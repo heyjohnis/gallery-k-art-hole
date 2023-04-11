@@ -80,14 +80,15 @@ This files table contents are outlined below>>>>>
 Default Style
 ============================*/
 
-$body-font-family: "Noto Sans KR", sans-serif;
+$body-font-family: "Open Sans", sans-serif;
 $heading-font-family: "Noto Serif KR", serif;
 
-$main-color: #1dd3f8;
+$main-color: #4E7D22;
 $body-color: #4d4d4d;
 $heading-color: #212121;
 $white-color: #ffffff;
 $black-color: #000000;
+$gray-color: #666666;
 $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 $transition: all 0.6s ease;
 $border-radius: 4px;
@@ -842,7 +843,7 @@ jumpx Nav Area Style
             size: 15px;
             weight: 500;
           }
-          color: $white-color;
+          color: $gray-color;
           text-transform: uppercase;
           padding: {
             left: 0;
@@ -1144,7 +1145,7 @@ jumpx Nav Area Style
 
   &.is-sticky {
     nav {
-      background-color: $black-color;
+      background-color: $white-color;
       padding-top: 15px;
       padding-bottom: 15px;
     }
