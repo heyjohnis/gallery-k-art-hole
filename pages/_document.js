@@ -11,7 +11,11 @@ import Document, {
         <Html lang="zxx">
           <Head>
             <link
-              href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
+              href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+              rel="stylesheet"
+            />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
               rel="stylesheet"
             />
             <link rel="icon" type="image/png" href="/images/favicon.png"></link>
