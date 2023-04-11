@@ -66,7 +66,7 @@ const Navbar = () => {
                     href="/"
                     className={`nav-link ${currentPath == "/" && "active"}`}
                   >
-                    Home <i className="bx bx-chevron-down"></i>
+                    회사소개 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -75,7 +75,7 @@ const Navbar = () => {
                         href="/"
                         className={`nav-link ${currentPath == "/" && "active"}`}
                       >
-                        Home One
+                        그린갤러리 소개
                       </Link>
                     </li>
 
@@ -86,7 +86,7 @@ const Navbar = () => {
                           currentPath == "/index-2/" && "active"
                         }`}
                       >
-                        Home Two
+                        갤러리케이 소개
                       </Link>
                     </li>
 
@@ -132,7 +132,7 @@ const Navbar = () => {
                       currentPath == "/about-1/" && "active"
                     }`}
                   >
-                    About <i className="bx bx-chevron-down"></i>
+                    멤버십소개 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -143,7 +143,7 @@ const Navbar = () => {
                           currentPath == "/about-1/" && "active"
                         }`}
                       >
-                        About Style One
+                        멤버십 소개
                       </Link>
                     </li>
 
@@ -154,7 +154,7 @@ const Navbar = () => {
                           currentPath == "/about-2/" && "active"
                         }`}
                       >
-                        About Style Two
+                        혜택 소개
                       </Link>
                     </li>
                   </ul>
@@ -167,7 +167,7 @@ const Navbar = () => {
                       currentPath == "/services/" && "active"
                     }`}
                   >
-                    Services <i className="bx bx-chevron-down"></i>
+                    미술품 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -178,7 +178,7 @@ const Navbar = () => {
                           currentPath == "/services/" && "active"
                         }`}
                       >
-                        Services Style One
+                        미술품 선택
                       </Link>
                     </li>
 
@@ -230,7 +230,7 @@ const Navbar = () => {
 
                 <li className="nav-item">
                   <Link href="#" onClick={(e) => e.preventDefault()}>
-                    Pages <i className="bx bx-chevron-down"></i>
+                    포인트몰 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -241,7 +241,7 @@ const Navbar = () => {
                           currentPath == "/pricing/" && "active"
                         }`}
                       >
-                        Pricing
+                        포인트몰
                       </Link>
                     </li>
 
@@ -378,7 +378,7 @@ const Navbar = () => {
 
                 <li className="nav-item">
                   <Link href="#" onClick={(e) => e.preventDefault()}>
-                    News <i className="bx bx-chevron-down"></i>
+                    행사 및 이벤트 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -424,7 +424,7 @@ const Navbar = () => {
                       currentPath == "/contact/" && "active"
                     }`}
                   >
-                    Contact <i className="bx bx-chevron-down"></i>
+                    고객지원 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -455,7 +455,7 @@ const Navbar = () => {
 
               <div className="others-options">
                 <Link href="/login/" className="default-btn">
-                  Log In <i className="bx bx-log-in-circle"></i>
+                  BOOK NOW <i className="bx bx-log-in-circle"></i>
                 </Link>
               </div>
             </div>
