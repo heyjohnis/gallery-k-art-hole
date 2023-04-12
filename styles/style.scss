@@ -2915,6 +2915,32 @@ Brand Area Serve Area Style
   }
 }
 
+.benefit_slide {
+  .swiper {
+    .swiper-slide {
+      &.swiper-slide-prev {
+      }
+      &.swiper-slide-next{
+      }
+      &.swiper-slide-active {
+        z-index: 3;
+      }
+    }
+  }
+  .swiper-pagination {
+    position: initial;
+    margin-top: 24px;
+    .swiper-pagination-bullet-active {
+      background-color:$main-color;
+      width: 20px;
+      border-radius: 5px;
+      transition: width 0.5s ease-in-out;
+    }
+  }
+
+}
+
+
 /*====================================================
 HOME THREE STYLE
 ======================================================*/
@@ -3005,7 +3031,7 @@ Banner Three Area Style
 Brand Three Area Style
 ======================================================*/
 .brand-area-two {
-  background-color: #f0fcfe;
+  background-color: #fafafa;
 }
 
 /*

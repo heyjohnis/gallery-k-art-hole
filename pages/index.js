@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/Layouts/Navbar";
 import MainBanner from "../components/HomeFive/MainBanner";
-import PartnerSlider from "../components/Common/PartnerSlider";
 import About from "../components/HomeFive/About";
 import WhyChooseUs from "../components/HomeFive/WhyChooseUs";
 import Services from "../components/HomeFive/Services";
@@ -12,6 +11,7 @@ import Testimonials from "../components/Common/Testimonials";
 import Faq from "../components/HomeFive/Faq";
 import News from "../components/Common/News";
 import Footer from "../components/Layouts/Footer";
+import BenefitSlider from '../components/Common/BenefitSlider';
 
 export default function Index5() {
   return (
@@ -22,8 +22,8 @@ export default function Index5() {
 
       <About />
 
-      <PartnerSlider />
-      
+      <BenefitSlider/>
+
       <WhyChooseUs />
 
       <Services />
