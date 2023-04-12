@@ -1,26 +1,29 @@
+import React from "react";
 import Navbar from "../components/Layouts/Navbar";
-import MainBanner from "../components/HomeOne/MainBanner";
-import Features from "../components/HomeOne/Features";
-import About from "../components/HomeOne/About";
-import WhyChooseUs from "../components/HomeOne/WhyChooseUs";
-import Services from "../components/HomeOne/Services";
+import MainBanner from "../components/HomeFive/MainBanner";
+import PartnerSlider from "../components/Common/PartnerSlider";
+import About from "../components/HomeFive/About";
+import WhyChooseUs from "../components/HomeFive/WhyChooseUs";
+import Services from "../components/HomeFive/Services";
 import MakeYourBusiness from "../components/Common/MakeYourBusiness";
-import WhatWeOffer from "../components/HomeOne/WhatWeOffer";
+import WhatWeOffer from "../components/HomeFive/WhatWeOffer";
+import CaseStudies from "../components/HomeFive/CaseStudies";
 import Testimonials from "../components/Common/Testimonials";
+import Faq from "../components/HomeFive/Faq";
 import News from "../components/Common/News";
 import Footer from "../components/Layouts/Footer";
 
-export default function Index() {
+export default function Index5() {
   return (
     <>
       <Navbar />
 
       <MainBanner />
 
-      <Features />
-
       <About />
 
+      <PartnerSlider />
+      
       <WhyChooseUs />
 
       <Services />
@@ -29,7 +32,11 @@ export default function Index() {
 
       <WhatWeOffer />
 
+      <CaseStudies />
+
       <Testimonials />
+
+      <Faq />
 
       <News />
 

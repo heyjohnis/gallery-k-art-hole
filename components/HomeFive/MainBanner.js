@@ -10,7 +10,7 @@ const MainBanner = () => {
         <Swiper
           navigation={true}
           autoplay={{
-            delay: 6500,
+            delay: 5500,
             disableOnInteraction: true,
             pauseOnMouseEnter: true,
           }}
@@ -20,26 +20,17 @@ const MainBanner = () => {
           <SwiperSlide>
             <div
               className="jumpx-slider-item"
-              style={{ backgroundImage: `url(/images/home-five/slider1.jpg)` }}
+              style={{ backgroundImage: `url(/images/home/slider1.jpg)` }}
             >
               <div className="d-table">
                 <div className="d-table-cell">
                   <div className="container">
                     <div className="jumpx-slider-text overflow-hidden one">
-                      <span>IT & AI Services</span>
-                      <h1>Secure IT Solutions For A More Secure Environment</h1>
-                      <p>
-                        If we drive down the cost of transportation in space, we
-                        can do great things.
-                      </p>
-
+                      <span>GREEN GALLERY</span>
+                      <h1>골프는 자연이라는 캔버스에<br/>그리는 예술이다</h1>
                       <div className="slider-btn">
-                        <Link href="/services" className="default-btn active">
-                          Our Services
-                        </Link>
-
                         <Link href="/contact" className="default-btn white">
-                          Contact Us
+                          자세히 보기
                         </Link>
                       </div>
                     </div>
@@ -52,26 +43,18 @@ const MainBanner = () => {
           <SwiperSlide>
             <div
               className="jumpx-slider-item"
-              style={{ backgroundImage: `url(/images/home-five/slider2.jpg)` }}
+              style={{ backgroundImage: `url(/images/home/slider2.jpg)` }}
             >
               <div className="d-table">
                 <div className="d-table-cell">
                   <div className="container">
                     <div className="jumpx-slider-text overflow-hidden two">
-                      <span>IT & AI Services</span>
-                      <h1>Specialized Artificial Intelligence Startup</h1>
-                      <p>
-                        If we drive down the cost of transportation in space, we
-                        can do great things.
-                      </p>
-
+                      <span>GREEN GALLERY</span>
+                      <h1>골프는 예술이고<br/>코스는 캔버스다</h1>
                       <div className="slider-btn">
-                        <Link href="/services" className="default-btn active">
-                          Our Services
-                        </Link>
 
                         <Link href="/contact" className="default-btn white">
-                          Contact Us
+                          자세히 보기
                         </Link>
                       </div>
                     </div>
@@ -84,26 +67,18 @@ const MainBanner = () => {
           <SwiperSlide>
             <div
               className="jumpx-slider-item"
-              style={{ backgroundImage: `url(/images/home-five/slider3.jpg)` }}
+              style={{ backgroundImage: `url(/images/home/slider3.jpg)` }}
             >
               <div className="d-table">
                 <div className="d-table-cell">
                   <div className="container">
                     <div className="jumpx-slider-text overflow-hidden three">
-                      <span>IT & AI Services</span>
-                      <h1>World’s Leading Machine Learning Company</h1>
-                      <p>
-                        If we drive down the cost of transportation in space, we
-                        can do great things.
-                      </p>
+                      <span>GREEN GALLERY</span>
+                      <h1>예술가처럼 스윙하고 프로처럼 플레이하다</h1>
 
                       <div className="slider-btn">
-                        <Link href="/services" className="default-btn active">
-                          Our Services
-                        </Link>
-
                         <Link href="/contact" className="default-btn white">
-                          Contact Us
+                          자세히 보기
                         </Link>
                       </div>
                     </div>

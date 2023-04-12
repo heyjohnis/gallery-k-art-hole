@@ -60,16 +60,16 @@ const PartnerSlider = () => {
             }}
             breakpoints={{
               0: {
-                slidesPerView: 2,
+                slidesPerView: 3,
               },
               576: {
                 slidesPerView: 3,
               },
               768: {
-                slidesPerView: 4,
+                slidesPerView: 3,
               },
               992: {
-                slidesPerView: 5,
+                slidesPerView: 3,
               },
             }}
             modules={[Navigation, Autoplay]}

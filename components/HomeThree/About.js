@@ -25,7 +25,7 @@ const About = () => {
                 data-aos-duration="1200"
                 data-aos-delay="500"
               >
-                <span>About Us</span>
+                <span>GREEN GALLERY</span>
                 <h2>
                   We Complete Every Project With Extra Care As Customer Need
                 </h2>
