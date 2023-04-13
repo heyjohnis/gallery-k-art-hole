@@ -81,7 +81,7 @@ const Navbar = () => {
 
                     <li className="nav-item">
                       <Link
-                        href="/index-2/"
+                        href="/"
                         className={`nav-link ${
                           currentPath == "/index-2/" && "active"
                         }`}
@@ -90,7 +90,7 @@ const Navbar = () => {
                       </Link>
                     </li>
 
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <Link
                         href="/index-3/"
                         className={`nav-link ${
@@ -121,13 +121,13 @@ const Navbar = () => {
                       >
                         Home Five
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </li>
 
                 <li className="nav-item">
                   <Link
-                    href="/about-1/"
+                    href="/"
                     className={`nav-link ${
                       currentPath == "/about-1/" && "active"
                     }`}
@@ -138,7 +138,7 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/about-1/"
+                        href="/"
                         className={`nav-link ${
                           currentPath == "/about-1/" && "active"
                         }`}
@@ -149,7 +149,7 @@ const Navbar = () => {
 
                     <li className="nav-item">
                       <Link
-                        href="/about-2/"
+                        href="/"
                         className={`nav-link ${
                           currentPath == "/about-2/" && "active"
                         }`}
@@ -162,7 +162,7 @@ const Navbar = () => {
 
                 <li className="nav-item">
                   <Link
-                    href="/services/"
+                    href="/"
                     className={`nav-link ${
                       currentPath == "/services/" && "active"
                     }`}
@@ -173,7 +173,7 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/services/"
+                        href="/"
                         className={`nav-link ${
                           currentPath == "/services/" && "active"
                         }`}
@@ -182,7 +182,7 @@ const Navbar = () => {
                       </Link>
                     </li>
 
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <Link
                         href="/services-2/"
                         className={`nav-link ${
@@ -224,7 +224,7 @@ const Navbar = () => {
                       >
                         Service Details
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </li>
 
@@ -236,7 +236,7 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/pricing/"
+                        href="/"
                         className={`nav-link ${
                           currentPath == "/pricing/" && "active"
                         }`}
@@ -245,7 +245,7 @@ const Navbar = () => {
                       </Link>
                     </li>
 
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <Link
                         href="/team/"
                         className={`nav-link ${
@@ -372,7 +372,7 @@ const Navbar = () => {
                       >
                         404 error
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </li>
 
@@ -384,26 +384,26 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/news-grid/"
+                        href="/"
                         className={`nav-link ${
                           currentPath == "/news-grid/" && "active"
                         }`}
                       >
-                        News Grid
+                        행사
                       </Link>
                     </li>
 
                     <li className="nav-item">
                       <Link
-                        href="/news-right-sidebar/"
+                        href="/"
                         className={`nav-link ${
                           currentPath == "/news-right-sidebar/" && "active"
                         }`}
                       >
-                        News Right Sidebar
+                        이벤트
                       </Link>
                     </li>
-
+{/* 
                     <li className="nav-item">
                       <Link
                         href="/news-details/"
@@ -413,7 +413,7 @@ const Navbar = () => {
                       >
                         News Details
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </li>
 
@@ -430,23 +430,53 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/contact/"
+                        href="/"
                         className={`nav-link ${
                           currentPath == "/contact/" && "active"
                         }`}
                       >
-                        Contact Style One
+                        FAQ
                       </Link>
                     </li>
 
                     <li className="nav-item">
                       <Link
-                        href="/contact-2/"
+                        href="/"
                         className={`nav-link ${
                           currentPath == "/contact-2/" && "active"
                         }`}
                       >
-                        Contact Style Two
+                        공지사항
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        href="/"
+                        className={`nav-link ${
+                          currentPath == "/contact-2/" && "active"
+                        }`}
+                      >
+                        상담/문의
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        href="/"
+                        className={`nav-link ${
+                          currentPath == "/contact-2/" && "active"
+                        }`}
+                      >
+                        이용후기
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        href="/"
+                        className={`nav-link ${
+                          currentPath == "/contact-2/" && "active"
+                        }`}
+                      >
+                        약관 및 규정
                       </Link>
                     </li>
                   </ul>
@@ -454,7 +484,7 @@ const Navbar = () => {
               </ul>
 
               <div className="others-options">
-                <Link href="/login/" className="default-btn">
+                <Link href="/" className="default-btn">
                   BOOK NOW <i className="bx bx-log-in-circle"></i>
                 </Link>
               </div>

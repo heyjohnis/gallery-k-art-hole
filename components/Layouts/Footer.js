@@ -101,10 +101,10 @@ const Footer = () => {
               <div className="privacy">
                 <ul>
                   <li>
-                    <Link href="/terms-conditions">개인정보 처리방침</Link>
+                    <Link href="/">개인정보 처리방침</Link>
                   </li>
                   <li>
-                    <Link href="/privacy-policy">이용약관</Link>
+                    <Link href="/">이용약관</Link>
                   </li>
                 </ul>
               </div>

@@ -52,8 +52,8 @@ const About = () => {
                   </div>
                 </div>
 
-                <Link href="/about-1" className="default-btn">
-                  Learn More
+                <Link href="/" className="default-btn">
+                  자세히 보기
                 </Link>
               </div>
             </div>

@@ -20,13 +20,13 @@ const News = () => {
             >
               <div className="single-news">
                 <div className="blog-img">
-                  <Link href="/news-details">
+                  <Link href="/">
                     <img src="/images/blog/blog1.png" alt="Image" />
                   </Link>
                 </div>
 
                 <div className="news-content-wrap">
-                  <Link href="/news-details">
+                  <Link href="/">
                     <span>NEWS</span>
                     <h3>그린갤러리 소식</h3>
                   </Link>
@@ -35,7 +35,7 @@ const News = () => {
                     골프와 예술, 그린갤러리 골프멤버십은 국내 미술품 시장 1위 갤러리케이가 새롭게 선보이는 프리미…
                   </p>
 
-                  <Link href="/news-details" className="read-more">
+                  <Link href="/" className="read-more">
                     자세히 보기<i className="bx bx-plus"></i>
                   </Link>
                 </div>
@@ -50,13 +50,13 @@ const News = () => {
             >
               <div className="single-news">
                 <div className="blog-img">
-                  <Link href="/news-details">
+                  <Link href="/">
                     <img src="/images/blog/blog2.png" alt="Image" />
                   </Link>
                 </div>
 
                 <div className="news-content-wrap">
-                  <Link href="/news-details">
+                  <Link href="/">
                     <span>EVENT</span>
                     <h3>그린갤러리 이벤트</h3>
                   </Link>
@@ -65,7 +65,7 @@ const News = () => {
                     골프와 예술, 그린갤러리 골프멤버십은 국내 미술품 시장 1위 갤러리케이가 새롭게 선보이는 프리미…
                   </p>
 
-                  <Link href="/news-details" className="read-more">
+                  <Link href="/" className="read-more">
                     자세히 보기<i className="bx bx-plus"></i>
                   </Link>
                 </div>
@@ -80,14 +80,14 @@ const News = () => {
             >
               <div className="single-news">
                 <div className="blog-img">
-                  <Link href="/news-details">
+                  <Link href="/">
                     <img src="/images/blog/blog3.png" alt="Image" />
                   </Link>
                 </div>
 
                 <div className="news-content-wrap">
 
-                  <Link href="/news-details">
+                  <Link href="/">
                     <span>EVENT</span>
                     <h3>그린갤러리 이벤트</h3>
                   </Link>
@@ -96,7 +96,7 @@ const News = () => {
                     골프와 예술, 그린갤러리 골프멤버십은 국내 미술품 시장 1위 갤러리케이가 새롭게 선보이는 프리미…
                   </p>
 
-                  <Link href="/news-details" className="read-more">
+                  <Link href="/" className="read-more">
                     자세히 보기<i className="bx bx-plus"></i>
                   </Link>
                 </div>
@@ -111,7 +111,7 @@ const News = () => {
             >
               <div className="single-news">
                 <div className="blog-img">
-                  <Link href="/news-details">
+                  <Link href="/">
                     <img src="/images/blog/blog3_1.png" alt="Image" />
                   </Link>
 
@@ -119,7 +119,7 @@ const News = () => {
 
                 <div className="news-content-wrap">
 
-                  <Link href="/news-details">
+                  <Link href="/">
                     <span>NEWS</span>
                     <h3>그린갤러리 소식</h3>
                   </Link>
@@ -128,7 +128,7 @@ const News = () => {
                     골프와 예술, 그린갤러리 골프멤버십은 국내 미술품 시장 1위 갤러리케이가 새롭게 선보이는 프리미…
                   </p>
 
-                  <Link href="/news-details" className="read-more">
+                  <Link href="/" className="read-more">
                     자세히 보기<i className="bx bx-plus"></i>
                   </Link>
                 </div>
