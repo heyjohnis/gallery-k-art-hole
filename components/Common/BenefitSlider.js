@@ -8,11 +8,11 @@ const benefitData = [
     url: "#",
   },
   {
-    image: "/images/main/slide_benefit01.png",
+    image: "/images/main/slide_benefit02.png",
     url: "#",
   },
   {
-    image: "/images/main/slide_benefit01.png",
+    image: "/images/main/slide_benefit03.png",
     url: "#",
   },
 ];
