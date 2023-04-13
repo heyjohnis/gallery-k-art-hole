@@ -2,16 +2,13 @@ import React from "react";
 import Navbar from "../components/Layouts/Navbar";
 import MainBanner from "../components/HomeFive/MainBanner";
 import About from "../components/HomeFive/About";
-import WhyChooseUs from "../components/HomeFive/WhyChooseUs";
-import Services from "../components/HomeFive/Services";
-import MakeYourBusiness from "../components/Common/MakeYourBusiness";
-import WhatWeOffer from "../components/HomeFive/WhatWeOffer";
-import CaseStudies from "../components/HomeFive/CaseStudies";
-import Testimonials from "../components/Common/Testimonials";
-import Faq from "../components/HomeFive/Faq";
 import News from "../components/Common/News";
 import Footer from "../components/Layouts/Footer";
 import BenefitSlider from '../components/Common/BenefitSlider';
+import GreenGolf from '../components/Common/GreenGolf';
+import GreenBenefit from '../components/Common/GreenBenefit';
+import GreenArt from '../components/Common/GreenArt';
+import MainMov from '../components/Common/MainMov';
 
 export default function Index5() {
   return (
@@ -24,19 +21,13 @@ export default function Index5() {
 
       <BenefitSlider/>
 
-      <WhyChooseUs />
+      <GreenGolf/>
 
-      <Services />
+      <GreenArt/>
 
-      <MakeYourBusiness />
-
-      <WhatWeOffer />
-
-      <CaseStudies />
-
-      <Testimonials />
-
-      <Faq />
+      <GreenBenefit/>
+      
+      <MainMov/>
 
       <News />
 

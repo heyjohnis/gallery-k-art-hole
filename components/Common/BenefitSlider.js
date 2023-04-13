@@ -25,7 +25,7 @@ const BenefitSlider = () => {
       </div>
       <div className="brand-area-two ptb-100">
       <div className="section-title">
-            <span>membership benefits</span>
+            <span>Membership Benefits</span>
             <h2>
               그린갤러리의 놀라운 혜택
             </h2>
