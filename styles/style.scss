@@ -2245,7 +2245,7 @@ News Area Style
 Footer Top Area Style
 ======================================================*/
 .footer-top-area {
-  background-color: #00042c;
+  background-color: #333333;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -2411,11 +2411,21 @@ Footer Top Area Style
   }
 }
 
+.footer_menu {
+  display: flex;
+  color: $white-color;
+}
+
+.footer_btn {
+  border: 1px solid #fff;
+  color: $white-color;
+}
+
 /*
 Footer Bottom Area Style
 ======================================================*/
 .footer-bottom-area {
-  background-color: #0d1240;
+  background-color: #535353;
   padding: 20px 0;
 
   .copy-right {
@@ -2450,6 +2460,7 @@ Footer Bottom Area Style
   .privacy {
     text-align: center;
     ul {
+      text-align: right;
       list-style-type: none;
       padding: 0;
       margin: 0;
