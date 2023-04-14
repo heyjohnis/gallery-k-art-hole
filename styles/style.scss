@@ -868,7 +868,7 @@ jumpx Nav Area Style
             size: 15px;
             weight: 500;
           }
-          color: $gray-color;
+          color: $white-color;
           text-transform: uppercase;
           padding: {
             left: 0;
@@ -883,7 +883,7 @@ jumpx Nav Area Style
           &:hover,
           &:focus,
           &.active {
-            color: $main-color;
+            color: #b1ea0c;
           }
           i {
             font-size: 22px;
@@ -904,12 +904,12 @@ jumpx Nav Area Style
         &:hover,
         &.active {
           a {
-            color: $main-color;
+            color: #b1ea0c;
           }
         }
         .dropdown-menu {
           box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
-          background: $white-color;
+          background: rgba(0, 0, 0, 0.7);
           position: absolute;
           border: none;
           top: 80px;
@@ -937,7 +937,7 @@ jumpx Nav Area Style
             a {
               padding: 5px 15px;
               margin: 0;
-              color: $black-color;
+              color: $white-color;
               text-transform: capitalize;
               font: {
                 size: 14.5px;
@@ -946,7 +946,7 @@ jumpx Nav Area Style
               &:hover,
               &:focus,
               &.active {
-                color: $main-color;
+                color: #b1ea0c;
               }
             }
             .dropdown-menu {
@@ -1173,6 +1173,29 @@ jumpx Nav Area Style
       background-color: $white-color;
       padding-top: 15px;
       padding-bottom: 15px;
+      .navbar-nav {
+        .nav-item {
+          a {
+            color: $gray-color;
+            &.active{
+              color: #66aa25;
+            }
+          }
+          .dropdown-menu {
+            background: $white-color;
+            li {
+              a {
+                color: $gray-color;
+                &:hover,
+                &:focus,
+                &.active {
+                  color: #66aa25;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -3514,13 +3537,14 @@ jumpx SliderArea Style
 
   &::before {
     content: "";
+    background-color:$black-color;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.9;
+    opacity: 0.45;
   }
 
   .jumpx-slider-text {

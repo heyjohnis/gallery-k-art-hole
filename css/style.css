@@ -839,7 +839,7 @@ jumpx Nav Area Style
 .navbar-area nav .navbar-nav .nav-item a {
   font-size: 15px;
   font-weight: 500;
-  color: #666666;
+  color: #ffffff;
   text-transform: uppercase;
   padding-left: 0;
   padding-right: 0;
@@ -849,7 +849,7 @@ jumpx Nav Area Style
   margin-right: 15px;
 }
 .navbar-area nav .navbar-nav .nav-item a:hover, .navbar-area nav .navbar-nav .nav-item a:focus, .navbar-area nav .navbar-nav .nav-item a.active {
-  color: #4E7D22;
+  color: #b1ea0c;
 }
 .navbar-area nav .navbar-nav .nav-item a i {
   font-size: 22px;
@@ -863,11 +863,11 @@ jumpx Nav Area Style
   margin-left: 0;
 }
 .navbar-area nav .navbar-nav .nav-item:hover a, .navbar-area nav .navbar-nav .nav-item.active a {
-  color: #4E7D22;
+  color: #b1ea0c;
 }
 .navbar-area nav .navbar-nav .nav-item .dropdown-menu {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
-  background: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
   position: absolute;
   border: none;
   top: 80px;
@@ -893,13 +893,13 @@ jumpx Nav Area Style
 .navbar-area nav .navbar-nav .nav-item .dropdown-menu li a {
   padding: 5px 15px;
   margin: 0;
-  color: #000000;
+  color: #ffffff;
   text-transform: capitalize;
   font-size: 14.5px;
   font-weight: 400;
 }
 .navbar-area nav .navbar-nav .nav-item .dropdown-menu li a:hover, .navbar-area nav .navbar-nav .nav-item .dropdown-menu li a:focus, .navbar-area nav .navbar-nav .nav-item .dropdown-menu li a.active {
-  color: #4E7D22;
+  color: #b1ea0c;
 }
 .navbar-area nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
   left: -250px;
@@ -1052,6 +1052,21 @@ jumpx Nav Area Style
   background-color: #ffffff;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+.navbar-area.is-sticky nav .navbar-nav .nav-item a {
+  color: #666666;
+}
+.navbar-area.is-sticky nav .navbar-nav .nav-item a.active {
+  color: #66aa25;
+}
+.navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu {
+  background: #ffffff;
+}
+.navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li a {
+  color: #666666;
+}
+.navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li a:hover, .navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li a:focus, .navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li a.active {
+  color: #66aa25;
 }
 
 .navbar-toggler {
@@ -3182,13 +3197,14 @@ jumpx SliderArea Style
 }
 .jumpx-slider-item::before {
   content: "";
+  background-color: #000000;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.9;
+  opacity: 0.45;
 }
 .jumpx-slider-item .jumpx-slider-text {
   text-align: center;
