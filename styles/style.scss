@@ -886,9 +886,8 @@ jumpx Nav Area Style
             color: #b1ea0c;
           }
           i {
-            font-size: 22px;
-            position: relative;
-            top: 3px;
+            font-size: 19px;
+            transform: translateY(2px);
           }
         }
         &:last-child {
@@ -899,6 +898,7 @@ jumpx Nav Area Style
         &:first-child {
           a {
             margin-left: 0;
+            padding-right: 15px;
           }
         }
         &:hover,

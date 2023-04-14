@@ -66,10 +66,10 @@ const Navbar = () => {
                     href="/"
                     className={`nav-link ${currentPath == "/" && "active"}`}
                   >
-                    회사소개 <i className="bx bx-chevron-down"></i>
+                    회사소개
                   </Link>
 
-                  <ul className="dropdown-menu">
+                  {/* <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
                         href="/"
@@ -90,7 +90,7 @@ const Navbar = () => {
                       </Link>
                     </li>
 
-                    {/* <li className="nav-item">
+                    <li className="nav-item">
                       <Link
                         href="/index-3/"
                         className={`nav-link ${
@@ -121,8 +121,8 @@ const Navbar = () => {
                       >
                         Home Five
                       </Link>
-                    </li> */}
-                  </ul>
+                    </li>
+                  </ul> */}
                 </li>
 
                 <li className="nav-item">

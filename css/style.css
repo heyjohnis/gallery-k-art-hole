@@ -852,15 +852,15 @@ jumpx Nav Area Style
   color: #b1ea0c;
 }
 .navbar-area nav .navbar-nav .nav-item a i {
-  font-size: 22px;
-  position: relative;
-  top: 3px;
+  font-size: 19px;
+  transform: translateY(2px);
 }
 .navbar-area nav .navbar-nav .nav-item:last-child a {
   margin-right: 0;
 }
 .navbar-area nav .navbar-nav .nav-item:first-child a {
   margin-left: 0;
+  padding-right: 15px;
 }
 .navbar-area nav .navbar-nav .nav-item:hover a, .navbar-area nav .navbar-nav .nav-item.active a {
   color: #b1ea0c;
