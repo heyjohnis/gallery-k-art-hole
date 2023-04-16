@@ -877,7 +877,7 @@ jumpx Nav Area Style
 }
 .navbar-area nav .navbar-nav .nav-item .dropdown-menu {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   border: none;
   top: 80px;
