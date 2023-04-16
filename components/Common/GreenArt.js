@@ -4,18 +4,18 @@ import Link from "next/link";
 const GreenArt = () => {
   return (
     <>
-      <section className="main-art-area mt-140">
-        <div className="container pb-140">
-          <div className="row align-items-start justify-content-between">
-            <div className="col-lg-8">
+      <section className="main-art-area mt-70">
+        <div className="container pb-70">
+          <div className="row d-flex align-items-start justify-content-between main-art-card">
+            <div className="col-12 greenart_img">
+              <img src="/images/main/bg_art.png" alt="콜렉터 이미지"/>
             </div>
-
-            <div className="col-md-4 main-art-text">
+            <div className="main-art-text">
               <div 
                 className="about-content"
-                data-aos="fade-in"
+                data-aos="fade-up"
                 data-aos-duration="1200"
-                data-aos-delay="900"
+                data-aos-delay="100"
               >
                 <span>GREEN GALLERY ART</span>
                 <h2>

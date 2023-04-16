@@ -11,7 +11,7 @@ import "swiper/css/bundle";
 
 // Global styles
 import "../styles/style.scss";
-import "../styles/responsive.css";
+import "../styles/responsive.scss";
 
 import Head from "next/head";
 import GoTop from "../components/Shared/GoTop";

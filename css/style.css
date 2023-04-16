@@ -24,6 +24,7 @@ This files table contents are outlined below>>>>>
 ** - Main Banner Area Style
 ** - Features Area Style
 ** - About Area Style 
+** - Company Area Style
 ** - Choose Us Area Style
 ** - Offer Area Style
 ** - Business  Area Style
@@ -1398,6 +1399,23 @@ About Area Style
 }
 
 /*
+Company Area Style
+======================================================*/
+.company-area .section-title {
+  max-width: 800px;
+  margin: -9px auto 60px;
+  text-align: center;
+  position: relative;
+}
+.company-area .section-title h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  position: relative;
+  display: block;
+  color: #0E5039;
+}
+
+/*
 Choose Us Area Style
 ======================================================*/
 .features-area {
@@ -1653,6 +1671,14 @@ Business  Area Style
 ======================================================*/
 .business-area .default-btn {
   margin-top: 10px;
+}
+.business-area .about-greengolf img {
+  margin-bottom: 50px;
+}
+.business-area .about-greengolf h2 {
+  font-size: 28px;
+  color: #0E5039;
+  margin-bottom: 40px;
 }
 
 .business-content {
@@ -2629,6 +2655,14 @@ Industries Serve Area Style
 .industries-serve-area .industries-img {
   text-align: center;
 }
+.industries-serve-area .industries-img span {
+  font-family: "Noto Serif KR", serif;
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #0E5039;
+}
 
 .single-industries {
   position: relative;
@@ -2652,18 +2686,6 @@ Industries Serve Area Style
 }
 .single-industries.right-item:hover::before {
   border-radius: 0 60px 60px 0;
-}
-.single-industries::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #4E7D22;
-  z-index: -1;
-  border-radius: 60px 0 0 60px;
-  transition: all 0.6s ease;
 }
 .single-industries i {
   position: absolute;
@@ -2693,22 +2715,20 @@ Industries Serve Area Style
   transition: all 0.6s ease;
   color: #4d4d4d;
 }
-.single-industries:hover i {
-  color: #ffffff;
-  transform: rotate(360deg);
+.single-industries.awards-warp {
+  padding-left: 30px;
+  padding-right: 30px;
 }
-.single-industries:hover h3 {
-  color: #ffffff;
+.single-industries.awards-warp h3 {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  color: #4E7D22;
+  font-weight: 400;
 }
-.single-industries:hover span {
-  color: #ffffff;
-}
-.single-industries:hover a {
-  right: 20px;
-}
-.single-industries:hover::before {
-  width: 100%;
-  border-radius: 60px 0 0 60px;
+.single-industries.awards-warp span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0E5039;
 }
 
 /*
@@ -3074,13 +3094,15 @@ About Area Four Style
 /*
 Main Art Area Style
 ======================================================*/
-.main-art-area .container {
-  background: url(/images/main/bg_art.png);
+.main-art-area .container .main-art-card {
+  position: relative;
 }
-.main-art-area .container .main-art-text {
+.main-art-area .container .main-art-card .main-art-text {
+  width: 33%;
+  position: absolute;
+  right: 35px;
   background: #fff;
   padding: 54px 36px;
-  transform: translateX(-2em);
 }
 .main-art-area .container .about-content h2 {
   color: #0E5039;
@@ -3271,11 +3293,12 @@ Page Title Area Style
   z-index: 1;
   padding-top: 200px;
   padding-bottom: 150px;
-  background-color: #04063c;
+  background-color: #0a3e2c;
   overflow: hidden;
   text-align: center;
 }
 .page-title-area .page-title-content h2 {
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 20px;
   color: #ffffff;
   font-size: 40px;
@@ -3290,11 +3313,11 @@ Page Title Area Style
 .page-title-area .page-title-content ul li {
   display: inline-block;
   position: relative;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   padding-right: 10px;
   padding-left: 10px;
-  color: #4E7D22;
+  color: #b1ea0c;
 }
 .page-title-area .page-title-content ul li::before {
   content: "";

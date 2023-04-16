@@ -881,6 +881,16 @@
   .cta-area .cta-content h3 {
     font-size: 35px;
   }
+  .main-art-area .container .main-art-card .greenart_img {
+    order: 1;
+  }
+  .main-art-area .container .main-art-card .main-art-text {
+    width: 100%;
+    position: relative;
+    right: unset;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+  }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .main-banner-area {
@@ -978,6 +988,10 @@
   }
   .service-card {
     padding: 20px 15px;
+  }
+  .main-art-area .container .main-art-card .main-art-text {
+    width: 100%;
+    position: relative;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1367,6 +1381,16 @@
     left: auto;
     right: 0;
   }
+  .main-art-area .container .main-art-card .greenart_img {
+    order: 1;
+  }
+  .main-art-area .container .main-art-card .main-art-text {
+    width: 100%;
+    position: relative;
+    right: unset;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+  }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .navbar-area nav .navbar-nav .nav-item a {
@@ -1597,6 +1621,9 @@
   }
   .single-offer i {
     left: 20px;
+  }
+  .main-art-area .container .main-art-card .main-art-text {
+    width: 45%;
   }
 }
 @media only screen and (min-width: 1824px) {
