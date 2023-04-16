@@ -22,15 +22,6 @@ export default function Company() {
       />
       <AboutGreenGolf/>
       <AboutCompany/>
-      <MakeYourBusiness />
-
-      <Testimonials />
-
-      <TeamTwo />
-
-      <div className="pb-50">
-        <Partner />
-      </div>
 
       <Footer />
     </>

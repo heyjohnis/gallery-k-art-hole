@@ -1,36 +1,36 @@
 import React from "react";
 import Link from "next/link";
 
-const GreenGolf = () => {
+const AboutGreenGolf = () => {
   return (
     <>
-      <section className="business-area mtb-70">
+      <section className="main-art-area mt-140">
         <div className="container">
-          <div className="row align-items-center justify-content-between">
-            <div className="col-lg-5 mt-50">
-              <div className="row mb-60 text-center about-greengolf">
-
-                <img src="/images/company/campany_logo.png" alt="그린갤러리 로고" />
-                <h2>그린갤러리 골프</h2>
-                <div className="single-business">
-                  <p>
-                  그린갤러리 골프멤버십은 프리미엄 골프장 27개소를 포함한 경기권, 강원권, 충북권, 경북권, 전라권, 충남권, 제주권 등 전국 300여 곳의 골프장을 동일한 권리로 이용하실 수 있습니다.
-                  <br/>또한 회당 50%~75%, 최대 40~60만원의 그린피 지원금을 제공해 차별화된 지원 서비스를 제공합니다. 그린갤러리 골프멤버십을 통해 전국 프리미엄 골프장을 원하는 시간에 이용해 보세요.  
-                  </p>
-                </div>
-
-              </div>
+          <div className="row d-flex align-items-start justify-content-between main-art-card">
+            <div className="col-12 greenart_img">
+              <img src="/images/company/about_greengolf.png" alt="콜렉터 이미지"/>
             </div>
-
-            <div className="col-lg-6">
-              <div className="row golf_main">
-                <div 
-                  data-aos="fade-up"
-                  data-aos-duration="1200"
-                  data-aos-delay="200"
-                >
-                  <img src="/images/company/about_greengolf.png" alt="골프장 전경" />
-                </div>
+            <div className="main-art-text">
+              <div 
+                className="about-content"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-delay="100"
+              >
+                <span>그린갤러리 프리미엄 골프 멤버쉽</span>
+                <h2>
+                예술과 골프의 만남
+                </h2>
+                <p>
+                당신의 골프 라운드에서 느꼈던 그 흥분감을 그림 속에서 만나보세요. 
+                그린갤러리는 골프와 예술이 만나 탄생한 새로운 문화의 시작입니다. 
+                골프회원권과 함께 예술작품을 구매할 수 있는 그린갤러리는 골프를 즐기는 분들에게 이색적이면서도 더욱 특별한 경험을 제공 합니다. 
+                그린갤러리에서는 다양한 장르의 예술작품을 구경하며 골프를 즐길 수 있습니다. 
+                이곳에서 살아있는 예술작품을 감상하며 골프를 즐기면서, 예술의 멋과 골프의 감성을 함께 느낄 수 있습니다. 
+                또한, 골프 회원권을 소유하신 분들은 그린갤러리에서 좀 더 특별한 혜택을 누릴 수 있습니다. 
+                그린갤러리는 예술을 사랑하 는 분들과 골프를 즐기는 분들에게 다양한 경험과 만족감을 제공 하며, 이를 통해 일상에서 더욱 특별한 순간을 만들어드립니다. 
+                골프와 예술의 만남, 그린갤러리에서 느껴보세요
+                </p>
 
               </div>
             </div>
@@ -41,4 +41,4 @@ const GreenGolf = () => {
   );
 };
 
-export default GreenGolf;
+export default AboutGreenGolf;

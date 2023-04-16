@@ -63,7 +63,7 @@ const Navbar = () => {
               <ul className="navbar-nav m-auto">
                 <li className="nav-item">
                   <Link
-                    href="/"
+                    href="/company"
                     className={`nav-link ${currentPath == "/" && "active"}`}
                   >
                     회사소개

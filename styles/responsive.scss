@@ -1104,6 +1104,7 @@
     .main-art-area{
         .container{
             .main-art-card {
+                text-align: center;
                 .greenart_img{
                     order: 1;
                 }
@@ -1247,16 +1248,6 @@
     }
     .service-card {
         padding: 20px 15px;
-    }
-    .main-art-area{
-        .container{
-            .main-art-card {
-                .main-art-text{
-                    width: 100%;
-                    position: relative;
-                }
-            }
-        }
     }
 }
 
@@ -1760,6 +1751,7 @@
     .main-art-area{
         .container{
             .main-art-card {
+                text-align: center;
                 .greenart_img{
                     order: 1;
                 }
@@ -2104,7 +2096,7 @@
         .container{
             .main-art-card {
                 .main-art-text{
-                    width: 45%;
+                    width: 65%;
                 }
             }
         }
@@ -2221,5 +2213,17 @@
     }
     .mean-container .mean-nav {
         margin-top: 66px;
+    }
+}
+
+@media only screen and (min-width : 1200px) and (max-width : 1535px) {
+    .main-art-area{
+        .container{
+            .main-art-card {
+                .main-art-text{
+                    width: 45%;
+                }
+            }
+        }
     }
 }

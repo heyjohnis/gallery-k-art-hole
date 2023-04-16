@@ -4,7 +4,7 @@ import Link from "next/link";
 const AboutCompany = () => {
   return (
     <>
-      <section className="industries-serve-area company-area pt-100 pb-0">
+      <section className="industries-serve-area company-area pt-100 pb-140">
         <div className="container">
           <div className="section-title">
             <span>예술, 경제가 되다. GALLERY K</span>
