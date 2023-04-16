@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
-import MakeYourBusiness from "../components/Common/MakeYourBusiness";
 import Footer from "../components/Layouts/Footer";
 import MembershipStyle from '../components/Membership/MembershipStyle';
+import MembershipBenefits from '../components/Membership/MembershipBenefits';
 
 export default function Membership() {
   return (
@@ -19,9 +19,8 @@ export default function Membership() {
 
       <MembershipStyle/>
 
-      <div className="bg-fafafa">
-        <MakeYourBusiness />
-      </div>
+      <MembershipBenefits/>
+    
 
       <Footer />
     </>
