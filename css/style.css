@@ -143,7 +143,7 @@ h3 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 15px;
   line-height: 1.6;
 }
@@ -272,6 +272,16 @@ textarea.form-control {
 .mtb-100 {
   margin-top: 100px;
   margin-bottom: 100px;
+}
+
+.mtb-70 {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.mtb-50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .mb-20 {
@@ -516,7 +526,7 @@ Video wave Style
 Default Btn Area Style
 ======================================================*/
 .default-btn {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
   color: #ffffff;
   padding: 18px 35px;
@@ -617,13 +627,13 @@ Section Title Area Style
   position: relative;
 }
 .section-title span {
-  font-size: 14px;
+  font-size: 16px;
   color: #4E7D22;
   display: inline-block;
-  margin-bottom: 5px;
+  font-weight: 700;
 }
 .section-title h2 {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 10px;
   position: relative;
   display: block;
@@ -1350,9 +1360,10 @@ About Area Style
   font-weight: 700;
 }
 .about-content h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 28px;
+  margin-bottom: 40px;
   color: #0E5039;
+  line-height: 1.4;
 }
 .about-content ul {
   list-style-type: none;
@@ -1361,7 +1372,7 @@ About Area Style
 }
 .about-content ul li {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: #212121;
   position: relative;
@@ -1647,9 +1658,15 @@ Business  Area Style
 .business-content {
   padding-left: 24px;
 }
+.business-content span {
+  font-size: 16px;
+  color: #4E7D22;
+  display: inline-block;
+  font-weight: 700;
+}
 .business-content h2 {
   color: #0E5039;
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 40px;
 }
 

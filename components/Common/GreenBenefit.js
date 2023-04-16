@@ -4,7 +4,7 @@ import Link from "next/link";
 const GreenBenefit = () => {
   return (
     <>
-      <section className="business-area ptb-100 mt-100">
+      <section className="business-area ptb-70 mt-100">
         <div className="container">
           <div className="row align-items-start justify-content-between">
             <div className="col-lg-4 mt-30">
@@ -15,8 +15,8 @@ const GreenBenefit = () => {
 
               <div className="single-business">
                 <p>
-                  골프와 예술, 그린갤러리 골프멤버십은 국내 미술품 시장 1위 갤러리케이가 새롭게 선보이는 프리미엄 골프멤버십으로서 기존에 없던 독보적인 혜택을 선사합니다. 
-                  그린갤러리 골프멤버쉽을 구매하시면 회원권의 50% 금액에 해당하는 미술품 혜택부터 전국 명문 골프장 라운딩, 제휴 호텔, 요트, 굿즈 등  부가적인 혜택까지 프리미엄 서비스를 제공해 고객님의 라이프스타일을 한층 더 높이실 수 있습니다.
+                그린갤러리 골프멤버십은 패션, 쇼핑, 여행, 레저, 미식, 인테리어 등 다양한 분야에 걸쳐 품격을 높이는 럭셔리 라이프 컨텐츠를 제공합니다. 
+                <br/>자율 포인트제를 운영하여 고객님의 선호도와 라이프 타입에 맞게 직접 선택해 사용하실 수 있습니다. 골프 강습부터 럭셔리 여행까지 그린갤러리 골프멤버십 하나로 다양한 혜택을 누리고 품격있는 라이프스타일을 즐겨보세요.
                 </p>
               </div>
             </div>
