@@ -101,9 +101,9 @@ const AboutCompany = () => {
 
             <div 
               className="col-lg-4"
-              data-aos="fade-in"
-              data-aos-duration="1200"
-              data-aos-delay="300"
+              data-aos="zoom-in" 
+              data-aos-duration="1200" 
+              data-aos-delay="400"
             >
               <div className="industries-img">
                 <img src="/images/company/img_award_tit1.png" alt="타이틀 장식"/>

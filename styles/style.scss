@@ -629,6 +629,13 @@ Section Title Area Style
   text-align: center;
   position: relative;
 
+  &.membership-tit {
+    h2{
+      margin-bottom: 40px;
+      line-height: 1.4;
+    }
+  }
+
   span {
     font-size: 16px;
     color: $main-color;
@@ -966,14 +973,14 @@ jumpx Nav Area Style
 
               li {
                 a {
-                  color: $black-color;
+                  color: $white-color;
                   text-transform: capitalize;
                   font-size: 14px;
 
                   &:hover,
                   &:focus,
                   &.active {
-                    color: $main-color;
+                    color: #b1ea0c;
                   }
                 }
                 .dropdown-menu {
@@ -1199,6 +1206,18 @@ jumpx Nav Area Style
                 &:focus,
                 &.active {
                   color: #66aa25;
+                }
+              }
+              .dropdown-menu {
+                li {
+                  a {
+                    color: $body-color;
+                    &:hover,
+                    &:focus,
+                    &.active {
+                      color: #66aa25;
+                    }
+                  }
                 }
               }
             }
@@ -2713,6 +2732,8 @@ Pricing Area Style
     position: relative;
     z-index: 1;
     h3 {
+      font-family: $body-font-family;
+      color: $main-color;
       font-size: 25px;
     }
     p {
@@ -2720,20 +2741,49 @@ Pricing Area Style
       font-size: 14px;
     }
   }
+  &.membership-benefits {
+    padding: 0;
+    padding-bottom: 30px;
+    h3 {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+    p{
+      color: $sub-color;
+    }
+    ul {
+      max-width: 300px;
+      li {
+        font-weight: 400;
+      }
+    }
+  }
   span {
-    font-size: 30px;
-    font-family: $heading-font-family;
-    color: $heading-color;
-    font-weight: 700;
-    display: block;
-    line-height: 1;
-    margin: 0 auto 20px;
-    background-color: $white-color;
-    box-shadow: $box-shadow;
-    width: 120px;
-    height: 120px;
-    line-height: 120px;
-    border-radius: 50%;
+    // font-size: 30px;
+    // font-family: $heading-font-family;
+    // color: $heading-color;
+    // font-weight: 700;
+    // display: block;
+    // line-height: 1;
+    // margin: 0 auto 20px;
+    // background-color: $white-color;
+    // box-shadow: $box-shadow;
+    // width: 120px;
+    // height: 120px;
+    // line-height: 120px;
+    // border-radius: 50%;
+    &.list_icon{
+      position: absolute;
+      top: 1px;
+      left: 0;
+      font-size: 14px;
+      background: url(/images/ico_list.png);
+      background-size: cover;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+    }
     sub {
       font-size: 14px;
       color: $body-color;

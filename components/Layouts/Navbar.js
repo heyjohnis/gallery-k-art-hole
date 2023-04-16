@@ -148,15 +148,57 @@ const Navbar = () => {
                     </li>
 
                     <li className="nav-item">
-                      <Link
-                        href="/"
-                        className={`nav-link ${
-                          currentPath == "/about-2/" && "active"
-                        }`}
-                      >
-                        혜택 소개
+                      <Link href="#" onClick={(e) => e.preventDefault()}>
+                        혜택 소개<i className="bx bx-chevron-down"></i>
                       </Link>
+
+                      <ul className="dropdown-menu">
+                      <li className="nav-item">
+                          <Link
+                            href="/"
+                            className={`nav-link ${
+                              currentPath == "/login/" && "active"
+                            }`}
+                          >
+                            혜택소개
+                          </Link>
+                        </li>
+
+                        <li className="nav-item">
+                          <Link
+                            href="/"
+                            className={`nav-link ${
+                              currentPath == "/login/" && "active"
+                            }`}
+                          >
+                            골프 서비스 소개
+                          </Link>
+                        </li>
+
+                        <li className="nav-item">
+                          <Link
+                            href="/"
+                            className={`nav-link ${
+                              currentPath == "/sign-up/" && "active"
+                            }`}
+                          >
+                            미술품 소개
+                          </Link>
+                        </li>
+
+                        <li className="nav-item">
+                          <Link
+                            href="/"
+                            className={`nav-link ${
+                              currentPath == "/sign-up/" && "active"
+                            }`}
+                          >
+                            부가서비스 소개
+                          </Link>
+                        </li>
+                      </ul>
                     </li>
+
                   </ul>
                 </li>
 

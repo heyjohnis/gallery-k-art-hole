@@ -627,6 +627,10 @@ Section Title Area Style
   text-align: center;
   position: relative;
 }
+.section-title.membership-tit h2 {
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
 .section-title span {
   font-size: 16px;
   color: #4E7D22;
@@ -919,12 +923,12 @@ jumpx Nav Area Style
   visibility: hidden;
 }
 .navbar-area nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a {
-  color: #000000;
+  color: #ffffff;
   text-transform: capitalize;
   font-size: 14px;
 }
 .navbar-area nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover, .navbar-area nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus, .navbar-area nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.active {
-  color: #4E7D22;
+  color: #b1ea0c;
 }
 .navbar-area nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu {
   left: 220px;
@@ -1077,6 +1081,12 @@ jumpx Nav Area Style
   color: #666666;
 }
 .navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li a:hover, .navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li a:focus, .navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li a.active {
+  color: #66aa25;
+}
+.navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a {
+  color: #4d4d4d;
+}
+.navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover, .navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus, .navbar-area.is-sticky nav .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.active {
   color: #66aa25;
 }
 
@@ -2467,26 +2477,42 @@ Pricing Area Style
   z-index: 1;
 }
 .single-pricing .pricing-top-heading h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #4E7D22;
   font-size: 25px;
 }
 .single-pricing .pricing-top-heading p {
   font-weight: 600;
   font-size: 14px;
 }
-.single-pricing span {
-  font-size: 30px;
-  font-family: "Noto Serif KR", serif;
-  color: #212121;
-  font-weight: 700;
-  display: block;
-  line-height: 1;
-  margin: 0 auto 20px;
-  background-color: #ffffff;
-  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  border-radius: 50%;
+.single-pricing.membership-benefits {
+  padding: 0;
+  padding-bottom: 30px;
+}
+.single-pricing.membership-benefits h3 {
+  margin-top: 30px;
+  font-size: 20px;
+}
+.single-pricing.membership-benefits p {
+  color: #0E5039;
+}
+.single-pricing.membership-benefits ul {
+  max-width: 300px;
+}
+.single-pricing.membership-benefits ul li {
+  font-weight: 400;
+}
+.single-pricing span.list_icon {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  font-size: 14px;
+  background: url(/images/ico_list.png);
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
 }
 .single-pricing span sub {
   font-size: 14px;
