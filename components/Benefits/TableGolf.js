@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Table from 'react-bootstrap/Table'
+import Table from 'react-bootstrap/Table';
 
 
 const TableGolf = () => {

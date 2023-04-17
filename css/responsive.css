@@ -1715,4 +1715,25 @@
   .main-art-area .container .main-art-card .main-art-text {
     width: 45%;
   }
+}
+@media only screen and (max-width: 576px) {
+  .table_pc {
+    display: none;
+  }
+  table, th, td {
+    font-size: 15px;
+  }
+  .table_golf th {
+    width: 100%;
+    display: block;
+  }
+  .table_golf td {
+    width: 100%;
+    display: block;
+  }
+}
+@media only screen and (min-width: 577px) {
+  .table_pc {
+    display: block;
+  }
 }/*# sourceMappingURL=responsive.css.map */

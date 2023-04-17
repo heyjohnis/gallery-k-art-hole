@@ -74,6 +74,7 @@ This files table contents are outlined below>>>>>
 ** - Main Contact Area Style
 ** - Contact Info Area Three Style 
 ** - Service Details Area Style
+** - Table Area Style 
 
 *******************************************
 /*
@@ -127,7 +128,7 @@ h5,
 h6 {
   color: #212121;
   font-family: "Noto Serif KR", serif;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h3 {
@@ -1691,9 +1692,6 @@ Business  Area Style
   margin-bottom: 40px;
 }
 
-.business-content {
-  padding-left: 24px;
-}
 .business-content span {
   font-size: 16px;
   color: #4E7D22;
@@ -1711,7 +1709,6 @@ Business  Area Style
 }
 
 .single-business {
-  padding-left: 24px;
   transition: all 0.6s ease;
   margin-bottom: 30px;
   position: relative;
@@ -5056,8 +5053,45 @@ Service Details Area Style
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
 
+/*
+Table Area Style 
+================================*/
+table, th, td {
+  font-size: 18px;
+}
+
 .table_golf th {
-  width: 10%;
+  width: 14%;
   background: #0E5039;
   color: #ffffff;
+}
+
+.member-table-wrap h3 {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #0E5039;
+}
+.member-table-wrap .table_membership {
+  border-color: #cbd5d1;
+}
+.member-table-wrap .table_membership tr {
+  vertical-align: middle;
+}
+.member-table-wrap .table_membership tr th {
+  background-color: #0E5039;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.1;
+}
+.member-table-wrap .table_membership tr th.sub_th {
+  background-color: #4E7D22;
+  text-align: left;
+}
+.member-table-wrap .table_membership tr th span.smaller {
+  font-size: 14px;
+}
+
+.white-shape {
+  line-height: 0;
 }/*# sourceMappingURL=style.css.map */

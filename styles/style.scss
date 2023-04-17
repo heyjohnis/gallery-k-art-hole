@@ -74,6 +74,7 @@ This files table contents are outlined below>>>>>
 ** - Main Contact Area Style
 ** - Contact Info Area Three Style 
 ** - Service Details Area Style
+** - Table Area Style 
 
 *******************************************
 /*
@@ -139,7 +140,7 @@ h5,
 h6 {
   color: $heading-color;
   font-family: $heading-font-family;
-  font-weight: 700;
+  font-weight: 600;
 }
 h3 {
   font-size: 22px;
@@ -1878,7 +1879,6 @@ Business  Area Style
   }
 }
 .business-content {
-  padding-left: 24px;
   span {
     font-size: 16px;
     color: $main-color;
@@ -1895,7 +1895,6 @@ Business  Area Style
   text-align: right;
 }
 .single-business {
-  padding-left: 24px;
   transition: $transition;
   margin-bottom: 30px;
   position: relative;
@@ -5534,10 +5533,52 @@ Service Details Area Style
     box-shadow: $box-shadow;
 }
 
+/*
+Table Area Style 
+================================*/
+
+table, th, td {
+  font-size: 18px;
+}
+
 .table_golf {
   th {
-    width:10%;
+    width:14%;
     background: $sub-color;
     color: $white-color;
   }
+}
+
+.member-table-wrap {
+  h3 {
+    font-size: 20px; 
+    font-family: $body-font-family;
+    font-weight: 700;
+    color: $sub-color
+  }
+  .table_membership {
+    border-color: #cbd5d1;
+    tr{
+      vertical-align: middle;
+      th {
+        background-color: $sub-color;
+        color: $white-color;
+        text-align: center;
+        line-height: 1.1;
+        &.sub_th{
+          background-color: $main-color;
+          text-align: left;
+        }
+        span{
+          &.smaller{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.white-shape {
+  line-height: 0;
 }
