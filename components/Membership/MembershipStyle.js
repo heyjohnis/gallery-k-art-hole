@@ -43,7 +43,7 @@ const MembershipStyle = () => {
                   </div>
 
                   <div className="col-lg-4 col-md-6">
-                  <div className="single-pricing membership-benefits">
+                    <div className="single-pricing membership-benefits">
                       <img src="/images/membership/membership2.png" alt="미술관 사진"/>
                       <div className="pricing-top-heading">
                         <h3>댜양한 상품</h3>
@@ -61,7 +61,7 @@ const MembershipStyle = () => {
                         </li>
                       </ul>
 
-                      <Link href="/" className="default-btn">
+                      <Link href="/golf" className="default-btn">
                         자세히 보기
                       </Link>
                     </div>
@@ -86,7 +86,7 @@ const MembershipStyle = () => {
                         </li>
                       </ul>
 
-                      <Link href="/" className="default-btn">
+                      <Link href="/addservice" className="default-btn">
                         자세히 보기
                       </Link>
                     </div>

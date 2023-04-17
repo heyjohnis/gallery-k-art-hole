@@ -2076,6 +2076,10 @@ News Area Style
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   padding: 30px;
 }
+.single-news .news-content-wrap h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #4d4d4d;
+}
 .single-news .news-content-wrap ul {
   margin-bottom: 10px;
   padding: 0;
@@ -5023,4 +5027,13 @@ Service Details Area Style
 .cta-area .cta-content h3 {
   color: #fff;
   font-size: 55px;
+}
+
+.golf_map {
+  background: #006249;
+  text-align: center;
+  padding: 0 0 40px;
+}
+.golf_map img {
+  width: 50%;
 }/*# sourceMappingURL=style.css.map */

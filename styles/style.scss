@@ -2279,6 +2279,10 @@ News Area Style
     background-color: $white-color;
     box-shadow: $box-shadow;
     padding: 30px;
+    h3 {
+      font-family: $body-font-family;
+      color: $body-color;
+    }
     ul {
       margin-bottom: 10px;
       padding: 0;
@@ -5497,5 +5501,14 @@ Service Details Area Style
       color: #fff;
       font-size: 55px;
     }
+  }
+}
+
+.golf_map {
+  background: #006249;
+  text-align: center;
+  padding: 0 0 40px;
+  img {
+    width: 50%;
   }
 }
