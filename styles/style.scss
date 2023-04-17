@@ -5533,3 +5533,11 @@ Service Details Area Style
     overflow: hidden;
     box-shadow: $box-shadow;
 }
+
+.table_golf {
+  th {
+    width:10%;
+    background: $sub-color;
+    color: $white-color;
+  }
+}

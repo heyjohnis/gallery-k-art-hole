@@ -5054,4 +5054,10 @@ Service Details Area Style
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+}
+
+.table_golf th {
+  width: 10%;
+  background: #0E5039;
+  color: #ffffff;
 }/*# sourceMappingURL=style.css.map */
