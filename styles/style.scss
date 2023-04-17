@@ -1949,44 +1949,58 @@ Business  Area Style
     font-weight: 500;
     margin: 10px 0 0;
   }
-  &:hover {
-    animation: rubberBand 1s linear;
+  &.benefits-text {
+    position: absolute;
+    bottom: 30px;
+    background: #ffffff;
+    text-align: left;
+    padding: 24px 32px;
+    max-width: 60%;
+    h2{
+      font-size: 24px;
+      color: $sub-color;
+    }
+    p {
+      font-size: 18px;
+      font-family: $body-font-family;
+    }
   }
+  // &:hover {
+  //   animation: rubberBand 1s linear;
+  // }
 }
 .counter-nth {
   &:nth-child(2) {
-    .single-counter {
       margin-top: 30px;
-      background-color: #cae5fe;
-      h2 {
-        span {
-          color: #3785ca;
-        }
+      bottom:0;
+      background-color: #ffffff;
+      .benefits-text {
+        margin:0;
       }
-    }
   }
   &:nth-child(3) {
-    .single-counter {
-      background-color: #c0fedc;
-      margin-top: -30px;
-      margin-bottom: 0;
-      h2 {
-        span {
-          color: #23bc68;
-        }
-      }
-    }
+      background-color: #ffffff;
+      margin-top: 0;
   }
   &:nth-child(4) {
-    .single-counter {
-      background-color: #fbc7ba;
-      margin-bottom: 0;
-      h2 {
-        span {
-          color: #c05234;
-        }
+      margin-top: 30px;
+      background-color: #ffffff;
+      .benefits-text {
+        margin:0;
       }
-    }
+  }
+  &:nth-child(5) {
+      background-color: #ffffff;
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+  &:nth-child(6) {
+      background-color: #ffffff;
+      margin-top: 30px;
+      margin-bottom: 0;
+      .benefits-text {
+        margin:0;
+      }
   }
 }
 

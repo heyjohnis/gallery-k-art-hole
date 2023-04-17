@@ -127,7 +127,7 @@ const Navbar = () => {
 
                 <li className="nav-item">
                   <Link
-                    href="/"
+                    href="/membership"
                     className={`nav-link ${
                       currentPath == "/about-1/" && "active"
                     }`}
@@ -138,7 +138,7 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/"
+                        href="/membership"
                         className={`nav-link ${
                           currentPath == "/about-1/" && "active"
                         }`}
@@ -148,14 +148,14 @@ const Navbar = () => {
                     </li>
 
                     <li className="nav-item">
-                      <Link href="#" onClick={(e) => e.preventDefault()}>
+                      <Link href="/benefits" onClick={(e) => e.preventDefault()}>
                         혜택 소개<i className="bx bx-chevron-down"></i>
                       </Link>
 
                       <ul className="dropdown-menu">
                       <li className="nav-item">
                           <Link
-                            href="/"
+                            href="/benefits"
                             className={`nav-link ${
                               currentPath == "/login/" && "active"
                             }`}

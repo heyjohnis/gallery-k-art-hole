@@ -1766,31 +1766,54 @@ Business  Area Style
   font-weight: 500;
   margin: 10px 0 0;
 }
-.single-counter:hover {
-  animation: rubberBand 1s linear;
+.single-counter.benefits-text {
+  position: absolute;
+  bottom: 30px;
+  background: #ffffff;
+  text-align: left;
+  padding: 24px 32px;
+  max-width: 60%;
+}
+.single-counter.benefits-text h2 {
+  font-size: 24px;
+  color: #0E5039;
+}
+.single-counter.benefits-text p {
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
 }
 
-.counter-nth:nth-child(2) .single-counter {
+.counter-nth:nth-child(2) {
   margin-top: 30px;
-  background-color: #cae5fe;
+  bottom: 0;
+  background-color: #ffffff;
 }
-.counter-nth:nth-child(2) .single-counter h2 span {
-  color: #3785ca;
+.counter-nth:nth-child(2) .benefits-text {
+  margin: 0;
 }
-.counter-nth:nth-child(3) .single-counter {
-  background-color: #c0fedc;
-  margin-top: -30px;
+.counter-nth:nth-child(3) {
+  background-color: #ffffff;
+  margin-top: 0;
+}
+.counter-nth:nth-child(4) {
+  margin-top: 30px;
+  background-color: #ffffff;
+}
+.counter-nth:nth-child(4) .benefits-text {
+  margin: 0;
+}
+.counter-nth:nth-child(5) {
+  background-color: #ffffff;
+  margin-top: 0;
   margin-bottom: 0;
 }
-.counter-nth:nth-child(3) .single-counter h2 span {
-  color: #23bc68;
-}
-.counter-nth:nth-child(4) .single-counter {
-  background-color: #fbc7ba;
+.counter-nth:nth-child(6) {
+  background-color: #ffffff;
+  margin-top: 30px;
   margin-bottom: 0;
 }
-.counter-nth:nth-child(4) .single-counter h2 span {
-  color: #c05234;
+.counter-nth:nth-child(6) .benefits-text {
+  margin: 0;
 }
 
 /*

@@ -7,7 +7,7 @@ const MembershipStyle = () => {
     <>
       <section className="pricing-area pt-100 pb-70">
         <div className="container">
-          <div className="section-title membership-tit">
+          <div className="section-title membership">
             <span>그린갤러리 골프멤버십 소개</span>
             <h2>멤버십 하나로 전국 300개의 골프장과 미술품, 부가 혜택까지 즐길 수 있는 기회!</h2>
           </div>
