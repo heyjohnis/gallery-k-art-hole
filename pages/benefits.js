@@ -11,10 +11,10 @@ export default function Membership() {
       <Navbar />
 
       <PageBanner
-        pageTitle="멤버십 소개"
+        pageTitle="혜택소개"
         homePageUrl="/"
         homePageText="Main"
-        activePageText="멤버십 소개"
+        activePageText="해택소개"
       />
 
       <IntroBenefits/>
