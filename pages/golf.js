@@ -19,8 +19,7 @@ export default function Membership() {
       />
 
       <IntroGolf/>
-      
-      <BenefitStyle/>
+
     
 
       <Footer />
