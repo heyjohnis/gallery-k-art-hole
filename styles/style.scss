@@ -5579,6 +5579,87 @@ table, th, td {
   }
 }
 
+.list_membership {
+  h3, h4 {
+    font-family: $body-font-family;
+  }
+  h3 {
+    font-size: 16px;
+    &.tit {
+      position: relative;
+      display: inline-block;
+      font-size: 14px;
+      color: $body-color;
+      background: linear-gradient(to top, #b1ea0c 50%, transparent 50%);
+      padding: 1px 0 0;
+    }
+  }
+  h4 {
+    padding: 6px 10px 6px 16px;
+    font-size: 18px;
+    border-radius: 8px;
+    color: white;
+    &.black {
+      background: black;
+    }
+    &.gray {
+      background: #777777;
+    }
+    &.green {
+      background: $sub-color;
+    }
+    &.blue {
+      background: #437FC1;
+    }
+    &.red {
+      background: #EF404A;
+    }
+    &.purple {
+      background: #7D499D;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;    
+    li{
+      position: relative;
+      padding-left: 24px;
+      span {
+        &.list_icon {
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          width: 16px;
+          height: 16px;
+          background: url(/images/ico_list.png);
+          background-size: cover;
+
+        }
+        &.strong {
+          font-weight: 700;
+          color: $main-color;
+        }
+        &.txt {
+          display: block;
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+  .table_membership {
+    border-color: #cbd5d1;
+    tr{
+      vertical-align: middle;
+      th {
+        background-color: $sub-color;
+        color: $white-color;
+        text-align: center;
+        line-height: 1.1;
+      }
+    }
+  }
+}
+
 .white-shape {
   line-height: 0;
 }

@@ -182,18 +182,410 @@ const MembershipBenefits = () => {
             </Table>
           </div>
 
-          <div className="table_mb">
-            <h3>상품 유형1</h3>
-            
-            <h4>블랙 (5억) - 개인/법인</h4>
+          <div className="list_membership table_mb mb-50">
+            <h3>상품 유형 1</h3>
+            <h4 className="black">블랙 (5억) - 개인/법인</h4>
             <ul>
-              <li>미술품</li>
-              <li>보증금</li>
-              <li>이용 방법</li>
-              <li>골프 혜택(소멸금 기준)</li>
-              <li>주중 이용가능 혜택 (주말이용 시 1.5회 차감) : 최대 월 7회(연 83회)</li>
-              <li></li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>50%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">보증금 : </span>50%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>무기명 1인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>100%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 7회(연 83회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 75% 또는 최대 90만원</span>
+              </li>
             </ul>
+
+
+            <h4 className="gray">플래티넘 (10억) - 개인/법인</h4>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>50%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">보증금 : </span>50%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>무기명 1인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>100%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">주중 최대 월 14회(연 167회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 75% 또는 최대 90만원</span>
+              </li>
+            </ul>
+
+
+            <h3 className="mt-50">상품 유형 2</h3>
+            <h4 className="green">그린 (3,500만원) - 개인 전용</h4>
+            <h3 className="tit">보증금 0%</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>기명 1인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>130%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 3회(연 23회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 50% 또는 최대 60만원</span>
+              </li>
+            </ul>
+
+            <h3 className="tit">보증금 25%</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>기명 1인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>130%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 2회(연 17회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 50% 또는 최대 60만원</span>
+              </li>
+            </ul>
+
+            <h4 className="blue">블루 (6,500만원) - 개인 전용</h4>
+            <h3 className="tit">보증금 0%</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>기명 2인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>130%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 4회(연 42회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 50% 또는 최대 60만원</span>
+              </li>
+            </ul>
+
+            <h3 className="tit">보증금 25%</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>기명 2인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>130%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 3회(연 32회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 50% 또는 최대 60만원</span>
+              </li>
+            </ul>
+
+
+            <h4 className="red">레드 (1억) - 개인/법인</h4>
+            <h3 className="tit">보증금 0%</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>기명 2인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>130%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 6회(연 65회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 50% 또는 최대 60만원</span>
+              </li>
+            </ul>
+
+            <h3 className="tit">보증금 25%</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>기명 2인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>130%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 5회(연 49회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 50% 또는 최대 60만원</span>
+              </li>
+            </ul>
+
+            <h3 className="tit">보증금 50% - 1</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>기명 2인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>130%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 4회(연 33회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 50% 또는 최대 60만원</span>
+              </li>
+            </ul>
+
+            <h3 className="tit">보증금 50% - 2</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>무기명 1인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>110%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 4회(연 28회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 50% 또는 최대 60만원</span>
+              </li>
+            </ul>
+
+            <h4 className="purple">퍼플 (3억) - 개인/법인</h4>
+            <h3 className="tit">보증금 0%</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>기명 2인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>130%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 11회(연 130회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 75% 또는 최대 90만원</span>
+              </li>
+            </ul>
+
+            <h3 className="tit">보증금 25%</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>기명 2인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>130%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 9회(연 98회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 75% 또는 최대 90만원</span>
+              </li>
+            </ul>
+
+            <h3 className="tit">보증금 50% - 1</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>기명 2인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>130%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 6회(연 65회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 75% 또는 최대 90만원</span>
+              </li>
+            </ul>
+
+            <h3 className="tit">보증금 50% - 2</h3>
+            <ul>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">미술품 : </span>30%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">이용 방법 : </span>무기명 1인
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">골프 혜택(소멸금 기준) : </span>110%
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">주중 이용가능 혜택 (주말이용 시 1.5회 차감)</span>
+                <span className="txt">최대 월 5회(연 55회)</span>
+              </li>
+              <li>
+                <span className="list_icon"></span>
+                <span className="strong">그린피 지원금 (주중이용시 1.5배 감소)</span>
+                <span className="txt">회당 75% 또는 최대 90만원</span>
+              </li>
+            </ul>
+
+            <Table bordered className="table_membership mt-30">
+              <thead>
+                <tr>
+                  <th>부가 혜택</th>
+                  <th>특별 혜택</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowSpan={3}>프리미엄 레저 + 쇼핑몰 + 럭셔리 여행 + 기타</td>
+                  <td>1. 멤버십 가입 시 고급 캐디백, 보스턴백 등 증정</td>
+                </tr>
+                <tr>
+                  <td>2. 유명 프로 골퍼와의 동반 라운드</td>
+                </tr>
+                <tr>
+                  <td>3. VIP의 성공스토리 콘텐츠 제작</td>
+
+                </tr>
+              </tbody>
+            </Table>
+
           </div>
 
         </div>

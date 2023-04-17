@@ -5092,6 +5092,82 @@ table, th, td {
   font-size: 14px;
 }
 
+.list_membership h3, .list_membership h4 {
+  font-family: "Open Sans", sans-serif;
+}
+.list_membership h3 {
+  font-size: 16px;
+}
+.list_membership h3.tit {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  color: #4d4d4d;
+  background: linear-gradient(to top, #b1ea0c 50%, transparent 50%);
+  padding: 1px 0 0;
+}
+.list_membership h4 {
+  padding: 6px 10px 6px 16px;
+  font-size: 18px;
+  border-radius: 8px;
+  color: white;
+}
+.list_membership h4.black {
+  background: black;
+}
+.list_membership h4.gray {
+  background: #777777;
+}
+.list_membership h4.green {
+  background: #0E5039;
+}
+.list_membership h4.blue {
+  background: #437FC1;
+}
+.list_membership h4.red {
+  background: #EF404A;
+}
+.list_membership h4.purple {
+  background: #7D499D;
+}
+.list_membership ul {
+  list-style: none;
+  padding: 0;
+}
+.list_membership ul li {
+  position: relative;
+  padding-left: 24px;
+}
+.list_membership ul li span.list_icon {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background: url(/images/ico_list.png);
+  background-size: cover;
+}
+.list_membership ul li span.strong {
+  font-weight: 700;
+  color: #4E7D22;
+}
+.list_membership ul li span.txt {
+  display: block;
+  transform: translateY(-5px);
+}
+.list_membership .table_membership {
+  border-color: #cbd5d1;
+}
+.list_membership .table_membership tr {
+  vertical-align: middle;
+}
+.list_membership .table_membership tr th {
+  background-color: #0E5039;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.1;
+}
+
 .white-shape {
   line-height: 0;
 }/*# sourceMappingURL=style.css.map */
