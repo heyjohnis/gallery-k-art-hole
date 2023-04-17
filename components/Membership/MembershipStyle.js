@@ -36,7 +36,7 @@ const MembershipStyle = () => {
                         </li>
                       </ul>
 
-                      <Link href="/" className="default-btn">
+                      <Link href="/art" className="default-btn">
                         자세히 보기
                       </Link>
                     </div>

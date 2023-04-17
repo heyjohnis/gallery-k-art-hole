@@ -5036,4 +5036,22 @@ Service Details Area Style
 }
 .golf_map img {
   width: 50%;
+}
+
+.art-service ul {
+  list-style: none;
+}
+.art-service ul li {
+  font-size: 18px;
+}
+.art-service ul li img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.artist-profile {
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }/*# sourceMappingURL=style.css.map */

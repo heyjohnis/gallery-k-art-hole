@@ -5512,3 +5512,24 @@ Service Details Area Style
     width: 50%;
   }
 }
+
+.art-service {
+  ul {
+    list-style: none;
+    li{
+      font-size: 18px;
+      img {
+        width:20px;
+        margin-right: 5px;
+      }
+    }
+
+  }
+}
+
+.artist-profile {
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+}
