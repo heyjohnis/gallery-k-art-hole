@@ -1,8 +1,17 @@
 import React from "react";
 import Link from "next/link";
+import YouTube from 'react-youtube';
 
 
 const MainMov = () => {
+  const opts = {
+    height: '315',
+    width: '100%',
+    playerVars: {
+      autoplay: 0,
+    },
+  };
+
   return (
     <>
       <section className="offer-area main-mov ptb-100 mt-50">
@@ -12,9 +21,10 @@ const MainMov = () => {
             <h2>그린갤러리 동영상</h2>
           </div>
 
-          <div className="row justify-content-center">
-            <img src="/images/main/main_mov_1.png" alt="mov 썸네일" />
+          <div className="row justify-content-center video-wrap">
+            <YouTube videoId="d7O8r0fLnLE" opts={opts}/>;
           </div>
+          
         </div>
 
         {/* Shape Images */}
@@ -32,6 +42,7 @@ const MainMov = () => {
       </div>
     </>
   );
+
 };
 
 export default MainMov;

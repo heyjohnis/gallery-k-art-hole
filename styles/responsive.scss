@@ -2232,6 +2232,9 @@
     .table_pc {
         display: none;
     }
+    .table_mb {
+        display: block;
+    }
     table, th, td {
         font-size: 15px;
     }
@@ -2251,5 +2254,8 @@
 @media only screen and (min-width: 577px){
     .table_pc {
         display: block;
+    }
+    .table_mb {
+        display: none;
     }
 }

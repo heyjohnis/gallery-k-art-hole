@@ -29,7 +29,7 @@ const MainBanner = () => {
                       <span>GREEN GALLERY</span>
                       <h1>골프는 자연이라는 캔버스에<br/>그리는 예술이다</h1>
                       <div className="slider-btn">
-                        <Link href="/" className="default-btn white">
+                        <Link href="/membership" className="default-btn white">
                           자세히 보기
                         </Link>
                       </div>
@@ -53,7 +53,7 @@ const MainBanner = () => {
                       <h1>골프는 예술이고<br/>코스는 캔버스다</h1>
                       <div className="slider-btn">
 
-                        <Link href="/" className="default-btn white">
+                        <Link href="/membership" className="default-btn white">
                           자세히 보기
                         </Link>
                       </div>
@@ -77,7 +77,7 @@ const MainBanner = () => {
                       <h1>예술가처럼 스윙하고 프로처럼 플레이하다</h1>
 
                       <div className="slider-btn">
-                        <Link href="/" className="default-btn white">
+                        <Link href="/membership" className="default-btn white">
                           자세히 보기
                         </Link>
                       </div>

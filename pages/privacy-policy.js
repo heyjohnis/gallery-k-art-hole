@@ -9,101 +9,48 @@ export default function PrivacyPolicy() {
       <Navbar />
 
       <PageBanner
-        pageTitle="Privacy Policy"
+        pageTitle="개인정보 처리방침"
         homePageUrl="/"
-        homePageText="Home"
-        activePageText="Privacy Policy"
+        homePageText="Main"
+        activePageText="개인정보 처리방침"
       />
 
       <div className="text-container ptb-100">
         <div className="container">
-          <h3>What is lorem ipsum?</h3>
+          <h3>1. 개인정보의 처리 목적</h3>
 
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            그린갤러리(‘http://greengallery.kr‘ 이하 ‘그린갤러리 골프멤버십’)은(는) 다음의 목적을 위하여 개인정보를 처리하고 있으며, 
+            다음의 목적 이외의 용도로는 이용하지 않습니다. <br/>
+            - 고객 가입의사 확인, 고객에 대한 서비스 제공에 따른 본인 식별.인증, 회원자격 유지.관리, 물품 또는 서비스 공급에 따른 금액 결제, 물품 또는 서비스의 공급.배송 등
           </p>
 
-          <h3>Where does it come from?</h3>
+          <h3>2. 개인정보의 처리 및 보유 기간</h3>
           <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Richard McClintock, a Latin professor
-            at Hampden-Sydney College in Virginia, looked up one of the more
-            obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-            going through the cites of the word in classical literature,
-            discovered the undoubtable source. Lorem Ipsum comes from sections
-            1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
-            of Good and Evil) by Cicero, written in 45 BC. This book is a
-            treatise on the theory of ethics, very popular during the
-            Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
-            amet..".
+            ① 그린갤러리(‘http://greengallery.kr‘ 이하 ‘그린갤러리 골프멤버십’)은(는) 정보주체로부터 개인정보를 수집할 때 동의 받은 개인정보 보유․이용기간 또는 법령에 따른 개인정보 보유․이용기간 내에서 개인정보를 처리․보유합니다.
           </p>
 
           <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            aliquid ex ea commodi consequatur? Quis autem vel eum iure
-            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
+            ② 구체적인 개인정보 처리 및 보유 기간은 다음과 같습니다.<br/>
+            ☞ 아래 예시를 참고하여 개인정보 처리업무와 개인정보 처리업무에 대한 보유기간 및 관련 법령, 근거 등을 기재합니다.(예시)<br/>
+            - 고객 가입 및 관리 : 서비스 이용계약 또는 회원가입 해지시까지, 다만 채권․채무관계 잔존시에는 해당 채권․채무관계 정산시까지<br/>
+            - 전자상거래에서의 계약․청약철회, 대금결제, 재화 등 공급기록 : 5년<br/>
           </p>
 
-          <h3>Where can I get some?</h3>
+          <h3>3. 개인정보의 제3자 제공에 관한 사항</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim.
+            ① 그린갤러리(‘http://greengallery.kr‘ 이하 ‘그린갤러리 골프멤버십’)은(는) 정보주체의 동의, 법률의 특별한 규정 등 개인정보 보호법 제17조 및 제18조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.
           </p>
 
           <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly
-            believable. If you are going to use a passage of Lorem Ipsum, you
-            need to be sure there isn't anything embarrassing hidden in the
-            middle of text. All the Lorem Ipsum generators on the Internet tend
-            to repeat predefined chunks as necessary, making this the first true
-            generator on the Internet. It uses a dictionary of over 200 Latin
-            words, combined with a handful of model sentence structures, to
-            generate Lorem Ipsum which looks reasonable. The generated Lorem
-            Ipsum is therefore always free from repetition, injected.
-          </p>
+            ② 그린갤러리(‘http://greengallery.kr‘)은(는) 다음과 같이 개인정보를 제3자에게 제공하고 있습니다.<br/>
+            . 그린갤러리
 
-          <p>
-            But I must explain to you how all this mistaken idea of denouncing
-            pleasure and praising pain was born and I will give you a complete
-            account of the system, and expound the actual teachings of the great
-            explorer of the truth, the master-builder of human happiness. No one
-            rejects, dislikes, or avoids pleasure itself, because it is
-            pleasure, but because those who do not know how to pursue pleasure
-            rationally encounter consequences that are extremely painful. Nor
-            again is there anyone who loves or pursues or desires to obtain pain
-            of itself, because it is pain, but because occasionally
-            circumstances occur in which toil and pain can procure him some
-            great pleasure. To take a trivial example, which of us ever
-            undertakes laborious physical exercise, except to obtain some
-            advantage from it? But who has any right to find fault with a man
-            who chooses to enjoy a pleasure that has no annoying consequences,
-            or one who avoids a pain that
+- 개인정보를 제공받는 자 : 그린갤러리
+
+- 제공받는 자의 개인정보 이용목적 : 이메일, 휴대전화번호, 자택주소, 비밀번호, 로그인ID, 성별, 생년월일, 이름
+
+- 제공받는 자의 보유.이용기간: 3년<br/>
           </p>
         </div>
       </div>

@@ -39,8 +39,11 @@ const Navbar = () => {
       <div id="navbar" className="navbar-area fixed-top">
         <nav className="navbar navbar-expand-md navbar-light">
           <div className="container">
-            <Link href="/" className="navbar-brand">
+            <Link href="/" className="navbar-brand light_logo">
               <img src="/images/white-logo.png" alt="logo" />
+            </Link>
+            <Link href="/" className="navbar-brand dark_logo">
+              <img src="/images/dark-logo.png" alt="logo" />
             </Link>
 
             {/* Toggle navigation */}
@@ -64,9 +67,9 @@ const Navbar = () => {
                 <li className="nav-item">
                   <Link
                     href="/company"
-                    className={`nav-link ${currentPath == "/" && "active"}`}
+                    className={`nav-link ${currentPath == "/company/" && "active"}`}
                   >
-                    회사소개
+                    소개
                   </Link>
 
                   {/* <ul className="dropdown-menu">
@@ -132,7 +135,7 @@ const Navbar = () => {
                       currentPath == "/about-1/" && "active"
                     }`}
                   >
-                    멤버십소개 <i className="bx bx-chevron-down"></i>
+                    멤버십 소개 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -148,57 +151,48 @@ const Navbar = () => {
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/benefits" onClick={(e) => e.preventDefault()}>
-                        혜택 소개<i className="bx bx-chevron-down"></i>
+                      <Link
+                        href="/benefits"
+                        className={`nav-link ${
+                          currentPath == "/benefits/" && "active"
+                        }`}
+                      >
+                        멤버십 혜택 소개
                       </Link>
-
-                      <ul className="dropdown-menu">
-                      <li className="nav-item">
-                          <Link
-                            href="/benefits"
-                            className={`nav-link ${
-                              currentPath == "/login/" && "active"
-                            }`}
-                          >
-                            혜택소개
-                          </Link>
-                        </li>
-
-                        <li className="nav-item">
-                          <Link
-                            href="/golf"
-                            className={`nav-link ${
-                              currentPath == "/login/" && "active"
-                            }`}
-                          >
-                            골프 서비스 소개
-                          </Link>
-                        </li>
-
-                        <li className="nav-item">
-                          <Link
-                            href="/art"
-                            className={`nav-link ${
-                              currentPath == "/sign-up/" && "active"
-                            }`}
-                          >
-                            미술품 소개
-                          </Link>
-                        </li>
-
-                        <li className="nav-item">
-                          <Link
-                            href="/addservice"
-                            className={`nav-link ${
-                              currentPath == "/sign-up/" && "active"
-                            }`}
-                          >
-                            부가서비스 소개
-                          </Link>
-                        </li>
-                      </ul>
                     </li>
 
+                    <li className="nav-item">
+                      <Link
+                        href="/golf"
+                        className={`nav-link ${
+                          currentPath == "/golf/" && "active"
+                        }`}
+                      >
+                        골프 서비스 소개
+                      </Link>
+                    </li>
+
+                    <li className="nav-item">
+                      <Link
+                        href="/art"
+                        className={`nav-link ${
+                          currentPath == "/art/" && "active"
+                        }`}
+                      >
+                        미술품 소개
+                      </Link>
+                    </li>
+
+                    <li className="nav-item">
+                      <Link
+                        href="/addservice"
+                        className={`nav-link ${
+                          currentPath == "/addservice/" && "active"
+                        }`}
+                      >
+                        부가서비스 소개
+                      </Link>
+                    </li>
                   </ul>
                 </li>
 

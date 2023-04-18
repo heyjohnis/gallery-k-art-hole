@@ -29,41 +29,14 @@ const Footer = () => {
                 data-aos-duration="1200"
                 data-aos-delay="300"
               >
-                <ul className="footer_menu">
-                  <li>
-                    <a>
-                      회사소개
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      멤버십소개 
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      미술품
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      포인트몰 
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      전시 및 이벤트 
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      고객지원
-                    </a>
-                  </li>
-                </ul>
+                
                 <p>
-                주식회사 갤러리케이
-주소 : 서울특별시 동대문구 왕산로 16 (신설동) 동진빌딩 12층 대표자 : 김정필 사업자 등록번호 : 359-86-00885 전화 : 1644-8826 팩스 : 02-557-5466 개인정보관리책임자 : 표영식(cs@galleryk.co.kr) 통신판매업 신고 : 2023-서울동대문-0364호 [사업자정보확인]
+                주식회사 갤러리케이 <br/>
+                주소 : 서울특별시 동대문구 왕산로 16 (신설동) 동진빌딩 12층 <br/> 
+                대표자 : 김정필 | 사업자 등록번호 : 359-86-00885 <br/>
+                전화 : 1644-8826 | 팩스 : 02-557-5466<br/>
+                개인정보관리책임자 : 표영식(cs@galleryk.co.kr)<br/>
+                통신판매업 신고 : 2023-서울동대문-0364호
                 </p>
               </div>
             </div>
@@ -71,12 +44,13 @@ const Footer = () => {
             
             <div className="col-lg-3 col-md-6">
               <div
-                className="single-widget"
+                className="single-widget tel_service"
                 data-aos="fade-in"
                 data-aos-duration="1200"
                 data-aos-delay="500"
               >
-                <p class="tel_service">
+                <span>상담문의</span>
+                <p>
                 1588-0526
                 </p>
               </div>
@@ -104,10 +78,10 @@ const Footer = () => {
               <div className="privacy">
                 <ul>
                   <li>
-                    <Link href="/">개인정보 처리방침</Link>
+                    <Link href="https://sprinkle-justice-3a1.notion.site/11de65f3be1241efb4e542bbb897a52c" target="_blank">개인정보 처리방침</Link>
                   </li>
                   <li>
-                    <Link href="/">이용약관</Link>
+                    <Link href="https://sprinkle-justice-3a1.notion.site/979ee37ad2914a3db3b4d66b16066979" target="_blank">이용약관</Link>
                   </li>
                 </ul>
               </div>
