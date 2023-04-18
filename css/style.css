@@ -1780,8 +1780,9 @@ Business  Area Style
   bottom: 30px;
   background: #ffffff;
   text-align: left;
-  padding: 24px 32px;
-  max-width: 60%;
+  padding: 16px 24px;
+  max-width: 80%;
+  border-radius: 0;
 }
 .single-counter.benefits-text h2 {
   font-size: 24px;
@@ -2515,6 +2516,7 @@ Pricing Area Style
   transition: all 0.6s ease;
 }
 .single-pricing .pricing-top-heading {
+  padding: 0 24px;
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
@@ -2527,6 +2529,7 @@ Pricing Area Style
 .single-pricing .pricing-top-heading p {
   font-weight: 600;
   font-size: 14px;
+  height: 50px;
 }
 .single-pricing.membership-benefits {
   padding: 0;
@@ -2540,7 +2543,9 @@ Pricing Area Style
   color: #0E5039;
 }
 .single-pricing.membership-benefits ul {
+  padding: 0 24px;
   max-width: 300px;
+  min-height: 120px;
 }
 .single-pricing.membership-benefits ul li {
   font-weight: 400;

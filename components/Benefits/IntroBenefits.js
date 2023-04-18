@@ -37,7 +37,7 @@ const IntroBenefits = () => {
                 >
                   <img src="/images/benefits/benefits2.png" alt="미술이미지"/>
                   <div className="single-counter benefits-text">
-                    <h2>미술혜택</h2>
+                    <h2>미술품 혜택</h2>
                     <p>국내 최정상 작가의 원화 작품 제공</p>
                   </div>
                 </div>
@@ -63,8 +63,8 @@ const IntroBenefits = () => {
                 >
                   <img src="/images/benefits/benefits4.png" alt="여행 이미지"/>
                   <div className="single-counter benefits-text">
-                    <h2>럭셔리 여행</h2>
-                    <p>국내 럭셔리 여행 제공</p>
+                    <h2>리조트</h2>
+                    <p>국내 제휴 리조트 제공</p>
                   </div>
                 </div>
 
@@ -77,8 +77,8 @@ const IntroBenefits = () => {
                 >
                   <img src="/images/benefits/benefits5.png" alt="골프 이미지"/>
                   <div className="single-counter benefits-text">
-                    <h2>유명 프로골퍼 동반 라운드</h2>
-                    <p>유명 프로골퍼와 함께하는 라운드</p>
+                    <h2>포인트몰</h2>
+                    <p>패션, 쇼핑, 여행, 레저, 미식, 인테리어 등 포인트몰 제공</p>
                   </div>
                 </div>
 

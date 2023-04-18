@@ -9,7 +9,7 @@ const MembershipStyle = () => {
         <div className="container">
           <div className="section-title membership">
             <span>그린갤러리 골프멤버십 소개</span>
-            <h2>멤버십 하나로 전국 300개의 골프장과 미술품, 부가 혜택까지 즐길 수 있는 기회!</h2>
+            <h2>멤버십 하나로 전국 300개의 골프장과 미술품,<br/>부가 혜택까지 즐길 수 있는 기회!</h2>
           </div>
 
           <div className="tab quote-list-tab">
@@ -46,18 +46,18 @@ const MembershipStyle = () => {
                     <div className="single-pricing membership-benefits">
                       <img src="/images/membership/membership2.png" alt="미술관 사진"/>
                       <div className="pricing-top-heading">
-                        <h3>댜양한 상품</h3>
-                        <p>골프</p>
+                        <h3>다양한 상품</h3>
+                        <p>프리미엄 골프 멤버십</p>
                       </div>
 
                       <ul>
                         <li>
                           <span class="list_icon"></span>
-                          골프집중 / 복합형 / 보증형 등 3가지의 다양한 상품 구성
+                          프리미엄 골프장 및 전국 300여 곳
                         </li>
                         <li>
                           <span class="list_icon"></span>
-                          프리미엄 골프장 및 전국 300여 곳
+                          해당 골프장 회원과 동일한 서비스 제공
                         </li>
                       </ul>
 
@@ -78,11 +78,11 @@ const MembershipStyle = () => {
                       <ul>
                         <li>
                           <span class="list_icon"></span>
-                          보증금은 포인트로 전환해 편하게 포인트 소비 가능!
+                          전반에 걸쳐 품격을 높여주는 멤버십 커뮤니티 서비스
                         </li>
                         <li>
                           <span class="list_icon"></span>
-                          패션, 쇼핑, 여행, 레저, 미식, 인테리어 등
+                          패션, 쇼핑, 여행, 레저, 미식, 인테리어 등 럭셔리라이프스타일 
                         </li>
                       </ul>
 

@@ -9,6 +9,8 @@ const AddServiceCard = () => {
           <div className="row align-items-center">
             <div className="col-lg-12">
               <div className="business-content text-center">
+                <span>Green Gallery Benefits</span>
+                <h2>그린갤러리 부가혜택</h2>
                 <p>골프여행, 호텔, 리조트, 프라이빗 파티 등 다양한 부가 서비스를 제공합니다. </p>
               </div>
               <div className="business-content text-center mt-100">
@@ -45,7 +47,7 @@ const AddServiceCard = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
                 <div className="blog-img">
-                  <img src="/images/benefits/card.png" alt="Image" />
+                  <img src="/images/benefits/card3.png" alt="Image" />
                 </div>
 
                 <div className="news-content-wrap">
@@ -57,7 +59,7 @@ const AddServiceCard = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
                 <div className="blog-img">
-                  <img src="/images/benefits/card.png" alt="Image" />
+                  <img src="/images/benefits/card4.png" alt="Image" />
                 </div>
 
                 <div className="news-content-wrap">
@@ -69,7 +71,7 @@ const AddServiceCard = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
                 <div className="blog-img">
-                  <img src="/images/benefits/card.png" alt="Image" />
+                  <img src="/images/benefits/card5.png" alt="Image" />
                 </div>
 
                 <div className="news-content-wrap">
@@ -81,7 +83,7 @@ const AddServiceCard = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
                 <div className="blog-img">
-                  <img src="/images/benefits/card.png" alt="Image" />
+                  <img src="/images/benefits/card6.png" alt="Image" />
                 </div>
 
                 <div className="news-content-wrap">
@@ -105,7 +107,7 @@ const AddServiceCard = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
                 <div className="blog-img">
-                  <img src="/images/benefits/card.png" alt="Image" />
+                  <img src="/images/benefits/card7.png" alt="Image" />
                 </div>
 
                 <div className="news-content-wrap">
@@ -117,7 +119,7 @@ const AddServiceCard = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
                 <div className="blog-img">
-                  <img src="/images/benefits/card.png" alt="Image" />
+                  <img src="/images/benefits/card8.png" alt="Image" />
                 </div>
 
                 <div className="news-content-wrap">
@@ -129,7 +131,7 @@ const AddServiceCard = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
                 <div className="blog-img">
-                  <img src="/images/benefits/card.png" alt="Image" />
+                  <img src="/images/benefits/card9.png" alt="Image" />
                 </div>
 
                 <div className="news-content-wrap">

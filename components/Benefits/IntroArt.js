@@ -16,15 +16,15 @@ const IntroArt = () => {
                   <ul>
                     <li>
                       <img src="/images/ico_list.png" alt="리스트 아이콘" />
-                      회원권의 최대 50% 금액에 해당하는 아름다운 미술품 혜택
+                      납입금액의 30~50% 상당 원화작품 제공 
                     </li>
                     <li>
                       <img src="/images/ico_list.png" alt="리스트 아이콘" />
-                      프리미엄 골프장 27개소 포함 전국 300여 곳 골프 라운드
+                      작품 활동 기간 평균 20년 이상 중견 작가 대상 
                     </li>
                     <li>
                       <img src="/images/ico_list.png" alt="리스트 아이콘" />
-                      차별화된 다양한 제휴 서비스 및 멤버십 포인트몰
+                      한국미술협회에서 발행한 호당가격 정찰제 작품
                     </li>
                   </ul>
                 </div>

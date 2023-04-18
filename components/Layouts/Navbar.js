@@ -198,7 +198,8 @@ const Navbar = () => {
 
                 <li className="nav-item">
                   <Link
-                    href="/"
+                    href="#"
+                    onClick={() => alert('준비중입니다')}
                     className={`nav-link ${
                       currentPath == "/services/" && "active"
                     }`}
@@ -209,7 +210,8 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
                           currentPath == "/services/" && "active"
                         }`}
@@ -265,14 +267,15 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="#" onClick={(e) => e.preventDefault()}>
+                  <Link href="#" onClick={() => alert('준비중입니다')}>
                     포인트몰 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
                           currentPath == "/pricing/" && "active"
                         }`}
@@ -413,14 +416,15 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="#" onClick={(e) => e.preventDefault()}>
+                  <Link href="#" onClick={() => alert('준비중입니다')}>
                     행사 및 이벤트 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
                           currentPath == "/news-grid/" && "active"
                         }`}
@@ -431,7 +435,8 @@ const Navbar = () => {
 
                     <li className="nav-item">
                       <Link
-                        href="/"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
                           currentPath == "/news-right-sidebar/" && "active"
                         }`}
@@ -455,7 +460,8 @@ const Navbar = () => {
 
                 <li className="nav-item">
                   <Link
-                    href="/"
+                    href="#"
+                    onClick={() => alert('준비중입니다')}
                     className={`nav-link ${
                       currentPath == "/contact/" && "active"
                     }`}
@@ -466,7 +472,8 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
                           currentPath == "/contact/" && "active"
                         }`}
@@ -477,7 +484,8 @@ const Navbar = () => {
 
                     <li className="nav-item">
                       <Link
-                        href="/"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
                           currentPath == "/contact-2/" && "active"
                         }`}
@@ -487,7 +495,8 @@ const Navbar = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        href="/"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
                           currentPath == "/contact-2/" && "active"
                         }`}
@@ -497,7 +506,8 @@ const Navbar = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        href="/"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
                           currentPath == "/contact-2/" && "active"
                         }`}
@@ -507,7 +517,8 @@ const Navbar = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        href="/"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
                           currentPath == "/contact-2/" && "active"
                         }`}
@@ -520,7 +531,7 @@ const Navbar = () => {
               </ul>
 
               <div className="others-options">
-                <Link href="/" className="default-btn">
+                <Link href="#" onClick={() => alert('준비중입니다')} className="default-btn">
                   BOOK NOW <i className="bx bx-log-in-circle"></i>
                 </Link>
               </div>
