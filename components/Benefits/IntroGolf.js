@@ -10,7 +10,7 @@ const IntroGolf = () => {
             <div className="col-lg-12">
               <div className="business-content text-center">
                 <span>Green Gallery Golf</span>
-                <h2>골프 서비스</h2>
+                <h2>골프서비스</h2>
                 <p>프리미엄 골프장 27개소 포함해 전국 300여 곳의 골프장에서 활용할 수 있습니다.<br/>
                     300억원 상당의 회원권 소지한 것 이상의 혜택을 받으실 수 있습니다.</p>
               </div>

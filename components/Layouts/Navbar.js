@@ -168,7 +168,7 @@ const Navbar = () => {
                           currentPath == "/golf/" && "active"
                         }`}
                       >
-                        골프 서비스 소개
+                        골프서비스 소개
                       </Link>
                     </li>
 

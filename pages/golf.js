@@ -13,10 +13,10 @@ export default function Membership() {
       <Navbar />
 
       <PageBanner
-        pageTitle="골프 서비스"
+        pageTitle="골프서비스"
         homePageUrl="/"
         homePageText="Main"
-        activePageText="골프 서비스"
+        activePageText="골프서비스"
       />
 
       <IntroGolf/>
