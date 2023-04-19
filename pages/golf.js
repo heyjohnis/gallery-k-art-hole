@@ -21,7 +21,7 @@ export default function Membership() {
 
       <IntroGolf/>
 
-      <TableGolf/>
+      {/* <TableGolf/> */}
     
       <Footer />
     </>

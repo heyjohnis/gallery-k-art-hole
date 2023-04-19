@@ -51,7 +51,7 @@ const Footer = () => {
               >
                 <span>상담문의</span>
                 <p>
-                1588-0526
+                1588-1778
                 </p>
               </div>
             </div>
