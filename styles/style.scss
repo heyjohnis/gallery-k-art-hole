@@ -83,8 +83,8 @@ This files table contents are outlined below>>>>>
 Default Style
 ============================*/
 
-$body-font-family: "Open Sans", sans-serif;
-$heading-font-family: "Noto Serif KR", serif;
+$body-font-family: "Noto Sans", sans-serif;
+$heading-font-family: "Noto Sans", sans-serif;
 
 $main-color: #4E7D22;
 $sub-color: #0E5039;
@@ -140,7 +140,7 @@ h5,
 h6 {
   color: $heading-color;
   font-family: $heading-font-family;
-  font-weight: 600;
+  font-weight: 700;
 }
 h3 {
   font-size: 22px;

@@ -7,8 +7,7 @@ const News = () => {
       <section className="news-area pt-100 pb-140">
         <div className="container">
           <div className="section-title">
-            <span>CUSTOMER SERVICE</span>
-            <h2>고객 지원</h2>
+            <h2>뉴스</h2>
           </div>
 
           <div className="row justify-content-center">

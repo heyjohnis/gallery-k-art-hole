@@ -9,6 +9,7 @@ import GreenGolf from '../components/Common/GreenGolf';
 import GreenBenefit from '../components/Common/GreenBenefit';
 import GreenArt from '../components/Common/GreenArt';
 import MainMov from '../components/Common/MainMov';
+import Products from '../components/HomeFive/Products';
 
 export default function Index5() {
   return (
@@ -21,11 +22,7 @@ export default function Index5() {
 
       <BenefitSlider/>
 
-      <GreenGolf/>
-
-      <GreenArt/>
-
-      <GreenBenefit/>
+      <Products/>
       
       <MainMov/>
 

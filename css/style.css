@@ -87,7 +87,7 @@ body {
   margin: 0;
   font-size: 15px;
   line-height: 1.8;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: #4d4d4d;
 }
 
@@ -127,8 +127,8 @@ h4,
 h5,
 h6 {
   color: #212121;
-  font-family: "Noto Serif KR", serif;
-  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
 }
 
 h3 {
@@ -1395,7 +1395,7 @@ About Area Style
   margin: 5px 0 0;
 }
 .about-content ul li {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #212121;
@@ -1760,7 +1760,7 @@ Business  Area Style
 .single-counter h2 span {
   font-size: 50px;
   color: #6b6bd4;
-  font-family: "Noto Serif KR", serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   line-height: 1;
 }
@@ -1770,7 +1770,7 @@ Business  Area Style
   top: 7px;
 }
 .single-counter p {
-  font-family: "Noto Serif KR", serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 18px;
   font-weight: 500;
   margin: 10px 0 0;
@@ -1790,7 +1790,7 @@ Business  Area Style
 }
 .single-counter.benefits-text p {
   font-size: 18px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .counter-nth:nth-child(2) {
@@ -1848,7 +1848,7 @@ Industries Area Style
   font-size: 15px;
   font-weight: 600;
   color: #212121;
-  font-family: "Noto Serif KR", serif;
+  font-family: "Noto Sans", sans-serif;
   margin-bottom: 15px;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
@@ -2088,7 +2088,7 @@ News Area Style
   padding: 30px;
 }
 .single-news .news-content-wrap h3 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: #4d4d4d;
 }
 .single-news .news-content-wrap ul {
@@ -2252,7 +2252,7 @@ Footer Top Area Style
 }
 .single-widget .information li.address span {
   display: block;
-  font-family: "Noto Serif KR", serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 20px;
   font-weight: 600;
 }
@@ -2528,7 +2528,7 @@ Pricing Area Style
   z-index: 1;
 }
 .single-pricing .pricing-top-heading h3 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: #4E7D22;
   font-size: 25px;
 }
@@ -2637,7 +2637,7 @@ Pricing Area Style
 .tab.quote-list-tab .tabs li {
   display: inline-block;
   padding: 0 10px;
-  font-family: "Noto Serif KR", serif;
+  font-family: "Noto Sans", sans-serif;
   color: #212121;
   font-size: 20px;
   font-weight: 700;
@@ -2733,7 +2733,7 @@ Industries Serve Area Style
   text-align: center;
 }
 .industries-serve-area .industries-img span {
-  font-family: "Noto Serif KR", serif;
+  font-family: "Noto Sans", sans-serif;
   display: inline-block;
   font-size: 32px;
   font-weight: 600;
@@ -2798,7 +2798,7 @@ Industries Serve Area Style
 }
 .single-industries.awards-warp h3 {
   font-size: 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: #4E7D22;
   font-weight: 400;
 }
@@ -3375,7 +3375,7 @@ Page Title Area Style
   text-align: center;
 }
 .page-title-area .page-title-content h2 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   margin-bottom: 20px;
   color: #ffffff;
   font-size: 40px;
@@ -5098,7 +5098,7 @@ table, th, td {
 
 .member-table-wrap h3 {
   font-size: 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   color: #0E5039;
 }
@@ -5123,7 +5123,7 @@ table, th, td {
 }
 
 .list_membership h3, .list_membership h4 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 .list_membership h3 {
   font-size: 16px;
