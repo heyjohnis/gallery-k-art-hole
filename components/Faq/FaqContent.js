@@ -6,6 +6,15 @@ import {
   AccordionItemPanel,
   AccordionItemButton,
 } from "react-accessible-accordion";
+import Lottie from 'react-lottie';
+import FaqAni from './data/faqs.json';
+
+const lottieOptions = {
+  animationData: FaqAni,   
+  loop: true,        
+  autoplay: true, 
+};
+
 
 const FaqContent = () => {
   return (
@@ -19,17 +28,17 @@ const FaqContent = () => {
                   <AccordionItem uuid="a">
                     <AccordionItemHeading>
                       <AccordionItemButton>
-                        What Are The Business Advisory Company?
+                        질문 1
                       </AccordionItemButton>
                     </AccordionItemHeading>
 
                     <AccordionItemPanel>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                        Risus commodo viverra maecenas accumsan lacus vel
-                        facilisis.
+                      인간이 보배를 무엇이 것이다.보라, 열매를 미인을 아름답고 눈이 사막이다. 
+                      설산에서 따뜻한 낙원을 소금이라 이상의 청춘은 인생을 들어 보라. 
+                      천하를 피어나는 끓는 어디 칼이다. 품에 이것은 안고, 설레는 것은 끓는다. 
+                      꾸며 이것을 그들에게 커다란 싹이 이것이야말로 천지는 쓸쓸하랴? 
+                      발휘하기 이 설레는 대한 듣는다. 인도하겠다는 우리의 청춘의 것이다.
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
@@ -37,17 +46,17 @@ const FaqContent = () => {
                   <AccordionItem uuid="b">
                     <AccordionItemHeading>
                       <AccordionItemButton>
-                        Research Is What Makes An Effective Business Plan?
+                        질문 1
                       </AccordionItemButton>
                     </AccordionItemHeading>
 
                     <AccordionItemPanel>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                        Risus commodo viverra maecenas accumsan lacus vel
-                        facilisis.
+                      인간이 보배를 무엇이 것이다.보라, 열매를 미인을 아름답고 눈이 사막이다. 
+                      설산에서 따뜻한 낙원을 소금이라 이상의 청춘은 인생을 들어 보라. 
+                      천하를 피어나는 끓는 어디 칼이다. 품에 이것은 안고, 설레는 것은 끓는다. 
+                      꾸며 이것을 그들에게 커다란 싹이 이것이야말로 천지는 쓸쓸하랴? 
+                      발휘하기 이 설레는 대한 듣는다. 인도하겠다는 우리의 청춘의 것이다.
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
@@ -55,16 +64,16 @@ const FaqContent = () => {
                   <AccordionItem uuid="c">
                     <AccordionItemHeading>
                       <AccordionItemButton>
-                        How Achieving Small Business Success?
+                        질문 3
                       </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                        Risus commodo viverra maecenas accumsan lacus vel
-                        facilisis.
+                      인간이 보배를 무엇이 것이다.보라, 열매를 미인을 아름답고 눈이 사막이다. 
+                      설산에서 따뜻한 낙원을 소금이라 이상의 청춘은 인생을 들어 보라. 
+                      천하를 피어나는 끓는 어디 칼이다. 품에 이것은 안고, 설레는 것은 끓는다. 
+                      꾸며 이것을 그들에게 커다란 싹이 이것이야말로 천지는 쓸쓸하랴? 
+                      발휘하기 이 설레는 대한 듣는다. 인도하겠다는 우리의 청춘의 것이다.
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
@@ -72,16 +81,16 @@ const FaqContent = () => {
                   <AccordionItem uuid="d">
                     <AccordionItemHeading>
                       <AccordionItemButton>
-                        Why Business Planing Is Important?
+                        질문 4
                       </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                        Risus commodo viverra maecenas accumsan lacus vel
-                        facilisis.
+                      인간이 보배를 무엇이 것이다.보라, 열매를 미인을 아름답고 눈이 사막이다. 
+                      설산에서 따뜻한 낙원을 소금이라 이상의 청춘은 인생을 들어 보라. 
+                      천하를 피어나는 끓는 어디 칼이다. 품에 이것은 안고, 설레는 것은 끓는다. 
+                      꾸며 이것을 그들에게 커다란 싹이 이것이야말로 천지는 쓸쓸하랴? 
+                      발휘하기 이 설레는 대한 듣는다. 인도하겠다는 우리의 청춘의 것이다.
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
@@ -89,16 +98,16 @@ const FaqContent = () => {
                   <AccordionItem uuid="e">
                     <AccordionItemHeading>
                       <AccordionItemButton>
-                        How Do You Startup?
+                        질문 5
                       </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                        Risus commodo viverra maecenas accumsan lacus vel
-                        facilisis.
+                      인간이 보배를 무엇이 것이다.보라, 열매를 미인을 아름답고 눈이 사막이다. 
+                      설산에서 따뜻한 낙원을 소금이라 이상의 청춘은 인생을 들어 보라. 
+                      천하를 피어나는 끓는 어디 칼이다. 품에 이것은 안고, 설레는 것은 끓는다. 
+                      꾸며 이것을 그들에게 커다란 싹이 이것이야말로 천지는 쓸쓸하랴? 
+                      발휘하기 이 설레는 대한 듣는다. 인도하겠다는 우리의 청춘의 것이다.
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
@@ -108,7 +117,11 @@ const FaqContent = () => {
 
             <div className="col-lg-4">
               <div className="faq-img">
-                <img src="/images/faq-img.png" alt="Image" />
+                <Lottie
+                  options={lottieOptions}
+                  style={{width: '300px', height: '300px'}} // svg의 부모 div에 적용
+                  speed={0.5}
+                />
               </div>
             </div>
           </div>

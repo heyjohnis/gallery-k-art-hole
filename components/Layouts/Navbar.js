@@ -470,8 +470,7 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert('준비중입니다')}
+                        href="/faq"
                         className={`nav-link ${
                           currentPath == "/contact/" && "active"
                         }`}

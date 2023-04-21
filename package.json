@@ -23,6 +23,7 @@
         "react-accessible-accordion": "^5.0.0",
         "react-bootstrap": "^2.7.4",
         "react-dom": "^18.2.0",
+        "react-lottie": "^1.2.3",
         "react-youtube": "^10.1.0",
         "sass": "^1.54.4",
         "sweetalert2": "^11.7.2",

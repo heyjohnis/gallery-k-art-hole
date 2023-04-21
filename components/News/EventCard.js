@@ -140,7 +140,7 @@ const EventCard = () => {
                   이성은 천자만홍이 인생을 하였으며, 때에, 두손을 피어나는 가지에 가슴이 사막이다.
                   </p>
 
-                  <Link href="/news-details" className="read-more">
+                  <Link href="#" className="read-more">
                     자세히 보기 <i className="bx bx-plus"></i>
                   </Link>
                 </div>
@@ -175,7 +175,7 @@ const EventCard = () => {
                   이성은 천자만홍이 인생을 하였으며, 때에, 두손을 피어나는 가지에 가슴이 사막이다.
                   </p>
 
-                  <Link href="/news-details" className="read-more">
+                  <Link href="#" className="read-more">
                     자세히 보기 <i className="bx bx-plus"></i>
                   </Link>
                 </div>
@@ -210,7 +210,7 @@ const EventCard = () => {
                   이성은 천자만홍이 인생을 하였으며, 때에, 두손을 피어나는 가지에 가슴이 사막이다.
                   </p>
 
-                  <Link href="/news-details" className="read-more">
+                  <Link href="#" className="read-more">
                     자세히 보기 <i className="bx bx-plus"></i>
                   </Link>
                 </div>
@@ -245,7 +245,7 @@ const EventCard = () => {
                   이성은 천자만홍이 인생을 하였으며, 때에, 두손을 피어나는 가지에 가슴이 사막이다.
                   </p>
 
-                  <Link href="/news-details" className="read-more">
+                  <Link href="#" className="read-more">
                     자세히 보기 <i className="bx bx-plus"></i>
                   </Link>
                 </div>
@@ -281,7 +281,7 @@ const EventCard = () => {
                   이성은 천자만홍이 인생을 하였으며, 때에, 두손을 피어나는 가지에 가슴이 사막이다.
                   </p>
 
-                  <Link href="/news-details" className="read-more">
+                  <Link href="#" className="read-more">
                     자세히 보기 <i className="bx bx-plus"></i>
                   </Link>
                 </div>
@@ -317,7 +317,7 @@ const EventCard = () => {
                   이성은 천자만홍이 인생을 하였으며, 때에, 두손을 피어나는 가지에 가슴이 사막이다.
                   </p>
 
-                  <Link href="/news-details" className="read-more">
+                  <Link href="#" className="read-more">
                     자세히 보기 <i className="bx bx-plus"></i>
                   </Link>
                 </div>
