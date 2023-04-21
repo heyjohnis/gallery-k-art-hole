@@ -416,15 +416,14 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="#" onClick={() => alert('준비중입니다')}>
+                  <Link href="/exhibition">
                     행사 및 이벤트 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert('준비중입니다')}
+                        href="/exhibition"
                         className={`nav-link ${
                           currentPath == "/news-grid/" && "active"
                         }`}
@@ -435,8 +434,7 @@ const Navbar = () => {
 
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert('준비중입니다')}
+                        href="/event"
                         className={`nav-link ${
                           currentPath == "/news-right-sidebar/" && "active"
                         }`}
