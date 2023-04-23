@@ -22,7 +22,7 @@ const MainMov = () => {
           </div>
 
           <div className="row justify-content-center video-wrap">
-            <YouTube videoId="d7O8r0fLnLE" opts={opts}/>;
+            <YouTube videoId="d7O8r0fLnLE" opts={opts}/>
           </div>
           
         </div>

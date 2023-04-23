@@ -26,7 +26,7 @@ const AddServiceCard = () => {
                   <img src="/images/benefits/card1.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>갤러리카페 & 큐레이팅</h3>
                 </div>
               </div>
@@ -38,7 +38,7 @@ const AddServiceCard = () => {
                   <img src="/images/benefits/card2.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>여수, 제주, 부산 등 호텔</h3>
                 </div>
               </div>
@@ -50,7 +50,7 @@ const AddServiceCard = () => {
                   <img src="/images/benefits/card3.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>프리미엄 골프여행 (여수)</h3>
                 </div>
               </div>
@@ -62,7 +62,7 @@ const AddServiceCard = () => {
                   <img src="/images/benefits/card4.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>전국 주요 리조트, 부대시설</h3>
                 </div>
               </div>
@@ -74,7 +74,7 @@ const AddServiceCard = () => {
                   <img src="/images/benefits/card5.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>마리나 요트, 제트보트</h3>
                 </div>
               </div>
@@ -86,7 +86,7 @@ const AddServiceCard = () => {
                   <img src="/images/benefits/card6.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>승마, 로드FC 등</h3>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const AddServiceCard = () => {
                   <img src="/images/benefits/card7.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>골프연습장 (예정)</h3>
                 </div>
               </div>
@@ -122,7 +122,7 @@ const AddServiceCard = () => {
                   <img src="/images/benefits/card8.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>굿즈 (예정)</h3>
                 </div>
               </div>
@@ -134,7 +134,7 @@ const AddServiceCard = () => {
                   <img src="/images/benefits/card9.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>국내외 일반/골프 여행패키지 (예정)</h3>
                 </div>
               </div>

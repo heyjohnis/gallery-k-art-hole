@@ -2302,6 +2302,9 @@ News Area Style
     background-color: $white-color;
     box-shadow: $box-shadow;
     padding: 30px;
+    &.service-content-warp {
+      height: 90px;
+    }
     h3 {
       font-family: $body-font-family;
       color: $body-color;

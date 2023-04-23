@@ -120,7 +120,6 @@ const FaqContent = () => {
                 <Lottie
                   options={lottieOptions}
                   style={{width: '300px', height: '300px'}} // svg의 부모 div에 적용
-                  speed={0.5}
                 />
               </div>
             </div>

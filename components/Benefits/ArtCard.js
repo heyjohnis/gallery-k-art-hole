@@ -21,7 +21,7 @@ const ArtCard = () => {
                   <img src="/images/benefits/art1.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>조재만 - 색의 감정 #115</h3>
                 </div>
               </div>
@@ -33,7 +33,7 @@ const ArtCard = () => {
                   <img src="/images/benefits/art2.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>최장칠 - Randomicity 222</h3>
                 </div>
               </div>
@@ -45,7 +45,7 @@ const ArtCard = () => {
                   <img src="/images/benefits/art3.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>조재만 - 겨울나무 #312</h3>
                 </div>
               </div>
@@ -57,7 +57,7 @@ const ArtCard = () => {
                   <img src="/images/benefits/art4.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>조재만 - 빛의감정 #510</h3>
                 </div>
               </div>
@@ -69,7 +69,7 @@ const ArtCard = () => {
                   <img src="/images/benefits/art5.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>조재만 - Big Island #100</h3>
                 </div>
               </div>
@@ -81,7 +81,7 @@ const ArtCard = () => {
                   <img src="/images/benefits/art6.png" alt="Image" />
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap service-content-warp">
                   <h3>조재만 - Untitled #302</h3>
                 </div>
               </div>
