@@ -14,10 +14,10 @@ const Products = () => {
             </div>
 
             <div className="col-lg-12">
-              <div className="row">
+              <div className="row justify-content-center">
                 <div 
-                  className="col-lg-6 col-sm-6 counter-nth position-relative"
-                  data-aos="fade-up"
+                  className="col-lg-4 col-sm-5 position-relative main-item"
+                  data-aos="fade-in"
                   data-aos-duration="1200"
                   data-aos-delay="100"
                 >
@@ -27,9 +27,12 @@ const Products = () => {
                   </div>
                 </div>
 
+                <div className="col-lg-1 col-sm-1">
+                </div>
+
                 <div 
-                  className="col-lg-6 col-sm-6 counter-nth position-relative"
-                  data-aos="fade-up"
+                  className="col-lg-4 col-sm-5 position-relative main-product main-item"
+                  data-aos="fade-in"
                   data-aos-duration="1200"
                   data-aos-delay="200"
                 >
@@ -40,8 +43,8 @@ const Products = () => {
                 </div>
 
                 <div 
-                  className="col-lg-6 col-sm-6 counter-nth position-relative"
-                  data-aos="fade-up"
+                  className="col-lg-4 col-sm-5 position-relative main-item"
+                  data-aos="fade-in"
                   data-aos-duration="1200"
                   data-aos-delay="300"
                 >
@@ -50,6 +53,9 @@ const Products = () => {
                     <h2>포인트몰</h2>
                   </div>
                 </div>
+
+                <div className="col-lg-1 col-sm-1"></div>
+                <div className="col-lg-4 col-sm-5"></div>
 
               </div>
             </div>
