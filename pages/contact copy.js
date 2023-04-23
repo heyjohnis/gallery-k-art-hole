@@ -11,10 +11,10 @@ export default function Contact() {
       <Navbar />
 
       <PageBanner
-        pageTitle="상담/문의"
+        pageTitle="Contact Style One"
         homePageUrl="/"
-        homePageText="Main"
-        activePageText="상담/문의"
+        homePageText="Home"
+        activePageText="Contact Style One"
       />
 
       <ContactInfo />

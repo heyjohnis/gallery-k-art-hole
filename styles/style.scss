@@ -109,9 +109,10 @@ a {
   display: inline-block;
   transition: $transition;
   text-decoration: none;
+  color: $body-color;
   &:hover {
     text-decoration: none;
-    color: $heading-color;
+    color: $main-color;
   }
   &:focus {
     text-decoration: none;
@@ -5289,6 +5290,9 @@ Main Contact Area Style
       }
       .hidden {
         display: none;
+      }
+      .contact-agree-label {
+        margin-left: 5px;
       }
     }
     .form-control {

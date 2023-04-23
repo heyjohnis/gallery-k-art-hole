@@ -461,7 +461,7 @@ const Navbar = () => {
                       <Link
                         href="/faq"
                         className={`nav-link ${
-                          currentPath == "/contact/" && "active"
+                          currentPath == "/faq/" && "active"
                         }`}
                       >
                         FAQ
@@ -481,10 +481,9 @@ const Navbar = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert('준비중입니다')}
+                        href="/contact"
                         className={`nav-link ${
-                          currentPath == "/contact-2/" && "active"
+                          currentPath == "/contact/" && "active"
                         }`}
                       >
                         상담/문의
