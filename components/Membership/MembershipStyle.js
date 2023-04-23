@@ -17,7 +17,12 @@ const MembershipStyle = () => {
             <div className="tab_content">
               <div id="tab1" className="tabs_item">
                 <div className="row justify-content-center">
-                  <div className="col-lg-4 col-md-6">
+                  <div 
+                    className="col-lg-4 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-duration="1200"
+                    data-aos-delay="100"
+                  >
                     <div className="single-pricing membership-benefits">
                       <img src="/images/membership/membership1.png" alt="미술관 사진"/>
                       <div className="pricing-top-heading">
@@ -42,7 +47,12 @@ const MembershipStyle = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-4 col-md-6">
+                  <div 
+                    className="col-lg-4 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-duration="1200"
+                    data-aos-delay="300"
+                  >
                     <div className="single-pricing membership-benefits">
                       <img src="/images/membership/membership2.png" alt="미술관 사진"/>
                       <div className="pricing-top-heading">
@@ -67,7 +77,12 @@ const MembershipStyle = () => {
                     </div>
                   </div>
 
-                  <div className="col-lg-4 col-md-6">
+                  <div 
+                    className="col-lg-4 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-duration="1200"
+                    data-aos-delay="500"
+                  >
                     <div className="single-pricing membership-benefits">
                       <img src="/images/membership/membership3.png" alt="미술관 사진"/>
                       <div className="pricing-top-heading">

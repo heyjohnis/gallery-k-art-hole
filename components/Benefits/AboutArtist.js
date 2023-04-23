@@ -6,8 +6,8 @@ const AboutArtist = () => {
     <>
       <section className="about-area pt-100">
         <div className="container">
-          <div className="row align-items-center justify-content-between">
-            <div className="col-lg-5">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-6 col-lg-3">
               <div 
                   className="about-img artist-profile"
                   data-aos="fade-up"
@@ -16,6 +16,9 @@ const AboutArtist = () => {
                 >
                 <img src="/images/benefits/artist1.png" alt="심온작가 프로필" />
               </div>
+            </div>
+
+            <div className="col-lg-1">
             </div>
 
             <div className="col-lg-6">
@@ -66,8 +69,8 @@ const AboutArtist = () => {
           </div>
 
 
-          <div className="row align-items-center justify-content-between mt-100">
-            <div className="col-lg-6">
+          <div className="row align-items-center justify-content-center mt-100">
+          <div className="col-lg-6 order-2 order-md-0">
               <div 
                   className="about-content"
                   data-aos="fade-up"
@@ -109,7 +112,10 @@ const AboutArtist = () => {
               </div>
             </div>
             
-            <div className="col-lg-5">
+            <div className="col-lg-1">
+            </div>
+
+            <div className="col-6 col-lg-3">
               <div 
                   className="about-img artist-profile"
                   data-aos="fade-up"
@@ -121,8 +127,9 @@ const AboutArtist = () => {
             </div>
           </div>
 
-          <div className="row align-items-center justify-content-between mtb-100">
-            <div className="col-lg-5">
+
+          <div className="row align-items-center justify-content-center mtb-100">
+            <div className="col-6 col-lg-3">
               <div 
                   className="about-img artist-profile"
                   data-aos="fade-up"
@@ -131,6 +138,10 @@ const AboutArtist = () => {
                 >
                 <img src="/images/benefits/artist3.png" alt="박삼영작가 프로필" />
               </div>
+            </div>
+
+
+            <div className="col-lg-1">
             </div>
 
             <div className="col-lg-6">

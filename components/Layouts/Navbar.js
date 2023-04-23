@@ -130,7 +130,7 @@ const Navbar = () => {
 
                 <li className="nav-item">
                   <Link
-                    href="/membership"
+                    href="/benefits"
                     className={`nav-link ${
                       currentPath == "/about-1/" && "active"
                     }`}
@@ -139,17 +139,6 @@ const Navbar = () => {
                   </Link>
 
                   <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        href="/membership"
-                        className={`nav-link ${
-                          currentPath == "/about-1/" && "active"
-                        }`}
-                      >
-                        멤버십 소개
-                      </Link>
-                    </li>
-
                     <li className="nav-item">
                       <Link
                         href="/benefits"
