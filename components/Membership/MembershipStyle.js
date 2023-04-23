@@ -26,18 +26,17 @@ const MembershipStyle = () => {
                     <div className="single-pricing membership-benefits">
                       <img src="/images/membership/membership1.png" alt="미술관 사진"/>
                       <div className="pricing-top-heading">
-                        <h3>맞춤형 상품</h3>
-                        <p>미술품</p>
+                        <h3>프리미엄 골프 멤버</h3>
                       </div>
 
                       <ul>
                         <li>
                           <span class="list_icon"></span>
-                          고객의 선호도와 소비성향에 부합하는 맞춤형 상품 구성
+                          프리미엄 골프장 및 전국 300여 곳
                         </li>
                         <li>
                           <span class="list_icon"></span>
-                          한국미술협회에서 인증하는 정찰 원화 작품
+                          해당 골프장 회원과 동일한 서비스 제공
                         </li>
                       </ul>
 
@@ -56,18 +55,13 @@ const MembershipStyle = () => {
                     <div className="single-pricing membership-benefits">
                       <img src="/images/membership/membership2.png" alt="미술관 사진"/>
                       <div className="pricing-top-heading">
-                        <h3>다양한 상품</h3>
-                        <p>프리미엄 골프 멤버십</p>
+                        <h3>미술품</h3>
                       </div>
 
                       <ul>
                         <li>
                           <span class="list_icon"></span>
-                          프리미엄 골프장 및 전국 300여 곳
-                        </li>
-                        <li>
-                          <span class="list_icon"></span>
-                          해당 골프장 회원과 동일한 서비스 제공
+                          한국미술협회에서 인증하는 정찰 원화 작품
                         </li>
                       </ul>
 
@@ -86,18 +80,13 @@ const MembershipStyle = () => {
                     <div className="single-pricing membership-benefits">
                       <img src="/images/membership/membership3.png" alt="미술관 사진"/>
                       <div className="pricing-top-heading">
-                        <h3>편리한 상품</h3>
-                        <p>포인트몰</p>
+                        <h3>포인트몰</h3>
                       </div>
 
                       <ul>
                         <li>
                           <span class="list_icon"></span>
-                          전반에 걸쳐 품격을 높여주는 멤버십 커뮤니티 서비스
-                        </li>
-                        <li>
-                          <span class="list_icon"></span>
-                          패션, 쇼핑, 여행, 레저, 미식, 인테리어 등 럭셔리라이프스타일 
+                          패션, 쇼핑, 여행, 레저, 미식, 인테리어 등 럭셔리라이프스타일
                         </li>
                       </ul>
 
