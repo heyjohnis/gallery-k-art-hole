@@ -410,7 +410,8 @@ const Navbar = () => {
                   </Link>
 
                   <ul className="dropdown-menu">
-                    <li className="nav-item">
+                    <li className="nav-item"><a href="#">준비중</a></li>
+                    {/* <li className="nav-item">
                       <Link
                         href="/exhibition"
                         className={`nav-link ${
@@ -430,7 +431,7 @@ const Navbar = () => {
                       >
                         이벤트
                       </Link>
-                    </li>
+                    </li> */}
 {/* 
                     <li className="nav-item">
                       <Link
