@@ -405,7 +405,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="/exhibition">
+                  <Link href="#" onClick={() => alert('준비중입니다')}>
                     행사 및 이벤트 <i className="bx bx-chevron-down"></i>
                   </Link>
 
