@@ -21,7 +21,7 @@ const ContactInfo = () => {
                 <i className="bx bx-phone-call"></i>
                 <h3>상담번호</h3>
                 <p>
-                  Tel. <a href="tel:1588-0526">1588-0526</a>
+                  Tel. <a href="tel:1588-1778">1588-1778</a>
                 </p>
               </div>
             </div>
