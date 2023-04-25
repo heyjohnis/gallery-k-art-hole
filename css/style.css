@@ -95,10 +95,11 @@ a {
   display: inline-block;
   transition: all 0.6s ease;
   text-decoration: none;
+  color: #4d4d4d;
 }
 a:hover {
   text-decoration: none;
-  color: #212121;
+  color: #4E7D22;
 }
 a:focus {
   text-decoration: none;
@@ -839,6 +840,19 @@ jumpx Nav Area Style
   padding-top: 20px;
   padding-bottom: 20px;
   transition: all 0.6s ease;
+  flex-direction: column;
+}
+.navbar-area nav .top-menu {
+  width: 100%;
+  list-style: none;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: end;
+}
+.navbar-area nav .top-menu li .menu-items {
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: 700;
 }
 .navbar-area nav .navbar-brand.light_logo {
   display: block;
@@ -1063,7 +1077,8 @@ jumpx Nav Area Style
   top: 3px;
 }
 .navbar-area .others-options .default-btn {
-  padding: 15px 35px;
+  padding: 12px 20px 10px;
+  font-size: 16px;
 }
 .navbar-area .others-options .default-btn i {
   position: relative;
@@ -1074,6 +1089,10 @@ jumpx Nav Area Style
   background-color: #ffffff;
   padding-top: 15px;
   padding-bottom: 15px;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+}
+.navbar-area.is-sticky nav .top-menu li .menu-items {
+  color: #4d4d4d;
 }
 .navbar-area.is-sticky nav .navbar-brand.light_logo {
   display: none;
@@ -1826,6 +1845,14 @@ Business  Area Style
   margin: 0;
 }
 
+.main-item {
+  margin-bottom: 50px;
+}
+
+.main-product {
+  transform: translateY(190px) !important;
+}
+
 /*
 Industries Area Style
 ======================================================*/
@@ -2086,6 +2113,9 @@ News Area Style
   background-color: #ffffff;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   padding: 30px;
+}
+.single-news .news-content-wrap.service-content-warp {
+  height: 90px;
 }
 .single-news .news-content-wrap h3 {
   font-family: "Noto Sans", sans-serif;
@@ -2551,7 +2581,7 @@ Pricing Area Style
 .single-pricing.membership-benefits ul {
   padding: 0 24px;
   max-width: 360px;
-  min-height: 120px;
+  min-height: 70px;
 }
 .single-pricing.membership-benefits ul li {
   font-weight: 400;
@@ -3678,6 +3708,20 @@ Sign In & Log In  Area Style
   color: #4E7D22;
   margin-left: 10px;
   font-weight: 600;
+  position: relative;
+}
+.user-area-all-style .contact-form-action .account-desc a:hover {
+  background: linear-gradient(to top, #b1ea0c 20%, transparent 20%);
+}
+.user-area-all-style .contact-form-action .account-notice {
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 13px;
+}
+.user-area-all-style .contact-form-action .account-notice span {
+  font-weight: 700;
+  color: #4E7D22;
 }
 .user-area-all-style .contact-form-action #chb1 {
   position: relative;
@@ -4831,6 +4875,9 @@ Main Contact Area Style
 }
 .main-contact-area .contact-wrap .contact-form .hidden {
   display: none;
+}
+.main-contact-area .contact-wrap .contact-form .contact-agree-label {
+  margin-left: 5px;
 }
 .main-contact-area .contact-wrap .form-control {
   border-radius: 4px !important;

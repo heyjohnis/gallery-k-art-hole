@@ -39,6 +39,11 @@ const Navbar = () => {
       <div id="navbar" className="navbar-area fixed-top">
         <nav className="navbar navbar-expand-xl navbar-light">
           <div className="container">
+            <ul className="top-menu">
+              <li><Link href="/login" className="menu-items">로그인</Link></li>
+            </ul>
+          </div>
+          <div className="container">
             <Link href="/" className="navbar-brand light_logo">
               <img src="/images/white-logo.svg" width={180} height={36} alt="logo" />
             </Link>

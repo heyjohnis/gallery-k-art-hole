@@ -10,10 +10,10 @@ export default function Login() {
       <Navbar />
 
       <PageBanner
-        pageTitle="Login"
+        pageTitle="로그인"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="Login"
+        activePageText="로그인"
       />
 
       <div className="user-area-all-style log-in-area ptb-100">
@@ -22,48 +22,19 @@ export default function Login() {
             <div className="col-12">
               <div className="contact-form-action">
                 <div className="form-heading text-center">
-                  <h3 className="form-title">Login to your account!</h3>
+                  <h3 className="form-title">로그인</h3>
                 </div>
 
                 <form>
                   <div className="row">
-                    <div className="col-lg-4 col-md-4 col-sm-12">
-                      <a
-                        href="https://www.google.com/"
-                        className="default-btn mb-30"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-google"></i> Google
-                      </a>
-                    </div>
-
-                    <div className="col-lg-4 col-md-4 col-sm-12">
-                      <a
-                        href="https://www.facebook.com/"
-                        className="default-btn mb-30"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-facebook"></i> Facebook
-                      </a>
-                    </div>
-
-                    <div className="col-lg-4 col-md-4 col-sm-12">
-                      <a
-                        href="https://www.twitter.com/"
-                        className="default-btn mb-30"
-                        target="_blank"
-                      >
-                        <i className="bx bxl-twitter"></i> Twitter
-                      </a>
-                    </div>
 
                     <div className="col-12">
                       <div className="form-group">
                         <input
                           className="form-control"
                           type="text"
-                          name="name"
-                          placeholder="Username or Email"
+                          name="아이디"
+                          placeholder="아이디"
                         />
                       </div>
                     </div>
@@ -74,7 +45,7 @@ export default function Login() {
                           className="form-control"
                           type="password"
                           name="password"
-                          placeholder="Password"
+                          placeholder="비밀번호"
                         />
                       </div>
                     </div>
@@ -91,28 +62,31 @@ export default function Login() {
                             className="form-check-label"
                             htmlFor="gridCheck"
                           >
-                            Remember me
+                            보안접속
                           </label>
                         </div>
                       </div>
                     </div>
 
                     <div className="col-lg-6 col-sm-6">
-                      <Link href="/recover-password" className="forget">
-                        Forgot my password?
+                      <Link href="#" className="forget">
+                        비밀번호를 잊으셨나요?
                       </Link>
                     </div>
 
                     <div className="col-12">
                       <button className="default-btn btn-two" type="submit">
-                        Log In Now
+                        로그인
                       </button>
                     </div>
-
+                    <hr className='mt-30'/>
                     <div className="col-12">
                       <p className="account-desc">
-                        Not a member?
-                        <Link href="/sign-up">Register</Link>
+                        그린갤러리 멤버십 소유자신가요?
+                        <Link href="#">멤버십 가입하기</Link>
+                      </p>
+                      <p className="account-notice"><span>그린갤러리 멤버십 소유자만</span> 가입이 가능하며, 로그인이 가능합니다. <br/>
+                        그린갤러리 가입을 원하시면 1588-1778 로 문의주세요.
                       </p>
                     </div>
                   </div>
