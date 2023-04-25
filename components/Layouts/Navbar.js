@@ -40,10 +40,10 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-xl navbar-light">
           <div className="container">
             <Link href="/" className="navbar-brand light_logo">
-              <img src="/images/white-logo.png" alt="logo" />
+              <img src="/images/white-logo.svg" width={180} height={36} alt="logo" />
             </Link>
             <Link href="/" className="navbar-brand dark_logo">
-              <img src="/images/dark-logo.png" alt="logo" />
+              <img src="/images/dark-logo.svg"  width={180} height={36} alt="logo" />
             </Link>
 
             {/* Toggle navigation */}
