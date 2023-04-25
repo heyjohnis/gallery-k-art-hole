@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <>
       <div id="navbar" className="navbar-area fixed-top">
-        <nav className="navbar navbar-expand-md navbar-light">
+        <nav className="navbar navbar-expand-xl navbar-light">
           <div className="container">
             <Link href="/" className="navbar-brand light_logo">
               <img src="/images/white-logo.png" alt="logo" />
@@ -402,7 +402,7 @@ const Navbar = () => {
 
               <div className="others-options">
                 <Link href="#" onClick={() => alert('준비중입니다')} className="default-btn">
-                  BOOK NOW <i className="bx bx-log-in-circle"></i>
+                  BOOK NOW
                 </Link>
               </div>
             </div>
