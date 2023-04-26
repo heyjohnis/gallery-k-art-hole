@@ -4118,6 +4118,18 @@ Sign In & Log In  Area Style
       .form-group {
         margin-bottom: 30px;
       }
+      .sup {
+        position: relative;
+        font-size: 1em;
+        line-height: 0;
+        vertical-align: baseline;
+        top: 0em;
+        color: #ff6a00;
+      }
+      .signup {
+        display: flex;
+        align-items: center;
+      }
     }
     .account-desc {
       margin: 25px auto 0;

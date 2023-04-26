@@ -19,7 +19,7 @@ const Navbar = () => {
   React.useEffect(() => {
     let elementId = document.getElementById("navbar");
     document.addEventListener("scroll", () => {
-      if (window.scrollY > 150) {
+      if (window.scrollY > 124) {
         elementId.classList.add("is-sticky");
       } else {
         elementId.classList.remove("is-sticky");

@@ -3705,6 +3705,18 @@ Sign In & Log In  Area Style
 .user-area-all-style .contact-form-action form .form-group {
   margin-bottom: 30px;
 }
+.user-area-all-style .contact-form-action form .sup {
+  position: relative;
+  font-size: 1em;
+  line-height: 0;
+  vertical-align: baseline;
+  top: 0em;
+  color: #ff6a00;
+}
+.user-area-all-style .contact-form-action form .signup {
+  display: flex;
+  align-items: center;
+}
 .user-area-all-style .contact-form-action .account-desc {
   margin: 25px auto 0;
   display: table;
