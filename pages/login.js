@@ -40,7 +40,7 @@ export default function Login() {
                     </div>
 
                     <div className="col-12">
-                      <div className="form-group">
+                      <div className="form-group mb-2">
                         <input
                           className="form-control"
                           type="password"
@@ -51,26 +51,11 @@ export default function Login() {
                     </div>
 
                     <div className="col-lg-6 col-sm-6 form-condition">
-                      <div className="agree-label">
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            id="gridCheck"
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="gridCheck"
-                          >
-                            보안접속
-                          </label>
-                        </div>
-                      </div>
                     </div>
 
-                    <div className="col-lg-6 col-sm-6">
+                    <div className="col-lg-6 col-sm-6 mb-30">
                       <Link href="#" className="forget">
-                        비밀번호를 잊으셨나요?
+                        아이디/비밀번호 찾기
                       </Link>
                     </div>
 
@@ -83,11 +68,18 @@ export default function Login() {
                     <div className="col-12">
                       <p className="account-desc">
                         그린갤러리 멤버십 소유자신가요?
-                        <Link href="#">멤버십 가입하기</Link>
                       </p>
-                      <p className="account-notice"><span>그린갤러리 멤버십 소유자만</span> 가입이 가능하며, 로그인이 가능합니다. <br/>
-                        그린갤러리 가입을 원하시면 1588-1778 로 문의주세요.
+                      <p className="account-notice"><span>그린갤러리 멤버십 소유자만</span> 가입과 로그인이 가능합니다. <br/>
+                      그린갤러리 가입을 원하시면 1588-1778 로 문의주세요.
                       </p>
+                    </div>
+
+                    <div className="col-12 mt-30">                      
+                      <Link href="#" className="forget">
+                        <button className="default-btn btn-two btn-border" type="submit">
+                          멤버십 가입하기
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </form>

@@ -3629,15 +3629,15 @@ Sign In & Log In  Area Style
   border-radius: 4px;
   box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
   padding: 40px;
-  max-width: 570px;
+  max-width: 620px;
   margin: auto;
 }
 .user-area-all-style .contact-form-action .form-heading {
   margin-bottom: 33px;
 }
 .user-area-all-style .contact-form-action .form-heading .form-title {
-  font-size: 35px;
-  color: #233d63;
+  font-size: 28px;
+  color: #0E5039;
   margin-bottom: 10px;
   text-transform: capitalize;
 }
@@ -3669,7 +3669,13 @@ Sign In & Log In  Area Style
 .user-area-all-style .contact-form-action form .default-btn.btn-two {
   display: table;
   margin: 0px auto 0;
-  padding: 20px 35px;
+  padding: 15px 35px;
+  font-size: 18px;
+}
+.user-area-all-style .contact-form-action form .default-btn.btn-border {
+  border: 1px solid #4f7d22;
+  background: white;
+  color: #4f7d22;
 }
 .user-area-all-style .contact-form-action form .col-lg-4:nth-child(1) .default-btn {
   background-color: #ff5733;

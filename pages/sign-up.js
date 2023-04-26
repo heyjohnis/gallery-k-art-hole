@@ -10,10 +10,10 @@ export default function SignUp() {
       <Navbar />
 
       <PageBanner
-        pageTitle="Sign Up"
+        pageTitle="회원가입 2"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="Sign Up"
+        activePageText="회원가입 2"
       />
 
       <div className="user-area-all-style sign-up-area ptb-100">
@@ -22,20 +22,30 @@ export default function SignUp() {
             <div className="col-12">
               <div className="contact-form-action">
                 <div className="form-heading text-center">
-                  <h3 className="form-title">Create an account!</h3>
+                  <h3 className="form-title">회원인증</h3>
                 </div>
 
                 <form method="post">
                   <div className="row">
                     <div className="col-md-12 col-sm-12">
-                      <div className="form-group">
-                        <input
-                          className="form-control"
-                          type="text"
-                          name="name"
-                          placeholder="First Name"
-                        />
-                      </div>
+                    <div className="radio">
+                      <label>
+                        <input type="radio" value="option1" checked={true} />
+                        Option 1
+                      </label>
+                    </div>
+                    <div className="radio">
+                      <label>
+                        <input type="radio" value="option2" />
+                        Option 2
+                      </label>
+                    </div>
+                    <div className="radio">
+                      <label>
+                        <input type="radio" value="option3" />
+                        Option 3
+                      </label>
+                    </div>
                     </div>
 
                     <div className="col-md-12 col-sm-12">
