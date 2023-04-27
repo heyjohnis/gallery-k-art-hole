@@ -130,7 +130,7 @@ h5,
 h6 {
   color: #212121;
   font-family: "Hahmlet";
-  font-weight: 700;
+  font-weight: 400;
 }
 
 h3 {
@@ -638,7 +638,7 @@ Section Title Area Style
   font-size: 16px;
   color: #4E7D22;
   display: inline-block;
-  font-weight: 700;
+  font-weight: 600;
 }
 .section-title h2 {
   font-size: 28px;
@@ -1739,7 +1739,7 @@ Business  Area Style
   font-size: 16px;
   color: #4E7D22;
   display: inline-block;
-  font-weight: 700;
+  font-weight: 600;
 }
 .business-content h2 {
   color: #0E5039;
@@ -1775,6 +1775,70 @@ Business  Area Style
 }
 .single-business:hover {
   transform: translateY(-5px);
+}
+
+.main-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+}
+.main-item h2, .main-item img, .main-item .main-product-link, .main-item .main-product-link span {
+  transition: all 1s ease-in-out;
+}
+.main-item .main-product-item {
+  position: absolute;
+  padding: 0;
+  color: #777;
+  font-size: 24px;
+  font-weight: 200;
+}
+.main-item .main-product-item.item1 {
+  top: 5%;
+  right: 10%;
+}
+.main-item .main-product-item.item2 {
+  top: 5%;
+  left: 10%;
+}
+.main-item .main-product-item.item3 {
+  top: 5%;
+  left: 10%;
+}
+.main-item .main-product-link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0);
+}
+.main-item .main-product-link span {
+  color: transparent;
+  font-size: 18px;
+  font-family: "Hahmlet";
+  font-weight: 500;
+  padding: 0 15px 5px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+.main-item:hover img {
+  transform: scale(1.2);
+  filter: blur(3px);
+}
+.main-item:hover h2 {
+  color: transparent;
+}
+.main-item:hover .main-product-link {
+  background: rgba(0, 0, 0, 0.3);
+}
+.main-item:hover .main-product-link span {
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 .single-counter {
