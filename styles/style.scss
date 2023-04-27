@@ -2407,6 +2407,9 @@ News Area Style
     background-color: $white-color;
     box-shadow: $box-shadow;
     padding: 30px;
+    &.main-news {
+      height: 270px;
+    }
     &.service-content-warp {
       height: 90px;
     }

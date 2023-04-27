@@ -2190,6 +2190,9 @@ News Area Style
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   padding: 30px;
 }
+.single-news .news-content-wrap.main-news {
+  height: 270px;
+}
 .single-news .news-content-wrap.service-content-warp {
   height: 90px;
 }
