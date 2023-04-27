@@ -104,6 +104,7 @@ body {
   line-height: 1.8;
   font-family: $body-font-family;
   color: $body-color;
+  word-break: keep-all;
 }
 a {
   display: inline-block;
@@ -868,14 +869,22 @@ jumpx Nav Area Style
     .top-menu {
       width: 100%;
       list-style: none;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       display: flex;
       justify-content:end;
+      align-items: center;
       li {
         .menu-items{
-          font-size: 11px;
+          font-size: 12px;
           color: $white-color;
-          font-weight: 700;
+          font-weight: 400;
+        }
+        span {
+          width: 1px;
+          height: 8px;
+          display: block;
+          margin: 0 10px;
+          background-color: $white-color;
         }
       }
     }
@@ -1219,6 +1228,9 @@ jumpx Nav Area Style
         li {
           .menu-items {
             color: $body-color;
+          }
+          span {
+            background-color: $body-color;
           }
         }
       }
@@ -2820,7 +2832,7 @@ Pricing Area Style
     }
     p {
       font-weight: 600;
-      font-size: 14px;
+      font-size: 16px;
       height: 50px;
     }
   }

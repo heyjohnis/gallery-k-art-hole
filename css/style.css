@@ -89,6 +89,7 @@ body {
   line-height: 1.8;
   font-family: "Noto Sans", sans-serif;
   color: #4d4d4d;
+  word-break: keep-all;
 }
 
 a {
@@ -845,14 +846,22 @@ jumpx Nav Area Style
 .navbar-area nav .top-menu {
   width: 100%;
   list-style: none;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: flex;
   justify-content: end;
+  align-items: center;
 }
 .navbar-area nav .top-menu li .menu-items {
-  font-size: 11px;
+  font-size: 12px;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 400;
+}
+.navbar-area nav .top-menu li span {
+  width: 1px;
+  height: 8px;
+  display: block;
+  margin: 0 10px;
+  background-color: #ffffff;
 }
 .navbar-area nav .navbar-brand.light_logo {
   display: block;
@@ -1093,6 +1102,9 @@ jumpx Nav Area Style
 }
 .navbar-area.is-sticky nav .top-menu li .menu-items {
   color: #4d4d4d;
+}
+.navbar-area.is-sticky nav .top-menu li span {
+  background-color: #4d4d4d;
 }
 .navbar-area.is-sticky nav .navbar-brand.light_logo {
   display: none;
@@ -2564,7 +2576,7 @@ Pricing Area Style
 }
 .single-pricing .pricing-top-heading p {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   height: 50px;
 }
 .single-pricing.membership-benefits {
