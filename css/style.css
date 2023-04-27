@@ -1779,7 +1779,7 @@ Business  Area Style
 
 .main-item {
   position: relative;
-  border-radius: 16px;
+  border-radius: 50px 0 50px 0;
   overflow: hidden;
   padding: 0;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
@@ -1805,6 +1805,9 @@ Business  Area Style
 .main-item .main-product-item.item3 {
   top: 5%;
   left: 10%;
+}
+.main-item img {
+  width: 100%;
 }
 .main-item .main-product-link {
   width: 100%;

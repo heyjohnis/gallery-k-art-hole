@@ -1974,7 +1974,7 @@ Business  Area Style
 }
 .main-item {
   position: relative;
-  border-radius: 16px;
+  border-radius: 50px 0 50px 0;
   overflow: hidden;
   padding: 0;
   box-shadow: $box-shadow; 
@@ -1999,6 +1999,9 @@ Business  Area Style
       top: 5%;
       left: 10%;
     }
+  }
+  img {
+    width: 100%;
   }
   .main-product-link {
     width: 100%;
