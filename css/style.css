@@ -87,7 +87,7 @@ body {
   margin: 0;
   font-size: 15px;
   line-height: 1.8;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Pretendard";
   color: #4d4d4d;
   word-break: keep-all;
 }
@@ -129,7 +129,7 @@ h4,
 h5,
 h6 {
   color: #212121;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Hahmlet";
   font-weight: 700;
 }
 
@@ -1426,7 +1426,7 @@ About Area Style
   margin: 5px 0 0;
 }
 .about-content ul li {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Pretendard";
   font-size: 18px;
   font-weight: 400;
   color: #212121;
@@ -1791,7 +1791,7 @@ Business  Area Style
 .single-counter h2 span {
   font-size: 50px;
   color: #6b6bd4;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Hahmlet";
   font-weight: 700;
   line-height: 1;
 }
@@ -1801,7 +1801,7 @@ Business  Area Style
   top: 7px;
 }
 .single-counter p {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Hahmlet";
   font-size: 18px;
   font-weight: 500;
   margin: 10px 0 0;
@@ -1821,7 +1821,7 @@ Business  Area Style
 }
 .single-counter.benefits-text p {
   font-size: 18px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Pretendard";
 }
 
 .counter-nth:nth-child(2) {
@@ -1887,7 +1887,7 @@ Industries Area Style
   font-size: 15px;
   font-weight: 600;
   color: #212121;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Hahmlet";
   margin-bottom: 15px;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
@@ -2130,7 +2130,7 @@ News Area Style
   height: 90px;
 }
 .single-news .news-content-wrap h3 {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Pretendard";
   color: #4d4d4d;
 }
 .single-news .news-content-wrap ul {
@@ -2294,7 +2294,7 @@ Footer Top Area Style
 }
 .single-widget .information li.address span {
   display: block;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Hahmlet";
   font-size: 20px;
   font-weight: 600;
 }
@@ -2570,7 +2570,7 @@ Pricing Area Style
   z-index: 1;
 }
 .single-pricing .pricing-top-heading h3 {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Pretendard";
   color: #4E7D22;
   font-size: 25px;
 }
@@ -2679,7 +2679,7 @@ Pricing Area Style
 .tab.quote-list-tab .tabs li {
   display: inline-block;
   padding: 0 10px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Hahmlet";
   color: #212121;
   font-size: 20px;
   font-weight: 700;
@@ -2775,7 +2775,7 @@ Industries Serve Area Style
   text-align: center;
 }
 .industries-serve-area .industries-img span {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Hahmlet";
   display: inline-block;
   font-size: 32px;
   font-weight: 600;
@@ -2840,7 +2840,7 @@ Industries Serve Area Style
 }
 .single-industries.awards-warp h3 {
   font-size: 20px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Pretendard";
   color: #4E7D22;
   font-weight: 400;
 }
@@ -3386,7 +3386,7 @@ jumpx SliderArea Style
   font-size: 54px;
   color: #ffffff;
   margin-bottom: 40px;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.4;
 }
 .jumpx-slider-item .jumpx-slider-text p {
@@ -3417,7 +3417,7 @@ Page Title Area Style
   text-align: center;
 }
 .page-title-area .page-title-content h2 {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Pretendard";
   margin-bottom: 20px;
   color: #ffffff;
   font-size: 40px;
@@ -5175,7 +5175,7 @@ table, th, td {
 
 .member-table-wrap h3 {
   font-size: 20px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Pretendard";
   font-weight: 700;
   color: #0E5039;
 }
@@ -5200,7 +5200,7 @@ table, th, td {
 }
 
 .list_membership h3, .list_membership h4 {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Pretendard";
 }
 .list_membership h3 {
   font-size: 16px;
