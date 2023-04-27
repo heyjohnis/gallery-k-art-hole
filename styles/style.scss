@@ -2035,6 +2035,7 @@ Business  Area Style
     .main-product-link {
       background:rgba(0, 0, 0, 0.3);
       span{
+        transform: translateY(-30px);
         color: $white-color;
         border: 1px solid $white-color;
       }

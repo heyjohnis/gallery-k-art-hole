@@ -1840,6 +1840,7 @@ Business  Area Style
   background: rgba(0, 0, 0, 0.3);
 }
 .main-item:hover .main-product-link span {
+  transform: translateY(-30px);
   color: #ffffff;
   border: 1px solid #ffffff;
 }
