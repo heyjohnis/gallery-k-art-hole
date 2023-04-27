@@ -863,6 +863,22 @@ jumpx Nav Area Style
     padding-top: 20px;
     padding-bottom: 20px;
     transition: $transition;
+    flex-direction: column;
+    
+    .top-menu {
+      width: 100%;
+      list-style: none;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content:end;
+      li {
+        .menu-items{
+          font-size: 11px;
+          color: $white-color;
+          font-weight: 700;
+        }
+      }
+    }
 
     .navbar-brand {
       &.light_logo {
@@ -1183,7 +1199,8 @@ jumpx Nav Area Style
     position: relative;
     top: 3px;
     .default-btn {
-      padding: 15px 35px;
+      padding: 12px 20px 10px;
+      font-size: 16px;
       i {
         position: relative;
         top: 1px;
@@ -1198,6 +1215,13 @@ jumpx Nav Area Style
       padding-top: 15px;
       padding-bottom: 15px;
       box-shadow: $box-shadow;
+      .top-menu {
+        li {
+          .menu-items {
+            color: $body-color;
+          }
+        }
+      }
       .navbar-brand {
         &.light_logo {
           display: none;
@@ -4016,13 +4040,13 @@ Sign In & Log In  Area Style
     border-radius: 4px;
     box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
     padding: 40px;
-    max-width: 570px;
+    max-width: 620px;
     margin: auto;
     .form-heading {
       margin-bottom: 33px;
       .form-title {
-        font-size: 35px;
-        color: #233d63;
+        font-size: 28px;
+        color: $sub-color;
         margin-bottom: 10px;
         text-transform: capitalize;
       }
@@ -4055,8 +4079,14 @@ Sign In & Log In  Area Style
         &.btn-two {
           display: table;
           margin: 0px auto 0;
-          padding: 20px 35px;
+          padding: 15px 35px;
+          font-size: 18px;
         }
+        &.btn-border {
+          border: 1px solid #4f7d22;
+          background: white;
+          color: #4f7d22;
+        }    
       }
       .col-lg-4 {
         &:nth-child(1) .default-btn {
@@ -4088,6 +4118,18 @@ Sign In & Log In  Area Style
       .form-group {
         margin-bottom: 30px;
       }
+      .sup {
+        position: relative;
+        font-size: 1em;
+        line-height: 0;
+        vertical-align: baseline;
+        top: 0em;
+        color: #ff6a00;
+      }
+      .signup {
+        display: flex;
+        align-items: center;
+      }
     }
     .account-desc {
       margin: 25px auto 0;
@@ -4097,8 +4139,24 @@ Sign In & Log In  Area Style
         color: $main-color;
         margin-left: 10px;
         font-weight: 600;
+        position: relative;
+        &:hover {
+          background: linear-gradient(to top, #b1ea0c 20%, transparent 20%);
+
+        }
       }
     }
+    .account-notice {
+      font-size: 16px;
+      text-align: center;
+      line-height: 1.4;
+      margin-top: 13px;
+      span {
+        font-weight: 700;
+        color: $main-color;
+      }
+    }
+
     #chb1 {
       position: relative;
       top: 1px;

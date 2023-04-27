@@ -19,7 +19,7 @@ const Navbar = () => {
   React.useEffect(() => {
     let elementId = document.getElementById("navbar");
     document.addEventListener("scroll", () => {
-      if (window.scrollY > 150) {
+      if (window.scrollY > 124) {
         elementId.classList.add("is-sticky");
       } else {
         elementId.classList.remove("is-sticky");
@@ -37,13 +37,18 @@ const Navbar = () => {
   return (
     <>
       <div id="navbar" className="navbar-area fixed-top">
-        <nav className="navbar navbar-expand-md navbar-light">
+        <nav className="navbar navbar-expand-xl navbar-light">
+          <div className="container">
+            <ul className="top-menu">
+              <li><Link href="/login" className="menu-items">로그인</Link></li>
+            </ul>
+          </div>
           <div className="container">
             <Link href="/" className="navbar-brand light_logo">
-              <img src="/images/white-logo.png" alt="logo" />
+              <img src="/images/white-logo.svg" width={180} height={36} alt="logo" />
             </Link>
             <Link href="/" className="navbar-brand dark_logo">
-              <img src="/images/dark-logo.png" alt="logo" />
+              <img src="/images/dark-logo.svg"  width={180} height={36} alt="logo" />
             </Link>
 
             {/* Toggle navigation */}
@@ -66,10 +71,18 @@ const Navbar = () => {
               <ul className="navbar-nav m-auto">
                 <li className="nav-item">
                   <Link
+                    href="/"
+                    className={`nav-link ${currentPath == "/" && "active"}`}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
                     href="/company"
                     className={`nav-link ${currentPath == "/company/" && "active"}`}
                   >
-                    소개
+                    그린갤러리
                   </Link>
 
                   {/* <ul className="dropdown-menu">
@@ -132,10 +145,10 @@ const Navbar = () => {
                   <Link
                     href="/benefits"
                     className={`nav-link ${
-                      currentPath == "/about-1/" && "active"
+                      currentPath == "/benefits/" && "active"
                     }`}
                   >
-                    멤버십 소개 <i className="bx bx-chevron-down"></i>
+                    멤버십 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -146,29 +159,7 @@ const Navbar = () => {
                           currentPath == "/benefits/" && "active"
                         }`}
                       >
-                        멤버십 혜택 소개
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/golf"
-                        className={`nav-link ${
-                          currentPath == "/golf/" && "active"
-                        }`}
-                      >
-                        골프서비스 소개
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/art"
-                        className={`nav-link ${
-                          currentPath == "/art/" && "active"
-                        }`}
-                      >
-                        미술품 소개
+                        혜원혜택
                       </Link>
                     </li>
 
@@ -179,7 +170,19 @@ const Navbar = () => {
                           currentPath == "/addservice/" && "active"
                         }`}
                       >
-                        부가서비스 소개
+                        프리미엄 서비스
+                      </Link>
+                    </li>
+
+                    <li className="nav-item">
+                      <Link
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
+                        className={`nav-link ${
+                          currentPath == "/contact-2/" && "active"
+                        }`}
+                      >
+                        약관 및 규정
                       </Link>
                     </li>
                   </ul>
@@ -187,16 +190,48 @@ const Navbar = () => {
 
                 <li className="nav-item">
                   <Link
-                    href="#"
-                    onClick={() => alert('준비중입니다')}
+                    href="/golf"
                     className={`nav-link ${
-                      currentPath == "/services/" && "active"
+                      currentPath == "/golf/" && "active"
+                    }`}
+                  >
+                    골프 <i className="bx bx-chevron-down"></i>
+                  </Link>
+                  <ul className="dropdown-menu">
+                    <li className="nav-item">
+                      <Link
+                        href="/golf"
+                        className={`nav-link ${
+                          currentPath == "/golf/" && "active"
+                        }`}
+                      >
+                        골프서비스
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+
+                <li className="nav-item">
+                  <Link
+                    href="/art"
+                    className={`nav-link ${
+                      currentPath == "/art/" && "active"
                     }`}
                   >
                     미술품 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
+                    <li className="nav-item">
+                      <Link
+                        href="/art"
+                        className={`nav-link ${
+                          currentPath == "/art/" && "active"
+                        }`}
+                      >
+                        미술품 소개
+                      </Link>
+                    </li>
                     <li className="nav-item">
                       <Link
                         href="#"
@@ -208,6 +243,7 @@ const Navbar = () => {
                         미술품 선택
                       </Link>
                     </li>
+
 
                     {/* <li className="nav-item">
                       <Link
@@ -272,177 +308,50 @@ const Navbar = () => {
                         포인트몰
                       </Link>
                     </li>
-
-                    {/* <li className="nav-item">
-                      <Link
-                        href="/team/"
-                        className={`nav-link ${
-                          currentPath == "/team/" && "active"
-                        }`}
-                      >
-                        Team
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/testimonials/"
-                        className={`nav-link ${
-                          currentPath == "/testimonials/" && "active"
-                        }`}
-                      >
-                        Testimonials
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/faq/"
-                        className={`nav-link ${
-                          currentPath == "/faq/" && "active"
-                        }`}
-                      >
-                        Faq
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link href="#" onClick={(e) => e.preventDefault()}>
-                        User <i className="bx bx-chevron-down"></i>
-                      </Link>
-
-                      <ul className="dropdown-menu">
-                        <li className="nav-item">
-                          <Link
-                            href="/login/"
-                            className={`nav-link ${
-                              currentPath == "/login/" && "active"
-                            }`}
-                          >
-                            Login
-                          </Link>
-                        </li>
-
-                        <li className="nav-item">
-                          <Link
-                            href="/sign-up/"
-                            className={`nav-link ${
-                              currentPath == "/sign-up/" && "active"
-                            }`}
-                          >
-                            Sign Up
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/terms-conditions/"
-                        className={`nav-link ${
-                          currentPath == "/terms-conditions/" && "active"
-                        }`}
-                      >
-                        Terms & Conditions
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/privacy-policy/"
-                        className={`nav-link ${
-                          currentPath == "/privacy-policy/" && "active"
-                        }`}
-                      >
-                        Privacy Policy
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/coming-soon/"
-                        className={`nav-link ${
-                          currentPath == "/coming-soon/" && "active"
-                        }`}
-                      >
-                        Coming Soon
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/login/"
-                        className={`nav-link ${
-                          currentPath == "/login/" && "active"
-                        }`}
-                      >
-                        Log In
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/sign-up/"
-                        className={`nav-link ${
-                          currentPath == "/sign-up/" && "active"
-                        }`}
-                      >
-                        Sign Up
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/404/"
-                        className={`nav-link ${
-                          currentPath == "/404/" && "active"
-                        }`}
-                      >
-                        404 error
-                      </Link>
-                    </li> */}
                   </ul>
                 </li>
 
                 <li className="nav-item">
                   <Link href="#" onClick={() => alert('준비중입니다')}>
-                    행사 및 이벤트 <i className="bx bx-chevron-down"></i>
+                    뉴스 & 이벤트 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
-                    <li className="nav-item"><a href="#">준비중</a></li>
-                    {/* <li className="nav-item">
+                    <li className="nav-item">
                       <Link
-                        href="/exhibition"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
-                          currentPath == "/news-grid/" && "active"
+                          currentPath == "/exhibition/" && "active"
                         }`}
                       >
-                        행사
+                        뉴스
                       </Link>
                     </li>
 
                     <li className="nav-item">
                       <Link
-                        href="/event"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
-                          currentPath == "/news-right-sidebar/" && "active"
+                          currentPath == "/event/" && "active"
                         }`}
                       >
                         이벤트
                       </Link>
-                    </li> */}
-{/* 
+                    </li>
+
                     <li className="nav-item">
                       <Link
-                        href="/news-details/"
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
                         className={`nav-link ${
-                          currentPath == "/news-details/" && "active"
+                          currentPath == "/media/" && "active"
                         }`}
                       >
-                        News Details
+                        미디어
                       </Link>
-                    </li> */}
+                    </li>
                   </ul>
                 </li>
 
@@ -460,12 +369,12 @@ const Navbar = () => {
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="/faq"
+                        href="/contact"
                         className={`nav-link ${
-                          currentPath == "/faq/" && "active"
+                          currentPath == "/contact/" && "active"
                         }`}
                       >
-                        FAQ
+                        상담/문의
                       </Link>
                     </li>
 
@@ -480,45 +389,25 @@ const Navbar = () => {
                         공지사항
                       </Link>
                     </li>
+
                     <li className="nav-item">
                       <Link
-                        href="/contact"
+                        href="/faq"
                         className={`nav-link ${
-                          currentPath == "/contact/" && "active"
+                          currentPath == "/faq/" && "active"
                         }`}
                       >
-                        상담/문의
+                        FAQ
                       </Link>
                     </li>
-                    <li className="nav-item">
-                      <Link
-                        href="#"
-                        onClick={() => alert('준비중입니다')}
-                        className={`nav-link ${
-                          currentPath == "/contact-2/" && "active"
-                        }`}
-                      >
-                        이용후기
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        href="#"
-                        onClick={() => alert('준비중입니다')}
-                        className={`nav-link ${
-                          currentPath == "/contact-2/" && "active"
-                        }`}
-                      >
-                        약관 및 규정
-                      </Link>
-                    </li>
+
                   </ul>
                 </li>
               </ul>
 
               <div className="others-options">
                 <Link href="#" onClick={() => alert('준비중입니다')} className="default-btn">
-                  BOOK NOW <i className="bx bx-log-in-circle"></i>
+                  BOOK NOW
                 </Link>
               </div>
             </div>
