@@ -12,10 +12,10 @@ export default function Company() {
       <Navbar />
 
       <PageBanner
-        pageTitle="회사소개"
+        pageTitle="그린갤러리"
         homePageUrl="/"
         homePageText="Main"
-        activePageText="회사소개"
+        activePageText="그린갤러리"
       />
       {/* <AboutGreenGolf/> */}
       <AboutCompany/>
