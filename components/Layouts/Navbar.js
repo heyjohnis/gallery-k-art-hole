@@ -163,7 +163,7 @@ const Navbar = () => {
                           currentPath == "/benefits/" && "active"
                         }`}
                       >
-                        혜원혜택
+                        회원혜택
                       </Link>
                     </li>
 
@@ -244,7 +244,7 @@ const Navbar = () => {
                           currentPath == "/services/" && "active"
                         }`}
                       >
-                        미술품 선택
+                        미술품 보기
                       </Link>
                     </li>
 
@@ -297,7 +297,7 @@ const Navbar = () => {
 
                 <li className="nav-item">
                   <Link href="#" onClick={() => alert('준비중입니다')}>
-                    포인트몰 <i className="bx bx-chevron-down"></i>
+                    제휴서비스 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -309,7 +309,7 @@ const Navbar = () => {
                           currentPath == "/pricing/" && "active"
                         }`}
                       >
-                        포인트몰
+                        제휴서비스 소개
                       </Link>
                     </li>
                   </ul>
