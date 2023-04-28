@@ -24,7 +24,7 @@ const News = () => {
                   </Link>
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap main-news">
                   <Link href="/">
                     <span>NEWS</span>
                     <h3>그린갤러리 소식</h3>
@@ -54,7 +54,7 @@ const News = () => {
                   </Link>
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap main-news">
                   <Link href="/">
                     <span>EVENT</span>
                     <h3>그린갤러리 이벤트</h3>
@@ -84,7 +84,7 @@ const News = () => {
                   </Link>
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap main-news">
 
                   <Link href="/">
                     <span>EVENT</span>
@@ -116,7 +116,7 @@ const News = () => {
 
                 </div>
 
-                <div className="news-content-wrap">
+                <div className="news-content-wrap main-news">
 
                   <Link href="/">
                     <span>NEWS</span>

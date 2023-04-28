@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-style: normal;
+  src: url('Pretendard-Regular.ttf') format('ttf'),
+  url('Pretendard-Regular.woff') format('woff'),
+  url('Pretendard-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-style: normal;
+  src: url('Pretendard-Medium.ttf') format('ttf'),
+  url('Pretendard-Medium.woff') format('woff'),
+  url('Pretendard-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-style: normal;
+  src: url('Pretendard-SemiBold.ttf') format('ttf'),
+  url('Pretendard-SemiBold.woff') format('woff'),
+  url('Pretendard-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-style: normal;
+  src: url('Pretendard-Bold.ttf') format('ttf'),
+  url('Pretendard-Bold.woff') format('woff'),
+  url('Pretendard-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Hahmlet';
+  font-weight: 100;
+  font-style: normal;
+  src: url('Hahmlet-Thin.ttf') format('ttf'),
+  url('Hahmlet-Thin.woff') format('woff'),
+  url('Hahmlet-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Hahmlet';
+  font-weight: 200;
+  font-style: normal;
+  src: url('Hahmlet-ExtraLight.ttf') format('ttf'),
+  url('Hahmlet-ExtraLight.woff') format('woff'),
+  url('Hahmlet-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Hahmlet';
+  font-weight: 300;
+  font-style: normal;
+  src: url('Hahmlet-Light.ttf') format('ttf'),
+  url('Hahmlet-Light.woff') format('woff'),
+  url('Hahmlet-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Hahmlet';
+  font-weight: 400;
+  font-style: normal;
+  src: url('Hahmlet-Regular.ttf') format('ttf'),
+  url('Hahmlet-Regular.woff') format('woff'),
+  url('Hahmlet-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Hahmlet';
+  font-weight: 500;
+  font-style: normal;
+  src: url('Hahmlet-Medium.ttf') format('ttf'),
+  url('Hahmlet-Medium.woff') format('woff'),
+  url('Hahmlet-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Hahmlet';
+  font-weight: 600;
+  font-style: normal;
+  src: url('Hahmlet-SemiBold.ttf') format('ttf'),
+  url('Hahmlet-SemiBold.woff') format('woff'),
+  url('Hahmlet-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Hahmlet';
+  font-weight: 700;
+  font-style: normal;
+  src: url('Hahmlet-Bold.ttf') format('ttf'),
+  url('Hahmlet-Bold.woff') format('woff'),
+  url('Hahmlet-Bold.woff2') format('woff2');
+}

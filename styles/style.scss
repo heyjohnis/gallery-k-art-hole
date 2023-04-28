@@ -83,8 +83,8 @@ This files table contents are outlined below>>>>>
 Default Style
 ============================*/
 
-$body-font-family: "Noto Sans", sans-serif;
-$heading-font-family: "Noto Sans", sans-serif;
+$body-font-family: "Pretendard";
+$heading-font-family: "Hahmlet";
 
 $main-color: #4E7D22;
 $sub-color: #0E5039;
@@ -104,6 +104,7 @@ body {
   line-height: 1.8;
   font-family: $body-font-family;
   color: $body-color;
+  word-break: keep-all;
 }
 a {
   display: inline-block;
@@ -141,7 +142,7 @@ h5,
 h6 {
   color: $heading-color;
   font-family: $heading-font-family;
-  font-weight: 700;
+  font-weight: 400;
 }
 h3 {
   font-size: 22px;
@@ -642,7 +643,7 @@ Section Title Area Style
     font-size: 16px;
     color: $main-color;
     display: inline-block;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   h2 {
@@ -868,14 +869,22 @@ jumpx Nav Area Style
     .top-menu {
       width: 100%;
       list-style: none;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       display: flex;
       justify-content:end;
+      align-items: center;
       li {
         .menu-items{
-          font-size: 11px;
+          font-size: 12px;
           color: $white-color;
-          font-weight: 700;
+          font-weight: 400;
+        }
+        span {
+          width: 1px;
+          height: 8px;
+          display: block;
+          margin: 0 10px;
+          background-color: $white-color;
         }
       }
     }
@@ -1219,6 +1228,9 @@ jumpx Nav Area Style
         li {
           .menu-items {
             color: $body-color;
+          }
+          span {
+            background-color: $body-color;
           }
         }
       }
@@ -1923,7 +1935,7 @@ Business  Area Style
     font-size: 16px;
     color: $main-color;
     display: inline-block;
-    font-weight: 700;
+    font-weight: 600;
   }
   h2 {
     color: $sub-color;
@@ -1959,6 +1971,77 @@ Business  Area Style
   &:hover {
     transform: translateY(-5px);
   }
+}
+.main-item {
+  position: relative;
+  border-radius: 50px 0 50px 0;
+  overflow: hidden;
+  padding: 0;
+  box-shadow: $box-shadow; 
+  h2, img, .main-product-link, .main-product-link span{
+    transition: all 1s ease-in-out;
+  }
+  .main-product-item {
+    position: absolute;
+    padding: 0;
+    color: #777;
+    font-size: 24px;
+    font-weight: 200;
+    &.item1 {
+      top: 5%;
+      right: 10%;
+    }
+    &.item2 {
+      top: 5%;
+      left: 10%;
+    }
+    &.item3 {
+      top: 5%;
+      left: 10%;
+    }
+  }
+  img {
+    width: 100%;
+  }
+  .main-product-link {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:rgba(0, 0, 0, 0.0);
+    span {
+      color: transparent;
+      font-size: 18px;
+      font-family: $heading-font-family;
+      font-weight: 500;
+      padding: 0 15px 5px;
+      border-radius: 20px;
+      border: 1px solid transparent;
+    }
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.2);  
+      filter: blur(3px);
+    }
+    h2 {
+      color: transparent;
+    }
+    .main-product-link {
+      background:rgba(0, 0, 0, 0.3);
+      span{
+        transform: translateY(-30px);
+        color: $white-color;
+        border: 1px solid $white-color;
+      }
+    }
+  }
+
 }
 .single-counter {
   background-color: #e2e2fc;
@@ -2005,6 +2088,7 @@ Business  Area Style
       font-family: $body-font-family;
     }
   }
+
   // &:hover {
   //   animation: rubberBand 1s linear;
   // }
@@ -2327,6 +2411,9 @@ News Area Style
     background-color: $white-color;
     box-shadow: $box-shadow;
     padding: 30px;
+    &.main-news {
+      height: 270px;
+    }
     &.service-content-warp {
       height: 90px;
     }
@@ -2820,7 +2907,7 @@ Pricing Area Style
     }
     p {
       font-weight: 600;
-      font-size: 14px;
+      font-size: 16px;
       height: 50px;
     }
   }
@@ -3777,7 +3864,7 @@ jumpx SliderArea Style
       font-size: 54px;
       color: $white-color;
       margin-bottom: 40px;
-      font-weight: 300;
+      font-weight: 200;
       line-height: 1.4;
     }
     p {

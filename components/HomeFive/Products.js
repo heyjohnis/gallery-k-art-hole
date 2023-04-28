@@ -21,10 +21,9 @@ const Products = () => {
                   data-aos-duration="1200"
                   data-aos-delay="100"
                 >
-                  <img src="/images/benefits/benefits1.png" alt="골프이미지"/>
-                  <div className="single-counter benefits-text">
-                    <h2>프리미엄 골프 멤버십</h2>
-                  </div>
+                  <img src="/images/main/main_product1.png" alt="골프이미지"/>
+                  <h2 className="main-product-item item1">프리미엄 골프 멤버십</h2>
+                  <Link className="main-product-link" href="/golf"><span>자세히 보기</span></Link>
                 </div>
 
                 <div className="col-lg-1 col-sm-1">
@@ -36,10 +35,9 @@ const Products = () => {
                   data-aos-duration="1200"
                   data-aos-delay="200"
                 >
-                  <img src="/images/benefits/benefits2.png" alt="미술이미지"/>
-                  <div className="single-counter benefits-text">
-                    <h2>미술품</h2>
-                  </div>
+                  <img src="/images/main/main_product2.png" alt="미술이미지"/>
+                  <h2 className="main-product-item item2">미술품</h2>
+                  <Link className="main-product-link" href="/art"><span>자세히 보기</span></Link>
                 </div>
 
                 <div 
@@ -48,10 +46,15 @@ const Products = () => {
                   data-aos-duration="1200"
                   data-aos-delay="300"
                 >
-                  <img src="/images/benefits/benefits3.png" alt="요트 이미지"/>
-                  <div className="single-counter benefits-text">
-                    <h2>포인트몰</h2>
-                  </div>
+                  <img src="/images/main/main_product3.png" alt="요트 이미지"/>
+                  <h2 className="main-product-item item3">포인트몰</h2>
+                  <Link 
+                    className="main-product-link" 
+                    href="#"
+                    onClick={() => alert('준비중입니다')}
+                  >
+                    <span>자세히 보기</span>
+                  </Link>
                 </div>
 
                 <div className="col-lg-1 col-sm-1"></div>
