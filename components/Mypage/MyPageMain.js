@@ -54,7 +54,7 @@ const MyPageMain = () => {
 
                 <div>
                   <div>
-                    <div>
+                    <div className='d-flex justify-content-between mt-30'>
                       <p>예약 내역(최근 5개)</p>
                       <Link href="#">전체보기</Link>
                     </div>
