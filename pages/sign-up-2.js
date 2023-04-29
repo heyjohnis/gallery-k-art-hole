@@ -310,7 +310,11 @@ export default function SignUp() {
               </div>
             </div>
           </div>
+          <Link className="default-btn" href="/sign-up-3">
+            회원가입
+          </Link>
         </div>
+
       </div>
 
       <Footer />

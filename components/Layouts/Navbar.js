@@ -40,7 +40,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-xl navbar-light">
           <div className="container">
             <ul className="top-menu">
-              <li><Link href="/" className="menu-items" onClick={() => alert('준비중입니다')}>회원가입</Link></li>
+              <li><Link href="/sign-up-1" className="menu-items" onClick={() => alert('준비중입니다')}>회원가입</Link></li>
               <li><span></span></li>
               <li><Link href="/login" className="menu-items">로그인</Link></li>
               <li><span></span></li>

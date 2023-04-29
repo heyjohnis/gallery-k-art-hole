@@ -75,7 +75,7 @@ export default function Login() {
                     </div>
 
                     <div className="col-12 mt-30">                      
-                      <Link href="#" className="forget">
+                      <Link href="sign-up-1" className="forget">
                         <button className="default-btn btn-two btn-border" type="submit">
                           멤버십 가입하기
                         </button>
