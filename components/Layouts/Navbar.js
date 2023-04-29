@@ -108,7 +108,7 @@ const Navbar = () => {
                           currentPath == "/benefits/" && "active"
                         }`}
                       >
-                        혜원혜택
+                        회원혜택
                       </Link>
                     </li>
 
@@ -189,7 +189,7 @@ const Navbar = () => {
                           currentPath == "/services/" && "active"
                         }`}
                       >
-                        미술품 선택
+                        미술품 보기
                       </Link>
                     </li>
                   </ul>
@@ -210,6 +210,7 @@ const Navbar = () => {
                         }`}
                       >
                         제휴서비스 소개
+<<<<<<< HEAD
                       </Link>
                     </li>
                     <li className="nav-item">
@@ -221,6 +222,8 @@ const Navbar = () => {
                         }`}
                       >
                         GG몰
+=======
+>>>>>>> 5487e9cda2d5ae97639e0f0ae1e5551d99285be4
                       </Link>
                     </li>
                   </ul>
