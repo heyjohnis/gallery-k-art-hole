@@ -15,143 +15,67 @@ const MyPageMain = () => {
             </div>
             <div className="col-lg-9 col-md-12">
               <div className="blog-details-desc">
-                <div className="article-image">
-                  <img
-                    src="/images/blog-details/blog-details.jpg"
-                    alt="Image"
-                  />
-                </div>
-
-                <div className="article-content">
-                  <div className="entry-meta">
-                    <ul>
-                      <li>
-                        <span>Posted On:</span> February 20 , 2020
-                      </li>
-                      <li>
-                        <span>Posted By:</span>
-                        <Link href="#">John Anderson</Link>
-                      </li>
-                    </ul>
+                <div className="row">
+                  <div className="col-lg-4 col-sm-6">
+                    <div className="single-contact-info">
+                      <p>잔여 이용 혜택</p>
+                      <h3>월 5 회 / 연 80회</h3>
+                    </div>
                   </div>
 
-                  <h3>
-                    Web development the best work in the future for the world
-                  </h3>
-
-                  <p>
-                    Quuntur magni dolores eos qui ratione voluptatem sequi
-                    nesciunt. Neque porro quia non numquam eius modi tempora
-                    incidunt ut labore et dolore magnam dolor sit, consectetur.
-                  </p>
-
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in sed quia non
-                    numquam eius modi tempora incidunt ut labore et dolore
-                    magnam aliquam quaerat.
-                  </p>
-
-                  <blockquote className="flaticon-quote">
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Repellendus aliquid praesentium eveniet illum asperiores,
-                      quidem, ipsum voluptatum numquam ducimus nisi
-                      exercitationem dolorum facilis.
-                    </p>
-                  </blockquote>
-
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in sed quia non
-                    numquam eius modi tempora incidunt ut labore et dolore
-                    magnam aliquam quaerat. Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in sed quia non numquam eius modi tempora
-                    incidunt ut labore et dolore magnam aliquam quaerat.
-                  </p>
-
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in sed quia non
-                    numquam eius modi tempora incidunt ut labore et dolore
-                    magnam aliquam quaerat.
-                  </p>
-
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in sed quia non
-                    numquam.
-                  </p>
-                </div>
-
-                <div className="article-footer">
-                  <div className="article-tags">
-                    <span>
-                      <i className="bx bx-share-alt"></i>
-                    </span>
-                    <Link href="#">Share</Link>
+                  <div className="col-lg-4 col-sm-6">
+                    <div className="single-contact-info">
+                      <p>월 잔여 포인트</p>
+                      <h3>50000P</h3>
+                    </div>
                   </div>
 
-                  <div className="article-share">
-                    <ul className="social">
-                      <li>
-                        <a href="https://www.facebook.com/" target="_blank">
-                          <i className="bx bxl-facebook"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.twitter.com/" target="_blank">
-                          <i className="bx bxl-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.linkedin.com/" target="_blank">
-                          <i className="bx bxl-linkedin"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.pinterest.com/" target="_blank">
-                          <i className="bx bxl-pinterest-alt"></i>
-                        </a>
-                      </li>
-                    </ul>
+                  <div className="col-lg-4 col-sm-6">
+                    <div className="single-contact-info">
+                      <p>주문/배송</p>
+                      <h3>0건</h3>
+                    </div>
                   </div>
                 </div>
+
 
                 <div className="post-navigation">
-                  <div className="navigation-links">
-                    <div className="nav-previous">
-                      <Link href="#">
-                        <i className="bx bx-left-arrow-alt"></i> Prev Post
-                      </Link>
+                  <div className="navigation-links justify-content-between">
+                    <div>
+                      <p>박선주 님은 그린갤러리 블랙 이용중이십니다. </p>
                     </div>
 
-                    <div className="nav-next">
-                      <Link href="#">
-                        Next Post <i className="bx bx-right-arrow-alt"></i>
-                      </Link>
+                    <div>
+                      <p>최대 월 7회 / 연 83회</p>
+                      <Link className="default-btn" href="#">혜택보기</Link>
                     </div>
                   </div>
                 </div>
 
-                {/* Comments Area */}
-                <CommentsArea />
+                <div>
+                  <div>
+                    <div>
+                      <p>예약 내역(최근 5개)</p>
+                      <Link href="#">전체보기</Link>
+                    </div>
+                    <ul>
+                      <li>
+                        <div className="row">
+                          <div className="col-3">
+                            <img src="/images/mypage/booking01.png" alt="골프장 사진"/>
+                          </div>
+                          <div className="col-9">
+                            <p>2021.05.17 월 06:17 코스명: 밸리ㅣ18홀</p>
+                            <span>세현  경기 용인</span>
+                            <span>예약완료</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+
               </div>
             </div>
 

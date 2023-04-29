@@ -4877,7 +4877,7 @@ Blog Details Area Style
 .news-details-area .widget-area .widget_download ul li:last-child a {
   border-bottom: none;
 }
-.news-details-area .widget-area .info time {
+.news-details-area .widget-area .info span {
   font-size: 13px;
   color: #929292;
   display: block;

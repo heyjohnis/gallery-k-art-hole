@@ -11,7 +11,7 @@ const MyPageSidebar = () => {
           <div className="post-wrap">
             <article className="item">
               <div className="thumb">
-                <span className="fullimage cover bg2" role="img"></span>
+                <span className="fullimage cover">BLACK</span>
               </div>
 
               <div className="info">
@@ -19,7 +19,7 @@ const MyPageSidebar = () => {
                 <h4 className="title usmall">
                 박선주
                 </h4>
-                <time>sunjoo1111</time>
+                <span>sunjoo1111</span>
               </div>
             </article>
             <Link className="default-btn" href="#">
