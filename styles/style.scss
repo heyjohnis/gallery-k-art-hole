@@ -147,6 +147,7 @@ h6 {
 h3 {
   font-size: 22px;
 }
+
 .d-table {
   width: 100%;
   height: 100%;
@@ -3278,17 +3279,7 @@ Brand Area Serve Area Style
 }
 
 .benefit_slide {
-  .swiper {
-    .swiper-slide {
-      &.swiper-slide-prev {
-      }
-      &.swiper-slide-next{
-      }
-      &.swiper-slide-active {
-        z-index: 3;
-      }
-    }
-  }
+
   .swiper-pagination {
     position: initial;
     margin-top: 24px;
@@ -3830,9 +3821,10 @@ jumpx SliderArea Style
 }
 
 .jumpx-slider-item {
+  
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% cover;
   height: 100vh;
   position: relative;
   z-index: 1;
@@ -3848,7 +3840,6 @@ jumpx SliderArea Style
     z-index: -1;
     opacity: 0.45;
   }
-
   .jumpx-slider-text {
     text-align: center;
     max-width: 750px;
@@ -3879,6 +3870,22 @@ jumpx SliderArea Style
           color: $white-color;
         }
       }
+    }
+  }
+}
+
+.swiper {
+  .swiper-slide {
+    transition: all 5s ease !important;
+    &.swiper-slide-prev {
+      transform: scale(0.5);
+    }
+    &.swiper-slide-next{
+      transform: scale(0.5);
+    }
+    &.swiper-slide-active {
+      
+      
     }
   }
 }
@@ -5646,11 +5653,17 @@ Service Details Area Style
   }
   h5 {
     font-size: 22px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-family: $body-font-family;
+    line-height: 1.4;
   }
   h6 {
     font-size: 20px;
     margin-bottom: 15px;
+  }
+  p{
+    margin-bottom: 30px;
   }
 }
 

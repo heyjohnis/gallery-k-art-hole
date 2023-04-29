@@ -88,61 +88,6 @@ const Navbar = () => {
                   >
                     그린갤러리
                   </Link>
-
-                  {/* <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        href="/"
-                        className={`nav-link ${currentPath == "/" && "active"}`}
-                      >
-                        그린갤러리 소개
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/"
-                        className={`nav-link ${
-                          currentPath == "/index-2/" && "active"
-                        }`}
-                      >
-                        갤러리케이 소개
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/index-3/"
-                        className={`nav-link ${
-                          currentPath == "/index-3/" && "active"
-                        }`}
-                      >
-                        Home Three
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/index-4/"
-                        className={`nav-link ${
-                          currentPath == "/index-4/" && "active"
-                        }`}
-                      >
-                        Home Four
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/index-5/"
-                        className={`nav-link ${
-                          currentPath == "/index-5/" && "active"
-                        }`}
-                      >
-                        Home Five
-                      </Link>
-                    </li>
-                  </ul> */}
                 </li>
 
                 <li className="nav-item">
@@ -247,57 +192,12 @@ const Navbar = () => {
                         미술품 선택
                       </Link>
                     </li>
-
-
-                    {/* <li className="nav-item">
-                      <Link
-                        href="/services-2/"
-                        className={`nav-link ${
-                          currentPath == "/services-2/" && "active"
-                        }`}
-                      >
-                        Services Style Two
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/services-3/"
-                        className={`nav-link ${
-                          currentPath == "/services-3/" && "active"
-                        }`}
-                      >
-                        Services Style Three
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/services-4/"
-                        className={`nav-link ${
-                          currentPath == "/services-4/" && "active"
-                        }`}
-                      >
-                        Services Style Four
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/service-details/"
-                        className={`nav-link ${
-                          currentPath == "/service-details/" && "active"
-                        }`}
-                      >
-                        Service Details
-                      </Link>
-                    </li> */}
                   </ul>
                 </li>
 
                 <li className="nav-item">
                   <Link href="#" onClick={() => alert('준비중입니다')}>
-                    포인트몰 <i className="bx bx-chevron-down"></i>
+                    제휴서비스 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -309,7 +209,18 @@ const Navbar = () => {
                           currentPath == "/pricing/" && "active"
                         }`}
                       >
-                        포인트몰
+                        제휴서비스 소개
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        href="#"
+                        onClick={() => alert('준비중입니다')}
+                        className={`nav-link ${
+                          currentPath == "/gg/" && "active"
+                        }`}
+                      >
+                        GG몰
                       </Link>
                     </li>
                   </ul>
