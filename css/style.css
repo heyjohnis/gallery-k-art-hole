@@ -3469,15 +3469,6 @@ jumpx SliderArea Style
   color: #ffffff;
 }
 
-.swiper .swiper-slide {
-  transition: all 5s ease !important;
-}
-.swiper .swiper-slide.swiper-slide-prev {
-  transform: scale(0.5);
-}
-.swiper .swiper-slide.swiper-slide-next {
-  transform: scale(0.5);
-}
 /*==================================================== 
 INNER PAGE STYLE
 ======================================================*/

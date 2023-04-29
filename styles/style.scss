@@ -3874,21 +3874,6 @@ jumpx SliderArea Style
   }
 }
 
-.swiper {
-  .swiper-slide {
-    transition: all 5s ease !important;
-    &.swiper-slide-prev {
-      transform: scale(0.5);
-    }
-    &.swiper-slide-next{
-      transform: scale(0.5);
-    }
-    &.swiper-slide-active {
-      
-      
-    }
-  }
-}
 
 /*==================================================== 
 INNER PAGE STYLE

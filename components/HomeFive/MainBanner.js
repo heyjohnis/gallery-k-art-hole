@@ -1,25 +1,22 @@
 import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Zoom, EffectFade, Navigation, Pagination, Autoplay } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 
 const MainBanner = () => {
   return (
     <>
       <section className="slider-area">
-        <Swiper
-          spaceBetween={30}
-          effect={"fade"}
-          navigation={true}
-          pagination={{
-            clickable: true,
-          }}
-          autoplay={{
-            delay: 1000,
-          }}
-          modules={[Zoom, EffectFade, Navigation, Pagination, Autoplay]}
-          className="mySwiper"
-        >
+          <Swiper
+              navigation={true}
+              autoplay={{
+                delay: 6500,
+                disableOnInteraction: true,
+                pauseOnMouseEnter: true,
+              }}
+              modules={[Navigation, Autoplay]}
+              className="hero-swiper"
+            >
           <SwiperSlide>
             <div
               className="jumpx-slider-item"
