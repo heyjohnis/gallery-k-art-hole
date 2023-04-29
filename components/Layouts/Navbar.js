@@ -210,7 +210,6 @@ const Navbar = () => {
                         }`}
                       >
                         제휴서비스 소개
-<<<<<<< HEAD
                       </Link>
                     </li>
                     <li className="nav-item">
@@ -222,8 +221,6 @@ const Navbar = () => {
                         }`}
                       >
                         GG몰
-=======
->>>>>>> 5487e9cda2d5ae97639e0f0ae1e5551d99285be4
                       </Link>
                     </li>
                   </ul>
