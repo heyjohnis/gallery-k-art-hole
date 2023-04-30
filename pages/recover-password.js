@@ -1,14 +1,11 @@
+import Link from "next/link";
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
-import Link from "next/link";
 
 export default function RecoverPassword() {
   return (
     <>
-      <Navbar />
-
       <PageBanner
         pageTitle="Recover Password"
         homePageUrl="/"
@@ -25,10 +22,9 @@ export default function RecoverPassword() {
                   <h3 className="form-title">Reset Password!</h3>
 
                   <p className="reset-desc">
-                    Enter the email of your account to reset the password. Then
-                    you will receive a link to email to reset the password. If
-                    you have any issue about reset password{" "}
-                    <Link href="/contact">contact us.</Link>
+                    Enter the email of your account to reset the password. Then you will
+                    receive a link to email to reset the password. If you have any issue
+                    about reset password <Link href="/contact">contact us.</Link>
                   </p>
                 </div>
 

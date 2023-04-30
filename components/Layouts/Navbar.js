@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { handleLogout } from "../../utils/auth";
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
   // Add active class
   const [currentPath, setCurrentPath] = useState("");
   const router = useRouter();
@@ -40,11 +41,47 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-xl navbar-light">
           <div className="container">
             <ul className="top-menu">
-              <li><Link href="/sign-up-1" className="menu-items" onClick={() => alert('준비중입니다')}>회원가입</Link></li>
-              <li><span></span></li>
-              <li><Link href="/login" className="menu-items">로그인</Link></li>
-              <li><span></span></li>
-              <li><Link href="/" className="menu-items" onClick={() => alert('준비중입니다')}>마이페이지</Link></li>
+              {user ? (
+                <>
+                  <li>
+                    <Link href="/mypage" className="menu-items">
+                      마이페이지
+                    </Link>
+                  </li>
+
+                  <li>
+                    <span></span>
+                  </li>
+                  <li>
+                    <Link href="#" className="menu-items">
+                      <div
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleLogout();
+                        }}
+                      >
+                        로그아웃
+                      </div>
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link href="/sign-up-1" className="menu-items">
+                      회원가입
+                    </Link>
+                  </li>
+                  <li>
+                    <span></span>
+                  </li>
+                  <li>
+                    <Link href="/login" className="menu-items">
+                      로그인
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <div className="container">
@@ -52,7 +89,7 @@ const Navbar = () => {
               <img src="/images/white-logo.svg" width={180} height={36} alt="logo" />
             </Link>
             <Link href="/" className="navbar-brand dark_logo">
-              <img src="/images/dark-logo.svg"  width={180} height={36} alt="logo" />
+              <img src="/images/dark-logo.svg" width={180} height={36} alt="logo" />
             </Link>
 
             {/* Toggle navigation */}
@@ -74,10 +111,7 @@ const Navbar = () => {
             <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav m-auto">
                 <li className="nav-item">
-                  <Link
-                    href="/"
-                    className={`nav-link ${currentPath == "/" && "active"}`}
-                  >
+                  <Link href="/" className={`nav-link ${currentPath == "/" && "active"}`}>
                     Home
                   </Link>
                 </li>
@@ -93,9 +127,7 @@ const Navbar = () => {
                 <li className="nav-item">
                   <Link
                     href="/benefits"
-                    className={`nav-link ${
-                      currentPath == "/benefits/" && "active"
-                    }`}
+                    className={`nav-link ${currentPath == "/benefits/" && "active"}`}
                   >
                     멤버십 <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -104,9 +136,7 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="/benefits"
-                        className={`nav-link ${
-                          currentPath == "/benefits/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/benefits/" && "active"}`}
                       >
                         회원혜택
                       </Link>
@@ -126,10 +156,8 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="#"
-                        onClick={() => alert('준비중입니다')}
-                        className={`nav-link ${
-                          currentPath == "/contact-2/" && "active"
-                        }`}
+                        onClick={() => alert("준비중입니다")}
+                        className={`nav-link ${currentPath == "/contact-2/" && "active"}`}
                       >
                         약관 및 규정
                       </Link>
@@ -140,9 +168,7 @@ const Navbar = () => {
                 <li className="nav-item">
                   <Link
                     href="/golf"
-                    className={`nav-link ${
-                      currentPath == "/golf/" && "active"
-                    }`}
+                    className={`nav-link ${currentPath == "/golf/" && "active"}`}
                   >
                     골프 <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -150,9 +176,7 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="/golf"
-                        className={`nav-link ${
-                          currentPath == "/golf/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/golf/" && "active"}`}
                       >
                         골프서비스
                       </Link>
@@ -163,9 +187,7 @@ const Navbar = () => {
                 <li className="nav-item">
                   <Link
                     href="/art"
-                    className={`nav-link ${
-                      currentPath == "/art/" && "active"
-                    }`}
+                    className={`nav-link ${currentPath == "/art/" && "active"}`}
                   >
                     미술품 <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -174,9 +196,7 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="/art"
-                        className={`nav-link ${
-                          currentPath == "/art/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/art/" && "active"}`}
                       >
                         미술품 소개
                       </Link>
@@ -184,10 +204,8 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="#"
-                        onClick={() => alert('준비중입니다')}
-                        className={`nav-link ${
-                          currentPath == "/services/" && "active"
-                        }`}
+                        onClick={() => alert("준비중입니다")}
+                        className={`nav-link ${currentPath == "/services/" && "active"}`}
                       >
                         미술품 보기
                       </Link>
@@ -196,7 +214,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="#" onClick={() => alert('준비중입니다')}>
+                  <Link href="#" onClick={() => alert("준비중입니다")}>
                     제휴서비스 <i className="bx bx-chevron-down"></i>
                   </Link>
 
@@ -204,10 +222,8 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="#"
-                        onClick={() => alert('준비중입니다')}
-                        className={`nav-link ${
-                          currentPath == "/pricing/" && "active"
-                        }`}
+                        onClick={() => alert("준비중입니다")}
+                        className={`nav-link ${currentPath == "/pricing/" && "active"}`}
                       >
                         제휴서비스 소개
                       </Link>
@@ -215,10 +231,8 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="#"
-                        onClick={() => alert('준비중입니다')}
-                        className={`nav-link ${
-                          currentPath == "/gg/" && "active"
-                        }`}
+                        onClick={() => alert("준비중입니다")}
+                        className={`nav-link ${currentPath == "/gg/" && "active"}`}
                       >
                         GG몰
                       </Link>
@@ -227,7 +241,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="#" onClick={() => alert('준비중입니다')}>
+                  <Link href="#" onClick={() => alert("준비중입니다")}>
                     뉴스 & 이벤트 <i className="bx bx-chevron-down"></i>
                   </Link>
 
@@ -235,7 +249,7 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="#"
-                        onClick={() => alert('준비중입니다')}
+                        onClick={() => alert("준비중입니다")}
                         className={`nav-link ${
                           currentPath == "/exhibition/" && "active"
                         }`}
@@ -247,10 +261,8 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="#"
-                        onClick={() => alert('준비중입니다')}
-                        className={`nav-link ${
-                          currentPath == "/event/" && "active"
-                        }`}
+                        onClick={() => alert("준비중입니다")}
+                        className={`nav-link ${currentPath == "/event/" && "active"}`}
                       >
                         이벤트
                       </Link>
@@ -259,10 +271,8 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="#"
-                        onClick={() => alert('준비중입니다')}
-                        className={`nav-link ${
-                          currentPath == "/media/" && "active"
-                        }`}
+                        onClick={() => alert("준비중입니다")}
+                        className={`nav-link ${currentPath == "/media/" && "active"}`}
                       >
                         미디어
                       </Link>
@@ -273,10 +283,8 @@ const Navbar = () => {
                 <li className="nav-item">
                   <Link
                     href="#"
-                    onClick={() => alert('준비중입니다')}
-                    className={`nav-link ${
-                      currentPath == "/contact/" && "active"
-                    }`}
+                    onClick={() => alert("준비중입니다")}
+                    className={`nav-link ${currentPath == "/contact/" && "active"}`}
                   >
                     고객지원 <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -285,9 +293,7 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="/contact"
-                        className={`nav-link ${
-                          currentPath == "/contact/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/contact/" && "active"}`}
                       >
                         상담/문의
                       </Link>
@@ -296,10 +302,8 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="#"
-                        onClick={() => alert('준비중입니다')}
-                        className={`nav-link ${
-                          currentPath == "/contact-2/" && "active"
-                        }`}
+                        onClick={() => alert("준비중입니다")}
+                        className={`nav-link ${currentPath == "/contact-2/" && "active"}`}
                       >
                         공지사항
                       </Link>
@@ -308,20 +312,21 @@ const Navbar = () => {
                     <li className="nav-item">
                       <Link
                         href="/faq"
-                        className={`nav-link ${
-                          currentPath == "/faq/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/faq/" && "active"}`}
                       >
                         FAQ
                       </Link>
                     </li>
-
                   </ul>
                 </li>
               </ul>
 
               <div className="others-options">
-                <Link href="#" onClick={() => alert('준비중입니다')} className="default-btn">
+                <Link
+                  href="#"
+                  onClick={() => alert("준비중입니다")}
+                  className="default-btn"
+                >
                   BOOK NOW
                 </Link>
               </div>

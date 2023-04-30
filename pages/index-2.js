@@ -1,23 +1,20 @@
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
-import MainBanner from "../components/HomeTwo/MainBanner";
-import Features from "../components/HomeTwo/Features";
-import About from "../components/HomeTwo/About";
-import Services from "../components/HomeTwo/Services";
-import Pricing from "../components/HomeTwo/Pricing";
-import Newsletter from "../components/Common/Newsletter";
 import MakeYourBusiness from "../components/Common/MakeYourBusiness";
-import Testimonials from "../components/Common/Testimonials";
-import WhatWeOffer from "../components/HomeTwo/WhatWeOffer";
 import News from "../components/Common/News";
+import Newsletter from "../components/Common/Newsletter";
 import Partner from "../components/Common/Partner";
+import Testimonials from "../components/Common/Testimonials";
+import About from "../components/HomeTwo/About";
+import Features from "../components/HomeTwo/Features";
+import MainBanner from "../components/HomeTwo/MainBanner";
+import Pricing from "../components/HomeTwo/Pricing";
+import Services from "../components/HomeTwo/Services";
+import WhatWeOffer from "../components/HomeTwo/WhatWeOffer";
 import Footer from "../components/Layouts/Footer";
 
 export default function Index2() {
   return (
     <>
-      <Navbar />
-
       <MainBanner />
 
       <Features />

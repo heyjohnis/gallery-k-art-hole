@@ -1,15 +1,11 @@
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
-import MembershipStyle from '../components/Membership/MembershipStyle';
-import MembershipBenefits from '../components/Membership/MembershipBenefits';
+import MembershipStyle from "../components/Membership/MembershipStyle";
 
 export default function Membership() {
   return (
     <>
-      <Navbar />
-
       <PageBanner
         pageTitle="멤버십 소개"
         homePageUrl="/"
@@ -17,10 +13,9 @@ export default function Membership() {
         activePageText="멤버십 소개"
       />
 
-      <MembershipStyle/>
+      <MembershipStyle />
 
       {/* <MembershipBenefits/> */}
-    
 
       <Footer />
     </>

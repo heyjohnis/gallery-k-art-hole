@@ -1,16 +1,12 @@
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
+import AboutCompany from "../components/Common/AboutCompany";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
-import AboutCompany from '../components/Common/AboutCompany';
-import AboutGreenGolf from '../components/Common/AboutGreenGolf';
-import MembershipStyle from '../components/Membership/MembershipStyle';
+import MembershipStyle from "../components/Membership/MembershipStyle";
 
 export default function Company() {
   return (
     <>
-      <Navbar />
-
       <PageBanner
         pageTitle="그린갤러리"
         homePageUrl="/"
@@ -18,9 +14,9 @@ export default function Company() {
         activePageText="그린갤러리"
       />
       {/* <AboutGreenGolf/> */}
-      <AboutCompany/>
+      <AboutCompany />
 
-      <MembershipStyle/>
+      <MembershipStyle />
 
       <Footer />
     </>

@@ -1,20 +1,17 @@
-import Navbar from "../components/Layouts/Navbar";
-import MainBanner from "../components/HomeOne/MainBanner";
-import Features from "../components/HomeOne/Features";
-import About from "../components/HomeOne/About";
-import WhyChooseUs from "../components/HomeOne/WhyChooseUs";
-import Services from "../components/HomeOne/Services";
 import MakeYourBusiness from "../components/Common/MakeYourBusiness";
-import WhatWeOffer from "../components/HomeOne/WhatWeOffer";
-import Testimonials from "../components/Common/Testimonials";
 import News from "../components/Common/News";
+import Testimonials from "../components/Common/Testimonials";
+import About from "../components/HomeOne/About";
+import Features from "../components/HomeOne/Features";
+import MainBanner from "../components/HomeOne/MainBanner";
+import Services from "../components/HomeOne/Services";
+import WhatWeOffer from "../components/HomeOne/WhatWeOffer";
+import WhyChooseUs from "../components/HomeOne/WhyChooseUs";
 import Footer from "../components/Layouts/Footer";
 
 export default function Index() {
   return (
     <>
-      <Navbar />
-
       <MainBanner />
 
       <Features />

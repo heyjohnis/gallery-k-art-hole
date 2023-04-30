@@ -1,7 +1,7 @@
-import React from "react";
 import Link from "next/link";
+import React from "react";
 
-const MyPageSidebar = () => {
+const MyPageSidebar = ({ user }) => {
   return (
     <>
       <div className="widget-area" id="secondary">
@@ -15,17 +15,13 @@ const MyPageSidebar = () => {
               </div>
 
               <div className="info">
-
-                <h4 className="title usmall">
-                박선주
-                </h4>
-                <span>sunjoo1111</span>
+                <h4 className="title usmall">{user.user_name}</h4>
+                <span>{user.login_id}</span>
               </div>
             </article>
             <Link className="default-btn" href="#">
               나의 계약내역
             </Link>
-            
           </div>
         </div>
 
@@ -35,34 +31,23 @@ const MyPageSidebar = () => {
           <div className="post-wrap">
             <ul>
               <li>
-                <Link href="#">
-                  잔여혜택 및 포인트
-                </Link>
+                <Link href="#">잔여혜택 및 포인트</Link>
               </li>
               <li>
-                <Link href="#">
-                  예약 조회
-                </Link>
+                <Link href="#">예약 조회</Link>
               </li>
               <li>
-                <Link href="#">
-                  포인트 사용 내역
-                </Link>
+                <Link href="#">포인트 사용 내역</Link>
               </li>
               <li>
-                <Link href="#">
-                  주문/배송조회
-                </Link>
+                <Link href="#">주문/배송조회</Link>
               </li>
               <li>
-                <Link href="#">
-                  회원정보 수정
-                </Link>
+                <Link href="#">회원정보 수정</Link>
               </li>
             </ul>
           </div>
         </div>
-
       </div>
     </>
   );
