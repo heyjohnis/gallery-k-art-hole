@@ -1,28 +1,31 @@
 import React from "react";
 import Link from "next/link";
+import styles from "./Mypage.module.scss"; 
 
 
 const MyLevel = () => {
   return (
     <>
-
-      <div className="widget widget-posts-thumb">
-        <div className="post-wrap">
-          <article className="item">
-            <div className="thumb">
-              <span className="fullimage black">BLACK</span>
+      <div className={`${styles.widget} ${styles.black}`}>
+        <article className="row">
+          <div className={`col-3 col-md-12 ${styles.level}`}>
+            <div className={`${styles.thumb} ${styles.black}`}>
+              <span className="black">BLACK</span>
             </div>
-
-            <div className="info">
-
-              <h4 className="title usmall">
-                박선주 <span>(sunjoo1111)</span>
-              </h4>
-              <p>최대 월 7회 / 연 83회</p>
+          </div> 
+          <div className='col-9 col-md-12'>
+            <div className={styles.info}>
+              <div className={styles.txt}>
+                <h4>박선주</h4>
+                <span>sunjoo1111</span>
+              </div>
+              <div className={styles.txt}>
+                <h4>혜택</h4>
+                <span>s최대 월 7회 / 연 83회</span>
+              </div>
             </div>
-          </article>
-          
-        </div>
+          </div>
+        </article>     
       </div>
 
     </>

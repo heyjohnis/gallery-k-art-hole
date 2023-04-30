@@ -1,0 +1,104 @@
+$body-font-family: "Pretendard";
+$heading-font-family: "Hahmlet";
+
+$main-color: #4E7D22;
+$sub-color: #0E5039;
+$body-color: #4d4d4d;
+$heading-color: #212121;
+$white-color: #ffffff;
+$black-color: #000000;
+$gray-color: #666666;
+$light-color: #999999;
+$box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+
+/*사용자 정보 위젯*/
+.widget {
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: $box-shadow;
+  color: $white-color;
+  &.black{
+    background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(25, 25, 25) 70%);
+  }
+  .level {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  .thumb {
+    width: 100px;
+    height: 100px;
+    border: 3px solid $white-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.black{
+      background: #222;
+    }
+  }
+  .info {
+    color: #222;
+    text-align: center;
+    .txt {
+      margin-top: 10px;
+      h4{
+        font-family: $body-font-family;
+        margin:0;
+        font-size:20px;
+        font-weight: 600;
+      }
+      span {
+        font-size: 14px;
+        color: $gray-color;
+      }
+    }
+  }
+}
+
+
+/*잔여혜액 및 포인트*/
+.point {
+  margin:0;
+  background: $white-color;
+  box-shadow: $box-shadow;
+  padding: 30px 20px;
+  border-radius: 16px;
+  .item_txt {
+    text-align: center;
+    &.border {
+      border-right: 1px solid #ddd;
+    }
+    p{
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+    h3{
+      font-weight: 600;
+    }
+    .smaller {
+      font-size: 14px;
+      color: $light-color;
+    }
+  }
+}
+
+.user_point {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px;
+  color: $white-color;
+  border-radius: 16px;
+  &.black {
+    background: #222;
+  }
+  p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .point_name {
+    font-weight: 700;
+  }
+}
