@@ -5,7 +5,7 @@ import styles from "./Mypage.module.scss";
 const MyPageInfo = () => {
   return (
     <>
-      <section className="news-details-area">
+      <section>
         <div className="container">
 
           <div className={`row ${styles.point}`}>

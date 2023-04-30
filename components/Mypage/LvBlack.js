@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Table from 'react-bootstrap/Table';
+import styles from "./Mypage.module.scss";
 
 const LvBlack = ({ user }) => {
   return (
     <>
-      <section className="news-details-area">
-        <div className="container">
+      <section>
+        <div className={`container ${styles.benefit_info}`}>
+          <h3>블랙회원 혜택</h3>
           <Table bordered className="table_membership mb-50">
             <thead>
               <tr>
