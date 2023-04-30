@@ -72,7 +72,7 @@ export default function SignUp() {
                         <p>회원번호 <span className='sup'>*</span></p>
                       </div>
                       <div className="col-md-9 col-sm-9">       
-                      <label for="form1">법인명</label>   
+                      <label htmlFor="form1">법인명</label>   
                         <input
                           className="form-control"
                           type="text"
@@ -87,7 +87,7 @@ export default function SignUp() {
                       <div className="col-md-3 col-sm-3">
                       </div>
                       <div className="col-md-9 col-sm-9">       
-                      <label for="form1">법인번호</label> 
+                      <label htmlFor="form1">법인번호</label> 
                         <div className='d-flex'> 
                           <input
                             className="form-control"
