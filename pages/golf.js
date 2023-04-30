@@ -14,7 +14,7 @@ export default function Membership() {
       <PageBanner
         pageTitle="골프서비스"
         homePageUrl="/"
-        homePageText="Main"
+        homePageText="Home"
         activePageText="골프서비스"
       />
 

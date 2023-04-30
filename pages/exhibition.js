@@ -12,7 +12,7 @@ export default function NewsGrid() {
       <PageBanner
         pageTitle="행사"
         homePageUrl="/"
-        homePageText="Main"
+        homePageText="Home"
         activePageText="행사"
       />
 

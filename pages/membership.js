@@ -13,7 +13,7 @@ export default function Membership() {
       <PageBanner
         pageTitle="멤버십 소개"
         homePageUrl="/"
-        homePageText="Main"
+        homePageText="Home"
         activePageText="멤버십 소개"
       />
 

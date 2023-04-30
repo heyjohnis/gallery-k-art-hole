@@ -14,7 +14,7 @@ export default function Membership() {
       <PageBanner
         pageTitle="미술품 소개"
         homePageUrl="/"
-        homePageText="Main"
+        homePageText="Home"
         activePageText="미술품 소개"
       />
 

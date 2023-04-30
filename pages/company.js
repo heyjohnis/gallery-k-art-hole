@@ -13,7 +13,7 @@ export default function Company() {
       <PageBanner
         pageTitle="그린갤러리"
         homePageUrl="/"
-        homePageText="Main"
+        homePageText="Home"
         activePageText="그린갤러리"
       />
       
