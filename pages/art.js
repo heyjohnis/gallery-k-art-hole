@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
+import IntroArt from '../components/Art/IntroArt';
+import AboutArtist from '../components/Art/AboutArtist';
+import ArtCard from '../components/Art/ArtCard';
 import Footer from "../components/Layouts/Footer";
-import IntroArt from '../components/Benefits/IntroArt';
-import AboutArtist from '../components/Benefits/AboutArtist';
-import ArtCard from '../components/Benefits/ArtCard';
 
 export default function Membership() {
   return (

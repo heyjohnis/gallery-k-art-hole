@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
-import Footer from "../components/Layouts/Footer";
 import MembershipStyle from '../components/Membership/MembershipStyle';
-import MembershipBenefits from '../components/Membership/MembershipBenefits';
+import Footer from "../components/Layouts/Footer";
+
 
 export default function Membership() {
   return (
@@ -19,9 +19,7 @@ export default function Membership() {
 
       <MembershipStyle/>
 
-      {/* <MembershipBenefits/> */}
-    
-
+  
       <Footer />
     </>
   );

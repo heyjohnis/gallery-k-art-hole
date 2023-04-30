@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import CommentsArea from "./CommentsArea";
 import MyPageSidebar from './MyPageSidebar';
 
 const MyPageMain = () => {

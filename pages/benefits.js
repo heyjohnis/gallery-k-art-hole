@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
+import IntroBenefits from '../components/Membership/IntroBenefits';
+import BenefitStyle from '../components/Membership/BenefitStyle';
 import Footer from "../components/Layouts/Footer";
-import IntroBenefits from '../components/Benefits/IntroBenefits';
-import BenefitStyle from '../components/Benefits/BenefitStyle';
 
 export default function Membership() {
   return (
