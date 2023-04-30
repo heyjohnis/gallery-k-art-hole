@@ -1,6 +1,7 @@
 import Link from "next/link";
 import MyPageSidebar from './MyPageSidebar';
 import MyPageInfo from './MyPageInfo';
+import LvBlack from './LvBlack';
 
 const MyPageMain = ({ user }) => {
   return (
@@ -13,6 +14,7 @@ const MyPageMain = ({ user }) => {
             </div>
             <div className="col-lg-9 col-md-12">
               <MyPageInfo/>
+              <LvBlack/>
             </div>
           </div>
         </div>
