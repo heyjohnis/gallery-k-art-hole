@@ -88,10 +88,10 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   justify-content: space-between;
   margin-top: 30px;
   padding: 20px;
-  color: $white-color;
+  color: $body-color;
   border-radius: 16px;
   &.black {
-    background: #222;
+    border: 1px solid #222;
   }
   p {
     margin: 0;

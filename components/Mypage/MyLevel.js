@@ -15,8 +15,8 @@ const MyLevel = ({ user }) => {
           <div className='col-9 col-md-12'>
             <div className={styles.info}>
               <div className={styles.txt}>
-                <h4>{user.user_name}</h4>
-                <span>{user.login_id}</span>
+                <h4>박선주</h4>
+                <span>asdf</span>
               </div>
               <div className={styles.txt}>
                 <h4>혜택</h4>
