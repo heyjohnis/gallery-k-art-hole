@@ -255,9 +255,36 @@ export default function SignUp() {
                     </div>
 
                     <div className="form-group signup">
+                      <div className="col-md-3 col-sm-3"></div>
+                      <div className="col-md-9 col-sm-9">
+                        <label htmlFor="form1">법인번호</label>
+                        <div className="d-flex">
+                          <input
+                            className="form-control"
+                            type="text"
+                            name="name"
+                            id="form1"
+                            placeholder="법인명"
+                          />
+                          <input
+                            className="form-control"
+                            type="text"
+                            name="name"
+                            id="form1"
+                            placeholder="법인명"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="form-heading text-center">
+                      <h3 className="form-title">기본정보</h3>
+                    </div>
+
+                    <div className="form-group signup">
                       <div className="col-md-3 col-sm-3">
                         <p>
-                          비밀번호 <span className="sup">*</span>
+                          아이디 <span className="sup">*</span>
                         </p>
                       </div>
                       <div className="col-md-9 col-sm-9 signup">

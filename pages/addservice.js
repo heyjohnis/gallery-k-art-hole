@@ -9,7 +9,7 @@ export default function NewsGrid() {
       <PageBanner
         pageTitle="부가서비스 소개"
         homePageUrl="/"
-        homePageText="Main"
+        homePageText="Home"
         activePageText="부가서비스 소개"
       />
 

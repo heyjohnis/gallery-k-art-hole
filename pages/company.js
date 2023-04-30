@@ -1,8 +1,9 @@
 import React from "react";
 import AboutCompany from "../components/Common/AboutCompany";
 import PageBanner from "../components/Common/PageBanner";
+import AboutCompany from '../components/Company/AboutCompany';
+import MembershipStyle from '../components/Company/MembershipStyle';
 import Footer from "../components/Layouts/Footer";
-import MembershipStyle from "../components/Membership/MembershipStyle";
 
 export default function Company() {
   return (
@@ -10,11 +11,11 @@ export default function Company() {
       <PageBanner
         pageTitle="그린갤러리"
         homePageUrl="/"
-        homePageText="Main"
+        homePageText="Home"
         activePageText="그린갤러리"
       />
-      {/* <AboutGreenGolf/> */}
-      <AboutCompany />
+      
+      <AboutCompany/>
 
       <MembershipStyle />
 

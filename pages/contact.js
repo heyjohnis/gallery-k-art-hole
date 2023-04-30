@@ -10,7 +10,7 @@ export default function Contact() {
       <PageBanner
         pageTitle="상담/문의"
         homePageUrl="/"
-        homePageText="Main"
+        homePageText="Home"
         activePageText="상담/문의"
       />
 

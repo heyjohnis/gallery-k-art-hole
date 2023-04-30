@@ -9,7 +9,7 @@ export default function Faq() {
       <PageBanner
         pageTitle="FAQ"
         homePageUrl="/"
-        homePageText="Main"
+        homePageText="Home"
         activePageText="FAQ"
       />
 

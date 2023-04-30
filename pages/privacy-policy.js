@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
       <PageBanner
         pageTitle="개인정보 처리방침"
         homePageUrl="/"
-        homePageText="Main"
+        homePageText="Home"
         activePageText="개인정보 처리방침"
       />
 

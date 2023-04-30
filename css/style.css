@@ -848,7 +848,7 @@ jumpx Nav Area Style
   list-style: none;
   margin-bottom: 5px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 .navbar-area nav .top-menu li .menu-items {
@@ -3420,9 +3420,9 @@ jumpx SliderArea Style
 }
 
 .jumpx-slider-item {
-  background-position: center center;
+  background-position: 50%;
   background-repeat: no-repeat;
-  background-size: 100% cover;
+  background-size: cover;
   height: 100vh;
   position: relative;
   z-index: 1;
@@ -4580,24 +4580,27 @@ Blog Details Area Style
 .news-details-area .widget-area .widget-posts-thumb .item .thumb .fullimage {
   width: 80px;
   height: 80px;
-  display: inline-block;
-  background-size: cover !important;
-  background-repeat: no-repeat;
-  background-position: center center !important;
+  border-radius: 50%;
   position: relative;
-  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
 }
-.news-details-area .widget-area .widget-posts-thumb .item .thumb .fullimage.bg1 {
-  background-image: url(/images/blog-details/popular-posts-1.png);
+.news-details-area .widget-area .widget-posts-thumb .item .thumb .fullimage.black {
+  background: #333;
 }
-.news-details-area .widget-area .widget-posts-thumb .item .thumb .fullimage.bg2 {
-  background-image: url(/images/blog-details/popular-posts-2.png);
+.news-details-area .widget-area .widget-posts-thumb .item .thumb .fullimage.platinum {
+  background: #333;
 }
-.news-details-area .widget-area .widget-posts-thumb .item .thumb .fullimage.bg3 {
-  background-image: url(/images/blog-details/popular-posts-3.png);
+.news-details-area .widget-area .widget-posts-thumb .item .thumb .fullimage.green {
+  background: #999;
 }
-.news-details-area .widget-area .widget-posts-thumb .item .thumb .fullimage.bg4 {
-  background-image: url(/images/blog-details/popular-posts-4.png);
+.news-details-area .widget-area .widget-posts-thumb .item .thumb .fullimage.red {
+  background: #333;
+}
+.news-details-area .widget-area .widget-posts-thumb .item .thumb .fullimage.purple {
+  background: #333;
 }
 .news-details-area .widget-area .widget-posts-thumb .item .info {
   overflow: hidden;
@@ -4666,8 +4669,8 @@ Blog Details Area Style
   padding-bottom: 10px;
   margin-bottom: 10px;
   color: #666666;
-  padding-left: 17px;
-  font-size: 15px;
+  padding-left: 10px;
+  font-size: 18px;
   font-weight: 600;
   border-bottom: 1px solid #efefef;
 }
@@ -4675,21 +4678,11 @@ Blog Details Area Style
   margin-bottom: 0;
   border-bottom: none;
 }
-.news-details-area .widget-area .widget_categories ul li::before {
-  background: #4E7D22;
-  position: absolute;
-  height: 10px;
-  width: 10px;
-  content: "";
-  left: 0;
-  top: 8px;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-}
 .news-details-area .widget-area .widget_categories ul li a {
   display: block;
   color: #666666;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 18px;
 }
 .news-details-area .widget-area .widget_categories ul li a span {
   float: right;

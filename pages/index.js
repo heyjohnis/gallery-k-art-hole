@@ -1,10 +1,11 @@
 import React from "react";
-import BenefitSlider from "../components/Common/BenefitSlider";
-import MainMov from "../components/Common/MainMov";
-import News from "../components/Common/News";
-import About from "../components/HomeFive/About";
-import MainBanner from "../components/HomeFive/MainBanner";
-import Products from "../components/HomeFive/Products";
+import BenefitSlider from "../components/Home/BenefitSlider";
+import MainMov from "../components/Home/MainMov";
+import News from "../components/Home/News";
+
+import About from "../components/Home/About";
+import MainBanner from "../components/Home/MainBanner";
+import Products from "../components/Home/Products";
 import Footer from "../components/Layouts/Footer";
 
 export default function Index5({ children, user }) {
