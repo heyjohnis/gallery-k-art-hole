@@ -1,14 +1,11 @@
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
-import TeamCard from "../components/Team/TeamCard";
 import Footer from "../components/Layouts/Footer";
+import TeamCard from "../components/Team/TeamCard";
 
 export default function Team() {
   return (
     <>
-      <Navbar />
-
       <PageBanner
         pageTitle="Team"
         homePageUrl="/"

@@ -1,27 +1,25 @@
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
-import MainBanner from "../components/Home/MainBanner";
-import About from "../components/Home/About";
+import BenefitSlider from "../components/Home/BenefitSlider";
+import MainMov from "../components/Home/MainMov";
 import News from "../components/Home/News";
-import BenefitSlider from '../components/Home/BenefitSlider';
-import MainMov from '../components/Home/MainMov';
-import Products from '../components/Home/Products';
+
+import About from "../components/Home/About";
+import MainBanner from "../components/Home/MainBanner";
+import Products from "../components/Home/Products";
 import Footer from "../components/Layouts/Footer";
 
-export default function Index5() {
+export default function Index5({ children, user }) {
   return (
     <>
-      <Navbar />
-
       <MainBanner />
 
       <About />
 
-      <BenefitSlider/>
+      <BenefitSlider />
 
-      <Products/>
-      
-      <MainMov/>
+      <Products />
+
+      <MainMov />
 
       <News />
 

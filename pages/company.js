@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
+import AboutCompany from "../components/Common/AboutCompany";
 import PageBanner from "../components/Common/PageBanner";
 import AboutCompany from '../components/Company/AboutCompany';
 import MembershipStyle from '../components/Company/MembershipStyle';
@@ -8,8 +8,6 @@ import Footer from "../components/Layouts/Footer";
 export default function Company() {
   return (
     <>
-      <Navbar />
-
       <PageBanner
         pageTitle="그린갤러리"
         homePageUrl="/"
@@ -19,7 +17,7 @@ export default function Company() {
       
       <AboutCompany/>
 
-      <MembershipStyle/>
+      <MembershipStyle />
 
       <Footer />
     </>

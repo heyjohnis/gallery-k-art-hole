@@ -1,14 +1,11 @@
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
-import ServiceDetailsContent from "../components/ServiceDetails/ServiceDetailsContent";
 import Footer from "../components/Layouts/Footer";
+import ServiceDetailsContent from "../components/ServiceDetails/ServiceDetailsContent";
 
 export default function ServiceDetails() {
   return (
     <>
-      <Navbar />
-
       <PageBanner
         pageTitle="Service Details"
         homePageUrl="/"

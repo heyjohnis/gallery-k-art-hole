@@ -1,14 +1,11 @@
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
-import NewsGridCard from "../components/News/NewsGridCard";
 import Footer from "../components/Layouts/Footer";
+import NewsGridCard from "../components/News/NewsGridCard";
 
 export default function NewsGrid() {
   return (
     <>
-      <Navbar />
-
       <PageBanner
         pageTitle="News Grid"
         homePageUrl="/"

@@ -1,14 +1,53 @@
+import axios from "axios";
+import Link from "next/link";
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
-import Link from "next/link";
+import { handleLogin } from "../utils/auth";
+import baseUrl from "../utils/baseUrl";
+
+const INITIAL_USER = {
+  login_id: "",
+  password: "",
+};
 
 export default function Login() {
+  const [user, setUser] = React.useState(INITIAL_USER);
+  const [disabled, setDisabled] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState("");
+
+  React.useEffect(() => {
+    const isUser = Object.values(user).every((el) => Boolean(el));
+    isUser ? setDisabled(false) : setDisabled(true);
+  }, [user]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      setError("");
+      const url = `${baseUrl}/login`;
+      const payload = { ...user };
+      const response = await axios.post(url, payload);
+      console.log(response);
+
+      handleLogin(response.data.token);
+    } catch (error) {
+      alert(error.response.data.message);
+      // catchErrors(error, setError);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
-      <Navbar />
-
       <PageBanner
         pageTitle="로그인"
         homePageUrl="/"
@@ -25,15 +64,16 @@ export default function Login() {
                   <h3 className="form-title">로그인</h3>
                 </div>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="row">
-
                     <div className="col-12">
                       <div className="form-group">
                         <input
                           className="form-control"
                           type="text"
-                          name="아이디"
+                          name="login_id"
+                          value={user.login_id}
+                          onChange={handleChange}
                           placeholder="아이디"
                         />
                       </div>
@@ -45,13 +85,14 @@ export default function Login() {
                           className="form-control"
                           type="password"
                           name="password"
+                          value={user.password}
+                          onChange={handleChange}
                           placeholder="비밀번호"
                         />
                       </div>
                     </div>
 
-                    <div className="col-lg-6 col-sm-6 form-condition">
-                    </div>
+                    <div className="col-lg-6 col-sm-6 form-condition"></div>
 
                     <div className="col-lg-6 col-sm-6 mb-30">
                       <Link href="#" className="forget">
@@ -64,17 +105,17 @@ export default function Login() {
                         로그인
                       </button>
                     </div>
-                    <hr className='mt-30'/>
+                    <hr className="mt-30" />
                     <div className="col-12">
-                      <p className="account-desc">
-                        그린갤러리 멤버십 소유자신가요?
-                      </p>
-                      <p className="account-notice"><span>그린갤러리 멤버십 소유자만</span> 가입과 로그인이 가능합니다. <br/>
-                      그린갤러리 가입을 원하시면 1588-1778 로 문의주세요.
+                      <p className="account-desc">그린갤러리 멤버십 소유자신가요?</p>
+                      <p className="account-notice">
+                        <span>그린갤러리 멤버십 소유자만</span> 가입과 로그인이
+                        가능합니다. <br />
+                        그린갤러리 가입을 원하시면 1588-1778 로 문의주세요.
                       </p>
                     </div>
 
-                    <div className="col-12 mt-30">                      
+                    <div className="col-12 mt-30">
                       <Link href="sign-up-1" className="forget">
                         <button className="default-btn btn-two btn-border" type="submit">
                           멤버십 가입하기

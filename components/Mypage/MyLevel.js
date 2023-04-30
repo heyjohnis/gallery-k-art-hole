@@ -2,8 +2,7 @@ import React from "react";
 import Link from "next/link";
 import styles from "./Mypage.module.scss"; 
 
-
-const MyLevel = () => {
+const MyLevel = ({ user }) => {
   return (
     <>
       <div className={`${styles.widget} ${styles.black}`}>
@@ -16,8 +15,8 @@ const MyLevel = () => {
           <div className='col-9 col-md-12'>
             <div className={styles.info}>
               <div className={styles.txt}>
-                <h4>박선주</h4>
-                <span>sunjoo1111</span>
+                <h4>{user.user_name}</h4>
+                <span>{user.login_id}</span>
               </div>
               <div className={styles.txt}>
                 <h4>혜택</h4>
@@ -27,7 +26,6 @@ const MyLevel = () => {
           </div>
         </article>     
       </div>
-
     </>
   );
 };
