@@ -2,7 +2,7 @@ import Link from "next/link";
 import Table from 'react-bootstrap/Table';
 import styles from "./Mypage.module.scss";
 
-const LvPlatinum = () =>{
+const LvPlatinum = ({ user }) => {
   return (
     <>
       <section>
