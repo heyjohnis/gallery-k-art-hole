@@ -6,6 +6,12 @@ import Reservation from "./Content/Reservation";
 import Point from "./Content/Point";
 import Order from "./Content/Order";
 import Update from "./Content/Update";
+import LvBlack from './LvBlack';
+import LvPlatinum from './LvPlatinum';
+import LvGreen from './LvGreen';
+import LvBlue from './LvBlue';
+import LvRed from './LvRed';
+import LvPurple from './LvPurple';
 
 
 const MyPageMain = ({ user, menu }) => {
