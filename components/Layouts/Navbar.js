@@ -40,51 +40,6 @@ const Navbar = ({ user }) => {
       <div id="navbar" className="navbar-area fixed-top">
         <nav className="navbar navbar-expand-xl navbar-light">
           <div className="container">
-            <ul className="top-menu">
-              {user ? (
-                <>
-                  <li>
-                    <Link href="/mypage/membership" className="menu-items">
-                      마이페이지
-                    </Link>
-                  </li>
-
-                  <li>
-                    <span></span>
-                  </li>
-                  <li>
-                    <Link href="#" className="menu-items">
-                      <div
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleLogout();
-                        }}
-                      >
-                        로그아웃
-                      </div>
-                    </Link>
-                  </li>
-                </>
-              ) : (
-                <>
-                  <li>
-                    <Link href="/sign-up-1" className="menu-items">
-                      회원가입
-                    </Link>
-                  </li>
-                  <li>
-                    <span></span>
-                  </li>
-                  <li>
-                    <Link href="/login" className="menu-items">
-                      로그인
-                    </Link>
-                  </li>
-                </>
-              )}
-            </ul>
-          </div>
-          <div className="container">
             <Link href="/" className="navbar-brand light_logo">
               <img src="/images/white-logo.svg" width={180} height={36} alt="logo" />
             </Link>
@@ -318,6 +273,49 @@ const Navbar = ({ user }) => {
               </ul>
 
               <div className="others-options">
+                <ul className="top-menu">
+                  {user ? (
+                    <>
+                      <li>
+                        <Link href="/mypage/membership" className="menu-items">
+                          마이페이지
+                        </Link>
+                      </li>
+
+                      <li>
+                        <span></span>
+                      </li>
+                      <li>
+                        <Link href="#" className="menu-items">
+                          <div
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleLogout();
+                            }}
+                          >
+                            로그아웃
+                          </div>
+                        </Link>
+                      </li>
+                    </>
+                  ) : (
+                    <>
+                      <li>
+                        <Link href="/sign-up-1" className="menu-items">
+                          회원가입
+                        </Link>
+                      </li>
+                      <li>
+                        <span></span>
+                      </li>
+                      <li>
+                        <Link href="/login" className="menu-items">
+                          로그인
+                        </Link>
+                      </li>
+                    </>
+                  )}
+                </ul>
                 <Link
                   href="#"
                   onClick={() => alert("준비중입니다")}
