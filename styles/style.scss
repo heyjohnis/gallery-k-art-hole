@@ -2709,6 +2709,10 @@ Footer Top Area Style
     font-weight: 700;
     font-size: 24px;
   }
+  .time{
+    font-size: 16px;
+    font-weight: 300;
+  }
 }
 
 /*
@@ -6010,6 +6014,12 @@ table, th, td {
       }
     }
   } 
+}
+.no-post {
+  height: 30vh;
+  justify-content: center;
+  display: flex;
+  font-size: 18px;
 }
 
 

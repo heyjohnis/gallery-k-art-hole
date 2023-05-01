@@ -50,9 +50,8 @@ const Footer = () => {
                 data-aos-delay="500"
               >
                 <span>상담문의</span>
-                <p>
-                1588-1778
-                </p>
+                <p>1588-1778</p>
+                <span className="time">상담시간 10:00 ~ 19:00</span>
               </div>
             </div>
           </div>
