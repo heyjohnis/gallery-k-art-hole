@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/*사용자 정보 위젯*/
+.widget {
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+  color: #ffffff;
+}
+.widget.black {
+  background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(25, 25, 25) 70%);
+}
+.widget .level {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.widget .thumb {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.widget .thumb.black {
+  background: #222;
+}
+.widget .info {
+  color: #222;
+  text-align: center;
+}
+.widget .info .txt {
+  margin-top: 10px;
+}
+.widget .info .txt h4 {
+  font-family: "Pretendard";
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.widget .info .txt span {
+  font-size: 14px;
+  color: #666666;
+}
+
+/*잔여혜액 및 포인트*/
+.point {
+  margin: 0;
+  background: #ffffff;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+  padding: 30px 20px;
+  border-radius: 16px;
+}
+.point .item_txt {
+  text-align: center;
+}
+.point .item_txt.border {
+  border-right: 1px solid #ddd;
+}
+.point .item_txt p {
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+.point .item_txt h3 {
+  font-weight: 600;
+}
+.point .item_txt .smaller {
+  font-size: 14px;
+  color: #999999;
+}
+
+.user_point {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px;
+  color: #ffffff;
+  border-radius: 16px;
+}
+.user_point.black {
+  background: #222;
+}
+.user_point p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+.user_point .point_name {
+  font-weight: 700;
+}/*# sourceMappingURL=mypage.module.css.map */
