@@ -1,9 +1,12 @@
 import Link from "next/link";
 import MyPageSidebar from './MyPageSidebar';
 import MyPageInfo from './MyPageInfo';
-import LvBlack from './LvBlack';
-import LvPlatinum from "./LvPlatinum";
-import LvGreen from "./LvGreen";
+import Membership from "./Content/Membership";
+import Reservation from "./Content/Reservation";
+import Point from "./Content/Point";
+import Order from "./Content/Order";
+import Update from "./Content/Update";
+
 
 const MyPageMain = ({ user, menu }) => {
   return (
@@ -16,9 +19,11 @@ const MyPageMain = ({ user, menu }) => {
             </div>
             <div className="col-lg-9 col-md-12">
               <MyPageInfo user={user} />
-              { user.membership === 'black' && <LvBlack/> }
-              { user.membership === 'platinum' && <LvPlatinum/> }
-              { user.membership === 'green' && <LvGreen/> }
+              {menu === 'membership' && <Membership user={user} /> }
+              {menu === 'reservation' && <Reservation user={user} /> }
+              {menu === 'point' && <Point user={user} /> }
+              {menu === 'order' && <Order user={user} /> }
+              {menu === 'update' && <Update user={user} /> }
             </div>
           </div>
         </div>
