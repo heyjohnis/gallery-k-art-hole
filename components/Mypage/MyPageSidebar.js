@@ -1,12 +1,12 @@
 import MyLevel from "./MyLevel";
 import MyPageMenu from "./MyPageMenu";
 
-const MyPageSidebar = ({ user }) => {
+const MyPageSidebar = ({ user, menu }) => {
   return (
     <>
       <div className="widget-area" id="secondary">
         <MyLevel user={user} />
-        <MyPageMenu />
+        <MyPageMenu menu={menu} />
       </div>
     </>
   );
