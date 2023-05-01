@@ -12,29 +12,52 @@ const MyPageMenu = ({ menu }) => {
         <h3 className="widget-title">마이페이지 메뉴</h3>
 
         <div className="post-wrap">
-          <ul className={`${menu}`}>
+          <ul className={`sidemenu ${menu}`}>
             <li>
-              <Link href="/mypage/membership">
+              <Link 
+                href="/mypage/membership" 
+                className="membership"
+              >
                 잔여혜택 및 포인트
               </Link>
             </li>
             <li>
-              <Link href="/mypage/reservation">
+              <Link 
+                href="/mypage/contract"
+                className="contract"
+              >
+                나의 계약
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/mypage/reservation"
+                className="reservation"
+              >
                 예약 조회
               </Link>
             </li>
             <li>
-              <Link href="/mypage/point">
+              <Link 
+                href="/mypage/point"
+                className="point"
+              >
                 포인트 사용 내역
               </Link>
             </li>
             <li>
-              <Link href="/mypage/order">
+              <Link 
+                href="/mypage/order"
+                className="order"
+              >
                 주문/배송조회
               </Link>
             </li>
             <li>
-              <Link href="/mypage/update">
+              <Link 
+                href="/mypage/update"
+                className="update"
+              >
                 회원정보 수정
               </Link>
             </li>

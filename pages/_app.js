@@ -11,8 +11,8 @@ import "../styles/flaticon.css";
 
 // Global styles
 import "../public/fonts/font.css";
-import "../styles/responsive.scss";
 import "../styles/style.scss";
+import "../styles/responsive.scss";
 
 import Head from "next/head";
 import GoTop from "../components/Shared/GoTop";

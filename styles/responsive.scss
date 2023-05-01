@@ -1275,10 +1275,6 @@
                 }
             }
         }
-
-        .others-options {
-            display: none;
-        }
     }
     .ptb-100 {
         padding-top: 60px;
@@ -2351,6 +2347,13 @@
             .default-btn {
                 padding: 10px 20px;
                 font-size: 14px;
+            }
+
+            .top-menu {
+                top: 7px;
+                .menu-items {
+                    font-size: 16px;
+                }
             }
         }
 

@@ -869,18 +869,21 @@ jumpx Nav Area Style
 ======================================================*/
 .navbar-area {
   nav {
-    padding-top: 20px;
+    padding-top: 38px;
     padding-bottom: 20px;
     transition: $transition;
     flex-direction: column;
     
     .top-menu {
       width: 100%;
+      position: absolute;
+      right: 0;
+      top: -35px;
       list-style: none;
-      margin-bottom: 5px;
       display: flex;
       justify-content:flex-end;
       align-items: center;
+
       li {
         .menu-items{
           font-size: 12px;
@@ -1229,7 +1232,7 @@ jumpx Nav Area Style
   &.is-sticky {
     nav {
       background-color: $white-color;
-      padding-top: 15px;
+      padding-top: 38px;
       padding-bottom: 15px;
       box-shadow: $box-shadow;
       .top-menu {
@@ -2705,6 +2708,10 @@ Footer Top Area Style
   p {
     font-weight: 700;
     font-size: 24px;
+  }
+  .time{
+    font-size: 16px;
+    font-weight: 300;
   }
 }
 
@@ -5944,4 +5951,75 @@ table, th, td {
     }
   }
 }
+
+/*Sidebar 메뉴*/
+.news-details-area {
+  .widget-area{
+    .widget_categories{
+      .sidemenu {
+        &.membership {
+          li{
+            a{
+              &.membership{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+        &.contract {
+          li{
+            a{
+              &.contract{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+        &.reservation {
+          li{
+            a{
+              &.reservation{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+        &.point {
+          li{
+            a{
+              &.point{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+        &.order {
+          li{
+            a{
+              &.order{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+        &.update {
+          li{
+            a{
+              &.update{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
+}
+.no-post {
+  height: 30vh;
+  justify-content: center;
+  display: flex;
+  font-size: 18px;
+}
+
 

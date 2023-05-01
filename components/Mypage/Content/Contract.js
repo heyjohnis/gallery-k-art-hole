@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "../Mypage.module.scss";
 
-const Reservation = ({ user }) => {
+const Contract = ({ user }) => {
     return (
         <div className="container">
             <div className={styles.content}>
@@ -11,4 +11,4 @@ const Reservation = ({ user }) => {
     );
 };
 
-export default Reservation;
+export default Contract;

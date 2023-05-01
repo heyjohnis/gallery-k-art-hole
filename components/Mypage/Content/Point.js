@@ -1,9 +1,12 @@
 import React from 'react';
+import styles from "../Mypage.module.scss";
 
 const Point = ({ user }) => {
     return (
-        <div>
-           포인트 
+        <div className="container">
+            <div className={styles.content}>
+                준비중입니다
+            </div>
         </div>
     );
 };
