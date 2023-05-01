@@ -1,11 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import BbsSigleCard from './BbsSingleCard';
+import BbsNoContent from './BbsNoContent';
 
 const BbsList = ({contents}) => {
   return (
     <>
-      <section className="news-area ptb-100">
+      { contents.length > 0 
+        ? 
+        <section className="news-area ptb-100">
         <div className="container">
           <div className="row">
             {
@@ -16,6 +19,12 @@ const BbsList = ({contents}) => {
           </div>
         </div>
       </section>
+      :
+      <BbsNoContent />
+
+      
+      }
+      
     </>
   );
 };

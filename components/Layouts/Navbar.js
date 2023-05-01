@@ -249,9 +249,8 @@ const Navbar = ({ user }) => {
 
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert("준비중입니다")}
-                        className={`nav-link ${currentPath == "/contact-2/" && "active"}`}
+                        href="/bbs/notice"
+                        className={`nav-link ${currentPath == "/bbs/notice" && "active"}`}
                       >
                         공지사항
                       </Link>
@@ -314,8 +313,7 @@ const Navbar = ({ user }) => {
                   )}
                 </ul>
                 <Link
-                  href="#"
-                  onClick={() => alert("준비중입니다")}
+                  href="/contact"
                   className="default-btn"
                 >
                   BOOK NOW

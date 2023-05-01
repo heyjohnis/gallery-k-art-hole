@@ -8,8 +8,8 @@ import Link from "next/link";
 
 const alertContent = () => {
   MySwal.fire({
-    title: "Congratulations!",
-    text: "Your message was successfully send and will back to you soon",
+    title: "성공",
+    text: "상담/문의가 접수되었습니다.",
     icon: "success",
     timer: 2000,
     timerProgressBar: true,
@@ -38,10 +38,12 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = `${baseUrl}/api/contact`;
+      const url = `https://node.galleryk.co.kr:8081/consult/homepage`;
       const { name, email, number, subject, text } = contact;
-      const payload = { name, email, number, subject, text };
-      const response = await axios.post(url, payload);
+      const content = `제목: ${subject} <br/> ${text}`;
+      const req = {cnst_type: 20 , logn_id: '', name, phone: number, dealer_code:'', cnst_cont: content};
+
+      const response = await axios.post(url, req);
       console.log(response);
       setContact(INITIAL_STATE);
       alertContent();
