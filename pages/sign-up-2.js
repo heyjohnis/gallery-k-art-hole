@@ -71,7 +71,6 @@ export default function SignUp() {
 
     try {
       setLoading(true);
-      setError("");
       const url = `${baseUrl}/signup`;
       const payload = {
         ...form,
@@ -83,7 +82,7 @@ export default function SignUp() {
       alert("회원가입이 완료되었습니다.");
       handleLogin(response.data.token);
     } catch (error) {
-      alert(error.response.data.message);
+      alert(error);
     } finally {
       setLoading(false);
     }
@@ -147,7 +146,7 @@ export default function SignUp() {
                       </div>
                       <div className="col-md-9 col-sm-9 signup">
                         <div className="radio">
-                          <label class="custom">
+                          <label className="custom">
                             <span>개인회원</span>
                             <input 
                               type="radio" 
@@ -159,7 +158,7 @@ export default function SignUp() {
                           </label>
                         </div>
                         <div className="radio ml-30">
-                          <label class="custom">
+                          <label className="custom">
                             <span>사업자회원</span>
                             <input 
                               type="radio" 
