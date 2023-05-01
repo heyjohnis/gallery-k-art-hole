@@ -2,12 +2,12 @@ import Link from "next/link";
 import Table from 'react-bootstrap/Table';
 import styles from "./Mypage.module.scss";
 
-const LvBlack = ({ user }) => {
+const LvPlatinum = () =>{
   return (
     <>
       <section>
         <div className={`container ${styles.benefit_info}`}>
-          <h3>블랙 혜택</h3>
+          <h3>블랙회원 혜택</h3>
           <Table bordered className={styles.table_membership}>
             <thead>
               <tr>
@@ -60,4 +60,4 @@ const LvBlack = ({ user }) => {
   );
 };
 
-export default LvBlack;
+export default LvPlatinum;
