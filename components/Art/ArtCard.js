@@ -90,8 +90,8 @@ const ArtCard = () => {
 
           <div className="col-lg-12">
             <div className="business-content text-center mt-100">
-              <Link href="https://www.artnomics.co.kr/" target="_blank" className="default-btn">
-              작품보러가기
+              <Link href="https://www.artnomics.co.kr/artworks/artnomics_list.php?is_KK=1" target="_blank" className="default-btn">
+                작품보러가기
               </Link>     
             </div>
           </div>

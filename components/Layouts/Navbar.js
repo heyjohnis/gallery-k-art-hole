@@ -202,9 +202,8 @@ const Navbar = ({ user }) => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert("준비중입니다")}
-                        className={`nav-link ${currentPath == "/services/" && "active"}`}
+                        href="https://www.artnomics.co.kr/artworks/artnomics_list.php?is_KK=1" 
+                        target="_blank"
                       >
                         미술품 보기
                       </Link>
