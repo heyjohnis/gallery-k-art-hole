@@ -5,7 +5,6 @@ import axios from "axios";
 import cookie from "js-cookie";
 import baseUrl from "../../utils/baseUrl";
 import PageBanner from "../../components/Common/PageBanner";
-import Footer from "../../components/Layouts/Footer";
 import MyPageMain from "../../components/Mypage/MyPageMain";
 
 const MyPage = () => {
@@ -47,8 +46,6 @@ const MyPage = () => {
       />
 
       <MyPageMain user={user} menu={menu} />
-
-      <Footer />
     </>
   );
 };
