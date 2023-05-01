@@ -1,20 +1,19 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
+import Associate from '../components/Ggmall/Associate';
 import Footer from "../components/Layouts/Footer";
-import NewsGridCard from "../components/News/NewsGridCard";
 
 export default function NewsGrid() {
   return (
     <>
       <PageBanner
-        pageTitle="News Grid"
+        pageTitle="제휴서비스 상세"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="News Grid"
+        activePageText="제휴서비스 상세"
       />
 
-      <NewsGridCard />
-
+      <Associate/>
       <Footer />
     </>
   );
