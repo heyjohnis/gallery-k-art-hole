@@ -1,7 +1,6 @@
 import React from "react";
 import NewsSidebar from "./NewsSidebar";
 import Link from "next/link";
-import CommentsArea from "./CommentsArea";
 
 const NewsDetailsContent = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Layouts/Navbar";
 import PageBanner from "../components/Common/PageBanner";
-import MembershipStyle from '../components/Membership/MembershipStyle';
+import MembershipStyle from '../components/Company/MembershipStyle';
 import Footer from "../components/Layouts/Footer";
 
 

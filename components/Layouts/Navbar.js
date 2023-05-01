@@ -279,8 +279,7 @@ const Navbar = ({ user }) => {
 
                 <li className="nav-item">
                   <Link
-                    href="#"
-                    onClick={() => alert("준비중입니다")}
+                    href="/contact"
                     className={`nav-link ${currentPath == "/contact/" && "active"}`}
                   >
                     고객지원 <i className="bx bx-chevron-down"></i>
