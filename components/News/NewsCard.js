@@ -11,26 +11,24 @@ const NewsCard = () => {
               <div className="single-news">
                 <div className="blog-img">
                   <Link href="#">
-                    <img src="/images/blog/blog1.png" alt="Image" />
+                    <img src="/images/news/news2.jpg" alt="뉴스썸네일" />
                   </Link>
                 </div>
 
                 <div className="news-content-wrap">
                   <ul>
                     <li>
-                      2023.04.30
+                      2023.04.26
                     </li>
                   </ul>
 
-                  <Link href="#">
-                    <h3>행사 제목 입니다 행사 1 행사 1</h3>
+                  <Link href="#" className="news-tit">
+                    <h3>갤러리K, 쇼골프와 골프회원권 ‘그린갤러리’ 공동 사업 위한 협력 체결</h3>
                   </Link>
 
                   <p>
-                  밤이 내린 우는 어머니, 많은 보고, 있습니다. 
-                  애기 가득 풀이 벌써 이름자를 아침이 오는 있습니다. 
-                  아이들의 잠, 이네들은 계십니다. 그리고 아름다운 토끼, 흙으로 우는 별 이름과, 거외다. 
-                  당신은 무엇인지 경, 내린 지나고 별 아무 지나가는 계십니다.
+                  갤러리K와 쇼골프는 지난 25일 신개념 프리미엄 골프 멤버십 ‘그린갤러리’ 공동 사업추진을 위해 사업협력계약을 체결했다고 밝혔다.
+                  갤러리K 본사에서 진행된 이번 협약식에는 갤러리K의 허국현 대표와 쇼골프의 조성준 대표 등이 참여했으며, 양사는 골프장 예약 대행서비스와 상품에 대한 마케팅, 서비스 및 판매에 대해 협력을 약속했다.
                   </p>
 
                   <Link href="#" className="read-more">
@@ -44,7 +42,7 @@ const NewsCard = () => {
               <div className="single-news">
                 <div className="blog-img">
                   <Link href="#">
-                    <img src="/images/blog/blog2.png" alt="Image" />
+                    <img src="/images/news/news1.jpg" alt="뉴스썸네일" />
                   </Link>
                 </div>
 
@@ -55,7 +53,7 @@ const NewsCard = () => {
                     </li>
                   </ul>
 
-                  <Link href="#">
+                  <Link href="#" className="news-tit">
                     <h3>갤러리K, 골프회원권 ‘그린갤러리’ 출시</h3>
                   </Link>
 
