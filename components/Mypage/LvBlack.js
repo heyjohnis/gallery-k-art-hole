@@ -33,6 +33,27 @@ const LvBlack = ({ user }) => {
               </tr>
             </tbody>
           </Table>
+          <Table bordered className="table_membership mb-50">
+              <thead>
+                <tr>
+                  <th>부가 혜택</th>
+                  <th>특별 혜택</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowSpan={3}>프리미엄 레저 + 쇼핑몰 + 럭셔리 여행 + 기타</td>
+                  <td>1. 멤버십 가입 시 고급 캐디백, 보스턴백 등 증정</td>
+                </tr>
+                <tr>
+                  <td>2. 유명 프로 골퍼와의 동반 라운드</td>
+                </tr>
+                <tr>
+                  <td>3. VIP의 성공스토리 콘텐츠 제작</td>
+
+                </tr>
+              </tbody>
+            </Table>
         </div>
       </section>
     </>
