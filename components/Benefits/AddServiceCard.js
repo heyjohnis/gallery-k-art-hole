@@ -22,7 +22,7 @@ const AddServiceCard = () => {
           <div className="row">
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
-                <div className="blog-img">
+                <div>
                   <img src="/images/benefits/card1.png" alt="Image" />
                 </div>
 
@@ -34,7 +34,7 @@ const AddServiceCard = () => {
 
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
-                <div className="blog-img">
+                <div>
                   <img src="/images/benefits/card2.png" alt="Image" />
                 </div>
 
@@ -46,7 +46,7 @@ const AddServiceCard = () => {
 
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
-                <div className="blog-img">
+                <div>
                   <img src="/images/benefits/card3.png" alt="Image" />
                 </div>
 
@@ -58,7 +58,7 @@ const AddServiceCard = () => {
 
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
-                <div className="blog-img">
+                <div>
                   <img src="/images/benefits/card4.png" alt="Image" />
                 </div>
 
@@ -70,7 +70,7 @@ const AddServiceCard = () => {
 
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
-                <div className="blog-img">
+                <div>
                   <img src="/images/benefits/card5.png" alt="Image" />
                 </div>
 
@@ -82,7 +82,7 @@ const AddServiceCard = () => {
 
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
-                <div className="blog-img">
+                <div>
                   <img src="/images/benefits/card6.png" alt="Image" />
                 </div>
 
@@ -106,7 +106,7 @@ const AddServiceCard = () => {
           <div className="row">
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
-                <div className="blog-img">
+                <div>
                   <img src="/images/benefits/card7.png" alt="Image" />
                 </div>
 
@@ -118,7 +118,7 @@ const AddServiceCard = () => {
 
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
-                <div className="blog-img">
+                <div>
                   <img src="/images/benefits/card8.png" alt="Image" />
                 </div>
 
@@ -130,7 +130,7 @@ const AddServiceCard = () => {
 
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
-                <div className="blog-img">
+                <div>
                   <img src="/images/benefits/card9.png" alt="Image" />
                 </div>
 
