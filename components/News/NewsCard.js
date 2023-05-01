@@ -10,7 +10,7 @@ const NewsCard = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
                 <div className="blog-img">
-                  <Link href="#">
+                  <Link href="/news-details">
                     <img src="/images/news/news2.jpg" alt="뉴스썸네일" />
                   </Link>
                 </div>
@@ -22,7 +22,7 @@ const NewsCard = () => {
                     </li>
                   </ul>
 
-                  <Link href="#" className="news-tit">
+                  <Link href="/news-details" className="news-tit">
                     <h3>갤러리K, 쇼골프와 골프회원권 ‘그린갤러리’ 공동 사업 위한 협력 체결</h3>
                   </Link>
 
@@ -31,7 +31,7 @@ const NewsCard = () => {
                   갤러리K 본사에서 진행된 이번 협약식에는 갤러리K의 허국현 대표와 쇼골프의 조성준 대표 등이 참여했으며, 양사는 골프장 예약 대행서비스와 상품에 대한 마케팅, 서비스 및 판매에 대해 협력을 약속했다.
                   </p>
 
-                  <Link href="#" className="read-more">
+                  <Link href="/news-details" className="read-more">
                     자세히 보기 <i className="bx bx-plus"></i>
                   </Link>
                 </div>
@@ -41,7 +41,7 @@ const NewsCard = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
                 <div className="blog-img">
-                  <Link href="#">
+                  <Link href="/news-details">
                     <img src="/images/news/news1.jpg" alt="뉴스썸네일" />
                   </Link>
                 </div>
@@ -53,7 +53,7 @@ const NewsCard = () => {
                     </li>
                   </ul>
 
-                  <Link href="#" className="news-tit">
+                  <Link href="/news-details" className="news-tit">
                     <h3>갤러리K, 골프회원권 ‘그린갤러리’ 출시</h3>
                   </Link>
 
@@ -62,7 +62,7 @@ const NewsCard = () => {
                   그린갤러리는 골프와 미술이 결합된 신개념 상품으로 개인회원 전용인 ▲그린, ▲블루, 개인과 법인회원 모두 가능한 ▲레드, ▲퍼플, ▲블랙, ▲플래티넘의 총 6종으로 구성되어 있으며, 가입기간은 5년이다.
                   </p>
 
-                  <Link href="#" className="read-more">
+                  <Link href="/news-details" className="read-more">
                     자세히 보기 <i className="bx bx-plus"></i>
                   </Link>
                 </div>
