@@ -155,9 +155,8 @@ const Navbar = ({ user }) => {
 
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert("준비중입니다")}
-                        className={`nav-link ${currentPath == "/contact-2/" && "active"}`}
+                        href="/membershipterm"
+                        className={`nav-link ${currentPath == "/membershipterm/" && "active"}`}
                       >
                         약관 및 규정
                       </Link>
