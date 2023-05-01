@@ -7,8 +7,8 @@ const LvPlatinum = ({ user }) => {
     <>
       <section>
         <div className={`container ${styles.benefit_info}`}>
-          <h3>플래티넘회원 혜택</h3>
-          <Table bordered className="table_membership mb-50">
+          <h3>플래티넘 혜택</h3>
+          <Table bordered className={styles.table_membership}>
             <thead>
               <tr>
                 <th colSpan={2}>상품</th>
@@ -22,17 +22,38 @@ const LvPlatinum = ({ user }) => {
             </thead>
             <tbody>
               <tr>
-                <th className="sub_th">플래티넘(10억)</th>
+                <th className="sub_th">플래티넘<span className="smaller">(10억)</span></th>
                 <td>개인/법인</td>
                 <td>50%</td>
                 <td>50%</td>
                 <td>무기명 1인</td>
                 <td>100%</td>
-                <td>최대 월 7회(연 83회)</td>
+                <td>주중 최대 월 14회(연 167회)</td>
                 <td rowSpan={2}>회당 75% 또는 최대 90만원</td>
               </tr>
             </tbody>
           </Table>
+          <Table bordered className={styles.table_membership}>
+              <thead>
+                <tr>
+                  <th>부가 혜택</th>
+                  <th>특별 혜택</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowSpan={3}>프리미엄 레저 + 쇼핑몰 + 럭셔리 여행 + 기타</td>
+                  <td>1. 멤버십 가입 시 고급 캐디백, 보스턴백 등 증정</td>
+                </tr>
+                <tr>
+                  <td>2. 유명 프로 골퍼와의 동반 라운드</td>
+                </tr>
+                <tr>
+                  <td>3. VIP의 성공스토리 콘텐츠 제작</td>
+
+                </tr>
+              </tbody>
+            </Table>
         </div>
       </section>
     </>

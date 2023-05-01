@@ -3,6 +3,7 @@ import MyPageSidebar from './MyPageSidebar';
 import MyPageInfo from './MyPageInfo';
 import LvBlack from './LvBlack';
 import LvPlatinum from "./LvPlatinum";
+import LvGreen from "./LvGreen";
 
 const MyPageMain = ({ user, menu }) => {
   return (
@@ -15,7 +16,9 @@ const MyPageMain = ({ user, menu }) => {
             </div>
             <div className="col-lg-9 col-md-12">
               <MyPageInfo user={user} />
-              { user.membership === 'black' ? <LvBlack/> : <LvPlatinum/> }
+              { user.membership === 'black' && <LvBlack/> }
+              { user.membership === 'platinum' && <LvPlatinum/> }
+              { user.membership === 'green' && <LvGreen/> }
             </div>
           </div>
         </div>

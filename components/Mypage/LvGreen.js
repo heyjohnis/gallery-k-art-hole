@@ -2,16 +2,16 @@ import Link from "next/link";
 import Table from 'react-bootstrap/Table';
 import styles from "./Mypage.module.scss";
 
-const LvBlack = () => {
+const LvGreen = () => {
   return (
     <>
       <section>
         <div className={`container ${styles.benefit_info}`}>
-          <h3>블랙 혜택</h3>
+          <h3>그린 혜택</h3>
           <Table bordered className={styles.table_membership}>
             <thead>
               <tr>
-                <th colSpan={2}>상품</th>
+                <th colSpan={2}>상품<span className="smaller">(VAT)</span></th>
                 <th>미술품</th>
                 <th>보증금</th>
                 <th>이용 방법</th>
@@ -60,4 +60,4 @@ const LvBlack = () => {
   );
 };
 
-export default LvBlack;
+export default LvGreen;
