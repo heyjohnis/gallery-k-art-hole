@@ -6,6 +6,7 @@ import Reservation from "./Content/Reservation";
 import Point from "./Content/Point";
 import Order from "./Content/Order";
 import Update from "./Content/Update";
+import Contract from "./Content/Contract";
 import LvBlack from './LvBlack';
 import LvPlatinum from './LvPlatinum';
 import LvGreen from './LvGreen';
@@ -26,6 +27,7 @@ const MyPageMain = ({ user, menu }) => {
             <div className="col-lg-9 col-md-12">
               <MyPageInfo user={user} />
               {menu === 'membership' && <Membership user={user} /> }
+              {menu === 'contract' && <Contract user={user} /> }
               {menu === 'reservation' && <Reservation user={user} /> }
               {menu === 'point' && <Point user={user} /> }
               {menu === 'order' && <Order user={user} /> }

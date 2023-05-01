@@ -19,6 +19,11 @@ const MyPageMenu = ({ menu }) => {
               </Link>
             </li>
             <li>
+              <Link href="/mypage/contract">
+                나의 계약
+              </Link>
+            </li>
+            <li>
               <Link href="/mypage/reservation">
                 예약 조회
               </Link>
