@@ -213,16 +213,15 @@ const Navbar = ({ user }) => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="#" onClick={() => alert("준비중입니다")}>
+                  <Link href="associate/">
                     제휴서비스 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert("준비중입니다")}
-                        className={`nav-link ${currentPath == "/pricing/" && "active"}`}
+                        href="associate/"
+                        className={`nav-link ${currentPath == "/associate/" && "active"}`}
                       >
                         제휴서비스 소개
                       </Link>

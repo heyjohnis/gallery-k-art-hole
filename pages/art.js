@@ -1,7 +1,4 @@
 import React from "react";
-import AboutArtist from "../components/Benefits/AboutArtist";
-import ArtCard from "../components/Benefits/ArtCard";
-import IntroArt from "../components/Benefits/IntroArt";
 import PageBanner from "../components/Common/PageBanner";
 import IntroArt from '../components/Art/IntroArt';
 import AboutArtist from '../components/Art/AboutArtist';

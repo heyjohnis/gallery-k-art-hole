@@ -1,7 +1,6 @@
 import React from "react";
-import AboutCompany from "../components/Common/AboutCompany";
+import AboutCompany from "../components/Company/AboutCompany";
 import PageBanner from "../components/Common/PageBanner";
-import AboutCompany from '../components/Company/AboutCompany';
 import MembershipStyle from '../components/Company/MembershipStyle';
 import Footer from "../components/Layouts/Footer";
 
