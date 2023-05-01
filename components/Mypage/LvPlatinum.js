@@ -7,7 +7,7 @@ const LvPlatinum = () =>{
     <>
       <section>
         <div className={`container ${styles.benefit_info}`}>
-          <h3>블랙회원 혜택</h3>
+          <h3>플래티넘 혜택</h3>
           <Table bordered className={styles.table_membership}>
             <thead>
               <tr>
@@ -22,13 +22,13 @@ const LvPlatinum = () =>{
             </thead>
             <tbody>
               <tr>
-                <th className="sub_th">블랙<span className="smaller">(5억)</span></th>
+                <th className="sub_th">플래티넘<span className="smaller">(10억)</span></th>
                 <td>개인/법인</td>
                 <td>50%</td>
                 <td>50%</td>
                 <td>무기명 1인</td>
                 <td>100%</td>
-                <td>최대 월 7회(연 83회)</td>
+                <td>주중 최대 월 14회(연 167회)</td>
                 <td rowSpan={2}>회당 75% 또는 최대 90만원</td>
               </tr>
             </tbody>
