@@ -238,17 +238,16 @@ const Navbar = ({ user }) => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="#" onClick={() => alert("준비중입니다")}>
+                  <Link href="/bbs/news">
                     뉴스 & 이벤트 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert("준비중입니다")}
+                        href="/bbs/news"
                         className={`nav-link ${
-                          currentPath == "/exhibition/" && "active"
+                          currentPath == "/bbs/news/" && "active"
                         }`}
                       >
                         뉴스
@@ -257,9 +256,8 @@ const Navbar = ({ user }) => {
 
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert("준비중입니다")}
-                        className={`nav-link ${currentPath == "/event/" && "active"}`}
+                        href="/bbs/event"
+                        className={`nav-link ${currentPath == "/bbs/event/" && "active"}`}
                       >
                         이벤트
                       </Link>
@@ -267,9 +265,8 @@ const Navbar = ({ user }) => {
 
                     <li className="nav-item">
                       <Link
-                        href="#"
-                        onClick={() => alert("준비중입니다")}
-                        className={`nav-link ${currentPath == "/media/" && "active"}`}
+                        href="/bbs/media"
+                        className={`nav-link ${currentPath == "/bbs/media/" && "active"}`}
                       >
                         미디어
                       </Link>

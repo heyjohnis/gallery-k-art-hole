@@ -42,7 +42,7 @@ const NewsSidebar = () => {
               <div className="info">
                 <time>2023.04.24</time>
                 <h4 className="title usmall">
-                  <Link href="/bbs/detail/1">
+                  <Link href="/news-details">
                     갤러리K, 골프회원권 ‘그린갤러리’ 출시
                   </Link>
                 </h4>
@@ -64,7 +64,7 @@ const NewsSidebar = () => {
               <div className="info">
                 <time> 2023.04.26</time>
                 <h4 className="title usmall">
-                  <Link href="/bbs/detail/2">
+                  <Link href="/news-details">
                     갤러리K, 쇼골프와 골프회원권 ‘그린갤러리’ 공동 사업 위한 협력 체결
                   </Link>
                 </h4>
