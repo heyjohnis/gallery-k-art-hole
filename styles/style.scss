@@ -240,6 +240,9 @@ textarea {
 .mb-60 {
   margin-bottom: 60px;
 }
+.mb-70 {
+  margin-bottom: 70px;
+}
 .pl-30 {
   padding-left: 30px;
 }
@@ -5761,12 +5764,11 @@ table, th, td {
     tr{
       vertical-align: middle;
       th {
-        background-color: $sub-color;
-        color: $white-color;
+        background-color: $sub-content-color-home-four;
         text-align: center;
         line-height: 1.1;
         &.sub_th{
-          background-color: $main-color;
+          background-color: $sub-content-color-home-four;
           text-align: left;
         }
         span{
