@@ -35,12 +35,10 @@ export default function Login() {
       const url = `${baseUrl}/login`;
       const payload = { ...user };
       const response = await axios.post(url, payload);
-      console.log(response);
-
       handleLogin(response.data.token);
     } catch (error) {
       alert(error.response.data.message);
-      // catchErrors(error, setError);
+      catchErrors(error, setError);
     } finally {
       setLoading(false);
     }

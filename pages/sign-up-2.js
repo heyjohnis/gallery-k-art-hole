@@ -1,12 +1,14 @@
 import axios from "axios";
-import React from "react";
-import { useDaumPostcodePopup } from "react-daum-postcode";
+import React, { useState, useEffect, useRef } from "react";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
+import { handleLogin } from "../utils/auth";
 import baseUrl from "../utils/baseUrl";
+import { useDaumPostcodePopup } from "react-daum-postcode";
 
 export default function SignUp() {
-  const [form, setForm] = React.useState(
+
+  const [form, setForm] = useState(
     //   # user_kind  01: 개인 / 02: 사업자
     // # crop_type  01: 개인회사 / 02: 법인회사
 
@@ -28,28 +30,44 @@ export default function SignUp() {
     }
   );
 
-  const [disabled, setDisabled] = React.useState(true);
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState("");
+  const [disabled, setDisabled] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const loginIdRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevState) => ({ ...prevState, [name]: value }));
+
+    if(form.user_kind === '02') {
+      console.log("02")
+    } else {
+      console.log("01")
+    }
   };
-  const checkloginId = async () => {
+
+  const checkLoginId = async () => {
     const url = `${baseUrl}/checkLoginId`;
     const payload = { login_id: form.login_id };
 
     const response = await axios.post(url, payload);
+    if(response && response.data.having_id) {
+      setForm((prevState) => ({ ...prevState, login_id: ''}));
+      alert("이미 가입된 아이디입니다.");
+      //loginIdRef.current.focus();
+    }
   };
+
+  const checkPassword = () => {
+    if ( form.password && form.password_chk && form.password != form.password_chk ) {
+      alert("비밀번호가 일치하지 않습니다.");
+      setForm( prevState => ({ ...prevState, password: '', password_chk: ''}))
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (form.password != form.password_chk) {
-      alert("비밀번호가 일치하지 않습니다.");
-      return;
-    }
 
     try {
       setLoading(true);
@@ -63,7 +81,7 @@ export default function SignUp() {
       };
       const response = await axios.post(url, payload);
       alert("회원가입이 완료되었습니다.");
-      Router.push("/");
+      handleLogin(response.data.token);
     } catch (error) {
       alert(error.response.data.message);
     } finally {
@@ -153,84 +171,86 @@ export default function SignUp() {
                       </div>
                     </div>
 
-                    <div className="form-group signup">
-                      <div className="col-md-3 col-sm-3">
-                        <p>
-                          사업자 구분 <span className="sup">*</span>
-                        </p>
-                      </div>
-                      <div className="col-md-9 col-sm-9 signup">
-                        <div className="radio">
-                          <label>
-                            <input
-                              type="radio"
-                              value="01"
-                              name="corp_type"
-                              id=""
-                              onChange={handleChange}
-                            />
-                            개인사업자
-                          </label>
+                    <div style={{display:'none'}} id="corp_type_radio_group">
+                      <div className="form-group signup">
+                        <div className="col-md-3 col-sm-3">
+                          <p>
+                            사업자 구분 <span className="sup">*</span>
+                          </p>
                         </div>
-                        <div className="radio">
-                          <label>
-                            <input
-                              type="radio"
-                              value="02"
-                              name="corp_type"
-                              onChange={handleChange}
-                            />
-                            법인사업자
-                          </label>
+                        <div className="col-md-9 col-sm-9 signup">
+                          <div className="radio">
+                            <label>
+                              <input
+                                type="radio"
+                                value="01"
+                                name="corp_type"
+                                id=""
+                                onChange={handleChange}
+                              />
+                              개인사업자
+                            </label>
+                          </div>
+                          <div className="radio">
+                            <label>
+                              <input
+                                type="radio"
+                                value="02"
+                                name="corp_type"
+                                onChange={handleChange}
+                              />
+                              법인사업자
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="form-group signup">
-                      <div className="col-md-3 col-sm-3">
-                        <p>
-                          회원번호 <span className="sup">*</span>
-                        </p>
-                      </div>
-                      <div className="col-md-9 col-sm-9">
-                        <label htmlFor="form1">법인명</label>
-                        <input
-                          className="form-control"
-                          type="text"
-                          name="corp_name"
-                          id="form1"
-                          placeholder="법인명"
-                          value={form.corp_name}
-                          onChange={handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="form-group signup">
-                      <div className="col-md-3 col-sm-3"></div>
-                      <div className="col-md-9 col-sm-9">
-                        <label htmlFor="form1">법인번호</label>
-                        <div className="d-flex">
+                    <div style={{display:'none'}}>
+                      <div className="form-group signup">
+                        <div className="col-md-3 col-sm-3">
+                          <p>
+                            회원번호 <span className="sup">*</span>
+                          </p>
+                        </div>
+                        <div className="col-md-9 col-sm-9">
+                          <label htmlFor="form1">법인명</label>
                           <input
                             className="form-control"
                             type="text"
-                            name="corp_ssn1"
+                            name="corp_name"
                             id="form1"
-                            value={form.corp_ssn1}
-                            onChange={handleChange}
-                          />
-                          <input
-                            className="form-control"
-                            type="text"
-                            name="corp_ssn2"
-                            id="form1"
-                            value={form.corp_ssn2}
+                            value={form.corp_name}
                             onChange={handleChange}
                           />
                         </div>
                       </div>
-                    </div>
 
+                      <div className="form-group signup">
+                        <div className="col-md-3 col-sm-3"></div>
+                        <div className="col-md-9 col-sm-9">
+                          <label htmlFor="form1">법인번호</label>
+                          <div className="d-flex">
+                            <input
+                              className="form-control"
+                              type="text"
+                              name="corp_ssn1"
+                              id="form1"
+                              value={form.corp_ssn1}
+                              onChange={handleChange}
+                            />
+                            <input
+                              className="form-control"
+                              type="text"
+                              name="corp_ssn2"
+                              id="form1"
+                              value={form.corp_ssn2}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <div className="form-heading text-center">
                       <h3 className="form-title">기본정보</h3>
                     </div>
@@ -243,48 +263,23 @@ export default function SignUp() {
                       </div>
                       <div className="col-md-9 col-sm-9 signup">
                         <input
+                          ref={loginIdRef}
                           className="form-control"
                           type="text"
                           name="login_id"
                           placeholder="아이디를 입력하세요"
                           value={form.login_id}
                           onChange={handleChange}
-                          onBlur={checkloginId}
+                          onBlur={checkLoginId}
                         />
                       </div>
                     </div>
 
-                    <div className="form-group signup">
-                      <div className="col-md-3 col-sm-3"></div>
-                      <div className="col-md-9 col-sm-9">
-                        <label htmlFor="form1">법인번호</label>
-                        <div className="d-flex">
-                          <input
-                            className="form-control"
-                            type="text"
-                            name="name"
-                            id="form1"
-                            placeholder="법인명"
-                          />
-                          <input
-                            className="form-control"
-                            type="text"
-                            name="name"
-                            id="form1"
-                            placeholder="법인명"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="form-heading text-center">
-                      <h3 className="form-title">기본정보</h3>
-                    </div>
 
                     <div className="form-group signup">
                       <div className="col-md-3 col-sm-3">
                         <p>
-                          아이디 <span className="sup">*</span>
+                          비밀번호 <span className="sup">*</span>
                         </p>
                       </div>
                       <div className="col-md-9 col-sm-9 signup">
@@ -295,6 +290,7 @@ export default function SignUp() {
                           placeholder="비밀번호를 입력하세요."
                           value={form.password}
                           onChange={handleChange}
+                          onBlur={checkPassword}
                         />
                       </div>
                     </div>
@@ -313,6 +309,7 @@ export default function SignUp() {
                           placeholder="비밀번호를 한번 더 입력하세요."
                           value={form.password_chk}
                           onChange={handleChange}
+                          onBlur={checkPassword}
                         />
                       </div>
                     </div>
@@ -385,12 +382,15 @@ export default function SignUp() {
                       </div>
                       <div className="col-md-9 col-sm-9">
                         <div className="row">
-                          <div className="col-md-3 col-sm-3">
-                            <select name="phone1" onChange={handleChange}>
-                              <option value="010">010</option>
-                              <option value="017">017</option>
-                              <option value="00">00</option>
-                            </select>
+                        <div className="col-md-3 col-sm-3">
+                            <input
+                              className="form-control"
+                              type="text"
+                              name="phone1"
+                              id="form1"
+                              value={form.phone1}
+                              onChange={handleChange}
+                            />
                           </div>
                           <div className="col-md-3 col-sm-3">
                             <input
@@ -398,7 +398,6 @@ export default function SignUp() {
                               type="text"
                               name="phone2"
                               id="form1"
-                              placeholder="1231"
                               value={form.phone2}
                               onChange={handleChange}
                             />
@@ -409,7 +408,6 @@ export default function SignUp() {
                               type="text"
                               name="phone3"
                               id="form1"
-                              placeholder="1234"
                               value={form.phone3}
                               onChange={handleChange}
                             />
@@ -427,11 +425,14 @@ export default function SignUp() {
                       <div className="col-md-9 col-sm-9">
                         <div className="row">
                           <div className="col-md-3 col-sm-3">
-                            <select name="mobile1" onChange={handleChange}>
-                              <option value="010">010</option>
-                              <option value="017">017</option>
-                              <option value="00">00</option>
-                            </select>
+                            <input
+                              className="form-control"
+                              type="text"
+                              name="mobile1"
+                              id="form1"
+                              value={form.mobile1}
+                              onChange={handleChange}
+                            />
                           </div>
                           <div className="col-md-3 col-sm-3">
                             <input
@@ -439,7 +440,6 @@ export default function SignUp() {
                               type="text"
                               name="mobile2"
                               id="form1"
-                              placeholder="1231"
                               value={form.mobile2}
                               onChange={handleChange}
                             />
@@ -450,7 +450,6 @@ export default function SignUp() {
                               type="text"
                               name="mobile3"
                               id="form1"
-                              placeholder="1234"
                               value={form.mobile3}
                               onChange={handleChange}
                             />
