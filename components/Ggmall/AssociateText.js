@@ -46,13 +46,13 @@ const AssociateText = () => {
 
                   <div className="tab_content">
                     <div id="tab1" className="tabs_item">
-                      준비중입니다.
+                      <p>준비중입니다.</p>
                     </div>
                     <div id="tab2" className="tabs_item">
-                      준비중입니다.
+                      <p>준비중입니다.</p>
                     </div>
                     <div id="tab3" className="tabs_item">
-                      준비중입니다.
+                      <p>준비중입니다.</p>
                     </div>
                   </div>
                 </div>
