@@ -1,0 +1,22 @@
+$main-color: #4E7D22;
+$sub-color: #0E5039;
+$body-color: #4d4d4d;
+$heading-color: #212121;
+$white-color: #ffffff;
+$black-color: #000000;
+$gray-color: #666666;
+$light-color: #999999;
+$box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+
+.item_card {
+  margin-bottom: 50px;
+  box-shadow: $box-shadow;
+  .items {
+    padding: 20px;
+    text-align: center;
+    background-color: $white-color ;
+    h3 {
+      margin-bottom: 15px;
+    }
+  }
+}
