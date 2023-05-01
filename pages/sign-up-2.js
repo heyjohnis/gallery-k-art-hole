@@ -147,25 +147,27 @@ export default function SignUp() {
                       </div>
                       <div className="col-md-9 col-sm-9 signup">
                         <div className="radio">
-                          <label>
-                            <input
-                              type="radio"
-                              name="user_kind"
+                          <label class="custom">
+                            <span>개인회원</span>
+                            <input 
+                              type="radio" 
+                              name="user_kind" 
                               value="01"
                               onChange={handleChange}
                             />
-                            개인회원
+                            <span class="checkmark"></span>
                           </label>
                         </div>
-                        <div className="radio">
-                          <label>
-                            <input
-                              type="radio"
+                        <div className="radio ml-30">
+                          <label class="custom">
+                            <span>사업자회원</span>
+                            <input 
+                              type="radio" 
+                              name="user_kind" 
                               value="02"
-                              name="user_kind"
                               onChange={handleChange}
                             />
-                            사업자 회원
+                            <span class="checkmark"></span>
                           </label>
                         </div>
                       </div>
@@ -180,26 +182,28 @@ export default function SignUp() {
                         </div>
                         <div className="col-md-9 col-sm-9 signup">
                           <div className="radio">
-                            <label>
-                              <input
+                            <label class="custom">
+                              <span>개인사업자</span>
+                              <input 
                                 type="radio"
                                 value="01"
                                 name="corp_type"
                                 id=""
                                 onChange={handleChange}
                               />
-                              개인사업자
+                              <span class="checkmark"></span>
                             </label>
                           </div>
-                          <div className="radio">
-                            <label>
-                              <input
+                          <div className="radio ml-30">
+                            <label class="custom">
+                              <span>법인사업자</span>
+                              <input 
                                 type="radio"
                                 value="02"
                                 name="corp_type"
                                 onChange={handleChange}
                               />
-                              법인사업자
+                              <span class="checkmark"></span>
                             </label>
                           </div>
                         </div>
@@ -251,7 +255,8 @@ export default function SignUp() {
                         </div>
                       </div>
                     </div>
-                    <div className="form-heading text-center">
+                    <hr/>
+                    <div className="form-heading text-center mt-20">
                       <h3 className="form-title">기본정보</h3>
                     </div>
 
@@ -497,10 +502,10 @@ export default function SignUp() {
                 </form>
               </div>
             </div>
-          </div>
-          <button className="default-btn" onClick={handleSubmit}>
+            <button className="default-btn btn-next" onClick={handleSubmit}>
             회원가입
-          </button>
+            </button>
+          </div>
         </div>
       </div>
 
