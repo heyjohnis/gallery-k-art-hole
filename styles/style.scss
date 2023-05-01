@@ -5948,3 +5948,68 @@ table, th, td {
   }
 }
 
+/*Sidebar 메뉴*/
+.news-details-area {
+  .widget-area{
+    .widget_categories{
+      .sidemenu {
+        &.membership {
+          li{
+            a{
+              &.membership{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+        &.contract {
+          li{
+            a{
+              &.contract{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+        &.reservation {
+          li{
+            a{
+              &.reservation{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+        &.point {
+          li{
+            a{
+              &.point{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+        &.order {
+          li{
+            a{
+              &.order{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+        &.update {
+          li{
+            a{
+              &.update{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
+}
+
+
