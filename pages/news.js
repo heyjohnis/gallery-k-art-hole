@@ -1,19 +1,19 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
-import ExhibitionCard from "../components/News/ExhibitionCard";
+import NewsCard from '../components/News/NewsCard';
 
 export default function NewsGrid() {
   return (
     <>
       <PageBanner
-        pageTitle="행사"
+        pageTitle="뉴스"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="행사"
+        activePageText="뉴스"
       />
 
-      <ExhibitionCard />
+      <NewsCard/>
 
       <Footer />
     </>
