@@ -2,12 +2,12 @@ import Link from "next/link";
 import Table from 'react-bootstrap/Table';
 import styles from "./Mypage.module.scss";
 
-const LvBlue = () => {
+const LvGreen = () => {
   return (
     <>
       <section>
         <div className={`container ${styles.benefit_info}`}>
-          <h3>그린 혜택</h3>
+          <h3>블루 혜택</h3>
           <Table bordered className={styles.table_membership}>
             <thead>
               <tr>
@@ -22,20 +22,20 @@ const LvBlue = () => {
             </thead>
             <tbody>
               <tr>
-                <th rowSpan={2} className="sub_th">그린<br/><span className="smaller">(3,500만원)</span></th>
+                <th rowSpan={2} className="sub_th">블루<br/><span className="smaller">(6,500만원)</span></th>
                 <td rowSpan={2} >개인 전용</td>
                 <td rowSpan={2} >30%</td>
                 <td>0%</td>
-                <td>기명 1인</td>
+                <td>기명 2인</td>
                 <td>130%</td>
-                <td>최대 월 3회(연 23회)</td>
+                <td>최대 월 4회(연 42회)</td>
                 <td rowSpan={2}>회당 50% 또는 최대 60만원</td>
               </tr>
               <tr>
                 <td>25%</td>
-                <td>기명 1인</td>
+                <td>기명 2인</td>
                 <td>130%</td>
-                <td>최대 월 2회(연 17회)</td>
+                <td>최대 월 3회(연 32회)</td>
               </tr>
             </tbody>
           </Table>
@@ -66,4 +66,4 @@ const LvBlue = () => {
   );
 };
 
-export default LvBlue;
+export default LvGreen;

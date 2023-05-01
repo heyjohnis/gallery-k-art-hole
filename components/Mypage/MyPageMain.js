@@ -4,6 +4,8 @@ import MyPageInfo from './MyPageInfo';
 import LvBlack from './LvBlack';
 import LvPlatinum from './LvPlatinum';
 import LvGreen from './LvGreen';
+import LvBlue from './LvBlue';
+import LvPurple from './LvPurple';
 
 const MyPageMain = ({ user }) => {
   return (
@@ -19,6 +21,8 @@ const MyPageMain = ({ user }) => {
               <LvBlack/>
               <LvPlatinum/>
               <LvGreen/>
+              <LvBlue/>
+              <LvPurple/>
             </div>
           </div>
         </div>
