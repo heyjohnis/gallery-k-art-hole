@@ -2210,6 +2210,45 @@
     .mean-container .mean-nav {
         margin-top: 66px;
     }
+
+
+    .news-details-area{ 
+        .widget-area{
+            .widget_categories{
+                .widget-title {
+                    display: none;
+                }
+                .post-wrap {
+                    width: 100%;
+                    position: fixed;
+                    display: flex;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 100;
+                    background: #000;
+                
+                    ul{
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        font-size: 14px;
+                        li{
+                            padding-bottom: 0;
+                            margin-bottom: 0;
+                            border-bottom:0;
+                            text-align: center;            
+                            a {
+                                font-size: 14px;
+                                color: #fff;
+                                line-height: 1.2;
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+    
 }
 
 @media only screen and (min-width : 1200px) and (max-width : 1535px) {
