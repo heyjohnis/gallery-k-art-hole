@@ -31,14 +31,15 @@ export default function SignUp() {
                 <PrivacyPolicyText />
               </div>
             </div>
-            <div className="col-lg-12 col-sm-12">
+            <div className="col-lg-12 col-sm-12 check-box mtb-30">
               <input
                 type="checkbox"
                 id="agree1"
+                className='form-check-input'
                 value={form.agree1}
                 onChange={handleChange}
               />
-              <label htmlFor="agree" className="contact-agree-label">
+              <label htmlFor="agree1" className="contact-agree-label">
                 동의합니다.
               </label>
             </div>
@@ -49,31 +50,32 @@ export default function SignUp() {
                 <TermsConditionsText />
               </div>
             </div>
-            <div className="col-lg-12 col-sm-12">
+            <div className="col-lg-12 col-sm-12 check-box mtb-30">
               <input
                 type="checkbox"
                 id="agree2"
+                className='form-check-input'
                 value={form.agree2}
                 onChange={handleChange}
               />
-              <label htmlFor="agree" className="contact-agree-label">
+              <label htmlFor="agree2" className="contact-agree-label">
                 동의합니다.
               </label>
             </div>
+            <Link
+              className="default-btn btn-next"
+              href="#"
+              onClick={() => {
+                if (form.agree1 && form.agree2) {
+                  location.href = "/sign-up-2";
+                } else {
+                  alert("약관에 동의해 주세요");
+                }
+              }}
+            >
+              다음
+            </Link>
           </div>
-          <Link
-            className="default-btn"
-            href="#"
-            onClick={() => {
-              if (form.agree1 && form.agree2) {
-                location.href = "/sign-up-2";
-              } else {
-                alert("약관에 동의해 주세요");
-              }
-            }}
-          >
-            다음
-          </Link>
         </div>
       </div>
 
