@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 
 import axios from "axios";
 import cookie from "js-cookie";
@@ -20,11 +20,15 @@ const MyPage = () => {
 
     const url = `${baseUrl}/myinfo`;
     const medq_token = cookie.get("medq_token");
-
     axios({ method: "post", url: url, headers: { Authorization: `Bearer ${medq_token}` }, data: {} })
         .then(({ data }) => {
             console.log("data: ", data);
             setUser(data.my_info);
+            if(!data.my_info.is_active) {
+              Router.push('/').then( () => {
+                alert('승인 대기중입니다.');
+              });
+            }
         })
         .finally(() => {
             setLoading(false);
