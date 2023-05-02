@@ -6,14 +6,12 @@ const benefitData = [
   {
     image: "/images/main/slide_benefit01.png",
     url: "#",
+    text: "당신의 행복한 건강",
   },
   {
     image: "/images/main/slide_benefit02.png",
     url: "#",
-  },
-  {
-    image: "/images/main/slide_benefit03.png",
-    url: "#",
+    text: "명예로운 사회적 지위",
   },
 ];
 
@@ -25,9 +23,8 @@ const BenefitSlider = () => {
       </div>
       <div className="brand-area-two ptb-100">
       <div className="section-title">
-            <h2>
-              SERVICE VALUE
-            </h2>
+            <span>SERVICE VALUE</span>
+            <h2>오직 당신만이 소유하고 누릴 수 있는<br/>프리미엄 특권</h2>
           </div>
         <div className="container benefit_slide">
           <Swiper
@@ -62,10 +59,11 @@ const BenefitSlider = () => {
             {benefitData &&
               benefitData.map((value, i) => (
                 <SwiperSlide key={i}>
-                  <a href={value.url} target="_blank">
-                    <img src={value.image} alt="Image" />
+                  <a href={value.url} className="benefits_wrap" target="_blank">
+                    <img src={value.image} alt="Image" />                  
+                    <span className='benefit_txt'>{value.text}</span>
                   </a>
-                  <span>{value.text}</span>
+
                 </SwiperSlide>
               ))}
           </Swiper>

@@ -9,7 +9,8 @@ const Products = () => {
           <div className="row align-items-center">
             <div className="col-lg-12">
               <div className="business-content text-center">
-                <h2>PRODUCT</h2>
+                <span>PRODUCT</span>
+                <h2>그린갤러리의 독보적인 상품구성</h2>
               </div>
             </div>
 
@@ -23,7 +24,10 @@ const Products = () => {
                 >
                   <img src="/images/main/main_product1.png" alt="골프이미지"/>
                   <h2 className="main-product-item item1">프리미엄 골프 멤버십</h2>
-                  <Link className="main-product-link" href="/golf"><span>자세히 보기</span></Link>
+                  <Link className="main-product-link" href="/golf">
+                    <p>드넓은 대지를 누리는<br/>프리미엄 골프 멤버십</p>
+                    <span>자세히 보기</span>
+                  </Link>
                 </div>
 
                 <div className="col-lg-1 col-sm-1">
@@ -37,7 +41,10 @@ const Products = () => {
                 >
                   <img src="/images/main/main_product2.png" alt="미술이미지"/>
                   <h2 className="main-product-item item2">미술품</h2>
-                  <Link className="main-product-link" href="/art"><span>자세히 보기</span></Link>
+                  <Link className="main-product-link" href="/art">
+                    <p>당신의 품격을 높여주는<br/>원화 작품</p>
+                    <span>자세히 보기</span>
+                  </Link>
                 </div>
 
                 <div 
@@ -47,12 +54,12 @@ const Products = () => {
                   data-aos-delay="300"
                 >
                   <img src="/images/main/main_product3.png" alt="요트 이미지"/>
-                  <h2 className="main-product-item item3">포인트몰</h2>
+                  <h2 className="main-product-item item3">제휴서비스</h2>
                   <Link 
                     className="main-product-link" 
-                    href="#"
-                    onClick={() => alert('준비중입니다')}
+                    href="/associate"
                   >
+                    <p>차별화된 제휴 서비스</p>
                     <span>자세히 보기</span>
                   </Link>
                 </div>
