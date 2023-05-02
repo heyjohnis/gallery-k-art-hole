@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper";
 
+
 const MainBanner = () => {
   return (
     <>
@@ -22,6 +23,10 @@ const MainBanner = () => {
               className="jumpx-slider-item"
               style={{ backgroundImage: `url(/images/home/slider1.jpg)` }}
             >
+              <video autoplay={true} loop>
+                <source src="/video/bg_mov01.mp4" type="video/mp4"/>
+              </video>
+
               <div className="d-table">
                 <div className="d-table-cell">
                   <div className="container">
