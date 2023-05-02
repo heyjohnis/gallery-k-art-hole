@@ -59,9 +59,17 @@ export default function SignUp() {
     }
   }
 
+  const validationInputs = () => {
+    
+    if(!form.login_id) throw new Error('아이디를 입력해주세요.');
+    if(!form.password) throw new Error('패스워드를 입력해주세요.');
+    if(!form.user_name) throw new Error('이름을 입력해주세요.');
+    if(!form.mobile1 || !form.mobile2 || !form.mobile3) throw new Error('휴대전화를 입력해주세요.');
+    if(!form.email) throw new Error('이메일을 입력해주세요.');
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
 
     try {
       setLoading(true);
@@ -72,11 +80,14 @@ export default function SignUp() {
         mobile: `${form.mobile1}-${form.mobile2}-${form.mobile3}`,
         phone: `${form.phone1}-${form.phone2}-${form.phone3}`,
       };
+
+      validationInputs();
+
       const response = await axios.post(url, payload);
       alert("회원가입이 완료되었습니다.");
       handleLogin(response.data.token);
     } catch (error) {
-      alert(error);
+      alert(error.message);
     } finally {
       setLoading(false);
     }
@@ -237,6 +248,7 @@ export default function SignUp() {
                               name="corp_ssn1"
                               id="form1"
                               value={form.corp_ssn1}
+                              maxLength={6}
                               onChange={handleChange}
                             />
                             <input
@@ -245,6 +257,7 @@ export default function SignUp() {
                               name="corp_ssn2"
                               id="form1"
                               value={form.corp_ssn2}
+                              maxLength={7}
                               onChange={handleChange}
                             />
                           </div>
@@ -391,6 +404,7 @@ export default function SignUp() {
                               name="phone1"
                               id="form1"
                               value={form.phone1}
+                              maxLength={4}
                               onChange={handleChange}
                             />
                           </div>
@@ -401,6 +415,7 @@ export default function SignUp() {
                               name="phone2"
                               id="form1"
                               value={form.phone2}
+                              maxLength={4}
                               onChange={handleChange}
                             />
                           </div>
@@ -411,6 +426,7 @@ export default function SignUp() {
                               name="phone3"
                               id="form1"
                               value={form.phone3}
+                              maxLength={4}
                               onChange={handleChange}
                             />
                           </div>
@@ -433,6 +449,7 @@ export default function SignUp() {
                               name="mobile1"
                               id="form1"
                               value={form.mobile1}
+                              maxLength={3}
                               onChange={handleChange}
                             />
                           </div>
@@ -443,6 +460,7 @@ export default function SignUp() {
                               name="mobile2"
                               id="form1"
                               value={form.mobile2}
+                              maxLength={4}
                               onChange={handleChange}
                             />
                           </div>
@@ -453,6 +471,7 @@ export default function SignUp() {
                               name="mobile3"
                               id="form1"
                               value={form.mobile3}
+                              maxLength={4}
                               onChange={handleChange}
                             />
                           </div>
@@ -480,9 +499,7 @@ export default function SignUp() {
 
                     <div className="form-group signup">
                       <div className="col-md-3 col-sm-3">
-                        <p>
-                          딜러코드 <span className="sup">*</span>
-                        </p>
+                        <p>딜러코드</p>
                       </div>
                       <div className="col-md-9 col-sm-9 signup">
                         <input
