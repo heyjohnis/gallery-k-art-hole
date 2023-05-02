@@ -38,12 +38,6 @@ export default function SignUp() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevState) => ({ ...prevState, [name]: value }));
-
-    if(form.user_kind === '02') {
-      console.log("02")
-    } else {
-      console.log("01")
-    }
   };
 
   const checkLoginId = async () => {
@@ -154,7 +148,7 @@ export default function SignUp() {
                               value="01"
                               onChange={handleChange}
                             />
-                            <span class="checkmark"></span>
+                            <span className="checkmark"></span>
                           </label>
                         </div>
                         <div className="radio ml-30">
@@ -166,13 +160,14 @@ export default function SignUp() {
                               value="02"
                               onChange={handleChange}
                             />
-                            <span class="checkmark"></span>
+                            <span className="checkmark"></span>
                           </label>
                         </div>
                       </div>
                     </div>
 
-                    <div style={{display:'none'}} id="corp_type_radio_group">
+
+                  { form.user_kind === '02' ? 
                       <div className="form-group signup">
                         <div className="col-md-3 col-sm-3">
                           <p>
@@ -181,7 +176,7 @@ export default function SignUp() {
                         </div>
                         <div className="col-md-9 col-sm-9 signup">
                           <div className="radio">
-                            <label class="custom">
+                            <label className="custom">
                               <span>개인사업자</span>
                               <input 
                                 type="radio"
@@ -190,11 +185,11 @@ export default function SignUp() {
                                 id=""
                                 onChange={handleChange}
                               />
-                              <span class="checkmark"></span>
+                              <span className="checkmark"></span>
                             </label>
                           </div>
                           <div className="radio ml-30">
-                            <label class="custom">
+                            <label className="custom">
                               <span>법인사업자</span>
                               <input 
                                 type="radio"
@@ -202,14 +197,16 @@ export default function SignUp() {
                                 name="corp_type"
                                 onChange={handleChange}
                               />
-                              <span class="checkmark"></span>
+                              <span className="checkmark"></span>
                             </label>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    : ''
+                  }
 
-                    <div style={{display:'none'}}>
+                  { (form.user_kind === '02' && form.corp_type === '02') ?
+                    <>
                       <div className="form-group signup">
                         <div className="col-md-3 col-sm-3">
                           <p>
@@ -253,7 +250,9 @@ export default function SignUp() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </>
+                    : ''
+                  }
                     <hr/>
                     <div className="form-heading text-center mt-20">
                       <h3 className="form-title">기본정보</h3>
@@ -278,7 +277,6 @@ export default function SignUp() {
                         />
                       </div>
                     </div>
-
 
                     <div className="form-group signup">
                       <div className="col-md-3 col-sm-3">

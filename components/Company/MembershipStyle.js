@@ -30,12 +30,12 @@ const MembershipStyle = () => {
                       </div>
 
                       <ul>
-                        <li>
-                          <span class="list_icon"></span>
+                        <li>56
+                          <span className="list_icon"></span>
                           프리미엄 골프장 및 전국 300여 곳
                         </li>
                         <li>
-                          <span class="list_icon"></span>
+                          <span className="list_icon"></span>
                           해당 골프장 회원과 동일한 서비스 제공
                         </li>
                       </ul>
@@ -60,7 +60,7 @@ const MembershipStyle = () => {
 
                       <ul>
                         <li>
-                          <span class="list_icon"></span>
+                          <span className="list_icon"></span>
                           한국미술협회에서 인증하는 정찰 원화 작품
                         </li>
                       </ul>
@@ -85,7 +85,7 @@ const MembershipStyle = () => {
 
                       <ul>
                         <li>
-                          <span class="list_icon"></span>
+                          <span className="list_icon"></span>
                           패션, 쇼핑, 여행, 레저, 미식, 인테리어 등 럭셔리라이프스타일
                         </li>
                       </ul>
