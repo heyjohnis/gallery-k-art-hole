@@ -1008,9 +1008,6 @@
     margin-left: 6px;
     margin-right: 6px;
   }
-  .navbar-area .others-options {
-    display: none;
-  }
   .ptb-100 {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -1710,6 +1707,35 @@
   .mean-container .mean-nav {
     margin-top: 66px;
   }
+  .news-details-area .widget-area .widget_categories .widget-title {
+    display: none;
+  }
+  .news-details-area .widget-area .widget_categories .post-wrap {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background: #000;
+  }
+  .news-details-area .widget-area .widget_categories .post-wrap ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+  }
+  .news-details-area .widget-area .widget_categories .post-wrap ul li {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+    text-align: center;
+  }
+  .news-details-area .widget-area .widget_categories .post-wrap ul li a {
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.2;
+  }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1535px) {
   .main-art-area .container .main-art-card .main-art-text {
@@ -1823,6 +1849,12 @@
   .navbar-area .others-options .default-btn {
     padding: 10px 20px;
     font-size: 14px;
+  }
+  .navbar-area .others-options .top-menu {
+    top: 7px;
+  }
+  .navbar-area .others-options .top-menu .menu-items {
+    font-size: 16px;
   }
   .navbar-area.is-sticky nav {
     padding-top: 10px;

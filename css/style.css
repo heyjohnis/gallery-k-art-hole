@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 @File: Jumpx Template Styles
 
@@ -140,6 +141,7 @@ h3 {
 .d-table {
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .d-table-cell {
@@ -245,6 +247,10 @@ textarea.form-control {
   margin-bottom: 60px;
 }
 
+.mb-70 {
+  margin-bottom: 70px;
+}
+
 .pl-30 {
   padding-left: 30px;
 }
@@ -286,6 +292,11 @@ textarea.form-control {
 .mtb-50 {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.mtb-30 {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .mb-20 {
@@ -838,15 +849,17 @@ Nice Select Area Style
 jumpx Nav Area Style
 ======================================================*/
 .navbar-area nav {
-  padding-top: 20px;
+  padding-top: 38px;
   padding-bottom: 20px;
   transition: all 0.6s ease;
   flex-direction: column;
 }
 .navbar-area nav .top-menu {
   width: 100%;
+  position: absolute;
+  right: 0;
+  top: -35px;
   list-style: none;
-  margin-bottom: 5px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -1096,7 +1109,7 @@ jumpx Nav Area Style
 }
 .navbar-area.is-sticky nav {
   background-color: #ffffff;
-  padding-top: 15px;
+  padding-top: 38px;
   padding-bottom: 15px;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
@@ -1136,7 +1149,6 @@ jumpx Nav Area Style
 
 .navbar-toggler {
   border: none;
-  background: #eee !important;
   padding: 10px;
   border-radius: 0;
 }
@@ -1784,7 +1796,7 @@ Business  Area Style
   padding: 0;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
-.main-item h2, .main-item img, .main-item .main-product-link, .main-item .main-product-link span {
+.main-item h2, .main-item img, .main-item .main-product-link, .main-item .main-product-link span, .main-item .main-product-link p {
   transition: all 1s ease-in-out;
 }
 .main-item .main-product-item {
@@ -1816,13 +1828,22 @@ Business  Area Style
   top: 0;
   left: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0);
 }
+.main-item .main-product-link p {
+  padding-bottom: 10px;
+  text-align: center;
+  color: transparent;
+  font-size: 20px;
+  font-family: "Pretendard";
+  font-weight: 300;
+}
 .main-item .main-product-link span {
   color: transparent;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Hahmlet";
   font-weight: 500;
   padding: 0 15px 5px;
@@ -1839,8 +1860,12 @@ Business  Area Style
 .main-item:hover .main-product-link {
   background: rgba(0, 0, 0, 0.3);
 }
+.main-item:hover .main-product-link p {
+  transform: translateY(-20px);
+  color: #ffffff;
+}
 .main-item:hover .main-product-link span {
-  transform: translateY(-30px);
+  transform: translateY(-20px);
   color: #ffffff;
   border: 1px solid #ffffff;
 }
@@ -2177,6 +2202,16 @@ News Area Style
 .single-news .blog-img {
   position: relative;
   overflow: hidden;
+  height: 290px;
+}
+.single-news .blog-img a {
+  height: 290px;
+  width: 100%;
+}
+.single-news .blog-img a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .single-news .blog-img .dates {
   position: absolute;
@@ -2200,9 +2235,15 @@ News Area Style
 .single-news .news-content-wrap.service-content-warp {
   height: 90px;
 }
-.single-news .news-content-wrap h3 {
+.single-news .news-content-wrap .news-tit {
+  width: 100%;
+}
+.single-news .news-content-wrap .news-tit h3 {
   font-family: "Pretendard";
   color: #4d4d4d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .single-news .news-content-wrap ul {
   margin-bottom: 10px;
@@ -2436,6 +2477,10 @@ Footer Top Area Style
 .tel_service p {
   font-weight: 700;
   font-size: 24px;
+}
+.tel_service .time {
+  font-size: 16px;
+  font-weight: 300;
 }
 
 /*
@@ -2951,6 +2996,19 @@ Brand Area Serve Area Style
   transition: all 0.6s ease;
 }
 
+.benefit_slide .benefits_wrap {
+  position: relative;
+}
+.benefit_slide .benefits_wrap .benefit_txt {
+  font-size: 1.35rem;
+  font-weight: 600;
+  position: absolute;
+  color: #eeeeee;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Pretendard";
+}
 .benefit_slide .swiper-pagination {
   position: initial;
   margin-top: 24px;
@@ -3716,6 +3774,7 @@ Sign In & Log In  Area Style
   margin-bottom: 33px;
 }
 .user-area-all-style .contact-form-action .form-heading .form-title {
+  font-family: "Pretendard";
   font-size: 28px;
   color: #0E5039;
   margin-bottom: 10px;
@@ -3927,6 +3986,7 @@ Blog Details Area Style
   ================================*/
 }
 .news-details-area .blog-details-desc .article-image {
+  text-align: center;
   position: relative;
   background-color: #f5f5f5;
 }
@@ -5253,13 +5313,12 @@ table, th, td {
   vertical-align: middle;
 }
 .member-table-wrap .table_membership tr th {
-  background-color: #0E5039;
-  color: #ffffff;
+  background-color: #e7e7e7;
   text-align: center;
   line-height: 1.1;
 }
 .member-table-wrap .table_membership tr th.sub_th {
-  background-color: #4E7D22;
+  background-color: #e7e7e7;
   text-align: left;
 }
 .member-table-wrap .table_membership tr th span.smaller {
@@ -5367,4 +5426,102 @@ table, th, td {
 .signup-agree-box {
   height: 300px;
   overflow: scroll;
+}
+
+.check-box {
+  display: flex;
+  align-items: center;
+}
+.check-box label {
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.form-check-input:checked {
+  background-color: #4E7D22;
+  border-color: #4E7D22;
+}
+
+.btn-next {
+  width: auto;
+  padding: 20px 50px;
+  margin: 30px auto;
+}
+
+.custom {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+.custom input {
+  appearance: none;
+}
+.custom input:checked ~ .checkmark {
+  background-color: #ffffff;
+  border: 1px solid #4E7D22;
+}
+.custom input:checked ~ .checkmark:after {
+  display: block;
+}
+.custom .checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  border: 1px solid #4E7D22;
+  border-radius: 50%;
+}
+.custom .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4E7D22;
+}
+.custom:hover input ~ .checkmark {
+  background-color: #eee;
+}
+
+/*Sidebar 메뉴*/
+.news-details-area .widget-area .widget_categories .sidemenu.membership li a.membership {
+  color: #4E7D22;
+}
+.news-details-area .widget-area .widget_categories .sidemenu.contract li a.contract {
+  color: #4E7D22;
+}
+.news-details-area .widget-area .widget_categories .sidemenu.reservation li a.reservation {
+  color: #4E7D22;
+}
+.news-details-area .widget-area .widget_categories .sidemenu.point li a.point {
+  color: #4E7D22;
+}
+.news-details-area .widget-area .widget_categories .sidemenu.order li a.order {
+  color: #4E7D22;
+}
+.news-details-area .widget-area .widget_categories .sidemenu.update li a.update {
+  color: #4E7D22;
+}
+
+.no-post {
+  height: 30vh;
+  justify-content: center;
+  display: flex;
+  font-size: 18px;
+}
+
+.bn_video {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }/*# sourceMappingURL=style.css.map */

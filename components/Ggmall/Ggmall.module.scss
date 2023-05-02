@@ -48,6 +48,25 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   }
 }
 
+.product_details_desc {
+  margin-top: 30px;
+  h2 {
+    margin-bottom: 30px;
+  }
+  p {
+  }
+  .price {
+    font-family: $body-font-family;
+    text-align: right;
+  }
+  .btn_warp {
+    text-align: right;
+    .btn {
+      padding: 20px 50px;
+    }
+  }
+}
+
 .items_text {
   border: 1px solid #eeeeee;
   padding: 30px
