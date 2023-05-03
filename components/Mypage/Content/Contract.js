@@ -5,7 +5,7 @@ const Contract = ({ user }) => {
     return (
         <div className="container">
             <div className={styles.content}>
-                준비중입니다
+                계약 내역이 없습니다.
             </div>
         </div>
     );
