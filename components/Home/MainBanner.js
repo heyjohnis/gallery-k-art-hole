@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper";
 
+
 const MainBanner = () => {
   return (
     <>
@@ -10,7 +11,7 @@ const MainBanner = () => {
           <Swiper
               navigation={true}
               autoplay={{
-                delay: 6500,
+                delay: 13000,
                 disableOnInteraction: true,
                 pauseOnMouseEnter: true,
               }}
@@ -18,10 +19,10 @@ const MainBanner = () => {
               className="hero-swiper"
             >
           <SwiperSlide>
-            <div
-              className="jumpx-slider-item"
-              style={{ backgroundImage: `url(/images/home/slider1.jpg)` }}
-            >
+            <div className="jumpx-slider-item" >
+              <video className="bn_video" autoPlay loop muted>
+                <source src="/video/bg_mov01.mp4" type="video/mp4"/>
+              </video>
               <div className="d-table">
                 <div className="d-table-cell">
                   <div className="container">
@@ -39,7 +40,7 @@ const MainBanner = () => {
             </div>
           </SwiperSlide>
 
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <div
               className="jumpx-slider-item"
               style={{ backgroundImage: `url(/images/home/slider2.jpg)` }}
@@ -83,7 +84,7 @@ const MainBanner = () => {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </section>
     </>

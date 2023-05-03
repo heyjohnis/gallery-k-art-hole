@@ -9,6 +9,21 @@
 .widget.black {
   background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(25, 25, 25) 70%);
 }
+.widget.platinum {
+  background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(153, 153, 153) 70%);
+}
+.widget.green {
+  background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(32, 96, 76) 70%);
+}
+.widget.blue {
+  background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(78, 121, 188) 70%);
+}
+.widget.red {
+  background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(218, 76, 67) 70%);
+}
+.widget.purple {
+  background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(121, 63, 144) 70%);
+}
 .widget .level {
   display: flex;
   justify-content: center;
@@ -24,7 +39,22 @@
   align-items: center;
 }
 .widget .thumb.black {
-  background: #222;
+  background: rgb(25, 25, 25);
+}
+.widget .thumb.platinum {
+  background: rgb(153, 153, 153);
+}
+.widget .thumb.green {
+  background: rgb(32, 96, 76);
+}
+.widget .thumb.blue {
+  background: rgb(78, 121, 188);
+}
+.widget .thumb.red {
+  background: rgb(218, 76, 67);
+}
+.widget .thumb.purple {
+  background: rgb(121, 63, 144);
 }
 .widget .info {
   color: #222;
@@ -75,11 +105,11 @@
   justify-content: space-between;
   margin-top: 30px;
   padding: 20px;
-  color: #ffffff;
+  color: #4d4d4d;
   border-radius: 16px;
 }
 .user_point.black {
-  background: #222;
+  border: 1px solid #222;
 }
 .user_point p {
   margin: 0;
@@ -88,4 +118,80 @@
 }
 .user_point .point_name {
   font-weight: 700;
-}/*# sourceMappingURL=mypage.module.css.map */
+}
+
+/*혜원혜택*/
+.benefit_info {
+  margin-bottom: 70px;
+}
+.benefit_info h3 {
+  margin: 30px 0 10px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.table_membership {
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 35px;
+}
+.table_membership thead th {
+  padding: 15px 10px;
+}
+.table_membership th {
+  background: #386f5c;
+  text-align: center;
+  vertical-align: middle;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+}
+.table_membership th span {
+  font-size: 12px;
+}
+.table_membership td {
+  vertical-align: middle;
+  line-height: 1.2;
+  color: #000000;
+}
+
+/*centent*/
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #999;
+  background: #fff;
+  height: 200px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: 991px) {
+  .widget.black {
+    background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(25, 25, 25) 90%);
+  }
+  .widget.platinum {
+    background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(153, 153, 153) 90%);
+  }
+  .widget.green {
+    background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(32, 96, 76) 90%);
+  }
+  .widget.blue {
+    background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(78, 121, 188) 90%);
+  }
+  .widget.red {
+    background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(218, 76, 67) 90%);
+  }
+  .widget.purple {
+    background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(121, 63, 144) 90%);
+  }
+  .widget .level {
+    align-items: center;
+  }
+  .widget .info {
+    text-align: left;
+  }
+}/*# sourceMappingURL=Mypage.module.css.map */

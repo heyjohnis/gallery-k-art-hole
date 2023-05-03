@@ -151,6 +151,7 @@ h3 {
 .d-table {
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.3);
 }
 .d-table-cell {
   vertical-align: middle;
@@ -1988,7 +1989,7 @@ Business  Area Style
   overflow: hidden;
   padding: 0;
   box-shadow: $box-shadow; 
-  h2, img, .main-product-link, .main-product-link span{
+  h2, img, .main-product-link, .main-product-link span, .main-product-link p{
     transition: all 1s ease-in-out;
   }
   .main-product-item {
@@ -2020,12 +2021,21 @@ Business  Area Style
     top: 0;
     left: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background:rgba(0, 0, 0, 0.0);
+    p {
+      padding-bottom: 10px;
+      text-align: center;
+      color: transparent;
+      font-size: 20px;
+      font-family: $body-font-family;
+      font-weight: 300;
+    }
     span {
       color: transparent;
-      font-size: 18px;
+      font-size: 16px;
       font-family: $heading-font-family;
       font-weight: 500;
       padding: 0 15px 5px;
@@ -2044,8 +2054,12 @@ Business  Area Style
     }
     .main-product-link {
       background:rgba(0, 0, 0, 0.3);
+      p { 
+        transform: translateY(-20px);
+        color: $white-color;
+      }
       span{
-        transform: translateY(-30px);
+        transform: translateY(-20px);
         color: $white-color;
         border: 1px solid $white-color;
       }
@@ -3252,25 +3266,6 @@ Industries Serve Area Style
       color: $sub-color;
     }
   }
-  // &:hover {
-  //   i {
-  //     color: $white-color;
-  //     transform: rotate(360deg);
-  //   }
-  //   h3 {
-  //     color: $white-color;
-  //   }
-  //   span {
-  //     color: $white-color;
-  //   }
-  //   a {
-  //     right: 20px;
-  //   }
-  //   &::before {
-  //     width: 100%;
-  //     border-radius: 60px 0 0 60px;
-  //   }
-  // }
 }
 
 /*
@@ -3309,7 +3304,19 @@ Brand Area Serve Area Style
 }
 
 .benefit_slide {
-
+  .benefits_wrap {
+    position: relative;
+    .benefit_txt {
+      font-size: 1.35rem;
+      font-weight: 600;
+      position: absolute;
+      color: #eeeeee;
+      bottom: 3%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: $body-font-family;
+    }
+  }
   .swiper-pagination {
     position: initial;
     margin-top: 24px;
@@ -6022,4 +6029,13 @@ table, th, td {
   font-size: 18px;
 }
 
+.bn_video {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
 
