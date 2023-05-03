@@ -1,7 +1,7 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
 import AssociateItems from '../components/Ggmall/AssociateItems';
-import AssociateText from '../components/Ggmall/AssociateText';
+// import AssociateText from '../components/Ggmall/AssociateText';
 import Footer from "../components/Layouts/Footer";
 
 export default function NewsGrid() {
@@ -15,7 +15,7 @@ export default function NewsGrid() {
       />
 
       <AssociateItems/>
-      <AssociateText/>
+      {/* <AssociateText/> */}
 
       <Footer />
     </>
