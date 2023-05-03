@@ -203,7 +203,7 @@ const teamData = [
   },
 ];
 
-const TeamCard = () => {
+const GgmallList = () => {
   return (
     <>
       <section className="team-area ptb-100">
@@ -228,7 +228,7 @@ const TeamCard = () => {
                     </div>
 
                     <div className="team-content">
-                      <h3>{value.name}</h3>
+                      <h3 className='f_body'>{value.name}</h3>
                       <span>{value.designation}</span>
 
                       <ul>
@@ -284,4 +284,4 @@ const TeamCard = () => {
   );
 };
 
-export default TeamCard;
+export default GgmallList;

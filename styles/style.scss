@@ -3448,3 +3448,55 @@ table, th, td {
   object-fit: cover;
 }
 
+/*
+디자인 가이드
+================================*/
+.fw200 {
+  font-weight: 200 !important; 
+}
+.fw300 {
+  font-weight: 300 !important; 
+}
+.fw400 {
+  font-weight: 400 !important; 
+}
+.fw500 {
+  font-weight: 500 !important; 
+}
+.fw600 {
+  font-weight: 600 !important; 
+}
+.fw700 {
+  font-weight: 700 !important; 
+}
+
+.fs_sm {
+  font-size: 14px !important;
+}
+.fs_normal {
+  font-size: 18px !important;
+}
+.fs_bigger {
+  font-size: 24px !important;
+}
+
+.font_main_color {
+  color: $main-color !important;
+}
+.font_sub_color {
+  color: $sub-color !important;
+}
+
+.bg_main_color {
+  background: $main-color !important;
+}
+.bg_sub_color {
+  background: $sub-color !important;
+}
+
+.f_heading {
+  font-family: $heading-font-family;
+} 
+.f_body {
+  font-family: $body-font-family;
+} 

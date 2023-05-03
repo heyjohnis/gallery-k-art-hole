@@ -1,7 +1,7 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
-import TeamCard from "../components/Team/TeamCard";
+import GgmallList from '../components/Ggmall/GgmallList';
 
 export default function Team() {
   return (
@@ -13,7 +13,7 @@ export default function Team() {
         activePageText="Team"
       />
 
-      <TeamCard />
+      <GgmallList/>
 
       <Footer />
     </>
