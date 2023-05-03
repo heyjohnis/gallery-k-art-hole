@@ -7,10 +7,10 @@ export default function SignUp() {
   return (
     <>
       <PageBanner
-        pageTitle="회원가입 3"
+        pageTitle="회원가입"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="회원가입 3"
+        activePageText="회원가입"
       />
 
       <div className="user-area-all-style sign-up-area ptb-100">
