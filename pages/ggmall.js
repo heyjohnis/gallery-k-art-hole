@@ -4,7 +4,7 @@ import GgmallItems from '../components/Ggmall/GgmallItems';
 import GgmallText from '../components/Ggmall/GgmallText';
 import Footer from "../components/Layouts/Footer";
 
-export default function NewsGrid() {
+export default function GgmailDetail() {
   return (
     <>
       <PageBanner

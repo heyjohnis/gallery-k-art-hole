@@ -4,12 +4,22 @@ import styles from "./Mypage.module.scss";
 
 const MyLevel = ({ user }) => {
 
+  let membershipStyle;
+  switch( user.membership ) {
+    case 'green': membershipStyle = styles.green; break;
+    case 'red': membershipStyle = styles.red; break;
+    case 'blue': membershipStyle = styles.blue; break;
+    case 'purple': membershipStyle = styles.purple; break;
+    case 'black': membershipStyle = styles.black; break;
+    case 'platinum': membershipStyle = styles.platinum; break;
+  }
+    
   return (
     <>
-      <div className={`${styles.widget} ${styles.black}`}>
+      <div className={`${styles.widget} ${membershipStyle}`}>
         <article className="row">
           <div className={`col-4 col-sm-3 col-lg-12 ${styles.level}`}>
-            <div className={`${styles.thumb} ${styles.black}`}>
+            <div className={`${styles.thumb}`}>
               <span className="black">{(user.membership || "").toUpperCase()}</span>
             </div>
           </div> 

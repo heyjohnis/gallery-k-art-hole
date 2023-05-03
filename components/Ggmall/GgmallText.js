@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from "react";
 import styles from "./Ggmall.module.scss";
 
-const GgmallText = () => {
+const GgmallText = ( { content }) => {
   const openTabSection = (evt, tabNmae) => {
     let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabs_item");
@@ -46,13 +46,19 @@ const GgmallText = () => {
 
                   <div className="tab_content">
                     <div id="tab1" className="tabs_item">
-                      <img src="/images/ggmall/product_desc01.png"/>
+                      {
+                        content.info_product ? <div dangerouslySetInnerHTML={{__html: content.info_product}}></div> : '준비중입니다.'
+                      }
                     </div>
                     <div id="tab2" className="tabs_item">
-                      <p>준비중입니다.</p>
+                      {
+                        content.info_use ? <div dangerouslySetInnerHTML={{__html: content.info_use}}></div> : '준비중입니다.'
+                      }
                     </div>
                     <div id="tab3" className="tabs_item">
-                      <p>준비중입니다.</p>
+                      {
+                        content.notice ? <div dangerouslySetInnerHTML={{__html: content.notice}}></div> : '준비중입니다.'
+                      }
                     </div>
                   </div>
                 </div>

@@ -19,21 +19,39 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   color: $white-color;
   &.black{
     background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(25, 25, 25) 70%);
+    .thumb {
+      background: rgb(25, 25, 25);
+    }
   }
   &.platinum{
     background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(153, 153, 153) 70%);
+    .thumb {
+      background: rgb(153, 153, 153);
+    }
   }
   &.green{
     background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(32, 96, 76) 70%);
+    .thumb {
+      background: rgb(32, 96, 76);
+    }
   }
   &.blue{
     background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(78, 121, 188) 70%);
+    .thumb {
+      background: rgb(78, 121, 188);
+    }
   }
   &.red{
     background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(218, 76, 67) 70%);
+    .thumb {
+      background: rgb(218, 76, 67);
+    }
   }
   &.purple{
     background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(121, 63, 144) 70%);
+    .thumb {
+      background: rgb(121, 63, 144);
+    }
   }
 
   .level {
@@ -49,25 +67,6 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
     align-items: center;
-    &.black{
-      background: rgb(25, 25, 25);
-    }
-    &.platinum{
-      background: rgb(153, 153, 153);
-    }
-    &.green{
-      background: rgb(32, 96, 76);
-    }
-    &.blue{
-      background: rgb(78, 121, 188);
-    }
-    &.red{
-      background: rgb(218, 76, 67);
-    }
-    &.purple{
-      background: rgb(121, 63, 144);
-    }
-
   }
   .info {
     color: #222;

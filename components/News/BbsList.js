@@ -19,7 +19,7 @@ const BbsList = ({contents}) => {
           </div>
         </div>
       </section>
-      :
+      : 
       <BbsNoContent />
 
       
