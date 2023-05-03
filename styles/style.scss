@@ -844,26 +844,6 @@ Keyframes Area Style
   }
 }
 
-/*
-Nice Select Area Style
-======================================================*/
-.nice-select {
-  .option {
-    display: block;
-    &:hover {
-      background-color: $main-color;
-      color: $white-color;
-    }
-  }
-  .option.selected.focus {
-    background-color: $heading-color;
-    color: $main-color;
-  }
-  .list {
-    width: 100%;
-  }
-}
-/*===== DEFAULT STYLE END ======*/
 
 /*
 jumpx Nav Area Style
