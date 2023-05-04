@@ -1,209 +1,21 @@
 import React from "react";
+import Link from "next/link";
 
 const teamData = [
   {
-    image: "/images/team/team1.png",
-    name: "Karen Peter",
-    designation: "CEO & Founder",
+    image: "/images/ggmall/product01.png",
+    name: "아이젠하임 말리 블랙휠스탠드골프백",
+    price: "713,000",
     aosDelay: "100",
-
-    socialLinks: [
-      {
-        iconName: "bx bxl-facebook",
-        url: "https://facebook.com/",
-      },
-      {
-        iconName: "bx bxl-twitter",
-        url: "https://twitter.com/",
-      },
-      {
-        iconName: "bx bxl-linkedin",
-        url: "https://linkedin.com/",
-      },
-      {
-        iconName: "bx bxl-pinterest-alt",
-        url: "https://pinterest.com/",
-      },
-    ],
-  },
-  {
-    image: "/images/team/team2.png",
-    name: "Alex Piter",
-    designation: "Executive",
-    aosDelay: "200",
-
-    socialLinks: [
-      {
-        iconName: "bx bxl-facebook",
-        url: "https://facebook.com/",
-      },
-      {
-        iconName: "bx bxl-twitter",
-        url: "https://twitter.com/",
-      },
-      {
-        iconName: "bx bxl-linkedin",
-        url: "https://linkedin.com/",
-      },
-      {
-        iconName: "bx bxl-pinterest-alt",
-        url: "https://pinterest.com/",
-      },
-    ],
-  },
-  {
-    image: "/images/team/team3.png",
-    name: "Alisa Maria",
-    designation: "Web Developer",
-    aosDelay: "300",
-
-    socialLinks: [
-      {
-        iconName: "bx bxl-facebook",
-        url: "https://facebook.com/",
-      },
-      {
-        iconName: "bx bxl-twitter",
-        url: "https://twitter.com/",
-      },
-      {
-        iconName: "bx bxl-linkedin",
-        url: "https://linkedin.com/",
-      },
-      {
-        iconName: "bx bxl-pinterest-alt",
-        url: "https://pinterest.com/",
-      },
-    ],
-  },
-  {
-    image: "/images/team/team4.png",
-    name: "Peter Jack",
-    designation: "UI/UX Designer",
-    aosDelay: "400",
-
-    socialLinks: [
-      {
-        iconName: "bx bxl-facebook",
-        url: "https://facebook.com/",
-      },
-      {
-        iconName: "bx bxl-twitter",
-        url: "https://twitter.com/",
-      },
-      {
-        iconName: "bx bxl-linkedin",
-        url: "https://linkedin.com/",
-      },
-      {
-        iconName: "bx bxl-pinterest-alt",
-        url: "https://pinterest.com/",
-      },
-    ],
-  },
-  {
-    image: "/images/team/team5.png",
-    name: "Anna Dew",
-    designation: "React Developer",
-    aosDelay: "500",
-
-    socialLinks: [
-      {
-        iconName: "bx bxl-facebook",
-        url: "https://facebook.com/",
-      },
-      {
-        iconName: "bx bxl-twitter",
-        url: "https://twitter.com/",
-      },
-      {
-        iconName: "bx bxl-linkedin",
-        url: "https://linkedin.com/",
-      },
-      {
-        iconName: "bx bxl-pinterest-alt",
-        url: "https://pinterest.com/",
-      },
-    ],
-  },
-  {
-    image: "/images/team/team6.png",
-    name: "Zeck Keath",
-    designation: "Angular Developer",
-    aosDelay: "600",
-
-    socialLinks: [
-      {
-        iconName: "bx bxl-facebook",
-        url: "https://facebook.com/",
-      },
-      {
-        iconName: "bx bxl-twitter",
-        url: "https://twitter.com/",
-      },
-      {
-        iconName: "bx bxl-linkedin",
-        url: "https://linkedin.com/",
-      },
-      {
-        iconName: "bx bxl-pinterest-alt",
-        url: "https://pinterest.com/",
-      },
-    ],
-  },
-  {
-    image: "/images/team/team7.png",
-    name: "Zeet Pew",
-    designation: "Wed Developer",
-    aosDelay: "700",
-
-    socialLinks: [
-      {
-        iconName: "bx bxl-facebook",
-        url: "https://facebook.com/",
-      },
-      {
-        iconName: "bx bxl-twitter",
-        url: "https://twitter.com/",
-      },
-      {
-        iconName: "bx bxl-linkedin",
-        url: "https://linkedin.com/",
-      },
-      {
-        iconName: "bx bxl-pinterest-alt",
-        url: "https://pinterest.com/",
-      },
-    ],
-  },
-  {
-    image: "/images/team/team8.png",
-    name: "Peter Jack",
-    designation: "Web Developer",
-    aosDelay: "800",
-
-    socialLinks: [
-      {
-        iconName: "bx bxl-facebook",
-        url: "https://facebook.com/",
-      },
-      {
-        iconName: "bx bxl-twitter",
-        url: "https://twitter.com/",
-      },
-      {
-        iconName: "bx bxl-linkedin",
-        url: "https://linkedin.com/",
-      },
-      {
-        iconName: "bx bxl-pinterest-alt",
-        url: "https://pinterest.com/",
-      },
-    ],
   },
 ];
 
 const GgmallList = () => {
+  
+  const onClick = () => {
+    console.log('제품페이지 이동');
+  }
+
   return (
     <>
       <section className="team-area ptb-100">
@@ -218,31 +30,21 @@ const GgmallList = () => {
                   data-aos-delay={value.aosDelay}
                   key={i}
                 >
-                  <div className="single-team active">
+                  <div className="single-team active" onClick={onClick}>
                     <div className="team-single-img">
                       <img src={value.image} alt="Image" />
-
-                      <div className="team-img">
-                        <img src="/images/team/team-shape.png" alt="Image" />
-                      </div>
                     </div>
 
                     <div className="team-content">
-                      <h3 className='f_body'>{value.name}</h3>
-                      <span>{value.designation}</span>
-
-                      <ul>
-                        {value.socialLinks.map((value, i) => (
-                          <li key={i}>
-                            <a href={value.url} target="_blank">
-                              <i className={value.iconName}></i>
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
+                      <h3>{value.name}</h3>
+                      <p><span className='price'>{value.price}</span>원</p>
                     </div>
+                    <Link className="default-btn" href="/ggmall/1">
+                      구매하기
+                    </Link>
                   </div>
                 </div>
+        
               ))}
 
             {/* Pagination */}

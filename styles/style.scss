@@ -2200,7 +2200,7 @@ GGmall 리스트
 ======================================================*/
 .single-team {
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   margin-bottom: 30px;
   transition: $transition;
@@ -2208,10 +2208,9 @@ GGmall 리스트
 
   .team-single-img {
     position: relative;
-    margin-top: 15px;
-    margin-bottom: 55px;
+    margin-bottom: 35px;
     img {
-      border-radius: 50%;
+      border-radius: 16px;
     }
     .team-img {
       position: absolute;
@@ -2227,30 +2226,20 @@ GGmall 리스트
   }
   .team-content {
     h3 {
+      font-family: $body-font-family;
       color: $heading-color;
     }
-    span {
+    p {
       margin-bottom: 15px;
       display: block;
-    }
-    ul {
-      line-height: 1;
-      padding: 0;
-      margin: 0;
-      li {
-        display: inline-block;
-        padding: 0 5px;
-        a {
-          background-color: #fafafa;
-          width: 30px;
-          height: 30px;
-          line-height: 30px;
-          &:hover {
-            animation: rubberBand 1s linear;
-          }
-        }
+      .price {
+        font-weight: 700;
+        margin-right: 5px;
       }
     }
+  }
+  .default-btn {
+    padding: 10px 25px;
   }
 }
 
