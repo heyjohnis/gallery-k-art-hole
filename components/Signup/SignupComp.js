@@ -6,6 +6,7 @@ import { useDaumPostcodePopup } from "react-daum-postcode";
 
 export default function SignupComp( { compType, user }) {
 
+  const [readlOnly, setReadlOnly] = useState(false);
   const [form, setForm] = useState(
     //   # user_kind  01: 개인 / 02: 사업자
     // # crop_type  01: 개인회사 / 02: 법인회사
@@ -14,7 +15,7 @@ export default function SignupComp( { compType, user }) {
       login_id: "",
       password: "",
       user_name: "",
-      user_kind: "",
+      user_kind: "01",
       corp_type: "",
       corp_name: "",
       corp_ssn: "",
@@ -35,6 +36,8 @@ export default function SignupComp( { compType, user }) {
   };
 
   const checkLoginId = async () => {
+    if(compType === 'mod') return;
+
     const url = `${baseUrl}/checkLoginId`;
     const payload = { login_id: form.login_id };
 
@@ -57,7 +60,7 @@ export default function SignupComp( { compType, user }) {
     if(!form.login_id) throw new Error('아이디를 입력해주세요.');
     if(!form.password) throw new Error('패스워드를 입력해주세요.');
     if(!form.user_name) throw new Error('이름을 입력해주세요.');
-    if(!form.mobile1 || !form.mobile2 || !form.mobile3) throw new Error('휴대전화를 입력해주세요.');
+    if(!form.mobile) throw new Error('휴대전화를 입력해주세요.');
     if(!form.email) throw new Error('이메일을 입력해주세요.');
   }
 
@@ -66,19 +69,22 @@ export default function SignupComp( { compType, user }) {
 
     try {
       setLoading(true);
-      const url = `${baseUrl}/signup`;
+      const url = `${baseUrl}/${compType === 'mod' ? 'myinfo/update' : 'signup'}` ;
       const payload = {
         ...form,
         corp_ssn: form.corp_ssn1 + form.corp_ssn2,
-        mobile: `${form.mobile1}-${form.mobile2}-${form.mobile3}`,
-        phone: `${form.phone1}-${form.phone2}-${form.phone3}`,
       };
 
       validationInputs();
 
       const response = await axios.post(url, payload);
-      alert("회원가입이 완료되었습니다.");
-      handleLogin(response.data.token);
+      if(compType === 'reg' ) {
+        alert("회원가입이 완료되었습니다.");
+        handleLogin(response.data.token);  
+      } else {
+        alert("수정되었습니다.");
+      }
+
     } catch (error) {
       alert(error.message);
     } finally {
@@ -117,11 +123,9 @@ export default function SignupComp( { compType, user }) {
   };
 
 	useState( () => {
-
 		if(compType == 'mod') {
-			console.log("user: ", user);
-			setForm((prevState) => ({ ...user}));
-
+			setForm(() => ({ ...user}));
+            setReadlOnly(true);
 		}
 
 	}, []);
@@ -150,6 +154,7 @@ export default function SignupComp( { compType, user }) {
                             name="user_kind" 
                             value="01"
                             onChange={handleChange}
+                            checked={form.user_kind === '01'}
                         />
                         <span className="checkmark"></span>
                         </label>
@@ -162,6 +167,7 @@ export default function SignupComp( { compType, user }) {
                             name="user_kind" 
                             value="02"
                             onChange={handleChange}
+                            checked={form.user_kind === '02'}
                         />
                         <span className="checkmark"></span>
                         </label>
@@ -187,6 +193,7 @@ export default function SignupComp( { compType, user }) {
                             name="corp_type"
                             id=""
                             onChange={handleChange}
+                            checked={form.corp_type === '01'}
                             />
                             <span className="checkmark"></span>
                         </label>
@@ -199,6 +206,7 @@ export default function SignupComp( { compType, user }) {
                             value="02"
                             name="corp_type"
                             onChange={handleChange}
+                            checked={form.corp_type === '02'}
                             />
                             <span className="checkmark"></span>
                         </label>
@@ -278,6 +286,7 @@ export default function SignupComp( { compType, user }) {
                         value={form.login_id}
                         onChange={handleChange}
                         onBlur={checkLoginId}
+                        readOnly={readlOnly}
                     />
                     </div>
                 </div>
@@ -334,6 +343,7 @@ export default function SignupComp( { compType, user }) {
                         placeholder="이름을 입력하세요."
                         value={form.user_name}
                         onChange={handleChange}
+                        readOnly={readlOnly}
                     />
                     </div>
                 </div>
@@ -386,42 +396,16 @@ export default function SignupComp( { compType, user }) {
                     <div className="col-md-3 col-sm-3">
                     <p>일반전화</p>
                     </div>
-                    <div className="col-md-9 col-sm-9">
-                    <div className="row">
-                    <div className="col-md-3 col-sm-3">
+                    <div className="col-md-9 col-sm-9 signup">
                         <input
                             className="form-control"
                             type="text"
-                            name="phone1"
+                            name="phone"
                             id="form1"
-                            value={form.phone1}
-                            maxLength={4}
+                            value={form.phone}
+                            maxLength={15}
                             onChange={handleChange}
                         />
-                        </div>
-                        <div className="col-md-3 col-sm-3">
-                        <input
-                            className="form-control"
-                            type="text"
-                            name="phone2"
-                            id="form1"
-                            value={form.phone2}
-                            maxLength={4}
-                            onChange={handleChange}
-                        />
-                        </div>
-                        <div className="col-md-3 col-sm-3">
-                        <input
-                            className="form-control"
-                            type="text"
-                            name="phone3"
-                            id="form1"
-                            value={form.phone3}
-                            maxLength={4}
-                            onChange={handleChange}
-                        />
-                        </div>
-                    </div>
                     </div>
                 </div>
 
@@ -431,42 +415,16 @@ export default function SignupComp( { compType, user }) {
                         휴대전화 <span className="sup">*</span>
                     </p>
                     </div>
-                    <div className="col-md-9 col-sm-9">
-                    <div className="row">
-                        <div className="col-md-3 col-sm-3">
+                    <div className="col-md-9 col-sm-9 signup">
                         <input
                             className="form-control"
                             type="text"
-                            name="mobile1"
+                            name="mobile"
                             id="form1"
-                            value={form.mobile1}
-                            maxLength={3}
+                            value={form.mobile}
+                            maxLength={15}
                             onChange={handleChange}
                         />
-                        </div>
-                        <div className="col-md-3 col-sm-3">
-                        <input
-                            className="form-control"
-                            type="text"
-                            name="mobile2"
-                            id="form1"
-                            value={form.mobile2}
-                            maxLength={4}
-                            onChange={handleChange}
-                        />
-                        </div>
-                        <div className="col-md-3 col-sm-3">
-                        <input
-                            className="form-control"
-                            type="text"
-                            name="mobile3"
-                            id="form1"
-                            value={form.mobile3}
-                            maxLength={4}
-                            onChange={handleChange}
-                        />
-                        </div>
-                    </div>
                     </div>
                 </div>
 
