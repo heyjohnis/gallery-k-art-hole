@@ -48,16 +48,31 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   }
 }
 
+
+/*GGmall 상세*/
 .product_details_desc {
   margin-top: 30px;
+  padding-left: 30px;
   h2 {
-    margin-bottom: 30px;
+    font-family: $body-font-family;
+    font-weight: 500;
+    margin-bottom: 50px;
   }
   p {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  .tit {
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 10px;
   }
   .price {
+    margin: 70px 0 20px;
     font-family: $body-font-family;
     text-align: right;
+    font-size: 24px;
+    font-weight: 700;
   }
   .btn_warp {
     text-align: right;

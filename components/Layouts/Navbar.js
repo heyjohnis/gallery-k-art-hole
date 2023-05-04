@@ -182,7 +182,7 @@ const Navbar = ({ user }) => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        href="/ggmall/1"
+                        href="/ggmall-list"
                         className={`nav-link ${currentPath == "/gg/" && "active"}`}
                       >
                         GG몰
