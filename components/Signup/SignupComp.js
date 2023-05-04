@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useRef } from "react";
+import cookie from "js-cookie";
 import { handleLogin } from "../../utils/auth";
 import baseUrl from "../../utils/baseUrl";
 import { useDaumPostcodePopup } from "react-daum-postcode";
@@ -76,8 +77,9 @@ export default function SignupComp( { compType, user }) {
       };
 
       validationInputs();
-
-      const response = await axios.post(url, payload);
+      
+      const medq_token = cookie.get("medq_token");
+      const response = await axios.post(url, payload, { headers: { Authorization: `Bearer ${medq_token}` }});
       if(compType === 'reg' ) {
         alert("회원가입이 완료되었습니다.");
         handleLogin(response.data.token);  
