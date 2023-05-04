@@ -28,20 +28,21 @@ const GgmallItems = ({ content }) => {
             <div className="col-lg-6 col-md-12">
               <div className={styles.product_details_desc}>
                 <h2>{content.pd_name}</h2>
-                <p><span className={styles.tit}>브랜드:</span>{content.brand}</p>
-              { options.length > 0 &&
-                <>
-                  <div>
-                    <span className={styles.tit}>컬러선택:</span>                
-                    <select>
-                      {
-                        options.map( option => <option key={option} value={option}>{option}</option>)
-                      }
-                    </select>
-                  </div>
-                </>
-              }
-                <h2 className={styles.price}>713,000원</h2>
+                <div className={styles.info_wrap}><span className={styles.tit}>브랜드:</span>{content.brand}</div>
+                { options.length > 0 &&
+                  <>
+                    <div className={styles.info_wrap}>
+                      <span className={styles.tit}>컬러선택:</span>                
+                      <select>
+                        {
+                          options.map( option => <option key={option} value={option}>{option}</option>)
+                        }
+                      </select>
+                    </div>
+                  </>
+                }
+                <div className={styles.info_wrap}><span className={styles.tit}>수량선택:</span></div>
+                <h2 className={styles.price}>713,000<span>원</span></h2>
                 <div className={styles.btn_warp}>
                   <Link href="#" className={`default-btn ${styles.btn}`}>구매하기</Link> 
                 </div>
