@@ -9,7 +9,7 @@ import BbsDetailContent from './../../components/News/BbsDetailContent';
 import GgmallItems from './../../components/Ggmall/GgmallItems';
 import GgmallText from './../../components/Ggmall/GgmallText';
 
-const BbsDetail = () => {
+const MallDetail = () => {
     
     const router = useRouter();
     const [loading, setLoading] = useState({});
@@ -21,7 +21,7 @@ const BbsDetail = () => {
 
         setLoading(true);
 
-        const pdNo = router.query.all[0];
+        const pdNo = router.query.id;
         const url = `${baseUrl}/mall/${pdNo}`;
         axios({ method: "get", url })
             .then( ({data}) => {
@@ -32,7 +32,7 @@ const BbsDetail = () => {
                 setLoading(false);
             });
 
-    }, [router.query.all[0]]);
+    }, [router.query.id]);
 
 
     return (
@@ -52,4 +52,4 @@ const BbsDetail = () => {
     );
 };
 
-export default BbsDetail;
+export default MallDetail;

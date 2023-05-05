@@ -1,16 +1,9 @@
 import React from "react";
 import Link from "next/link";
 
-const teamData = [
-  {
-    image: "/images/ggmall/product01.png",
-    name: "아이젠하임 말리 블랙휠스탠드골프백",
-    price: "713,000",
-    aosDelay: "100",
-  },
-];
+import { commaFormat } from "../../utils/number";
 
-const GgmallList = () => {
+const GgmallList = ({ contents }) => {
   
   const onClick = () => {
     console.log('제품페이지 이동');
@@ -21,25 +14,25 @@ const GgmallList = () => {
       <section className="team-area ptb-100">
         <div className="container">
           <div className="row justify-content-center">
-            {teamData &&
-              teamData.map((value, i) => (
+            {contents &&
+              contents.map((content, i) => (
                 <div
                   className="col-lg-3 col-sm-6"
                   data-aos="fade-in"
                   data-aos-duration="1200"
-                  data-aos-delay={value.aosDelay}
+                  data-aos-delay={100}
                   key={i}
                 >
                   <div className="single-team active" onClick={onClick}>
                     <div className="team-single-img">
-                      <img src={value.image} alt="Image" />
+                      <img src={content.thumb_img} alt="Image" />
                     </div>
 
                     <div className="team-content">
-                      <h3>{value.name}</h3>
-                      <p><span className='price'>{value.price}</span>원</p>
+                      <h3>{content.pd_name}</h3>
+                      <p><span className='price'>{commaFormat(content.price || 0)}</span>원</p>
                     </div>
-                    <Link className="default-btn" href="/ggmall/1">
+                    <Link className="default-btn" href={`/ggmall/${content.pd_no}`}>
                       구매하기
                     </Link>
                   </div>
@@ -48,7 +41,7 @@ const GgmallList = () => {
               ))}
 
             {/* Pagination */}
-            <div className="col-lg-12">
+            {/* <div className="col-lg-12">
               <div className="page-navigation-area">
                 <nav aria-label="Page navigation example text-center">
                   <ul className="pagination">
@@ -78,7 +71,7 @@ const GgmallList = () => {
                   </ul>
                 </nav>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

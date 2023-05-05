@@ -2,6 +2,8 @@ import Link from 'next/link';
 import React, { useEffect, useState } from "react";
 import styles from "./Ggmall.module.scss";
 
+import { commaFormat } from '../../utils/number';
+
 const GgmallItems = ({ content }) => {
 
   const [options, setOptions] = useState([]);
@@ -22,7 +24,7 @@ const GgmallItems = ({ content }) => {
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
               <div className={styles.items_image}>
-                <img src="/images/ggmall/product01.png"/>
+                <img src={content.thumb_img}/>
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
@@ -41,8 +43,8 @@ const GgmallItems = ({ content }) => {
                     </div>
                   </>
                 }
-                <div className={styles.info_wrap}><span className={styles.tit}>수량선택:</span></div>
-                <h2 className={styles.price}>713,000<span>원</span></h2>
+                {/* <div className={styles.info_wrap}><span className={styles.tit}>수량선택:</span></div> */}
+                <h2 className={styles.price}>{commaFormat(content.price || 0)}<span>원</span></h2>
                 <div className={styles.btn_warp}>
                   <Link href="#" className={`default-btn ${styles.btn}`}>구매하기</Link> 
                 </div>
