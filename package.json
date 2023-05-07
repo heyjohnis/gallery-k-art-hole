@@ -4,7 +4,7 @@
   "description": "Jumpx - React Next.js AI & IT Startup Template",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },

@@ -37,8 +37,7 @@ export default function Login() {
       const response = await axios.post(url, payload);
       handleLogin(response.data.token);
     } catch (error) {
-      alert(error.response.data.message);
-      catchErrors(error, setError);
+      alert(error);
     } finally {
       setLoading(false);
     }
