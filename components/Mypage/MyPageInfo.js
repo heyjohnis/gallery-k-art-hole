@@ -28,6 +28,10 @@ const MyPageInfo = ({ user }) => {
               <p>{user.user_name} 님은 <span className={styles.point_name}>그린갤러리 {user.ms_name}</span> 이용중이십니다. </p>
               <p>최대 월 {user.monthly_count}회 / 연 {user.yearly_count}회</p>
           </div>
+            <p>이용기간: {user.start_date} ~ {user.end_date}</p>
+          <div>
+          </div>
+
 
         </div>
       </section>
