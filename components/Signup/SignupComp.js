@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useState, useRef } from "react";
 import cookie from "js-cookie";
+import { useDaumPostcodePopup } from "react-daum-postcode";
+
 import { handleLogin } from "../../utils/auth";
 import baseUrl from "../../utils/baseUrl";
-import { useDaumPostcodePopup } from "react-daum-postcode";
+import { hyphenForPhone, hyphenForCorpNum } from "../../utils/number"; 
 
 export default function SignupComp( { compType, user }) {
 
@@ -35,6 +37,7 @@ export default function SignupComp( { compType, user }) {
     const { name, value } = e.target;
     setForm((prevState) => ({ ...prevState, [name]: value }));
   };
+
 
   const checkLoginId = async () => {
     if(compType === 'mod') return;
@@ -72,8 +75,10 @@ export default function SignupComp( { compType, user }) {
       setLoading(true);
       const url = `${baseUrl}/${compType === 'mod' ? 'myinfo/update' : 'signup'}` ;
       const payload = {
-        ...form,
-        corp_ssn: form.corp_ssn1 + form.corp_ssn2,
+        ...form, 
+        corp_ssn: (form.corp_ssn).replace(/[^0-9]/g, ''),
+        mobile: (form.mobile).replace(/[^0-9]/g, ''),
+        phone: (form.phone).replace(/[^0-9]/g, "")
       };
 
       validationInputs();
@@ -126,7 +131,12 @@ export default function SignupComp( { compType, user }) {
 
 	useState( () => {
 		if(compType == 'mod') {
-			setForm(() => ({ ...user}));
+			setForm(() => ({ 
+                ...user,
+                mobile: hyphenForPhone(user.mobile),
+                phone: hyphenForPhone(user.phone),
+                corp_ssn: hyphenForCorpNum(user.corp_ssn)
+            }));
             setReadlOnly(true);
 		}
 
@@ -178,8 +188,9 @@ export default function SignupComp( { compType, user }) {
                 </div>
 
 
-                { form.user_kind === '02' ? 
-                    <div className="form-group signup">
+                { form.user_kind === '02' && 
+                <>
+                <div className="form-group signup">
                     <div className="col-md-3 col-sm-3">
                         <p>
                         사업자 구분 <span className="sup">*</span>
@@ -214,20 +225,15 @@ export default function SignupComp( { compType, user }) {
                         </label>
                         </div>
                     </div>
-                    </div>
-                : ''
-                }
-
-                { (form.user_kind === '02' && form.corp_type === '02') ?
-                <>
-                    <div className="form-group signup">
+                </div>
+                <div className="form-group signup">
                     <div className="col-md-3 col-sm-3">
                         <p>
-                        회원번호 <span className="sup">*</span>
+                        사업자정보 <span className="sup">*</span>
                         </p>
                     </div>
                     <div className="col-md-9 col-sm-9">
-                        <label htmlFor="form1">법인명</label>
+                        <label htmlFor="form1">사업자명</label>
                         <input
                         className="form-control"
                         type="text"
@@ -237,36 +243,25 @@ export default function SignupComp( { compType, user }) {
                         onChange={handleChange}
                         />
                     </div>
-                    </div>
-
-                    <div className="form-group signup">
+                </div>
+                <div className="form-group signup">
                     <div className="col-md-3 col-sm-3"></div>
                     <div className="col-md-9 col-sm-9">
-                        <label htmlFor="form1">법인번호</label>
+                        <label htmlFor="form1">사업자번호</label>
                         <div className="d-flex">
                         <input
                             className="form-control"
                             type="text"
-                            name="corp_ssn1"
+                            name="corp_ssn"
                             id="form1"
-                            value={form.corp_ssn1}
-                            maxLength={6}
-                            onChange={handleChange}
-                        />
-                        <input
-                            className="form-control"
-                            type="text"
-                            name="corp_ssn2"
-                            id="form1"
-                            value={form.corp_ssn2}
-                            maxLength={7}
+                            value={form.corp_ssn}
+                            maxLength={12}
                             onChange={handleChange}
                         />
                         </div>
                     </div>
-                    </div>
+                </div>
                 </>
-                : ''
                 }
                 <hr/>
                 <div className="form-heading text-center mt-20">
