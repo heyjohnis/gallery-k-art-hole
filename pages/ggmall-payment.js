@@ -1,39 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import React from 'react';
 
-import axios from 'axios';
-import baseUrl from './../utils/baseUrl';
 import Footer from './../components/Layouts/Footer';
 import PageBanner from './../components/Common/PageBanner';
 import OrderInfo from '../components/Ggmall/OrderInfo';
 import OrderForm from '../components/Ggmall/Orderform';
+import PayInfo from '../components/Ggmall/PayInfo';
 
 
-export default function GgmailDetail() {
-
-  const router = useRouter();
-  const [loading, setLoading] = useState({});
-  const [content, setContent] = useState('');
-  
-  const cont = router.query.state;
-
-  useEffect(() => {
-
-      setLoading(true);
-
-      const pdNo = router.query.id;
-      const url = `${baseUrl}/mall/${pdNo}`;
-      axios({ method: "get", url })
-          .then( ({data}) => {
-              console.log("data: ", data);
-              setContent(data);
-          })
-          .finally( () => {
-              setLoading(false);
-          });
-
-  }, [router.query.id]);
-
+export default function GgmallPayment() {
 
   return (
     <>
@@ -47,13 +21,13 @@ export default function GgmailDetail() {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <OrderInfo content={content}/>
+            <OrderInfo/>
           </div>
-          <div className="col-12 col-md-8 mt-50">
+          <div className="col-12 col-lg-8 mt-100">
             <OrderForm/>
           </div>
-          <div className="col-12 col-md-4 mt-50">
-            <OrderForm/>
+          <div className="col-12 col-lg-4 mt-100">
+            <PayInfo/>
           </div>
         </div>
       </div>

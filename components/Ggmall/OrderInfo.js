@@ -1,20 +1,9 @@
+import React from "react";
 import Link from 'next/link';
-import React, { useEffect, useState } from "react";
 import styles from "./Ggmall.module.scss";
 
-import { commaFormat } from '../../utils/number';
 
-const OrderInfo = ({ content }) => {
-
-  const [options, setOptions] = useState([]);
-
-  useEffect( () => {
-    console.log("content: ", content.option);
-    if(content.option) {
-      setOptions((content.option).split('|'));
-      console.log("options: ", options);
-    } 
-  }, [content]);
+const OrderInfo = () => {
 
   
   return (
