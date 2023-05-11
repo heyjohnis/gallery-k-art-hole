@@ -32,7 +32,7 @@ export default function OrderForm() {
                     <div className="form-group signup">
                         <div className="col-md-3 col-sm-3">
                         <p>
-                            휴대전화 <span className="sup">*</span>
+                            휴대전화 <span className={styles.sup}>*</span>
                         </p>
                         </div>
                         <div className="col-md-9 col-sm-9 signup">
@@ -49,7 +49,7 @@ export default function OrderForm() {
                     <div className="form-group signup">
                         <div className="col-md-3 col-sm-3">
                         <p>
-                            이메일 <span className="sup">*</span>
+                            이메일 <span className={styles.sup}>*</span>
                         </p>
                         </div>
                         <div className="col-md-9 col-sm-9 signup">

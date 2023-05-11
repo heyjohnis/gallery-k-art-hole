@@ -9,20 +9,38 @@
 .widget.black {
   background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(25, 25, 25) 70%);
 }
+.widget.black .thumb {
+  background: rgb(25, 25, 25);
+}
 .widget.platinum {
   background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(153, 153, 153) 70%);
+}
+.widget.platinum .thumb {
+  background: rgb(153, 153, 153);
 }
 .widget.green {
   background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(32, 96, 76) 70%);
 }
+.widget.green .thumb {
+  background: rgb(32, 96, 76);
+}
 .widget.blue {
   background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(78, 121, 188) 70%);
+}
+.widget.blue .thumb {
+  background: rgb(78, 121, 188);
 }
 .widget.red {
   background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(218, 76, 67) 70%);
 }
+.widget.red .thumb {
+  background: rgb(218, 76, 67);
+}
 .widget.purple {
   background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(121, 63, 144) 70%);
+}
+.widget.purple .thumb {
+  background: rgb(121, 63, 144);
 }
 .widget .level {
   display: flex;
@@ -37,24 +55,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.widget .thumb.black {
-  background: rgb(25, 25, 25);
-}
-.widget .thumb.platinum {
-  background: rgb(153, 153, 153);
-}
-.widget .thumb.green {
-  background: rgb(32, 96, 76);
-}
-.widget .thumb.blue {
-  background: rgb(78, 121, 188);
-}
-.widget .thumb.red {
-  background: rgb(218, 76, 67);
-}
-.widget .thumb.purple {
-  background: rgb(121, 63, 144);
 }
 .widget .info {
   color: #222;
