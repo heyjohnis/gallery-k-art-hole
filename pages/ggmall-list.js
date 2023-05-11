@@ -7,10 +7,10 @@ export default function Team() {
   return (
     <>
       <PageBanner
-        pageTitle="Team"
+        pageTitle="GG몰"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="Team"
+        activePageText="GG몰"
       />
 
       <GgmallList/>
