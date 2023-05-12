@@ -14,7 +14,7 @@ const Reservation = ({ user }) => {
         {
           search_start_date: "",
           search_end_date: "",
-          search_keyword: "",
+          search_word: "",
         }
       );
 
@@ -27,6 +27,15 @@ const Reservation = ({ user }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         getReservationData();
+    }
+
+    const handleRest = async (e) => {
+        e.preventDefault();
+        setForm({
+            search_start_date: "",
+            search_end_date: "",
+            search_word: "",
+        });
     }
 
     const getReservationData = () => {
@@ -79,11 +88,12 @@ const Reservation = ({ user }) => {
                     />
                     <input 
                         type="text" 
-                        name="search_keyword"                         
+                        name="search_word"                         
                         value={form.search_word}
                         onChange={handleChange}
                     />
-                    <div className='btn btn-secondary' onClick={handleSubmit}>조회</div>
+                    <div className='btn btn-secondary' onClick={handleRest}>초기화</div>
+                    <div className='btn btn-dark' onClick={handleSubmit}>조회</div>
                 </form>
 
         { reservations.length > 0 ?
