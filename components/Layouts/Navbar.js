@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { handleLogout } from "../../utils/auth";
-
+import styles from "./navbar.module.scss";
 const Navbar = ({ user }) => {
   // Add active class
   const [currentPath, setCurrentPath] = useState("");
@@ -38,6 +38,7 @@ const Navbar = ({ user }) => {
   return (
     <>
       <div id="navbar" className="navbar-area fixed-top">
+        <div className={styles.backdrop}></div>
         <nav className="navbar navbar-expand-xl navbar-light">
           <div className="container">
             <Link href="/" className="navbar-brand light_logo">
