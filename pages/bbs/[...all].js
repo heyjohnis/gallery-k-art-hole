@@ -26,7 +26,6 @@ const Bbs = () => {
         const url = `${baseUrl}/bbs/${cate}`;
         axios({ method: "get", url })
             .then( ({data}) => {
-                console.log("data: ", data);
                 setContents(data);
             })
             .finally( () => {

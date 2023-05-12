@@ -22,7 +22,6 @@ const MyPage = () => {
     const medq_token = cookie.get("medq_token");
     axios({ method: "post", url: url, headers: { Authorization: `Bearer ${medq_token}` }, data: {} })
         .then(({ data }) => {
-            console.log("data: ", data);
             setUser(data.my_info);
             if(!data.my_info.is_active) {
               Router.push('/').then( () => {

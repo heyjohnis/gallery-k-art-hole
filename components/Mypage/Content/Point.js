@@ -21,7 +21,6 @@ const Point = ({ user }) => {
         const medq_token = cookie.get("medq_token");
         axios({ method: "post", url: url, headers: { Authorization: `Bearer ${medq_token}` }, data: {} })
             .then(({ data }) => {
-                console.log("data: ", data);
                 setPoints(data);
             })
             .finally(() => {

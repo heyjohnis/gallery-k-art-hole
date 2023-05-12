@@ -22,7 +22,6 @@ const BbsDetail = () => {
         const url = `${baseUrl}/mall`;
         axios({ method: "get", url })
             .then( ({data}) => {
-                console.log("data: ", data);
                 setContents(data);
             })
             .finally( () => {

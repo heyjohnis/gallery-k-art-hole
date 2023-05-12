@@ -25,7 +25,6 @@ const BbsDetail = () => {
         const url = `${baseUrl}/bbs/detail/${bbsNo}`;
         axios({ method: "get", url })
             .then( ({data}) => {
-                console.log("data: ", data);
                 setContent(data);
             })
             .finally( () => {
