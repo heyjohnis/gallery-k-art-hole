@@ -1,13 +1,159 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import { Table } from 'react-bootstrap';
+import cookie from 'js-cookie';
 import styles from "../Mypage.module.scss";
+import baseUrl from '../../../utils/baseUrl';
 
 const Reservation = ({ user }) => {
+
+    const [ loading, setLoading ] = useState(false);
+    const [ reservations, setReservations ] = useState([]);
+
+    const [form, setForm] = useState(
+        {
+          search_start_date: "",
+          search_end_date: "",
+          search_keyword: "",
+        }
+      );
+
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm((prevState) => ({ ...prevState, [name]: value }));
+        console.log("form: ", form);
+      };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        getReservationData();
+    }
+
+    const getReservationData = () => {
+        setLoading(true);
+        if(user.user_no) {
+            const url = `${baseUrl}/mypage/reservation`;
+            const medq_token = cookie.get("medq_token");
+            axios({ method: "post", url: url, headers: { Authorization: `Bearer ${medq_token}` }, data: form })
+                .then(({ data }) => {
+                    console.log("data: ", data);
+                    setReservations(data || []);
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
+        }
+    }
+
+    const showDetailInfo = ( id ) => {
+        const targetObj = document.querySelector('#info' + id);
+        const displayVal = targetObj.style.display;
+        if(displayVal === 'none')
+            targetObj.style.display = 'block';
+        else 
+            targetObj.style.display = 'none';
+    }
+
+    useEffect(() => {
+        getReservationData();
+    }, []);
+
     return (
-        <div className="container">
+        <>
+        <section>
+            <div className={`container ${styles.benefit_info}`}>
+                <h3>예약 내역</h3>
+
+              <form >
+                    <input 
+                        type="date" 
+                        name="search_start_date"                         
+                        value={form.search_start_date}
+                        onChange={handleChange}
+                    />
+                    <input 
+                        type="date" 
+                        name="search_end_date"                         
+                        value={form.search_end_date}
+                        onChange={handleChange}
+                    />
+                    <input 
+                        type="text" 
+                        name="search_keyword"                         
+                        value={form.search_word}
+                        onChange={handleChange}
+                    />
+                    <div className='btn btn-secondary' onClick={handleSubmit}>조회</div>
+                </form>
+
+        { reservations.length > 0 ?
+            <div>
+                { reservations.map( (resv, i ) =>
+                <div key={i}>
+                    <Table>
+                        <thead>
+                            <tr>
+                                <th>상품정보</th>
+                                <th>상태</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    예약일자: {resv.reg_date} 예약번호: {resv.resv_no} <br/>
+                                    {resv.resv_date} {resv.resv_week} {resv.resv_time} <br/>
+                                    {resv.resv_name}
+                                </td>
+                                <td>
+                                    <div className='btn'>{resv.resv_stts_nm}</div>
+                                </td>
+                                <td>
+                                    <div className='btn' onClick={() => showDetailInfo(i)}>예약상세&gt;</div>
+                                    <br/>
+                                    <div className='btn btn-secondary'>취소접수</div>
+                                    <br/>
+                                    <div className='btn btn-secondary'>1:1문의</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                    <div id={`info${i}`} style={{display: 'none'}}>
+                        <Table>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        예약자정보
+                                    </th>
+                                    <td colSpan={2}>
+                                        {resv.resv_user_name} / {resv.moblie} / {resv.phone} / {resv.email}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        이용자정보
+                                    </th>
+                                    <td colSpan={2}>
+                                        {resv.user_name} / {resv.user_phone}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </div>
+                </div>
+                )
+                }
+            </div>
+        : <div className="container">
             <div className={styles.content}>
                 예약 내역이 없습니다.
             </div>
         </div>
+        } 
+        </div>
+        </section>
+
+        </>
     );
 };
 
