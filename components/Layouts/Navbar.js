@@ -71,14 +71,15 @@ const Navbar = ({ user }) => {
                     Home
                   </Link>
                 </li>
-                <li className="nav-item">
+                
+                {/* <li className="nav-item">
                   <Link
                     href="/company"
                     className={`nav-link ${currentPath == "/company/" && "active"}`}
                   >
                     그린갤러리
                   </Link>
-                </li>
+                </li> */}
 
                 <li className="nav-item">
                   <Link
@@ -148,14 +149,14 @@ const Navbar = ({ user }) => {
                   </Link>
 
                   <ul className="dropdown-menu">
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <Link
                         href="/art"
                         className={`nav-link ${currentPath == "/art/" && "active"}`}
                       >
                         미술품 소개
                       </Link>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                       <Link
                         href="https://www.artnomics.co.kr/artworks/artnomics_list.php?is_KK=1" 
@@ -168,10 +169,10 @@ const Navbar = ({ user }) => {
                 </li>
 
                 <li className="nav-item">
-                  <Link href="associate/">
-                    제휴서비스 <i className="bx bx-chevron-down"></i>
+                  <Link href="/ggmall/list">
+                    포인트몰
                   </Link>
-
+{/* 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
@@ -189,25 +190,15 @@ const Navbar = ({ user }) => {
                         GG몰
                       </Link>
                     </li>
-                  </ul>
+                  </ul> */}
                 </li>
-
+{/* 
                 <li className="nav-item">
                   <Link href="/bbs/news">
                     뉴스 & 이벤트 <i className="bx bx-chevron-down"></i>
                   </Link>
 
                   <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        href="/bbs/news"
-                        className={`nav-link ${
-                          currentPath == "/bbs/news/" && "active"
-                        }`}
-                      >
-                        뉴스
-                      </Link>
-                    </li>
 
                     <li className="nav-item">
                       <Link
@@ -227,7 +218,7 @@ const Navbar = ({ user }) => {
                       </Link>
                     </li>
                   </ul>
-                </li>
+                </li> */}
 
                 <li className="nav-item">
                   <Link
@@ -255,7 +246,16 @@ const Navbar = ({ user }) => {
                         공지사항
                       </Link>
                     </li>
-
+                    <li className="nav-item">
+                      <Link
+                        href="/bbs/news"
+                        className={`nav-link ${
+                          currentPath == "/bbs/news/" && "active"
+                        }`}
+                      >
+                        뉴스
+                      </Link>
+                    </li>
                     <li className="nav-item">
                       <Link
                         href="/faq"

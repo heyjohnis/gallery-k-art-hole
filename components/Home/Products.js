@@ -24,9 +24,8 @@ const Products = () => {
                 >
                   <img src="/images/main/main_product1.png" alt="골프이미지"/>
                   <h2 className="main-product-item item1">프리미엄 골프 멤버십</h2>
-                  <Link className="main-product-link" href="/golf">
-                    <p>드넓은 대지를 누리는<br/>프리미엄 골프 멤버십</p>
-                    <span>자세히 보기</span>
+                  <Link className="main-product-link" href="#">
+                    <p>해당 골프장 회원과<br/>동일한 서비스 제공</p>
                   </Link>
                 </div>
 
@@ -41,9 +40,8 @@ const Products = () => {
                 >
                   <img src="/images/main/main_product2.png" alt="미술이미지"/>
                   <h2 className="main-product-item item2">미술품</h2>
-                  <Link className="main-product-link" href="/art">
-                    <p>당신의 품격을 높여주는<br/>원화 작품</p>
-                    <span>자세히 보기</span>
+                  <Link className="main-product-link" href="#">
+                    <p>한국미술협회에서<br/>인증하는 정찰 원화 작품</p>
                   </Link>
                 </div>
 
@@ -57,10 +55,9 @@ const Products = () => {
                   <h2 className="main-product-item item3">제휴서비스</h2>
                   <Link 
                     className="main-product-link" 
-                    href="/associate"
+                    href="#"
                   >
-                    <p>차별화된 제휴 서비스</p>
-                    <span>자세히 보기</span>
+                    <p>패션, 쇼핑, 여행, 레저,<br/>미식, 인테리어 등<br/>럭셔리라이프스타일</p>
                   </Link>
                 </div>
 

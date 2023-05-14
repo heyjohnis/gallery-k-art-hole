@@ -16,6 +16,7 @@ const About = () => {
               >
                 <span>Green Gallery Art</span>
                 <h2>정상의 삶을 영위하기 위한<br/>최고의 품격</h2>
+                <img src="/images/logo.svg" width={250} className="mt-30"/> 
               </div>
             </div>
       

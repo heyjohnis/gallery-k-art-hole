@@ -19,10 +19,6 @@ export default function Index5({ children, user }) {
 
       <Products />
 
-      <MainMov />
-
-      <News />
-
       <Footer />
     </>
   );

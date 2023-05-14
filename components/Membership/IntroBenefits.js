@@ -25,7 +25,7 @@ const IntroBenefits = () => {
                   <img src="/images/benefits/benefits1.png" alt="골프이미지"/>
                   <div className="single-counter benefits-text">
                     <h2>골프혜택</h2>
-                    <p>전국 300여개 프리미엄 골프장 이용</p>
+                    <p>포리미엄 골프장 포함 전국 골프장 이용</p>
                   </div>
                 </div>
 
