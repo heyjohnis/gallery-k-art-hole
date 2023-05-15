@@ -9,8 +9,6 @@ import Footer from "../components/Layouts/Footer";
 export default function Membership() {
   return (
     <>
-      <Navbar />
-
       <PageBanner
         pageTitle="골프서비스"
         homePageUrl="/"
