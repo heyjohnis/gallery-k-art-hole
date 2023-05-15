@@ -3,7 +3,7 @@ import React from 'react';
 import Footer from './../components/Layouts/Footer';
 import PageBanner from './../components/Common/PageBanner';
 import OrderInfo from '../components/Ggmall/OrderInfo';
-import OrderForm from '../components/Ggmall/Orderform';
+// import OrderForm from '../components/Ggmall/Orderform';
 import PayInfo from '../components/Ggmall/PayInfo';
 
 
@@ -24,7 +24,7 @@ export default function GgmallPayment() {
             <OrderInfo/>
           </div>
           <div className="col-12 col-lg-8 mt-100">
-            <OrderForm/>
+            {/* <OrderForm/> */}
           </div>
           <div className="col-12 col-lg-4 mt-100">
             <PayInfo/>
