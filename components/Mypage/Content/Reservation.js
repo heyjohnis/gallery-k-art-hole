@@ -73,7 +73,7 @@ const Reservation = ({ user }) => {
             <div className={`container ${styles.benefit_info}`}>
                 <h3>예약 내역</h3>
 
-              <form >
+              <form>
                     <input 
                         type="date" 
                         name="search_start_date"                         
@@ -87,20 +87,23 @@ const Reservation = ({ user }) => {
                         onChange={handleChange}
                     />
                     <input 
+                        className={styles.input_txt}
                         type="text" 
                         name="search_word"                         
                         value={form.search_word}
                         onChange={handleChange}
                     />
-                    <div className={`btn ${styles.btn_conform}`} onClick={handleSubmit}>조회</div>
-                    <div className='btn btn-secondary' onClick={handleRest}>초기화</div>
+                    <div className= {styles.btn_wrap}>
+                        <div className={`btn ${styles.btn} ${styles.btn_outline}`} onClick={handleRest}>초기화</div>
+                        <div className={`btn ${styles.btn} ${styles.btn_conform}`} onClick={handleSubmit}>조회</div>
+                    </div>
                 </form>
 
         { reservations.length > 0 ?
             <div>
                 { reservations.map( (resv, i ) =>
                 <div key={i}>
-                    <Table>
+                    <Table className={styles.info_booking}>
                         <thead>
                             <tr>
                                 <th>상품정보</th>

@@ -122,8 +122,9 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
 
 .period {
-  margin: 5px 0 16px;
+  margin: 5px 10px 16px;
   font-size: 16px;
+  text-align: right;
 }
 
 .user_point {
@@ -155,21 +156,39 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     font-weight: 600;
     margin-bottom: 12px;
   }
+  form {
+    display: flex;
+    align-items: center;
+  }
   input {
     height: 44px;
+    min-width: 5em;
     padding: 0 10px;
     margin-right: 5px;
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    &.input_txt {
+      flex-grow: 1;
+    }
   }
-  .btn_conform {
+  .btn_wrap {
+    display: flex;
+  }
+  .btn {
+    margin-left: 10px;
     height: 44px;
     padding: 0 20px;
-    background-color: $main-color;
-    color: $white-color;
     font-weight: 600;
     line-height: 44px;
+  }
+  .btn_conform {
+    background-color: $main-color;
+    color: $white-color;
+  }
+  .btn_outline {
+    border: 1px solid #ddd;
+    color: $body-color;
   }
 }
 
@@ -198,9 +217,10 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     line-height: 1.2;
     color: $black-color;
   }
+
 }
 
-/*centent*/
+/*content*/
 .content {
   display: flex;
   justify-content: center;
@@ -213,6 +233,13 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   box-shadow: $box-shadow;
   margin-top: 30px;
 }
+
+/*content-예약내역*/
+.info_booking {
+  margin-top: 3em;
+}
+
+
 
 
 @media only screen and (max-width: 991px) {
@@ -240,6 +267,10 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     }
     .info {
       text-align: left;
+    }
+    .thumb {
+      width: 80px;
+      height: 80px;
     }
   }
 }
