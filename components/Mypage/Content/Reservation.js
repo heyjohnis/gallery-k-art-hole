@@ -92,8 +92,8 @@ const Reservation = ({ user }) => {
                         value={form.search_word}
                         onChange={handleChange}
                     />
+                    <div className={`btn ${styles.btn_conform}`} onClick={handleSubmit}>조회</div>
                     <div className='btn btn-secondary' onClick={handleRest}>초기화</div>
-                    <div className='btn btn-dark' onClick={handleSubmit}>조회</div>
                 </form>
 
         { reservations.length > 0 ?
@@ -154,11 +154,10 @@ const Reservation = ({ user }) => {
                 )
                 }
             </div>
-        : <div className="container">
-            <div className={styles.content}>
-                예약 내역이 없습니다.
-            </div>
+        : <div className={styles.content}>
+            예약 내역이 없습니다.
         </div>
+
         } 
         </div>
         </section>
