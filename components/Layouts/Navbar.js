@@ -99,6 +99,8 @@ const Navbar = ({ user }) => {
                       </Link>
                     </li>
 
+                   { user && 
+                    <>
                     <li className="nav-item">
                       <Link
                         href="/addservice"
@@ -108,7 +110,7 @@ const Navbar = ({ user }) => {
                       >
                         프리미엄 서비스
                       </Link>
-                    </li>
+                    </li> 
 
                     <li className="nav-item">
                       <Link
@@ -118,6 +120,8 @@ const Navbar = ({ user }) => {
                         약관 및 규정
                       </Link>
                     </li>
+                    </>
+                   }
                   </ul>
                 </li>
 
@@ -139,7 +143,9 @@ const Navbar = ({ user }) => {
                     </li>
                   </ul>
                 </li>
+              {
 
+               user && <>
                 <li className="nav-item">
                   <Link
                     href="/art"
@@ -192,6 +198,8 @@ const Navbar = ({ user }) => {
                     </li>
                   </ul> */}
                 </li>
+                </>
+                }
 {/* 
                 <li className="nav-item">
                   <Link href="/bbs/news">
@@ -312,12 +320,13 @@ const Navbar = ({ user }) => {
                     </>
                   )}
                 </ul>
+                { user &&
                 <Link
                   href="/contact"
                   className="default-btn"
                 >
                   BOOK NOW
-                </Link>
+                </Link>}
               </div>
             </div>
           </div>
