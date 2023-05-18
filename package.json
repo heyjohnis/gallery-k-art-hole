@@ -1,14 +1,14 @@
 {
-  "name": "jumpx",
-  "version": "2.1.0",
-  "description": "Jumpx - React Next.js AI & IT Startup Template",
+  "name": "greengallery",
+  "version": "1.0.0",
+  "description": "Green Gallery",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
-  "author": "EnvyTheme.com",
+  "author": "Bethelean.com",
   "license": "ISC",
   "dependencies": {
     "animate.css": "^4.1.1",

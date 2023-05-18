@@ -13,14 +13,14 @@ const MyPageMenu = ({ menu }) => {
 
         <div className="post-wrap">
           <ul className={`sidemenu ${menu}`}>
-            <li>
+            {/* <li>
               <Link 
                 href="/mypage/membership" 
                 className="membership"
               >
                 잔여혜택 및 포인트
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link 
                 href="/mypage/contract"

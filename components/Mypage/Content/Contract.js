@@ -35,6 +35,54 @@ const Contract = ({ user }) => {
     return (
         <section>
             <div className={`container ${styles.benefit_info}`}>
+                <h3>{user.ms_name} 혜택</h3>
+                <Table bordered className={styles.table_membership}>
+                    <thead>
+                    <tr>
+                        <th>상품</th>
+                        <th>미술품</th>
+                        <th>보증금</th>
+                        <th>이용 방법</th>
+                        <th>골프혜택<br/><span className="smaller">(소멸금기준)</span></th>
+                        <th>주중 이용가능 혜택<br/><span className="smaller">(주말이용 시 1.5회 차감)</span></th>
+                        <th>그린피 지원금<br/><span className="smaller">(주중이용시 1.5배 감소)</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th className="sub_th">{user.ms_name}</th>
+                        <td>{user.artwork}%</td>
+                        <td>{user.deposit}%</td>
+                        <td>{user.user_option === '01' ? '기명 1인' : user.user_option === '02' ? '기명 2인' : '무기명 1인'}</td>
+                        <td>?</td>
+                        <td>최대 월 {user.monthly_count}회(연 {user.yearly_count}회)</td>
+                        <td>회당 50% 또는 최대 60만원</td>
+                    </tr>
+                    </tbody>
+                </Table>
+
+                <Table bordered className={styles.table_membership}>
+                    <thead>
+                        <tr>
+                        <th>부가 혜택</th>
+                        <th>특별 혜택</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td rowSpan={3}>프리미엄 레저 + 쇼핑몰 + 럭셔리 여행 + 기타</td>
+                        <td>1. 멤버십 가입 시 고급 캐디백, 보스턴백 등 증정</td>
+                        </tr>
+                        <tr>
+                        <td>2. 유명 프로 골퍼와의 동반 라운드</td>
+                        </tr>
+                        <tr>
+                        <td>3. VIP의 성공스토리 콘텐츠 제작</td>
+
+                        </tr>
+                    </tbody>
+                </Table>
+
                 <h3>계약정보</h3>
                 <Table bordered className={styles.table_membership}>
                     <tbody>
@@ -95,54 +143,6 @@ const Contract = ({ user }) => {
 
                 </Table>
 
-                <h3>{user.ms_name} 혜택</h3>
-
-                <Table bordered className={styles.table_membership}>
-                    <thead>
-                    <tr>
-                        <th>상품</th>
-                        <th>미술품</th>
-                        <th>보증금</th>
-                        <th>이용 방법</th>
-                        <th>골프혜택<br/><span className="smaller">(소멸금기준)</span></th>
-                        <th>주중 이용가능 혜택<br/><span className="smaller">(주말이용 시 1.5회 차감)</span></th>
-                        <th>그린피 지원금<br/><span className="smaller">(주중이용시 1.5배 감소)</span></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th className="sub_th">{user.ms_name}</th>
-                        <td>{user.artwork}%</td>
-                        <td>{user.deposit}%</td>
-                        <td>{user.user_option === '01' ? '기명 1인' : user.user_option === '02' ? '기명 2인' : '무기명 1인'}</td>
-                        <td>?</td>
-                        <td>최대 월 {user.monthly_count}회(연 {user.yearly_count}회)</td>
-                        <td>회당 50% 또는 최대 60만원</td>
-                    </tr>
-                    </tbody>
-                </Table>
-                ↓ 확인할 필요 있음
-                <Table bordered className={styles.table_membership}>
-                    <thead>
-                        <tr>
-                        <th>부가 혜택</th>
-                        <th>특별 혜택</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td rowSpan={3}>프리미엄 레저 + 쇼핑몰 + 럭셔리 여행 + 기타</td>
-                        <td>1. 멤버십 가입 시 고급 캐디백, 보스턴백 등 증정</td>
-                        </tr>
-                        <tr>
-                        <td>2. 유명 프로 골퍼와의 동반 라운드</td>
-                        </tr>
-                        <tr>
-                        <td>3. VIP의 성공스토리 콘텐츠 제작</td>
-
-                        </tr>
-                    </tbody>
-                </Table>
                 { artworks.length > 0 &&
                 <>
                 <h3>보유작품</h3>

@@ -281,7 +281,7 @@ const Navbar = ({ user }) => {
                   {user ? (
                     <>
                       <li>
-                        <Link href="/mypage/membership" className="menu-items">
+                        <Link href="/mypage/contract" className="menu-items">
                           마이페이지
                         </Link>
                       </li>
