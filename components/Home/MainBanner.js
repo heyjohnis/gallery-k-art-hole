@@ -30,7 +30,7 @@ const MainBanner = () => {
                       <h1>골프는 자연이라는 캔버스에<br/>그리는 예술이다.</h1>
                       <div className="slider-btn">
                         <Link href="/membership" className="default-btn white">
-                          자세히 보기
+                          BOOK NOW
                         </Link>
                       </div>
                     </div>
