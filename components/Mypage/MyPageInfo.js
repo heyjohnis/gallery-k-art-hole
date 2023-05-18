@@ -4,6 +4,7 @@ import styles from "./Mypage.module.scss";
 import { commaFormat } from '../../utils/number.js'
 
 const MyPageInfo = ({ user }) => {
+  console.log("user: ", user);
   return (
     <>
       <section>
@@ -19,7 +20,7 @@ const MyPageInfo = ({ user }) => {
             <div className="col-6">
               <div className={styles.item_txt}>
                 <p>월 잔여 포인트 <span className={styles.smaller}>/ 월 총 포인트</span></p>
-                <h3 className={styles.info_data}>{commaFormat(user.point || 0)}P <span className={styles.smaller}>/ {commaFormat(user.monthly_point || 0)}P</span></h3>
+                <h3 className={styles.info_data}>{commaFormat(user.point || 0)}P <span className={styles.smaller}>/ {commaFormat(user.yearly_point || 0)}P</span></h3>
               </div>
             </div>
           </div>

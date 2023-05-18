@@ -13,6 +13,7 @@ const MyPage = () => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState({});
   const [menu, setMenu] = useState('');
+  const [pointStatus, setPointStatus] = useState({});
 
   useEffect(() => {
 
