@@ -2,37 +2,44 @@ import React, { useState, useEffect } from "react";
 import Router, { useRouter } from 'next/router';
 
 import axios from "axios";
+import { Modal } from "react-bootstrap";
 import cookie from "js-cookie";
 import baseUrl from "../../utils/baseUrl";
 import PageBanner from "../../components/Common/PageBanner";
 import MyPageMain from "../../components/Mypage/MyPageMain";
 
-const MyPage = () => {
+const MyPage = ( { user } ) => {
 
   const router = useRouter();
-  const [user, setUser] = useState({});
+  const [userInfo, setUserInfo] = useState({});
   const [loading, setLoading] = useState({});
   const [menu, setMenu] = useState('');
   const [pointStatus, setPointStatus] = useState({});
 
+  console.log("user 나의계약: ", user);
+
   useEffect(() => {
 
     setLoading(true);
-
-    const url = `${baseUrl}/myinfo`;
-    const medq_token = cookie.get("medq_token");
-    axios({ method: "post", url: url, headers: { Authorization: `Bearer ${medq_token}` }, data: {} })
-        .then(({ data }) => {
-            setUser(data.my_info);
-            if(!data.my_info.is_active) {
-              Router.push('/').then( () => {
-                alert('승인 대기중입니다.');
-              });
-            }
-        })
-        .finally(() => {
-            setLoading(false);
-        });
+    if(user) {   
+      const url = `${baseUrl}/myinfo`;
+      const medq_token = cookie.get("medq_token");
+      axios({ method: "post", url: url, headers: { Authorization: `Bearer ${medq_token}` }, data: {} })
+          .then(({ data }) => {
+              setUserInfo(data.my_info);
+              if(!data.my_info.is_active) {
+                Router.push('/').then( () => {
+                  alert('승인 대기중입니다.');
+                });
+              }
+          })
+          .finally(() => {
+              setLoading(false);
+          });
+    } else {
+      // 홈화면에서 [BOOK NOW] 클릭시, 로그인이 안됐을 경우
+      Router.push({pathname: '/login', query: {goto: 'mypage/reservation/'}})
+    }
     }, []
   );
 
@@ -49,7 +56,7 @@ const MyPage = () => {
         activePageText="마이페이지"
       />
 
-      <MyPageMain user={user} menu={menu} />
+      <MyPageMain user={userInfo} menu={menu} />
     </>
   );
 };

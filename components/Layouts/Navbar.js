@@ -1,23 +1,26 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { Modal, Button } from "react-bootstrap";
 import { handleLogout } from "../../utils/auth";
 import styles from "./navbar.module.scss";
 const Navbar = ({ user }) => {
-  // Add active class
-  const [currentPath, setCurrentPath] = useState("");
+  
   const router = useRouter();
   // console.log(router.asPath)
+
+  const [currentPath, setCurrentPath] = useState("");
+  const [menu, setMenu] = useState(true);
 
   useEffect(() => {
     setCurrentPath(router.asPath);
   }, [router]);
 
-  const [menu, setMenu] = React.useState(true);
   const toggleNavbar = () => {
     setMenu(!menu);
   };
-  React.useEffect(() => {
+
+  useEffect(() => {
     let elementId = document.getElementById("navbar");
     document.addEventListener("scroll", () => {
       if (window.scrollY > 124) {
@@ -327,6 +330,7 @@ const Navbar = ({ user }) => {
                 >
                   BOOK NOW
                 </Link>}
+
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ const Contract = ({ user }) => {
                     setLoading(false);
                 });
         }
-    }, []);
+    }, [user]);
 
 
     return (
@@ -43,7 +43,6 @@ const Contract = ({ user }) => {
                         <th>미술품</th>
                         <th>보증금</th>
                         <th>이용 방법</th>
-                        <th>골프혜택<br/><span className="smaller">(소멸금기준)</span></th>
                         <th>주중 이용가능 혜택<br/><span className="smaller">(주말이용 시 1.5회 차감)</span></th>
                         <th>그린피 지원금<br/><span className="smaller">(주중이용시 1.5배 감소)</span></th>
                     </tr>
@@ -54,32 +53,9 @@ const Contract = ({ user }) => {
                         <td>{user.artwork}%</td>
                         <td>{user.deposit}%</td>
                         <td>{user.user_option === '01' ? '기명 1인' : user.user_option === '02' ? '기명 2인' : '무기명 1인'}</td>
-                        <td>?</td>
                         <td>최대 월 {user.monthly_count}회(연 {user.yearly_count}회)</td>
                         <td>회당 50% 또는 최대 60만원</td>
                     </tr>
-                    </tbody>
-                </Table>
-
-                <Table bordered className={styles.table_membership}>
-                    <thead>
-                        <tr>
-                        <th>부가 혜택</th>
-                        <th>특별 혜택</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td rowSpan={3}>프리미엄 레저 + 쇼핑몰 + 럭셔리 여행 + 기타</td>
-                        <td>1. 멤버십 가입 시 고급 캐디백, 보스턴백 등 증정</td>
-                        </tr>
-                        <tr>
-                        <td>2. 유명 프로 골퍼와의 동반 라운드</td>
-                        </tr>
-                        <tr>
-                        <td>3. VIP의 성공스토리 콘텐츠 제작</td>
-
-                        </tr>
                     </tbody>
                 </Table>
 
@@ -118,6 +94,11 @@ const Contract = ({ user }) => {
                             <th>이용기간</th>
                             <td>{user.start_date} ~ {user.end_date}</td>
                         </tr>
+                        { user.special_contract && <tr>
+                            <th>특약사항</th>
+                            <td>{user.special_contract}</td>
+                        </tr> }
+
                         { user.user_kind != '01' &&
                             <>
                             <tr>
@@ -138,9 +119,7 @@ const Contract = ({ user }) => {
                             </tr>
                             </>
                         }
-
                     </tbody>
-
                 </Table>
 
                 { artworks.length > 0 &&

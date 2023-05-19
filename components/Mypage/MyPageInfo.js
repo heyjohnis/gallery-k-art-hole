@@ -4,7 +4,7 @@ import styles from "./Mypage.module.scss";
 import { commaFormat } from '../../utils/number.js'
 
 const MyPageInfo = ({ user }) => {
-  console.log("user: ", user);
+
   const yearlyPoint = user.yearly_point || 0;
   const usePoint = user.use_point || 0;
   const currentPoint = (yearlyPoint - usePoint ) < 0 ? 0 : yearlyPoint - usePoint;

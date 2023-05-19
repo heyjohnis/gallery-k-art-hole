@@ -1,6 +1,7 @@
 import axios from "axios";
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useRouter } from 'next/router';
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
 import { handleLogin } from "../utils/auth";
@@ -12,12 +13,17 @@ const INITIAL_USER = {
 };
 
 export default function Login() {
-  const [user, setUser] = React.useState(INITIAL_USER);
-  const [disabled, setDisabled] = React.useState(true);
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState("");
 
-  React.useEffect(() => {
+  const router = useRouter();
+
+  const [user, setUser] = useState(INITIAL_USER);
+  const [disabled, setDisabled] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  
+  const { goto } = router.query;
+  
+  useEffect(() => {
     const isUser = Object.values(user).every((el) => Boolean(el));
     isUser ? setDisabled(false) : setDisabled(true);
   }, [user]);
@@ -35,7 +41,7 @@ export default function Login() {
       const url = `${baseUrl}/login`;
       const payload = { ...user };
       const response = await axios.post(url, payload);
-      handleLogin(response.data.token);
+      handleLogin(response.data.token, goto);
     } catch (error) {
       alert(error);
     } finally {

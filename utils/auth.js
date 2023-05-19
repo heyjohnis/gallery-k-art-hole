@@ -1,9 +1,9 @@
 import cookie from "js-cookie";
 import Router from "next/router";
 
-export const handleLogin = (medq_token) => {
+export const handleLogin = (medq_token, goto="") => {
   cookie.set("medq_token", medq_token);
-  Router.push("/");
+  Router.push("/" + goto);
 };
 
 export const redirectUser = (ctx, location) => {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import cookie from "js-cookie";
 import { useDaumPostcodePopup } from "react-daum-postcode";
 
@@ -27,6 +27,8 @@ export default function SignupComp( { compType, user }) {
       addr2: "",
       phone: "",
       mobile: "",
+      birthday: "1980-01-01",
+      gender: "",
       email: "",
       dlr_cd: "",
     }
@@ -66,6 +68,7 @@ export default function SignupComp( { compType, user }) {
     if(!form.user_name) throw new Error('이름을 입력해주세요.');
     if(!form.mobile) throw new Error('휴대전화를 입력해주세요.');
     if(!form.email) throw new Error('이메일을 입력해주세요.');
+    if(!form.birthday) throw new Error('생년월일을 입력해주세요.');
   }
 
   const handleSubmit = async (e) => {
@@ -83,6 +86,8 @@ export default function SignupComp( { compType, user }) {
 
       validationInputs();
       
+      console.log("payload: ", payload);
+
       const medq_token = cookie.get("medq_token");
       const response = await axios.post(url, payload, { headers: { Authorization: `Bearer ${medq_token}` }});
       if(compType === 'reg' ) {
@@ -129,7 +134,7 @@ export default function SignupComp( { compType, user }) {
     }));
   };
 
-	useState( () => {
+	useEffect( () => {
 		if(compType == 'mod') {
 			setForm(() => ({ 
                 ...user,
@@ -140,7 +145,7 @@ export default function SignupComp( { compType, user }) {
             setReadlOnly(true);
 		}
 
-	}, []);
+	}, [user, compType]);
 
   return (
     <>
@@ -440,6 +445,74 @@ export default function SignupComp( { compType, user }) {
                         value={form.email}
                         onChange={handleChange}
                     />
+                    </div>
+                </div>
+
+                <div className="form-group signup">
+                    <div className="col-md-3 col-sm-3">
+                    <p>
+                        생년월일 <span className="sup">*</span>
+                    </p>
+                    </div>
+                    <div className="col-md-9 col-sm-9 signup">
+                    <input
+                        className="form-control"
+                        type="date"
+                        name="birthday"
+                        placeholder="생년월일을 입력하세요."
+                        value={form.birthday}
+                        onChange={handleChange}
+                    />
+                    </div>
+                </div>
+
+                <div className="form-group signup">
+                    <div className="col-md-3 col-sm-3">
+                        <p>
+                        성별
+                        </p>
+                    </div>
+                    <div className="col-md-9 col-sm-9 signup">
+                        <div className="radio">
+                        <label className="custom">
+                            <span>남</span>
+                            <input 
+                            type="radio"
+                            value="m"
+                            name="gender"
+                            id=""
+                            onChange={handleChange}
+                            checked={form.gender === 'm'}
+                            />
+                            <span className="checkmark"></span>
+                        </label>
+                        </div>
+                        <div className="radio ml-30">
+                        <label className="custom">
+                            <span>여</span>
+                            <input 
+                            type="radio"
+                            value="f"
+                            name="gender"
+                            onChange={handleChange}
+                            checked={form.gender === 'f'}
+                            />
+                            <span className="checkmark"></span>
+                        </label>
+                        </div>
+                        <div className="radio ml-30">
+                        <label className="custom">
+                            <span>미선택</span>
+                            <input 
+                            type="radio"
+                            value=""
+                            name="gender"
+                            onChange={handleChange}
+                            checked={form.gender === ''}
+                            />
+                            <span className="checkmark"></span>
+                        </label>
+                        </div>
                     </div>
                 </div>
 

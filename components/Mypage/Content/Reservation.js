@@ -4,12 +4,13 @@ import { Table } from 'react-bootstrap';
 import cookie from 'js-cookie';
 import styles from "../Mypage.module.scss";
 import baseUrl from '../../../utils/baseUrl';
+import ReservationModal from '../ReservationModal';
 
 const Reservation = ({ user }) => {
 
     const [ loading, setLoading ] = useState(false);
     const [ reservations, setReservations ] = useState([]);
-
+    const [ showModal, setShowModal ] = useState(false);
     const [form, setForm] = useState(
         {
           search_start_date: "",
@@ -63,16 +64,22 @@ const Reservation = ({ user }) => {
             targetObj.style.display = 'none';
     }
 
+    const showReservationModal = () => {
+        setShowModal(true);
+    };
+
     useEffect(() => {
         getReservationData();
-    }, []);
+    }, [user]);
 
     return (
         <>
         <section>
+            <div className= {styles.btn_wrap}>
+                <div className={`btn btn-primary`} onClick={() => showReservationModal()}>예약신청</div>
+            </div>
             <div className={`container ${styles.benefit_info}`}>
                 <h3>예약 내역</h3>
-
               <form>
                     <input 
                         type="date" 
@@ -124,8 +131,6 @@ const Reservation = ({ user }) => {
                                 <td>
                                     <div className='btn' onClick={() => showDetailInfo(i)}>예약상세&gt;</div>
                                     <br/>
-                                    <div className='btn btn-secondary'>취소접수</div>
-                                    <br/>
                                     <div className='btn btn-secondary'>1:1문의</div>
                                 </td>
                             </tr>
@@ -164,7 +169,7 @@ const Reservation = ({ user }) => {
         } 
         </div>
         </section>
-
+        <ReservationModal show={showModal} />
         </>
     );
 };

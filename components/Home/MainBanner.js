@@ -29,7 +29,7 @@ const MainBanner = () => {
                     <div className="jumpx-slider-text overflow-hidden one">
                       <h1>골프는 자연이라는 캔버스에<br/>그리는 예술이다.</h1>
                       <div className="slider-btn">
-                        <Link href="/membership" className="default-btn white">
+                        <Link href="/mypage/reservation/" className="default-btn white">
                           BOOK NOW
                         </Link>
                       </div>
