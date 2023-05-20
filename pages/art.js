@@ -1,8 +1,8 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import IntroArt from '../components/Art/IntroArt';
-import AboutArtist from '../components/Art/AboutArtist';
-import ArtCard from '../components/Art/ArtCard';
+import IntroArt from "../components/Art/IntroArt";
+import AboutArtist from "../components/Art/AboutArtist";
+import ArtCard from "../components/Art/ArtCard";
 import Footer from "../components/Layouts/Footer";
 
 export default function Membership() {

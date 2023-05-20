@@ -32,10 +32,7 @@ const NewsSidebar = () => {
             <article className="item">
               <Link href="/news-details" className="thumb">
                 <span className="fullimage cover bg1" role="img">
-                  <img
-                    src="/images/news/news1.jpg"
-                    alt="뉴스 썸네일"
-                  />
+                  <img src="/images/news/news1.jpg" alt="뉴스 썸네일" />
                 </span>
               </Link>
 
@@ -54,10 +51,7 @@ const NewsSidebar = () => {
             <article className="item">
               <Link href="/news-details" className="thumb">
                 <span className="fullimage cover bg2" role="img">
-                  <img
-                    src="/images/news/news2.jpg"
-                    alt="뉴스 썸네일"
-                  />
+                  <img src="/images/news/news2.jpg" alt="뉴스 썸네일" />
                 </span>
               </Link>
 
@@ -65,15 +59,14 @@ const NewsSidebar = () => {
                 <time> 2023.04.26</time>
                 <h4 className="title usmall">
                   <Link href="/news-details">
-                    갤러리K, 쇼골프와 골프회원권 ‘그린갤러리’ 공동 사업 위한 협력 체결
+                    갤러리K, 쇼골프와 골프회원권 ‘그린갤러리’ 공동 사업 위한
+                    협력 체결
                   </Link>
                 </h4>
               </div>
 
               <div className="clear"></div>
             </article>
-
-            
           </div>
         </div>
       </div>

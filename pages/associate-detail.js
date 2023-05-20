@@ -1,6 +1,6 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import AssociateItems from '../components/Ggmall/AssociateItems';
+import AssociateItems from "../components/Ggmall/AssociateItems";
 // import AssociateText from '../components/Ggmall/AssociateText';
 import Footer from "../components/Layouts/Footer";
 
@@ -14,7 +14,7 @@ export default function NewsGrid() {
         activePageText="제휴서비스 상세"
       />
 
-      <AssociateItems/>
+      <AssociateItems />
       {/* <AssociateText/> */}
 
       <Footer />

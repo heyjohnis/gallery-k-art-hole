@@ -1,30 +1,24 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import Link from "next/link";
-import BbsSigleCard from './BbsSingleCard';
-import BbsNoContent from './BbsNoContent';
+import BbsSigleCard from "./BbsSingleCard";
+import BbsNoContent from "./BbsNoContent";
 
-const BbsList = ({contents}) => {
+const BbsList = ({ contents }) => {
   return (
     <>
-      { contents.length > 0 
-        ? 
+      {contents.length > 0 ? (
         <section className="news-area ptb-100">
-        <div className="container">
-          <div className="row">
-            {
-              contents.map( content => 
-                <BbsSigleCard key={content.bbs_no} content={content} />  
-              )
-            }
+          <div className="container">
+            <div className="row">
+              {contents.map((content) => (
+                <BbsSigleCard key={content.bbs_no} content={content} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-      : 
-      <BbsNoContent />
-
-      
-      }
-      
+        </section>
+      ) : (
+        <BbsNoContent />
+      )}
     </>
   );
 };

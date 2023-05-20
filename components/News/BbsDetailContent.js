@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import NewsSidebar from "./NewsSidebar";
 import Link from "next/link";
@@ -11,28 +12,22 @@ const BbsDetailContent = ({ content }) => {
             <div className="col-lg-8 col-md-12">
               <div className="blog-details-desc">
                 <div className="article-image">
-                  <img
-                    src={content.thumb_img}
-                    alt="Image"
-                  />
+                  <img src={content.thumb_img} alt="Image" />
                 </div>
 
                 <div className="article-content">
                   <div className="entry-meta">
                     <ul>
-                      <li>
-                        {content.reg_date}
-                      </li>
-                      <li>
-                        강석봉 기자
-                      </li>
+                      <li>{content.reg_date}</li>
+                      <li>강석봉 기자</li>
                     </ul>
                   </div>
 
                   <h3>{content.title}</h3>
 
-                  <div dangerouslySetInnerHTML={{__html: content.content}}></div>
-
+                  <div
+                    dangerouslySetInnerHTML={{ __html: content.content }}
+                  ></div>
                 </div>
 
                 <div className="post-navigation">
@@ -50,7 +45,6 @@ const BbsDetailContent = ({ content }) => {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 

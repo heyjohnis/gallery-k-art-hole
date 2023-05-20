@@ -14,8 +14,6 @@ const IntroGolf = () => {
                 <p>프리미엄 골프장 포함 전국 골프장에서 활용할 수 있습니다.</p>
               </div>
             </div>
-
-        
           </div>
         </div>
       </section>
@@ -24,7 +22,7 @@ const IntroGolf = () => {
         <img src="/images/benefits/shape_top.png" alt="Image" />
       </div>
       <div className="golf_map">
-        <img src="/images/benefits/golf1.png" alt="골프장 지도"/>
+        <img src="/images/benefits/golf1.png" alt="골프장 지도" />
       </div>
     </>
   );

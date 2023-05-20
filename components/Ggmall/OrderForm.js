@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Ggmall.module.scss";
 
 const OrderForm = () => {
-  
   return (
     <>
       <section>
@@ -11,15 +10,15 @@ const OrderForm = () => {
           <div className={`row ${styles.form_group}`}>
             <div className="col-md-3 col-sm-3">
               <p>
-                  이름 <span className={styles.sup}>*</span>
+                이름 <span className={styles.sup}>*</span>
               </p>
             </div>
             <div className="col-md-9 col-sm-9 signup">
               <input
-                  className="form-control"
-                  type="text"
-                  name="login_id"
-                  placeholder="아이디를 입력하세요"
+                className="form-control"
+                type="text"
+                name="login_id"
+                placeholder="아이디를 입력하세요"
               />
             </div>
           </div>
@@ -32,27 +31,27 @@ const OrderForm = () => {
             </div>
             <div className={`col-md-9 col-sm-9 ${styles.tel}`}>
               <input
-                  className="form-control"
-                  type="tel"
-                  name="mobile"
-                  placeholder="010"
-                  maxLength={3}
+                className="form-control"
+                type="tel"
+                name="mobile"
+                placeholder="010"
+                maxLength={3}
               />
               <span>-</span>
               <input
-                  className="form-control"
-                  type="tel"
-                  name="mobile"
-                  placeholder="010"
-                  maxLength={4}
+                className="form-control"
+                type="tel"
+                name="mobile"
+                placeholder="010"
+                maxLength={4}
               />
               <span>-</span>
               <input
-                  className="form-control"
-                  type="tel"
-                  name="mobile"
-                  placeholder="010"
-                  maxLength={4}
+                className="form-control"
+                type="tel"
+                name="mobile"
+                placeholder="010"
+                maxLength={4}
               />
             </div>
           </div>
@@ -65,10 +64,10 @@ const OrderForm = () => {
             </div>
             <div className="col-md-9 col-sm-9 signup">
               <input
-                  className="form-control"
-                  type="text"
-                  name=""
-                  placeholder="이메일을 입력하세요"
+                className="form-control"
+                type="text"
+                name=""
+                placeholder="이메일을 입력하세요"
               />
             </div>
           </div>
@@ -82,15 +81,15 @@ const OrderForm = () => {
           <div className={`row ${styles.form_group}`}>
             <div className="col-md-3 col-sm-3">
               <p>
-                  이름 <span className={styles.sup}>*</span>
+                이름 <span className={styles.sup}>*</span>
               </p>
             </div>
             <div className="col-md-9 col-sm-9 signup">
               <input
-                  className="form-control"
-                  type="text"
-                  name="login_id"
-                  placeholder="아이디를 입력하세요"
+                className="form-control"
+                type="text"
+                name="login_id"
+                placeholder="아이디를 입력하세요"
               />
             </div>
           </div>
@@ -103,50 +102,52 @@ const OrderForm = () => {
             </div>
             <div className={`col-md-9 col-sm-9 ${styles.tel}`}>
               <input
-                  className="form-control"
-                  type="tel"
-                  name="mobile"
-                  placeholder="010"
-                  maxLength={3}
+                className="form-control"
+                type="tel"
+                name="mobile"
+                placeholder="010"
+                maxLength={3}
               />
               <span>-</span>
               <input
-                  className="form-control"
-                  type="tel"
-                  name="mobile"
-                  placeholder="010"
-                  maxLength={4}
+                className="form-control"
+                type="tel"
+                name="mobile"
+                placeholder="010"
+                maxLength={4}
               />
               <span>-</span>
               <input
-                  className="form-control"
-                  type="tel"
-                  name="mobile"
-                  placeholder="010"
-                  maxLength={4}
+                className="form-control"
+                type="tel"
+                name="mobile"
+                placeholder="010"
+                maxLength={4}
               />
             </div>
           </div>
           <div className={`row ${styles.form_group}`}>
             <div className="col-md-3 col-sm-3">
-              <p>주소 <span className={styles.sup}>*</span></p>
+              <p>
+                주소 <span className={styles.sup}>*</span>
+              </p>
             </div>
             <div className="col-md-9 col-sm-9">
               <div className="row">
-                  <div className="col-md-8 col-sm-8">
-                    <input
-                        className="form-control"
-                        type="text"
-                        name="zipcode"
-                        id="form1"
-                        placeholder="우편번호"
-                    />
-                  </div>
-                  <div className="col-md-3 col-sm-3">
-                    <button type="button" className='default-btn'>
-                        주소검색
-                    </button>
-                  </div>
+                <div className="col-md-8 col-sm-8">
+                  <input
+                    className="form-control"
+                    type="text"
+                    name="zipcode"
+                    id="form1"
+                    placeholder="우편번호"
+                  />
+                </div>
+                <div className="col-md-3 col-sm-3">
+                  <button type="button" className="default-btn">
+                    주소검색
+                  </button>
+                </div>
               </div>
               <input
                 className="form-control"
@@ -165,7 +166,6 @@ const OrderForm = () => {
             </div>
           </div>
         </form>
-        
       </section>
     </>
   );

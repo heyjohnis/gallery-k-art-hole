@@ -1,11 +1,9 @@
-import axios from "axios";
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
 import SignupComp from "../components/Signup/SignupComp";
 
 export default function SignUp() {
-
   return (
     <>
       <PageBanner
@@ -18,7 +16,7 @@ export default function SignUp() {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <SignupComp compType={'reg'} />
+              <SignupComp compType={"reg"} />
             </div>
           </div>
         </div>

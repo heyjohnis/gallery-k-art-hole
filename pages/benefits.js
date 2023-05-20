@@ -14,7 +14,7 @@ export default function Membership() {
         activePageText="멤버십 혜택 소개"
       />
 
-      <IntroBenefits/>
+      <IntroBenefits />
 
       <BenefitStyle />
 

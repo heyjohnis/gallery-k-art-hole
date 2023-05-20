@@ -1,7 +1,7 @@
 import React from "react";
 import AboutCompany from "../components/Company/AboutCompany";
 import PageBanner from "../components/Common/PageBanner";
-import MembershipStyle from '../components/Company/MembershipStyle';
+import MembershipStyle from "../components/Company/MembershipStyle";
 import Footer from "../components/Layouts/Footer";
 
 export default function Company() {
@@ -13,8 +13,8 @@ export default function Company() {
         homePageText="Home"
         activePageText="그린갤러리"
       />
-      
-      <AboutCompany/>
+
+      <AboutCompany />
 
       <MembershipStyle />
 

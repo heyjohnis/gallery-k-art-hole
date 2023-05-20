@@ -3,33 +3,39 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper";
 
-
 const MainBanner = () => {
   return (
     <>
       <section className="slider-area">
-          <Swiper
-              navigation={true}
-              autoplay={{
-                delay: 13000,
-                disableOnInteraction: true,
-                pauseOnMouseEnter: true,
-              }}
-              modules={[Navigation, Autoplay]}
-              className="hero-swiper"
-            >
+        <Swiper
+          navigation={true}
+          autoplay={{
+            delay: 13000,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true,
+          }}
+          modules={[Navigation, Autoplay]}
+          className="hero-swiper"
+        >
           <SwiperSlide>
-            <div className="jumpx-slider-item" >
+            <div className="jumpx-slider-item">
               <video className="bn_video" autoPlay loop muted>
-                <source src="/video/bg_mov01.mp4" type="video/mp4"/>
+                <source src="/video/bg_mov01.mp4" type="video/mp4" />
               </video>
               <div className="d-table">
                 <div className="d-table-cell">
                   <div className="container">
                     <div className="jumpx-slider-text overflow-hidden one">
-                      <h1>골프는 자연이라는 캔버스에<br/>그리는 예술이다.</h1>
+                      <h1>
+                        골프는 자연이라는 캔버스에
+                        <br />
+                        그리는 예술이다.
+                      </h1>
                       <div className="slider-btn">
-                        <Link href="/mypage/reservation/" className="default-btn white">
+                        <Link
+                          href="/mypage/reservation/"
+                          className="default-btn white"
+                        >
                           BOOK NOW
                         </Link>
                       </div>

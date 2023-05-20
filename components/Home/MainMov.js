@@ -1,12 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import YouTube from 'react-youtube';
-
+import YouTube from "react-youtube";
 
 const MainMov = () => {
   const opts = {
-    height: '315',
-    width: '100%',
+    height: "315",
+    width: "100%",
     playerVars: {
       autoplay: 0,
     },
@@ -22,9 +21,8 @@ const MainMov = () => {
           </div>
 
           <div className="row justify-content-center video-wrap">
-            <YouTube videoId="d7O8r0fLnLE" opts={opts}/>
+            <YouTube videoId="d7O8r0fLnLE" opts={opts} />
           </div>
-          
         </div>
 
         {/* Shape Images */}
@@ -42,7 +40,6 @@ const MainMov = () => {
       </div>
     </>
   );
-
 };
 
 export default MainMov;

@@ -5,7 +5,6 @@ import { Modal, Button } from "react-bootstrap";
 import { handleLogout } from "../../utils/auth";
 import styles from "./navbar.module.scss";
 const Navbar = ({ user }) => {
-  
   const router = useRouter();
   // console.log(router.asPath)
 
@@ -45,10 +44,20 @@ const Navbar = ({ user }) => {
         <nav className="navbar navbar-expand-xl navbar-light">
           <div className="container">
             <Link href="/" className="navbar-brand light_logo">
-              <img src="/images/white-logo.svg" width={180} height={36} alt="logo" />
+              <img
+                src="/images/white-logo.svg"
+                width={180}
+                height={36}
+                alt="logo"
+              />
             </Link>
             <Link href="/" className="navbar-brand dark_logo">
-              <img src="/images/dark-logo.svg" width={180} height={36} alt="logo" />
+              <img
+                src="/images/dark-logo.svg"
+                width={180}
+                height={36}
+                alt="logo"
+              />
             </Link>
 
             {/* Toggle navigation */}
@@ -70,11 +79,14 @@ const Navbar = ({ user }) => {
             <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav m-auto">
                 <li className="nav-item">
-                  <Link href="/" className={`nav-link ${currentPath == "/" && "active"}`}>
+                  <Link
+                    href="/"
+                    className={`nav-link ${currentPath == "/" && "active"}`}
+                  >
                     Home
                   </Link>
                 </li>
-                
+
                 {/* <li className="nav-item">
                   <Link
                     href="/company"
@@ -87,7 +99,9 @@ const Navbar = ({ user }) => {
                 <li className="nav-item">
                   <Link
                     href="/benefits"
-                    className={`nav-link ${currentPath == "/benefits/" && "active"}`}
+                    className={`nav-link ${
+                      currentPath == "/benefits/" && "active"
+                    }`}
                   >
                     멤버십 <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -96,42 +110,48 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/benefits"
-                        className={`nav-link ${currentPath == "/benefits/" && "active"}`}
+                        className={`nav-link ${
+                          currentPath == "/benefits/" && "active"
+                        }`}
                       >
                         회원혜택
                       </Link>
                     </li>
 
-                   { user && 
-                    <>
-                    <li className="nav-item">
-                      <Link
-                        href="/addservice"
-                        className={`nav-link ${
-                          currentPath == "/addservice/" && "active"
-                        }`}
-                      >
-                        프리미엄 서비스
-                      </Link>
-                    </li> 
+                    {user && (
+                      <>
+                        <li className="nav-item">
+                          <Link
+                            href="/addservice"
+                            className={`nav-link ${
+                              currentPath == "/addservice/" && "active"
+                            }`}
+                          >
+                            프리미엄 서비스
+                          </Link>
+                        </li>
 
-                    <li className="nav-item">
-                      <Link
-                        href="/membershipterm"
-                        className={`nav-link ${currentPath == "/membershipterm/" && "active"}`}
-                      >
-                        약관 및 규정
-                      </Link>
-                    </li>
-                    </>
-                   }
+                        <li className="nav-item">
+                          <Link
+                            href="/membershipterm"
+                            className={`nav-link ${
+                              currentPath == "/membershipterm/" && "active"
+                            }`}
+                          >
+                            약관 및 규정
+                          </Link>
+                        </li>
+                      </>
+                    )}
                   </ul>
                 </li>
 
                 <li className="nav-item">
                   <Link
                     href="/golf"
-                    className={`nav-link ${currentPath == "/golf/" && "active"}`}
+                    className={`nav-link ${
+                      currentPath == "/golf/" && "active"
+                    }`}
                   >
                     골프 <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -139,26 +159,29 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/golf"
-                        className={`nav-link ${currentPath == "/golf/" && "active"}`}
+                        className={`nav-link ${
+                          currentPath == "/golf/" && "active"
+                        }`}
                       >
                         골프서비스
                       </Link>
                     </li>
                   </ul>
                 </li>
-              {
+                {user && (
+                  <>
+                    <li className="nav-item">
+                      <Link
+                        href="/art"
+                        className={`nav-link ${
+                          currentPath == "/art/" && "active"
+                        }`}
+                      >
+                        미술품 <i className="bx bx-chevron-down"></i>
+                      </Link>
 
-               user && <>
-                <li className="nav-item">
-                  <Link
-                    href="/art"
-                    className={`nav-link ${currentPath == "/art/" && "active"}`}
-                  >
-                    미술품 <i className="bx bx-chevron-down"></i>
-                  </Link>
-
-                  <ul className="dropdown-menu">
-                    {/* <li className="nav-item">
+                      <ul className="dropdown-menu">
+                        {/* <li className="nav-item">
                       <Link
                         href="/art"
                         className={`nav-link ${currentPath == "/art/" && "active"}`}
@@ -166,22 +189,20 @@ const Navbar = ({ user }) => {
                         미술품 소개
                       </Link>
                     </li> */}
-                    <li className="nav-item">
-                      <Link
-                        href="https://www.artnomics.co.kr/artworks/artnomics_list.php?is_KK=1" 
-                        target="_blank"
-                      >
-                        미술품 보기
-                      </Link>
+                        <li className="nav-item">
+                          <Link
+                            href="https://www.artnomics.co.kr/artworks/artnomics_list.php?is_KK=1"
+                            target="_blank"
+                          >
+                            미술품 보기
+                          </Link>
+                        </li>
+                      </ul>
                     </li>
-                  </ul>
-                </li>
 
-                <li className="nav-item">
-                  <Link href="/ggmall/list">
-                    포인트몰
-                  </Link>
-{/* 
+                    <li className="nav-item">
+                      <Link href="/ggmall/list">포인트몰</Link>
+                      {/* 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
@@ -200,10 +221,10 @@ const Navbar = ({ user }) => {
                       </Link>
                     </li>
                   </ul> */}
-                </li>
-                </>
-                }
-{/* 
+                    </li>
+                  </>
+                )}
+                {/* 
                 <li className="nav-item">
                   <Link href="/bbs/news">
                     뉴스 & 이벤트 <i className="bx bx-chevron-down"></i>
@@ -234,7 +255,9 @@ const Navbar = ({ user }) => {
                 <li className="nav-item">
                   <Link
                     href="/contact"
-                    className={`nav-link ${currentPath == "/contact/" && "active"}`}
+                    className={`nav-link ${
+                      currentPath == "/contact/" && "active"
+                    }`}
                   >
                     고객지원 <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -243,7 +266,9 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/contact"
-                        className={`nav-link ${currentPath == "/contact/" && "active"}`}
+                        className={`nav-link ${
+                          currentPath == "/contact/" && "active"
+                        }`}
                       >
                         상담/문의
                       </Link>
@@ -252,7 +277,9 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/bbs/notice"
-                        className={`nav-link ${currentPath == "/bbs/notice" && "active"}`}
+                        className={`nav-link ${
+                          currentPath == "/bbs/notice" && "active"
+                        }`}
                       >
                         공지사항
                       </Link>
@@ -270,7 +297,9 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/faq"
-                        className={`nav-link ${currentPath == "/faq/" && "active"}`}
+                        className={`nav-link ${
+                          currentPath == "/faq/" && "active"
+                        }`}
                       >
                         FAQ
                       </Link>
@@ -323,14 +352,11 @@ const Navbar = ({ user }) => {
                     </>
                   )}
                 </ul>
-                { user &&
-                <Link
-                  href="/contact"
-                  className="default-btn"
-                >
-                  BOOK NOW
-                </Link>}
-
+                {user && (
+                  <Link href="/contact" className="default-btn">
+                    BOOK NOW
+                  </Link>
+                )}
               </div>
             </div>
           </div>

@@ -1,13 +1,13 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import Link from "next/link";
 
 import { commaFormat } from "../../utils/number";
 
 const GgmallList = ({ contents }) => {
-  
   const onClick = () => {
-    console.log('제품페이지 이동');
-  }
+    console.log("제품페이지 이동");
+  };
 
   return (
     <>
@@ -30,14 +30,21 @@ const GgmallList = ({ contents }) => {
 
                     <div className="team-content">
                       <h3>{content.pd_name}</h3>
-                      <p><span className='price'>{commaFormat(content.price || 0)}</span>원</p>
+                      <p>
+                        <span className="price">
+                          {commaFormat(content.price || 0)}
+                        </span>
+                        원
+                      </p>
                     </div>
-                    <Link className="default-btn" href={`/ggmall/${content.pd_no}`}>
+                    <Link
+                      className="default-btn"
+                      href={`/ggmall/${content.pd_no}`}
+                    >
                       구매하기
                     </Link>
                   </div>
                 </div>
-        
               ))}
 
             {/* Pagination */}

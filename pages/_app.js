@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "animate.css";
 import AOS from "aos";
 import React from "react";
@@ -43,40 +44,40 @@ const MyApp = ({ Component, pageProps }) => {
 };
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {
-  const { medq_token } = parseCookies(ctx);
+  // const { medq_token } = parseCookies(ctx);
   let pageProps = {};
 
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
   }
 
-  if (!medq_token) {
-    const isProtectedRoute = ctx.pathname === "/admin/dashboard";
-    if (isProtectedRoute) {
-      redirectUser(ctx, "/auth");
-    }
-  } else {
-    try {
-      const url = `${baseUrl}/myinfo`;
+  // if (!medq_token) {
+  //   const isProtectedRoute = ctx.pathname === "/admin/dashboard";
+  //   if (isProtectedRoute) {
+  //     redirectUser(ctx, "/auth");
+  //   }
+  // } else {
+  //   try {
+  //     const url = `${baseUrl}/myinfo`;
 
-      const response = await axios({
-        method: "post",
-        url: url,
-        headers: { Authorization: `Bearer ${medq_token}` },
-        data: {},
-      });
+  //     const response = await axios({
+  //       method: "post",
+  //       url: url,
+  //       headers: { Authorization: `Bearer ${medq_token}` },
+  //       data: {},
+  //     });
 
-      const user = response.data.my_info;
-      const isAdmin = user.role == "admin";
-      const isNotPermitted = !isAdmin && ctx.pathname === "/admin/dashboard";
-      if (isNotPermitted) {
-        redirectUser(ctx, "/products");
-      }
-      pageProps.user = user;
-    } catch (error) {
-      destroyCookie(ctx, "medq_token");
-    }
-  }
+  //     const user = response.data.my_info;
+  //     const isAdmin = user.role == "admin";
+  //     const isNotPermitted = !isAdmin && ctx.pathname === "/admin/dashboard";
+  //     if (isNotPermitted) {
+  //       redirectUser(ctx, "/products");
+  //     }
+  //     pageProps.user = user;
+  //   } catch (error) {
+  //     destroyCookie(ctx, "medq_token");
+  //   }
+  // }
   return { pageProps };
 };
 

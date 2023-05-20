@@ -11,7 +11,7 @@ const News = () => {
           </div>
 
           <div className="row justify-content-center">
-            <div 
+            <div
               className="col-lg-3 col-md-6"
               data-aos="fade-up"
               data-aos-duration="1200"
@@ -30,9 +30,7 @@ const News = () => {
                     <h3>그린갤러리 소식</h3>
                   </Link>
 
-                  <p>
-                  그린갤러리 골프멤버십이 4월 18일 사전 오픈 합니다
-                  </p>
+                  <p>그린갤러리 골프멤버십이 4월 18일 사전 오픈 합니다</p>
 
                   <Link href="/" className="read-more">
                     자세히 보기<i className="bx bx-plus"></i>
@@ -41,7 +39,7 @@ const News = () => {
               </div>
             </div>
 
-            <div 
+            <div
               className="col-lg-3 col-md-6"
               data-aos="fade-up"
               data-aos-duration="1200"
@@ -61,7 +59,8 @@ const News = () => {
                   </Link>
 
                   <p>
-                  멤버십 가입 시 유명 브랜드 커스터마이징 골프백을 증정해 드립니다.
+                    멤버십 가입 시 유명 브랜드 커스터마이징 골프백을 증정해
+                    드립니다.
                   </p>
 
                   <Link href="/" className="read-more">
@@ -71,7 +70,7 @@ const News = () => {
               </div>
             </div>
 
-            <div 
+            <div
               className="col-lg-3 col-md-6"
               data-aos="fade-up"
               data-aos-duration="1200"
@@ -85,14 +84,14 @@ const News = () => {
                 </div>
 
                 <div className="news-content-wrap main-news">
-
                   <Link href="/">
                     <span>EVENT</span>
                     <h3>그린갤러리 이벤트</h3>
                   </Link>
 
                   <p>
-                  프로골퍼와 동반라운드 및 프리미엄 골프 투어를 준비 중 입니다.
+                    프로골퍼와 동반라운드 및 프리미엄 골프 투어를 준비 중
+                    입니다.
                   </p>
 
                   <Link href="/" className="read-more">
@@ -101,8 +100,8 @@ const News = () => {
                 </div>
               </div>
             </div>
-            
-            <div 
+
+            <div
               className="col-lg-3 col-md-6"
               data-aos="fade-up"
               data-aos-duration="1200"
@@ -113,18 +112,17 @@ const News = () => {
                   <Link href="/">
                     <img src="/images/blog/blog3_1.png" alt="Image" />
                   </Link>
-
                 </div>
 
                 <div className="news-content-wrap main-news">
-
                   <Link href="/">
                     <span>NEWS</span>
                     <h3>그린갤러리 소식</h3>
                   </Link>
 
                   <p>
-                  럭셔리 라이프스타일 전반에 걸쳐 품격을 높여주는 멤버십 커뮤니티 서비스 제공 
+                    럭셔리 라이프스타일 전반에 걸쳐 품격을 높여주는 멤버십
+                    커뮤니티 서비스 제공
                   </p>
 
                   <Link href="/" className="read-more">

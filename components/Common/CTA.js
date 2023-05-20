@@ -1,10 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
+/* eslint-disable react/no-unescaped-entities */
+import React from "react";
+import Link from "next/link";
 
 const CTA = () => {
   return (
-		<>
-			<div className="cta-area ptb-100">
+    <>
+      <div className="cta-area ptb-100">
         <div className="container">
           <div className="cta-content">
             <span>So What is Next?</span>
@@ -17,8 +18,8 @@ const CTA = () => {
           </div>
         </div>
       </div>
-		</>
+    </>
   );
-}
+};
 
 export default CTA;

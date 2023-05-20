@@ -35,7 +35,7 @@ export default function SignUp() {
               <input
                 type="checkbox"
                 id="agree1"
-                className='form-check-input'
+                className="form-check-input"
                 value={form.agree1}
                 onChange={handleChange}
               />
@@ -54,7 +54,7 @@ export default function SignUp() {
               <input
                 type="checkbox"
                 id="agree2"
-                className='form-check-input'
+                className="form-check-input"
                 value={form.agree2}
                 onChange={handleChange}
               />

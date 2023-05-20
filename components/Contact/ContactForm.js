@@ -41,7 +41,14 @@ const ContactForm = () => {
       const url = `https://node.galleryk.co.kr:8081/consult/homepage`;
       const { name, email, number, subject, text } = contact;
       const content = `제목: ${subject} <br/> ${text}`;
-      const req = {cnst_type: 20 , logn_id: '', name, phone: number, dealer_code:'', cnst_cont: content};
+      const req = {
+        cnst_type: 20,
+        logn_id: "",
+        name,
+        phone: number,
+        dealer_code: "",
+        cnst_cont: content,
+      };
 
       const response = await axios.post(url, req);
       console.log(response);
@@ -59,7 +66,9 @@ const ContactForm = () => {
           <span>Contact Us</span>
           <h2>상담/문의</h2>
           <p>
-          상딤신청을 남겨주시면 빠른 시간 내에<br/>답변 드리도록 하겠습니다
+            상딤신청을 남겨주시면 빠른 시간 내에
+            <br />
+            답변 드리도록 하겠습니다
           </p>
         </div>
 
@@ -123,12 +132,14 @@ const ContactForm = () => {
                       </div>
                     </div>
                     <div className="col-lg-12 col-sm-12">
-                      <input
-                        type="checkbox"
-                        id="agree"
-                      /> 
-                      <label htmlFor='agree' className='contact-agree-label'>
-                        <Link href="https://sprinkle-justice-3a1.notion.site/11de65f3be1241efb4e542bbb897a52c" target="_blank">개인정보 동의</Link>
+                      <input type="checkbox" id="agree" />
+                      <label htmlFor="agree" className="contact-agree-label">
+                        <Link
+                          href="https://sprinkle-justice-3a1.notion.site/11de65f3be1241efb4e542bbb897a52c"
+                          target="_blank"
+                        >
+                          개인정보 동의
+                        </Link>
                       </label>
                     </div>
                     <div className="col-lg-12 col-sm-12">
@@ -141,7 +152,6 @@ const ContactForm = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

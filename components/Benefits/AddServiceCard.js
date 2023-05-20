@@ -11,7 +11,10 @@ const AddServiceCard = () => {
               <div className="business-content text-center">
                 <span>Green Gallery Benefits</span>
                 <h2>그린갤러리 부가혜택</h2>
-                <p>골프여행, 호텔, 리조트, 프라이빗 파티 등 다양한 부가 서비스를 제공합니다. </p>
+                <p>
+                  골프여행, 호텔, 리조트, 프라이빗 파티 등 다양한 부가 서비스를
+                  제공합니다.
+                </p>
               </div>
               <div className="business-content text-center mt-100">
                 <h2>자사 보유 컨텐츠</h2>
@@ -91,9 +94,7 @@ const AddServiceCard = () => {
                 </div>
               </div>
             </div>
-
           </div>
-
 
           <div className="row align-items-center mt-100">
             <div className="col-lg-12">
@@ -102,7 +103,7 @@ const AddServiceCard = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="row">
             <div className="col-lg-4 col-md-6">
               <div className="single-news">
@@ -139,10 +140,7 @@ const AddServiceCard = () => {
                 </div>
               </div>
             </div>
-
           </div>
-
-
         </div>
       </section>
     </>

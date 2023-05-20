@@ -18,7 +18,7 @@ export default function SignUp() {
           <div className="row">
             <div className="col-12 text-center">회원가입이 완료되었습니다.</div>
             <Link className="default-btn btn-next" href="/login">
-            로그인 하러 가기
+              로그인 하러 가기
             </Link>
           </div>
         </div>
