@@ -18,10 +18,7 @@ import "../styles/responsive.scss";
 import Head from "next/head";
 import GoTop from "../components/Shared/GoTop";
 
-import axios from "axios";
-import { destroyCookie, parseCookies } from "nookies";
 import Navbar from "../components/Layouts/Navbar";
-import baseUrl from "../utils/baseUrl";
 
 const MyApp = ({ Component, pageProps }) => {
   React.useEffect(() => {
