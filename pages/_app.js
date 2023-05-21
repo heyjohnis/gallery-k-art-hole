@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-undef */
 import "animate.css";
 import AOS from "aos";
 import React from "react";
