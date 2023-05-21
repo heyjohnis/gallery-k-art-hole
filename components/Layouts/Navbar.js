@@ -352,11 +352,10 @@ const Navbar = ({ user }) => {
                     </>
                   )}
                 </ul>
-                {user && (
-                  <Link href="/contact" className="default-btn">
-                    BOOK NOW
-                  </Link>
-                )}
+
+                <Link href="/mypage/reservation/" className="default-btn">
+                  BOOK NOW
+                </Link>
               </div>
             </div>
           </div>

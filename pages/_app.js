@@ -9,7 +9,7 @@ import "../node_modules/aos/dist/aos.css";
 import "../styles/bootstrap.min.css";
 import "../styles/boxicons.min.css";
 import "../styles/flaticon.css";
-
+import baseUrl from "../utils/baseUrl";
 // Global styles
 import "../public/fonts/font.css";
 import "../styles/style.scss";
@@ -41,40 +41,40 @@ const MyApp = ({ Component, pageProps }) => {
 };
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {
-  // const { medq_token } = parseCookies(ctx);
+  const { medq_token } = parseCookies(ctx);
   let pageProps = {};
 
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
   }
 
-  // if (!medq_token) {
-  //   const isProtectedRoute = ctx.pathname === "/admin/dashboard";
-  //   if (isProtectedRoute) {
-  //     redirectUser(ctx, "/auth");
-  //   }
-  // } else {
-  //   try {
-  //     const url = `${baseUrl}/myinfo`;
+  if (!medq_token) {
+    const isProtectedRoute = ctx.pathname === "/admin/dashboard";
+    if (isProtectedRoute) {
+      redirectUser(ctx, "/auth");
+    }
+  } else {
+    try {
+      const url = `${baseUrl}/myinfo`;
 
-  //     const response = await axios({
-  //       method: "post",
-  //       url: url,
-  //       headers: { Authorization: `Bearer ${medq_token}` },
-  //       data: {},
-  //     });
+      const response = await axios({
+        method: "post",
+        url: url,
+        headers: { Authorization: `Bearer ${medq_token}` },
+        data: {},
+      });
 
-  //     const user = response.data.my_info;
-  //     const isAdmin = user.role == "admin";
-  //     const isNotPermitted = !isAdmin && ctx.pathname === "/admin/dashboard";
-  //     if (isNotPermitted) {
-  //       redirectUser(ctx, "/products");
-  //     }
-  //     pageProps.user = user;
-  //   } catch (error) {
-  //     destroyCookie(ctx, "medq_token");
-  //   }
-  // }
+      const user = response.data.my_info;
+      const isAdmin = user.role == "admin";
+      const isNotPermitted = !isAdmin && ctx.pathname === "/admin/dashboard";
+      if (isNotPermitted) {
+        redirectUser(ctx, "/products");
+      }
+      pageProps.user = user;
+    } catch (error) {
+      destroyCookie(ctx, "medq_token");
+    }
+  }
   return { pageProps };
 };
 
