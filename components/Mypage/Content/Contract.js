@@ -12,7 +12,7 @@ import {
 } from "../../../utils/number";
 
 const Contract = ({ user }) => {
-  const [setLoading] = useState(false);
+  const [, setLoading] = useState(false);
   const [artworks, setArtworks] = useState([]);
 
   useEffect(() => {
