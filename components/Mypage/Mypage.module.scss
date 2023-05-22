@@ -273,6 +273,34 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 /*content-예약내역*/
 .info_booking {
   margin-top: 2em;
+  margin-bottom: 0;
+  thead {
+    background-color: #ddd;
+  }
+  tbody {
+    td {
+      vertical-align: middle;
+      line-height: 1.5;
+      &:first-child {
+        width: 60%;
+      }
+      &:last-child {
+        text-align: right;
+        padding-right: 16px;
+      }
+      .btn_detail {
+        padding: 0;
+        margin-bottom:1em;
+        font-size: 14px;
+      }
+      .btn_oneon {
+        padding: 4px 10px;
+        background: $black-color;
+        color: $white-color;
+        font-size: 14px;
+      }
+    }
+  }
 }
 
 .point_txt {

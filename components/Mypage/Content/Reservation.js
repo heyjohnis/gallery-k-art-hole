@@ -159,24 +159,25 @@ const Reservation = ({ user }) => {
                     <tbody>
                       <tr>
                         <td>
-                          예약일자: {resv.reg_date} 예약번호: {resv.resv_no}{" "}
-                          <br />
+                          <strong>예약일자: </strong>{resv.reg_date} 
+                          <br/>
+                          <strong>예약번호: </strong>{resv.resv_no}{" "}
+                          <br/>
                           {resv.resv_date} {resv.resv_week} {resv.resv_time}{" "}
                           <br />
                           {resv.resv_name}
                         </td>
                         <td>
-                          <div className="btn">{resv.resv_stts_nm}</div>
+                          <div>{resv.resv_stts_nm}</div>
                         </td>
                         <td>
                           <div
-                            className="btn"
+                            className={styles.btn_detail}
                             onClick={() => showDetailInfo(i)}
                           >
-                            예약상세&gt;
+                            예약상세 &gt;
                           </div>
-                          <br />
-                          <div className="btn btn-secondary">1:1문의</div>
+                          <div className={`btn ${styles.btn_oneon}`}>1:1문의</div>
                         </td>
                       </tr>
                     </tbody>
