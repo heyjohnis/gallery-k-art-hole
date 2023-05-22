@@ -90,11 +90,12 @@ const Reservation = ({ user }) => {
             className={`btn ${styles.btn_booking}`}
             onClick={() => showReservationModal()}
           >
+            <div className={styles.ani_booking}>
               <Lottie
-                className = {styles.ani_booking}
                 options={lottieOptions}// svg의 부모 div에 적용
               />
-              <span>예약신청</span>
+            </div>
+            <span>예약신청</span>
           </div>
         </div>
         <div className={`${styles.benefit_info}`}>
