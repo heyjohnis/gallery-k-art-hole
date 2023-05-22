@@ -91,8 +91,8 @@ const Reservation = ({ user }) => {
             onClick={() => showReservationModal()}
           >
               <Lottie
-                options={lottieOptions}
-                style={{ width: "90%", height: "auto" }} // svg의 부모 div에 적용
+                className = {styles.ani_booking}
+                options={lottieOptions}// svg의 부모 div에 적용
               />
               <span>예약신청</span>
           </div>

@@ -157,8 +157,35 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
 
 /*혜원혜택*/
+.btn_booking {
+  width: 120px;
+  height: 48px;
+  padding: 0 24px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $sub-color;
+  border-radius: 30px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+
+  .ani_booking {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+  }
+  span {
+    position: unset;
+    left: none;
+    bottom: none;
+    transform: none;
+    color: $white-color;
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+}
 .benefit_info {
-  margin-bottom: 70px;
+  margin-bottom: 200px;
   h3 {
     font-family: $body-font-family;
     margin: 40px 0 10px;
@@ -266,6 +293,9 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
       font-size: 16px;
     }
   }
+  .period {
+    font-size: 14px;
+  }
 
   /*혜원혜택*/
   .benefit_info {
@@ -288,14 +318,21 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     padding-left: calc(var(--bs-gutter-x) * .5);
   }
   .btn_booking {
-    position: fixed;
-    background-color: $sub-color;
-    bottom: 100px;
-    right: 16px;
     width: 80px;
     height: 80px;
+    padding: 0 16px;
+    align-items: flex-start;
+    position: fixed;
+    bottom: 100px;
+    right: 16px;
+    background-color: $sub-color;
     border-radius: 50%;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    .ani_booking {
+      margin-top: 3px;
+      width: 90%;
+      height: auto;
+    }
     span {
       position: absolute;
       left: 50%;
@@ -304,6 +341,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
       color: $white-color;
       font-weight: 600;
       font-size: 0.85em;
+      margin:0;
     }
   }
 }
