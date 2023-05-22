@@ -336,6 +336,17 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     }
   }
 
+
+  /*content-예약내역*/
+  .info_booking {
+    tbody {
+      td {
+        &:first-child {
+          width: 50%;
+        }
+      }
+    }
+  }
 }
 
 
