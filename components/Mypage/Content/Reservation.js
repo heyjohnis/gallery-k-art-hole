@@ -85,41 +85,48 @@ const Reservation = ({ user }) => {
             예약신청
           </div>
         </div>
-        <div className={`container ${styles.benefit_info}`}>
+        <div className={`${styles.benefit_info}`}>
           <h3>예약 내역</h3>
           <form>
-          
-            <input
-              type="date"
-              name="search_start_date"
-              value={form.search_start_date}
-              onChange={handleChange}
-            />
-            <input
-              type="date"
-              name="search_end_date"
-              value={form.search_end_date}
-              onChange={handleChange}
-            />
-            <input
-              className={styles.input_txt}
-              type="text"
-              name="search_word"
-              value={form.search_word}
-              onChange={handleChange}
-            />
-            <div className={styles.btn_wrap}>
-              <div
-                className={`btn ${styles.btn} ${styles.btn_outline}`}
-                onClick={handleRest}
-              >
-                초기화
+            <div className='row'>
+              <div className='col-12 col-sm-8'>
+                <div className={`row ${styles.filter_wrap}`}>
+                  <input
+                    className='col-4'
+                    type="date"
+                    name="search_start_date"
+                    value={form.search_start_date}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className='col-4'
+                    type="date"
+                    name="search_end_date"
+                    value={form.search_end_date}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className={`col-3 ${styles.input_txt}`}
+                    type="text"
+                    name="search_word"
+                    value={form.search_word}
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
-              <div
-                className={`btn ${styles.btn} ${styles.btn_conform}`}
-                onClick={handleSubmit}
-              >
-                조회
+              <div className={`col-12 col-sm-4 ${styles.btn_wrap}`}>
+                <div
+                  className={`btn ${styles.btn} ${styles.btn_outline}`}
+                  onClick={handleRest}
+                >
+                  초기화
+                </div>
+                <div
+                  className={`btn ${styles.btn} ${styles.btn_conform}`}
+                  onClick={handleSubmit}
+                >
+                  조회
+                </div>
               </div>
             </div>
           </form>
