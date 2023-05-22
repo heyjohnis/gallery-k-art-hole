@@ -21,24 +21,27 @@ const MyPageInfo = ({ user }) => {
   return (
     <>
       <section>
-        <div className="container">
+
           <div className={`row ${styles.point}`}>
             <div className="col-6">
-              <div className={`row ${styles.item_txt} ${styles.border}`}>
+              <div className={`row ${styles.item_txt}`}>
                 <p>잔여 이용 혜택</p>
                 <h3 className={styles.info_data}>
-                  월 {currentMonthlyCount} 회 / 연 {currentYearlyCount}회
+                  <span className={styles.point_txt}>월 {currentMonthlyCount} 회 / </span>
+                  <span className={styles.smaller}>연 {currentYearlyCount}회</span>
                 </h3>
               </div>
             </div>
             <div className="col-6">
-              <div className={styles.item_txt}>
-                <p>
-                  연간 잔여 포인트{" "}
+              <div className={`row ${styles.item_txt} ${styles.border}`}>
+                <p className={styles.info_data}>
+                  <span>연간 잔여 포인트{" "}</span>
                   <span className={styles.smaller}>/ 연간 총 포인트</span>
                 </p>
                 <h3 className={styles.info_data}>
-                  {commaFormat(currentPoint)}P{" "}
+                  <span className={styles.point_txt}>
+                    {commaFormat(currentPoint)}P{" "}
+                  </span>
                   <span className={styles.smaller}>
                     / {commaFormat(yearlyPoint)}P
                   </span>
@@ -60,10 +63,9 @@ const MyPageInfo = ({ user }) => {
             </p>
           </div>
           <p className={styles.period}>
-            이용기간: {user.start_date} ~ {user.end_date}
+            <strong>이용기간 :</strong> {user.start_date} ~ {user.end_date}
           </p>
           <div></div>
-        </div>
       </section>
     </>
   );
