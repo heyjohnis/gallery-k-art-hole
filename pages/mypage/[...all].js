@@ -1,51 +1,56 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
-import Router, { useRouter } from 'next/router';
+import Router, { useRouter } from "next/router";
 
 import axios from "axios";
-import { Modal } from "react-bootstrap";
 import cookie from "js-cookie";
 import baseUrl from "../../utils/baseUrl";
 import PageBanner from "../../components/Common/PageBanner";
 import MyPageMain from "../../components/Mypage/MyPageMain";
 
-const MyPage = ( { user } ) => {
-
+const MyPage = ({ user }) => {
   const router = useRouter();
   const [userInfo, setUserInfo] = useState({});
   const [loading, setLoading] = useState({});
-  const [menu, setMenu] = useState('');
-  const [pointStatus, setPointStatus] = useState({});
+  const [menu, setMenu] = useState("");
 
   console.log("user 나의계약: ", user);
 
   useEffect(() => {
-
     setLoading(true);
-    if(user) {   
+    if (user) {
       const url = `${baseUrl}/myinfo`;
       const medq_token = cookie.get("medq_token");
-      axios({ method: "post", url: url, headers: { Authorization: `Bearer ${medq_token}` }, data: {} })
-          .then(({ data }) => {
-              setUserInfo(data.my_info);
-              if(!data.my_info.is_active) {
-                Router.push('/').then( () => {
-                  alert('승인 대기중입니다.');
-                });
-              }
-          })
-          .finally(() => {
-              setLoading(false);
-          });
+      axios({
+        method: "post",
+        url: url,
+        headers: { Authorization: `Bearer ${medq_token}` },
+        data: {},
+      })
+        .then(({ data }) => {
+          setUserInfo(data.my_info);
+          if (!data.my_info.is_active) {
+            Router.push("/").then(() => {
+              alert("승인 대기중입니다.");
+            });
+          }
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     } else {
       // 홈화면에서 [BOOK NOW] 클릭시, 로그인이 안됐을 경우
-      Router.push({pathname: '/login', query: {goto: 'mypage/reservation/'}})
+      Router.push({
+        pathname: "/login",
+        query: { goto: "mypage/reservation/" },
+      });
     }
-    }, []
-  );
+  }, []);
 
   useEffect(() => {
     setMenu(router.query.all[0]);
-    }, [router.query.all[0]]);
+  }, [router.query.all[0]]);
 
   return (
     <>

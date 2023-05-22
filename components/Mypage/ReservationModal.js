@@ -1,8 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, { forwardRef, useState, useImperativeHandle } from "react";
+import React, {
+  forwardRef,
+  useState,
+  useImperativeHandle,
+  useEffect,
+} from "react";
 import { Modal, Button } from "react-bootstrap";
 import axios from "axios";
+import cookie from "js-cookie";
 import baseUrl from "../../utils/baseUrl";
 
 const ReservationModal = ({ user }, ref) => {
@@ -44,8 +50,16 @@ const ReservationModal = ({ user }, ref) => {
 
     try {
       const url = `${baseUrl}/reservation`;
-      const response = await axios.post(url, reservation);
-      console.log(response);
+      const medq_token = cookie.get("medq_token");
+      await axios
+        .post({
+          url,
+          headers: { Authorization: `Bearer ${medq_token}` },
+          data: reservation,
+        })
+        .then(({ data }) => {
+          console.log("reservation: ", data);
+        });
       setReservation(INITIAL_STATE);
     } catch (error) {
       console.log(error);
@@ -53,6 +67,17 @@ const ReservationModal = ({ user }, ref) => {
 
     setShow(false);
   };
+
+  useEffect(() => {
+    if (user) {
+      setReservation((prevState) => ({
+        ...prevState,
+        user_no: user.user_no,
+        login_id: user.login_id,
+        login_user_name: user.user_name,
+      }));
+    }
+  }, [user]);
 
   return (
     <Modal show={show} onHide={handleClose}>
