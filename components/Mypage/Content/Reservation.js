@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
 import cookie from "js-cookie";
@@ -10,12 +10,13 @@ import ReservationModal from "../ReservationModal";
 const Reservation = ({ user }) => {
   const [, setLoading] = useState(false);
   const [reservations, setReservations] = useState([]);
-  const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({
     search_start_date: "",
     search_end_date: "",
     search_word: "",
   });
+
+  const modalRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -66,7 +67,7 @@ const Reservation = ({ user }) => {
   };
 
   const showReservationModal = () => {
-    setShowModal(true);
+    modalRef.current.showModal();
   };
 
   useEffect(() => {
@@ -187,7 +188,7 @@ const Reservation = ({ user }) => {
           )}
         </div>
       </section>
-      <ReservationModal show={showModal} />
+      <ReservationModal ref={modalRef} />
     </>
   );
 };
