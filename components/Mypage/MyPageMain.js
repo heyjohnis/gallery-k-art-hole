@@ -8,6 +8,7 @@ import Point from "./Content/Point";
 import Order from "./Content/Order";
 import Update from "./Content/Update";
 import Contract from "./Content/Contract";
+import styles from "./Mypage.module.scss";
 
 const MyPageMain = ({ user, menu }) => {
   return (
@@ -18,7 +19,7 @@ const MyPageMain = ({ user, menu }) => {
             <div className="col-lg-3 col-md-12">
               <MyPageSidebar user={user} menu={menu} />
             </div>
-            <div className="col-lg-9 col-md-12">
+            <div className={`col-lg-9 col-md-12 ${styles.my_con_wrap}`}>
               <MyPageInfo user={user} />
               {menu === "membership" && <Membership user={user} />}
               {menu === "contract" && <Contract user={user} />}

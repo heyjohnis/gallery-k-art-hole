@@ -6,6 +6,14 @@ import cookie from "js-cookie";
 import styles from "../Mypage.module.scss";
 import baseUrl from "../../../utils/baseUrl";
 import ReservationModal from "../ReservationModal";
+import Lottie from "react-lottie";
+import Booking from "../data/booking.json";
+
+const lottieOptions = {
+  animationData: Booking,
+  loop: true,
+  autoplay: true,
+};
 
 const Reservation = ({ user }) => {
   const [, setLoading] = useState(false);
@@ -79,47 +87,59 @@ const Reservation = ({ user }) => {
       <section>
         <div className={styles.btn_wrap}>
           <div
-            className={`btn btn-primary`}
+            className={`btn ${styles.btn_booking}`}
             onClick={() => showReservationModal()}
           >
-            예약신청
+            <div className={styles.ani_booking}>
+              <Lottie
+                options={lottieOptions}// svg의 부모 div에 적용
+              />
+            </div>
+            <span>예약신청</span>
           </div>
         </div>
-        <div className={`container ${styles.benefit_info}`}>
+        <div className={`${styles.benefit_info}`}>
           <h3>예약 내역</h3>
           <form>
-          
-            <input
-              type="date"
-              name="search_start_date"
-              value={form.search_start_date}
-              onChange={handleChange}
-            />
-            <input
-              type="date"
-              name="search_end_date"
-              value={form.search_end_date}
-              onChange={handleChange}
-            />
-            <input
-              className={styles.input_txt}
-              type="text"
-              name="search_word"
-              value={form.search_word}
-              onChange={handleChange}
-            />
-            <div className={styles.btn_wrap}>
-              <div
-                className={`btn ${styles.btn} ${styles.btn_outline}`}
-                onClick={handleRest}
-              >
-                초기화
+            <div className='row'>
+              <div className='col-12 col-sm-8'>
+                <div className={`row ${styles.filter_wrap}`}>
+                  <input
+                    className='col-4'
+                    type="date"
+                    name="search_start_date"
+                    value={form.search_start_date}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className='col-4'
+                    type="date"
+                    name="search_end_date"
+                    value={form.search_end_date}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className={`col-3 ${styles.input_txt}`}
+                    type="text"
+                    name="search_word"
+                    value={form.search_word}
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
-              <div
-                className={`btn ${styles.btn} ${styles.btn_conform}`}
-                onClick={handleSubmit}
-              >
-                조회
+              <div className={`col-12 col-sm-4 ${styles.btn_wrap}`}>
+                <div
+                  className={`btn ${styles.btn} ${styles.btn_outline}`}
+                  onClick={handleRest}
+                >
+                  초기화
+                </div>
+                <div
+                  className={`btn ${styles.btn} ${styles.btn_conform}`}
+                  onClick={handleSubmit}
+                >
+                  조회
+                </div>
               </div>
             </div>
           </form>
@@ -139,24 +159,25 @@ const Reservation = ({ user }) => {
                     <tbody>
                       <tr>
                         <td>
-                          예약일자: {resv.reg_date} 예약번호: {resv.resv_no}{" "}
-                          <br />
+                          <strong>예약일자: </strong>{resv.reg_date} 
+                          <br/>
+                          <strong>예약번호: </strong>{resv.resv_no}{" "}
+                          <br/>
                           {resv.resv_date} {resv.resv_week} {resv.resv_time}{" "}
                           <br />
                           {resv.resv_name}
                         </td>
                         <td>
-                          <div className="btn">{resv.resv_stts_nm}</div>
+                          <div>{resv.resv_stts_nm}</div>
                         </td>
                         <td>
                           <div
-                            className="btn"
+                            className={styles.btn_detail}
                             onClick={() => showDetailInfo(i)}
                           >
-                            예약상세&gt;
+                            예약상세 &gt;
                           </div>
-                          <br />
-                          <div className="btn btn-secondary">1:1문의</div>
+                          <div className={`btn ${styles.btn_oneon}`}>1:1문의</div>
                         </td>
                       </tr>
                     </tbody>
