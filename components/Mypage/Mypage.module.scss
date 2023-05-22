@@ -87,6 +87,10 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   }
 }
 
+/*메이페이지 컨텐츠 레이아웃*/
+.my_con_wrap {
+  padding-left: 50px;
+}
 
 /*잔여혜액 및 포인트*/
 .point {
@@ -258,7 +262,8 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   .user_point {
     flex-direction: column;
     p {
-      margin-top: 8px;
+      margin-top: 6px;
+      font-size: 16px;
     }
   }
 
@@ -275,6 +280,33 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
 }
 
+
+@media only screen and (max-width: 991px) {
+  /*메이페이지 컨텐츠 레이아웃*/
+  .my_con_wrap {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+  }
+  .btn_booking {
+    position: fixed;
+    background-color: $sub-color;
+    bottom: 100px;
+    right: 16px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    span {
+      position: absolute;
+      left: 50%;
+      bottom: 0px;
+      transform: translate(-50%, -50%);
+      color: $white-color;
+      font-weight: 600;
+      font-size: 0.85em;
+    }
+  }
+}
 
 @media only screen and (max-width: 991px) {
   .widget {

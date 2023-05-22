@@ -6,6 +6,14 @@ import cookie from "js-cookie";
 import styles from "../Mypage.module.scss";
 import baseUrl from "../../../utils/baseUrl";
 import ReservationModal from "../ReservationModal";
+import Lottie from "react-lottie";
+import Booking from "../data/booking.json";
+
+const lottieOptions = {
+  animationData: Booking,
+  loop: true,
+  autoplay: true,
+};
 
 const Reservation = ({ user }) => {
   const [, setLoading] = useState(false);
@@ -79,10 +87,14 @@ const Reservation = ({ user }) => {
       <section>
         <div className={styles.btn_wrap}>
           <div
-            className={`btn btn-primary`}
+            className={`btn ${styles.btn_booking}`}
             onClick={() => showReservationModal()}
           >
-            예약신청
+              <Lottie
+                options={lottieOptions}
+                style={{ width: "90%", height: "auto" }} // svg의 부모 div에 적용
+              />
+              <span>예약신청</span>
           </div>
         </div>
         <div className={`${styles.benefit_info}`}>
