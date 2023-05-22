@@ -87,6 +87,7 @@ const Reservation = ({ user }) => {
         <div className={`container ${styles.benefit_info}`}>
           <h3>예약 내역</h3>
           <form>
+          
             <input
               type="date"
               name="search_start_date"
