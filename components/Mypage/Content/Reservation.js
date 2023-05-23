@@ -92,7 +92,7 @@ const Reservation = ({ user }) => {
           >
             <div className={styles.ani_booking}>
               <Lottie
-                options={lottieOptions}// svg의 부모 div에 적용
+                options={lottieOptions} // svg의 부모 div에 적용
               />
             </div>
             <span>예약신청</span>
@@ -101,18 +101,18 @@ const Reservation = ({ user }) => {
         <div className={`${styles.benefit_info}`}>
           <h3>예약 내역</h3>
           <form>
-            <div className='row'>
-              <div className='col-12 col-sm-8'>
+            <div className="row">
+              <div className="col-12 col-sm-8">
                 <div className={`row ${styles.filter_wrap}`}>
                   <input
-                    className='col-4'
+                    className="col-4"
                     type="date"
                     name="search_start_date"
                     value={form.search_start_date}
                     onChange={handleChange}
                   />
                   <input
-                    className='col-4'
+                    className="col-4"
                     type="date"
                     name="search_end_date"
                     value={form.search_end_date}
@@ -159,10 +159,11 @@ const Reservation = ({ user }) => {
                     <tbody>
                       <tr>
                         <td>
-                          <strong>예약일자: </strong>{resv.reg_date} 
-                          <br/>
-                          <strong>예약번호: </strong>{resv.resv_no}{" "}
-                          <br/>
+                          <strong>예약일자: </strong>
+                          {resv.reg_date}
+                          <br />
+                          <strong>예약번호: </strong>
+                          {resv.resv_no} <br />
                           {resv.resv_date} {resv.resv_week} {resv.resv_time}{" "}
                           <br />
                           {resv.resv_name}
@@ -177,7 +178,9 @@ const Reservation = ({ user }) => {
                           >
                             예약상세 &gt;
                           </div>
-                          <div className={`btn ${styles.btn_oneon}`}>1:1문의</div>
+                          {/* <div className={`btn ${styles.btn_oneon}`}>
+                            1:1문의
+                          </div> */}
                         </td>
                       </tr>
                     </tbody>
@@ -198,6 +201,14 @@ const Reservation = ({ user }) => {
                             {resv.user_name} / {resv.user_phone}
                           </td>
                         </tr>
+                        {resv.memo && (
+                          <tr>
+                            <th>메모</th>
+                            <td colSpan={2}>
+                              <pre>{resv.memo}</pre>
+                            </td>
+                          </tr>
+                        )}
                       </tbody>
                     </Table>
                   </div>
@@ -209,7 +220,11 @@ const Reservation = ({ user }) => {
           )}
         </div>
       </section>
-      <ReservationModal ref={modalRef} />
+      <ReservationModal
+        user={user}
+        updateReservation={getReservationData}
+        ref={modalRef}
+      />
     </>
   );
 };

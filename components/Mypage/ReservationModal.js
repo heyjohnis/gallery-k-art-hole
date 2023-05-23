@@ -24,13 +24,22 @@ const INITIAL_STATE = {
   login_user_name: "",
 };
 
-const ReservationModal = ({ user }, ref) => {
+const ReservationModal = ({ user, updateReservation }, ref) => {
   const [reservation, setReservation] = useState(INITIAL_STATE);
   const [show, setShow] = useState(false);
 
   useImperativeHandle(ref, () => ({
     showModal,
   }));
+
+  const userInfoSetting = () => {
+    setReservation((prevState) => ({
+      ...prevState,
+      user_no: user.user_no,
+      login_id: user.login_id,
+      login_user_name: user.user_name,
+    }));
+  };
 
   const showModal = () => {
     setShow(true);
@@ -42,42 +51,51 @@ const ReservationModal = ({ user }, ref) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const memo = `희망일자/시간대: ${reservation.resv_time} \n
-      지역: ${reservation.resv_place} \n
-      기타사항: ${reservation.etc}
-      `;
+    const memo = `희망일자/시간대: ${reservation.resv_time}
+지역: ${reservation.resv_place} 
+기타사항: ${reservation.etc}`;
     setReservation((prevState) => ({ ...prevState, [name]: value, memo }));
+  };
+
+  const validateForm = () => {
+    if (!reservation.user_name) {
+      alert("이용자명을 입력해주세요.");
+      return false;
+    }
+    if (!reservation.user_phone) {
+      alert("이용자 연락처를 입력해주세요.");
+      return false;
+    }
+    return true;
+  };
+
+  const sendReservation = async () => {
+    try {
+      const url = `${baseUrl}/reservation/request`;
+      const medq_token = cookie.get("medq_token");
+      console.log("url: ", url);
+      const response = await axios.post(url, reservation, {
+        headers: { Authorization: `Bearer ${medq_token}` },
+      });
+      setReservation(INITIAL_STATE);
+      updateReservation();
+      alert("예약접수 되었습니다.");
+    } catch (error) {
+      console.log(error);
+    }
+    setShow(false);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("reservation: ", reservation);
 
-    try {
-      const url = `${baseUrl}/reservation`;
-      const medq_token = cookie.get("medq_token");
-
-      const response = await axios.post(url, reservation, {
-        headers: { Authorization: `Bearer ${medq_token}` },
-      });
-      console.log("response: ", response);
-
-      setReservation(INITIAL_STATE);
-    } catch (error) {
-      console.log(error);
-    }
-
-    setShow(false);
+    if (!validateForm()) return;
+    sendReservation();
   };
 
   useEffect(() => {
     if (user && user.user_no) {
-      setReservation((prevState) => ({
-        ...prevState,
-        user_no: user.user_no,
-        login_id: user.login_id,
-        login_user_name: user.user_name,
-      }));
+      userInfoSetting();
     }
   }, [user]);
 
