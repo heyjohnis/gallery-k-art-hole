@@ -19,6 +19,11 @@ const MyPageMenu = ({ menu }) => {
               </Link>
             </li> */}
             <li>
+              <Link href="/mypage/home" className="home">
+                홈
+              </Link>
+            </li>
+            <li>
               <Link href="/mypage/contract" className="contract">
                 나의 계약
               </Link>

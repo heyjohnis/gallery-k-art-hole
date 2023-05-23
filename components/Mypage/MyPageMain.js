@@ -9,6 +9,7 @@ import Order from "./Content/Order";
 import Update from "./Content/Update";
 import Contract from "./Content/Contract";
 import styles from "./Mypage.module.scss";
+import Home from "./Content/Home";
 
 const MyPageMain = ({ user, menu }) => {
   return (
@@ -21,6 +22,7 @@ const MyPageMain = ({ user, menu }) => {
             </div>
             <div className={`col-lg-9 col-md-12 ${styles.my_con_wrap}`}>
               <MyPageInfo user={user} />
+              {menu === "home" && <Home user={user} />}
               {menu === "membership" && <Membership user={user} />}
               {menu === "contract" && <Contract user={user} />}
               {menu === "reservation" && <Reservation user={user} />}
