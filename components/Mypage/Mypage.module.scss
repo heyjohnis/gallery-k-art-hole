@@ -229,6 +229,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
 
 .table_membership {
+  border: 1px solid #eaeaea;
   font-size: 14px;
   line-height: 1;
   margin-bottom: 35px;
@@ -238,12 +239,12 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     }
   }
   th {
-    background: #386f5c;
+    background: #ddd;
     text-align: center;
     vertical-align: middle;
-    color: $white-color;
+    color: $black-color;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
     span {
       font-size: 12px;
     }
@@ -289,7 +290,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
         padding-right: 16px;
       }
       .btn_detail {
-        font-size: 14px;
+        font-size: 16px;
       }
       .btn_oneon {
         padding: 4px 10px;
@@ -341,6 +342,9 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
       td {
         &:first-child {
           width: 50%;
+        }
+        .btn_detail {
+          font-size: 14px;
         }
       }
     }

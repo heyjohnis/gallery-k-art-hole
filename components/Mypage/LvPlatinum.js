@@ -2,6 +2,14 @@
 import Table from "react-bootstrap/Table";
 import styles from "./Mypage.module.scss";
 
+const platinumData = [
+  {
+    image: "/images/main/slide_benefit01.png",
+    url: "#",
+    text: "당신의 행복한 건강",
+  }
+];
+
 const LvPlatinum = ({ user }) => {
   return (
     <>
