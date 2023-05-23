@@ -3487,3 +3487,42 @@ table, th, td {
 .f_body {
   font-family: $body-font-family;
 } 
+
+/*
+My page
+================================*/
+
+.toggle_on, .toggle_off {
+  position: relative;
+  padding-right: 16px;
+}
+
+.toggle_on, .toggle_off {
+  &::after{
+    position: absolute;
+    right: 0; 
+    content: '';
+    width: 10px; /* 사이즈 */
+    height: 10px; /* 사이즈 */
+    border-top: 2px solid #000; /* 선 두께 */
+    border-right: 2px solid #000; /* 선 두께 */
+  }
+}
+
+.toggle_on {
+  &::after{
+  top: 8px;
+  transform: rotate(315deg);
+  }
+}
+
+.toggle_off {
+  &::after{
+  top: 2px;
+  transform: rotate(135deg);
+  }
+}
+
+
+
+

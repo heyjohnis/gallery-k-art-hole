@@ -7,8 +7,17 @@ const ReservationList = ({ reservations }) => {
   const showDetailInfo = (id) => {
     const targetObj = document.querySelector("#info" + id);
     const displayVal = targetObj.style.display;
-    if (displayVal === "none") targetObj.style.display = "block";
-    else targetObj.style.display = "none";
+    const toggleButton = document.querySelector("#btn_toggle");
+    if (displayVal === "none") {
+      targetObj.style.display = "block";
+      toggleButton.classList.add("toggle_on");
+      toggleButton.classList.remove("toggle_off");
+    }
+    else {
+      targetObj.style.display = "none";
+      toggleButton.classList.remove("toggle_on");
+      toggleButton.classList.add("toggle_off");
+    }
   };
 
   return (
@@ -40,10 +49,11 @@ const ReservationList = ({ reservations }) => {
                   </td>
                   <td>
                     <div
+                      id = "btn_toggle"
                       className={styles.btn_detail}
                       onClick={() => showDetailInfo(i)}
                     >
-                      예약상세 &gt;
+                      예약상세
                     </div>
                     {/* <div className={`btn ${styles.btn_oneon}`}>
                             1:1문의
