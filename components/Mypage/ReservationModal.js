@@ -11,15 +11,20 @@ import axios from "axios";
 import cookie from "js-cookie";
 import baseUrl from "../../utils/baseUrl";
 
+const INITIAL_STATE = {
+  user_name: "",
+  user_phone: "",
+  resv_time: "",
+  resv_place: "",
+  subject: "",
+  memo: "",
+  etc: "",
+  user_no: "",
+  login_id: "",
+  login_user_name: "",
+};
+
 const ReservationModal = ({ user }, ref) => {
-  const INITIAL_STATE = {
-    user_name: "",
-    user_phone: "",
-    resv_time: "",
-    resv_place: "",
-    subject: "",
-    memo: "",
-  };
   const [reservation, setReservation] = useState(INITIAL_STATE);
   const [show, setShow] = useState(false);
 
@@ -37,29 +42,26 @@ const ReservationModal = ({ user }, ref) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setReservation((prevState) => ({ ...prevState, [name]: value }));
+    const memo = `희망일자/시간대: ${reservation.resv_time} \n
+      지역: ${reservation.resv_place} \n
+      기타사항: ${reservation.etc}
+      `;
+    setReservation((prevState) => ({ ...prevState, [name]: value, memo }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const memo = `희망일자/시간대: ${reservation.resv_time} \n
-      지역: ${reservation.resv_place} \n
-      기타사항: ${reservation.etc}
-    `;
-    setReservation((prevState) => ({ ...prevState, memo }));
+    console.log("reservation: ", reservation);
 
     try {
       const url = `${baseUrl}/reservation`;
       const medq_token = cookie.get("medq_token");
-      await axios
-        .post({
-          url,
-          headers: { Authorization: `Bearer ${medq_token}` },
-          data: reservation,
-        })
-        .then(({ data }) => {
-          console.log("reservation: ", data);
-        });
+
+      const response = await axios.post(url, reservation, {
+        headers: { Authorization: `Bearer ${medq_token}` },
+      });
+      console.log("response: ", response);
+
       setReservation(INITIAL_STATE);
     } catch (error) {
       console.log(error);
@@ -69,7 +71,7 @@ const ReservationModal = ({ user }, ref) => {
   };
 
   useEffect(() => {
-    if (user) {
+    if (user && user.user_no) {
       setReservation((prevState) => ({
         ...prevState,
         user_no: user.user_no,
