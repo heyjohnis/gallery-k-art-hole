@@ -331,7 +331,7 @@ const Navbar = ({ user }) => {
                     <>
                       <li>
                         <Link
-                          href="/mypage/contract"
+                          href="/mypage/home"
                           className="menu-items"
                           onClick={toggleNavbar}
                         >

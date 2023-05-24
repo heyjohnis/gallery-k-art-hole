@@ -86,7 +86,7 @@ const Home = ({ user }) => {
       </div>
       <h3>예약정보</h3>
       <ReservationList reservations={reservations} />
-      <h3 className="mt-5">포인트 사용내역</h3>
+      <h3 className="mt-5 mb-4">포인트 사용내역</h3>
       <Table bordered className={styles.table_membership}>
         <thead>
           <tr>
