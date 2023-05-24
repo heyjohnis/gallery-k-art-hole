@@ -85,10 +85,10 @@ const MyApp = ({ Component, pageProps }) => {
   })();
   ChannelIO('boot', {
     "pluginKey": "851db043-3ce1-4d57-b7af-58aa7dcb9c7e", //please fill with your plugin key
-    "memberId": "${user.login_id}", //fill with user id
+    "memberId": "${user && user.login_id}", //fill with user id
     "profile": {
-      "name": "${user.user_name}", //fill with user name
-      "mobileNumber": "${user.mobile}", //fill with user phone number
+      "name": "${user && user.user_name}", //fill with user name
+      "mobileNumber": "${user && user.mobile}", //fill with user phone number
     }
   });`,
         }}
