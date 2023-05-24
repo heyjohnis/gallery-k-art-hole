@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReservationList from "../ReservationList";
 import axios from "axios";
 import cookie from "js-cookie";
@@ -7,15 +7,20 @@ import baseUrl from "../../../utils/baseUrl";
 import styles from "../Mypage.module.scss";
 import { commaFormat } from "../../../utils/number";
 import Table from "react-bootstrap/Table";
+import ReservationModal from "../ReservationModal";
+import Lottie from "react-lottie";
+import Booking from "../data/booking.json";
+
+const lottieOptions = {
+  animationData: Booking,
+  loop: true,
+  autoplay: true,
+};
 
 const Home = ({ user }) => {
   const [, setLoading] = useState(false);
   const [reservations, setReservations] = useState([]);
-  const [form, setForm] = useState({
-    search_start_date: "",
-    search_end_date: "",
-    search_word: "",
-  });
+  const modalRef = useRef(null);
 
   const [points, setPoints] = useState([]);
 
@@ -43,7 +48,7 @@ const Home = ({ user }) => {
         method: "post",
         url: url,
         headers: { Authorization: `Bearer ${medq_token}` },
-        data: form,
+        data: {},
       })
         .then(({ data }) => {
           console.log("data: ", data);
@@ -55,6 +60,10 @@ const Home = ({ user }) => {
     }
   };
 
+  const showReservationModal = () => {
+    modalRef.current.showModal();
+  };
+
   useEffect(() => {
     getReservationData();
     getPointData();
@@ -62,6 +71,19 @@ const Home = ({ user }) => {
 
   return (
     <>
+      <div className={styles.btn_wrap}>
+        <div
+          className={`btn ${styles.btn_booking}`}
+          onClick={() => showReservationModal()}
+        >
+          <div className={styles.ani_booking}>
+            <Lottie
+              options={lottieOptions} // svg의 부모 div에 적용
+            />
+          </div>
+          <span>예약신청</span>
+        </div>
+      </div>
       <h3>예약정보</h3>
       <ReservationList reservations={reservations} />
       <h3 className="mt-5">포인트 사용내역</h3>
@@ -84,6 +106,12 @@ const Home = ({ user }) => {
           ))}
         </tbody>
       </Table>
+      <div style={{ marginTop: "10rem" }}> </div>
+      <ReservationModal
+        user={user}
+        updateReservation={getReservationData}
+        ref={modalRef}
+      />
     </>
   );
 };

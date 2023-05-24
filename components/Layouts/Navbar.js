@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { Modal, Button } from "react-bootstrap";
 import { handleLogout } from "../../utils/auth";
 import styles from "./navbar.module.scss";
+
 const Navbar = ({ user }) => {
   const router = useRouter();
   // console.log(router.asPath)
@@ -82,6 +83,7 @@ const Navbar = ({ user }) => {
                   <Link
                     href="/"
                     className={`nav-link ${currentPath == "/" && "active"}`}
+                    onClick={toggleNavbar}
                   >
                     Home
                   </Link>
@@ -102,6 +104,7 @@ const Navbar = ({ user }) => {
                     className={`nav-link ${
                       currentPath == "/benefits/" && "active"
                     }`}
+                    onClick={toggleNavbar}
                   >
                     멤버십 <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -113,6 +116,7 @@ const Navbar = ({ user }) => {
                         className={`nav-link ${
                           currentPath == "/benefits/" && "active"
                         }`}
+                        onClick={toggleNavbar}
                       >
                         회원혜택
                       </Link>
@@ -126,6 +130,7 @@ const Navbar = ({ user }) => {
                             className={`nav-link ${
                               currentPath == "/addservice/" && "active"
                             }`}
+                            onClick={toggleNavbar}
                           >
                             프리미엄 서비스
                           </Link>
@@ -137,6 +142,7 @@ const Navbar = ({ user }) => {
                             className={`nav-link ${
                               currentPath == "/membershipterm/" && "active"
                             }`}
+                            onClick={toggleNavbar}
                           >
                             약관 및 규정
                           </Link>
@@ -152,6 +158,7 @@ const Navbar = ({ user }) => {
                     className={`nav-link ${
                       currentPath == "/golf/" && "active"
                     }`}
+                    onClick={toggleNavbar}
                   >
                     골프 <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -162,6 +169,7 @@ const Navbar = ({ user }) => {
                         className={`nav-link ${
                           currentPath == "/golf/" && "active"
                         }`}
+                        onClick={toggleNavbar}
                       >
                         골프서비스
                       </Link>
@@ -176,6 +184,7 @@ const Navbar = ({ user }) => {
                         className={`nav-link ${
                           currentPath == "/art/" && "active"
                         }`}
+                        onClick={toggleNavbar}
                       >
                         미술품 <i className="bx bx-chevron-down"></i>
                       </Link>
@@ -193,6 +202,7 @@ const Navbar = ({ user }) => {
                           <Link
                             href="https://www.artnomics.co.kr/artworks/artnomics_list.php?is_KK=1"
                             target="_blank"
+                            onClick={toggleNavbar}
                           >
                             미술품 보기
                           </Link>
@@ -201,7 +211,9 @@ const Navbar = ({ user }) => {
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/ggmall/list">포인트몰</Link>
+                      <Link href="/ggmall/list" onClick={toggleNavbar}>
+                        포인트몰
+                      </Link>
                       {/* 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
@@ -258,6 +270,7 @@ const Navbar = ({ user }) => {
                     className={`nav-link ${
                       currentPath == "/contact/" && "active"
                     }`}
+                    onClick={toggleNavbar}
                   >
                     고객지원 <i className="bx bx-chevron-down"></i>
                   </Link>
@@ -269,6 +282,7 @@ const Navbar = ({ user }) => {
                         className={`nav-link ${
                           currentPath == "/contact/" && "active"
                         }`}
+                        onClick={toggleNavbar}
                       >
                         상담/문의
                       </Link>
@@ -280,6 +294,7 @@ const Navbar = ({ user }) => {
                         className={`nav-link ${
                           currentPath == "/bbs/notice" && "active"
                         }`}
+                        onClick={toggleNavbar}
                       >
                         공지사항
                       </Link>
@@ -290,6 +305,7 @@ const Navbar = ({ user }) => {
                         className={`nav-link ${
                           currentPath == "/bbs/news/" && "active"
                         }`}
+                        onClick={toggleNavbar}
                       >
                         뉴스
                       </Link>
@@ -300,6 +316,7 @@ const Navbar = ({ user }) => {
                         className={`nav-link ${
                           currentPath == "/faq/" && "active"
                         }`}
+                        onClick={toggleNavbar}
                       >
                         FAQ
                       </Link>
@@ -313,7 +330,11 @@ const Navbar = ({ user }) => {
                   {user ? (
                     <>
                       <li>
-                        <Link href="/mypage/contract" className="menu-items">
+                        <Link
+                          href="/mypage/contract"
+                          className="menu-items"
+                          onClick={toggleNavbar}
+                        >
                           마이페이지
                         </Link>
                       </li>
@@ -327,6 +348,7 @@ const Navbar = ({ user }) => {
                             onClick={(e) => {
                               e.preventDefault();
                               handleLogout();
+                              toggleNavbar();
                             }}
                           >
                             로그아웃
@@ -337,7 +359,11 @@ const Navbar = ({ user }) => {
                   ) : (
                     <>
                       <li>
-                        <Link href="/sign-up-1" className="menu-items">
+                        <Link
+                          href="/sign-up-1"
+                          className="menu-items"
+                          onClick={toggleNavbar}
+                        >
                           회원가입
                         </Link>
                       </li>
@@ -345,7 +371,11 @@ const Navbar = ({ user }) => {
                         <span></span>
                       </li>
                       <li>
-                        <Link href="/login" className="menu-items">
+                        <Link
+                          href="/login"
+                          className="menu-items"
+                          onClick={toggleNavbar}
+                        >
                           로그인
                         </Link>
                       </li>
@@ -353,7 +383,11 @@ const Navbar = ({ user }) => {
                   )}
                 </ul>
 
-                <Link href="/mypage/reservation/" className="default-btn">
+                <Link
+                  href="/mypage/reservation/"
+                  className="default-btn"
+                  onClick={toggleNavbar}
+                >
                   BOOK NOW
                 </Link>
               </div>

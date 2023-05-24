@@ -3414,6 +3414,15 @@ table, th, td {
             }
           }
         }
+        &.home {
+          li{
+            a{
+              &.home{
+                color:#4E7D22;
+              }
+            }
+          }
+        }
       }
     }
   } 

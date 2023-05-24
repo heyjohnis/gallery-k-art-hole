@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 import MyPageSidebar from "./MyPageSidebar";
 import MyPageInfo from "./MyPageInfo";
-import Membership from "./Content/Membership";
 import Reservation from "./Content/Reservation";
 import Point from "./Content/Point";
 import Order from "./Content/Order";
@@ -23,7 +22,6 @@ const MyPageMain = ({ user, menu }) => {
             <div className={`col-lg-9 col-md-12 ${styles.my_con_wrap}`}>
               <MyPageInfo user={user} />
               {menu === "home" && <Home user={user} />}
-              {menu === "membership" && <Membership user={user} />}
               {menu === "contract" && <Contract user={user} />}
               {menu === "reservation" && <Reservation user={user} />}
               {menu === "point" && <Point user={user} />}
