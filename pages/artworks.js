@@ -1,6 +1,7 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
+import ArtworkList from "../components/Artworks/ArtworkList";
 
 const artworks = () => {
   return (
@@ -11,7 +12,7 @@ const artworks = () => {
         homePageText="Home"
         activePageText="제휴서비스 소개"
       />
-
+      <ArtworkList />
       <Footer />
     </>
   );

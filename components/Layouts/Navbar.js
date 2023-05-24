@@ -4,11 +4,10 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { handleLogout } from "../../utils/auth";
 import styles from "./navbar.module.scss";
+import Script from "next/script";
 
 const Navbar = ({ user }) => {
   const router = useRouter();
-  // console.log(router.asPath)
-
   const [currentPath, setCurrentPath] = useState("");
   const [menu, setMenu] = useState(true);
 
@@ -88,15 +87,6 @@ const Navbar = ({ user }) => {
                     Home
                   </Link>
                 </li>
-
-                {/* <li className="nav-item">
-                  <Link
-                    href="/company"
-                    className={`nav-link ${currentPath == "/company/" && "active"}`}
-                  >
-                    그린갤러리
-                  </Link>
-                </li> */}
 
                 <li className="nav-item">
                   <Link
@@ -190,20 +180,15 @@ const Navbar = ({ user }) => {
                       </Link>
 
                       <ul className="dropdown-menu">
-                        {/* <li className="nav-item">
-                      <Link
-                        href="/art"
-                        className={`nav-link ${currentPath == "/art/" && "active"}`}
-                      >
-                        미술품 소개
-                      </Link>
-                    </li> */}
                         <li className="nav-item">
                           <Link
                             href="https://www.artnomics.co.kr/artworks/artnomics_list.php?is_KK=1"
                             target="_blank"
                             onClick={toggleNavbar}
                           >
+                            미술품 보기
+                          </Link>
+                          <Link href="/artworks/" onClick={toggleNavbar}>
                             미술품 보기
                           </Link>
                         </li>
@@ -214,55 +199,12 @@ const Navbar = ({ user }) => {
                       <Link href="/ggmall/list" onClick={toggleNavbar}>
                         포인트몰
                       </Link>
-                      {/* 
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        href="associate/"
-                        className={`nav-link ${currentPath == "/associate/" && "active"}`}
-                      >
-                        제휴서비스 소개
+                      <Link href="/ggmall/list" onClick={toggleNavbar}>
+                        포인트몰
                       </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        href="/ggmall/list"
-                        className={`nav-link ${currentPath == "/gg/" && "active"}`}
-                      >
-                        GG몰
-                      </Link>
-                    </li>
-                  </ul> */}
                     </li>
                   </>
                 )}
-                {/* 
-                <li className="nav-item">
-                  <Link href="/bbs/news">
-                    뉴스 & 이벤트 <i className="bx bx-chevron-down"></i>
-                  </Link>
-
-                  <ul className="dropdown-menu">
-
-                    <li className="nav-item">
-                      <Link
-                        href="/bbs/event"
-                        className={`nav-link ${currentPath == "/bbs/event/" && "active"}`}
-                      >
-                        이벤트
-                      </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/bbs/media"
-                        className={`nav-link ${currentPath == "/bbs/media/" && "active"}`}
-                      >
-                        미디어
-                      </Link>
-                    </li>
-                  </ul>
-                </li> */}
 
                 <li className="nav-item">
                   <Link
@@ -395,6 +337,62 @@ const Navbar = ({ user }) => {
           </div>
         </nav>
       </div>
+      <Script
+        onError={(e) => {
+          console.error("Script failed to load", e);
+        }}
+        dangerouslySetInnerHTML={{
+          __html: ` (function() {
+              var w = window;
+              if (w.ChannelIO) {
+                return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+              }
+              var ch = function() {
+                ch.c(arguments);
+              };
+              ch.q = [];
+              ch.c = function(args) {
+                ch.q.push(args);
+              };
+              w.ChannelIO = ch;
+              function l() {
+                if (w.ChannelIOInitialized) {
+                  return;
+                }
+                w.ChannelIOInitialized = true;
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+                s.charset = 'UTF-8';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+              }
+              if (document.readyState === 'complete') {
+                l();
+              } else if (window.attachEvent) {
+                window.attachEvent('onload', l);
+              } else {
+                window.addEventListener('DOMContentLoaded', l, false);
+                window.addEventListener('load', l, false);
+              }
+            })();
+            ChannelIO('boot', {
+              "pluginKey": "851db043-3ce1-4d57-b7af-58aa7dcb9c7e", //please fill with your plugin key
+              "memberId": "${
+                (user && user.login_id) || ""
+              }", //fill with user id
+              "profile": {
+                "name": "${
+                  (user && user.user_name) || ""
+                }", //fill with user name
+                "mobileNumber": "${
+                  (user && user.mobile) || ""
+                }", //fill with user phone number
+              }
+            });`,
+        }}
+      />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import axios from "axios";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
 import { handleLogin } from "../utils/auth";
@@ -13,16 +13,15 @@ const INITIAL_USER = {
 };
 
 export default function Login() {
-
   const router = useRouter();
 
   const [user, setUser] = useState(INITIAL_USER);
   const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  
+
   const { goto } = router.query;
-  
+
   useEffect(() => {
     const isUser = Object.values(user).every((el) => Boolean(el));
     isUser ? setDisabled(false) : setDisabled(true);
@@ -110,7 +109,9 @@ export default function Login() {
                     </div>
                     <hr className="mt-30" />
                     <div className="col-12">
-                      <p className="account-desc">그린갤러리 멤버십 소유자신가요?</p>
+                      <p className="account-desc">
+                        그린갤러리 멤버십 소유자신가요?
+                      </p>
                       <p className="account-notice">
                         <span>그린갤러리 멤버십 소유자만</span> 가입과 로그인이
                         가능합니다. <br />
@@ -120,7 +121,10 @@ export default function Login() {
 
                     <div className="col-12 mt-30">
                       <Link href="sign-up-1" className="forget">
-                        <button className="default-btn btn-two btn-border" type="submit">
+                        <button
+                          className="default-btn btn-two btn-border"
+                          type="submit"
+                        >
                           멤버십 가입하기
                         </button>
                       </Link>
