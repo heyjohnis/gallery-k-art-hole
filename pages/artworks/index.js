@@ -1,7 +1,7 @@
 import React from "react";
-import PageBanner from "../components/Common/PageBanner";
-import Footer from "../components/Layouts/Footer";
-import ArtworkList from "../components/Artworks/ArtworkList";
+import PageBanner from "./../../components/Common/PageBanner";
+import Footer from "./../../components/Layouts/Footer";
+import ArtworkList from "./../../components/Artworks/ArtworkList";
 
 const artworks = () => {
   return (

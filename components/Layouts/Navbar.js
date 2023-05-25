@@ -199,9 +199,6 @@ const Navbar = ({ user }) => {
                       <Link href="/ggmall/list" onClick={toggleNavbar}>
                         포인트몰
                       </Link>
-                      <Link href="/ggmall/list" onClick={toggleNavbar}>
-                        포인트몰
-                      </Link>
                     </li>
                   </>
                 )}
