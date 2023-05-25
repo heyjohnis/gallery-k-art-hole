@@ -4,8 +4,8 @@ import React, { useState } from "react";
 const PaginationComp = ({ page, goto }) => {
   const [currentPage, setCurrentPage] = useState(page.currentPage || 1);
 
-  let totalPage = page.totalPages;
-  let countDisplayPage = totalPage - 5 > 0 ? 5 : totalPage;
+  const totalPage = page.totalPages;
+  const countDisplayPage = totalPage - 5 > 0 ? 5 : totalPage;
   const middlePage = parseInt(countDisplayPage / 2);
   let startPageNumber =
     currentPage - middlePage > 0 ? currentPage - middlePage : 1;
@@ -13,9 +13,8 @@ const PaginationComp = ({ page, goto }) => {
     totalPage - currentPage - middlePage > 0
       ? startPageNumber
       : startPageNumber + (totalPage - currentPage - middlePage);
-  console.log("currentPage: ", currentPage);
 
-  let items = [];
+  const items = [];
   for (let i = 0; i < countDisplayPage; i++) {
     const pageNumber = startPageNumber + i;
 

@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { commaFormat } from "../../utils/number.js";
 
-const ArtworkThumbnail = ({ artwork }) => {
+const ArtworkCard = ({ artwork }) => {
   return (
     <div
       className="col-lg-3 col-sm-6"
@@ -12,7 +12,12 @@ const ArtworkThumbnail = ({ artwork }) => {
       data-aos-delay={100}
     >
       <div className="single-team active">
-        <div className="team-single-img"></div>
+        <div className="team-single-img">
+          <img
+            src={`https://www.artnomics.co.kr/data/artworks/${artwork.atwk_no}/thumb-image_286.jpg`}
+            alt={artwork.atwk_nm}
+          />
+        </div>
 
         <div className="team-content">
           <h3>{artwork.atwk_nm}</h3>
@@ -28,4 +33,4 @@ const ArtworkThumbnail = ({ artwork }) => {
   );
 };
 
-export default ArtworkThumbnail;
+export default ArtworkCard;

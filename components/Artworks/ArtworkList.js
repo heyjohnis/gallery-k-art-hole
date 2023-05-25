@@ -4,7 +4,7 @@ import Pagination from "../Pagination";
 import baseUrl from "../../utils/baseUrl";
 import cookie from "js-cookie";
 
-import ArtworkThumbnail from "./ArtworkThumbnail";
+import ArtworkCard from "./ArtworkCard";
 
 const ArtworkList = () => {
   const [artworks, setArtworks] = useState([]);
@@ -41,7 +41,7 @@ const ArtworkList = () => {
       <div className="container">
         <div className="row">
           {artworks.map((artwork) => (
-            <ArtworkThumbnail key={artwork.atwk_no} artwork={artwork} />
+            <ArtworkCard key={artwork.atwk_no} artwork={artwork} />
           ))}
         </div>
       </div>

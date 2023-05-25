@@ -7,10 +7,10 @@ const artworks = () => {
   return (
     <>
       <PageBanner
-        pageTitle="제휴서비스 소개"
-        homePageUrl="/"
+        pageTitle="미술품 보기"
+        homePageUrl="/미술품"
         homePageText="Home"
-        activePageText="제휴서비스 소개"
+        activePageText="미술품 보기"
       />
       <ArtworkList />
       <Footer />
