@@ -1,13 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
-import React, { useState, useEffect } from "react";
-import AOS from "aos";
-import axios from "axios";
-import Script from "next/script";
-import { destroyCookie, parseCookies } from "nookies";
-import Head from "next/head";
+/* eslint-disable react/prop-types */
 import "animate.css";
+import AOS from "aos";
+import React from "react";
 import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
 import "swiper/css/bundle";
@@ -21,17 +16,18 @@ import "../public/fonts/font.css";
 import "../styles/style.scss";
 import "../styles/responsive.scss";
 
+import Head from "next/head";
 import GoTop from "../components/Shared/GoTop";
+
+import axios from "axios";
+import { destroyCookie, parseCookies } from "nookies";
 import Navbar from "../components/Layouts/Navbar";
 import baseUrl from "../utils/baseUrl";
 
 const MyApp = ({ Component, pageProps }) => {
-  const [user, setUser] = useState(pageProps.user);
-
-  useEffect(() => {
+  React.useEffect(() => {
     AOS.init();
   }, []);
-
   return (
     <>
       <Head>
@@ -39,7 +35,7 @@ const MyApp = ({ Component, pageProps }) => {
         <title>GREEN GALLERY</title>
       </Head>
 
-      <Navbar user={user} />
+      <Navbar user={pageProps.user} />
       <Component {...pageProps} />
 
       {/* Go Top Button */}
