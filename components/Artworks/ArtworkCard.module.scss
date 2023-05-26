@@ -1,0 +1,16 @@
+.artwork .single-team .team-single-img {
+  margin-bottom: 20px !important;
+}
+
+.artwork h3 {
+  font-size: 0.9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.artwork h2 {
+  font-size: 1.1em;
+}

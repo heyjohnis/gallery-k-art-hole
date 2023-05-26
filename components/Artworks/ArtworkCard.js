@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { commaFormat } from "../../utils/number.js";
-import styles from "./ArtworkCard.module.css";
+import styles from "./ArtworkCard.module.scss";
 
 const ArtworkCard = ({ artwork }) => {
   const artworkPrice =
