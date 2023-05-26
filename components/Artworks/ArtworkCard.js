@@ -5,9 +5,6 @@ import { commaFormat } from "../../utils/number.js";
 import styles from "./ArtworkCard.module.scss";
 
 const ArtworkCard = ({ artwork }) => {
-  const artworkPrice =
-    parseInt(artwork.atwk_size_per_pric || 0) *
-    parseInt(artwork.atwk_size_no || 0);
   return (
     <div
       className={`col-lg-3 col-sm-6 ${styles.artwork}`}
@@ -26,7 +23,7 @@ const ArtworkCard = ({ artwork }) => {
           <h2>{artwork.atst_nm}</h2>
           <h3>{artwork.atwk_nm}</h3>
           <p>
-            <span className="price">{commaFormat(artworkPrice)}</span>원
+            <span className="price">{commaFormat(artwork.atwk_pric)}</span>원
           </p>
         </div>
         <Link className="default-btn" href={`/artworks/${artwork.atwk_no}`}>

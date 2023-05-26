@@ -2033,6 +2033,14 @@ Footer
           color: $white-color;
         }
       }
+      :hover { 
+        background-color: #80b153;
+        border-radius: 10px;
+
+        span {
+          color: $white-color;
+        }
+      }
     }
   }
 }

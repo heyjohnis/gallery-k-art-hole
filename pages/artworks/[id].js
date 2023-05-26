@@ -5,10 +5,10 @@ import axios from "axios";
 import baseUrl from "./../../utils/baseUrl";
 import Footer from "./../../components/Layouts/Footer";
 import PageBanner from "./../../components/Common/PageBanner";
-import GgmallItems from "./../../components/Ggmall/GgmallItems";
-import GgmallText from "./../../components/Ggmall/GgmallText";
+import ArtworkItem from "../../components/Artworks/ArtworkItem";
+import ArtworkContent from "../../components/Artworks/ArtworkContent";
 
-const MallDetail = () => {
+const ArtworkDetail = ({ user }) => {
   const router = useRouter();
   const [, setLoading] = useState({});
   const [content, setContent] = useState("");
@@ -16,9 +16,9 @@ const MallDetail = () => {
   useEffect(() => {
     setLoading(true);
 
-    const pdNo = router.query.id;
-    const url = `${baseUrl}/mall/${pdNo}`;
-    axios({ method: "get", url })
+    const atwk_no = router.query.id;
+    const url = `${baseUrl}/artwork/`;
+    axios({ method: "post", url, data: { atwk_no } })
       .then(({ data }) => {
         console.log("data: ", data);
         setContent(data);
@@ -37,12 +37,12 @@ const MallDetail = () => {
         activePageText="미술품 보기"
       />
 
-      <GgmallItems content={content} />
-      <GgmallText content={content} />
+      <ArtworkItem content={content} user={user} />
+      <ArtworkContent content={content} />
 
       <Footer />
     </>
   );
 };
 
-export default MallDetail;
+export default ArtworkDetail;

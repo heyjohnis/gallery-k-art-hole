@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import LvBlack from "../LvBlack";
 import LvPlatinum from "../LvPlatinum";

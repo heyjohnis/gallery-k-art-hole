@@ -1,0 +1,265 @@
+$body-font-family: "Pretendard";
+$main-color: #4E7D22;
+$sub-color: #0E5039;
+$body-color: #4d4d4d;
+$heading-color: #212121;
+$white-color: #ffffff;
+$black-color: #000000;
+$gray-color: #666666;
+$light-color: #999999;
+$box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+
+/*작품소개 소개*/
+.item_card {
+  margin-bottom: 50px;
+  box-shadow: $box-shadow;
+  .items {
+    padding: 20px;
+    text-align: center;
+    background-color: $white-color ;
+    h3 {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+/*작품소개 소개 상세 & 작품소개 상세*/
+.items_image {
+  text-align: center;
+  background-color: #f7f7f7;
+  overflow: hidden;
+  border-radius: 16px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.items_details_desc {
+  margin-top: 30px;
+  h2 {
+    margin-bottom: 30px;
+  }
+  p {
+    margin-bottom: 50px;
+  }
+  .price {
+    font-family: $body-font-family;
+    text-align: right;
+  }
+  .btn_warp {
+    text-align: right;
+    .btn {
+      padding: 20px 50px;
+    }
+  }
+}
+
+
+/*작품소개 상세*/
+.product_details_desc {
+  margin-top: 30px;
+  padding-left: 30px;
+  h2 {
+    font-family: $body-font-family;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+  .info_wrap {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  .tit {
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  .price {
+    margin: 70px 0 20px;
+    font-family: $body-font-family;
+    text-align: right;
+    font-size: 24px;
+    font-weight: 700;
+    span {
+      margin-left: 5px;
+      font-size: 16px;
+      color: $gray-color;
+      font-weight: 400;
+    }
+  }
+  select {
+    width: 150px;
+    height: 35px;
+    padding: 5px 30px 5px 10px;
+    border-radius: 4px;
+    outline: 0 none;
+  }
+  select option {
+    background: black;
+    color: #fff;
+    padding: 3px 0;
+  }
+  .btn_warp {
+    text-align: right;
+    .btn {
+      padding: 20px 50px;
+    }
+  }
+}
+
+.items_text {
+  border: 1px solid #eeeeee;
+  padding: 30px
+}
+
+.tab_tit {
+  padding: 3px 10px;
+  font-size: 18px;
+  font-family: $body-font-family;
+  font-weight: 600;
+}
+
+
+/*GGmall 결제*/
+.cart_list {
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: $box-shadow;
+  border-radius: 10px;
+  span {
+    font-size: 18px;
+  }
+  .division {
+    margin: 0 10px;
+  }
+  .price {
+    font-size: 18px;
+    font-weight: 700;
+    span {
+      margin-left: 5px;
+      font-weight: 400;
+    }
+  }
+}
+
+
+.order_form {
+  padding-top: 2em;
+  margin-bottom: 2em;
+
+  h3 {
+    margin-bottom: 0.5rem;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: "Pretendard";
+  }
+  p {
+    font-size: 18px;
+  }
+  .form_group {
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .tel {
+    display: flex;
+    align-items: center;
+    span {
+      margin: 0 5px;
+    }
+  }
+  .sup {
+    position: relative;
+    font-size: 1em;
+    line-height: 0;
+    vertical-align: baseline;
+    top: 0em;
+    color: #ff6a00;
+  }
+}
+
+.pay_warp {
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-bottom: 2em;
+  font-size: 18px;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  .pay_group {
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      font-family: $body-font-family;
+    }
+  }
+  .agree_form {
+    display: flex;
+    .agree {
+      margin-left: 10px;
+      line-height: 1.4;
+    }
+  }
+  .btn_warp {
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+    text-align: center;
+  
+    .btn_round {
+      width: 30%;
+      padding: 1em 0;
+      margin-right: 5%;
+      color: $main-color;
+      background: #fff;
+      border: 1px solid $main-color;
+    }
+  
+    .btn_buy {
+      padding: 1em 0;
+      width: 60%;
+    }
+  }
+}
+
+.ArtworkContent {
+  h3 {
+    font-size: 2.3rem;
+    padding: 70px 0 30px;
+  }
+}
+
+.ArtworkContent .qnote {
+  text-align: left;
+}
+
+.ArtworkContent .shrt_intro {
+  margin: 3rem;
+  font-size: 1.7rem;;
+}
+
+.ArtworkContent .introArtist {
+  text-align: left;
+  h2 {
+    margin-bottom:1rem;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  p {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width : 1280px) {
+  .pay_warp {
+    padding-left: 1em;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .pay_warp {
+    padding-left: 0;
+    box-shadow: none;
+  }
+}
