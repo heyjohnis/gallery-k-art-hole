@@ -11,12 +11,12 @@ const ArtworkItem = ({ content, user }) => {
   const [options, setOptions] = useState([]);
 
   const buyArtwork = () => {
+    confirm("구매신청을 하시겠습니까?");
     const url = `${baseUrl}/artwork/buy`;
     const medq_token = cookie.get("medq_token");
     const payload = {
       atwk_no: content.atwk_no,
       user_no: user.user_no,
-      login_id: user.login_id,
     };
     console.log("payload: ", payload, user);
     axios({
@@ -27,6 +27,9 @@ const ArtworkItem = ({ content, user }) => {
     })
       .then(({ data }) => {
         console.log("data: ", data);
+        if (data.insertId > 0) {
+          alert("구매신청이 완료되었습니다.");
+        }
       })
       .finally(() => {});
   };

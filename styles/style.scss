@@ -123,6 +123,12 @@ textarea {
     height: auto;
   }
 }
+
+.mr-0 {margin-right: 0;}
+.ml-0 {margin-left: 0;}
+.pr-0 {padding-right: 0;}
+.pl-0 {padding-left: 0;}
+
 .ptb-140 {
   padding-top: 140px;
   padding-bottom: 140px;
@@ -222,6 +228,18 @@ textarea {
 
 .body-bg-color {
   background-color: #010032;
+}
+
+.text-right {
+  text-align: right;
+} 
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
 }
 
 /*
@@ -3319,6 +3337,12 @@ table, th, td {
   margin: 30px auto;
 }
 
+.btn-reset {
+  margin-right: 8px;
+  display: inline-block;
+  padding: 18px 35px;
+  background-color: gray !important;
+}
 
 .custom {
   position: relative;
