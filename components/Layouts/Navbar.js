@@ -181,13 +181,13 @@ const Navbar = ({ user }) => {
 
                       <ul className="dropdown-menu">
                         <li className="nav-item">
-                          <Link
+                          {/* <Link
                             href="https://www.artnomics.co.kr/artworks/artnomics_list.php?is_KK=1"
                             target="_blank"
                             onClick={toggleNavbar}
                           >
                             미술품 보기
-                          </Link>
+                          </Link> */}
                           <Link href="/artworks/" onClick={toggleNavbar}>
                             미술품 보기
                           </Link>
