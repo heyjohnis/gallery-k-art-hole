@@ -1,8 +1,8 @@
 import React from "react";
-import PageBanner from "../../src/components/Common/PageBanner";
-import OrderInfo from "../../src/components/Order/OrderInfo";
-import PayInfo from "../../src/components/Order/PayInfo";
-import Footer from "../../src/components/_App/Footer";
+import PageBanner from "../../components/Common/PageBanner";
+import OrderInfo from "../../components/Ggmall/OrderInfo";
+import PayInfo from "../../components/Ggmall/PayInfo";
+import Footer from "../../components/Layouts/Footer";
 
 const payment = () => {
   return (

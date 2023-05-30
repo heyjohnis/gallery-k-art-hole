@@ -59,7 +59,16 @@ const GgmallItems = ({ content, options }) => {
                   <span>원</span>
                 </h2>
                 <div className={styles.btn_warp}>
-                  <Link href="#" className={`default-btn ${styles.btn}`}>
+                  <Link
+                    href={{
+                      pathname: "/ggmall/payment/",
+                      query: {
+                        pd_no: content.pd_no,
+                        thumb_img: content.thumb_img,
+                      },
+                    }}
+                    className={`default-btn ${styles.btn}`}
+                  >
                     구매하기
                   </Link>
                 </div>
