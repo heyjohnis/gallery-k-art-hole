@@ -7,6 +7,23 @@ import { commaFormat } from "../../utils/number";
 
 const GgmallItems = ({ content, options }) => {
   const [optionComp, setOptionComp] = useState([]);
+  const [selectedVals, setSelectedVals] = useState({});
+  const [textSelectedOption, setTextSelectedOption] = useState("");
+
+  const selectedOptionStr = () => {
+    let text = "";
+    Object.keys(selectedVals).forEach((key) => {
+      console.log(`${key}: ${selectedVals[key]} `);
+      text += `${key}: ${selectedVals[key]} `;
+    });
+    setTextSelectedOption(text);
+  };
+
+  const selectOption = (idx, optionName, e) => {
+    selectedVals[optionName] = e.target.value;
+    setSelectedVals({ ...selectedVals });
+    selectedOptionStr();
+  };
 
   const renderOptions = () => {
     const comp = [];
@@ -14,9 +31,10 @@ const GgmallItems = ({ content, options }) => {
       const optionValue = options[i].option_value;
       const splitOptions = optionValue.split(",");
       const optionArr = [];
+      optionArr.push(<option key={0}>선택</option>);
       for (let j = 0; j < splitOptions.length; j++) {
         optionArr.push(
-          <option key={j} value={splitOptions[j]}>
+          <option key={j + 1} value={splitOptions[j]}>
             {splitOptions[j]}
           </option>
         );
@@ -24,7 +42,14 @@ const GgmallItems = ({ content, options }) => {
       comp.push(
         <div className={styles.info_wrap}>
           <span className={styles.tit}>{options[i].option}</span>
-          <select>{optionArr}</select>
+          <select
+            key={i}
+            onChange={(e) => {
+              selectOption(i, options[i].option, e);
+            }}
+          >
+            {optionArr}
+          </select>
         </div>
       );
     }
@@ -64,7 +89,7 @@ const GgmallItems = ({ content, options }) => {
                       pathname: "/ggmall/payment/",
                       query: {
                         pd_no: content.pd_no,
-                        thumb_img: content.thumb_img,
+                        option: textSelectedOption,
                       },
                     }}
                     className={`default-btn ${styles.btn}`}
