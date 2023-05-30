@@ -12,6 +12,7 @@ const MallDetail = () => {
   const router = useRouter();
   const [, setLoading] = useState({});
   const [content, setContent] = useState("");
+  const [options, setOptions] = useState("");
 
   useEffect(() => {
     setLoading(true);
@@ -21,7 +22,8 @@ const MallDetail = () => {
     axios({ method: "get", url })
       .then(({ data }) => {
         console.log("data: ", data);
-        setContent(data);
+        setContent(data.product);
+        setOptions(data.options);
       })
       .finally(() => {
         setLoading(false);
@@ -35,9 +37,10 @@ const MallDetail = () => {
         homePageUrl="/"
         homePageText="Home"
         activePageText="GG몰"
+        activePageUrl="/ggmall/list/"
       />
 
-      <GgmallItems content={content} />
+      <GgmallItems content={content} options={options} />
       <GgmallText content={content} />
 
       <Footer />

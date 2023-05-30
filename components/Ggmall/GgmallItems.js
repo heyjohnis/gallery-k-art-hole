@@ -5,16 +5,35 @@ import styles from "./Ggmall.module.scss";
 
 import { commaFormat } from "../../utils/number";
 
-const GgmallItems = ({ content }) => {
-  const [options, setOptions] = useState([]);
+const GgmallItems = ({ content, options }) => {
+  const [optionComp, setOptionComp] = useState([]);
+
+  const renderOptions = () => {
+    const comp = [];
+    for (let i = 0; i < options.length; i++) {
+      const optionValue = options[i].option_value;
+      const splitOptions = optionValue.split(",");
+      const optionArr = [];
+      for (let j = 0; j < splitOptions.length; j++) {
+        optionArr.push(
+          <option key={j} value={splitOptions[j]}>
+            {splitOptions[j]}
+          </option>
+        );
+      }
+      comp.push(
+        <div className={styles.info_wrap}>
+          <span className={styles.tit}>{options[i].option}</span>
+          <select>{optionArr}</select>
+        </div>
+      );
+    }
+    setOptionComp(comp);
+  };
 
   useEffect(() => {
-    console.log("content: ", content.option);
-    if (content.option) {
-      setOptions(content.option.split("|"));
-      console.log("options: ", options);
-    }
-  }, [content]);
+    renderOptions();
+  }, [options]);
 
   return (
     <>
@@ -29,24 +48,11 @@ const GgmallItems = ({ content }) => {
             <div className="col-lg-6 col-md-12">
               <div className={styles.product_details_desc}>
                 <h2>{content.pd_name}</h2>
-                <div className={styles.info_wrap}>
+                {/* <div className={styles.info_wrap}>
                   <span className={styles.tit}>브랜드:</span>
                   {content.brand}
-                </div>
-                {options.length > 0 && (
-                  <>
-                    <div className={styles.info_wrap}>
-                      <span className={styles.tit}>컬러선택:</span>
-                      <select>
-                        {options.map((option) => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </>
-                )}
+                </div> */}
+                {optionComp}
                 {/* <div className={styles.info_wrap}><span className={styles.tit}>수량선택:</span></div> */}
                 <h2 className={styles.price}>
                   {commaFormat(content.price || 0)}

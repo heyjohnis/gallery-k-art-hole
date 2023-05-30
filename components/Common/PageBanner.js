@@ -7,6 +7,7 @@ const PageBanner = ({
   homePageUrl,
   homePageText,
   activePageText,
+  activePageUrl = "#",
 }) => {
   return (
     <>
@@ -18,7 +19,9 @@ const PageBanner = ({
               <li>
                 <Link href={homePageUrl}>{homePageText}</Link>
               </li>
-              <li>{activePageText}</li>
+              <li>
+                <Link href={activePageUrl}>{activePageText}</Link>
+              </li>
             </ul>
           </div>
         </div>
