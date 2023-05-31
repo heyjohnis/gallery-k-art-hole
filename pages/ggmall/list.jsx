@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-
+import Router from "next/router";
 import axios from "axios";
 import baseUrl from "./../../utils/baseUrl";
 import Footer from "./../../components/Layouts/Footer";
 import PageBanner from "./../../components/Common/PageBanner";
 import GgmallList from "../../components/Ggmall/GgmallList";
 
-const BbsDetail = () => {
+const ggList = ({ user }) => {
   const [, setLoading] = useState({});
   const [contents, setContents] = useState("");
 
   useEffect(() => {
+    if (!user) {
+      alert("로그인이 필요합니다.");
+      Router.push("/login");
+    }
     setLoading(true);
 
     const url = `${baseUrl}/mall`;
@@ -21,7 +25,7 @@ const BbsDetail = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [user]);
 
   return (
     <>
@@ -39,4 +43,4 @@ const BbsDetail = () => {
   );
 };
 
-export default BbsDetail;
+export default ggList;

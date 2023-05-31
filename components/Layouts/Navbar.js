@@ -185,7 +185,6 @@ const Navbar = ({ user }) => {
                     )}
                   </ul>
                 </li> */}
-
                 {/* <li className="nav-item">
                   <Link
                     href="/golf"
@@ -210,63 +209,54 @@ const Navbar = ({ user }) => {
                     </li>
                   </ul>
                 </li> */}
-                {user && (
-                  <>
-                    <li className="nav-item">
-                      <Link
-                        href="/art"
-                        className={`nav-link ${
-                          currentPath == "/art/" && "active"
-                        }`}
-                        onClick={toggleNavbar}
-                      >
-                        가입특전 <i className="bx bx-chevron-down"></i>
-                      </Link>
+                <li className="nav-item">
+                  <Link
+                    href="/art"
+                    className={`nav-link ${currentPath == "/art/" && "active"}`}
+                    onClick={toggleNavbar}
+                  >
+                    가입특전 <i className="bx bx-chevron-down"></i>
+                  </Link>
 
-                      <ul className="dropdown-menu">
-                        <li className="nav-item">
-                          {/* <Link
+                  <ul className="dropdown-menu">
+                    <li className="nav-item">
+                      {/* <Link
                             href="https://www.artnomics.co.kr/artworks/artnomics_list.php?is_KK=1"
                             target="_blank"
                             onClick={toggleNavbar}
                           >
                             미술품 보기
                           </Link> */}
-                          <Link href="/artworks/" onClick={toggleNavbar}>
-                            미술품
-                          </Link>
-                          <Link href="/gifts/" onClick={toggleNavbar}>
-                            사은품
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link
-                        href="/ggmall/list"
-                        className={`nav-link ${
-                          currentPath == "/art/" && "active"
-                        }`}
-                        onClick={toggleNavbar}
-                      >
-                        GG몰
-                        <i className="bx bx-chevron-down"></i>
+                      <Link href="/artworks/" onClick={toggleNavbar}>
+                        미술품
                       </Link>
-                      <ul className="dropdown-menu">
-                        <li className="nav-item">
-                          <Link href="/ggmall/list" onClick={toggleNavbar}>
-                            제휴서비스
-                          </Link>
-                          <Link href="/ggmall/list" onClick={toggleNavbar}>
-                            쇼핑
-                          </Link>
-                        </li>
-                      </ul>
+                      <Link href="/gifts/" onClick={toggleNavbar}>
+                        사은품
+                      </Link>
                     </li>
-                  </>
-                )}
+                  </ul>
+                </li>
 
+                <li className="nav-item">
+                  <Link
+                    href="/ggmall/list"
+                    className={`nav-link ${currentPath == "/art/" && "active"}`}
+                    onClick={toggleNavbar}
+                  >
+                    GG몰
+                    <i className="bx bx-chevron-down"></i>
+                  </Link>
+                  <ul className="dropdown-menu">
+                    <li className="nav-item">
+                      <Link href="/ggmall/list" onClick={toggleNavbar}>
+                        제휴서비스
+                      </Link>
+                      <Link href="/ggmall/list" onClick={toggleNavbar}>
+                        쇼핑
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
                 <li className="nav-item">
                   <Link
                     href="/contact"

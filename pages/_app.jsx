@@ -32,6 +32,14 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="GREEN GALLERY" />
+        <meta
+          property="og:description"
+          content="골프와 예술의 만남, 프리미엄 골프 멤버십 그린갤러리"
+        />
+        <meta property="og:image" content="/images/gg.png" />
+        <meta property="og:url" content="https://greengallery.kr" />
+
         <title>GREEN GALLERY</title>
       </Head>
 
