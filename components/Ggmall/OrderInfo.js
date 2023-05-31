@@ -21,7 +21,7 @@ const OrderInfo = ({ product, option }) => {
           <div className="col-2">
             <p className={styles.price}>
               {commaFormat((product && product.price) || 0)}
-              <span>원</span>
+              <span>P</span>
             </p>
           </div>
         </div>

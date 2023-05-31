@@ -1,15 +1,30 @@
 /* eslint-disable react/prop-types */
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { handleLogout } from "../../utils/auth";
+import cookie from "js-cookie";
+import axios from "axios";
+
 import styles from "./navbar.module.scss";
 import Script from "next/script";
+import ReservationModal from "../Mypage/ReservationModal";
+import baseUrl from "../../utils/baseUrl";
 
 const Navbar = ({ user }) => {
   const router = useRouter();
   const [currentPath, setCurrentPath] = useState("");
   const [menu, setMenu] = useState(true);
+  const modalRef = useRef(null);
+
+  const showReservationModal = () => {
+    console.log("showReservationModal");
+    if (!user) {
+      router.push("/login");
+    } else {
+      modalRef.current.showModal();
+    }
+  };
 
   useEffect(() => {
     setCurrentPath(router.asPath);
@@ -17,6 +32,23 @@ const Navbar = ({ user }) => {
 
   const toggleNavbar = () => {
     setMenu(!menu);
+  };
+
+  const getReservationData = () => {
+    if (user.user_no) {
+      const url = `${baseUrl}/mypage/reservation`;
+      const medq_token = cookie.get("medq_token");
+      axios({
+        method: "post",
+        url: url,
+        headers: { Authorization: `Bearer ${medq_token}` },
+        data: {},
+      })
+        .then(({ data }) => {
+          console.log("data: ", data);
+        })
+        .finally(() => {});
+    }
   };
 
   useEffect(() => {
@@ -87,8 +119,20 @@ const Navbar = ({ user }) => {
                     Home
                   </Link>
                 </li>
-
                 <li className="nav-item">
+                  <Link
+                    href="/"
+                    className={`nav-link pr-3`}
+                    style={{ paddingRight: "15px" }}
+                    onClick={() => {
+                      showReservationModal();
+                      toggleNavbar();
+                    }}
+                  >
+                    골프예약
+                  </Link>
+                </li>
+                {/* <li className="nav-item">
                   <Link
                     href="/benefits"
                     className={`nav-link ${
@@ -140,7 +184,7 @@ const Navbar = ({ user }) => {
                       </>
                     )}
                   </ul>
-                </li>
+                </li> */}
 
                 <li className="nav-item">
                   <Link
@@ -176,7 +220,7 @@ const Navbar = ({ user }) => {
                         }`}
                         onClick={toggleNavbar}
                       >
-                        미술품 <i className="bx bx-chevron-down"></i>
+                        가입특전 <i className="bx bx-chevron-down"></i>
                       </Link>
 
                       <ul className="dropdown-menu">
@@ -189,16 +233,36 @@ const Navbar = ({ user }) => {
                             미술품 보기
                           </Link> */}
                           <Link href="/artworks/" onClick={toggleNavbar}>
-                            미술품 보기
+                            미술품
+                          </Link>
+                          <Link href="/gifts/" onClick={toggleNavbar}>
+                            사은품
                           </Link>
                         </li>
                       </ul>
                     </li>
 
                     <li className="nav-item">
-                      <Link href="/ggmall/list" onClick={toggleNavbar}>
-                        포인트몰
+                      <Link
+                        href="/ggmall/list"
+                        className={`nav-link ${
+                          currentPath == "/art/" && "active"
+                        }`}
+                        onClick={toggleNavbar}
+                      >
+                        GG몰
+                        <i className="bx bx-chevron-down"></i>
                       </Link>
+                      <ul className="dropdown-menu">
+                        <li className="nav-item">
+                          <Link href="/ggmall/list" onClick={toggleNavbar}>
+                            제휴서비스
+                          </Link>
+                          <Link href="/ggmall/list" onClick={toggleNavbar}>
+                            쇼핑
+                          </Link>
+                        </li>
+                      </ul>
                     </li>
                   </>
                 )}
@@ -389,6 +453,11 @@ const Navbar = ({ user }) => {
               }
             });`,
         }}
+      />
+      <ReservationModal
+        user={user}
+        updateReservation={getReservationData}
+        ref={modalRef}
       />
     </>
   );

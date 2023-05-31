@@ -12,7 +12,7 @@ const PayInfo = () => {
             <div className={styles.info_wrap}>
               <span className={styles.tit}>총 결제금액:</span>
               <span className={styles.tit}>
-                10000<span>원</span>
+                10000<span>P</span>
               </span>
             </div>
           </div>

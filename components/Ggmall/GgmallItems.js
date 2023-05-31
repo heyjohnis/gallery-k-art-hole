@@ -81,7 +81,7 @@ const GgmallItems = ({ content, options }) => {
                 {/* <div className={styles.info_wrap}><span className={styles.tit}>수량선택:</span></div> */}
                 <h2 className={styles.price}>
                   {commaFormat(content.price || 0)}
-                  <span>원</span>
+                  <span>P</span>
                 </h2>
                 <div className={styles.btn_warp}>
                   <Link
