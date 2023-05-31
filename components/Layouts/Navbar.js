@@ -251,7 +251,7 @@ const Navbar = ({ user }) => {
                       <Link href="/ggmall/list" onClick={toggleNavbar}>
                         제휴서비스
                       </Link>
-                      <Link href="/ggmall/list" onClick={toggleNavbar}>
+                      <Link href="/ggmall/shoping" onClick={toggleNavbar}>
                         쇼핑
                       </Link>
                     </li>

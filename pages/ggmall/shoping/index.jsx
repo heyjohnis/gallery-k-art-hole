@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Router from "next/router";
 import axios from "axios";
-import baseUrl from "./../../utils/baseUrl";
-import Footer from "./../../components/Layouts/Footer";
-import PageBanner from "./../../components/Common/PageBanner";
-import GgmallList from "../../components/Ggmall/GgmallList";
+import baseUrl from "./../../../utils/baseUrl";
+import Footer from "./../../../components/Layouts/Footer";
+import PageBanner from "./../../../components/Common/PageBanner";
+import GgmallList from "../../../components/Ggmall/GgmallList";
 
 const ggList = ({ user }) => {
   const [, setLoading] = useState({});
@@ -17,7 +17,7 @@ const ggList = ({ user }) => {
     }
     setLoading(true);
 
-    const url = `${baseUrl}/mall?pd_kind=02`;
+    const url = `${baseUrl}/mall?pd_kind=01`;
     axios({ method: "get", url })
       .then(({ data }) => {
         setContents(data);
@@ -30,10 +30,10 @@ const ggList = ({ user }) => {
   return (
     <>
       <PageBanner
-        pageTitle="제휴서비스"
+        pageTitle="쇼핑"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="제휴서비스"
+        activePageText="쇼핑"
       />
 
       <GgmallList contents={contents} />

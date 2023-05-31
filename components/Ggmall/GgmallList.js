@@ -40,7 +40,7 @@ const GgmallList = ({ contents }) => {
                     </div>
                     <Link
                       className="default-btn"
-                      href={`/ggmall/${content.pd_no}`}
+                      href={`/ggmall/shoping/${content.pd_no}`}
                     >
                       구매하기
                     </Link>
