@@ -62,7 +62,7 @@ const ContactForm = () => {
   return (
     <div className="main-contact-area pb-100">
       <div className="container">
-        <div className="section-title">
+        <div className="section-title mt-5">
           <span>Contact Us</span>
           <h2>상담/문의</h2>
           <p>

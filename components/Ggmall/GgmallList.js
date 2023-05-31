@@ -35,7 +35,7 @@ const GgmallList = ({ contents }) => {
                         <span className="price">
                           {commaFormat(content.price || 0)}
                         </span>
-                        원
+                        P
                       </p>
                     </div>
                     <Link

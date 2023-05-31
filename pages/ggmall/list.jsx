@@ -30,10 +30,10 @@ const ggList = ({ user }) => {
   return (
     <>
       <PageBanner
-        pageTitle="포인트몰"
+        pageTitle="제휴서비스"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="포인트몰"
+        activePageText="제휴서비스"
       />
 
       <GgmallList contents={contents} />

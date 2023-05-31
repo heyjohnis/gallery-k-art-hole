@@ -3,6 +3,7 @@ import styles from "./landing.module.scss";
 import Booking from "../components/Mypage/data/booking.json";
 import Lottie from "react-lottie";
 import Link from "next/link";
+import YouTube from "react-youtube";
 
 const lottieOptions = {
   animationData: Booking,
@@ -11,12 +12,39 @@ const lottieOptions = {
 };
 
 const landing = () => {
+  const onPlayerReady = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  };
+
+  const opts = {
+    height: "200",
+    width: "380",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
   return (
     <>
       <div>
         <img src="/images/landing.jpg" alt="landing" />
       </div>
-      <div className={styles.btn_wrap}>
+      <div className="youtube_wrap">
+        <h3>
+          최고의 품격과 서비스로 당신의 자부심이 될<br />
+          그린갤러리 멤버십을 지금 시작하세요.
+        </h3>
+        <YouTube
+          videoId="ZQw7meQJWTk"
+          opts={opts}
+          onReady={onPlayerReady}
+          onEnd={(e) => {
+            e.target.stopVideo(0);
+          }}
+        />
+      </div>
+      <div>
         <Link href="/contact">
           <div className={`btn ${styles.btn_booking}`}>
             <div className={styles.ani_booking}>

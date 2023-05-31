@@ -10,11 +10,11 @@ export default function Index5() {
     <>
       <MainBanner />
 
-      <About />
+      {/* <About /> */}
 
-      <BenefitSlider />
+      {/* <BenefitSlider /> */}
 
-      <Products />
+      {/* <Products /> */}
 
       <Footer />
     </>

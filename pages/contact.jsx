@@ -14,7 +14,7 @@ export default function Contact() {
         activePageText="상담/문의"
       />
 
-      <ContactInfo />
+      {/* <ContactInfo /> */}
 
       <ContactForm />
 
