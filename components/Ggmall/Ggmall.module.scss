@@ -88,11 +88,10 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     }
   }
   select {
-    width: 150px;
-    height: 35px;
-    padding: 5px 30px 5px 10px;
+    width: 100%;
+    font-size:1.1rem;
+    padding: 10px;
     border-radius: 4px;
-    outline: 0 none;
   }
   select option {
     background: black;
