@@ -37,7 +37,7 @@ const MallDetail = () => {
         homePageUrl="/"
         homePageText="Home"
         activePageText="제휴서비스"
-        activePageUrl="/ggmall/list/"
+        activePageUrl="/ggmall/service/"
       />
 
       <GgmallItems content={content} options={options} />
