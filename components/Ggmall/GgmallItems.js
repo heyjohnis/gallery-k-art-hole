@@ -67,7 +67,7 @@ const GgmallItems = ({ content, options }) => {
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
               <div className={styles.items_image}>
-                <img src={content.thumb_img} />
+                <img src={content.pd_img} />
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
