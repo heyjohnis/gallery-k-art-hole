@@ -186,7 +186,7 @@ const Navbar = ({ user }) => {
                   </ul>
                 </li> */}
 
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link
                     href="/golf"
                     className={`nav-link ${
@@ -209,7 +209,7 @@ const Navbar = ({ user }) => {
                       </Link>
                     </li>
                   </ul>
-                </li>
+                </li> */}
                 {user && (
                   <>
                     <li className="nav-item">

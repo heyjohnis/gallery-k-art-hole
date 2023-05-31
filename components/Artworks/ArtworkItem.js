@@ -11,7 +11,10 @@ const ArtworkItem = ({ content, user }) => {
   const [options, setOptions] = useState([]);
 
   const buyArtwork = () => {
-    confirm("구매신청을 하시겠습니까?");
+    const isConfirm = confirm("작품신청을 하시겠습니까?");
+    if (!isConfirm) {
+      return;
+    }
     const url = `${baseUrl}/artwork/buy`;
     const medq_token = cookie.get("medq_token");
     const payload = {
@@ -28,7 +31,7 @@ const ArtworkItem = ({ content, user }) => {
       .then(({ data }) => {
         console.log("data: ", data);
         if (data.insertId > 0) {
-          alert("구매신청이 완료되었습니다.");
+          alert("작품신청이 완료되었습니다.");
         }
       })
       .finally(() => {});
