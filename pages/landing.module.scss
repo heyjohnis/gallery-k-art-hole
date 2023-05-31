@@ -1,0 +1,429 @@
+$body-font-family: "Pretendard";
+$heading-font-family: "Hahmlet";
+
+$main-color: #4E7D22;
+$sub-color: #0E5039;
+$body-color: #4d4d4d;
+$heading-color: #212121;
+$white-color: #ffffff;
+$black-color: #000000;
+$gray-color: #666666;
+$light-color: #999999;
+$box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+
+/*사용자 정보 위젯*/
+.widget {
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: $box-shadow;
+  color: $white-color;
+  &.black{
+    background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(25, 25, 25) 70%);
+    .thumb {
+      background: rgb(25, 25, 25);
+    }
+  }
+  &.platinum{
+    background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(153, 153, 153) 70%);
+    .thumb {
+      background: rgb(153, 153, 153);
+    }
+  }
+  &.green{
+    background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(32, 96, 76) 70%);
+    .thumb {
+      background: rgb(32, 96, 76);
+    }
+  }
+  &.blue{
+    background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(78, 121, 188) 70%);
+    .thumb {
+      background: rgb(78, 121, 188);
+    }
+  }
+  &.red{
+    background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(218, 76, 67) 70%);
+    .thumb {
+      background: rgb(218, 76, 67);
+    }
+  }
+  &.purple{
+    background: linear-gradient(to top, rgb(255, 255, 255) 70%, rgb(121, 63, 144) 70%);
+    .thumb {
+      background: rgb(121, 63, 144);
+    }
+  }
+
+  .level {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  .thumb {
+    width: 100px;
+    height: 100px;
+    border: 3px solid $white-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .info {
+    color: #222;
+    text-align: center;
+    .txt {
+      margin-top: 10px;
+      h4{
+        font-family: $body-font-family;
+        margin:0;
+        font-size:20px;
+        font-weight: 600;
+      }
+      span {
+        font-size: 14px;
+        color: $gray-color;
+      }
+    }
+  }
+}
+
+/*메이페이지 컨텐츠 레이아웃*/
+.my_con_wrap {
+  padding-left: 50px;
+}
+
+/*잔여혜액 및 포인트*/
+.point {
+  margin:0;
+  background: $white-color;
+  box-shadow: $box-shadow;
+  padding: 30px 20px;
+  border-radius: 16px;
+  .item_txt {
+    text-align: center;
+    &.border {
+      border-left: 1px solid #ddd;
+    }
+    p{
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+    h3{
+      font-weight: 600;
+    }
+    .smaller {
+      font-size: 14px;
+      color: $black-color;
+    }
+  }
+}
+
+.info_data {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-family: $body-font-family;
+  span {
+    &.smaller{
+      font-size: 16px;
+    }
+  }
+}
+
+.period {
+  margin: 5px 10px 16px;
+  font-size: 16px;
+  text-align: right;
+}
+
+.user_point {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px;
+  color: $body-color;
+  border-radius: 16px;
+  &.black {
+    border: 1px solid #222;
+  }
+  p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .point_name {
+    font-weight: 700;
+  }
+}
+
+/*혜원혜택*/
+.btn_booking {
+  width: 150px;
+  height: 48px;
+  margin-bottom: 45px;
+  padding: 0 24px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $sub-color;
+  border-radius: 30px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+
+  .ani_booking {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+  }
+  span {
+    position: unset;
+    left: none;
+    bottom: none;
+    transform: none;
+    color: $white-color;
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+}
+.benefit_info {
+  margin-bottom: 200px;
+  h3 {
+    font-family: $body-font-family;
+    margin: 40px 0 10px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  form {
+    display: flex;
+    align-items: center;
+    .filter_wrap {
+      display: flex;
+      justify-content: space-between;
+      padding-right: calc(var(--bs-gutter-x) * .5);
+      padding-left: calc(var(--bs-gutter-x) * .5);
+    }
+  }
+  input {
+    height: 44px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .btn_wrap {
+    text-align: right;
+  }
+  .btn {
+    height: 44px;
+    padding: 0 20px;
+    font-weight: 600;
+    line-height: 44px;
+  }
+  .btn_outline {
+    margin-right: 16px;
+    border: 1px solid #ddd;
+    color: $body-color;
+  }
+  .btn_conform {
+    background-color: $main-color;
+    color: $white-color;
+  }
+}
+
+.table_membership {
+  border: 1px solid #eaeaea;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 35px;
+  thead {
+    th {
+      padding: 15px 10px;
+    }
+  }
+  th {
+    background: #ddd;
+    text-align: center;
+    vertical-align: middle;
+    color: $black-color;
+    font-size: 16px;
+    font-weight: 500;
+    span {
+      font-size: 12px;
+    }
+  }
+  td {
+    vertical-align: middle;
+    line-height: 1.2;
+    color: $black-color;
+  }
+
+}
+
+/*content*/
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #999;
+  background: #fff;
+  height: 200px;
+  border-radius: 16px;
+  box-shadow: $box-shadow;
+  margin-top: 30px;
+}
+
+/*content-예약내역*/
+.info_booking {
+  margin-top: 2em;
+  margin-bottom: 0;
+  thead {
+    background-color: #ddd;
+  }
+  tbody {
+    td {
+      vertical-align: middle;
+      line-height: 1.5;
+      &:first-child {
+        width: 60%;
+      }
+      &:last-child {
+        text-align: right;
+        padding-right: 16px;
+      }
+      .btn_detail {
+        font-size: 16px;
+      }
+      .btn_oneon {
+        padding: 4px 10px;
+        background: $black-color;
+        color: $white-color;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.point_txt {
+  color: $main-color;
+}
+
+@media only screen and (max-width: 575px) {
+  /*잔여혜액 및 포인트*/
+  .info_data {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user_point {
+    flex-direction: column;
+    p {
+      margin-top: 6px;
+      font-size: 16px;
+    }
+  }
+  .period {
+    font-size: 14px;
+  }
+
+  /*혜원혜택*/
+  .benefit_info {
+    .btn_wrap {
+      margin-top: 24px;
+      text-align: center;
+      .btn {
+        padding: 0 35px;
+      }
+    }
+  }
+
+
+  /*content-예약내역*/
+  .info_booking {
+    tbody {
+      td {
+        &:first-child {
+          width: 50%;
+        }
+        .btn_detail {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+
+  /*메이페이지 컨텐츠 레이아웃*/
+  .my_con_wrap {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+  }
+  .btn_booking {
+    width: 80px;
+    height: 80px;
+    padding: 0 16px;
+    align-items: flex-start;
+    position: fixed;
+    bottom: 100px;
+    right: 16px;
+    background-color: $sub-color;
+    border-radius: 50%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    animation: booking 2s 3s infinite ease-in-out;
+    .ani_booking {
+      margin-top: 3px;
+      width: 90%;
+      height: auto;
+    }
+    span {
+      position: absolute;
+      left: 50%;
+      bottom: 0px;
+      transform: translate(-50%, -50%);
+      color: $white-color;
+      font-weight: 600;
+      font-size: 0.85em;
+      margin:0;
+    }
+  }
+  /*content-예약내역*/
+  .info_booking {
+    margin-top: 1em;
+  }
+
+  .widget {
+    &.black{
+      background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(25, 25, 25) 90%);
+    }
+    &.platinum{
+      background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(153, 153, 153) 90%);
+    }
+    &.green{
+      background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(32, 96, 76) 90%);
+    }
+    &.blue{
+      background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(78, 121, 188) 90%);
+    }
+    &.red{
+      background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(218, 76, 67) 90%);
+    }
+    &.purple{
+      background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(121, 63, 144) 90%);
+    }
+    .level {
+      align-items: center;
+    }
+    .info {
+      text-align: left;
+    }
+    .thumb {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+@keyframes booking {
+  0%  {transform: translateY(0);}
+  50%  {transform: translateY(-5px);}
+  100%  {transform: translateY(0);}
+}
