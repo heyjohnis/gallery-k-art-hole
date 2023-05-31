@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import axios from "axios";
-import baseUrl from "./../../utils/baseUrl";
-import Footer from "./../../components/Layouts/Footer";
-import PageBanner from "./../../components/Common/PageBanner";
-import GgmallItems from "./../../components/Ggmall/GgmallItems";
-import GgmallText from "./../../components/Ggmall/GgmallText";
+import baseUrl from "./../../../utils/baseUrl";
+import Footer from "./../../../components/Layouts/Footer";
+import PageBanner from "./../../../components/Common/PageBanner";
+import GgmallItems from "./../../../components/Ggmall/GgmallItems";
+import GgmallText from "./../../../components/Ggmall/GgmallText";
 
 const MallDetail = () => {
   const router = useRouter();

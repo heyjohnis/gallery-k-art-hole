@@ -36,7 +36,7 @@ const ggList = ({ user }) => {
         activePageText="쇼핑"
       />
 
-      <GgmallList contents={contents} />
+      <GgmallList contents={contents} productKind={"shoping"} />
 
       <Footer />
     </>

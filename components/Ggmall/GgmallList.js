@@ -5,7 +5,7 @@ import styles from "./Ggmall.module.scss";
 
 import { commaFormat } from "../../utils/number";
 
-const GgmallList = ({ contents }) => {
+const GgmallList = ({ contents, productKind }) => {
   const onClick = () => {
     console.log("제품페이지 이동");
   };
@@ -40,7 +40,7 @@ const GgmallList = ({ contents }) => {
                     </div>
                     <Link
                       className="default-btn"
-                      href={`/ggmall/shoping/${content.pd_no}`}
+                      href={`/ggmall/${productKind}/${content.pd_no}`}
                     >
                       구매하기
                     </Link>

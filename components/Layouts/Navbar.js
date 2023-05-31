@@ -239,7 +239,7 @@ const Navbar = ({ user }) => {
 
                 <li className="nav-item">
                   <Link
-                    href="/ggmall/list"
+                    href="/ggmall/service"
                     className={`nav-link ${currentPath == "/art/" && "active"}`}
                     onClick={toggleNavbar}
                   >
@@ -248,7 +248,7 @@ const Navbar = ({ user }) => {
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link href="/ggmall/list" onClick={toggleNavbar}>
+                      <Link href="/ggmall/service" onClick={toggleNavbar}>
                         제휴서비스
                       </Link>
                       <Link href="/ggmall/shoping" onClick={toggleNavbar}>
