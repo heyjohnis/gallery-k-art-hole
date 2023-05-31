@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import Link from "next/link";
+import styles from "./Ggmall.module.scss";
 
 import { commaFormat } from "../../utils/number";
 
