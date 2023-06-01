@@ -47,7 +47,7 @@ const Navbar = ({ user }) => {
         .then(({ data }) => {
           console.log("data: ", data);
         })
-        .finally(() => {});
+        .finally(() => { });
     }
   };
 
@@ -129,7 +129,7 @@ const Navbar = ({ user }) => {
                       toggleNavbar();
                     }}
                   >
-                    골프예약
+                    Golf Booking {/*23.06.01 골프예약에서 Golf Booking*/}
                   </Link>
                 </li>
                 {/* <li className="nav-item">
@@ -210,12 +210,13 @@ const Navbar = ({ user }) => {
                   </ul>
                 </li> */}
                 <li className="nav-item">
+                  {/*23.06.01 art에서 artworks*/}
                   <Link
-                    href="/art"
-                    className={`nav-link ${currentPath == "/art/" && "active"}`}
+                    href="/artworks"
+                    className={`nav-link ${currentPath == "/artworks/" && "active"}`}
                     onClick={toggleNavbar}
                   >
-                    가입특전 <i className="bx bx-chevron-down"></i>
+                    Benefits <i className="bx bx-chevron-down"></i> {/*23.06.01 가입특전에서 Benefits*/}
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -240,19 +241,19 @@ const Navbar = ({ user }) => {
                 <li className="nav-item">
                   <Link
                     href="/ggmall/service"
-                    className={`nav-link ${currentPath == "/art/" && "active"}`}
+                    className={`nav-link ${currentPath == "/ggmall/service/" && "active"}`}
                     onClick={toggleNavbar}
                   >
-                    GG몰
+                    GG Mall {/*23.06.01 GG몰에서 GG Mall*/}
                     <i className="bx bx-chevron-down"></i>
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link href="/ggmall/service" onClick={toggleNavbar}>
-                        제휴서비스
+                        제휴서비스 {/*23.06.01 제휴서비스에서 GG Service*/}
                       </Link>
                       <Link href="/ggmall/shoping" onClick={toggleNavbar}>
-                        쇼핑
+                        GG 쇼핑  {/*23.06.01 쇼핑에서 GG Shop*/}
                       </Link>
                     </li>
                   </ul>
@@ -260,21 +261,19 @@ const Navbar = ({ user }) => {
                 <li className="nav-item">
                   <Link
                     href="/contact"
-                    className={`nav-link ${
-                      currentPath == "/contact/" && "active"
-                    }`}
+                    className={`nav-link ${currentPath == "/contact/" && "active"
+                      }`}
                     onClick={toggleNavbar}
                   >
-                    고객지원 <i className="bx bx-chevron-down"></i>
+                    Support <i className="bx bx-chevron-down"></i>  {/*23.06.01 고객지원에서 Support*/}
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
                         href="/contact"
-                        className={`nav-link ${
-                          currentPath == "/contact/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/contact/" && "active"
+                          }`}
                         onClick={toggleNavbar}
                       >
                         상담/문의
@@ -284,9 +283,8 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/bbs/notice"
-                        className={`nav-link ${
-                          currentPath == "/bbs/notice" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/bbs/notice" && "active"
+                          }`}
                         onClick={toggleNavbar}
                       >
                         공지사항
@@ -295,9 +293,8 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/bbs/news"
-                        className={`nav-link ${
-                          currentPath == "/bbs/news/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/bbs/news/" && "active"
+                          }`}
                         onClick={toggleNavbar}
                       >
                         뉴스
@@ -306,9 +303,8 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/faq"
-                        className={`nav-link ${
-                          currentPath == "/faq/" && "active"
-                        }`}
+                        className={`nav-link ${currentPath == "/faq/" && "active"
+                          }`}
                         onClick={toggleNavbar}
                       >
                         FAQ
@@ -381,7 +377,7 @@ const Navbar = ({ user }) => {
                   className="default-btn"
                   onClick={toggleNavbar}
                 >
-                  BOOK NOW
+                  예약 확인 {/*23.06.01 고객지원에서 Support*/}
                 </Link>
               </div>
             </div>
@@ -430,16 +426,13 @@ const Navbar = ({ user }) => {
             })();
             ChannelIO('boot', {
               "pluginKey": "851db043-3ce1-4d57-b7af-58aa7dcb9c7e", //please fill with your plugin key
-              "memberId": "${
-                (user && user.login_id) || ""
-              }", //fill with user id
+              "memberId": "${(user && user.login_id) || ""
+            }", //fill with user id
               "profile": {
-                "name": "${
-                  (user && user.user_name) || ""
-                }", //fill with user name
-                "mobileNumber": "${
-                  (user && user.mobile) || ""
-                }", //fill with user phone number
+                "name": "${(user && user.user_name) || ""
+            }", //fill with user name
+                "mobileNumber": "${(user && user.mobile) || ""
+            }", //fill with user phone number
               }
             });`,
         }}
