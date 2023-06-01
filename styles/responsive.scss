@@ -2169,6 +2169,9 @@
 }
 
 @media only screen and (max-width: 991px) {
+    .lg-pl-3 {
+        padding-left: 12px !important;
+    }
     .mobile-nav {
         .logo {
             top: 12px;
@@ -2286,6 +2289,10 @@
     .swiper-button-next,
     .swiper-button-prev {
         display: none;
+    }
+
+    .md-pl-3 {
+        padding-left: 12px !important;
     }
       
 }

@@ -4,6 +4,7 @@ import Booking from "../components/Mypage/data/booking.json";
 import Lottie from "react-lottie";
 import Link from "next/link";
 import YouTube from "react-youtube";
+import ContactForm from "../components/Contact/ContactForm";
 
 const lottieOptions = {
   animationData: Booking,
@@ -18,34 +19,37 @@ const landing = () => {
   };
 
   const opts = {
-    height: "200",
-    width: "380",
+    width: "100%",
+    height: "100%",
     playerVars: {
       autoplay: 1,
     },
   };
 
   return (
-    <>
+    <div className={`container ${styles.container}`}>
       <div>
         <img src="/images/landing.jpg" alt="landing" />
       </div>
-      <div className="youtube_wrap">
+      <div className={styles.youtube_wrap}>
         <h3>
           최고의 품격과 서비스로 당신의 자부심이 될<br />
           그린갤러리 멤버십을 지금 시작하세요.
         </h3>
-        <YouTube
-          videoId="ZQw7meQJWTk"
-          opts={opts}
-          onReady={onPlayerReady}
-          onEnd={(e) => {
-            e.target.stopVideo(0);
-          }}
-        />
+        <div className={styles.youtube}>
+          <YouTube
+            videoId="ZQw7meQJWTk"
+            className={styles.scaleVideo}
+            opts={opts}
+            onReady={onPlayerReady}
+            onEnd={(e) => {
+              e.target.stopVideo(0);
+            }}
+          />
+        </div>
       </div>
       <div>
-        <Link href="/contact">
+        <Link href="#contact">
           <div className={`btn ${styles.btn_booking}`}>
             <div className={styles.ani_booking}>
               <Lottie
@@ -56,7 +60,10 @@ const landing = () => {
           </div>
         </Link>
       </div>
-    </>
+      <div id="contact">
+        <ContactForm />
+      </div>
+    </div>
   );
 };
 

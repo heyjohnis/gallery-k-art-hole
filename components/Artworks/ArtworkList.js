@@ -54,10 +54,10 @@ const ArtworkList = () => {
     <section className="team-area ptb-100">
       <div className="container">
         <div className="row mb-5">
-          <div className="col-lg-1 col-md-1 text-center d-flex align-items-center justify-content-center">
+          <div className="col-lg-1 col-md-1 text-center d-flex align-items-center justify-content-center mb-3">
             작품가격
           </div>
-          <div className="col-lg-2 col-md-12 mr-0 pr-0 d-flex">
+          <div className="col-lg-2 col-md-12 mr-0 pr-0 d-flex mb-3">
             <input
               className="form-control"
               type="number"
@@ -74,7 +74,7 @@ const ArtworkList = () => {
               ~
             </div>
           </div>
-          <div className="col-lg-2 col-md-12 ml-0 pl-0 d-flex align-items-center justify-content-center ">
+          <div className="col-lg-2 col-md-12 ml-0 pl-0 lg-pl-3 d-flex align-items-center justify-content-center mb-3">
             <input
               className="form-control"
               type="number"
@@ -88,7 +88,7 @@ const ArtworkList = () => {
               만원
             </div>
           </div>
-          <div className="col-lg-4 col-md-12">
+          <div className="col-lg-4 col-md-12 mb-3">
             <input
               className="form-control"
               type="text"
@@ -99,7 +99,7 @@ const ArtworkList = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="col-lg-3 col-md-12 text-right">
+          <div className="col-lg-3 col-md-12 text-right mb-3">
             <button
               type="submit"
               className="default-btn btn-reset"
