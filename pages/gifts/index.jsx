@@ -18,8 +18,8 @@ const artworks = ({ user }) => {
         homePageText="Home"
         activePageText="사은품"
       />
-      <p className="text-center" style={{ margin: "200px 0" }}>
-        준비중입니다.
+      <p className="text-center">
+        <img src="/images/gift.jpg" alt="gifts" />
       </p>
       <Footer />
     </>
