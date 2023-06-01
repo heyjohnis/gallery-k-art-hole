@@ -1,7 +1,6 @@
-// const baseUrl = process.env.NODE_ENV === "production"
-// ? 'https://jumpx-react.envytheme.com'
-// : 'http://localhost:3000';
-
-const baseUrl = "https://greengallery.kr:8086";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://greengallery.kr:8086"
+    : "https://test.greengallery.kr:8186";
 
 export default baseUrl;
