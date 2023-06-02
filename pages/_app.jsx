@@ -42,6 +42,10 @@ const MyApp = ({ Component, pageProps }) => {
         />
         <meta property="og:image" content="/images/gg.png" />
         <meta property="og:url" content="https://greengallery.kr" />
+        <meta
+          name="naver-site-verification"
+          content="7b74dc7c21795caa25d7858c7ed96a4e3f5e3e0c"
+        />
         <title>GREEN GALLERY</title>
       </Head>
 
