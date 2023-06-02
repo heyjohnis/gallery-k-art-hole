@@ -1,14 +1,17 @@
 /* eslint-disable react/prop-types */
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import styles from "./Ggmall.module.scss";
 
 import { commaFormat } from "../../utils/number";
 
 const GgmallItems = ({ content, options }) => {
+  const router = useRouter();
+
   const [optionComp, setOptionComp] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [price, setPrice] = useState({});
+  const [option, setOption] = useState({});
 
   const selectOption = (optionNo, option) => {
     console.log("selected option: ", option);
@@ -16,7 +19,10 @@ const GgmallItems = ({ content, options }) => {
       ...prev,
       [optionNo]: parseInt(option.price),
     }));
-
+    setOption((prev) => ({
+      ...prev,
+      [optionNo]: { op_name: option.op_name, price: parseInt(option.price) },
+    }));
     console.log("total", price);
   };
 
@@ -37,6 +43,7 @@ const GgmallItems = ({ content, options }) => {
           </option>
         );
       }
+
       comp.push(
         <div key={i} className="row">
           <div className="col-md-12">
@@ -59,6 +66,19 @@ const GgmallItems = ({ content, options }) => {
       );
     }
     setOptionComp(comp);
+  };
+
+  const buyProduct = () => {
+    console.log("price: ", price);
+    console.log("option: ", option);
+    router.push({
+      pathname: "/ggmall/payment",
+      query: {
+        pd_no: content.pd_no,
+        options: JSON.stringify(option),
+        total: totalPrice,
+      },
+    });
   };
 
   useEffect(() => {
@@ -94,17 +114,12 @@ const GgmallItems = ({ content, options }) => {
                   <span>P</span>
                 </h2>
                 <div className={styles.btn_warp}>
-                  <Link
-                    href={{
-                      pathname: "/ggmall/payment/",
-                      query: {
-                        pd_no: content.pd_no,
-                      },
-                    }}
+                  <div
                     className={`default-btn ${styles.btn}`}
+                    onClick={buyProduct}
                   >
                     구매하기
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>

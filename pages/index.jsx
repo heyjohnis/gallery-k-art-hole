@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import BenefitSlider from "../components/Home/BenefitSlider";
 import About from "../components/Home/About";

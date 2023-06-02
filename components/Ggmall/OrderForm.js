@@ -1,7 +1,77 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import React, { useEffect, useState } from "react";
 import styles from "./Ggmall.module.scss";
+import { useDaumPostcodePopup } from "react-daum-postcode";
 
-const OrderForm = () => {
+const INITIAL_FORM = {
+  order_user_name: "",
+  order_user_phone: "",
+  order_user_email: "",
+  delivery_user_name: "",
+  delivery_phone: "",
+  delivery_zipcode: "",
+  delivery_addr1: "",
+  delivery_addr2: "",
+};
+
+const OrderForm = ({ user, setOrderInfo }) => {
+  const [form, setForm] = useState(INITIAL_FORM);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleClick = () => {
+    open({ onComplete: handleComplete });
+  };
+
+  const open = useDaumPostcodePopup(
+    "https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
+  );
+
+  const handleComplete = (data) => {
+    let fullAddress = data.address;
+    let extraAddress = "";
+
+    if (data.addressType === "R") {
+      if (data.bname !== "") {
+        extraAddress += data.bname;
+      }
+      if (data.buildingName !== "") {
+        extraAddress +=
+          extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
+      }
+      fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
+    }
+    console.log("=-=-0=0-0-=", data.zonecode);
+    setForm((prevState) => ({
+      ...prevState,
+      delivery_addr1: fullAddress,
+      delivery_zipcode: data.zonecode,
+    }));
+  };
+
+  useEffect(() => {
+    if (user) {
+      setForm((prevState) => ({
+        ...prevState,
+        order_user_name: user.user_name,
+        order_user_phone: user.mobile,
+        order_user_email: user.email,
+        delivery_user_name: user.user_name,
+        delivery_phone: user.mobile,
+        delivery_zipcode: user.zipcode,
+        delivery_addr1: user.addr1,
+        delivery_addr2: user.addr2,
+      }));
+    }
+  }, [user]);
+
+  useEffect(() => {
+    setOrderInfo(form);
+  }, [form]);
+
   return (
     <>
       <section>
@@ -17,8 +87,10 @@ const OrderForm = () => {
               <input
                 className="form-control"
                 type="text"
-                name="login_id"
-                placeholder="아이디를 입력하세요"
+                name="order_user_name"
+                placeholder="이름을 입력하세요"
+                value={form.order_user_name}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -33,25 +105,10 @@ const OrderForm = () => {
               <input
                 className="form-control"
                 type="tel"
-                name="mobile"
-                placeholder="010"
-                maxLength={3}
-              />
-              <span>-</span>
-              <input
-                className="form-control"
-                type="tel"
-                name="mobile"
-                placeholder="010"
-                maxLength={4}
-              />
-              <span>-</span>
-              <input
-                className="form-control"
-                type="tel"
-                name="mobile"
-                placeholder="010"
-                maxLength={4}
+                name="order_user_phone"
+                placeholder="휴대폰번호를 입력하세요"
+                value={form.order_user_phone}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -66,8 +123,10 @@ const OrderForm = () => {
               <input
                 className="form-control"
                 type="text"
-                name=""
+                name="order_user_email"
                 placeholder="이메일을 입력하세요"
+                value={form.order_user_email}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -88,8 +147,10 @@ const OrderForm = () => {
               <input
                 className="form-control"
                 type="text"
-                name="login_id"
-                placeholder="아이디를 입력하세요"
+                name="delivery_user_name"
+                placeholder="받으시는 분 이름을 입력하세요"
+                value={form.delivery_user_name}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -104,25 +165,10 @@ const OrderForm = () => {
               <input
                 className="form-control"
                 type="tel"
-                name="mobile"
-                placeholder="010"
-                maxLength={3}
-              />
-              <span>-</span>
-              <input
-                className="form-control"
-                type="tel"
-                name="mobile"
-                placeholder="010"
-                maxLength={4}
-              />
-              <span>-</span>
-              <input
-                className="form-control"
-                type="tel"
-                name="mobile"
-                placeholder="010"
-                maxLength={4}
+                name="delivery_phone"
+                placeholder="휴대폰번호를 입력하세요"
+                value={form.delivery_phone}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -138,13 +184,19 @@ const OrderForm = () => {
                   <input
                     className="form-control"
                     type="text"
-                    name="zipcode"
-                    id="form1"
+                    name="delivery_zipcode"
+                    id="delivery_zipcode"
                     placeholder="우편번호"
+                    value={form.delivery_zipcode}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="col-md-3 col-sm-3">
-                  <button type="button" className="default-btn">
+                  <button
+                    type="button"
+                    className="default-btn"
+                    onClick={handleClick}
+                  >
                     주소검색
                   </button>
                 </div>
@@ -152,16 +204,20 @@ const OrderForm = () => {
               <input
                 className="form-control"
                 type="text"
-                name="addr1"
-                id="form1"
+                name="delivery_addr1"
+                id="delivery_addr1"
                 placeholder="기본주소"
+                value={form.delivery_addr1}
+                onChange={handleChange}
               />
               <input
                 className="form-control"
                 type="text"
-                name="addr2"
-                id="form1"
+                name="delivery_addr2"
+                id="delivery_addr2"
                 placeholder="나머지 주소"
+                value={form.delivery_addr2}
+                onChange={handleChange}
               />
             </div>
           </div>

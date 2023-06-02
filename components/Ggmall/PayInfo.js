@@ -1,8 +1,44 @@
+/* eslint-disable no-undef */
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import styles from "./Ggmall.module.scss";
+import baseUrl from "../../utils/baseUrl";
+import { commaFormat } from "../../utils/number";
 
-const PayInfo = () => {
+const MySwal = withReactContent(Swal);
+
+const alertContent = () => {
+  MySwal.fire({
+    title: "성공",
+    text: "결제가 완료되었습니다.",
+    icon: "success",
+    timer: 2000,
+    timerProgressBar: true,
+    showConfirmButton: false,
+  });
+};
+
+const PayInfo = ({ user, total, buyProduct }) => {
+  const [point, setPoint] = useState(0);
+  // const payNow = () => {
+  //   console.log("payNow: ", total);
+  //   url = `${baseUrl}/mall/buy`;
+  //   axios({ method: "post", url })
+  //     .then(({ data }) => {
+  //       console.log("data: ", data);
+  //     })
+  //     .finally(() => {
+  //       setLoading(false);
+  //     });
+  // };
+
+  const onClickHandler = () => {
+    buyProduct();
+  };
+
   return (
     <>
       <section>
@@ -10,9 +46,10 @@ const PayInfo = () => {
           <div className={styles.pay_group}>
             <h2>결제정보</h2>
             <div className={styles.info_wrap}>
-              <span className={styles.tit}>총 결제금액:</span>
+              <span className={styles.tit}>총 결제금액: </span>
               <span className={styles.tit}>
-                10000<span>P</span>
+                {commaFormat(total)}
+                <span>P</span>
               </span>
             </div>
           </div>
@@ -21,15 +58,21 @@ const PayInfo = () => {
             <div className="radio">
               <label className="custom">
                 <span>포인트결제</span>
-                <input type="radio" name="user_kind" value="01" />
+                <input
+                  type="radio"
+                  name="user_kind"
+                  value="01"
+                  defaultChecked="checked"
+                />
                 <span className="checkmark"></span>
               </label>
-
-              <label className="custom ml-30">
+              <input type="number" name="point" className="form-control" />
+              <span>사용 가능한 포인트: {point}</span>
+              {/* <label className="custom ml-30">
                 <span>카드결제</span>
                 <input type="radio" name="user_kind" value="02" />
                 <span className="checkmark"></span>
-              </label>
+              </label> */}
             </div>
           </div>
 
@@ -54,9 +97,12 @@ const PayInfo = () => {
             <Link href="#" className={`default-btn ${styles.btn_round}`}>
               취소하기
             </Link>
-            <Link href="#" className={`default-btn ${styles.btn_buy}`}>
+            <div
+              onClick={onClickHandler}
+              className={`default-btn ${styles.btn_buy}`}
+            >
               구매하기
-            </Link>
+            </div>
           </div>
         </div>
       </section>

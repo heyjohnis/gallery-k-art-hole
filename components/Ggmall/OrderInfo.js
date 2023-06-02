@@ -3,7 +3,8 @@ import React from "react";
 import styles from "./Ggmall.module.scss";
 import { commaFormat } from "../../utils/number";
 
-const OrderInfo = ({ product, option }) => {
+const OrderInfo = ({ product, total, selectedOptions, optionsResult }) => {
+  console.log("product: ", selectedOptions);
   return (
     <>
       <section className="pt-100">
@@ -15,12 +16,11 @@ const OrderInfo = ({ product, option }) => {
           </div>
           <div className="col-7 col-md-8">
             <span>{product && product.pd_name}</span>
-            <span className={styles.division}>/</span>
-            <span> {option}</span>
+            <span className={styles.division}>{optionsResult}</span>
           </div>
           <div className="col-2">
             <p className={styles.price}>
-              {commaFormat((product && product.price) || 0)}
+              {commaFormat(total || 0)}
               <span>P</span>
             </p>
           </div>
