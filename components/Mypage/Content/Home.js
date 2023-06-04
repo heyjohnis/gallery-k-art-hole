@@ -100,7 +100,10 @@ const Home = ({ user }) => {
             <tr key={i}>
               <td className="text-center">{point.point_date}</td>
               <td>{point.point_type}</td>
-              <td>{point.pd_name}</td>
+              <td>
+                {point.resv_name}
+                {point.pd_name}
+              </td>
               <td className="text-right">{commaFormat(point.point || 0)} P</td>
             </tr>
           ))}

@@ -35,7 +35,7 @@ const payment = ({ user }) => {
       showConfirmButton: true,
     }).then((result) => {
       console.log("router: ", router);
-      //router.push(`/ggmall/${productKind}`);
+      router.push(`/ggmall/${productKind}`);
     });
   };
 

@@ -3589,3 +3589,13 @@ My page
   bottom: 68px !important;
 }
 
+.swiper-scrollbar {
+  background-color: rgba(0, 0, 0, 0.5); /* 스크롤바의 배경색을 파란색으로 지정합니다. */
+  height: 20px;
+}
+
+.swiper-scrollbar-drag {
+  background-color: rgba(0, 136, 45, 0.843); /* 스크롤바 드래그 핸들의 배경색을 빨간색으로 지정합니다. */
+  width: 20px; /* 스크롤바 드래그 핸들의 너비를 20px로 지정합니다. */
+  opacity: 0.8; /* 스크롤바 드래그 핸들의 투명도를 0.7로 지정합니다. */
+}

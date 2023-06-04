@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
 const MainBanner = () => {
   return (
@@ -14,7 +14,14 @@ const MainBanner = () => {
             disableOnInteraction: true,
             pauseOnMouseEnter: true,
           }}
-          modules={[Navigation, Autoplay]}
+          spaceBetween={50}
+          scrollbar={{ draggable: true }}
+          pagination={{
+            clickable: true,
+            el: ".swiper-pagination",
+            type: "progressbar", // 페이지네이션을 바 형태로 지정합니다.
+          }}
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
           className="hero-swiper"
         >
           <SwiperSlide>
