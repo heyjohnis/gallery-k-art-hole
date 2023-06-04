@@ -9,16 +9,35 @@ import Footer from "../../components/Layouts/Footer";
 import axios from "axios";
 import baseUrl from "./../../utils/baseUrl";
 import { commaFormat } from "../../utils/number";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 const payment = ({ user }) => {
-  const [loading, setLoading] = useState(true); // [1
   const router = useRouter();
+  const [loading, setLoading] = useState(true); // [1
   const [pdNo, setPdNo] = useState();
   const [product, setProduct] = useState("");
   const [total, setTotal] = useState(0); // [2
   const [selectedOptions, setSelectedOptions] = useState({});
   const [optionsResult, setOptionsResult] = useState(""); // [3
   const [orderInfo, setOrderInfo] = useState({});
+  const [productKind, setProductKin] = useState("");
+
+  const alertContent = () => {
+    MySwal.fire({
+      title: "성공",
+      text: "결제가 완료되었습니다.",
+      icon: "success",
+      timer: 3000,
+      timerProgressBar: true,
+      showConfirmButton: true,
+    }).then((result) => {
+      console.log("router: ", router);
+      //router.push(`/ggmall/${productKind}`);
+    });
+  };
 
   const selectedOptionsResult = (options) => {
     let result = "";
@@ -33,6 +52,29 @@ const payment = ({ user }) => {
     setOptionsResult(result);
   };
 
+  const buyProduct = (payInfo) => {
+    const payload = {
+      ...orderInfo,
+      ...payInfo,
+      pd_name: product.pd_name,
+      point_type: productKind === "service" ? "01" : "03",
+    };
+
+    const url = `${baseUrl}/mall/buy`;
+    axios({ method: "post", url, data: payload })
+      .then(({ data }) => {
+        console.log("data: ", data);
+        alertContent();
+      })
+      .catch((error) => {
+        console.log("error: ", error);
+      });
+  };
+
+  useEffect(() => {
+    if (!user) router.push("/login");
+  }, [user]);
+
   useEffect(() => {
     if (!pdNo) return;
 
@@ -42,13 +84,14 @@ const payment = ({ user }) => {
       total_price: total,
       option_values: optionsResult,
       user_no: user.user_no,
-      delivery_fee: product.delivery_fee,
+      quntity: 1,
+      pay_amount: total + parseInt(product.delivery_fee || 0),
     }));
 
     const url = `${baseUrl}/mall/${pdNo}`;
     axios({ method: "get", url })
       .then(({ data }) => {
-        console.log("data: ", data);
+        console.log("product data: ", data);
         setProduct(data.product);
       })
       .finally(() => {
@@ -59,29 +102,14 @@ const payment = ({ user }) => {
   useEffect(() => {
     const pdNo = router.query.pd_no;
     setPdNo(pdNo);
-    const total = router.query.total;
+    const total = parseInt(router.query.total || 0);
     setTotal(total);
+    const productKind = router.query.product_kind;
+    setProductKin(productKind);
     const options = JSON.parse(router.query.options);
     setSelectedOptions(options);
     selectedOptionsResult(options);
   }, [router.query]);
-
-  const getOrderInfo = (orderInfo) => {
-    console.log("orderInfo: ", orderInfo);
-    setOrderInfo(orderInfo);
-  };
-
-  const buyProduct = () => {
-    const url = `${baseUrl}/mall/buy`;
-    axios({ method: "post", url, data: orderInfo })
-      .then(({ data }) => {
-        console.log("data: ", data);
-        //router.push(`/ggmall/order/${data.order_id}`);
-      })
-      .catch((error) => {
-        console.log("error: ", error);
-      });
-  };
 
   return (
     <>
@@ -103,10 +131,20 @@ const payment = ({ user }) => {
             />
           </div>
           <div className="col-12 col-lg-8 mt-100">
-            <OrderForm user={user} setOrderInfo={getOrderInfo} />
+            <OrderForm
+              user={user}
+              setOrderInfo={(orderInfo) => {
+                setOrderInfo(orderInfo);
+              }}
+            />
           </div>
           <div className="col-12 col-lg-4 mt-100">
-            <PayInfo user={user} total={total} buyProduct={buyProduct} />
+            <PayInfo
+              user={user}
+              total={total}
+              product={product}
+              buyProduct={buyProduct}
+            />
           </div>
         </div>
       </div>

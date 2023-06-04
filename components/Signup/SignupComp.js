@@ -101,7 +101,7 @@ export default function SignupComp({ compType, user }) {
         headers: { Authorization: `Bearer ${medq_token}` },
       });
       if (compType === "reg") {
-        alert("회원가입이 완료되었습니다.");
+        alert("회원가입이 완료되었습니다. 관리자 승인 후 로그인이 가능합니다.");
         handleLogin(response.data.token);
       } else {
         alert("수정되었습니다.");

@@ -1,54 +1,52 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 import Link from "next/link";
-import React, { useState } from "react";
-import axios from "axios";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+import React, { useEffect, useState } from "react";
 import styles from "./Ggmall.module.scss";
-import baseUrl from "../../utils/baseUrl";
 import { commaFormat } from "../../utils/number";
 
-const MySwal = withReactContent(Swal);
-
-const alertContent = () => {
-  MySwal.fire({
-    title: "성공",
-    text: "결제가 완료되었습니다.",
-    icon: "success",
-    timer: 2000,
-    timerProgressBar: true,
-    showConfirmButton: false,
-  });
+const INITIAL_FORM = {
+  use_point: 0,
+  pay_card: 0,
+  delivery_fee: 0,
+  product_price: 0,
+  total_price: 0,
 };
 
-const PayInfo = ({ user, total, buyProduct }) => {
+const PayInfo = ({ user, product, total, buyProduct }) => {
   const [point, setPoint] = useState(0);
-  // const payNow = () => {
-  //   console.log("payNow: ", total);
-  //   url = `${baseUrl}/mall/buy`;
-  //   axios({ method: "post", url })
-  //     .then(({ data }) => {
-  //       console.log("data: ", data);
-  //     })
-  //     .finally(() => {
-  //       setLoading(false);
-  //     });
-  // };
+  const [payInfo, setPayInfo] = useState(INITIAL_FORM);
 
-  const onClickHandler = () => {
-    buyProduct();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setPayInfo((prevState) => ({ ...prevState, [name]: value }));
   };
+
+  const buyNow = () => {
+    buyProduct(payInfo);
+  };
+
+  useEffect(() => {
+    const totalPrice = total + product.delivery_fee;
+    setPayInfo((prevState) => ({
+      ...prevState,
+      delivery_fee: product.delivery_fee,
+      total_price: totalPrice,
+      use_point: totalPrice,
+    }));
+  }, [product]);
 
   return (
     <>
-      <section>
+      <section className="mb-5">
         <div className={styles.pay_warp}>
           <div className={styles.pay_group}>
             <h2>결제정보</h2>
             <div className={styles.info_wrap}>
               <span className={styles.tit}>총 결제금액: </span>
               <span className={styles.tit}>
-                {commaFormat(total)}
+                {commaFormat(payInfo.total_price)}
                 <span>P</span>
               </span>
             </div>
@@ -66,7 +64,13 @@ const PayInfo = ({ user, total, buyProduct }) => {
                 />
                 <span className="checkmark"></span>
               </label>
-              <input type="number" name="point" className="form-control" />
+              <input
+                type="text"
+                name="use_point"
+                className="form-control"
+                value={payInfo.use_point}
+                onChange={handleChange}
+              />
               <span>사용 가능한 포인트: {point}</span>
               {/* <label className="custom ml-30">
                 <span>카드결제</span>
@@ -97,10 +101,7 @@ const PayInfo = ({ user, total, buyProduct }) => {
             <Link href="#" className={`default-btn ${styles.btn_round}`}>
               취소하기
             </Link>
-            <div
-              onClick={onClickHandler}
-              className={`default-btn ${styles.btn_buy}`}
-            >
+            <div onClick={buyNow} className={`default-btn ${styles.btn_buy}`}>
               구매하기
             </div>
           </div>

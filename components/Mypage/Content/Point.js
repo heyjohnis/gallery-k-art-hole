@@ -42,7 +42,7 @@ const Point = () => {
             <tr key={i}>
               <td>{point.point_date}</td>
               <td>{point.point_type}</td>
-              <td>{point.comment}</td>
+              <td>{point.pd_name}</td>
               <td>{commaFormat(point.point || 0)} P</td>
             </tr>
           ))}

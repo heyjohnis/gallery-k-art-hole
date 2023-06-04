@@ -5,7 +5,7 @@ import styles from "./Ggmall.module.scss";
 
 import { commaFormat } from "../../utils/number";
 
-const GgmallItems = ({ content, options }) => {
+const GgmallItems = ({ content, options, productKind }) => {
   const router = useRouter();
 
   const [optionComp, setOptionComp] = useState([]);
@@ -77,6 +77,7 @@ const GgmallItems = ({ content, options }) => {
         pd_no: content.pd_no,
         options: JSON.stringify(option),
         total: totalPrice,
+        product_kind: productKind,
       },
     });
   };
