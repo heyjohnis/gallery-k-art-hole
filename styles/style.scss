@@ -3599,3 +3599,25 @@ My page
   width: 20px; /* 스크롤바 드래그 핸들의 너비를 20px로 지정합니다. */
   opacity: 0.8; /* 스크롤바 드래그 핸들의 투명도를 0.7로 지정합니다. */
 }
+
+// Calendar Picker
+.my-day-picker {
+  margin: 2em;
+}
+.my-selected:not([disabled]) { 
+  font-weight: bold; 
+  border: 2px solid currentColor;
+}
+.my-selected:hover:not([disabled]) { 
+  border-color: blue;
+  color: blue;
+}
+.my-today { 
+  font-weight: bold;
+  font-size: 140%; 
+  color: red;
+}
+
+span.option_price {
+  display: none;
+}

@@ -39,14 +39,16 @@ const payment = ({ user }) => {
     });
   };
 
-  const selectedOptionsResult = (options) => {
+  const selectedOptionsResult = (options, hopeDate) => {
     let result = "";
+    result += hopeDate ? `/ 희망일: ${hopeDate} ` : "";
     Object.keys(options).forEach((key) => {
       const optionName = options[key].op_name;
       const optionPrice = options[key].price
         ? commaFormat(options[key].price) + "P"
         : "";
-      if (optionName) result += `/ ${optionName} `;
+      if (optionName)
+        result += `/ ${optionName} <b className="option_price">(+${optionPrice})</b> `;
     });
     console.log("result: ", result);
     setOptionsResult(result);
@@ -100,15 +102,13 @@ const payment = ({ user }) => {
   }, [pdNo]);
 
   useEffect(() => {
-    const pdNo = router.query.pd_no;
-    setPdNo(pdNo);
-    const total = parseInt(router.query.total || 0);
-    setTotal(total);
+    setPdNo(router.query.pd_no);
+    setTotal(parseInt(router.query.total || 0));
     const productKind = router.query.product_kind;
-    setProductKin(productKind);
+    setProductKin(router.query.product_kind);
     const options = JSON.parse(router.query.options);
     setSelectedOptions(options);
-    selectedOptionsResult(options);
+    selectedOptionsResult(options, router.query.hope_date);
   }, [router.query]);
 
   return (

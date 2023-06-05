@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import styles from "./Ggmall.module.scss";
 
 import { commaFormat } from "../../utils/number";
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/dist/style.css";
+import styles from "./Ggmall.module.scss";
+import { format } from "date-fns";
 
 const GgmallItems = ({ content, options, productKind }) => {
   const router = useRouter();
@@ -12,6 +15,9 @@ const GgmallItems = ({ content, options, productKind }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [price, setPrice] = useState({});
   const [option, setOption] = useState({});
+  const [dateOptionName, setDateOptionName] = useState("");
+  const [useDateOption, setUseDateOption] = useState(false);
+  const [selectedDay, setSelectedDay] = useState(new Date());
 
   const selectOption = (optionNo, option) => {
     console.log("selected option: ", option);
@@ -29,6 +35,12 @@ const GgmallItems = ({ content, options, productKind }) => {
   const renderOptions = () => {
     const comp = [];
     for (let i = 0; i < options.length; i++) {
+      // option_type 01: 선택, 02: 날짜
+      if (options[i].option_type !== "01") {
+        setDateOptionName(options[i].option_name);
+        setUseDateOption(true);
+        continue;
+      }
       const optionArr = [];
       optionArr.push(<option key={0}>선택</option>);
 
@@ -78,6 +90,7 @@ const GgmallItems = ({ content, options, productKind }) => {
         options: JSON.stringify(option),
         total: totalPrice,
         product_kind: productKind,
+        hope_date: format(selectedDay, "yyyy-MM-dd"),
       },
     });
   };
@@ -110,6 +123,28 @@ const GgmallItems = ({ content, options, productKind }) => {
               <div className={styles.product_details_desc}>
                 <h2>{content.pd_name}</h2>
                 {optionComp}
+
+                {useDateOption && (
+                  <div key={`10`} className="hope_date">
+                    <label className={styles.tit}>{dateOptionName}</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={format(selectedDay, "yyyy-MM-dd")}
+                      readOnly
+                    />
+                    <DayPicker
+                      mode="single"
+                      required
+                      selected={selectedDay}
+                      onSelect={setSelectedDay}
+                      modifiersClassNames={{
+                        selected: "my-selected",
+                        today: "my-today",
+                      }}
+                    />
+                  </div>
+                )}
                 <h2 className={styles.price}>
                   {commaFormat(totalPrice)}
                   <span>P</span>
