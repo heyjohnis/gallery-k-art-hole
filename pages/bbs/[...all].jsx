@@ -36,12 +36,13 @@ const Bbs = () => {
       });
   }, [router.query.all[0]]);
 
+  {/* harry 0605 pagebanner 정보 변경 */ }
   return (
     <>
       <PageBanner
         pageTitle={bbs[category]}
-        homePageUrl="/"
-        homePageText="Home"
+        homePageUrl="/contact"
+        homePageText="SUPPORT"
         activePageText={bbs[category]}
       />
 

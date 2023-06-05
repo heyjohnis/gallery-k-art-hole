@@ -216,7 +216,7 @@ const Navbar = ({ user }) => {
                     className={`nav-link ${currentPath == "/artworks/" && "active"}`}
                     onClick={toggleNavbar}
                   >
-                    Benefits <i className="bx bx-chevron-down"></i> {/*23.06.01 가입특전에서 Benefits*/}
+                    Member Privileges<i className="bx bx-chevron-down"></i> {/*harry 23.06.06 Benefits 에서 변경*/}
                   </Link>
 
                   <ul className="dropdown-menu">

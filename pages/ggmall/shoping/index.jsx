@@ -27,13 +27,14 @@ const ggList = ({ user }) => {
       });
   }, [user]);
 
+  {/* harry 0605 pagebanner 정보 변경 */ }
   return (
     <>
       <PageBanner
-        pageTitle="쇼핑"
-        homePageUrl="/"
-        homePageText="Home"
-        activePageText="쇼핑"
+        pageTitle="GG 쇼핑"
+        homePageUrl="/ggmall/service/#"
+        homePageText="GG MALL"
+        activePageText="GG 쇼핑"
       />
 
       <GgmallList contents={contents} productKind={"shoping"} />

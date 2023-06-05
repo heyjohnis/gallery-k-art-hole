@@ -10,12 +10,14 @@ const artworks = ({ user }) => {
       Router.push("/login");
     }
   }, [user]);
+
+  {/* harry 0605 pagebanner 정보 변경 */ }
   return (
     <>
       <PageBanner
         pageTitle="사은품"
-        homePageUrl="/사은품"
-        homePageText="Home"
+        homePageUrl="/artworks"
+        homePageText="MEMBER PRIVILEGES"
         activePageText="사은품"
       />
       <p className="text-center">

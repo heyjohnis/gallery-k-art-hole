@@ -27,12 +27,13 @@ const ggList = ({ user }) => {
       });
   }, [user]);
 
+  {/* harry 0605 pagebanner 정보 변경 */ }
   return (
     <>
       <PageBanner
         pageTitle="제휴서비스"
-        homePageUrl="/"
-        homePageText="Home"
+        homePageUrl="/ggmall/service/#"
+        homePageText="GG MALL"
         activePageText="제휴서비스"
       />
 

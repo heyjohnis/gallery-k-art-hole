@@ -11,13 +11,15 @@ const artworks = ({ user }) => {
       Router.push("/login");
     }
   }, [user]);
+
+  {/* harry 0605 pagebanner 정보 변경 */ }
   return (
     <>
       <PageBanner
-        pageTitle="미술품 보기"
-        homePageUrl="/미술품"
-        homePageText="Home"
-        activePageText="미술품 보기"
+        pageTitle="미술품"
+        homePageUrl="/artworks/"
+        homePageText="MEMBER PRIVILEGES"
+        activePageText="미술품"
       />
       <ArtworkList />
       <Footer />
