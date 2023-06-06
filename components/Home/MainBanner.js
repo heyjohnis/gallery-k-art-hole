@@ -221,7 +221,7 @@ const MainBanner = () => {
                       </div>
                       <div className="slider-btn">
                         <Link
-                          href="ggmall/service/"
+                          href="ggmall/shoping/"
                           className="default-btn black"
                         >
                           포인트몰
