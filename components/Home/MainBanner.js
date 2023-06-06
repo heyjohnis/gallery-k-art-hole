@@ -1,20 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Modal, Button } from "react-bootstrap";
+import YouTube from "react-youtube";
+import styles from "./MainBanner.module.scss";
 
 const MainBanner = () => {
+  const [show, setShow] = useState(false);
+  const showModal = () => {
+    setShow(true);
+  };
+  const onPlayerReady = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  };
+
+  const opts = {
+    width: "100%",
+    height: "100%",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
+  const handleClose = () => {
+    setShow(false);
+  };
   return (
     <>
       <section className="slider-area">
         <Swiper
-          navigation={true}
+          navigation={false}
+          spaceBetween={0}
           autoplay={{
             delay: 6500,
             disableOnInteraction: true,
             pauseOnMouseEnter: true,
           }}
-          spaceBetween={50}
           scrollbar={{ draggable: true }}
           pagination={{
             clickable: true,
@@ -40,10 +63,27 @@ const MainBanner = () => {
                       </h1>
                       <div className="slider-btn">
                         <Link
+                          href="#"
+                          className="default-btn black"
+                          onClick={showModal}
+                        >
+                          소개
+                        </Link>
+                      </div>
+                      <div className="slider-btn">
+                        <Link
                           href="/mypage/reservation/"
                           className="default-btn black"
                         >
                           예약하기
+                        </Link>
+                      </div>
+                      <div className="slider-btn">
+                        <Link
+                          href="ggmall/service/"
+                          className="default-btn black"
+                        >
+                          포인트몰
                         </Link>
                       </div>
                     </div>
@@ -68,12 +108,31 @@ const MainBanner = () => {
                         <b>전국 300여 지역 골프장</b> 이용
                       </h1>
                       <div className="slider-btn">
-                        <Link
-                          href="/mypage/reservation/"
-                          className="default-btn black"
-                        >
-                          예약하기
-                        </Link>
+                        <div className="slider-btn">
+                          <Link
+                            href="#"
+                            className="default-btn black"
+                            onClick={showModal}
+                          >
+                            소개
+                          </Link>
+                        </div>
+                        <div className="slider-btn">
+                          <Link
+                            href="/mypage/reservation/"
+                            className="default-btn black"
+                          >
+                            예약하기
+                          </Link>
+                        </div>
+                        <div className="slider-btn">
+                          <Link
+                            href="ggmall/service/"
+                            className="default-btn black"
+                          >
+                            포인트몰
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -99,10 +158,27 @@ const MainBanner = () => {
 
                       <div className="slider-btn">
                         <Link
+                          href="#"
+                          className="default-btn black"
+                          onClick={showModal}
+                        >
+                          소개
+                        </Link>
+                      </div>
+                      <div className="slider-btn">
+                        <Link
                           href="/mypage/reservation/"
                           className="default-btn black"
                         >
                           예약하기
+                        </Link>
+                      </div>
+                      <div className="slider-btn">
+                        <Link
+                          href="ggmall/service/"
+                          className="default-btn black"
+                        >
+                          포인트몰
                         </Link>
                       </div>
                     </div>
@@ -126,13 +202,29 @@ const MainBanner = () => {
                         <br />
                         차별화된 <b>프리미엄 혜택</b>
                       </h1>
-
+                      <div className="slider-btn">
+                        <Link
+                          href="#"
+                          className="default-btn black"
+                          onClick={showModal}
+                        >
+                          소개
+                        </Link>
+                      </div>
                       <div className="slider-btn">
                         <Link
                           href="/mypage/reservation/"
                           className="default-btn black"
                         >
                           예약하기
+                        </Link>
+                      </div>
+                      <div className="slider-btn">
+                        <Link
+                          href="ggmall/service/"
+                          className="default-btn black"
+                        >
+                          포인트몰
                         </Link>
                       </div>
                     </div>
@@ -143,6 +235,21 @@ const MainBanner = () => {
           </SwiperSlide>
         </Swiper>
       </section>
+      <Modal show={show} onHide={handleClose}>
+        <div className={styles.youtube_wrap}>
+          <div className={styles.youtube}>
+            <YouTube
+              videoId="ZQw7meQJWTk"
+              className={styles.scaleVideo}
+              opts={opts}
+              onReady={onPlayerReady}
+              onEnd={(e) => {
+                e.target.stopVideo(0);
+              }}
+            />
+          </div>
+        </div>
+      </Modal>
     </>
   );
 };
