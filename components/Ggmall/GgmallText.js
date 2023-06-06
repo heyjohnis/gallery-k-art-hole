@@ -49,7 +49,7 @@ const GgmallText = ({ content }) => {
                   </ul>
 
                   <div className="">
-                    {content.info_product ? (
+                    {content.info_contents ? (
                       <div
                         dangerouslySetInnerHTML={{
                           __html: content.info_contents,
