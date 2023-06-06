@@ -16,7 +16,12 @@ const OrderInfo = ({ product, total, selectedOptions, optionsResult }) => {
           </div>
           <div className="col-7 col-md-8">
             <span>{product && product.pd_name}</span>
-            <span className={styles.division}>{optionsResult}</span>
+            <span
+              className={styles.division}
+              dangerouslySetInnerHTML={{
+                __html: optionsResult,
+              }}
+            ></span>
           </div>
           <div className="col-2">
             <p className={styles.price}>
