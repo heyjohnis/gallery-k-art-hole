@@ -52,10 +52,11 @@
       width: 70%;
     }
     .mapImage {
+      margin-top: -30px;
       margin-bottom: 30px;
       float: right;
       width:30%;
-      min-height: 300px;
+      min-height: 400px;
       background-image: url(/images/main/main_02_map.png);
       background-size: contain;
       background-repeat: no-repeat;
@@ -104,6 +105,7 @@
         width: 100%;
       }
       .mapImage {
+        margin-top: 0;
         margin-bottom: 30px;
         float: auto;
         width:100%;
