@@ -32,7 +32,7 @@ const REGION_LIST = [
   { id: 2, data: "강원" },
   { id: 3, data: "충북" },
   { id: 4, data: "충남" },
-  { id: 5, data: "경부" },
+  { id: 5, data: "경북" },
   { id: 6, data: "경남" },
   { id: 7, data: "전북" },
   { id: 8, data: "전남" },

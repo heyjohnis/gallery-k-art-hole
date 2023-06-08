@@ -107,20 +107,23 @@ const MainBanner = () => {
                 <div className="d-table-cell">
                   <div className="container">
                     <div className="jumpx-slider-text overflow-hidden two">
-                      <h1>
-                        국내 프리미엄 골프장 300여 곳 포함
-                        <br /> 전 세계 유명 골프장을
-                        <br />
-                        <b>회원 이상의 가치</b>로 <b>이용</b>
-                      </h1>
-                      <p>
-                        한국 내 프리미엄 골프장 뿐만 아니라,
-                        <br className="mobile" />
-                        PGA / LPGA 등 경기가 개최되는 전 세계 유명 골프장과
-                        제휴를 통해 <br />
-                        회원 이상의 가치로 자유롭게 이용할 수 있는 특권을
-                        제공합니다.
-                      </p>
+                      <div className={styles.mainCopy}>
+                        <h1>
+                          국내 프리미엄 골프장 300여 곳 포함
+                          <br /> 전 세계 유명 골프장을
+                          <br />
+                          <b>회원 이상의 가치</b>로 <b>이용</b>
+                        </h1>
+                        <p>
+                          한국 내 프리미엄 골프장 뿐만 아니라,
+                          <br className="mobile" />
+                          PGA / LPGA 등 경기가 개최되는 전 세계 유명 골프장과
+                          제휴를 통해 <br />
+                          회원 이상의 가치로 자유롭게 이용할 수 있는 특권을
+                          제공합니다.
+                        </p>
+                      </div>
+                      <div className={styles.mapImage}></div>
                       <div className="slider-btn">
                         <Link
                           href="#"
@@ -308,14 +311,19 @@ const MainBanner = () => {
           </SwiperSlide>
         </Swiper>
       </section>
-      <Modal show={show} onHide={handleClose}>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        size="lg"
+        className={styles.mainModal}
+        aria-labelledby="contained-modal-title-vcenter"
+      >
         <div className={styles.youtube_wrap}>
           <div className={styles.youtube}>
             <YouTube
               videoId="ZQw7meQJWTk"
               className={styles.scaleVideo}
               opts={opts}
-              onReady={onPlayerReady}
               onEnd={(e) => {
                 e.target.stopVideo(0);
               }}
