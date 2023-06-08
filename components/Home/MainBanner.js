@@ -11,10 +11,6 @@ const MainBanner = () => {
   const showModal = () => {
     setShow(true);
   };
-  const onPlayerReady = (event) => {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  };
 
   const opts = {
     width: "100%",
