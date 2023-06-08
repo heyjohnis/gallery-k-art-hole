@@ -4160,19 +4160,6 @@ My page
 .gtSrFt {
   bottom: 68px !important;
 }
-
-.swiper-scrollbar {
-  background-color: rgba(0, 0, 0, 0.5);
-  /* 스크롤바의 배경색을 파란색으로 지정합니다. */
-  height: 20px;
-}
-
-.swiper-scrollbar-drag {
-  background-color: rgba(0, 136, 45, 0.843); /* 스크롤바 드래그 핸들의 배경색을 빨간색으로 지정합니다. */
-  width: 20px; /* 스크롤바 드래그 핸들의 너비를 20px로 지정합니다. */
-  opacity: 0.8; /* 스크롤바 드래그 핸들의 투명도를 0.7로 지정합니다. */
-}
-
 // Calendar Picker
 .my-day-picker {
   margin: 2em;
@@ -4194,3 +4181,20 @@ My page
 span.option_price {
   display: none;
 }
+
+// 메인배너 pagination
+.swiper-pagination {
+  bottom: 30px !important;
+}
+.swiper-pagination-bullet { 
+  width: 15px !important; 
+  height: 15px !important;
+  background: transparent !important;
+  border: 2px solid #fff !important; 
+  opacity: 0.6 !important; }
+.swiper-pagination-bullet-active { 
+  width: 40px !important; 
+  transition: width .5s !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  border: 2px solid transparent !important; }

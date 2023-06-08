@@ -5,6 +5,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Modal } from "react-bootstrap";
 import YouTube from "react-youtube";
 import styles from "./MainBanner.module.scss";
+import "swiper/scss/pagination";
 
 const MainBanner = () => {
   const [show, setShow] = useState(false);
@@ -27,21 +28,17 @@ const MainBanner = () => {
     <>
       <section className="slider-area">
         <Swiper
-          navigation={false}
           spaceBetween={0}
           autoplay={{
             delay: 6500,
             disableOnInteraction: true,
             pauseOnMouseEnter: true,
           }}
-          scrollbar={{ draggable: true }}
-          autoHeight={false}
           pagination={{
             clickable: true,
-            el: ".swiper-pagination",
-            type: "progressbar", // 페이지네이션을 바 형태로 지정합니다.
+            type: "bullets",
           }}
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Pagination, A11y]}
           className={`hero-swiper ${styles.swiper}`}
         >
           <SwiperSlide>
