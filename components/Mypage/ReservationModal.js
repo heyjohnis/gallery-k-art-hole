@@ -11,6 +11,7 @@ import axios from "axios";
 import cookie from "js-cookie";
 import baseUrl from "../../utils/baseUrl";
 import DatePicker from "../Common/DatePicker";
+import styles from "./Mypage.module.scss";
 
 const INITIAL_STATE = {
   user_name: "",
@@ -27,16 +28,19 @@ const INITIAL_STATE = {
 };
 
 const REGION_LIST = [
-  { id: 0, data: "경기서부" },
-  { id: 1, data: "경기동부" },
-  { id: 2, data: "강원" },
-  { id: 3, data: "충북" },
-  { id: 4, data: "충남" },
-  { id: 5, data: "경북" },
-  { id: 6, data: "경남" },
-  { id: 7, data: "전북" },
-  { id: 8, data: "전남" },
-  { id: 9, data: "제주" },
+  { id: 0, data: "서울/인천" },
+  { id: 1, data: "경기남동" },
+  { id: 2, data: "경기남서" },
+  { id: 3, data: "경기북동" },
+  { id: 4, data: "경기북서" },
+  { id: 5, data: "강원" },
+  { id: 6, data: "충북" },
+  { id: 7, data: "충남" },
+  { id: 8, data: "경북" },
+  { id: 9, data: "경남" },
+  { id: 10, data: "전북" },
+  { id: 11, data: "전남" },
+  { id: 12, data: "제주" },
 ];
 
 const ReservationModal = ({ user, updateReservation }, ref) => {
@@ -287,12 +291,20 @@ ${reservation.etc}`;
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <div
+          className={`btn ${styles.btn} ${styles.btn_outline}`}
+          onClick={handleClose}
+          style={{ marginRight: "0" }}
+        >
           닫기
-        </Button>
-        <Button variant="primary" onClick={handleSubmit}>
+        </div>
+        <div
+          className={`default-btn ${styles.btn} `}
+          style={{ borderRadius: "6px" }}
+          onClick={handleSubmit}
+        >
           신청
-        </Button>
+        </div>
       </Modal.Footer>
     </Modal>
   );

@@ -209,24 +209,26 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     border: 1px solid #ddd;
     border-radius: 4px;
   }
-  .btn_wrap {
-    text-align: right;
-  }
-  .btn {
-    height: 44px;
-    padding: 0 20px;
-    font-weight: 600;
-    line-height: 44px;
-  }
-  .btn_outline {
-    margin-right: 16px;
-    border: 1px solid #ddd;
-    color: $body-color;
-  }
-  .btn_conform {
-    background-color: $main-color;
-    color: $white-color;
-  }
+
+}
+
+.btn_wrap {
+  text-align: right;
+}
+.btn {
+  height: 44px;
+  padding: 0 20px;
+  font-weight: 600;
+  line-height: 44px;
+}
+.btn_outline {
+  margin-right: 16px;
+  border: 1px solid #ddd;
+  color: $body-color;
+}
+.btn_conform {
+  background-color: $main-color;
+  color: $white-color;
 }
 
 .table_membership {
