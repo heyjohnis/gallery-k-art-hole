@@ -2615,6 +2615,8 @@ GGmall 리스트
 /*
 슬라이드
 ======================================================*/
+
+.mobile {display: none;}
 .hero-swiper {
 
   .swiper-button-next,
@@ -2642,10 +2644,11 @@ GGmall 리스트
 }
 
 .jumpx-slider-item {
+
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100vh !important;
   position: relative;
   z-index: 1;
 
@@ -2662,8 +2665,6 @@ GGmall 리스트
   }
 
   .jumpx-slider-text {
-    max-width: 750px;
-
     span {
       color: $white-color;
       font-size: 20px;
@@ -2674,12 +2675,13 @@ GGmall 리스트
 
     h1 {
       text-align: left;
-      font-size: 54px;
+      font-size: 45px;
       font-family: "S-CoreDream-2ExtraLight";
       font-weight: 300;
       color: $white-color;
-      margin-bottom: 40px;
+      margin-bottom: 25px;
       line-height: 1.4;
+      letter-spacing: -2px;
 
       b {
         font-family: "S-CoreDream-6Bold";
@@ -2688,9 +2690,11 @@ GGmall 리스트
     }
 
     p {
+      font-family: S-CoreDream-3Light;
       color: $white-color;
-      font-size: 20px;
+      font-size: 12px;
       margin-bottom: 45px;
+      letter-spacing: -0.05rem;
     }
 
     .slider-btn {
@@ -2707,19 +2711,33 @@ GGmall 리스트
         &.black {
           min-width: 150px;
           padding: 14px 20px 12px;
-          font-family: "S-CoreDream-2ExtraLight";
-          background: rgba(0, 0, 0, 0.8);
+          font-family: "S-CoreDream-6Bold";
+          background: rgba(0, 0, 0, 0.5);
           border: 1px solid #fff;
           border-radius: 30px;
           line-height: 1;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           text-align: center;
         }
       }
     }
   }
 }
+@media only screen and (max-width: 768px) {
+.mobile {display: block;}
 
+.default-btn {
+  margin: 0 7px;
+
+  &.white {
+    color: $white-color;
+  }
+
+  &.black {
+    min-width: 80px !important;
+    font-size: 0.8rem !important;
+  }}
+} 
 /* 
 메인 동영상
 =====================================================*/
