@@ -7,7 +7,7 @@ import baseUrl from "../../../utils/baseUrl";
 import ReservationModal from "../ReservationModal";
 import Lottie from "react-lottie";
 import Booking from "../data/booking.json";
-import ReservationList from "../ReservationList";
+import ReservationComp from "./ReservationComp";
 
 const lottieOptions = {
   animationData: Booking,
@@ -138,7 +138,9 @@ const Reservation = ({ user }) => {
           </form>
 
           {reservations.length > 0 ? (
-            <ReservationList reservations={reservations} />
+            reservations.map((reservation, i) => (
+              <ReservationComp reservation={reservation} key={i} />
+            ))
           ) : (
             <div className={styles.content}>예약 내역이 없습니다.</div>
           )}

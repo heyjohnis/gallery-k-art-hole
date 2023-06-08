@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect, useRef } from "react";
-import ReservationList from "../ReservationList";
 import axios from "axios";
 import cookie from "js-cookie";
 import baseUrl from "../../../utils/baseUrl";
@@ -10,6 +9,7 @@ import Table from "react-bootstrap/Table";
 import ReservationModal from "../ReservationModal";
 import Lottie from "react-lottie";
 import Booking from "../data/booking.json";
+import ReservationComp from "./ReservationComp";
 
 const lottieOptions = {
   animationData: Booking,
@@ -85,7 +85,13 @@ const Home = ({ user }) => {
         </div>
       </div>
       <h3>예약정보</h3>
-      <ReservationList reservations={reservations} />
+      {reservations.length > 0 ? (
+        reservations.map((reservation, i) => (
+          <ReservationComp reservation={reservation} key={i} />
+        ))
+      ) : (
+        <div className={styles.content}>예약 내역이 없습니다.</div>
+      )}
       <h3 className="mt-5 mb-4">포인트 사용내역</h3>
       <Table bordered className={styles.table_membership}>
         <thead>
