@@ -7,39 +7,34 @@ import { commaFormat, hyphenForPhone } from "../../../utils/number";
 const OrderComp = ({ order }) => {
   console.log("order: ", order);
   const [isShow, setIsShow] = useState(false);
+  const [toggle, setToggle] = useState("toggle_on");
 
   const showDetail = () => {
     setIsShow(!isShow);
+    setToggle(!isShow ? "toggle_off" : "toggle_on");
   };
 
   return (
     <>
-      <Table className={styles.table_membership}>
-        <thead>
-          <tr>
-            <th></th>
-            <th>주문일시</th>
-            <th>주문상태</th>
-            <th>주문내용</th>
-            <th>포인트</th>
-            <th></th>
-          </tr>
-        </thead>
+      <Table className={styles.order_info}>
         <tbody>
           <tr>
-            <td>
-              <img src={order.thumb_img} width="120px" />
+            <td width="100px">
+              <img src={order.thumb_img} width="100px" />
             </td>
-            <td className="text-center">{order.order_date}</td>
-            <td className="text-center">{order.order_status}</td>
-            <td>{order.pd_name}</td>
-            <td className="text-right">
+            <td width="*">
+              {order.order_date}
+              <br />[{order.order_status}] {order.pd_name}
+              <br />
               {commaFormat(order.total_price || 0)} P
             </td>
-            <td>
-              <button className="btn" onClick={showDetail}>
+            <td width="50px">
+              <div
+                className={`${styles.btn_detail} ${toggle}`}
+                onClick={showDetail}
+              >
                 상세보기
-              </button>
+              </div>
             </td>
           </tr>
         </tbody>

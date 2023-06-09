@@ -25,27 +25,30 @@ const INITIAL_STATE = {
   login_user_name: "",
   start_time: "",
   end_time: "",
+  selected_cc: "",
 };
 
 const REGION_LIST = [
-  { id: 0, data: "서울/인천" },
-  { id: 1, data: "경기남동" },
-  { id: 2, data: "경기남서" },
-  { id: 3, data: "경기북동" },
-  { id: 4, data: "경기북서" },
-  { id: 5, data: "강원" },
-  { id: 6, data: "충북" },
-  { id: 7, data: "충남" },
-  { id: 8, data: "경북" },
-  { id: 9, data: "경남" },
-  { id: 10, data: "전북" },
-  { id: 11, data: "전남" },
-  { id: 12, data: "제주" },
+  { id: "02", data: "서울/인천" },
+  { id: "031SE", data: "경기남동" },
+  { id: "031SW", data: "경기남서" },
+  { id: "031NE", data: "경기북동" },
+  { id: "031NW", data: "경기북서" },
+  { id: "033", data: "강원" },
+  { id: "043", data: "충북" },
+  { id: "041", data: "충남" },
+  { id: "054", data: "경북" },
+  { id: "055", data: "경남" },
+  { id: "063", data: "전북" },
+  { id: "061", data: "전남" },
+  { id: "064", data: "제주" },
 ];
 
 const ReservationModal = ({ user, updateReservation }, ref) => {
   const [reservation, setReservation] = useState(INITIAL_STATE);
   const [show, setShow] = useState(false);
+  const [ccList, setCcList] = useState([]);
+  const [selectedRegion, setSelectedRegion] = useState();
   const [pickDates, setPickDates] = useState({
     hope_date1: "",
     hope_date2: "",
@@ -103,7 +106,9 @@ const ReservationModal = ({ user, updateReservation }, ref) => {
   3차: ${pickDates.hope_date3} 
   시간: ${reservation.start_time} ~ ${reservation.end_time}
 희망지역: 
-${checkItems.map((item) => REGION_LIST[item].data)}
+${checkItems
+  .map((item) => REGION_LIST.find((el) => el.id === item).data)
+  .join(", ")}
 기타사항: 
 ${reservation.etc}`;
     setReservation((prevState) => ({ ...prevState, [name]: value, memo }));
@@ -129,7 +134,7 @@ ${reservation.etc}`;
           id={`hope_region_${item.id}`}
           className="form-check-input"
           type="checkbox"
-          name="resv_place"
+          name="checked_region"
           value={item.data}
           onChange={(e) => handleSingleCheck(e.target.checked, item.id)}
           checked={checkItems.includes(item.id) ? true : false}
@@ -174,20 +179,69 @@ ${reservation.etc}`;
     console.log("pickDates: ", pickDates);
   };
 
+  const selectedCc = (cc) => {
+    console.log("cc: ", cc);
+    setReservation((prevState) => ({ ...prevState, resv_place: cc }));
+  };
+
+  const getCCList = async () => {
+    try {
+      const url = `${baseUrl}/reservation/cc-info`;
+      const medq_token = cookie.get("medq_token");
+      const response = await axios.post(url, reservation, {
+        headers: { Authorization: `Bearer ${medq_token}` },
+      });
+      console.log(response.data);
+      setCcList(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     if (user && user.user_no) {
       userInfoSetting();
     }
   }, [user]);
 
+  // CC 정보 전체로딩
+  useEffect(() => {
+    if (show) getCCList();
+  }, [show]);
+
+  // 선택한 지역에 따른 CC 정보
+  useEffect(() => {
+    const list = [];
+    ccList.map(
+      (item, i) =>
+        checkItems.includes(item.region_cd) &&
+        list.push(
+          <div
+            key={i}
+            className={styles.ccInfo}
+            onClick={() =>
+              selectedCc(
+                `[${item.region_nm}] ${item.cc_name} / ${item.cc_addr} / ${item.cc_tel}`
+              )
+            }
+          >
+            <p>
+              [{item.region_nm}] {item.cc_name} <span>{item.cc_addr}</span>
+            </p>
+          </div>
+        )
+    );
+    setSelectedRegion(list);
+  }, [checkItems]);
+
   return (
-    <Modal className="modal-lg" show={show} onHide={handleClose}>
+    <Modal className="modal-xl" show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>예약신청</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className="row">
-          <div className="col-lg-6 col-sm-12">
+          <div className="col-lg-4 col-sm-12">
             <DatePicker
               label="1차 선택"
               pickDate={pickedDates}
@@ -224,7 +278,7 @@ ${reservation.etc}`;
             </div>
           </div>
 
-          <div className="col-lg-6 col-sm-12">
+          <div className="col-lg-4 col-sm-12">
             <label>지역선택</label>
             <div className="checkbox-group">
               <div
@@ -249,6 +303,20 @@ ${reservation.etc}`;
               </div>
               {renderCheckbox()}
             </div>
+            <div className="form-group">
+              <input
+                type="text"
+                name="resv_place"
+                placeholder="골프장 정보"
+                className="form-control"
+                value={reservation.resv_place}
+                onChange={handleChange}
+                readOnly
+              />
+            </div>
+            <div className={styles.selectCc}>{selectedRegion}</div>
+          </div>
+          <div className="col-lg-4 col-sm-12">
             <label>이용자명</label>
             <div className="form-group">
               <input

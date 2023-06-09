@@ -292,17 +292,21 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
         text-align: right;
         padding-right: 16px;
       }
-      .btn_detail {
-        font-size: 16px;
-      }
-      .btn_oneon {
-        padding: 4px 10px;
-        background: $black-color;
-        color: $white-color;
-        font-size: 14px;
-      }
+
     }
   }
+}
+
+.btn_detail {
+  font-size: 16px;
+  cursor: pointer;
+
+}
+.btn_oneon {
+  padding: 4px 10px;
+  background: $black-color;
+  color: $white-color;
+  font-size: 14px;
 }
 
 .point_txt {
@@ -347,7 +351,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
           width: 50%;
         }
         .btn_detail {
-          font-size: 14px;
+          font-size: 13px;
         }
       }
     }
@@ -367,7 +371,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     padding: 0 16px;
     align-items: flex-start;
     position: fixed;
-    bottom: 100px;
+    bottom: 40px;
     right: 16px;
     background-color: $sub-color;
     border-radius: 50%;
@@ -432,4 +436,24 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   0%  {transform: translateY(0);}
   50%  {transform: translateY(-5px);}
   100%  {transform: translateY(0);}
+}
+
+.ccInfo {
+  p {
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    span {
+      margin-left: 0.3rem;
+      font-size:0.8rem; 
+      color: #999;
+    }
+  }
+}
+.selectCc {
+  padding: 0.5rem;
+  max-height: 200px;
+  overflow: auto;
 }

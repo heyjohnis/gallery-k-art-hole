@@ -5,8 +5,10 @@ import styles from "../Mypage.module.scss";
 
 const ReservationComp = ({ reservation }) => {
   const [isShow, setIsShow] = useState(false);
+  const [toggle, setToggle] = useState("toggle_on");
   const showDetailInfo = () => {
     setIsShow(!isShow);
+    setToggle(!isShow ? "toggle_off" : "toggle_on");
   };
 
   return (
@@ -36,15 +38,11 @@ const ReservationComp = ({ reservation }) => {
             </td>
             <td>
               <div
-                id="btn_toggle"
-                className={styles.btn_detail}
+                className={`${styles.btn_detail} ${toggle}`}
                 onClick={() => showDetailInfo()}
               >
                 예약상세
               </div>
-              {/* <div className={`btn ${styles.btn_oneon}`}>
-                            1:1문의
-                          </div> */}
             </td>
           </tr>
         </tbody>
@@ -71,6 +69,12 @@ const ReservationComp = ({ reservation }) => {
                 <td colSpan={2}>
                   <pre>{reservation.memo}</pre>
                 </td>
+              </tr>
+            )}
+            {reservation.resv_place && (
+              <tr>
+                <th>골프장 정보</th>
+                <td colSpan={2}>{reservation.resv_place}</td>
               </tr>
             )}
           </tbody>
