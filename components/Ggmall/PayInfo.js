@@ -9,11 +9,11 @@ import { commaFormat } from "../../utils/number";
 import baseUrl from "../../utils/baseUrl";
 import cookie from "js-cookie";
 const INITIAL_FORM = {
-  use_point: 0,
-  pay_card: 0,
   delivery_fee: 0,
   product_price: 0,
+  use_point: 0,
   total_price: 0,
+  pay_money: 0,
   my_point: 0,
 };
 
@@ -22,10 +22,14 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
   const [payInfo, setPayInfo] = useState(INITIAL_FORM);
   const [loading, setLoading] = useState(false);
   const [myPoint, setMyPoint] = useState(0);
+  const [usePoint, setUsePoint] = useState(0);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setPayInfo((prevState) => ({ ...prevState, [name]: value }));
+    setPayInfo((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const buyNow = () => {
@@ -45,6 +49,7 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
       total_price: totalPrice,
       use_point: totalPrice,
       my_point: myPoint,
+      pay_money: totalPrice - payInfo.use_point,
     }));
   };
 
@@ -79,7 +84,7 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
           <div className={styles.pay_group}>
             <h2>결제정보</h2>
             <div className={styles.info_wrap}>
-              <span className={styles.tit}>총 결제금액: </span>
+              <span className={styles.tit}>총 금액: </span>
               <span className={styles.tit}>
                 {commaFormat(payInfo.total_price)}
                 <span>P</span>
@@ -87,32 +92,19 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
             </div>
           </div>
           <div className={styles.pay_group}>
-            <h2>결제수단</h2>
-            <div className="radio">
-              <label className="custom">
-                <span>포인트결제</span>
-                <input
-                  type="radio"
-                  name="user_kind"
-                  value="01"
-                  defaultChecked="checked"
-                />
-                <span className="checkmark"></span>
-              </label>
-              <input
-                type="text"
-                name="use_point"
-                className="form-control"
-                value={payInfo.use_point}
-                onChange={handleChange}
-              />
-              <span>사용 가능한 포인트: {commaFormat(myPoint)}P</span>
-              {/* <label className="custom ml-30">
-                <span>카드결제</span>
-                <input type="radio" name="user_kind" value="02" />
-                <span className="checkmark"></span>
-              </label> */}
-            </div>
+            <h2>포인트결제</h2>
+            <input
+              type="text"
+              name="use_point"
+              className="form-control"
+              value={payInfo.use_point}
+              onChange={handleChange}
+            />
+            <span>사용 가능한 포인트: {commaFormat(myPoint)}P</span>
+          </div>
+          <div className={styles.pay_group}>
+            <h2>카드결제</h2>
+            <span>{payInfo.pay_money}</span>
           </div>
 
           <div className={styles.pay_group}>
