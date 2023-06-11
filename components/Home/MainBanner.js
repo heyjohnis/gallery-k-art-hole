@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Pagination, Autoplay, A11y } from "swiper";
 import { Modal } from "react-bootstrap";
 import YouTube from "react-youtube";
 import styles from "./MainBanner.module.scss";
@@ -30,7 +30,7 @@ const MainBanner = () => {
         <Swiper
           spaceBetween={0}
           autoplay={{
-            delay: 6500,
+            delay: 4000,
             disableOnInteraction: true,
             pauseOnMouseEnter: true,
           }}
@@ -38,7 +38,7 @@ const MainBanner = () => {
             clickable: true,
             type: "bullets",
           }}
-          modules={[Pagination, A11y]}
+          modules={[Pagination, A11y, Autoplay]}
           className={`hero-swiper ${styles.swiper}`}
         >
           <SwiperSlide>
