@@ -92,7 +92,9 @@ const ReservationModal = ({ user, updateReservation }, ref) => {
   };
 
   const handleClose = () => {
+    setReservation(INITIAL_STATE);
     setShow(false);
+    setCheckItems([]);
   };
 
   const handleChange = (e) => {
