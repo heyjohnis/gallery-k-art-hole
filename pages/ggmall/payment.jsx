@@ -54,50 +54,24 @@ const payment = ({ user }) => {
     setOptionsResult(result);
   };
 
-  // const buyProduct = (payInfo) => {
-  //   const payload = {
-  //     ...orderInfo,
-  //     ...payInfo,
-  //     pd_name: product.pd_name,
-  //     point_type: productKind === "service" ? "01" : "03",
-  //   };
-
-  //   const url = `${baseUrl}/mall/buy`;
-  //   axios({ method: "post", url, data: payload })
-  //     .then(({ data }) => {
-  //       console.log("data: ", data);
-  //       alertContent();
-  //     })
-  //     .catch((error) => {
-  //       console.log("error: ", error);
-  //     });
-  // };
-
-  const callback = (response) => {
-    const { success, error_msg } = response;
-    if (success) {
-      const payInfo = {
-        pay_method: "card",
-        imp_uid: response.imp_uid,
-        merchant_uid: response.merchant_uid,
-        paid_amount: response.paid_amount,
-        apply_num: response.apply_num,
-      };
-    }
-  };
-
   const buyProduct = (payInfo) => {
-    const { IMP } = window;
-    IMP.init("imp47778223");
-    const data = {
-      pg: "html5_inicis",
-      pay_method: "card",
-      merchant_uid: `mid_${new Date().getTime()}`,
-      amount: orderInfo.pay_amount,
-      name: product.pd_name,
-      buyer_name: user.user_name,
+    console.log("payInfo: ", payInfo);
+    const payload = {
+      ...orderInfo,
+      ...payInfo,
+      pd_name: product.pd_name,
+      point_type: productKind === "service" ? "01" : "03",
     };
-    IMP.request_pay(data, callback);
+
+    const url = `${baseUrl}/mall/buy`;
+    axios({ method: "post", url, data: payload })
+      .then(({ data }) => {
+        console.log("data: ", data);
+        alertContent();
+      })
+      .catch((error) => {
+        console.log("error: ", error);
+      });
   };
 
   useEffect(() => {
@@ -137,20 +111,6 @@ const payment = ({ user }) => {
     setSelectedOptions(options);
     selectedOptionsResult(options, router.query.hope_date);
   }, [router.query]);
-
-  // [1] 결제 모듈을 사용하기 위해 jquery와 iamport.payment를 불러온다.
-  useEffect(() => {
-    const jquery = document.createElement("script");
-    jquery.src = "https://code.jquery.com/jquery-1.12.4.min.js";
-    const iamport = document.createElement("script");
-    iamport.src = "https://cdn.iamport.kr/js/iamport.payment-1.1.7.js";
-    document.head.appendChild(jquery);
-    document.head.appendChild(iamport);
-    return () => {
-      document.head.removeChild(jquery);
-      document.head.removeChild(iamport);
-    };
-  }, []);
 
   return (
     <>

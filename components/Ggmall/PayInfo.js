@@ -8,6 +8,7 @@ import styles from "./Ggmall.module.scss";
 import { commaFormat } from "../../utils/number";
 import baseUrl from "../../utils/baseUrl";
 import cookie from "js-cookie";
+
 const INITIAL_FORM = {
   delivery_fee: 0,
   product_price: 0,
@@ -21,41 +22,73 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
   const [point, setPoint] = useState(0);
   const [payInfo, setPayInfo] = useState(INITIAL_FORM);
   const [loading, setLoading] = useState(false);
-  const [myPoint, setMyPoint] = useState(0);
-  const [usePoint, setUsePoint] = useState(0);
+  const [isAgree, setIsAgree] = useState(false);
 
-  const handleChange = (e) => {
+  const changeUsePoint = (e) => {
     const { name, value } = e.target;
-    setPayInfo((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const buyNow = () => {
-    console.log("payInfo: ", payInfo);
-    if (payInfo.total_price === parseInt(payInfo.use_point)) {
-      buyProduct(payInfo);
-    } else {
-      alert("결제금액이 맞지 않습니다. \n포인트를 확인해주세요");
+    console.log("name: ", name, "value: ", value);
+    if (
+      payInfo.my_point >= value &&
+      payInfo.total_price >= value &&
+      value >= 0
+    ) {
+      setPayInfo((prevState) => ({
+        ...prevState,
+        [name]: value,
+        pay_money: payInfo.total_price - value,
+      }));
     }
   };
 
-  const paymentInfo = () => {
-    const totalPrice = total + product.delivery_fee;
-    setPayInfo((prevState) => ({
-      ...prevState,
-      delivery_fee: product.delivery_fee,
-      total_price: totalPrice,
-      use_point: totalPrice,
-      my_point: myPoint,
-      pay_money: totalPrice - payInfo.use_point,
-    }));
+  const changeAgree = () => {
+    setIsAgree(!isAgree);
   };
 
-  useEffect(() => {
-    paymentInfo();
-  }, [product, total, myPoint]);
+  const buyNow = () => {
+    if (!isAgree) {
+      alert("구매 동의에 체크해주세요.");
+      return;
+    }
+    if (payInfo.pay_money !== 0) {
+      const { IMP } = window;
+      IMP.init("imp47778223");
+      const data = {
+        pg: "html5_inicis",
+        pay_method: "card",
+        merchant_uid: `mid_${new Date().getTime()}`,
+        amount: payInfo.pay_money,
+        name: product.pd_name,
+        buyer_name: user.user_name,
+        buyer_tel: user.mobile,
+        buyer_email: user.email,
+      };
+      IMP.request_pay(data, callback);
+    } else {
+      buyProduct(payInfo);
+    }
+  };
+
+  const callback = (response) => {
+    const { success, error_msg } = response;
+    console.log("response: ", response);
+    if (success) {
+      buyProduct({ ...payInfo, ...response });
+    } else {
+      alert(`결제에 실패하였습니다.\n${error_msg}`);
+    }
+  };
+
+  const setPayPoint = (point) => {
+    const totalPrice = total + (product.delivery_fee || 0);
+    const payPoint = totalPrice > point ? point : totalPrice;
+    setPayInfo((prevState) => ({
+      ...prevState,
+      total_price: totalPrice,
+      my_point: point,
+      use_point: payPoint,
+      pay_money: totalPrice - payPoint,
+    }));
+  };
 
   useEffect(() => {
     const url = `${baseUrl}/point/use`;
@@ -70,12 +103,26 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
         console.log("point ", user, data.use_point);
         let ablePoint = (user.yearly_point || 0) - (data.use_point || 0);
         ablePoint = ablePoint < 0 ? 0 : ablePoint;
-        setMyPoint(ablePoint);
+        setPayPoint(ablePoint);
       })
       .finally(() => {
         setLoading(false);
       });
   }, [total]);
+
+  // [1] 결제 모듈을 사용하기 위해 jquery와 iamport.payment를 불러온다.
+  useEffect(() => {
+    const jquery = document.createElement("script");
+    jquery.src = "https://code.jquery.com/jquery-1.12.4.min.js";
+    const iamport = document.createElement("script");
+    iamport.src = "https://cdn.iamport.kr/js/iamport.payment-1.1.7.js";
+    document.head.appendChild(jquery);
+    document.head.appendChild(iamport);
+    return () => {
+      document.head.removeChild(jquery);
+      document.head.removeChild(iamport);
+    };
+  }, []);
 
   return (
     <>
@@ -84,7 +131,7 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
           <div className={styles.pay_group}>
             <h2>결제정보</h2>
             <div className={styles.info_wrap}>
-              <span className={styles.tit}>총 금액: </span>
+              <span className={styles.tit}>총 결제포인트: </span>
               <span className={styles.tit}>
                 {commaFormat(payInfo.total_price)}
                 <span>P</span>
@@ -98,14 +145,16 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
               name="use_point"
               className="form-control"
               value={payInfo.use_point}
-              onChange={handleChange}
+              onChange={changeUsePoint}
             />
-            <span>사용 가능한 포인트: {commaFormat(myPoint)}P</span>
+            <span>사용 가능한 포인트: {commaFormat(payInfo.my_point)}P</span>
           </div>
-          <div className={styles.pay_group}>
-            <h2>카드결제</h2>
-            <span>{payInfo.pay_money}</span>
-          </div>
+          {payInfo.pay_money > 0 && (
+            <div className={styles.pay_group}>
+              <h2>카드결제</h2>
+              <span>{payInfo.pay_money.toLocaleString()}원</span>
+            </div>
+          )}
 
           <div className={styles.pay_group}>
             <h2>이용약관안내</h2>
@@ -118,7 +167,13 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
           </div>
 
           <div className={styles.agree_form}>
-            <input type="checkbox" id="agree1" className="form-check-input" />
+            <input
+              type="checkbox"
+              id="agree1"
+              className="form-check-input"
+              checked={isAgree}
+              onChange={changeAgree}
+            />
             <label htmlFor="agree1" className={styles.agree}>
               결제정보를 확인하였으며, 구매 및 계약진행에 동의합니다.
             </label>

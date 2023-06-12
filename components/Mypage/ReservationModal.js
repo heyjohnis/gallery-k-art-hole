@@ -109,8 +109,8 @@ const ReservationModal = ({ user, updateReservation }, ref) => {
   시간: ${reservation.start_time} ~ ${reservation.end_time}
 희망지역: 
 ${checkItems
-        .map((item) => REGION_LIST.find((el) => el.id === item).data)
-        .join(", ")}
+  .map((item) => REGION_LIST.find((el) => el.id === item).data)
+  .join(", ")}
 기타사항: 
 ${reservation.etc}`;
     setReservation((prevState) => ({ ...prevState, [name]: value, memo }));
