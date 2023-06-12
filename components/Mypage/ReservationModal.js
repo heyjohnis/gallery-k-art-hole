@@ -109,8 +109,8 @@ const ReservationModal = ({ user, updateReservation }, ref) => {
   시간: ${reservation.start_time} ~ ${reservation.end_time}
 희망지역: 
 ${checkItems
-  .map((item) => REGION_LIST.find((el) => el.id === item).data)
-  .join(", ")}
+        .map((item) => REGION_LIST.find((el) => el.id === item).data)
+        .join(", ")}
 기타사항: 
 ${reservation.etc}`;
     setReservation((prevState) => ({ ...prevState, [name]: value, memo }));
@@ -259,6 +259,7 @@ ${reservation.etc}`;
               pickDate={pickedDates}
               dateKind="hope_date3"
             />
+            <br />
             <label>희망시간</label>
             <div className="form-group d-flex">
               <input
@@ -281,6 +282,7 @@ ${reservation.etc}`;
           </div>
 
           <div className="col-lg-4 col-sm-12">
+            <br className="mobile" />
             <label>지역선택</label>
             <div className="checkbox-group">
               <div
