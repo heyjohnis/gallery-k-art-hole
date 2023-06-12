@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import PageBanner from "../../components/Common/PageBanner";
 import OrderForm from "../../components/Ggmall/OrderForm";
@@ -55,6 +55,7 @@ const payment = ({ user }) => {
   };
 
   const buyProduct = (payInfo) => {
+    console.log("payInfo: ", payInfo);
     const payload = {
       ...orderInfo,
       ...payInfo,

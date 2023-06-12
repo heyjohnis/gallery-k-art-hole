@@ -259,6 +259,7 @@ ${reservation.etc}`;
               pickDate={pickedDates}
               dateKind="hope_date3"
             />
+            <br />
             <label>희망시간</label>
             <div className="form-group d-flex">
               <input
@@ -281,6 +282,7 @@ ${reservation.etc}`;
           </div>
 
           <div className="col-lg-4 col-sm-12">
+            <br className="mobile" />
             <label>지역선택</label>
             <div className="checkbox-group">
               <div
