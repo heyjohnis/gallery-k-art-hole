@@ -7,7 +7,7 @@ import YouTube from "react-youtube";
 import styles from "./MainBanner.module.scss";
 import "swiper/scss/pagination";
 
-const MainBanner = () => {
+const MainBanner = ({ showReservationModal }) => {
   const [show, setShow] = useState(false);
   const showModal = () => {
     setShow(true);
@@ -24,6 +24,7 @@ const MainBanner = () => {
   const handleClose = () => {
     setShow(false);
   };
+
   return (
     <>
       <section className="slider-area">
@@ -72,12 +73,12 @@ const MainBanner = () => {
                         </Link>
                       </div>
                       <div className="slider-btn">
-                        <Link
-                          href="/mypage/reservation/"
+                        <div
+                          onClick={showReservationModal}
                           className="default-btn black"
                         >
                           예약하기
-                        </Link>
+                        </div>
                       </div>
                       <div className="slider-btn">
                         <Link
@@ -127,12 +128,12 @@ const MainBanner = () => {
                         </Link>
                       </div>
                       <div className="slider-btn">
-                        <Link
-                          href="/mypage/reservation/"
+                        <div
+                          onClick={showReservationModal}
                           className="default-btn black"
                         >
                           예약하기
-                        </Link>
+                        </div>
                       </div>
                       <div className="slider-btn">
                         <Link
@@ -177,12 +178,12 @@ const MainBanner = () => {
                         </Link>
                       </div>
                       <div className="slider-btn">
-                        <Link
-                          href="/mypage/reservation/"
+                        <div
+                          onClick={showReservationModal}
                           className="default-btn black"
                         >
                           예약하기
-                        </Link>
+                        </div>
                       </div>
                       <div className="slider-btn">
                         <Link
@@ -224,12 +225,12 @@ const MainBanner = () => {
                         </Link>
                       </div>
                       <div className="slider-btn">
-                        <Link
-                          href="/mypage/reservation/"
+                        <div
+                          onClick={showReservationModal}
                           className="default-btn black"
                         >
                           예약하기
-                        </Link>
+                        </div>
                       </div>
                       <div className="slider-btn">
                         <Link
@@ -281,12 +282,12 @@ const MainBanner = () => {
                         </Link>
                       </div>
                       <div className="slider-btn">
-                        <Link
-                          href="/mypage/reservation/"
+                        <div
+                          onClick={showReservationModal}
                           className="default-btn black"
                         >
                           예약하기
-                        </Link>
+                        </div>
                       </div>
                       <div className="slider-btn">
                         <Link
