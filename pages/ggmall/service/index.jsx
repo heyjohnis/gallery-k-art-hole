@@ -27,7 +27,6 @@ const ggList = ({ user }) => {
       });
   }, [user]);
 
-  {/* harry 0605 pagebanner 정보 변경 */ }
   return (
     <>
       <PageBanner

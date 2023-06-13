@@ -4197,8 +4197,14 @@ span.option_price {
   transition: width .5s !important;
   border-radius: 8px !important;
   background: #fff !important;
-  border: 2px solid transparent !important; }
+  border: 2px solid transparent !important; 
+}
 
+.option_user {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: #4E7D22
+}
 
 .select-region {
   input[type="checkbox"]{

@@ -145,18 +145,22 @@ const GgmallItems = ({ content, options, productKind }) => {
                     />
                   </div>
                 )}
-                <h2 className={styles.price}>
-                  {commaFormat(totalPrice)}
-                  <span>P</span>
-                </h2>
-                <div className={styles.btn_warp}>
-                  <div
-                    className={`default-btn ${styles.btn}`}
-                    onClick={buyProduct}
-                  >
-                    구매하기
-                  </div>
-                </div>
+                {totalPrice > 0 && (
+                  <>
+                    <h2 className={styles.price}>
+                      {commaFormat(totalPrice)}
+                      <span>P</span>
+                    </h2>
+                    <div className={styles.btn_warp}>
+                      <div
+                        className={`default-btn ${styles.btn}`}
+                        onClick={buyProduct}
+                      >
+                        구매하기
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>

@@ -84,6 +84,8 @@ const ReservationModal = ({ user, updateReservation }, ref) => {
       user_no: user.user_no,
       login_id: user.login_id,
       login_user_name: user.user_name,
+      user_name: user.option_name1,
+      user_phone: user.option_phone1,
     }));
   };
 
@@ -322,6 +324,15 @@ ${reservation.etc}`;
           </div>
           <div className="col-lg-4 col-sm-12">
             <label>이용자명</label>
+            <span className="text-danger">*</span>
+            {user && (
+              <span className="option_user">
+                {user.user_option_name}{" "}
+                {user.user_option !== "03"
+                  ? `: ${user.option_name1} ${user.option_name2}`
+                  : ""}
+              </span>
+            )}
             <div className="form-group">
               <input
                 type="text"
@@ -333,8 +344,8 @@ ${reservation.etc}`;
                 required
               />
             </div>
-
             <label>이용자 연락처</label>
+            <span className="text-danger">*</span>
             <div className="form-group">
               <input
                 type="text"

@@ -1,18 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import Link from "next/link";
-import styles from "./Ggmall.module.scss";
 
 import { commaFormat } from "../../utils/number";
 
 const GgmallList = ({ contents, productKind }) => {
-  const onClick = () => {
-    console.log("제품페이지 이동");
-  };
-
   return (
     <>
-      <section className="team-area ptb-100">
+      <section className="team-area mt-5 pb-100">
         <div className="container">
           <div className="row justify-content-center">
             {contents &&
@@ -24,7 +19,7 @@ const GgmallList = ({ contents, productKind }) => {
                   data-aos-delay={100}
                   key={i}
                 >
-                  <div className="single-team active" onClick={onClick}>
+                  <div className="single-team active">
                     <div className="team-single-img">
                       <img src={content.thumb_img} alt="Image" />
                     </div>
@@ -33,9 +28,11 @@ const GgmallList = ({ contents, productKind }) => {
                       <h3>{content.pd_name}</h3>
                       <p>
                         <span className="price">
-                          {commaFormat(content.price || 0)}
+                          {content.price > 0
+                            ? commaFormat(content.price || 0)
+                            : "별도문의"}
                         </span>
-                        P
+                        {content.price > 0 && "P"}
                       </p>
                     </div>
                     <Link
