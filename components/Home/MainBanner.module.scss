@@ -48,14 +48,15 @@
   .slide2 {
     background-image: url(/images/main/main_02.jpg);
     .mainCopy {
-      display: inline-block;
-      width: 70%;
+      position: relative;
     }
     .mapImage {
-      margin-bottom: 30px;
-      float: right;
-      width:30%;
-      min-height: 400px;
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 35%;
+      min-height:70vh;
       background-image: url(/images/main/main_02_map.png);
       background-size: contain;
       background-repeat: no-repeat;
@@ -104,9 +105,10 @@
         width: 100%;
       }
       .mapImage {
-        margin-top: 0;
+        position: inherit;
+        float: left;
         margin-bottom: 30px;
-        float: auto;
+        transform: translateY(0);
         width:100%;
         min-height: 180px;
         background-image: url(/images/main/main_002_map.png);

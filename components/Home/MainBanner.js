@@ -119,6 +119,7 @@ const MainBanner = ({ showReservationModal }) => {
                         </p>
                       </div>
                       <div className={styles.mapImage}></div>
+
                       <div className="slider-btn">
                         <Link
                           href="#"
