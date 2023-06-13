@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -270,9 +271,7 @@ const MainBanner = ({ showReservationModal }) => {
                           가치있는 삶을 한층 더 높은 품격으로 모십니다.
                         </p>
                       </div>
-                      <div className={styles.slide5Icons}>
-                        <img src="/images/main/main_05_service.png" alt="" />
-                      </div>
+                      <div className={styles.slide5Icons}></div>
                       <div className="slider-btn">
                         <Link
                           href="#"

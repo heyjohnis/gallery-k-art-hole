@@ -47,7 +47,7 @@ const Navbar = ({ user }) => {
         .then(({ data }) => {
           console.log("data: ", data);
         })
-        .finally(() => { });
+        .finally(() => {});
     }
   };
 
@@ -213,10 +213,13 @@ const Navbar = ({ user }) => {
                   {/*23.06.01 art에서 artworks*/}
                   <Link
                     href="/artworks"
-                    className={`nav-link ${currentPath == "/artworks/" && "active"}`}
+                    className={`nav-link ${
+                      currentPath == "/artworks/" && "active"
+                    }`}
                     onClick={toggleNavbar}
                   >
-                    Member Privileges<i className="bx bx-chevron-down"></i> {/*harry 23.06.06 Benefits 에서 변경*/}
+                    Member Privileges<i className="bx bx-chevron-down"></i>{" "}
+                    {/*harry 23.06.06 Benefits 에서 변경*/}
                   </Link>
 
                   <ul className="dropdown-menu">
@@ -241,7 +244,9 @@ const Navbar = ({ user }) => {
                 <li className="nav-item">
                   <Link
                     href="/ggmall/service"
-                    className={`nav-link ${currentPath == "/ggmall/service/" && "active"}`}
+                    className={`nav-link ${
+                      currentPath == "/ggmall/service/" && "active"
+                    }`}
                     onClick={toggleNavbar}
                   >
                     GG Mall {/*23.06.01 GG몰에서 GG Mall*/}
@@ -253,7 +258,7 @@ const Navbar = ({ user }) => {
                         제휴서비스 {/*23.06.01 제휴서비스에서 GG Service*/}
                       </Link>
                       <Link href="/ggmall/shoping" onClick={toggleNavbar}>
-                        GG 쇼핑  {/*23.06.01 쇼핑에서 GG Shop*/}
+                        GG 쇼핑 {/*23.06.01 쇼핑에서 GG Shop*/}
                       </Link>
                     </li>
                   </ul>
@@ -261,19 +266,22 @@ const Navbar = ({ user }) => {
                 <li className="nav-item">
                   <Link
                     href="/contact"
-                    className={`nav-link ${currentPath == "/contact/" && "active"
-                      }`}
+                    className={`nav-link ${
+                      currentPath == "/contact/" && "active"
+                    }`}
                     onClick={toggleNavbar}
                   >
-                    Support <i className="bx bx-chevron-down"></i>  {/*23.06.01 고객지원에서 Support*/}
+                    Support <i className="bx bx-chevron-down"></i>{" "}
+                    {/*23.06.01 고객지원에서 Support*/}
                   </Link>
 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
                         href="/contact"
-                        className={`nav-link ${currentPath == "/contact/" && "active"
-                          }`}
+                        className={`nav-link ${
+                          currentPath == "/contact/" && "active"
+                        }`}
                         onClick={toggleNavbar}
                       >
                         상담/문의
@@ -283,8 +291,9 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/bbs/notice"
-                        className={`nav-link ${currentPath == "/bbs/notice" && "active"
-                          }`}
+                        className={`nav-link ${
+                          currentPath == "/bbs/notice" && "active"
+                        }`}
                         onClick={toggleNavbar}
                       >
                         공지사항
@@ -293,8 +302,9 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/bbs/news"
-                        className={`nav-link ${currentPath == "/bbs/news/" && "active"
-                          }`}
+                        className={`nav-link ${
+                          currentPath == "/bbs/news/" && "active"
+                        }`}
                         onClick={toggleNavbar}
                       >
                         뉴스
@@ -303,8 +313,9 @@ const Navbar = ({ user }) => {
                     <li className="nav-item">
                       <Link
                         href="/faq"
-                        className={`nav-link ${currentPath == "/faq/" && "active"
-                          }`}
+                        className={`nav-link ${
+                          currentPath == "/faq/" && "active"
+                        }`}
                         onClick={toggleNavbar}
                       >
                         FAQ
@@ -426,13 +437,16 @@ const Navbar = ({ user }) => {
             })();
             ChannelIO('boot', {
               "pluginKey": "851db043-3ce1-4d57-b7af-58aa7dcb9c7e", //please fill with your plugin key
-              "memberId": "${(user && user.login_id) || ""
-            }", //fill with user id
+              "memberId": "${
+                (user && user.login_id) || ""
+              }", //fill with user id
               "profile": {
-                "name": "${(user && user.user_name) || ""
-            }", //fill with user name
-                "mobileNumber": "${(user && user.mobile) || ""
-            }", //fill with user phone number
+                "name": "${
+                  (user && user.user_name) || ""
+                }", //fill with user name
+                "mobileNumber": "${
+                  (user && user.mobile) || ""
+                }", //fill with user phone number
               }
             });`,
         }}

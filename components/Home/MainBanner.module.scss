@@ -72,13 +72,19 @@
   .slide5 {
     background-image: url(/images/main/main_05.jpg);
     .mainCopy {
-      display: inline-block;
-      width: 65%;
+      position: relative;
     }
     .slide5Icons {
-      margin-bottom: 30px;
-      display: inline-flex;
-      width:35%
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40%;
+      min-height:70vh;
+      background-image: url(/images/main/main_05_service.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 }
@@ -126,8 +132,12 @@
         width: 100%;
       }
       .slide5Icons {
-        width: 80%;
-        margin-left: 10%;
+        position: inherit;
+        float: left;
+        margin-bottom: 30px;
+        transform: translateY(0);
+        width:100%;
+        min-height: 180px;
       }
     }
   }
