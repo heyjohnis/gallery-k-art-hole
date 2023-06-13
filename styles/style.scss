@@ -4198,3 +4198,28 @@ span.option_price {
   border-radius: 8px !important;
   background: #fff !important;
   border: 2px solid transparent !important; }
+
+
+.select-region {
+  input[type="checkbox"]{
+    display:none
+  }
+  .form-check-inline {
+    display: inline-flex;
+    width: 32.3%;
+    margin: 0.5%;
+    padding: 0;
+  }
+  input[type="checkbox"] + label{
+    padding: 3px 0;
+    text-align: center;
+    display: block;
+    width:100%;
+    border:1px solid #ddd;
+    border-radius: 8px;
+  }
+  input[type="checkbox"]:checked + label{
+    background-color: #4E7D22;
+    color: #fff;
+  }
+}

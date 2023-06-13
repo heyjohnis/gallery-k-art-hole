@@ -284,7 +284,7 @@ ${reservation.etc}`;
           <div className="col-lg-4 col-sm-12">
             <br className="mobile" />
             <label>지역선택</label>
-            <div className="checkbox-group">
+            <div className="checkbox-group select-region">
               <div
                 className="form-check form-check-inline"
                 key={REGION_LIST.length + 1}
@@ -307,7 +307,7 @@ ${reservation.etc}`;
               </div>
               {renderCheckbox()}
             </div>
-            <div className="form-group">
+            <div className="form-group mt-2">
               <input
                 type="text"
                 name="resv_place"
