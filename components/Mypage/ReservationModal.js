@@ -23,8 +23,8 @@ const INITIAL_STATE = {
   user_no: "",
   login_id: "",
   login_user_name: "",
-  start_time: "",
-  end_time: "",
+  start_time: "09:00",
+  end_time: "15:00",
   selected_cc: "",
 };
 
