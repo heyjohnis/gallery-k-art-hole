@@ -71,7 +71,7 @@ const MainBanner = ({ showReservationModal }) => {
                           className="default-btn black"
                           onClick={showModal}
                         >
-                          소개
+                          소개영상
                         </Link>
                       </div>
                       <div className="slider-btn">
@@ -79,7 +79,7 @@ const MainBanner = ({ showReservationModal }) => {
                           onClick={showReservationModal}
                           className="default-btn black"
                         >
-                          예약하기
+                          Golf Booking
                         </div>
                       </div>
                       <div className="slider-btn">
@@ -87,7 +87,7 @@ const MainBanner = ({ showReservationModal }) => {
                           href="ggmall/shoping/"
                           className="default-btn black"
                         >
-                          포인트몰
+                          GG Mall
                         </Link>
                       </div>
                     </div>
@@ -127,7 +127,7 @@ const MainBanner = ({ showReservationModal }) => {
                           className="default-btn black"
                           onClick={showModal}
                         >
-                          소개
+                          소개영상
                         </Link>
                       </div>
                       <div className="slider-btn">
@@ -135,7 +135,7 @@ const MainBanner = ({ showReservationModal }) => {
                           onClick={showReservationModal}
                           className="default-btn black"
                         >
-                          예약하기
+                          Golf Booking
                         </div>
                       </div>
                       <div className="slider-btn">
@@ -143,7 +143,7 @@ const MainBanner = ({ showReservationModal }) => {
                           href="ggmall/shoping/"
                           className="default-btn black"
                         >
-                          포인트몰
+                          GG Mall
                         </Link>
                       </div>
                     </div>
@@ -177,7 +177,7 @@ const MainBanner = ({ showReservationModal }) => {
                           className="default-btn black"
                           onClick={showModal}
                         >
-                          소개
+                          소개영상
                         </Link>
                       </div>
                       <div className="slider-btn">
@@ -185,7 +185,7 @@ const MainBanner = ({ showReservationModal }) => {
                           onClick={showReservationModal}
                           className="default-btn black"
                         >
-                          예약하기
+                          Golf Booking
                         </div>
                       </div>
                       <div className="slider-btn">
@@ -193,7 +193,7 @@ const MainBanner = ({ showReservationModal }) => {
                           href="ggmall/shoping/"
                           className="default-btn black"
                         >
-                          포인트몰
+                          GG Mall
                         </Link>
                       </div>
                     </div>
@@ -224,7 +224,7 @@ const MainBanner = ({ showReservationModal }) => {
                           className="default-btn black"
                           onClick={showModal}
                         >
-                          소개
+                          소개영상
                         </Link>
                       </div>
                       <div className="slider-btn">
@@ -232,7 +232,7 @@ const MainBanner = ({ showReservationModal }) => {
                           onClick={showReservationModal}
                           className="default-btn black"
                         >
-                          예약하기
+                          Golf Booking
                         </div>
                       </div>
                       <div className="slider-btn">
@@ -240,7 +240,7 @@ const MainBanner = ({ showReservationModal }) => {
                           href="ggmall/shoping/"
                           className="default-btn black"
                         >
-                          포인트몰
+                          GG Mall
                         </Link>
                       </div>
                     </div>
@@ -278,7 +278,7 @@ const MainBanner = ({ showReservationModal }) => {
                           className="default-btn black"
                           onClick={showModal}
                         >
-                          소개
+                          소개영상
                         </Link>
                       </div>
                       <div className="slider-btn">
@@ -286,7 +286,7 @@ const MainBanner = ({ showReservationModal }) => {
                           onClick={showReservationModal}
                           className="default-btn black"
                         >
-                          예약하기
+                          Golf Booking
                         </div>
                       </div>
                       <div className="slider-btn">
@@ -294,7 +294,7 @@ const MainBanner = ({ showReservationModal }) => {
                           href="ggmall/shoping/"
                           className="default-btn black"
                         >
-                          포인트몰
+                          GG Mall
                         </Link>
                       </div>
                     </div>
