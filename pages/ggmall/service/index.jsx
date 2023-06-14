@@ -5,6 +5,7 @@ import baseUrl from "./../../../utils/baseUrl";
 import Footer from "./../../../components/Layouts/Footer";
 import PageBanner from "./../../../components/Common/PageBanner";
 import GgmallList from "../../../components/Ggmall/GgmallList";
+import SearchKeyword from "../../../components/Ggmall/SearchKeyword";
 
 const ggList = ({ user }) => {
   const [, setLoading] = useState({});
@@ -35,7 +36,7 @@ const ggList = ({ user }) => {
         homePageText="GG MALL"
         activePageText="제휴서비스"
       />
-
+      <SearchKeyword searchKeyword={searchKeyword} serviceKind="02" />
       <GgmallList contents={contents} productKind={"service"} />
 
       <Footer />

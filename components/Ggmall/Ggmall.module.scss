@@ -222,6 +222,35 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   }
 }
 
+.searchArea {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto 15px;
+  .keywordBtns {
+    padding: 0;
+  }
+  button {padding: 14px 20px !important;}
+  .checkButton {
+    display: inline-block;
+    margin-right: 10px;
+    input[type="checkbox"]{
+        display:none
+    }
+      
+    input[type="checkbox"] + label{
+      padding: 10px 20px;
+      text-align: center;
+      display: block;
+      width:100%;
+      border:1px solid #ddd;
+      border-radius: 8px;
+    }
+    input[type="checkbox"]:checked + label{
+      background-color: #4E7D22;
+      color: #fff;
+    }
+  }
+}
 
 
 
