@@ -8,6 +8,7 @@ import MainBanner from "../components/Home/MainBanner";
 //import Products from "../components/Home/Products";
 import Footer from "../components/Layouts/Footer";
 import ReservationModal from "../components/Mypage/ReservationModal";
+import ContactForm from "../components/Home/ContactForm";
 
 export default function Index({ user }) {
   const router = useRouter();
@@ -28,6 +29,7 @@ export default function Index({ user }) {
 
       {/* <Products /> */}
 
+      <ContactForm />
       <Footer />
 
       <ReservationModal
