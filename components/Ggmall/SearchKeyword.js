@@ -81,25 +81,31 @@ const SearchKeyword = ({ searchWords, serviceKind }) => {
 
   return (
     <section className={`container ${styles.searchArea}`}>
-      <ul className={styles.keywordBtns}>{keywordBtns}</ul>
-      <div className={styles.inputKeyword}>
-        <div className="input-group">
-          <div className="form-outline">
-            <input
-              id="search-focus"
-              type="search"
-              name="search_word"
-              className="form-control"
-              onChange={handleChange}
-            />
+      <div className="row">
+        <div className="col-xl-9 col-sm-12">
+          <ul className={styles.keywordBtns}>{keywordBtns}</ul>
+        </div>
+        <div className="col-xl-3 col-sm-12">
+          <div className={styles.inputKeyword}>
+            <div className={`${styles.searchInput} input-group`}>
+              <div className={`${styles.input} form-outline`}>
+                <input
+                  id="search-focus"
+                  type="search"
+                  name="search_word"
+                  className="form-control"
+                  onChange={handleChange}
+                />
+              </div>
+              <button
+                type="button"
+                className="default-btn"
+                onClick={searchInputWord}
+              >
+                <FontAwesomeIcon icon={faSearch} />
+              </button>
+            </div>
           </div>
-          <button
-            type="button"
-            className="default-btn"
-            onClick={searchInputWord}
-          >
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
         </div>
       </div>
     </section>

@@ -223,11 +223,12 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
 
 .searchArea {
-  display: flex;
-  justify-content: space-between;
   margin: 40px auto 15px;
   .keywordBtns {
     padding: 0;
+  }
+  .searchInput {
+    justify-content: right;
   }
   button {padding: 14px 20px !important;}
   .checkButton {
@@ -264,5 +265,11 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   .pay_warp {
     padding-left: 0;
     box-shadow: none;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .input {
+    width: calc(100% - 53px);
   }
 }
