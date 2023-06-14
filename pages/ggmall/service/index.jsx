@@ -7,18 +7,17 @@ import PageBanner from "./../../../components/Common/PageBanner";
 import GgmallList from "../../../components/Ggmall/GgmallList";
 import SearchKeyword from "../../../components/Ggmall/SearchKeyword";
 
+const INITIAL_SEARCH = {
+  keyword: "",
+  search_word: "",
+};
+
 const ggList = ({ user }) => {
   const [, setLoading] = useState({});
   const [contents, setContents] = useState("");
 
-  useEffect(() => {
-    if (!user) {
-      alert("로그인이 필요합니다.");
-      Router.push("/login");
-    }
-    setLoading(true);
-
-    const url = `${baseUrl}/mall?pd_kind=02`;
+  const getContents = ({ keyword, search_word }) => {
+    const url = `${baseUrl}/mall?pd_kind=02&keyword=${keyword}&search_word=${search_word}`;
     axios({ method: "get", url })
       .then(({ data }) => {
         setContents(data);
@@ -26,6 +25,14 @@ const ggList = ({ user }) => {
       .finally(() => {
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    if (!user) {
+      alert("로그인이 필요합니다.");
+      Router.push("/login");
+    }
+    getContents(INITIAL_SEARCH);
   }, [user]);
 
   return (
@@ -36,7 +43,7 @@ const ggList = ({ user }) => {
         homePageText="GG MALL"
         activePageText="제휴서비스"
       />
-      <SearchKeyword searchKeyword={searchKeyword} serviceKind="02" />
+      <SearchKeyword searchWords={getContents} serviceKind="02" />
       <GgmallList contents={contents} productKind={"service"} />
 
       <Footer />
