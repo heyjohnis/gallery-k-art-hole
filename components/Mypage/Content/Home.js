@@ -93,28 +93,34 @@ const Home = ({ user }) => {
         <div className={styles.content}>예약 내역이 없습니다.</div>
       )}
       <h3 className="mt-5 mb-4">포인트 사용내역</h3>
-      <Table bordered className={styles.table_membership}>
-        <thead>
-          <tr>
-            <th>일시</th>
-            <th colSpan={2}>포인트 내역</th>
-            <th>포인트</th>
-          </tr>
-        </thead>
-        <tbody>
-          {points.map((point, i) => (
-            <tr key={i}>
-              <td className="text-center">{point.point_date}</td>
-              <td>{point.point_type}</td>
-              <td>
-                {point.resv_name}
-                {point.pd_name}
-              </td>
-              <td className="text-right">{commaFormat(point.point || 0)} P</td>
+      {points.length > 0 ? (
+        <Table bordered className={styles.table_membership}>
+          <thead>
+            <tr>
+              <th>일시</th>
+              <th colSpan={2}>포인트 내역</th>
+              <th>포인트</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {points.map((point, i) => (
+              <tr key={i}>
+                <td className="text-center">{point.point_date}</td>
+                <td>{point.point_type}</td>
+                <td>
+                  {point.resv_name}
+                  {point.pd_name}
+                </td>
+                <td className="text-right">
+                  {commaFormat(point.point || 0)} P
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      ) : (
+        <div className={styles.content}> 포인트 사용 내역이 없습니다.</div>
+      )}
       <div style={{ marginTop: "10rem" }}> </div>
       <ReservationModal
         user={user}

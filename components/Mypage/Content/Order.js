@@ -3,6 +3,7 @@ import axios from "axios";
 import cookie from "js-cookie";
 import baseUrl from "../../../utils/baseUrl";
 import OrderComp from "./OrderComp";
+import styles from "../Mypage.module.scss";
 
 const Order = () => {
   const [orders, setOrders] = useState([]);
@@ -25,9 +26,11 @@ const Order = () => {
     <div className="container">
       <>
         <h3>주문/배송 내역 </h3>
-        {orders.map((order, i) => (
-          <OrderComp order={order} key={i} />
-        ))}
+        {orders.length > 0 ? (
+          orders.map((order, i) => <OrderComp order={order} key={i} />)
+        ) : (
+          <div className={styles.content}> 포인트 사용 내역이 없습니다.</div>
+        )}
       </>
     </div>
   );
