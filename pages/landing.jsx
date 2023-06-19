@@ -5,6 +5,7 @@ import Lottie from "react-lottie";
 import Link from "next/link";
 import YouTube from "react-youtube";
 import ContactForm from "../components/Contact/ContactForm";
+import LandingContactForm from "../components/LandingContactForm";
 
 const lottieOptions = {
   animationData: Booking,
@@ -48,7 +49,7 @@ const landing = () => {
           />
         </div>
       </div>
-      <div>
+      <div style={{ position: "absolute" }}>
         <Link href="#contact">
           <div className={`btn ${styles.btn_booking}`}>
             <div className={styles.ani_booking}>
@@ -60,9 +61,7 @@ const landing = () => {
           </div>
         </Link>
       </div>
-      <div id="contact">
-        <ContactForm />
-      </div>
+      <LandingContactForm />
     </div>
   );
 };
