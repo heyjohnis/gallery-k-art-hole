@@ -48,11 +48,33 @@ const GgmallText = ({ content }) => {
                     </li>
                   </ul>
 
-                  <div className="">
+                  <div id="tab1" className={styles.contents}>
                     {content.info_contents ? (
                       <div
                         dangerouslySetInnerHTML={{
                           __html: content.info_contents,
+                        }}
+                      ></div>
+                    ) : (
+                      "준비중입니다."
+                    )}
+                  </div>
+                  <div id="tab2" className={styles.contents}>
+                    {content.info_use ? (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: content.info_contents,
+                        }}
+                      ></div>
+                    ) : (
+                      "준비중입니다."
+                    )}
+                  </div>
+                  <div id="tab3" className={styles.contents}>
+                    {content.info_use ? (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: content.info_notice,
                         }}
                       ></div>
                     ) : (

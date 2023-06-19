@@ -327,6 +327,10 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   }
 }
 
+.contents {
+  padding-top: 50px;
+}
+
 @media only screen and (max-width : 1280px) {
   .pay_warp {
     padding-left: 1em;
