@@ -114,6 +114,11 @@ const GgmallItems = ({ content, options, productKind }) => {
       <section className="news-area pt-100">
         <div className="container">
           <div className="row align-items-center">
+            <div className="col-lg-12 col-md-12">
+              {/* <p>{`${productKind === "service" ? "제휴서비스" : "쇼핑"} > ${
+                content.keyword
+              }`}</p> */}
+            </div>
             <div className="col-lg-6 col-md-12">
               <div className={styles.items_image}>
                 <img src={content.thumb_img} />
@@ -121,7 +126,9 @@ const GgmallItems = ({ content, options, productKind }) => {
             </div>
             <div className="col-lg-6 col-md-12">
               <div className={styles.product_details_desc}>
+                <label className={styles.brand}>{content.brand}</label>
                 <h2>{content.pd_name}</h2>
+                <p>{content.info_short}</p>
                 {optionComp}
 
                 {useDateOption && (

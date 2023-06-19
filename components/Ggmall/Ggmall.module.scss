@@ -58,12 +58,22 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
 /*GGmall 상세*/
 .product_details_desc {
+  font-family: "S-CoreDream-6Bold";
   margin-top: 30px;
   padding-left: 30px;
+  .brand {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #777;
+  }
   h2 {
-    font-family: $body-font-family;
+    font-family: "S-CoreDream-6Bold";
     font-weight: 500;
+  }
+  p {
     margin-bottom: 50px;
+    font-family: "S-CoreDream-3Light";
   }
   .info_wrap {
     font-size: 18px;
@@ -252,22 +262,69 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     }
   }
 }
+.product {
+  font-family: "S-CoreDream-3Light";
+  .brand {
+    display: block;
+    height: 20px;
+    font-family: "S-CoreDream-3Light";
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    color: #555;
+    font-weight: 700;
+    text-align: left;
+  }
+  .pdName {
+    margin-bottom: 0.3rem;
+    width: 100%;
+    font-family: "S-CoreDream-6Bold";
+    font-size: 16px;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    font-weight: 600;
+  }
 
-.pdName {
-  font-size: 16px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: block;
-  overflow: hidden;
-}
+  .infoShort {
+    font-family: "S-CoreDream-3Light";
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    color: #999;
+    text-align: left;
+  }
 
-.infoShort {
-  font-size: 13px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: block;
-  overflow: hidden;
-  color: #999;
+  .originPrice {
+    display: block;
+    height: 20px;
+    font-family: "S-CoreDream-3Light";
+    margin-bottom: 0 !important;
+    font-size: 12px;
+    color: #999;
+    text-align: left;
+    text-decoration: line-through;
+  }
+
+  .price {
+    font-family: "S-CoreDream-6Bold";
+    text-align: left;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    color: $sub-color;
+    span {
+      margin-left: 5px;
+      font-family: "S-CoreDream-3Light";
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
 }
 
 @media only screen and (max-width : 1280px) {

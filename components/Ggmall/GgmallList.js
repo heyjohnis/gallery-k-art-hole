@@ -6,20 +6,39 @@ import styles from "./Ggmall.module.scss";
 import { commaFormat } from "../../utils/number";
 
 const GgmallList = ({ contents, productKind }) => {
-  const price = (content) => {
-    if (content.price !== content.sale_price) {
+  const priceComp = (content) => {
+    const price = content.price || 0;
+    if (price === 0) {
       return (
         <>
-          <span className="price">D/C {commaFormat(content.price || 0)}</span>
-          <span className="price">{commaFormat(content.sale_price || 0)}</span>
-          <span className="price">P</span>
+          <span>별도문의</span>
+        </>
+      );
+    }
+
+    const saleAmt = price - content.origin_price;
+
+    if (saleAmt !== 0) {
+      return (
+        <>
+          <p className={styles.originPrice}>
+            {commaFormat(content.origin_price)}
+            <span className={styles.unit}>P</span>
+          </p>
+          <p className={styles.price}>
+            <b>{commaFormat(content.price || 0)}</b>
+            <span className={styles.unit}>P</span>
+          </p>
         </>
       );
     } else {
       return (
         <>
-          <span className="price">{commaFormat(content.price || 0)}</span>
-          <span className="price">P</span>
+          <p className={styles.originPrice}></p>
+          <p className={styles.price}>
+            <b>{commaFormat(content.price || 0)}</b>
+            <span className={styles.unit}>P</span>
+          </p>
         </>
       );
     }
@@ -33,37 +52,30 @@ const GgmallList = ({ contents, productKind }) => {
             {contents &&
               contents.map((content, i) => (
                 <div
-                  className="col-lg-3 col-sm-6"
+                  className={`col-lg-3 col-sm-6`}
                   data-aos="fade-in"
                   data-aos-duration="1200"
                   data-aos-delay={100}
                   key={i}
                 >
-                  <div className="single-team active">
-                    <div className="team-single-img">
-                      <img src={content.thumb_img} alt="Image" />
+                  <Link
+                    key={i}
+                    href={`/ggmall/${productKind}/${content.pd_no}`}
+                  >
+                    <div className={`single-team active ${styles.product}`}>
+                      <div className="team-single-img">
+                        <img src={content.thumb_img} alt="Image" />
+                      </div>
+                      <div className="team-content">
+                        <label className={styles.brand}>{content.brand}</label>
+                        <h3 className={styles.pdName}>{content.pd_name}</h3>
+                        <h4 className={styles.infoShort}>
+                          {content.info_short}
+                        </h4>
+                        {priceComp(content)}
+                      </div>
                     </div>
-
-                    <div className="team-content">
-                      <h3 className={styles.pdName}>{content.pd_name}</h3>
-                      <h4 className={styles.infoShort}>{content.info_short}</h4>
-                      <p>
-                        <span className="price">
-                          {content.price !== content.sale_price && "D/C "}
-                          {content.sale_price > 0
-                            ? commaFormat(content.price || 0)
-                            : "별도문의"}
-                        </span>
-                        {content.price > 0 && "P"}
-                      </p>
-                    </div>
-                    <Link
-                      className="default-btn"
-                      href={`/ggmall/${productKind}/${content.pd_no}`}
-                    >
-                      구매하기
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
               ))}
 
