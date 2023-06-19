@@ -253,7 +253,22 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   }
 }
 
+.pdName {
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+}
 
+.infoShort {
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  color: #999;
+}
 
 @media only screen and (max-width : 1280px) {
   .pay_warp {

@@ -1,10 +1,30 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import Link from "next/link";
+import styles from "./Ggmall.module.scss";
 
 import { commaFormat } from "../../utils/number";
 
 const GgmallList = ({ contents, productKind }) => {
+  const price = (content) => {
+    if (content.price !== content.sale_price) {
+      return (
+        <>
+          <span className="price">D/C {commaFormat(content.price || 0)}</span>
+          <span className="price">{commaFormat(content.sale_price || 0)}</span>
+          <span className="price">P</span>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <span className="price">{commaFormat(content.price || 0)}</span>
+          <span className="price">P</span>
+        </>
+      );
+    }
+  };
+
   return (
     <>
       <section className="team-area mt-5 pb-100">
@@ -25,10 +45,12 @@ const GgmallList = ({ contents, productKind }) => {
                     </div>
 
                     <div className="team-content">
-                      <h3>{content.pd_name}</h3>
+                      <h3 className={styles.pdName}>{content.pd_name}</h3>
+                      <h4 className={styles.infoShort}>{content.info_short}</h4>
                       <p>
                         <span className="price">
-                          {content.price > 0
+                          {content.price !== content.sale_price && "D/C "}
+                          {content.sale_price > 0
                             ? commaFormat(content.price || 0)
                             : "별도문의"}
                         </span>

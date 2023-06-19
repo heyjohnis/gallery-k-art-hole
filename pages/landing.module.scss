@@ -307,6 +307,33 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   color: $main-color;
 }
 
+.contactButton {
+  background-color: $main-color;
+  text-align: center;
+  color: #fff;
+  
+  button {
+    font-size: 20px;
+    width: 100%;
+    color: #fff;
+  }
+}
+
+.contactFormContainer {
+
+  background-color: #afc899 ;
+  overflow: hidden;
+}
+
+.contactFormContainer.open {
+  height: 300px;
+}
+
+.contactFormContainer.close {
+  height: 0;
+}
+
+
 @media only screen and (max-width: 575px) {
   /*잔여혜액 및 포인트*/
   .info_data {

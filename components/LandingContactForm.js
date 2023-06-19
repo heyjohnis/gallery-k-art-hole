@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 import Link from "next/link";
+import styles from "../pages/landing.module.scss";
 
 const alertContent = () => {
   MySwal.fire({
@@ -25,8 +26,9 @@ const INITIAL_STATE = {
   text: "",
 };
 
-const ContactForm = () => {
+const LandingContactForm = () => {
   const [contact, setContact] = useState(INITIAL_STATE);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +41,7 @@ const ContactForm = () => {
     try {
       const url = `https://node.galleryk.co.kr:8081/consult/homepage`;
       const { name, email, number, subject, text } = contact;
-      const content = `제목: ${subject} <br/> ${text}`;
+      const content = `제목: 그린갤러리상담신청 <br/> ${text}`;
       const req = {
         cnst_type: 20,
         logn_id: "",
@@ -59,13 +61,27 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form container">
-      <div className="row">
-        <div className="col-lg-4 col-md-4"></div>
-        <div className="col-lg-4 col-md-4">
+    <div className={`contact-form container`}>
+      <div className={`row ${styles.contactButton}`}>
+        <button
+          className={`btn default_btn`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          상담문의
+        </button>
+      </div>
+      <div
+        className={`row ${styles.contactFormContainer} ${
+          isOpen ? styles.open : styles.close
+        }`}
+      >
+        <div className="col-lg-3 col-md-3">
+          <div>1588-1778</div>
+        </div>
+        <div className="col-lg-6 col-md-6">
           <form onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col-lg-6 col-sm-6">
+              <div className="col-lg-12 col-sm-12">
                 <div className="form-group">
                   <input
                     type="text"
@@ -78,7 +94,7 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-6 col-sm-6">
+              <div className="col-lg-12 col-sm-12">
                 <div className="form-group">
                   <input
                     type="text"
@@ -91,7 +107,7 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-12 col-sm-12">
+              {/* <div className="col-lg-12 col-sm-12">
                 <div className="form-group">
                   <input
                     type="text"
@@ -103,13 +119,13 @@ const ContactForm = () => {
                     required
                   />
                 </div>
-              </div>
+              </div> */}
               <div className="col-lg-12 col-md-12">
                 <div className="form-group">
                   <textarea
                     name="text"
                     cols="30"
-                    rows="6"
+                    rows="1"
                     placeholder="문의 내용"
                     className="form-control"
                     value={contact.text}
@@ -118,29 +134,30 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-12 col-sm-12">
-                <input type="checkbox" id="agree" />
-                <label htmlFor="agree" className="contact-agree-label">
-                  <Link
-                    href="https://sprinkle-justice-3a1.notion.site/11de65f3be1241efb4e542bbb897a52c"
-                    target="_blank"
-                  >
-                    개인정보 동의
-                  </Link>
-                </label>
-              </div>
-              <div className="col-lg-12 col-sm-12">
-                <button type="submit" className="default-btn btn-two">
-                  상담신청
-                </button>
-              </div>
             </div>
           </form>
         </div>
-        <div className="col-lg-4 col-md-4"></div>
+        <div className="col-lg-3 col-md-3">
+          <div className="col-lg-12 col-sm-12">
+            <input type="checkbox" id="agree" />
+            <label htmlFor="agree" className="contact-agree-label">
+              <Link
+                href="https://sprinkle-justice-3a1.notion.site/11de65f3be1241efb4e542bbb897a52c"
+                target="_blank"
+              >
+                개인정보 동의
+              </Link>
+            </label>
+          </div>
+          <div className="col-lg-12 col-sm-12">
+            <button type="submit" className="default-btn btn-two">
+              상담신청
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default ContactForm;
+export default LandingContactForm;
