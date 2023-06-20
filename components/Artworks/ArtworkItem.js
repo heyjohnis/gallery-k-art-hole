@@ -34,7 +34,7 @@ const ArtworkItem = ({ content, user }) => {
           alert("작품신청이 완료되었습니다.");
         }
       })
-      .finally(() => {});
+      .finally(() => { });
   };
 
   useEffect(() => {
@@ -62,7 +62,7 @@ const ArtworkItem = ({ content, user }) => {
               <div className={styles.product_details_desc}>
                 <h2>{(content.atwk_nm || "").replace("(KK)", "")}</h2>
                 <div className={styles.info_wrap}>
-                  <span className={styles.tit}>작가명</span>
+                  <span className={styles.tit}>작 &nbsp;가&nbsp; 명</span>
                   {content.atst_nm}
                 </div>
                 <div className={styles.info_wrap}>
@@ -70,7 +70,7 @@ const ArtworkItem = ({ content, user }) => {
                   {content.atwk_no}
                 </div>
                 <div className={styles.info_wrap}>
-                  <span className={styles.tit}>호수</span>
+                  <span className={styles.tit}>호 &nbsp; &nbsp; &nbsp; 수</span>
                   {content.atwk_size_no}호
                 </div>
                 <div className={styles.info_wrap}>
@@ -89,7 +89,7 @@ const ArtworkItem = ({ content, user }) => {
                   )} X ${decimalPlaces(content.atwk_size_depth || 0, 1)}`}
                 </div>
                 <div className={styles.info_wrap}>
-                  <span className={styles.tit}>재료</span>
+                  <span className={styles.tit}>재 &nbsp; &nbsp; &nbsp; 료</span>
                   {content.atwk_resc}
                 </div>
                 <h2 className={styles.price}>

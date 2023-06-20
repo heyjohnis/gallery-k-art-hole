@@ -18,13 +18,14 @@ const ArtworkContent = ({ content }) => {
               <div className={styles.items_text}>
                 <div className="tab quote-list-tab">
                   {/* Tabs */}
+                  {/*
                   <ul className="tabs">
                     <li className="current">
                       <Link href="#tab1">
                         <span className={styles.tab_tit}>작품소개</span>
                       </Link>
                     </li>
-
+                    
                     <li>
                       <Link href="#tab2">
                         <span className={styles.tab_tit}>작가소개</span>
@@ -36,7 +37,7 @@ const ArtworkContent = ({ content }) => {
                       </Link>
                     </li>
                   </ul>
-
+                  */}
                   <div className="tab_content">
                     <div id="tab1">
                       <h3>작품소개</h3>
