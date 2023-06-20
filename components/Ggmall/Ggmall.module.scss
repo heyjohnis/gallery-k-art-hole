@@ -9,6 +9,12 @@ $gray-color: #666666;
 $light-color: #999999;
 $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
+
+.itemContainter {
+  padding: 2rem;
+  border: 1px solid #eee;
+}
+
 /*제휴서비스 소개*/
 .item_card {
   margin-bottom: 50px;

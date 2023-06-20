@@ -48,7 +48,7 @@ const ArtworkItem = ({ content, user }) => {
   return (
     <>
       <section className="news-area pt-100 mb-5">
-        <div className="container">
+        <div className={`container ${styles.ArtworkItem}`}>
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
               <div className={styles.artwork_image}>
