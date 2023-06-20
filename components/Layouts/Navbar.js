@@ -72,6 +72,11 @@ const Navbar = ({ user }) => {
   return (
     <>
       <div id="navbar" className="navbar-area fixed-top">
+        <div className={styles.top_event}>
+          <Link href="/landing">
+            <span> 📣 아트와 골프가 만나다! 그린갤러리 오픈프로모션 진행중!</span>
+          </Link>
+        </div>
         <div className={styles.backdrop}></div>
         <nav className="navbar navbar-expand-xl navbar-light">
           <div className="container">

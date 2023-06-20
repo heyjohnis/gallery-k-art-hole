@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'S-CoreDream-6Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $body-font-family: "Pretendard";
 $heading-font-family: "Hahmlet";
 
@@ -308,10 +315,11 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
 
 .contactButton {
+  font-family:'S-CoreDream-6Bold';
   background-color: $main-color;
   text-align: center;
   color: #fff;
-  
+  margin:0;
   button {
     font-size: 20px;
     width: 100%;
@@ -320,18 +328,20 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
 
 .contactFormContainer {
-
   background-color: #afc899 ;
   overflow: hidden;
+  &.open {
+    height: 250px;
+  }
+  &.close {
+    height: 0;
+  }
+  transition: height 0.3s ease-in-out;
+  .contact_items {
+    padding: 20px 0;
+  }
 }
 
-.contactFormContainer.open {
-  height: 300px;
-}
-
-.contactFormContainer.close {
-  height: 0;
-}
 
 
 @media only screen and (max-width: 575px) {
@@ -397,6 +407,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     border-radius: 50%;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
     animation: booking 2s 3s infinite ease-in-out;
+    z-index: 100;
     .ani_booking {
       margin-top: 3px;
       width: 90%;
@@ -455,8 +466,12 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   100%  {transform: translateY(0);}
 }
 
+
+/*랜딩페이지*/
+
 .container {
-  padding: 0;
+  padding: 140px 0 44px;
+  background-color: #011e14;
 }
 
 .youtube_wrap {
@@ -498,4 +513,67 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     }
   }
   
+}
+
+.event_form {
+  padding: 0;
+  position: fixed;
+  bottom:0;
+}
+
+.items {
+  padding: 0 20px;
+  &.tel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $black-color;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  &.items_form{
+    border-right: 1px dashed #666;
+    border-left: 1px dashed #666;
+  }
+  &.conform {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: $black-color;
+    span {
+      font-size:1.25rem;
+      font-weight: 700;
+      .small {
+        font-size:0.85rem;
+      }
+    }
+  }
+}
+
+.form_group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  label {
+    width: 25%;
+    margin-right: 0.5em;
+    color: $black-color;
+    font-weight: 700;
+  }
+  .form_control {    
+    width: 100%;
+    padding: 5px 20px;
+    font-size: 15px;
+    color: #212121;
+    background-color: #f7f7f7;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    &:hover, &:focus {
+      box-shadow: unset;
+      outline: 0;
+      background: #ddd;
+      transition: all 0.4s ease-in-out;
+    }
+  }
 }

@@ -61,7 +61,7 @@ const LandingContactForm = () => {
   };
 
   return (
-    <div className={`contact-form container`}>
+    <div className={`contact-form container ${styles.event_form}`}>
       <div className={`row ${styles.contactButton}`}>
         <button
           className={`btn default_btn`}
@@ -71,88 +71,98 @@ const LandingContactForm = () => {
         </button>
       </div>
       <div
-        className={`row ${styles.contactFormContainer} ${
+        className={`${styles.contactFormContainer} ${
           isOpen ? styles.open : styles.close
         }`}
       >
-        <div className="col-lg-3 col-md-3">
-          <div>1588-1778</div>
-        </div>
-        <div className="col-lg-6 col-md-6">
-          <form onSubmit={handleSubmit}>
-            <div className="row">
-              <div className="col-lg-12 col-sm-12">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="성함"
-                    className="form-control"
-                    value={contact.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="col-lg-12 col-sm-12">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="number"
-                    placeholder="연락처"
-                    className="form-control"
-                    value={contact.number}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              {/* <div className="col-lg-12 col-sm-12">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="subject"
-                    placeholder="제목을 적어주세요"
-                    className="form-control"
-                    value={contact.subject}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div> */}
-              <div className="col-lg-12 col-md-12">
-                <div className="form-group">
-                  <textarea
-                    name="text"
-                    cols="30"
-                    rows="1"
-                    placeholder="문의 내용"
-                    className="form-control"
-                    value={contact.text}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div className="col-lg-3 col-md-3">
-          <div className="col-lg-12 col-sm-12">
-            <input type="checkbox" id="agree" />
-            <label htmlFor="agree" className="contact-agree-label">
-              <Link
-                href="https://sprinkle-justice-3a1.notion.site/11de65f3be1241efb4e542bbb897a52c"
-                target="_blank"
-              >
-                개인정보 동의
-              </Link>
-            </label>
+        <div className={`row ${styles.contact_items}`}>
+          <div className={`col-lg-3 col-md-3 ${styles.items} ${styles.tel}`}>
+            <div>1588-1778</div>
           </div>
-          <div className="col-lg-12 col-sm-12">
-            <button type="submit" className="default-btn btn-two">
-              상담신청
-            </button>
+          <div className={`col-lg-6 col-md-6 ${styles.items} ${styles.items_form}`}>
+            <form onSubmit={handleSubmit}>
+              <div className="row">
+                <div className="col-lg-12 col-sm-12">
+                  <div className={styles.form_group}>
+                    <label for="name">이름</label>
+                    <input
+                      type="text"
+                      id ="name"
+                      name="name"
+                      placeholder="이름"
+                      className={styles.form_control}
+                      value={contact.name}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-12 col-sm-12">
+                <div className={styles.form_group}>
+                    <label for="number">연락처</label>
+                    <input
+                      type="text"
+                      id="number"
+                      name="number"
+                      placeholder="연락처"
+                      className={styles.form_control}
+                      value={contact.number}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                {/* <div className="col-lg-12 col-sm-12">
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      name="subject"
+                      placeholder="제목을 적어주세요"
+                      className="form-control"
+                      value={contact.subject}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div> */}
+                <div className="col-lg-12 col-md-12">
+                <div className={styles.form_group}>
+                    <label for="text">문의 내용</label>
+                    <textarea
+                      id="text"
+                      name="text"
+                      cols="30"
+                      rows="3"
+                      className={`form-control ${styles.form_control}`}
+                      value={contact.text}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-12 col-sm-12 text-right">
+                  <input type="checkbox" id="agree" />
+                  <label htmlFor="agree" className="contact-agree-label ml-1">
+                    <Link
+                      href="https://sprinkle-justice-3a1.notion.site/11de65f3be1241efb4e542bbb897a52c"
+                      target="_blank"
+                    >
+                      개인정보 동의
+                    </Link>
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div className={`col-lg-3 col-md-3 ${styles.items}  ${styles.conform}`}>
+            <div className="col-lg-12 col-sm-12">
+              <span>계약 NO! <span className={styles.small}>지금은 문의만</span></span>
+            </div>
+            <div className="col-lg-12 col-sm-12">
+              <button type="submit" className="default-btn btn-two">
+                상담신청
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -1,3 +1,27 @@
+$body-font-family: "Pretendard";
+$main-color: #4E7D22;
+$sub-color: #0E5039;
+$body-color: #4d4d4d;
+$heading-color: #212121;
+$white-color: #ffffff;
+$black-color: #000000;
+$gray-color: #666666;
+$light-color: #999999;
+$box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+
+.top_event {
+    background-color: #006349;
+    padding: 5px 0;
+    a {
+        display: flex;
+        justify-content: center;
+        span {
+            font-size: 10px;
+            color: $white-color;
+        }
+    }
+
+}
 .backdrop {
     display: none;
     position: absolute;
