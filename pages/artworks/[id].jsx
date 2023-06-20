@@ -32,10 +32,10 @@ const ArtworkDetail = ({ user }) => {
   return (
     <>
       <PageBanner
-        pageTitle="미술품 보기"
-        homePageUrl="/"
-        homePageText="Home"
-        activePageText="미술품 보기"
+        pageTitle="미술품"
+        homePageUrl="/artworks/"
+        homePageText="MEMBER PRIVILEGES"
+        activePageText="미술품"
       />
 
       <ArtworkItem content={content} user={user} />

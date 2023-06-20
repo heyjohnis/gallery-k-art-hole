@@ -27,7 +27,7 @@ const ArtworkCard = ({ artwork }) => {
           </p>
         </div>
         <Link className="default-btn" href={`/artworks/${artwork.atwk_no}`}>
-          보러가기
+          작품보기
         </Link>
       </div>
     </div>
