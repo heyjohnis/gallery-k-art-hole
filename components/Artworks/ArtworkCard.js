@@ -21,7 +21,7 @@ const ArtworkCard = ({ artwork }) => {
         </div>
         <div className="team-content">
           <h2>{artwork.atst_nm}</h2>
-          <h3>{artwork.atwk_nm}</h3>
+          <h3>{artwork.atwk_nm.replace("(KK)", "")}</h3>
           <p>
             <span className="price">{commaFormat(artwork.atwk_pric)}</span>원
           </p>

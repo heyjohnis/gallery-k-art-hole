@@ -51,7 +51,7 @@ const ArtworkItem = ({ content, user }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
-              <div className={styles.items_image}>
+              <div className={styles.artwork_image}>
                 <img
                   src={`https://www.artnomics.co.kr/data/artworks/${content.atwk_no}/thumb-image_500.jpg`}
                   alt={content.atwk_nm}

@@ -24,6 +24,21 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
 
 /*작품소개 소개 상세 & 작품소개 상세*/
+
+.artwork_image {
+  text-align: center;
+  background-color: #f7f7f7;
+  overflow: hidden;
+  border-radius: 16px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+
 .items_image {
   text-align: center;
   background-color: #f7f7f7;

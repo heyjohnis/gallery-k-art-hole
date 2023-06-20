@@ -22,10 +22,12 @@ const ArtworkList = () => {
     setForm((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const getArtworkData = () => {
+  const gotoPage = (pageNumber = 1) => {
+    console.log("pageNumber: ", pageNumber);
+    setPage((prevState) => ({ ...prevState, currentPage: pageNumber }));
     const url = `${baseUrl}/artworks`;
     const medq_token = cookie.get("medq_token");
-    const payload = { ...form, ...page };
+    const payload = { ...form, ...page, currentPage: pageNumber };
 
     axios({
       method: "post",
@@ -41,14 +43,9 @@ const ArtworkList = () => {
       .finally(() => {});
   };
 
-  const gotoPage = (pageNumber) => {
-    console.log("pageNumber: ", pageNumber);
-    setPage((prevState) => ({ ...prevState, currentPage: pageNumber }));
-  };
-
   useEffect(() => {
-    getArtworkData();
-  }, [page.currentPage]);
+    gotoPage();
+  }, []);
 
   return (
     <section className="team-area ptb-100">
@@ -110,7 +107,7 @@ const ArtworkList = () => {
             <button
               type="submit"
               className="default-btn btn-two"
-              onClick={getArtworkData}
+              onClick={gotoPage}
             >
               검색
             </button>
