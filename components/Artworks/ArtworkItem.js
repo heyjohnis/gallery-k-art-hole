@@ -60,7 +60,7 @@ const ArtworkItem = ({ content, user }) => {
             </div>
             <div className="col-lg-6 col-md-12">
               <div className={styles.product_details_desc}>
-                <h2>{content.atwk_nm}</h2>
+                <h2>{(content.atwk_nm || "").replace("(KK)", "")}</h2>
                 <div className={styles.info_wrap}>
                   <span className={styles.tit}>작가명</span>
                   {content.atst_nm}
