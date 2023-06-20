@@ -33,10 +33,10 @@ const MallDetail = () => {
   return (
     <>
       <PageBanner
-        pageTitle="쇼핑"
-        homePageUrl="/"
-        homePageText="Home"
-        activePageText="쇼핑"
+        pageTitle="GG 쇼핑"
+        homePageUrl="/ggmall/shoping/#"
+        homePageText="GG MALL"
+        activePageText="GG 쇼핑"
         activePageUrl="/ggmall/shoping/"
       />
 

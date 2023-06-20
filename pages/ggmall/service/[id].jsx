@@ -34,8 +34,8 @@ const MallDetail = () => {
     <>
       <PageBanner
         pageTitle="제휴서비스"
-        homePageUrl="/"
-        homePageText="Home"
+        homePageUrl="/ggmall/service/#"
+        homePageText="GG MALL"
         activePageText="제휴서비스"
         activePageUrl="/ggmall/service/"
       />
