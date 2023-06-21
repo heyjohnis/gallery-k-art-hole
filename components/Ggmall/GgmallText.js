@@ -63,7 +63,7 @@ const GgmallText = ({ content }) => {
                     {content.info_use ? (
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: content.info_contents,
+                          __html: content.info_use,
                         }}
                       ></div>
                     ) : (
@@ -71,7 +71,7 @@ const GgmallText = ({ content }) => {
                     )}
                   </div>
                   <div id="tab3" className={styles.contents}>
-                    {content.info_use ? (
+                    {content.info_notice ? (
                       <div
                         dangerouslySetInnerHTML={{
                           __html: content.info_notice,
