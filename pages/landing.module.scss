@@ -163,8 +163,41 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   }
 }
 
+.toggle_on,
+.toggle_off {
+  position: relative;
+  &::after {
+    position: absolute;
+    left: 20px;
+    content: '';
+    width: 10px;
+    /* 사이즈 */
+    height: 10px;
+    /* 사이즈 */
+    border-top: 2px solid #fff;
+    /* 선 두께 */
+    border-right: 2px solid #fff;
+    /* 선 두께 */
+  }
+}
+
+.toggle_on {
+  &::after {
+    top: 8px;
+    transform: rotate(315deg);
+  }
+}
+
+.toggle_off {
+  &::after {
+    top: 4px;
+    transform: rotate(135deg);
+  }
+}
+
 /*혜원혜택*/
 .btn_booking {
+  position: relative;
   width: 150px;
   height: 48px;
   margin-bottom: 45px;

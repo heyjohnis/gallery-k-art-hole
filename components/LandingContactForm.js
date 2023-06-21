@@ -90,7 +90,10 @@ const LandingContactForm = ({ openContact }) => {
           className={`btn default_btn `}
           onClick={() => setIsOpen(!isOpen)}
         >
-          상담문의
+          상담문의{" "}
+          <span className={`${isOpen ? styles.toggle_off : styles.toggle_on}`}>
+            {" "}
+          </span>
         </button>
       </div>
       <div
