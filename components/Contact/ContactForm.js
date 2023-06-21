@@ -28,6 +28,7 @@ const INITIAL_STATE = {
 
 const ContactForm = () => {
   const [contact, setContact] = useState(INITIAL_STATE);
+  const [checkAgree, setCheckAgree] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,11 +37,28 @@ const ContactForm = () => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("e: ", e.target);
     e.preventDefault();
+
+    if (!contact.name) {
+      alert("이름을 입력해주세요.");
+      return;
+    }
+
+    if (!contact.number) {
+      alert("연락처를 입력해주세요.");
+      return;
+    }
+
+    if (!checkAgree) {
+      alert("개인정보 수집 및 이용에 동의해주세요.");
+      return;
+    }
+
     try {
       const url = `https://node.galleryk.co.kr:8081/consult/homepage`;
-      const { name, email, number, subject, text } = contact;
-      const content = `제목: ${subject} <br/> ${text}`;
+      const { name, number, text } = contact;
+      const content = `제목: 그린갤러리상담신청 <br/> ${text}`;
       const req = {
         cnst_type: 20,
         logn_id: "",
@@ -48,6 +66,7 @@ const ContactForm = () => {
         phone: number,
         dealer_code: "",
         cnst_cont: content,
+        cust_no: null,
       };
 
       const response = await axios.post(url, req);
@@ -132,7 +151,11 @@ const ContactForm = () => {
                       </div>
                     </div>
                     <div className="col-lg-12 col-sm-12">
-                      <input type="checkbox" id="agree" />
+                      <input
+                        type="checkbox"
+                        id="agree"
+                        onChange={() => setCheckAgree(!checkAgree)}
+                      />
                       <label htmlFor="agree" className="contact-agree-label">
                         <Link
                           href="https://sprinkle-justice-3a1.notion.site/11de65f3be1241efb4e542bbb897a52c"

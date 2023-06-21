@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./landing.module.scss";
 import Booking from "../components/Mypage/data/booking.json";
 import Lottie from "react-lottie";
 import Link from "next/link";
 import YouTube from "react-youtube";
-import ContactForm from "../components/Contact/ContactForm";
 import LandingContactForm from "../components/LandingContactForm";
 
 const lottieOptions = {
@@ -14,10 +13,7 @@ const lottieOptions = {
 };
 
 const landing = () => {
-  const onPlayerReady = (event) => {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  };
+  const [openContact, setOpenContact] = useState(false);
 
   const opts = {
     width: "100%",
@@ -42,7 +38,6 @@ const landing = () => {
             videoId="ZQw7meQJWTk"
             className={styles.scaleVideo}
             opts={opts}
-            onReady={onPlayerReady}
             onEnd={(e) => {
               e.target.stopVideo(0);
             }}
@@ -50,7 +45,7 @@ const landing = () => {
         </div>
       </div>
       <div style={{ position: "absolute" }}>
-        <Link href="#contact">
+        <Link href="#contact" onClick={() => setOpenContact(!openContact)}>
           <div className={`btn ${styles.btn_booking}`}>
             <div className={styles.ani_booking}>
               <Lottie
@@ -61,7 +56,7 @@ const landing = () => {
           </div>
         </Link>
       </div>
-      <LandingContactForm />
+      <LandingContactForm openContact={openContact} />
     </div>
   );
 };
