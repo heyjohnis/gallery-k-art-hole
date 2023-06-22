@@ -454,7 +454,7 @@ export default function SignupComp({ compType, user }) {
               </div>
             </div>
 
-            <div className="form-group signup">
+            {/* <div className="form-group signup">
               <div className="col-md-3 col-sm-3">
                 <p>생년월일</p>
               </div>
@@ -468,7 +468,7 @@ export default function SignupComp({ compType, user }) {
                   onChange={handleChange}
                 />
               </div>
-            </div>
+            </div> */}
 
             <div className="form-group signup">
               <div className="col-md-3 col-sm-3">
