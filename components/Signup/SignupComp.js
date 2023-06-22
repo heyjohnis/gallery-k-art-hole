@@ -74,7 +74,6 @@ export default function SignupComp({ compType, user }) {
     if (!form.user_name) throw new Error("이름을 입력해주세요.");
     if (!form.mobile) throw new Error("휴대전화를 입력해주세요.");
     if (!form.email) throw new Error("이메일을 입력해주세요.");
-    if (!form.birthday) throw new Error("생년월일을 입력해주세요.");
   };
 
   const handleSubmit = async (e) => {
@@ -457,9 +456,7 @@ export default function SignupComp({ compType, user }) {
 
             <div className="form-group signup">
               <div className="col-md-3 col-sm-3">
-                <p>
-                  생년월일 <span className="sup">*</span>
-                </p>
+                <p>생년월일</p>
               </div>
               <div className="col-md-9 col-sm-9 signup">
                 <input
