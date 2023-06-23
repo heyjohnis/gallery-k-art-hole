@@ -1,14 +1,17 @@
 @charset "UTF-8";
+
 /*제휴서비스 소개*/
 .item_card {
   margin-bottom: 50px;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
+
 .item_card .items {
   padding: 20px;
   text-align: center;
   background-color: #ffffff;
 }
+
 .item_card .items h3 {
   margin-bottom: 15px;
 }
@@ -20,6 +23,7 @@
   overflow: hidden;
   border-radius: 16px;
 }
+
 .items_image img {
   width: 100%;
   height: 100%;
@@ -29,19 +33,24 @@
 .items_details_desc {
   margin-top: 30px;
 }
+
 .items_details_desc h2 {
   margin-bottom: 30px;
 }
+
 .items_details_desc p {
   margin-bottom: 50px;
 }
+
 .items_details_desc .price {
   font-family: "Pretendard";
   text-align: right;
 }
+
 .items_details_desc .btn_warp {
   text-align: right;
 }
+
 .items_details_desc .btn_warp .btn {
   padding: 20px 50px;
 }
@@ -51,20 +60,24 @@
   margin-top: 30px;
   padding-left: 30px;
 }
+
 .product_details_desc h2 {
   font-family: "Pretendard";
   font-weight: 500;
   margin-bottom: 50px;
 }
+
 .product_details_desc .info_wrap {
   font-size: 18px;
   margin-bottom: 8px;
 }
+
 .product_details_desc .tit {
   font-size: 18px;
   font-weight: 600;
   margin-right: 10px;
 }
+
 .product_details_desc .price {
   margin: 70px 0 20px;
   font-family: "Pretendard";
@@ -72,12 +85,14 @@
   font-size: 24px;
   font-weight: 700;
 }
+
 .product_details_desc .price span {
   margin-left: 5px;
   font-size: 16px;
   color: #666666;
   font-weight: 400;
 }
+
 .product_details_desc select {
   width: 150px;
   height: 35px;
@@ -85,14 +100,17 @@
   border-radius: 4px;
   outline: 0 none;
 }
+
 .product_details_desc select option {
   background: black;
   color: #fff;
   padding: 3px 0;
 }
+
 .product_details_desc .btn_warp {
   text-align: right;
 }
+
 .product_details_desc .btn_warp .btn {
   padding: 20px 50px;
 }
@@ -116,16 +134,20 @@
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
 }
+
 .cart_list span {
   font-size: 18px;
 }
+
 .cart_list .division {
   margin: 0 10px;
 }
+
 .cart_list .price {
   font-size: 18px;
   font-weight: 700;
 }
+
 .cart_list .price span {
   margin-left: 5px;
   font-weight: 400;
@@ -135,26 +157,32 @@
   padding-top: 2em;
   margin-bottom: 2em;
 }
+
 .order_form h3 {
   margin-bottom: 0.5rem;
   font-size: 22px;
   font-weight: 700;
   font-family: "Pretendard";
 }
+
 .order_form p {
   font-size: 18px;
 }
+
 .order_form .form_group {
   align-items: center;
   margin-bottom: 16px;
 }
+
 .order_form .tel {
   display: flex;
   align-items: center;
 }
+
 .order_form .tel span {
   margin: 0 5px;
 }
+
 .order_form .sup {
   position: relative;
   font-size: 1em;
@@ -172,27 +200,33 @@
   border-radius: 8px;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
+
 .pay_warp .pay_group {
   margin-bottom: 30px;
 }
+
 .pay_warp .pay_group h2 {
   font-size: 22px;
   font-weight: 700;
   font-family: "Pretendard";
 }
+
 .pay_warp .agree_form {
   display: flex;
 }
+
 .pay_warp .agree_form .agree {
   margin-left: 10px;
   line-height: 1.4;
 }
+
 .pay_warp .btn_warp {
   width: 100%;
   display: flex;
   margin-top: 50px;
   text-align: center;
 }
+
 .pay_warp .btn_warp .btn_round {
   width: 30%;
   padding: 1em 0;
@@ -201,6 +235,7 @@
   background: #fff;
   border: 1px solid #4E7D22;
 }
+
 .pay_warp .btn_warp .btn_buy {
   padding: 1em 0;
   width: 60%;
@@ -211,9 +246,12 @@
     padding-left: 1em;
   }
 }
+
 @media only screen and (max-width: 991px) {
   .pay_warp {
     padding-left: 0;
     box-shadow: none;
   }
-}/*# sourceMappingURL=Ggmall.module.css.map */
+}
+
+/*# sourceMappingURL=Ggmall.module.css.map */

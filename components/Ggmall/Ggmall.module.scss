@@ -19,10 +19,12 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 .item_card {
   margin-bottom: 50px;
   box-shadow: $box-shadow;
+
   .items {
     padding: 20px;
     text-align: center;
     background-color: $white-color ;
+
     h3 {
       margin-bottom: 15px;
     }
@@ -35,26 +37,33 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   background-color: #f7f7f7;
   overflow: hidden;
   border-radius: 16px;
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
+
 .items_details_desc {
   margin-top: 30px;
+
   h2 {
     margin-bottom: 30px;
   }
+
   p {
     margin-bottom: 50px;
   }
+
   .price {
     font-family: $body-font-family;
     text-align: right;
   }
+
   .btn_warp {
     text-align: right;
+
     .btn {
       padding: 20px 50px;
     }
@@ -67,35 +76,42 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   font-family: "S-CoreDream-6Bold";
   margin-top: 30px;
   padding-left: 30px;
+
   .brand {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
     color: #777;
   }
+
   h2 {
     font-family: "S-CoreDream-6Bold";
     font-weight: 500;
   }
+
   p {
     margin-bottom: 50px;
     font-family: "S-CoreDream-3Light";
   }
+
   .info_wrap {
     font-size: 18px;
     margin-bottom: 8px;
   }
+
   .tit {
     font-size: 18px;
     font-weight: 600;
     margin-right: 10px;
   }
+
   .price {
     margin: 40px 0 20px;
     font-family: $body-font-family;
     text-align: right;
     font-size: 24px;
     font-weight: 700;
+
     span {
       margin-left: 5px;
       font-size: 16px;
@@ -103,19 +119,23 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
       font-weight: 400;
     }
   }
+
   select {
     width: 100%;
-    font-size:1.1rem;
+    font-size: 1.1rem;
     padding: 10px;
     border-radius: 4px;
   }
+
   select option {
     background: black;
     color: #fff;
     padding: 3px 0;
   }
+
   .btn_warp {
     text-align: right;
+
     .btn {
       padding: 20px 50px;
     }
@@ -140,18 +160,23 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   padding: 10px 0;
   box-shadow: $box-shadow;
   border-radius: 10px;
+
   span {
     font-size: 18px;
   }
+
   .division {
     margin: 0 10px;
+
     b {
       display: none !important;
     }
   }
+
   .price {
     font-size: 18px;
     font-weight: 700;
+
     span {
       margin-left: 5px;
       font-weight: 400;
@@ -170,20 +195,25 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     font-weight: 700;
     font-family: "Pretendard";
   }
+
   p {
     font-size: 18px;
   }
+
   .form_group {
     align-items: center;
     margin-bottom: 16px;
   }
+
   .tel {
     display: flex;
     align-items: center;
+
     span {
       margin: 0 5px;
     }
   }
+
   .sup {
     position: relative;
     font-size: 1em;
@@ -200,6 +230,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   font-size: 18px;
   border-radius: 8px;
   box-shadow: $box-shadow;
+
   .pay_group {
     margin-bottom: 30px;
 
@@ -209,19 +240,22 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
       font-family: $body-font-family;
     }
   }
+
   .agree_form {
     display: flex;
+
     .agree {
       margin-left: 10px;
       line-height: 1.4;
     }
   }
+
   .btn_warp {
     width: 100%;
     display: flex;
     margin-top: 50px;
     text-align: center;
-  
+
     .btn_round {
       width: 30%;
       padding: 1em 0;
@@ -230,7 +264,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
       background: #fff;
       border: 1px solid $main-color;
     }
-  
+
     .btn_buy {
       padding: 1em 0;
       width: 60%;
@@ -240,36 +274,46 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
 .searchArea {
   margin: 40px auto 15px;
+
   .keywordBtns {
     padding: 0;
   }
+
   .searchInput {
     justify-content: right;
   }
-  button {padding: 14px 20px !important;}
+
+  button {
+    padding: 14px 20px !important;
+  }
+
   .checkButton {
     display: inline-block;
     margin-right: 10px;
-    input[type="checkbox"]{
-        display:none
+
+    input[type="checkbox"] {
+      display: none
     }
-      
-    input[type="checkbox"] + label{
+
+    input[type="checkbox"]+label {
       padding: 10px 20px;
       text-align: center;
       display: block;
-      width:100%;
-      border:1px solid #ddd;
+      width: 100%;
+      border: 1px solid #ddd;
       border-radius: 8px;
     }
-    input[type="checkbox"]:checked + label{
+
+    input[type="checkbox"]:checked+label {
       background-color: #4E7D22;
       color: #fff;
     }
   }
 }
+
 .product {
   font-family: "S-CoreDream-3Light";
+
   .brand {
     display: block;
     height: 20px;
@@ -283,13 +327,16 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     font-weight: 700;
     text-align: left;
   }
+
   .pdName {
     margin-bottom: 0.3rem;
     width: 100%;
     font-family: "S-CoreDream-6Bold";
-    font-size: 16px;
+    font-size: 20px;
     text-overflow: ellipsis;
-    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-align: left;
     font-weight: 600;
@@ -297,13 +344,14 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
   .infoShort {
     font-family: "S-CoreDream-3Light";
-    font-size: 11px;
+    font-size: 14px;
     text-overflow: ellipsis;
     white-space: nowrap;
     display: block;
     overflow: hidden;
-    color: #999;
+    color: #666;
     text-align: left;
+    padding-top: 5px;
   }
 
   .originPrice {
@@ -311,8 +359,20 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     height: 20px;
     font-family: "S-CoreDream-3Light";
     margin-bottom: 0 !important;
-    font-size: 12px;
+    font-size: 14px;
     color: #999;
+    text-align: left;
+    text-decoration: line-through;
+    padding-top: 10px;
+  }
+
+  .originPriceNone {
+    display: block;
+    height: 20px;
+    font-family: "S-CoreDream-3Light";
+    margin-bottom: 0 !important;
+    font-size: 14px;
+    color: #fff;
     text-align: left;
     text-decoration: line-through;
   }
@@ -321,15 +381,26 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     font-family: "S-CoreDream-6Bold";
     text-align: left;
     width: 100%;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: $sub-color;
-    span {
-      margin-left: 5px;
-      font-family: "S-CoreDream-3Light";
-      font-size: 12px;
-      font-weight: 600;
-    }
+    padding-top: 10px;
+  }
+
+  .priceNone {
+    font-family: "S-CoreDream-6Bold";
+    text-align: left;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    padding-top: 10px;
+  }
+
+  span {
+    margin-left: 5px;
+    font-family: "S-CoreDream-3Light";
+    font-size: 14px;
   }
 }
 
