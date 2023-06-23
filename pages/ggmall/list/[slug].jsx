@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import axios from "axios";
 import baseUrl from "./../../../utils/baseUrl";
 import Footer from "./../../../components/Layouts/Footer";
 import PageBanner from "./../../../components/Common/PageBanner";
 import GgmallList from "../../../components/Ggmall/GgmallList";
 import SearchKeyword from "../../../components/Ggmall/SearchKeyword";
+import { ggmallKind } from "../../../utils/cmmCode";
 
 const INITIAL_SEARCH = {
   keyword: "",
@@ -13,11 +14,15 @@ const INITIAL_SEARCH = {
 };
 
 const ggList = ({ user }) => {
+  const router = useRouter();
   const [, setLoading] = useState({});
   const [contents, setContents] = useState("");
+  const [pdKind, setPdKind] = useState("");
+  const [pdKindName, setPdKindName] = useState("");
 
   const getContents = ({ keyword, search_word }) => {
-    const url = `${baseUrl}/mall?pd_kind=01&keyword=${keyword}&search_word=${search_word}`;
+    console.log("pdKind: ", pdKind);
+    const url = `${baseUrl}/mall?pd_kind=${pdKind}&keyword=${keyword}&search_word=${search_word}`;
     axios({ method: "get", url })
       .then(({ data }) => {
         setContents(data);
@@ -32,19 +37,27 @@ const ggList = ({ user }) => {
       alert("로그인이 필요합니다.");
       Router.push("/login");
     }
-    getContents(INITIAL_SEARCH);
   }, [user]);
+
+  useEffect(() => {
+    setPdKind(router.query.slug);
+  }, [router.query.slug]);
+
+  useEffect(() => {
+    if (pdKind) getContents(INITIAL_SEARCH);
+    setPdKindName(ggmallKind[pdKind]);
+  }, [pdKind]);
 
   return (
     <>
       <PageBanner
-        pageTitle="GG 쇼핑"
-        homePageUrl="/ggmall/service/#"
+        pageTitle={pdKindName}
+        homePageUrl={`/ggmall/list/${pdKind}`}
         homePageText="GG MALL"
-        activePageText="GG 쇼핑"
+        activePageText={pdKindName}
       />
-      <SearchKeyword searchWords={getContents} serviceKind="01" />
-      <GgmallList contents={contents} productKind={"shoping"} />
+      <SearchKeyword searchWords={getContents} serviceKind={pdKind} />
+      <GgmallList contents={contents} productKind={pdKind} />
 
       <Footer />
     </>

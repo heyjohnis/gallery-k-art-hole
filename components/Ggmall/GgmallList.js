@@ -60,7 +60,7 @@ const GgmallList = ({ contents, productKind }) => {
                 >
                   <Link
                     key={i}
-                    href={`/ggmall/${productKind}/${content.pd_no}`}
+                    href={`/ggmall/detail/${productKind}/${content.pd_no}`}
                   >
                     <div className={`single-team active ${styles.product}`}>
                       <div className="team-single-img">
