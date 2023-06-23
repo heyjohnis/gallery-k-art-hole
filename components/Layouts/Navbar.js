@@ -251,9 +251,9 @@ const Navbar = ({ user }) => {
 
                 <li className="nav-item">
                   <Link
-                    href="/ggmall/service"
+                    href="/ggmall/list/service"
                     className={`nav-link ${
-                      currentPath == "/ggmall/service/" && "active"
+                      currentPath.indexOf("/ggmall/list/") > -1 && "active"
                     }`}
                     onClick={toggleNavbar}
                   >
@@ -278,7 +278,12 @@ const Navbar = ({ user }) => {
                   <Link
                     href="/contact"
                     className={`nav-link ${
-                      currentPath == "/contact/" && "active"
+                      [
+                        "/contact/",
+                        "/bbs/notice/",
+                        "/bbs/news/",
+                        "/faq/",
+                      ].includes(currentPath) && "active"
                     }`}
                     onClick={toggleNavbar}
                   >
