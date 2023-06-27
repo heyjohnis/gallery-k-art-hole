@@ -61,7 +61,7 @@ const SearchKeyword = ({ searchWords, serviceKind }) => {
         }
       }
     );
-  }, []);
+  }, [serviceKind]);
 
   useEffect(() => {
     const btns = keywords.map((keyword) => (
