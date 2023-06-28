@@ -269,7 +269,7 @@ const Navbar = ({ user }) => {
                         GG 쇼핑
                       </Link>
                       <Link href="/ggmall/list/tour" onClick={toggleNavbar}>
-                        GG 여행
+                        GG 투어
                       </Link>
                     </li>
                   </ul>
