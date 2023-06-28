@@ -17,7 +17,7 @@ const GgmallItems = ({ content, options, productKind }) => {
   const [option, setOption] = useState({});
   const [dateOptionName, setDateOptionName] = useState("");
   const [useDateOption, setUseDateOption] = useState(false);
-  const [selectedDay, setSelectedDay] = useState();
+  const [selectedDay, setSelectedDay] = useState(new Date());
 
   const selectOption = (optionNo, option) => {
     console.log("selected option: ", option);
@@ -90,7 +90,8 @@ const GgmallItems = ({ content, options, productKind }) => {
         options: JSON.stringify(option),
         total: totalPrice,
         product_kind: productKind,
-        hope_date: selectedDay ? format(selectedDay, "yyyy-MM-dd") : "",
+        hope_date:
+          useDateOption && selectedDay ? format(selectedDay, "yyyy-MM-dd") : "",
       },
     });
   };
