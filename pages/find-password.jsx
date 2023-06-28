@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
-import { handleLogin } from "../utils/auth";
 import baseUrl from "../utils/baseUrl";
 
 const INITIAL_USER = {
@@ -12,7 +11,7 @@ const INITIAL_USER = {
   password: "",
 };
 
-export default function Login() {
+export default function FindPassword() {
   const router = useRouter();
 
   const [user, setUser] = useState(INITIAL_USER);
@@ -20,7 +19,23 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const { goto } = router.query;
+  const sendEmailForTempPassword = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      setError("");
+      const url = `${baseUrl}/findPassword`;
+      const payload = { ...user };
+      const response = await axios.post(url, payload);
+      alert(response.data.message);
+    } catch (error) {
+      if (error.response) alert(error.response.data.message);
+      else alert(error.message);
+    } finally {
+      setLoading(false);
+      setUser(INITIAL_USER);
+    }
+  };
 
   useEffect(() => {
     const isUser = Object.values(user).every((el) => Boolean(el));
@@ -32,30 +47,13 @@ export default function Login() {
     setUser((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      setLoading(true);
-      setError("");
-      const url = `${baseUrl}/login`;
-      const payload = { ...user };
-      const response = await axios.post(url, payload);
-      handleLogin(response.data.token, goto);
-    } catch (error) {
-      if (error.response) alert(error.response.data.message);
-      else alert(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <>
       <PageBanner
-        pageTitle="로그인"
+        pageTitle="비밀번호 찾기"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="로그인"
+        activePageText="비밀번호 찾기"
       />
 
       <div className="user-area-all-style log-in-area ptb-100">
@@ -64,10 +62,10 @@ export default function Login() {
             <div className="col-12">
               <div className="contact-form-action">
                 <div className="form-heading text-center">
-                  <h3 className="form-title">로그인</h3>
+                  <h3 className="form-title">임시 비밀번호 발송</h3>
                 </div>
 
-                <form onSubmit={handleSubmit}>
+                <form>
                   <div className="row">
                     <div className="col-12">
                       <div className="form-group">
@@ -82,30 +80,15 @@ export default function Login() {
                       </div>
                     </div>
 
-                    <div className="col-12">
-                      <div className="form-group mb-2">
-                        <input
-                          className="form-control"
-                          type="password"
-                          name="password"
-                          value={user.password}
-                          onChange={handleChange}
-                          placeholder="비밀번호"
-                        />
-                      </div>
-                    </div>
-
                     <div className="col-lg-6 col-sm-6 form-condition"></div>
 
-                    <div className="col-lg-6 col-sm-6 mb-30">
-                      <Link href="find-password" className="forget">
-                        아이디/비밀번호 찾기
-                      </Link>
-                    </div>
-
                     <div className="col-12">
-                      <button className="default-btn btn-two" type="submit">
-                        로그인
+                      <button
+                        className="default-btn btn-two"
+                        type="submit"
+                        onClick={sendEmailForTempPassword}
+                      >
+                        이메일 발송
                       </button>
                     </div>
                     <hr className="mt-30" />
@@ -120,8 +103,17 @@ export default function Login() {
                       </p>
                     </div>
 
-                    <div className="col-12 mt-30">
-                      <Link href="sign-up-1" className="forget">
+                    <div className="col-12 mt-30 text-center">
+                      <Link href="login">
+                        <button
+                          className="default-btn btn-two btn-border "
+                          type="submit"
+                          style={{ marginRight: "10px" }}
+                        >
+                          로그인 하기
+                        </button>
+                      </Link>
+                      <Link href="sign-up-1" className="mr-3">
                         <button
                           className="default-btn btn-two btn-border"
                           type="submit"
