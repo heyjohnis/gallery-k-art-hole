@@ -87,6 +87,10 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   }
 }
 
+.menu {
+  .icon { display: none !important;}
+}
+
 /*메이페이지 컨텐츠 레이아웃*/
 .my_con_wrap {
   padding-left: 50px;

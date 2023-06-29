@@ -19,14 +19,20 @@ const Bbs = () => {
     event: "이벤트",
     media: "미디어",
     notice: "공지사항",
+    review: "이벤트 및 이용후기",
   };
 
   useEffect(() => {
     setLoading(true);
-
-    const cate = router.query.all[0];
+    console.log("router.query: ", router.query);
+    const query = router.query.all;
+    const cate = query[0];
+    let searchWord = "";
+    if (query.length > 1) {
+      searchWord = query[1];
+    }
     setCategory(cate);
-    const url = `${baseUrl}/bbs/${cate}`;
+    const url = `${baseUrl}/bbs/${cate}?searchWord=${searchWord}`;
     axios({ method: "get", url })
       .then(({ data }) => {
         setContents(data);
@@ -34,9 +40,11 @@ const Bbs = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [router.query.all[0]]);
+  }, [router.query]);
 
-  {/* harry 0605 pagebanner 정보 변경 */ }
+  {
+    /* harry 0605 pagebanner 정보 변경 */
+  }
   return (
     <>
       <PageBanner

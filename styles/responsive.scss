@@ -2217,6 +2217,7 @@
                 }
                 .post-wrap {
                     width: 100%;
+                    padding: 15px 0;
                     position: fixed;
                     display: flex;
                     bottom: 0;
@@ -2230,14 +2231,26 @@
                         width: 100%;
                         font-size: 14px;
                         li{
+                            width: 20%;
                             padding-bottom: 0;
                             margin-bottom: 0;
                             border-bottom:0;
+                            padding:0;
                             text-align: center;            
                             a {
-                                font-size: 14px;
+                                font-size: 11px;
                                 color: #fff;
                                 line-height: 1.2;
+
+                                .icon {
+                                    display: block !important;
+                                    width: 30px;
+                                    margin: 0 auto 5px;
+                                }
+
+                            }
+                            &.myinfo_update {
+                                display: none;
                             }
                         }
                     }
@@ -2305,8 +2318,6 @@
         display: none;
     }
 }
-
- 
 
 @media only screen and (max-width: 1199px) {
     .navbar-area {

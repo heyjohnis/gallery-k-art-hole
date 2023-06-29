@@ -1,30 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import NewsSearchBar from "./NewsSearchBar";
 
-const NewsSidebar = () => {
+const NewsSidebar = ({ content }) => {
   return (
     <>
       <div className="widget-area" id="secondary">
-        <div className="widget widget_search">
-          <h3 className="widget-title">검색하기</h3>
-
-          <div className="post-wrap">
-            <form className="search-form">
-              <label>
-                <input
-                  type="search"
-                  className="search-field"
-                  placeholder="검색어를 입력하세요"
-                />
-              </label>
-
-              <button type="submit">
-                <i className="bx bx-search"></i>
-              </button>
-            </form>
-          </div>
-        </div>
-
+        <NewsSearchBar content={content} />
         <div className="widget widget-posts-thumb">
           <h3 className="widget-title">다른 기사 보기</h3>
 

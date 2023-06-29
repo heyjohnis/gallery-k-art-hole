@@ -43,7 +43,6 @@ const BbsDetail = () => {
       />
 
       <BbsDetailContent content={content} />
-
       <Footer />
     </>
   );

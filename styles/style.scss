@@ -3194,10 +3194,13 @@ GGmall 리스트
     .navigation-links {
       display: flex;
       flex-wrap: wrap;
-
+      justify-content: space-between;
+      .nav-button {
+        cursor: pointer;
+        font-weight: bold;
+      }
       .nav-previous {
-        flex: 0 0 50%;
-        max-width: 50%;
+        max-width: 33%;
 
         a {
           i {
@@ -3208,10 +3211,22 @@ GGmall 리스트
           }
         }
       }
+      .nav-goto-list {
+        max-width: 33%;
+        text-align: right;
+
+        a {
+          i {
+            margin-left: 0;
+            font-size: 20px;
+            position: relative;
+            top: 4px;
+          }
+        }
+      }
 
       .nav-next {
-        flex: 0 0 50%;
-        max-width: 50%;
+        max-width: 33%;
         text-align: right;
 
         a {
@@ -3973,6 +3988,10 @@ td {
               &.membership {
                 color: #4E7D22;
               }
+              img {
+                color: #4E7D22;
+                filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+              }
             }
           }
         }
@@ -3982,6 +4001,10 @@ td {
             a {
               &.contract {
                 color: #4E7D22;
+                img {
+                  color: #4E7D22;
+                  filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                }
               }
             }
           }
@@ -3992,6 +4015,10 @@ td {
             a {
               &.reservation {
                 color: #4E7D22;
+                img {
+                  color: #4E7D22;
+                  filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                }
               }
             }
           }
@@ -4002,6 +4029,10 @@ td {
             a {
               &.point {
                 color: #4E7D22;
+                img {
+                  color: #4E7D22;
+                  filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                }
               }
             }
           }
@@ -4012,6 +4043,10 @@ td {
             a {
               &.order {
                 color: #4E7D22;
+                img {
+                  color: #4E7D22;
+                  filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                }
               }
             }
           }
@@ -4032,7 +4067,12 @@ td {
             a {
               &.home {
                 color: #4E7D22;
+                img {
+                  color: #4E7D22;
+                  filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                }
               }
+
             }
           }
         }
