@@ -549,29 +549,29 @@ Default Btn
     transform: rotate(45deg);
   }
 
-  &.active {
-    background-color: $sub-color;
-    color: $main-color;
+  // &.active {
+  //   background-color: $sub-color;
+  //   color: $main-color;
 
-    &:hover {
-      color: $white-color;
-      background-color: $sub-color;
-    }
-  }
+  //   &:hover {
+  //     color: $white-color;
+  //     background-color: $sub-color;
+  //   }
+  // }
 
-  &:hover {
-    color: $white-color;
-    transition: $transition;
-    background-color: $sub-color;
+  // &:hover {
+  //   color: $white-color;
+  //   transition: $transition;
+  //   background-color: $sub-color;
 
-    &::before {
-      left: 200px;
-    }
+  //   &::before {
+  //     left: 200px;
+  //   }
 
-    &::after {
-      right: 200px;
-    }
-  }
+  //   &::after {
+  //     right: 200px;
+  //   }
+  // }
 }
 
 /*
@@ -2570,11 +2570,12 @@ GGmall 리스트
 ======================================================*/
 .single-team {
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   margin-bottom: 30px;
   transition: $transition;
   background-color: #fff;
+  height: 470px;
 
   .team-single-img {
     position: relative;
@@ -2623,7 +2624,10 @@ GGmall 리스트
 슬라이드
 ======================================================*/
 
-.mobile {display: none;}
+.mobile {
+  display: none;
+}
+
 .hero-swiper {
 
   .swiper-button-next,
@@ -2730,19 +2734,26 @@ GGmall 리스트
     }
   }
 }
-@media only screen and (max-width: 768px) {
-.mobile {display: block;}
 
-.default-btn {
-  margin: 0;
-  &.white {
-    color: $white-color;
+@media only screen and (max-width: 768px) {
+  .mobile {
+    display: block;
   }
-  &.black {
-    min-width: 80px !important;
-    font-size: 0.8rem !important;
-  }}
-} 
+
+  .default-btn {
+    margin: 0;
+
+    &.white {
+      color: $white-color;
+    }
+
+    &.black {
+      min-width: 80px !important;
+      font-size: 0.8rem !important;
+    }
+  }
+}
+
 /* 
 메인 동영상
 =====================================================*/
@@ -3195,10 +3206,12 @@ GGmall 리스트
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+
       .nav-button {
         cursor: pointer;
         font-weight: bold;
       }
+
       .nav-previous {
         max-width: 33%;
 
@@ -3211,6 +3224,7 @@ GGmall 리스트
           }
         }
       }
+
       .nav-goto-list {
         max-width: 33%;
         text-align: right;
@@ -3988,6 +4002,7 @@ td {
               &.membership {
                 color: #4E7D22;
               }
+
               img {
                 color: #4E7D22;
                 filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
@@ -4001,6 +4016,7 @@ td {
             a {
               &.contract {
                 color: #4E7D22;
+
                 img {
                   color: #4E7D22;
                   filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
@@ -4015,6 +4031,7 @@ td {
             a {
               &.reservation {
                 color: #4E7D22;
+
                 img {
                   color: #4E7D22;
                   filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
@@ -4029,6 +4046,7 @@ td {
             a {
               &.point {
                 color: #4E7D22;
+
                 img {
                   color: #4E7D22;
                   filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
@@ -4043,6 +4061,7 @@ td {
             a {
               &.order {
                 color: #4E7D22;
+
                 img {
                   color: #4E7D22;
                   filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
@@ -4067,6 +4086,7 @@ td {
             a {
               &.home {
                 color: #4E7D22;
+
                 img {
                   color: #4E7D22;
                   filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
@@ -4205,21 +4225,25 @@ My page
 .gtSrFt {
   bottom: 68px !important;
 }
+
 // Calendar Picker
 .my-day-picker {
   margin: 2em;
 }
-.my-selected:not([disabled]) { 
-  font-weight: bold; 
+
+.my-selected:not([disabled]) {
+  font-weight: bold;
   border: 2px solid currentColor;
 }
-.my-selected:hover:not([disabled]) { 
+
+.my-selected:hover:not([disabled]) {
   border-color: blue;
   color: blue;
 }
-.my-today { 
+
+.my-today {
   font-weight: bold;
-  font-size: 140%; 
+  font-size: 140%;
   color: red;
 }
 
@@ -4231,18 +4255,21 @@ span.option_price {
 .swiper-pagination {
   bottom: 30px !important;
 }
-.swiper-pagination-bullet { 
-  width: 15px !important; 
+
+.swiper-pagination-bullet {
+  width: 15px !important;
   height: 15px !important;
   background: transparent !important;
-  border: 2px solid #fff !important; 
-  opacity: 0.6 !important; }
-.swiper-pagination-bullet-active { 
-  width: 40px !important; 
+  border: 2px solid #fff !important;
+  opacity: 0.6 !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 40px !important;
   transition: width .5s !important;
   border-radius: 8px !important;
   background: #fff !important;
-  border: 2px solid transparent !important; 
+  border: 2px solid transparent !important;
 }
 
 .option_user {
@@ -4252,24 +4279,27 @@ span.option_price {
 }
 
 .select-region {
-  input[type="checkbox"]{
-    display:none
+  input[type="checkbox"] {
+    display: none
   }
+
   .form-check-inline {
     display: inline-flex;
     width: 32.3%;
     margin: 0.5%;
     padding: 0;
   }
-  input[type="checkbox"] + label{
+
+  input[type="checkbox"]+label {
     padding: 3px 0;
     text-align: center;
     display: block;
-    width:100%;
-    border:1px solid #ddd;
+    width: 100%;
+    border: 1px solid #ddd;
     border-radius: 8px;
   }
-  input[type="checkbox"]:checked + label{
+
+  input[type="checkbox"]:checked+label {
     background-color: #4E7D22;
     color: #fff;
   }
