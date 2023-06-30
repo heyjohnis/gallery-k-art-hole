@@ -2635,24 +2635,34 @@ GGmall 리스트
     width: auto;
 
     &:after {
-      background-color: $main-color;
       color: $white-color;
-      width: 45px;
-      height: 45px;
+      width: 80px;
+      height: 100px;
       line-height: 45px;
       display: inline-block;
       text-align: center;
       transition: $transition;
       font-size: 22px;
       border-radius: 30px;
-
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
       &:hover {
         background-color: #000;
         color: $white-color;
       }
     }
   }
+  .swiper-button-next:after {
+    content: " ";
+    background-image: url(/images/main/slide_right.png);
+  }
+  .swiper-button-prev:after {
+    content: " ";
+    background-image: url(/images/main/slide_left.png);
+  }
 }
+
 
 .jumpx-slider-item {
 
