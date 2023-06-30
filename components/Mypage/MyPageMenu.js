@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./MyPage.module.scss";
+import styles from "./Mypage.module.scss";
 
 // eslint-disable-next-line react/prop-types
 const MyPageMenu = ({ menu }) => {
