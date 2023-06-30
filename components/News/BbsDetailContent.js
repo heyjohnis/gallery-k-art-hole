@@ -42,7 +42,9 @@ const BbsDetailContent = ({ content }) => {
                   <div className="entry-meta">
                     <ul>
                       <li>{content.reg_date}</li>
-                      <li>강석봉 기자</li>
+                      <li>
+                        {content.writer ? content.writer : content.reg_name}
+                      </li>
                     </ul>
                   </div>
 
