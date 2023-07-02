@@ -404,6 +404,34 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   }
 }
 
+.infoProduct {
+  p {
+    font-family: "S-CoreDream-3Light";
+    margin: 0; 
+    font-size: 12px;
+  }
+  ul {
+    padding-left: 15px;
+  }
+  li {
+    font-family: "S-CoreDream-3Light";
+    font-size: 11px;
+    font-weight: 300;
+  }
+  p > strong {
+    font-family: "S-CoreDream-6Bold";
+    font-weight: 700;
+  }
+  li strong {
+    padding: 0px;
+    font-family: "S-CoreDream-6Bold";
+    font-weight: 700;
+  }
+  li strong::after { content: ': '; display: inline;}
+  
+  
+}
+
 .contents {
   padding-top: 50px;
 }

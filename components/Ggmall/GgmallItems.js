@@ -102,6 +102,7 @@ const GgmallItems = ({ content, options, productKind }) => {
   }, [options]);
 
   useEffect(() => {
+    console.log("content: ", content);
     if (price) {
       const total = Object.values(price).reduce(function add(sum, currValue) {
         return sum + currValue;
@@ -153,6 +154,12 @@ const GgmallItems = ({ content, options, productKind }) => {
                         }}
                       />
                     </div>
+                  )}
+                  {content.info_product && (
+                    <div
+                      className={styles.infoProduct}
+                      dangerouslySetInnerHTML={{ __html: content.info_product }}
+                    ></div>
                   )}
                   {totalPrice > 0 && (
                     <>
