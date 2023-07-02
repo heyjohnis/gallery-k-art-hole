@@ -100,7 +100,6 @@ const Navbar = ({ user }) => {
               />
             </Link>
 
-            {/* Toggle navigation */}
             <button
               onClick={toggleNavbar}
               className={classTwo}
@@ -137,88 +136,10 @@ const Navbar = ({ user }) => {
                       toggleNavbar();
                     }}
                   >
-                    Golf Booking {/*23.06.01 골프예약에서 Golf Booking*/}
+                    Golf Booking
                   </Link>
                 </li>
-                {/* <li className="nav-item">
-                  <Link
-                    href="/benefits"
-                    className={`nav-link ${
-                      currentPath == "/benefits/" && "active"
-                    }`}
-                    onClick={toggleNavbar}
-                  >
-                    멤버십 <i className="bx bx-chevron-down"></i>
-                  </Link>
-
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        href="/benefits"
-                        className={`nav-link ${
-                          currentPath == "/benefits/" && "active"
-                        }`}
-                        onClick={toggleNavbar}
-                      >
-                        회원혜택
-                      </Link>
-                    </li>
-
-                    {user && (
-                      <>
-                        <li className="nav-item">
-                          <Link
-                            href="/addservice"
-                            className={`nav-link ${
-                              currentPath == "/addservice/" && "active"
-                            }`}
-                            onClick={toggleNavbar}
-                          >
-                            프리미엄 서비스
-                          </Link>
-                        </li>
-
-                        <li className="nav-item">
-                          <Link
-                            href="/membershipterm"
-                            className={`nav-link ${
-                              currentPath == "/membershipterm/" && "active"
-                            }`}
-                            onClick={toggleNavbar}
-                          >
-                            약관 및 규정
-                          </Link>
-                        </li>
-                      </>
-                    )}
-                  </ul>
-                </li> */}
-                {/* <li className="nav-item">
-                  <Link
-                    href="/golf"
-                    className={`nav-link ${
-                      currentPath == "/golf/" && "active"
-                    }`}
-                    onClick={toggleNavbar}
-                  >
-                    골프 <i className="bx bx-chevron-down"></i>
-                  </Link>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        href="/golf"
-                        className={`nav-link ${
-                          currentPath == "/golf/" && "active"
-                        }`}
-                        onClick={toggleNavbar}
-                      >
-                        골프서비스
-                      </Link>
-                    </li>
-                  </ul>
-                </li> */}
                 <li className="nav-item">
-                  {/*23.06.01 art에서 artworks*/}
                   <Link
                     href="/artworks"
                     className={`nav-link ${
@@ -227,18 +148,9 @@ const Navbar = ({ user }) => {
                     onClick={toggleNavbar}
                   >
                     Member Privileges<i className="bx bx-chevron-down"></i>{" "}
-                    {/*harry 23.06.06 Benefits 에서 변경*/}
                   </Link>
-
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      {/* <Link
-                            href="https://www.artnomics.co.kr/artworks/artnomics_list.php?is_KK=1"
-                            target="_blank"
-                            onClick={toggleNavbar}
-                          >
-                            미술품 보기
-                          </Link> */}
                       <Link href="/artworks/" onClick={toggleNavbar}>
                         미술품
                       </Link>
@@ -288,9 +200,7 @@ const Navbar = ({ user }) => {
                     onClick={toggleNavbar}
                   >
                     Support <i className="bx bx-chevron-down"></i>{" "}
-                    {/*23.06.01 고객지원에서 Support*/}
                   </Link>
-
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
@@ -303,7 +213,6 @@ const Navbar = ({ user }) => {
                         상담/문의
                       </Link>
                     </li>
-
                     <li className="nav-item">
                       <Link
                         href="/bbs/notice"
@@ -324,6 +233,17 @@ const Navbar = ({ user }) => {
                         onClick={toggleNavbar}
                       >
                         뉴스
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        href="/bbs/review"
+                        className={`nav-link ${
+                          currentPath == "/bbs/review/" && "active"
+                        }`}
+                        onClick={toggleNavbar}
+                      >
+                        이벤트 및 이용후기
                       </Link>
                     </li>
                     <li className="nav-item">
@@ -354,7 +274,6 @@ const Navbar = ({ user }) => {
                           마이페이지
                         </Link>
                       </li>
-
                       <li>
                         <span></span>
                       </li>
@@ -404,7 +323,7 @@ const Navbar = ({ user }) => {
                   className="default-btn"
                   onClick={toggleNavbar}
                 >
-                  예약 내역 {/*23.06.14 고객지원에서 Support*/}
+                  예약 내역
                 </Link>
               </div>
             </div>

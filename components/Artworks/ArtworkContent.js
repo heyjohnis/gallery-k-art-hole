@@ -77,6 +77,11 @@ const ArtworkContent = ({ content }) => {
             </div>
           </div>
         </div>
+        <div className="text-center mt-5 mb-5">
+          <Link href={`/artworks`} className="default-btn">
+            목록으로
+          </Link>
+        </div>
       </section>
     </>
   );

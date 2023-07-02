@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 
 const BbsSingleCard = ({ content }) => {
-  console.log(" {...content} : ", { ...content });
   return (
     <div className="col-lg-4 col-md-6">
       <div className="single-news">

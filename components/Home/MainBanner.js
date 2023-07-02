@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, A11y } from "swiper";
+import { Pagination, Autoplay, A11y, Navigation } from "swiper";
 import { Modal } from "react-bootstrap";
 import YouTube from "react-youtube";
 import styles from "./MainBanner.module.scss";
@@ -30,6 +30,7 @@ const MainBanner = ({ showReservationModal }) => {
     <>
       <section className="slider-area">
         <Swiper
+          navigation={true}
           spaceBetween={0}
           autoplay={{
             delay: 4000,
@@ -40,7 +41,7 @@ const MainBanner = ({ showReservationModal }) => {
             clickable: true,
             type: "bullets",
           }}
-          modules={[Pagination, A11y, Autoplay]}
+          modules={[Pagination, A11y, Autoplay, Navigation]}
           className={`hero-swiper ${styles.swiper}`}
         >
           <SwiperSlide>

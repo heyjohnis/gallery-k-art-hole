@@ -86,6 +86,14 @@ const GgmallText = ({ content }) => {
             </div>
           </div>
         </div>
+        <div className="text-center mt-5">
+          <Link
+            href={`/ggmall/list/${content.pd_kind}`}
+            className="default-btn"
+          >
+            목록으로
+          </Link>
+        </div>
       </section>
     </>
   );
