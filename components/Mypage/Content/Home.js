@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import axios from "axios";
 import cookie from "js-cookie";
 import baseUrl from "../../../utils/baseUrl";
@@ -10,6 +11,8 @@ import ReservationModal from "../ReservationModal";
 import Lottie from "react-lottie";
 import Booking from "../data/booking.json";
 import ReservationComp from "./ReservationComp";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { set } from "date-fns";
 
 const lottieOptions = {
   animationData: Booking,
@@ -21,8 +24,9 @@ const Home = ({ user }) => {
   const [, setLoading] = useState(false);
   const [reservations, setReservations] = useState([]);
   const modalRef = useRef(null);
-
   const [points, setPoints] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [productSize, setProductSize] = useState(false);
 
   const getPointData = () => {
     const url = `${baseUrl}/points`;
@@ -60,6 +64,24 @@ const Home = ({ user }) => {
     }
   };
 
+  const getRandProduct = () => {
+    const url = `${baseUrl}/mall/rand`;
+    const medq_token = cookie.get("medq_token");
+    axios({
+      method: "post",
+      url: url,
+      headers: { Authorization: `Bearer ${medq_token}` },
+      data: {},
+    })
+      .then(({ data }) => {
+        console.log("product: ", data);
+        setProducts(data);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   const showReservationModal = () => {
     modalRef.current.showModal();
   };
@@ -67,6 +89,7 @@ const Home = ({ user }) => {
   useEffect(() => {
     getReservationData();
     getPointData();
+    getRandProduct();
   }, [user]);
 
   return (
@@ -121,6 +144,37 @@ const Home = ({ user }) => {
       ) : (
         <div className={styles.content}> 포인트 사용 내역이 없습니다.</div>
       )}
+      <Swiper
+        spaceBetween={20}
+        slidesPerView={"auto"}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        {products.map((product, i) => (
+          <SwiperSlide key={i} style={{ width: "280px" }}>
+            <Link
+              key={i}
+              href={`/ggmall/detail/${product.pd_kind}/${product.pd_no}`}
+            >
+              <div
+                className={`single-team active ${styles.product}`}
+                style={{ height: "auto" }}
+              >
+                <div className="team-single-img">
+                  <img src={product.thumb_img} alt="Image" />
+                </div>
+                <div className="team-content">
+                  <h3 className={styles.pdName}>{product.pd_name}</h3>
+                  <p className={styles.originPriceNone}>
+                    {commaFormat(product.origin_price)}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
       <div style={{ marginTop: "10rem" }}> </div>
       <ReservationModal
         user={user}
