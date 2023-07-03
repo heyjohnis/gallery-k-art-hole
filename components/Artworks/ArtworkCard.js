@@ -19,7 +19,8 @@ const ArtworkCard = ({ artwork }) => {
             alt={artwork.atwk_nm}
           />
         </div>
-        <div className="team-content">
+        <div className={`team-content ${styles.ArtworkCard}`}>
+          <h4 className={styles.artworkNo}>#{artwork.atwk_no}</h4>
           <h2>{artwork.atst_nm}</h2>
           <h3>{(artwork.atwk_nm || "").replace("(KK)", "")}</h3>
           <p>

@@ -22,7 +22,7 @@ const ArtworkList = () => {
     setForm((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const gotoPage = (pageNumber = 1) => {
+  const gotoPage = (pageNumber) => {
     console.log("pageNumber: ", pageNumber);
     setPage((prevState) => ({ ...prevState, currentPage: pageNumber }));
     const url = `${baseUrl}/artworks`;
@@ -34,18 +34,20 @@ const ArtworkList = () => {
       url: url,
       headers: { Authorization: `Bearer ${medq_token}` },
       data: payload,
-    })
-      .then(({ data }) => {
-        console.log("data: ", data);
-        setArtworks(data.list);
-        setPage(data.pagination);
-      })
-      .finally(() => { });
+    }).then(({ data }) => {
+      console.log("data: ", data);
+      setArtworks(data.list);
+      setPage(data.pagination);
+    });
   };
 
   useEffect(() => {
-    gotoPage();
+    gotoPage(1);
   }, []);
+
+  useEffect(() => {
+    gotoPage(1);
+  }, [form]);
 
   return (
     <section className="team-area ptb-100">
@@ -107,7 +109,7 @@ const ArtworkList = () => {
             <button
               type="submit"
               className="default-btn btn-two"
-              onClick={gotoPage}
+              onClick={() => gotoPage(1)}
             >
               검색
             </button>
