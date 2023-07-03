@@ -237,13 +237,24 @@ const Navbar = ({ user }) => {
                     </li>
                     <li className="nav-item">
                       <Link
+                        href="/bbs/event"
+                        className={`nav-link ${
+                          currentPath == "/bbs/event/" && "active"
+                        }`}
+                        onClick={toggleNavbar}
+                      >
+                        이벤트
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
                         href="/bbs/review"
                         className={`nav-link ${
                           currentPath == "/bbs/review/" && "active"
                         }`}
                         onClick={toggleNavbar}
                       >
-                        이벤트 및 이용후기
+                        이용후기
                       </Link>
                     </li>
                     <li className="nav-item">
