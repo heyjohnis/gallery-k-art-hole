@@ -463,4 +463,11 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   max-height: 200px;
   overflow: auto;
 }
-
+.recomandProduct {
+  position: relative;
+}
+.moreButton {
+  position: absolute;
+  right: 5px;
+  top: 15px
+}

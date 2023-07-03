@@ -12,7 +12,6 @@ import Lottie from "react-lottie";
 import Booking from "../data/booking.json";
 import ReservationComp from "./ReservationComp";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { set } from "date-fns";
 
 const lottieOptions = {
   animationData: Booking,
@@ -26,7 +25,6 @@ const Home = ({ user }) => {
   const modalRef = useRef(null);
   const [points, setPoints] = useState([]);
   const [products, setProducts] = useState([]);
-  const [productSize, setProductSize] = useState(false);
 
   const getPointData = () => {
     const url = `${baseUrl}/points`;
@@ -110,10 +108,6 @@ const Home = ({ user }) => {
     if (saleAmt !== 0) {
       return (
         <>
-          <p className={styles.originPrice}>
-            {commaFormat(content.origin_price)}
-            <span className={styles.unit}>P</span>
-          </p>
           <p className={styles.price}>
             <b>{commaFormat(content.price || 0)}</b>
             <span className={styles.unit}>P</span>
@@ -123,7 +117,6 @@ const Home = ({ user }) => {
     } else {
       return (
         <>
-          <p className={styles.originPrice}></p>
           <p className={styles.price}>
             <b>{commaFormat(content.price || 0)}</b>
             <span className={styles.unit}>P</span>
@@ -185,34 +178,43 @@ const Home = ({ user }) => {
       ) : (
         <div className={styles.content}> 포인트 사용 내역이 없습니다.</div>
       )}
-      <Swiper
-        spaceBetween={20}
-        slidesPerView={"auto"}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        {products.map((product, i) => (
-          <SwiperSlide key={i} style={{ width: "280px" }}>
-            <Link
-              key={i}
-              href={`/ggmall/detail/${product.pd_kind}/${product.pd_no}`}
-            >
-              <div
-                className={`single-team active ${styles.product}`}
-                style={{ height: "auto" }}
+      <section className={styles.recomandProduct}>
+        <h3 className="mt-5 mb-4">
+          그린갤러리에서 엄선한 <br />
+          <b>프리미엄 상품</b>을 만나보세요
+        </h3>
+        <Link href="/ggmall/list/shop/" className={styles.moreButton}>
+          MORE &gt;
+        </Link>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={"auto"}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {products.map((product, i) => (
+            <SwiperSlide key={i} style={{ width: "280px", paddingTop: "20px" }}>
+              <Link
+                key={i}
+                href={`/ggmall/detail/${product.pd_kind}/${product.pd_no}`}
               >
-                <div className="team-single-img">
-                  <img src={product.thumb_img} alt="Image" />
+                <div
+                  className={`single-team active ${styles.product}`}
+                  style={{ height: "auto" }}
+                >
+                  <div className="team-single-img">
+                    <img src={product.thumb_img} alt="Image" />
+                  </div>
+                  <div className="team-content">
+                    <h3 className={styles.pdName}>{product.pd_name}</h3>
+                    {priceComp(product)}
+                  </div>
                 </div>
-                <div className="team-content">
-                  <h3 className={styles.pdName}>{product.pd_name}</h3>
-                  {priceComp(product)}
-                </div>
-              </div>
-            </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
 
       <div style={{ marginTop: "10rem" }}> </div>
       <ReservationModal

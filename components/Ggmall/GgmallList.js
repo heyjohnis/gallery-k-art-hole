@@ -11,9 +11,6 @@ const GgmallList = ({ contents, productKind }) => {
     if (price === 0) {
       return (
         <>
-          <p className={styles.originPriceNone}>
-            {commaFormat(content.origin_price)}
-          </p>
           <p className={styles.priceNone}>별도문의</p>
         </>
       );
