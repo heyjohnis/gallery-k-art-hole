@@ -14,7 +14,7 @@ const INITIAL_FORM = {
   delivery_addr2: "",
 };
 
-const OrderForm = ({ user, setOrderInfo }) => {
+const OrderForm = ({ user, product, setOrderInfo }) => {
   const [form, setForm] = useState(INITIAL_FORM);
 
   const handleChange = (e) => {
@@ -131,97 +131,98 @@ const OrderForm = ({ user, setOrderInfo }) => {
             </div>
           </div>
         </form>
+        {product.pd_type === "01" && (
+          <form className={styles.order_form}>
+            <div>
+              <h3>받으시는 분</h3>
+            </div>
 
-        <form className={styles.order_form}>
-          <div>
-            <h3>받으시는 분</h3>
-          </div>
-
-          <div className={`row ${styles.form_group}`}>
-            <div className="col-md-3 col-sm-3">
-              <p>
-                이름 <span className={styles.sup}>*</span>
-              </p>
-            </div>
-            <div className="col-md-9 col-sm-9 signup">
-              <input
-                className="form-control"
-                type="text"
-                name="delivery_user_name"
-                placeholder="받으시는 분 이름을 입력하세요"
-                value={form.delivery_user_name}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-
-          <div className={`row ${styles.form_group}`}>
-            <div className="col-md-3 col-sm-3">
-              <p>
-                휴대폰번호 <span className={styles.sup}>*</span>
-              </p>
-            </div>
-            <div className={`col-md-9 col-sm-9 ${styles.tel}`}>
-              <input
-                className="form-control"
-                type="tel"
-                name="delivery_phone"
-                placeholder="휴대폰번호를 입력하세요"
-                value={form.delivery_phone}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-          <div className={`row ${styles.form_group}`}>
-            <div className="col-md-3 col-sm-3">
-              <p>
-                주소 <span className={styles.sup}>*</span>
-              </p>
-            </div>
-            <div className="col-md-9 col-sm-9">
-              <div className="row">
-                <div className="col-md-8 col-sm-8">
-                  <input
-                    className="form-control"
-                    type="text"
-                    name="delivery_zipcode"
-                    id="delivery_zipcode"
-                    placeholder="우편번호"
-                    value={form.delivery_zipcode}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="col-md-3 col-sm-3">
-                  <button
-                    type="button"
-                    className="default-btn"
-                    onClick={handleClick}
-                  >
-                    주소검색
-                  </button>
-                </div>
+            <div className={`row ${styles.form_group}`}>
+              <div className="col-md-3 col-sm-3">
+                <p>
+                  이름 <span className={styles.sup}>*</span>
+                </p>
               </div>
-              <input
-                className="form-control"
-                type="text"
-                name="delivery_addr1"
-                id="delivery_addr1"
-                placeholder="기본주소"
-                value={form.delivery_addr1}
-                onChange={handleChange}
-              />
-              <input
-                className="form-control"
-                type="text"
-                name="delivery_addr2"
-                id="delivery_addr2"
-                placeholder="나머지 주소"
-                value={form.delivery_addr2}
-                onChange={handleChange}
-              />
+              <div className="col-md-9 col-sm-9 signup">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="delivery_user_name"
+                  placeholder="받으시는 분 이름을 입력하세요"
+                  value={form.delivery_user_name}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
-          </div>
-        </form>
+
+            <div className={`row ${styles.form_group}`}>
+              <div className="col-md-3 col-sm-3">
+                <p>
+                  휴대폰번호 <span className={styles.sup}>*</span>
+                </p>
+              </div>
+              <div className={`col-md-9 col-sm-9 ${styles.tel}`}>
+                <input
+                  className="form-control"
+                  type="tel"
+                  name="delivery_phone"
+                  placeholder="휴대폰번호를 입력하세요"
+                  value={form.delivery_phone}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className={`row ${styles.form_group}`}>
+              <div className="col-md-3 col-sm-3">
+                <p>
+                  주소 <span className={styles.sup}>*</span>
+                </p>
+              </div>
+              <div className="col-md-9 col-sm-9">
+                <div className="row">
+                  <div className="col-md-8 col-sm-8">
+                    <input
+                      className="form-control"
+                      type="text"
+                      name="delivery_zipcode"
+                      id="delivery_zipcode"
+                      placeholder="우편번호"
+                      value={form.delivery_zipcode}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="col-md-3 col-sm-3">
+                    <button
+                      type="button"
+                      className="default-btn"
+                      onClick={handleClick}
+                    >
+                      주소검색
+                    </button>
+                  </div>
+                </div>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="delivery_addr1"
+                  id="delivery_addr1"
+                  placeholder="기본주소"
+                  value={form.delivery_addr1}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-control"
+                  type="text"
+                  name="delivery_addr2"
+                  id="delivery_addr2"
+                  placeholder="나머지 주소"
+                  value={form.delivery_addr2}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+          </form>
+        )}
       </section>
     </>
   );

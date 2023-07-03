@@ -47,7 +47,7 @@ const MallDetail = () => {
         activePageUrl={`/ggmall/list/${pdKind}`}
       />
 
-      <GgmallItems content={content} options={options} productKind="shoping" />
+      <GgmallItems content={content} options={options} />
       <GgmallText content={content} />
 
       <Footer />

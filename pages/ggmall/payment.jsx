@@ -23,7 +23,7 @@ const payment = ({ user }) => {
   const [selectedOptions, setSelectedOptions] = useState({});
   const [optionsResult, setOptionsResult] = useState(""); // [3
   const [orderInfo, setOrderInfo] = useState({});
-  const [productKind, setProductKin] = useState("");
+  const [productKind, setProductKind] = useState("");
 
   const alertContent = () => {
     MySwal.fire({
@@ -35,7 +35,7 @@ const payment = ({ user }) => {
       showConfirmButton: true,
     }).then((result) => {
       console.log("router: ", router);
-      router.push(`/ggmall/${productKind}`);
+      router.push(`/ggmall/list/${productKind}`);
     });
   };
 
@@ -89,6 +89,7 @@ const payment = ({ user }) => {
       user_no: user.user_no,
       quntity: 1,
       pay_amount: total + parseInt(product.delivery_fee || 0),
+      order_status: product.pd_type === "01" ? "01" : "09",
     }));
 
     const url = `${baseUrl}/mall/${pdNo}`;
@@ -106,7 +107,7 @@ const payment = ({ user }) => {
     setPdNo(router.query.pd_no);
     setTotal(parseInt(router.query.total || 0));
     const productKind = router.query.product_kind;
-    setProductKin(router.query.product_kind);
+    setProductKind(router.query.product_kind);
     const options = JSON.parse(router.query.options);
     setSelectedOptions(options);
     selectedOptionsResult(options, router.query.hope_date);
@@ -118,7 +119,7 @@ const payment = ({ user }) => {
         pageTitle="결제하기"
         homePageUrl="/"
         homePageText="Home"
-        activePageText="포인트몰"
+        activePageText="GG MALL"
       />
 
       <div className="container">
@@ -134,6 +135,7 @@ const payment = ({ user }) => {
           <div className="col-12 col-lg-8 mt-100">
             <OrderForm
               user={user}
+              product={product}
               setOrderInfo={(orderInfo) => {
                 setOrderInfo(orderInfo);
               }}

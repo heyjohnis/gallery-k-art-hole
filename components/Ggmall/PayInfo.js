@@ -61,6 +61,7 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
         buyer_name: user.user_name,
         buyer_tel: user.mobile,
         buyer_email: user.email,
+        order_status: product.pd_type === "01" ? "01" : "09",
       };
       IMP.request_pay(data, callback);
     } else {
@@ -184,7 +185,7 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
               취소하기
             </Link>
             <div onClick={buyNow} className={`default-btn ${styles.btn_buy}`}>
-              구매하기
+              {product.pd_type === "01" ? "구매하기" : "신청하기"}
             </div>
           </div>
         </div>

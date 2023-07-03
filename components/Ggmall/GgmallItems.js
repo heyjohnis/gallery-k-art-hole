@@ -8,7 +8,7 @@ import "react-day-picker/dist/style.css";
 import styles from "./Ggmall.module.scss";
 import { format } from "date-fns";
 
-const GgmallItems = ({ content, options, productKind }) => {
+const GgmallItems = ({ content, options }) => {
   const router = useRouter();
 
   const [optionComp, setOptionComp] = useState([]);
@@ -89,7 +89,7 @@ const GgmallItems = ({ content, options, productKind }) => {
         pd_no: content.pd_no,
         options: JSON.stringify(option),
         total: totalPrice,
-        product_kind: productKind,
+        product_kind: content.pd_kind,
         hope_date:
           useDateOption && selectedDay ? format(selectedDay, "yyyy-MM-dd") : "",
       },
@@ -172,7 +172,7 @@ const GgmallItems = ({ content, options, productKind }) => {
                           className={`default-btn ${styles.btn}`}
                           onClick={buyProduct}
                         >
-                          구매하기
+                          {content.pd_type === "01" ? "구매하기" : "신청하기"}
                         </div>
                       </div>
                     </>
