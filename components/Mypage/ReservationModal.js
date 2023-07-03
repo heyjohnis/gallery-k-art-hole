@@ -374,6 +374,10 @@ ${reservation.etc}`;
         </div>
       </Modal.Body>
       <Modal.Footer>
+        <div style={{ paddingRight: "10px" }}>
+          예약 신청시 골프장 상황에 따라 희망하신 내역으로 예약이 안 될 수
+          있으며, 이 경우 별도로 연락드리겠습니다.
+        </div>
         <div
           className={`btn ${styles.btn} ${styles.btn_outline}`}
           onClick={handleClose}
