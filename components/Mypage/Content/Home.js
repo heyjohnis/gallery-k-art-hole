@@ -92,6 +92,47 @@ const Home = ({ user }) => {
     getRandProduct();
   }, [user]);
 
+  const priceComp = (content) => {
+    const price = content.price || 0;
+    if (price === 0) {
+      return (
+        <>
+          <p className={styles.originPriceNone}>
+            {commaFormat(content.origin_price)}
+          </p>
+          <p className={styles.priceNone}>별도문의</p>
+        </>
+      );
+    }
+
+    const saleAmt = price - content.origin_price;
+
+    if (saleAmt !== 0) {
+      return (
+        <>
+          <p className={styles.originPrice}>
+            {commaFormat(content.origin_price)}
+            <span className={styles.unit}>P</span>
+          </p>
+          <p className={styles.price}>
+            <b>{commaFormat(content.price || 0)}</b>
+            <span className={styles.unit}>P</span>
+          </p>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <p className={styles.originPrice}></p>
+          <p className={styles.price}>
+            <b>{commaFormat(content.price || 0)}</b>
+            <span className={styles.unit}>P</span>
+          </p>
+        </>
+      );
+    }
+  };
+
   return (
     <>
       <div className={styles.btn_wrap}>
@@ -165,9 +206,7 @@ const Home = ({ user }) => {
                 </div>
                 <div className="team-content">
                   <h3 className={styles.pdName}>{product.pd_name}</h3>
-                  <p className={styles.originPriceNone}>
-                    {commaFormat(product.origin_price)}
-                  </p>
+                  {priceComp(product)}
                 </div>
               </div>
             </Link>
