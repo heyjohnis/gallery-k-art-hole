@@ -93,7 +93,7 @@ const ArtworkList = () => {
               type="text"
               name="search_keyword"
               value={form.search_keyword}
-              placeholder="작품명이나 작품번호를 입력하세요"
+              placeholder="작품명, 작가명, 작품번호를 입력하세요"
               maxLength={15}
               onChange={handleChange}
             />

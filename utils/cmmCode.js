@@ -3,3 +3,11 @@ export const ggmallKind = {
   shop: "GG 쇼핑",
   tour: "GG 투어",
 };
+
+export const bbs = {
+  news: "뉴스",
+  event: "이벤트",
+  media: "미디어",
+  notice: "공지사항",
+  review: "이용후기",
+};

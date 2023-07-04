@@ -7,20 +7,13 @@ import PageBanner from "../../components/Common/PageBanner";
 
 import baseUrl from "../../utils/baseUrl";
 import BbsList from "../../components/News/BbsList";
+import { bbs } from "../../utils/cmmCode";
 
 const Bbs = () => {
   const router = useRouter();
   const [, setLoading] = useState({});
   const [contents, setContents] = useState([]);
   const [category, setCategory] = useState("");
-
-  const bbs = {
-    news: "뉴스",
-    event: "이벤트",
-    media: "미디어",
-    notice: "공지사항",
-    review: "이벤트 및 이용후기",
-  };
 
   useEffect(() => {
     setLoading(true);

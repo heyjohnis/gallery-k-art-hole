@@ -6,18 +6,12 @@ import baseUrl from "../../../utils/baseUrl";
 import Footer from "../../../components/Layouts/Footer";
 import PageBanner from "../../../components/Common/PageBanner";
 import BbsDetailContent from "../../../components/News/BbsDetailContent";
+import { bbs } from "../../../utils/cmmCode";
 
 const BbsDetail = () => {
   const router = useRouter();
   const [, setLoading] = useState({});
   const [content, setContent] = useState("");
-
-  const bbs = {
-    news: "뉴스",
-    event: "이벤트",
-    media: "미디어",
-    notice: "공지사항",
-  };
 
   useEffect(() => {
     setLoading(true);
