@@ -91,7 +91,7 @@ const ContactForm = () => {
         </div>
 
         <div className="row align-items-center justify-content-center">
-          <div className="col-lg-8 col-md-12">
+          <div className="col-md-12">
             <div className="contact-wrap contact-pages mb-0">
               <div className="contact-form">
                 <form onSubmit={handleSubmit}>
