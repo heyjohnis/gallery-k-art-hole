@@ -42,7 +42,7 @@ const MallDetail = () => {
       <PageBanner
         pageTitle={pdKindName}
         homePageUrl={`/ggmall/list/${pdKind}`}
-        homePageText="GG MALL"
+        homePageText={pdKind === "gift" ? "MEMBER PRIVILEGES" : "GG MALL"}
         activePageText={pdKindName}
         activePageUrl={`/ggmall/list/${pdKind}`}
       />

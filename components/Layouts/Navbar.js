@@ -154,7 +154,7 @@ const Navbar = ({ user }) => {
                       <Link href="/artworks/" onClick={toggleNavbar}>
                         미술품
                       </Link>
-                      <Link href="/gifts/" onClick={toggleNavbar}>
+                      <Link href="/ggmall/list/gift" onClick={toggleNavbar}>
                         사은품
                       </Link>
                     </li>
