@@ -71,6 +71,21 @@ const ArtworkContent = ({ content }) => {
                         {renderTextWithLineBreaks(content.qnote)}
                       </p>
                     </div>
+                    {content.atwk_mov_key && (
+                      <div>
+                        <h3>작품소개</h3>
+                        <p style={{ textAlign: "center" }}>
+                          ※ 작가의 도슨트이며 게시된 제품과 다를 수 있습니다.
+                        </p>
+                        <div className={styles.scaleVideo}>
+                          <iframe
+                            src={`https://play.wecandeo.com/video/v/?key=${content.atwk_mov_key}`}
+                            allowfullscreen
+                            allow="autoplay;fullscreen;"
+                          ></iframe>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
