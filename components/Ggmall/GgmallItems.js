@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 
 import { commaFormat } from "../../utils/number";
 import { DayPicker } from "react-day-picker";
-import "react-day-picker/dist/style.css";
-import styles from "./Ggmall.module.scss";
 import { format } from "date-fns";
+import GgmallImageModal from "./GgmallImageModal";
+
+import styles from "./Ggmall.module.scss";
+import "react-day-picker/dist/style.css";
 
 const GgmallItems = ({ content, options }) => {
   const router = useRouter();
@@ -18,6 +20,8 @@ const GgmallItems = ({ content, options }) => {
   const [dateOptionName, setDateOptionName] = useState("");
   const [useDateOption, setUseDateOption] = useState(false);
   const [selectedDay, setSelectedDay] = useState(new Date());
+
+  const modalRef = useRef(null);
 
   const selectOption = (optionNo, option) => {
     console.log("selected option: ", option);
@@ -123,7 +127,13 @@ const GgmallItems = ({ content, options }) => {
               }`}</p> */}
               </div>
               <div className="col-lg-6 col-md-12">
-                <div className={styles.items_image}>
+                <div
+                  className={styles.items_image}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    modalRef.current.showModal();
+                  }}
+                >
                   <img src={content.thumb_img} />
                 </div>
               </div>
@@ -183,6 +193,7 @@ const GgmallItems = ({ content, options }) => {
           </div>
         </div>
       </section>
+      <GgmallImageModal imageUrl={content.thumb_img} ref={modalRef} />
     </>
   );
 };
