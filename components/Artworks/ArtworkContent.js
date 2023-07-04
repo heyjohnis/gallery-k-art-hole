@@ -65,15 +65,8 @@ const ArtworkContent = ({ content }) => {
                         </div>
                       </div>
                     </div>
-                    <div id="tab3">
-                      <h3>큐레이터 노트</h3>
-                      <p className={styles.qnote}>
-                        {renderTextWithLineBreaks(content.qnote)}
-                      </p>
-                    </div>
                     {content.atwk_mov_key && (
-                      <div>
-                        <h3>작품소개</h3>
+                      <div className="mt-5">
                         <p style={{ textAlign: "center" }}>
                           ※ 작가의 도슨트이며 게시된 제품과 다를 수 있습니다.
                         </p>
@@ -86,6 +79,12 @@ const ArtworkContent = ({ content }) => {
                         </div>
                       </div>
                     )}
+                    <div id="tab3">
+                      <h3>큐레이터 노트</h3>
+                      <p className={styles.qnote}>
+                        {renderTextWithLineBreaks(content.qnote)}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
