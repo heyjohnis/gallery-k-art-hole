@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { commaFormat } from "../../utils/number";
 import { DayPicker } from "react-day-picker";
 import { format } from "date-fns";
-import GgmallImageModal from "./GgmallImageModal";
+import ImageModal from "../ImageModal";
 
 import styles from "./Ggmall.module.scss";
 import "react-day-picker/dist/style.css";
@@ -193,7 +193,7 @@ const GgmallItems = ({ content, options }) => {
           </div>
         </div>
       </section>
-      <GgmallImageModal imageUrl={content.thumb_img} ref={modalRef} />
+      <ImageModal imageUrl={content.thumb_img} ref={modalRef} />
     </>
   );
 };

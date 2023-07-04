@@ -2,7 +2,7 @@
 import React, { useState, useImperativeHandle, forwardRef } from "react";
 import { Modal } from "react-bootstrap";
 
-const GgmallImageModal = ({ imageUrl }, ref) => {
+const ImageModal = ({ imageUrl }, ref) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -23,4 +23,4 @@ const GgmallImageModal = ({ imageUrl }, ref) => {
   );
 };
 
-export default forwardRef(GgmallImageModal);
+export default forwardRef(ImageModal);
