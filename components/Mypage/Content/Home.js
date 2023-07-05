@@ -128,6 +128,56 @@ const Home = ({ user }) => {
 
   return (
     <>
+      <div className="row mt-5 mb-5">
+        <div className="col-lg-2 col-md-4 col-4 mb-3">
+          <Link href="/ggmall/list/shop/">
+            <div className={styles.quickIcon}>
+              <img src="/images/quick-button/btn01.png" alt="골프상품" />
+              <span>골프상품</span>
+            </div>
+          </Link>
+        </div>
+        <div className="col-lg-2  col-md-4  col-4 mb-3">
+          <Link href="/ggmall/list/tour/">
+            <div className={styles.quickIcon}>
+              <img src="/images/quick-button/btn02.png" alt="골프투어" />
+              <span>골프투어</span>
+            </div>
+          </Link>
+        </div>
+        <div className="col-lg-2  col-md-4 col-4 mb-3">
+          <Link href="/artworks/">
+            <div className={styles.quickIcon}>
+              <img src="/images/quick-button/btn03.png" alt="미술품" />
+              <span>미술품</span>
+            </div>
+          </Link>
+        </div>
+        <div className="col-lg-2  col-md-4 col-4 mb-3">
+          <Link href="/gifts/">
+            <div className={styles.quickIcon}>
+              <img src="/images/quick-button/btn04.png" alt="사은품" />
+              <span>사은품</span>
+            </div>
+          </Link>
+        </div>
+        <div className="col-lg-2  col-md-4 col-4 mb-3">
+          <Link href="/ggmall/list/service/">
+            <div className={styles.quickIcon}>
+              <img src="/images/quick-button/btn05.png" alt="제휴서비스" />
+              <span>제휴서비스</span>
+            </div>
+          </Link>
+        </div>
+        <div className="col-lg-2  col-md-4 col-4 mb-3">
+          <Link href="/ggmall/list/shop">
+            <div className={styles.quickIcon}>
+              <img src="/images/quick-button/btn06.png" alt="GG몰" />
+              <span>GG몰</span>
+            </div>
+          </Link>
+        </div>
+      </div>
       <div className={styles.btn_wrap}>
         <div
           className={`btn ${styles.btn_booking}`}
