@@ -191,7 +191,7 @@ const OrderForm = ({ user, product, setOrderInfo }) => {
                       onChange={handleChange}
                     />
                   </div>
-                  <div className="col-md-3 col-sm-3">
+                  <div className="col-md-3 col-sm-3 mb-2">
                     <button
                       type="button"
                       className="default-btn"
@@ -202,7 +202,7 @@ const OrderForm = ({ user, product, setOrderInfo }) => {
                   </div>
                 </div>
                 <input
-                  className="form-control"
+                  className="form-control mb-2"
                   type="text"
                   name="delivery_addr1"
                   id="delivery_addr1"

@@ -176,7 +176,7 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
               onChange={changeAgree}
             />
             <label htmlFor="agree1" className={styles.agree}>
-              결제정보를 확인하였으며, 구매 및 계약진행에 동의합니다.
+              결제정보를 확인하였으며, 구매진행에 동의합니다.
             </label>
           </div>
 
