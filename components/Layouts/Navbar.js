@@ -143,7 +143,9 @@ const Navbar = ({ user }) => {
                   <Link
                     href="/artworks"
                     className={`nav-link ${
-                      currentPath == "/artworks/" && "active"
+                      (currentPath.indexOf("artworks") > -1 ||
+                        currentPath.indexOf("gift") > -1) &&
+                      "active"
                     }`}
                     onClick={toggleNavbar}
                   >
@@ -154,7 +156,7 @@ const Navbar = ({ user }) => {
                       <Link href="/artworks/" onClick={toggleNavbar}>
                         미술품
                       </Link>
-                      <Link href="/gifts/" onClick={toggleNavbar}>
+                      <Link href="/ggmall/list/gift" onClick={toggleNavbar}>
                         사은품
                       </Link>
                     </li>
@@ -165,7 +167,10 @@ const Navbar = ({ user }) => {
                   <Link
                     href="/ggmall/list/service"
                     className={`nav-link ${
-                      currentPath.indexOf("/ggmall/list/") > -1 && "active"
+                      (currentPath.indexOf("/ggmall/list/") > -1 ||
+                        currentPath.indexOf("/ggmall/detail/") > -1) &&
+                      currentPath.indexOf("/gift") === -1 &&
+                      "active"
                     }`}
                     onClick={toggleNavbar}
                   >

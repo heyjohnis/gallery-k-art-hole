@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { commaFormat } from "../../utils/number";
 import { DayPicker } from "react-day-picker";
 import { format } from "date-fns";
-import GgmallImageModal from "./GgmallImageModal";
+import ImageModal from "../ImageModal";
 
 import styles from "./Ggmall.module.scss";
 import "react-day-picker/dist/style.css";
@@ -171,12 +171,14 @@ const GgmallItems = ({ content, options }) => {
                       dangerouslySetInnerHTML={{ __html: content.info_product }}
                     ></div>
                   )}
-                  {totalPrice > 0 && (
+                  {(totalPrice > 0 || content.pd_type === "03") && (
                     <>
-                      <h2 className={styles.price}>
-                        {commaFormat(totalPrice)}
-                        <span>P</span>
-                      </h2>
+                      {content.pd_type !== "03" && (
+                        <h2 className={styles.price}>
+                          {commaFormat(totalPrice)}
+                          <span>P</span>
+                        </h2>
+                      )}
                       <div className={styles.btn_warp}>
                         <div
                           className={`default-btn ${styles.btn}`}
@@ -193,7 +195,7 @@ const GgmallItems = ({ content, options }) => {
           </div>
         </div>
       </section>
-      <GgmallImageModal imageUrl={content.thumb_img} ref={modalRef} />
+      <ImageModal imageUrl={content.thumb_img} ref={modalRef} />
     </>
   );
 };

@@ -53,7 +53,7 @@ const ggList = ({ user }) => {
       <PageBanner
         pageTitle={pdKindName}
         homePageUrl={`/ggmall/list/${pdKind}`}
-        homePageText="GG MALL"
+        homePageText={pdKind === "gift" ? "MEMBER PRIVILEGES" : "GG MALL"}
         activePageText={pdKindName}
       />
       <SearchKeyword searchWords={getContents} serviceKind={pdKind} />

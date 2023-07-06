@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./Artwork.module.scss";
 import baseUrl from "../../utils/baseUrl";
 import { commaFormat, decimalPlaces } from "../../utils/number";
 import axios from "axios";
 import cookie from "js-cookie";
+import ImageModal from "../ImageModal";
 
 const ArtworkItem = ({ content, user }) => {
   const [options, setOptions] = useState([]);
+  const modalRef = useRef(null);
 
   const buyArtwork = () => {
     const isConfirm = confirm("작품신청을 하시겠습니까?");
@@ -34,7 +36,7 @@ const ArtworkItem = ({ content, user }) => {
           alert("작품신청이 완료되었습니다.");
         }
       })
-      .finally(() => { });
+      .finally(() => {});
   };
 
   useEffect(() => {
@@ -51,7 +53,13 @@ const ArtworkItem = ({ content, user }) => {
         <div className={`container ${styles.ArtworkItem}`}>
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
-              <div className={styles.artwork_image}>
+              <div
+                className={styles.artwork_image}
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  modalRef.current.showModal();
+                }}
+              >
                 <img
                   src={`https://www.artnomics.co.kr/data/artworks/${content.atwk_no}/thumb-image_500.jpg`}
                   alt={content.atwk_nm}
@@ -110,6 +118,10 @@ const ArtworkItem = ({ content, user }) => {
           </div>
         </div>
       </section>
+      <ImageModal
+        imageUrl={`https://www.artnomics.co.kr/data/artworks/${content.atwk_no}/image.jpg`}
+        ref={modalRef}
+      />
     </>
   );
 };
