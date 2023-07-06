@@ -156,7 +156,7 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
               <span>{payInfo.pay_money.toLocaleString()}원</span>
             </div>
           )}
-
+          {/* 
           <div className={styles.pay_group}>
             <h2>이용약관안내</h2>
             <ul>
@@ -165,7 +165,7 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
               <li>(별도의 회원가입이 필요하지 않습니다)</li>
               <li>자세한 내용은 약관참조</li>
             </ul>
-          </div>
+          </div> */}
 
           <div className={styles.agree_form}>
             <input
