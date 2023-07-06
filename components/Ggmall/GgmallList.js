@@ -11,7 +11,9 @@ const GgmallList = ({ contents, productKind }) => {
     if (price === 0) {
       return (
         <>
-          <p className={styles.priceNone}>별도문의</p>
+          <p className={styles.priceNone}>
+            {content.pd_type === "03" ? "신청하기" : "별도문의"}
+          </p>
         </>
       );
     }

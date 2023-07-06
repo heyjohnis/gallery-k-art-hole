@@ -171,12 +171,14 @@ const GgmallItems = ({ content, options }) => {
                       dangerouslySetInnerHTML={{ __html: content.info_product }}
                     ></div>
                   )}
-                  {totalPrice > 0 && (
+                  {(totalPrice > 0 || content.pd_type === "03") && (
                     <>
-                      <h2 className={styles.price}>
-                        {commaFormat(totalPrice)}
-                        <span>P</span>
-                      </h2>
+                      {content.pd_type !== "03" && (
+                        <h2 className={styles.price}>
+                          {commaFormat(totalPrice)}
+                          <span>P</span>
+                        </h2>
+                      )}
                       <div className={styles.btn_warp}>
                         <div
                           className={`default-btn ${styles.btn}`}
