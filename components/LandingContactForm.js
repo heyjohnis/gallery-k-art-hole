@@ -75,6 +75,8 @@ const LandingContactForm = ({ openContact }) => {
       console.log(response);
       setContact(INITIAL_STATE);
       alertContent();
+      // eslint-disable-next-line no-undef
+      dataLayer.push({ event: "submit" });
     } catch (error) {
       console.log(error);
     }
