@@ -85,7 +85,7 @@ const MainBanner = ({ showReservationModal }) => {
                       </div>
                       <div className="slider-btn">
                         <Link
-                          href="ggmall/shoping/"
+                          href="ggmall/list/shop/"
                           className="default-btn black"
                         >
                           GG Mall
@@ -141,7 +141,7 @@ const MainBanner = ({ showReservationModal }) => {
                       </div>
                       <div className="slider-btn">
                         <Link
-                          href="ggmall/shoping/"
+                          href="ggmall/list/shop/"
                           className="default-btn black"
                         >
                           GG Mall
@@ -191,7 +191,7 @@ const MainBanner = ({ showReservationModal }) => {
                       </div>
                       <div className="slider-btn">
                         <Link
-                          href="ggmall/shoping/"
+                          href="ggmall/list/shop/"
                           className="default-btn black"
                         >
                           GG Mall
@@ -238,7 +238,7 @@ const MainBanner = ({ showReservationModal }) => {
                       </div>
                       <div className="slider-btn">
                         <Link
-                          href="ggmall/shoping/"
+                          href="ggmall/list/shop/"
                           className="default-btn black"
                         >
                           GG Mall
@@ -292,7 +292,7 @@ const MainBanner = ({ showReservationModal }) => {
                       </div>
                       <div className="slider-btn">
                         <Link
-                          href="ggmall/shoping/"
+                          href="ggmall/list/shop/"
                           className="default-btn black"
                         >
                           GG Mall
