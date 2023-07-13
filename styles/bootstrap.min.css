@@ -1563,7 +1563,10 @@ progress {
 
     .col-lg-6 {
         flex: 0 0 auto;
-        width: 50%
+        width: 600px;
+        height: 600px;
+        position: relative;
+        margin: 0 auto;
     }
 
     .col-lg-7 {

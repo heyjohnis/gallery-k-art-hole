@@ -523,31 +523,31 @@ Default Btn
   background-color: $main-color;
   display: inline-block;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: -40px;
-    width: 10px;
-    height: 100px;
-    background-color: #ffffff;
-    opacity: 0.5;
-    transition: $transition;
-    transform: rotate(45deg);
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: -20px;
+  //   left: -40px;
+  //   width: 10px;
+  //   height: 100px;
+  //   background-color: #ffffff;
+  //   opacity: 0.5;
+  //   transition: $transition;
+  //   transform: rotate(45deg);
+  // }
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: -40px;
-    width: 10px;
-    height: 100px;
-    background-color: #ffffff;
-    opacity: 0.5;
-    transition: $transition;
-    transform: rotate(45deg);
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: -20px;
+  //   right: -40px;
+  //   width: 10px;
+  //   height: 100px;
+  //   background-color: #ffffff;
+  //   opacity: 0.5;
+  //   transition: $transition;
+  //   transform: rotate(45deg);
+  // }
 
   // &.active {
   //   background-color: $sub-color;
@@ -2571,6 +2571,7 @@ GGmall 리스트
 .single-team {
   text-align: center;
   padding: 20px;
+  height: 480px;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   margin-bottom: 30px;
   transition: $transition;
