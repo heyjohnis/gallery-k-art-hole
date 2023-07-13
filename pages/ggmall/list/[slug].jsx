@@ -56,7 +56,15 @@ const ggList = ({ user }) => {
         homePageText={pdKind === "gift" ? "MEMBER PRIVILEGES" : "GG MALL"}
         activePageText={pdKindName}
       />
+      {pdKind === "gift" && (
+        <section className="team-area mt-5">
+          <div className="container">
+            <img src="/images/gift_guide.jpg" alt="gift_guide" />
+          </div>
+        </section>
+      )}
       <SearchKeyword searchWords={getContents} serviceKind={pdKind} />
+
       <GgmallList contents={contents} productKind={pdKind} />
 
       <Footer />
