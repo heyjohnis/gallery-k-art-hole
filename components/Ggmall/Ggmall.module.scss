@@ -13,7 +13,6 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 .itemContainter {
   padding: 2rem;
   border: 1px solid #eee;
-  max-height: 1200px;
 }
 
 /*제휴서비스 소개*/
@@ -104,7 +103,6 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     font-size: 18px;
     font-weight: 600;
     margin-right: 10px;
-    margin-top: 20px;
   }
 
   .price {
@@ -385,6 +383,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     text-align: left;
     width: 100%;
     font-size: 18px;
+    font-weight: 700;
     color: $sub-color;
     padding-top: 10px;
   }
@@ -394,8 +393,9 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     text-align: left;
     width: 100%;
     font-size: 18px;
-    color: #333;
-    padding-top: 30px;
+    font-weight: 700;
+    color: #000;
+    padding-top: 10px;
   }
 
   span {
@@ -412,39 +412,23 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     font-size: 14px;
   }
   ul {
-    padding-left: 0px;
+    padding-left: 15px;
   }
   li {
     font-family: "S-CoreDream-3Light";
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 300;
-    display: flex;
-    align-items: flex-start;
-    color: #333;
   }
   p > strong {
     font-family: "S-CoreDream-6Bold";
+    font-weight: 700;
   }
   li strong {
     padding: 0px;
-    min-width: 70px;
-    position: relative;
-    white-space: break-spaces;
     font-family: "S-CoreDream-6Bold";
-    color: #111;
-    margin-right: 8px;
+    font-weight: 700;
   }
-  li strong::after {
-    content: ''; 
-    display: block;
-    width: 1px;
-    height: 14px;
-    background: #f0f0f0;
-    position: absolute;
-    top: 50%;
-    margin-top: -7px;
-    right: 0px;
-  }
+  li strong::after { content: ': '; display: inline;}
   
   
 }
