@@ -59,7 +59,12 @@ const ggList = ({ user }) => {
       {pdKind === "gift" && (
         <section className="team-area mt-5">
           <div className="container">
-            <img src="/images/gift_guide.jpg" alt="gift_guide" />
+            <img src="/images/gift_guide.jpg" alt="gift_guide" className="pc" />
+            <img
+              src="/images/gift_guide_mobile.jpg"
+              alt="gift_guide"
+              className="mobile"
+            />
           </div>
         </section>
       )}
