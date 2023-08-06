@@ -523,31 +523,31 @@ Default Btn
   background-color: $main-color;
   display: inline-block;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: -40px;
-    width: 10px;
-    height: 100px;
-    background-color: #ffffff;
-    opacity: 0.5;
-    transition: $transition;
-    transform: rotate(45deg);
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: -20px;
+  //   left: -40px;
+  //   width: 10px;
+  //   height: 100px;
+  //   background-color: #ffffff;
+  //   opacity: 0.5;
+  //   transition: $transition;
+  //   transform: rotate(45deg);
+  // }
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: -40px;
-    width: 10px;
-    height: 100px;
-    background-color: #ffffff;
-    opacity: 0.5;
-    transition: $transition;
-    transform: rotate(45deg);
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: -20px;
+  //   right: -40px;
+  //   width: 10px;
+  //   height: 100px;
+  //   background-color: #ffffff;
+  //   opacity: 0.5;
+  //   transition: $transition;
+  //   transform: rotate(45deg);
+  // }
 
   // &.active {
   //   background-color: $sub-color;

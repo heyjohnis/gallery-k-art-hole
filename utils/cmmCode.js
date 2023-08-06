@@ -11,4 +11,5 @@ export const bbs = {
   media: "미디어",
   notice: "공지사항",
   review: "이용후기",
+  "": "게시판",
 };
