@@ -6,10 +6,11 @@ import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
 import { handleLogin } from "../utils/auth";
 import baseUrl from "../utils/baseUrl";
+import cookie from "js-cookie";
 
 const INITIAL_USER = {
-  login_id: "",
-  password: "",
+  login_id: cookie.get("userId") || "",
+  password: cookie.get("password") | "",
 };
 
 export default function Login() {
@@ -19,6 +20,7 @@ export default function Login() {
   const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [userId, setUserId] = useState("");
 
   const { goto } = router.query;
 
@@ -26,6 +28,8 @@ export default function Login() {
     const isUser = Object.values(user).every((el) => Boolean(el));
     isUser ? setDisabled(false) : setDisabled(true);
   }, [user]);
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,6 +44,8 @@ export default function Login() {
       const url = `${baseUrl}/login`;
       const payload = { ...user };
       const response = await axios.post(url, payload);
+      cookie.set("userId", user.login_id)
+      cookie.set("password", user.password)
       handleLogin(response.data.token, goto);
     } catch (error) {
       if (error.response) alert(error.response.data.message);
