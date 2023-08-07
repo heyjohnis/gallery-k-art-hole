@@ -10,14 +10,13 @@ import cookie from "js-cookie";
 
 const INITIAL_USER = {
   login_id: cookie.get("userId") || "",
-  password: cookie.get("password") | "",
+  password: cookie.get("password") || "",
 };
 
 export default function Login() {
   const router = useRouter();
 
   const [user, setUser] = useState(INITIAL_USER);
-  const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [userId, setUserId] = useState("");
@@ -25,11 +24,12 @@ export default function Login() {
   const { goto } = router.query;
 
   useEffect(() => {
-    const isUser = Object.values(user).every((el) => Boolean(el));
-    isUser ? setDisabled(false) : setDisabled(true);
-  }, [user]);
-
-
+    console.log("useEffect router.query");
+    setUser({
+      login_id: cookie.get("userId") || "",
+      password: cookie.get("password") || "",
+    })
+  }, [router.query]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
