@@ -6,11 +6,10 @@ import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
 import { handleLogin } from "../utils/auth";
 import baseUrl from "../utils/baseUrl";
-import cookie from "js-cookie";
 
 const INITIAL_USER = {
-  login_id: cookie.get("userId") || "",
-  password: cookie.get("password") || "",
+  login_id: "",
+  password: "",
 };
 
 export default function Login() {
@@ -26,8 +25,8 @@ export default function Login() {
   useEffect(() => {
     console.log("useEffect router.query");
     setUser({
-      login_id: cookie.get("userId") || "",
-      password: cookie.get("password") || "",
+      login_id: window.localStorage.getItem("userId") || "",
+      password: window.localStorage.getItem("password") || "",
     })
   }, [router.query]);
 
@@ -44,8 +43,8 @@ export default function Login() {
       const url = `${baseUrl}/login`;
       const payload = { ...user };
       const response = await axios.post(url, payload);
-      cookie.set("userId", user.login_id)
-      cookie.set("password", user.password)
+      window.localStorage.setItem("userId", user.login_id)
+      window.localStorage.setItem("password", user.password)
       handleLogin(response.data.token, goto);
     } catch (error) {
       if (error.response) alert(error.response.data.message);
