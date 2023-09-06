@@ -228,7 +228,7 @@ const PrivacyPolicyText = () => {
         연락처 : 1644-8826, cs@galleryk.co.kr, 02-557-5466
         <br />② 정보주체께서는 제1항의 열람청구 접수․처리부서 이외에,
         행정안전부의 ‘개인정보보호 종합지원 포털’
-        웹사이트([www.privacy.go.kr)를](https://www.artnomics.co.kr/bbs/content.php?co_id=privacy)
+        웹사이트(www.privacy.go.kr)를
         통하여서도 개인정보 열람청구를 하실 수 있습니다.
         <br />▶ 행정안전부 개인정보보호 종합지원 포털 → 개인정보 민원 → 개인정보
         열람등 요구 (본인확인을 위하여 아이핀(I-PIN)이 있어야 함)
@@ -254,9 +254,9 @@ const PrivacyPolicyText = () => {
         <br />- 전화 : (국번없이) 1833-6972
         <br />- 주소 : (03171)서울특별시 종로구 세종대로 209 정부서울청사 4층
         <br />▶ 대검찰청 사이버범죄수사단 : 02-3480-3573
-        ([www.spo.go.kr)](https://www.artnomics.co.kr/bbs/content.php?co_id=privacy)
+        (www.spo.go.kr)
         <br />▶ 경찰청 사이버안전국 : 182
-        ([http://cyberbureau.police.go.kr)](https://www.artnomics.co.kr/bbs/content.php?co_id=privacy)
+        (http://cyberbureau.police.go.kr)
       </p>
     </>
   );
