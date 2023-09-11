@@ -91,6 +91,9 @@ const MainBanner = ({ showReservationModal }) => {
                           GG Mall
                         </Link>
                       </div>
+                      <div className="slider-partner-logo">
+                        <img src="/images/main/main_partner.png" alt="파트너안내" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -147,6 +150,9 @@ const MainBanner = ({ showReservationModal }) => {
                           GG Mall
                         </Link>
                       </div>
+                      <div className="slider-partner-logo">
+                        <img src="/images/main/main_partner.png" alt="파트너안내" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -197,6 +203,9 @@ const MainBanner = ({ showReservationModal }) => {
                           GG Mall
                         </Link>
                       </div>
+                      <div className="slider-partner-logo">
+                        <img src="/images/main/main_partner.png" alt="파트너안내" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -243,6 +252,9 @@ const MainBanner = ({ showReservationModal }) => {
                         >
                           GG Mall
                         </Link>
+                      </div>
+                      <div className="slider-partner-logo">
+                        <img src="/images/main/main_partner.png" alt="파트너안내" />
                       </div>
                     </div>
                   </div>
@@ -297,6 +309,9 @@ const MainBanner = ({ showReservationModal }) => {
                         >
                           GG Mall
                         </Link>
+                      </div>
+                      <div className="slider-partner-logo">
+                        <img src="/images/main/main_partner.png" alt="파트너안내" />
                       </div>
                     </div>
                   </div>

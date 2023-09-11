@@ -111,8 +111,8 @@ const ReservationModal = ({ user, updateReservation }, ref) => {
   시간: ${reservation.start_time} ~ ${reservation.end_time}
 희망지역: 
 ${checkItems
-  .map((item) => REGION_LIST.find((el) => el.id === item).data)
-  .join(", ")}
+        .map((item) => REGION_LIST.find((el) => el.id === item).data)
+        .join(", ")}
 기타사항: 
 ${reservation.etc}`;
     setReservation((prevState) => ({ ...prevState, [name]: value, memo }));
@@ -242,6 +242,7 @@ ${reservation.etc}`;
     <Modal className="modal-xl" show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>예약신청</Modal.Title>
+        <img src="/images/partner_logo/partner_showgolf.png" className="logo-showgolf" alt="쇼골프" />
       </Modal.Header>
       <Modal.Body>
         <div className="row">
