@@ -12,6 +12,7 @@ import cookie from "js-cookie";
 import baseUrl from "../../utils/baseUrl";
 import DatePicker from "../Common/DatePicker";
 import styles from "./Mypage.module.scss";
+import Link from "next/link";
 
 const INITIAL_STATE = {
   user_name: "",
@@ -380,13 +381,13 @@ ${reservation.etc}`;
       </Modal.Body>
       <Modal.Footer>
         <div className={`${styles.screen_golf}`}>
-          <a
+          <Link
             href="/ggmall/detail/service/178/"
             className={`${styles.screen_golf}`}
             onClick={handleClose}
           >
             스크린골프 예약하기
-          </a>
+          </Link>
         </div>
         <div style={{ paddingRight: "10px" }}>
           예약 신청시 골프장 상황에 따라 희망하신 내역으로 예약이 안 될 수
