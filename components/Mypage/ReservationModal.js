@@ -384,6 +384,7 @@ ${reservation.etc}`;
           <Link
             href="/ggmall/detail/service/178/"
             className={`${styles.screen_golf}`}
+            onClick={handleClose}
           >
             스크린골프 예약하기
           </Link>
