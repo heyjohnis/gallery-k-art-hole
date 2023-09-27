@@ -241,15 +241,37 @@ ${reservation.etc}`;
 
   return (
     <Modal className="modal-xl" show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title>예약신청</Modal.Title>
-        <img
-          src="/images/partner_logo/partner_showgolf.png"
-          className={`logo_showgolf ${styles.logo_showgolf}`}
-          alt="쇼골프"
-        />
+        
+        <div className={`logo_wrap ${styles.logo_wrap}`}>
+          <img
+            src="/images/company/greengallery_showgolf.png"
+            className={`greengallery_showgolf ${styles.greengallery_showgolf}`}
+            alt="그린갤러리 쇼골프 협업"
+          />
+        </div>
       </Modal.Header>
       <Modal.Body>
+        <div className="col">
+          <div className="col-lg-12 col-sm-12">
+            <div className={`menu_wrap ${styles.menu_wrap}`}>
+              <span className={`menu_wrap_title ${styles.menu_wrap_title}`}>골프장 예약</span>
+              <Link
+                href="/ggmall/detail/service/178/"
+                className={`${styles.screen_golf}`}
+                onClick={handleClose}
+              >
+                스크린골프 예약
+                <img 
+                  src="/images/link.png" 
+                  style={{ paddingLeft: "10px", width: "27px", height: "17px" }} 
+                  alt="스크린골프 바로가기" 
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
         <div className="row">
           <div className="col-lg-4 col-sm-12">
             <DatePicker
@@ -380,15 +402,6 @@ ${reservation.etc}`;
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <div className={`${styles.screen_golf}`}>
-          <Link
-            href="/ggmall/detail/service/178/"
-            className={`${styles.screen_golf}`}
-            onClick={handleClose}
-          >
-            스크린골프 예약하기
-          </Link>
-        </div>
         <div style={{ paddingRight: "10px" }}>
           예약 신청시 골프장 상황에 따라 희망하신 내역으로 예약이 안 될 수
           있으며, 이 경우 별도로 연락드리겠습니다.

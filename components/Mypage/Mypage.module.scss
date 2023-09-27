@@ -383,19 +383,42 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   color: $main-color;
 }
 
-/* 쇼골프 로고 삽입 2023. 09. 11.*/
-.logo_showgolf {
-  margin-left: 10px;
+/* 스크린 골프 예약 버튼 2023. 09. 26.*/
+.logo_wrap {
+  display: inline-block;
+  width: calc(100% - 10px);
+  padding-right: 10px;
+  text-align: right;
 }
 
-/* 스크린골프 예약하기 링크 삽입 2023. 09. 18.*/
-.screen_golf {
-  flex: 1;
+.menu_wrap {
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0 20px;
+  border-bottom: 2px solid #eee;
 
-  a {
-    font-size: 21px;
+  .menu_wrap_title {
+    display: inline-block;
+    width: 150px;
+    font-size: 19px;
     font-weight: 500;
-    color: #4e7d22;
+    color: #fff;
+    line-height: 1.9;
+    text-align: center;
+    border-radius: 7px 7px 0 0;
+    background-color: #4e7d22;
+  }
+
+  .screen_golf {
+    width: 230px;
+    margin-left: 1px;
+    font-size: 19px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.9;
+    text-align: center;
+    border-radius: 7px 7px 0 0;
+    background-color: #1a2b21;
   }
 }
 
@@ -444,6 +467,31 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
         }
       }
     }
+  }
+
+  /* 스크린 골프 예약 버튼 2023. 09. 25.*/
+  .menu_wrap {
+    display: block;
+    width: 100%;
+
+    .menu_wrap_title {
+      display: inline-block;
+      width: 49.9%;
+      font-size: 15px;
+    }
+
+    .screen_golf {
+      width: 49.9%;
+      margin-left: 0.2%;
+      font-size: 15px;
+    }
+  }
+
+  .logo_wrap {
+    display: block;
+    width: 56%;
+    padding: 10px 0 5px;
+    text-align: right;
   }
 }
 
