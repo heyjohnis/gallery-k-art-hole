@@ -69,13 +69,22 @@ const Contract = ({ user }) => {
                 {user.user_option === "01"
                   ? "기명 1인"
                   : user.user_option === "02"
-                  ? "기명 2인"
-                  : "무기명 1인"}
+                    ? "기명 2인"
+                    : "무기명 1인"}
               </td>
               <td>
                 최대 월 {user.monthly_count}회(연 {user.yearly_count}회)
               </td>
-              <td>회당 50% 또는 최대 60만원</td>
+              <td>
+                {user.ms_name === '퍼플'
+                  ? "회당 75% 또는 최대 90만원"
+                  : user.ms_name === '블랙'
+                    ? "회당 75% 또는 최대 90만원"
+                    : user.ms_name === '플래티넘'
+                      ? "회당 75% 또는 최대 90만원"
+                      : "회당 50% 또는 최대 60만원"
+                }
+              </td>
             </tr>
           </tbody>
         </Table>
