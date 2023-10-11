@@ -246,9 +246,9 @@ ${reservation.etc}`;
         
         <div className={`logo_wrap ${styles.logo_wrap}`}>
           <img
-            src="/images/company/greengallery_showgolf.png"
+            src="/images/company/cooperation.png"
             className={`greengallery_showgolf ${styles.greengallery_showgolf}`}
-            alt="그린갤러리 쇼골프 협업"
+            alt="쇼골프 협업"
           />
         </div>
       </Modal.Header>
@@ -262,12 +262,7 @@ ${reservation.etc}`;
                 className={`${styles.screen_golf}`}
                 onClick={handleClose}
               >
-                스크린골프 예약
-                <img 
-                  src="/images/link.png" 
-                  style={{ paddingLeft: "10px", width: "27px", height: "17px" }} 
-                  alt="스크린골프 바로가기" 
-                />
+                스크린골프 서비스
               </Link>
             </div>
           </div>
@@ -402,14 +397,14 @@ ${reservation.etc}`;
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <div style={{ paddingRight: "10px" }}>
-          예약 신청시 골프장 상황에 따라 희망하신 내역으로 예약이 안 될 수
+        <div style={{ paddingRight: "10px", flexGrow: "1" }}>
+          예약 신청 시 골프장 상황에 따라 희망하신 내역으로 예약이 안 될 수
           있으며, 이 경우 별도로 연락드리겠습니다.
         </div>
         <div
           className={`btn ${styles.btn} ${styles.btn_outline}`}
           onClick={handleClose}
-          style={{ marginRight: "0" }}
+          style={{ marginRight: "4px" }}
         >
           닫기
         </div>
