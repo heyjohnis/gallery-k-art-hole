@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Table } from "react-bootstrap";
 import styles from "../Mypage.module.scss";
+import axios from "axios";
+import baseUrl from "../../../utils/baseUrl";
 
 const ReservationComp = ({ reservation }) => {
   const [isShow, setIsShow] = useState(false);
@@ -11,6 +13,21 @@ const ReservationComp = ({ reservation }) => {
     setToggle(!isShow ? "toggle_off" : "toggle_on");
   };
 
+  const cancelReservation = (resv_no) => {
+    console.log("cancelReservation: ", resv_no);
+
+    const url = `${baseUrl}/reservation/cancel`;
+    axios({ method: "post", url, data: { resv_no } })
+      .then(({ data }) => {
+        console.log("data: ", data);
+        alert("예약이 취소되었습니다.");
+        location.reload();
+      })
+      .catch((error) => {
+        console.log("error: ", error);
+      });
+  };
+
   return (
     <>
       <Table className={styles.info_booking}>
@@ -18,6 +35,7 @@ const ReservationComp = ({ reservation }) => {
           <tr>
             <th>상품정보</th>
             <th>상태</th>
+            <th></th>
             <th></th>
           </tr>
         </thead>
@@ -35,6 +53,16 @@ const ReservationComp = ({ reservation }) => {
             </td>
             <td>
               <div>{reservation.resv_stts_nm}</div>
+            </td>
+            <td>
+              {["01", "05"].includes(reservation.resv_stts) && (
+                <div
+                  className={`default-btn ${styles.btn} ${styles.btn_conform}`}
+                  onClick={() => cancelReservation(reservation.resv_no)}
+                >
+                  예약취소
+                </div>
+              )}
             </td>
             <td>
               <div

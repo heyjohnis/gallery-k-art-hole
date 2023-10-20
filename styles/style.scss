@@ -1,20 +1,23 @@
 @font-face {
-  font-family: 'S-CoreDream-3Light';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-family: "S-CoreDream-3Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'S-CoreDream-6Bold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+  font-family: "S-CoreDream-6Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'S-CoreDream-2ExtraLight';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+  font-family: "S-CoreDream-2ExtraLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -26,8 +29,8 @@ Default Style
 $body-font-family: "Pretendard";
 $heading-font-family: "Hahmlet";
 
-$main-color: #4E7D22;
-$sub-color: #0E5039;
+$main-color: #4e7d22;
+$sub-color: #0e5039;
 $body-color: #4d4d4d;
 $heading-color: #212121;
 $white-color: #ffffff;
@@ -559,19 +562,11 @@ Default Btn
   //   }
   // }
 
-  // &:hover {
-  //   color: $white-color;
-  //   transition: $transition;
-  //   background-color: $sub-color;
-
-  //   &::before {
-  //     left: 200px;
-  //   }
-
-  //   &::after {
-  //     right: 200px;
-  //   }
-  // }
+  &:hover {
+    color: $white-color;
+    transition: $transition;
+    background-color: $sub-color;
+  }
 }
 
 /*
@@ -640,7 +635,6 @@ Section Title
     }
   }
 }
-
 
 /*
 Keyframes Area Style
@@ -738,7 +732,6 @@ Keyframes Area Style
 }
 
 @keyframes border-transform {
-
   0%,
   100% {
     border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
@@ -768,7 +761,6 @@ Keyframes Area Style
     border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
   }
 }
-
 
 /*
 Nav 메뉴
@@ -1450,7 +1442,6 @@ Main Banner
   }
 }
 
-
 /*
 About 미술품소개 / 골프서비스
 ======================================================*/
@@ -1512,7 +1503,6 @@ About 미술품소개 / 골프서비스
   }
 }
 
-
 /*
 Company 그린갤러리
 ======================================================*/
@@ -1547,7 +1537,7 @@ Company 그린갤러리
   }
 
   &.main-mov {
-    background-color: #F8FAF7;
+    background-color: #f8faf7;
   }
 
   .offer-shape {
@@ -1719,7 +1709,7 @@ Company 그린갤러리
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.0);
+    background: rgba(0, 0, 0, 0);
 
     p {
       padding-bottom: 10px;
@@ -1766,7 +1756,6 @@ Company 그린갤러리
       }
     }
   }
-
 }
 
 .single-counter {
@@ -2218,7 +2207,6 @@ Footer
   }
 }
 
-
 /*
 멤버십 / 혜택 소개
 ======================================================*/
@@ -2395,7 +2383,6 @@ Footer
   }
 }
 
-
 /*
 그린갤러리
 ======================================================*/
@@ -2418,7 +2405,6 @@ Footer
 메인 제품 슬라이드
 ======================================================*/
 .brand-slide {
-
   .swiper-button-next,
   .swiper-button-prev {
     &:after {
@@ -2455,13 +2441,11 @@ Footer
       transition: width 0.5s ease-in-out;
     }
   }
-
 }
 
 .brand-area-two {
   background-color: #fafafa;
 }
-
 
 /*
 FAQ
@@ -2533,7 +2517,6 @@ FAQ
   }
 }
 
-
 /*
 Main Art 
 ======================================================*/
@@ -2551,7 +2534,6 @@ Main Art
       }
     }
 
-
     .about-content {
       h2 {
         color: $sub-color;
@@ -2563,7 +2545,6 @@ Main Art
     }
   }
 }
-
 
 /*
 GGmall 리스트
@@ -2628,7 +2609,6 @@ GGmall 리스트
 }
 
 .hero-swiper {
-
   .swiper-button-next,
   .swiper-button-prev {
     width: auto;
@@ -2662,9 +2642,7 @@ GGmall 리스트
   }
 }
 
-
 .jumpx-slider-item {
-
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2877,7 +2855,6 @@ GGmall 리스트
   }
 }
 
-
 /*
 로그인 회원가입
 =====================================================*/
@@ -3017,7 +2994,6 @@ GGmall 리스트
 
         &:hover {
           background: linear-gradient(to top, #b1ea0c 20%, transparent 20%);
-
         }
       }
     }
@@ -3070,7 +3046,6 @@ GGmall 리스트
     }
   }
 }
-
 
 /*
 뉴스 자세히 보기 / 마이페이지
@@ -3148,7 +3123,6 @@ GGmall 리스트
         margin-bottom: 13px;
         margin-top: 25px;
       }
-
     }
 
     .post-navigation {
@@ -3275,7 +3249,6 @@ GGmall 리스트
       }
     }
   }
-
 
   /*
 	뉴스 위젯 / 마이페이지
@@ -3621,7 +3594,6 @@ GGmall 리스트
   }
 }
 
-
 /* Video modal */
 .modal-video-close-btn {
   cursor: pointer;
@@ -3676,12 +3648,14 @@ GGmall 리스트
   background-attachment: fixed;
 
   &:before {
-    background: linear-gradient(to left top,
-        #ff2c9c,
-        #ff287b,
-        #ff395a,
-        #ff5137,
-        #ff6a00);
+    background: linear-gradient(
+      to left top,
+      #ff2c9c,
+      #ff287b,
+      #ff395a,
+      #ff5137,
+      #ff6a00
+    );
     position: absolute;
     height: 100%;
     width: 100%;
@@ -3732,7 +3706,6 @@ GGmall 리스트
         margin-right: 5px;
       }
     }
-
   }
 }
 
@@ -3766,7 +3739,7 @@ td {
     font-size: 20px;
     font-family: $body-font-family;
     font-weight: 700;
-    color: $sub-color
+    color: $sub-color;
   }
 
   .table_membership {
@@ -3796,7 +3769,6 @@ td {
 }
 
 .list_membership {
-
   h3,
   h4 {
     font-family: $body-font-family;
@@ -3834,15 +3806,15 @@ td {
     }
 
     &.blue {
-      background: #437FC1;
+      background: #437fc1;
     }
 
     &.red {
-      background: #EF404A;
+      background: #ef404a;
     }
 
     &.purple {
-      background: #7D499D;
+      background: #7d499d;
     }
   }
 
@@ -3863,7 +3835,6 @@ td {
           height: 16px;
           background: url(/images/ico_list.png);
           background-size: cover;
-
         }
 
         &.strong {
@@ -3917,7 +3888,6 @@ td {
   height: 100%;
 }
 
-
 .signup-agree-box {
   height: 300px;
   overflow: scroll;
@@ -3960,12 +3930,12 @@ td {
   input {
     appearance: none;
 
-    &:checked~.checkmark {
+    &:checked ~ .checkmark {
       background-color: $white-color;
       border: 1px solid $main-color;
     }
 
-    &:checked~.checkmark:after {
+    &:checked ~ .checkmark:after {
       display: block;
     }
   }
@@ -3994,7 +3964,7 @@ td {
   }
 
   &:hover {
-    input~.checkmark {
+    input ~ .checkmark {
       background-color: #eee;
     }
   }
@@ -4009,12 +3979,12 @@ td {
           li {
             a {
               &.membership {
-                color: #4E7D22;
+                color: #4e7d22;
               }
 
               img {
-                color: #4E7D22;
-                filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                color: #4e7d22;
+                filter: opacity(0.4) drop-shadow(0 0 0 #4e7d22);
               }
             }
           }
@@ -4024,11 +3994,11 @@ td {
           li {
             a {
               &.contract {
-                color: #4E7D22;
+                color: #4e7d22;
 
                 img {
-                  color: #4E7D22;
-                  filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                  color: #4e7d22;
+                  filter: opacity(0.4) drop-shadow(0 0 0 #4e7d22);
                 }
               }
             }
@@ -4039,11 +4009,11 @@ td {
           li {
             a {
               &.reservation {
-                color: #4E7D22;
+                color: #4e7d22;
 
                 img {
-                  color: #4E7D22;
-                  filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                  color: #4e7d22;
+                  filter: opacity(0.4) drop-shadow(0 0 0 #4e7d22);
                 }
               }
             }
@@ -4054,11 +4024,11 @@ td {
           li {
             a {
               &.point {
-                color: #4E7D22;
+                color: #4e7d22;
 
                 img {
-                  color: #4E7D22;
-                  filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                  color: #4e7d22;
+                  filter: opacity(0.4) drop-shadow(0 0 0 #4e7d22);
                 }
               }
             }
@@ -4069,11 +4039,11 @@ td {
           li {
             a {
               &.order {
-                color: #4E7D22;
+                color: #4e7d22;
 
                 img {
-                  color: #4E7D22;
-                  filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                  color: #4e7d22;
+                  filter: opacity(0.4) drop-shadow(0 0 0 #4e7d22);
                 }
               }
             }
@@ -4084,7 +4054,7 @@ td {
           li {
             a {
               &.update {
-                color: #4E7D22;
+                color: #4e7d22;
               }
             }
           }
@@ -4094,14 +4064,13 @@ td {
           li {
             a {
               &.home {
-                color: #4E7D22;
+                color: #4e7d22;
 
                 img {
-                  color: #4E7D22;
-                  filter: opacity(0.4) drop-shadow(0 0 0 #4E7D22);
+                  color: #4e7d22;
+                  filter: opacity(0.4) drop-shadow(0 0 0 #4e7d22);
                 }
               }
-
             }
           }
         }
@@ -4205,7 +4174,7 @@ My page
   &::after {
     position: absolute;
     right: 0;
-    content: '';
+    content: "";
     width: 10px;
     /* 사이즈 */
     height: 10px;
@@ -4275,7 +4244,7 @@ span.option_price {
 
 .swiper-pagination-bullet-active {
   width: 40px !important;
-  transition: width .5s !important;
+  transition: width 0.5s !important;
   border-radius: 8px !important;
   background: #fff !important;
   border: 2px solid transparent !important;
@@ -4284,12 +4253,12 @@ span.option_price {
 .option_user {
   margin-left: 0.5rem;
   font-size: 0.8rem;
-  color: #4E7D22
+  color: #4e7d22;
 }
 
 .select-region {
   input[type="checkbox"] {
-    display: none
+    display: none;
   }
 
   .form-check-inline {
@@ -4299,7 +4268,7 @@ span.option_price {
     padding: 0;
   }
 
-  input[type="checkbox"]+label {
+  input[type="checkbox"] + label {
     padding: 3px 0;
     text-align: center;
     display: block;
@@ -4308,8 +4277,8 @@ span.option_price {
     border-radius: 8px;
   }
 
-  input[type="checkbox"]:checked+label {
-    background-color: #4E7D22;
+  input[type="checkbox"]:checked + label {
+    background-color: #4e7d22;
     color: #fff;
   }
 }
