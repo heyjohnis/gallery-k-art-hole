@@ -206,6 +206,7 @@ ${reservation.etc}`;
   useEffect(() => {
     if (user && user.user_no) {
       userInfoSetting();
+      console.log("user: ", user);
     }
   }, [user]);
 
@@ -243,7 +244,7 @@ ${reservation.etc}`;
     <Modal className="modal-xl" show={show} onHide={handleClose}>
       <Modal.Header>
         <Modal.Title>예약신청</Modal.Title>
-        
+
         <div className={`logo_wrap ${styles.logo_wrap}`}>
           <img
             src="/images/company/cooperation.png"
@@ -256,7 +257,9 @@ ${reservation.etc}`;
         <div className="col">
           <div className="col-lg-12 col-sm-12">
             <div className={`menu_wrap ${styles.menu_wrap}`}>
-              <span className={`menu_wrap_title ${styles.menu_wrap_title}`}>골프장 예약</span>
+              <span className={`menu_wrap_title ${styles.menu_wrap_title}`}>
+                골프장 예약
+              </span>
               <Link
                 href="/ggmall/detail/service/178/"
                 className={`${styles.screen_golf}`}
@@ -408,13 +411,15 @@ ${reservation.etc}`;
         >
           닫기
         </div>
-        <div
-          className={`default-btn ${styles.btn} `}
-          style={{ borderRadius: "6px" }}
-          onClick={handleSubmit}
-        >
-          신청
-        </div>
+        {user?.membership !== "dealer" && (
+          <div
+            className={`default-btn ${styles.btn} `}
+            style={{ borderRadius: "6px" }}
+            onClick={handleSubmit}
+          >
+            신청
+          </div>
+        )}
       </Modal.Footer>
     </Modal>
   );
