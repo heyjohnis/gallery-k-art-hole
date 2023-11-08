@@ -110,7 +110,7 @@
     // position: absolute;
     // top: 50%;
     // transform: translateY(-400px);
-    padding: 226px 0 100px 200px;
+    padding: 226px 0 100px 199px;
     background-color: #fff;
 		
 			.titleBox {
@@ -168,12 +168,6 @@
 					input[type='date']:focus::before,
 					input[type='date']:valid::before {
 						display: none;
-					}
-
-					input[type='date']::after {
-						content: ">";
-						width: 10%;
-						color: #aaa;
 					}
 
 				}
@@ -250,9 +244,96 @@
 }
 
 .sliderPageSection {
+		padding: 226px 199px;
+		background-color: #fff;
 
-	
-}
+			.titleWrap {
+
+				h1 {
+					display: inline-block;
+					font-family: Jost;
+					font-size: 50px;
+					font-style: normal;
+					font-weight: 700;
+					line-height: 60px;
+					letter-spacing: -0.5px;
+					text-transform: uppercase;
+					color: #111;
+
+					span {
+						font-size: 80px;
+						letter-spacing: -0.8px;
+						color: #6ED338;
+					}
+				}
+
+				p {
+					display: inline-block;
+					padding-left: 40px;
+				}
+			}
+
+			.sildeSize {
+				height: 520px;
+			}
+
+			.slide2 {
+				// background-image: url(/images/main/main_001.jpg);
+				height: 520px;
+		}
+		
+	}
+
+	.itemListPageSection {
+		padding: 226px 199px;
+		background-color: #fff;
+
+		.titleWrap {
+
+			h1 {
+				display: inline-block;
+				font-family: Jost;
+				font-size: 50px;
+				font-style: normal;
+				font-weight: 700;
+				line-height: 60px;
+				letter-spacing: -0.5px;
+				text-transform: uppercase;
+				color: #111;
+
+				span {
+					font-size: 80px;
+					letter-spacing: -0.8px;
+					color: #6ED338;
+				}
+			}
+
+			p {
+				display: inline-block;
+				padding-left: 40px;
+			}
+		}
+
+		.itemIntoroduceWrap{ 
+
+		}
+
+		.itemListWrap {
+
+			ul {
+				margin: 0;
+				padding: 0;
+				
+				li {
+					margin: 0;
+					padding: 0;
+					list-style: none;
+				}
+			}
+
+		}
+
+	}
 
 
 

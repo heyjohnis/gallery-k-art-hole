@@ -6,8 +6,33 @@ import { Pagination, Autoplay, A11y, Navigation } from "swiper";
 import { Modal } from "react-bootstrap";
 import YouTube from "react-youtube";
 import { SectionsContainer, Section } from "react-fullpage";
+import MainListItems from "./MainListItems";
 import styles from "./MainBanner.module.scss";
 import "swiper/scss/pagination";
+
+const LIST_ITEM = [
+  {
+    id: 1,
+    img: "1",
+    title: "리무진 서비스",
+    script: "벤츠 스플린터",
+    point: 862200,
+  },
+  {
+    id: 2,
+    img: "2",
+    title: "개인 제트기 서비스",
+    script: "ZETCAP",
+    point: "가격별도문의",
+  },
+  {
+    id: 3,
+    img: "3",
+    title: "제주 스위트룸 이용권",
+    script: "비성수기",
+    point: 720000,
+  },
+];
 
 const MainBanner = ({ showReservationModal }) => {
   const [show, setShow] = useState(false);
@@ -174,15 +199,17 @@ const MainBanner = ({ showReservationModal }) => {
         </Section>
         <Section>
           <div
-            className={`left-section col-lg-6 col-md-12 ${styles.onePage} ${styles.sliderPageSection}}`}
+            className={`col-lg-6 col-md-12 ${styles.onePage} ${styles.sliderPageSection}`}
           >
-            <h1>
-              ART GALLERY<span>.</span>{" "}
-              <span>
+            <div className={`${styles.titleWrap}`}>
+              <h1>
+                ART GALLERY<span>.</span>
+              </h1>
+              <p>
                 갤러리케이에서 최정상 제휴 작가의 노력으로 완성된 원화 작품을
                 제공합니다.
-              </span>
-            </h1>
+              </p>
+            </div>
             <div>
               <Swiper
                 navigation={true}
@@ -200,11 +227,13 @@ const MainBanner = ({ showReservationModal }) => {
                 className={`hero-swiper ${styles.swiper}`}
               >
                 <SwiperSlide>
-                  <div className={`row ${styles.slide1}`}>
+                  <div className={`row ${styles.sildeSize}`}>
                     <div className="d-table">
                       <div className="d-table-cell">
-                        <div className="container">
-                          <div className="jumpx-slider-text overflow-hidden one">
+                        <div className={`container`}>
+                          <div
+                            className={`jumpx-slider-text overflow-hidden one`}
+                          >
                             <h1>
                               <b>시대의 가치</b>를 창조해 온 당신
                               <br />
@@ -252,9 +281,8 @@ const MainBanner = ({ showReservationModal }) => {
                     </div>
                   </div>
                 </SwiperSlide>
-
                 <SwiperSlide>
-                  <div>
+                  <div className={`row ${styles.sildeSize}`}>
                     <div className="d-table">
                       <div className="d-table-cell">
                         <div className="container">
@@ -313,8 +341,10 @@ const MainBanner = ({ showReservationModal }) => {
           </div>
         </Section>
         <Section>
-          <div>
-            <div>
+          <div
+            className={`col-lg-6 col-md-12 ${styles.onePage} ${styles.itemListPageSection}`}
+          >
+            <div className={`${styles.titleWrap}`}>
               <h1>
                 BEST
                 <br />
@@ -324,17 +354,27 @@ const MainBanner = ({ showReservationModal }) => {
                 GG는 Green Gallery의 약자로 GG Mall만의 프리미엄 서비스를
                 제공합니다.
               </p>
-              <h3>제휴서비스</h3>
-              <p>
-                GG 쇼핑
-                <br />
-                <br />
-                GG 투어
-              </p>
-              {/* <Link
-                href="/"
+            </div>
+            <div className={`${styles.itemIntoroduceWrap}`}>
+              <div>
+                <h3>제휴서비스</h3>
+                <p>
+                  GG 쇼핑
+                  <br />
+                  <br />
+                  GG 투어
+                </p>
+                {/* <Link
               >
                 VIEW MORE</Link> */}
+              </div>
+              <div className={`${styles.itemListWrap}`}>
+                <ul>
+                  {LIST_ITEM.map((itemList) => (
+                    <MainListItems key={itemList.id} itemList={itemList} />
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </Section>
