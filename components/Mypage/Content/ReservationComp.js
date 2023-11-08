@@ -53,14 +53,13 @@ const ReservationComp = ({ reservation }) => {
             </td>
             <td>
               <div>{reservation.resv_stts_nm}</div>
-            </td>
-            <td>
               {["01", "05"].includes(reservation.resv_stts) && (
                 <div
+                  style={{ marginTop: "20px" }}
                   className={`default-btn ${styles.btn} ${styles.btn_conform}`}
                   onClick={() => cancelReservation(reservation.resv_no)}
                 >
-                  예약취소
+                  취소
                 </div>
               )}
             </td>
@@ -74,7 +73,7 @@ const ReservationComp = ({ reservation }) => {
             </td>
           </tr>
         </tbody>
-      </Table>
+      </Table >
       {isShow && (
         <Table>
           <tbody>
@@ -107,7 +106,8 @@ const ReservationComp = ({ reservation }) => {
             )}
           </tbody>
         </Table>
-      )}
+      )
+      }
     </>
   );
 };
