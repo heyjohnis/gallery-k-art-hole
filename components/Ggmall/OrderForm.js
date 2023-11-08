@@ -12,6 +12,7 @@ const INITIAL_FORM = {
   delivery_zipcode: "",
   delivery_addr1: "",
   delivery_addr2: "",
+  memo: "",
 };
 
 const OrderForm = ({ user, product, setOrderInfo }) => {
@@ -69,7 +70,7 @@ const OrderForm = ({ user, product, setOrderInfo }) => {
   }, [user]);
 
   useEffect(() => {
-    setOrderInfo(form);
+    setOrderInfo((prevState) => ({ ...prevState, ...form }));
   }, [form]);
 
   return (
@@ -126,6 +127,21 @@ const OrderForm = ({ user, product, setOrderInfo }) => {
                 name="order_user_email"
                 placeholder="이메일을 입력하세요"
                 value={form.order_user_email}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className={`row ${styles.form_group}`}>
+            <div className="col-md-3 col-sm-3">
+              <p>메모</p>
+            </div>
+            <div className="col-md-9 col-sm-9 signup">
+              <textarea
+                name="memo"
+                cols="30"
+                rows="3"
+                value={form.memo}
+                className={`form-control ${styles.form_control}`}
                 onChange={handleChange}
               />
             </div>
