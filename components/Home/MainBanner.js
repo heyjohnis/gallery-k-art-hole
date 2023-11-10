@@ -4,33 +4,43 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, A11y, Navigation } from "swiper";
 import { Modal } from "react-bootstrap";
+import Nav from "react-bootstrap/Nav";
+import Tab from "react-bootstrap/Tab";
 import YouTube from "react-youtube";
 import { SectionsContainer, Section } from "react-fullpage";
-import MainListItems from "./MainListItems";
+import MainListItems from "./MainListWrap";
+import Footer from "../Layouts/Footer";
 import styles from "./MainBanner.module.scss";
 import "swiper/scss/pagination";
+import MainListWrap from "./MainListWrap";
 
 const LIST_ITEM = [
   {
     id: 1,
-    img: "1",
+    img: "https://erp.galleryk.co.kr/download?filename=420b43d8-01bb-4c5f-a8bb-12a4e3d9b359.jpg&dir=green-prod-thumb&ofilename=thumnail_05.jpg",
     title: "리무진 서비스",
-    script: "벤츠 스플린터",
+    discript: "벤츠 스플린터",
+    discount: 0,
     point: 862200,
+    discountPoint: 0,
   },
   {
     id: 2,
-    img: "2",
+    img: "https://erp.galleryk.co.kr/download?filename=fedd585e-95db-42f0-9a5d-80cd105fdd9f.jpg&dir=green-prod-thumb&ofilename=thumnail_01.jpg",
     title: "개인 제트기 서비스",
-    script: "ZETCAP",
-    point: "가격별도문의",
+    discript: "ZETCAP",
+    discount: 0,
+    point: 0,
+    discountPoint: 0,
   },
   {
     id: 3,
-    img: "3",
+    img: "https://erp.galleryk.co.kr/download?filename=203f3f91-c9c3-4db7-ae2f-00206641ec1a.jpg&dir=green-prod-thumb&ofilename=thumnail_07.jpg",
     title: "제주 스위트룸 이용권",
-    script: "비성수기",
-    point: 720000,
+    discript: "비성수기",
+    discount: 10,
+    point: 800000,
+    discountPoint: 720000,
   },
 ];
 
@@ -342,43 +352,73 @@ const MainBanner = ({ showReservationModal }) => {
         </Section>
         <Section>
           <div
-            className={`col-lg-6 col-md-12 ${styles.onePage} ${styles.itemListPageSection}`}
+            className={`row col-lg-12 col-md-12 ${styles.onePage} ${styles.itemListPageSection}`}
           >
-            <div className={`${styles.titleWrap}`}>
-              <h1>
-                BEST
-                <br />
-                GG ITEMS<span>.</span>
-              </h1>
-              <p>
-                GG는 Green Gallery의 약자로 GG Mall만의 프리미엄 서비스를
-                제공합니다.
-              </p>
-            </div>
-            <div className={`${styles.itemIntoroduceWrap}`}>
-              <div>
-                <h3>제휴서비스</h3>
-                <p>
-                  GG 쇼핑
-                  <br />
-                  <br />
-                  GG 투어
-                </p>
-                {/* <Link
-              >
-                VIEW MORE</Link> */}
+            <Tab.Container id="left-tabs" defaultActiveKey="first">
+              <div className={`col col-lg-3 col-md-12`}>
+                <div className={`col col-lg-12 col-md-6 ${styles.titleWrap}`}>
+                  <h1>
+                    BEST
+                    <br />
+                    GG ITEMS<span>.</span>
+                  </h1>
+                  <p>
+                    GG는 Green Gallery의 약자로 <br />
+                    GG Mall만의 프리미엄 서비스를 제공합니다.
+                  </p>
+                </div>
+                <div
+                  className={`row col-lg-12 col-md-6 ${styles.itemIntoroduceWrap}`}
+                >
+                  <Nav className="flex-column">
+                    <Nav.Item>
+                      <Nav.Link
+                        eventKey="first"
+                        className={`col-lg-12 col-md-6 ${styles.navLink}`}
+                      >
+                        제휴서비스
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link
+                        eventKey="second"
+                        className={`col-lg-12 col-md-6 ${styles.navLink}`}
+                      >
+                        GG쇼핑
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link
+                        eventKey="third"
+                        className={`col-lg-12 col-md-6 ${styles.navLink}`}
+                      >
+                        GG투어
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                </div>
               </div>
-              <div className={`${styles.itemListWrap}`}>
-                <ul>
-                  {LIST_ITEM.map((itemList) => (
-                    <MainListItems key={itemList.id} itemList={itemList} />
-                  ))}
-                </ul>
+              <div className={`row col-lg-9 col-md-6 ${styles.itemListWrap}`}>
+                <Tab.Content>
+                  <Tab.Pane eventKey="first">
+                    1
+                    <MainListWrap LIST_ITEM={LIST_ITEM} />
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="second">
+                    2
+                    <MainListWrap LIST_ITEM={LIST_ITEM} />
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="third">
+                    3
+                    <MainListWrap LIST_ITEM={LIST_ITEM} />
+                  </Tab.Pane>
+                </Tab.Content>
               </div>
-            </div>
+            </Tab.Container>
           </div>
         </Section>
       </SectionsContainer>
+      {/* <Footer /> */}
     </>
   );
 };
