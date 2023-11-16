@@ -23,6 +23,7 @@ const LIST_ITEM = [
     discount: 0,
     point: 862200,
     discountPoint: 0,
+    link: "/login/",
   },
   {
     id: 2,
@@ -32,6 +33,7 @@ const LIST_ITEM = [
     discount: 0,
     point: 0,
     discountPoint: 0,
+    link: "/login/",
   },
   {
     id: 3,
@@ -41,6 +43,103 @@ const LIST_ITEM = [
     discount: 10,
     point: 800000,
     discountPoint: 720000,
+    link: "/login/",
+  },
+];
+
+const LIST_ITEM_SHOPING = [
+  {
+    id: 1,
+    img: "https://erp.galleryk.co.kr/download?filename=a55f9941-c6c0-4751-902a-384ab633745b.jpg&dir=green-prod-thumb&ofilename=thumbnail_34.jpg",
+    title: "말본 골프 클래식 하프백 그린",
+    discript: "Malbon",
+    discount: 10,
+    point: 500000,
+    discountPoint: 417000,
+    link: "/login/",
+  },
+  {
+    id: 2,
+    img: "https://erp.galleryk.co.kr/download?filename=2d1f5523-1291-4645-aedb-64766dfae3f2.jpg&dir=green-prod-thumb&ofilename=thumbnail_25.jpg",
+    title: "야마하 페미나 여성 풀세트",
+    discript: "YAMAHA",
+    discount: 0,
+    point: 2250000,
+    discountPoint: 0,
+    link: "/login/",
+  },
+  {
+    id: 3,
+    img: "https://erp.galleryk.co.kr/download?filename=949720e1-2290-4268-ab76-024032f4c1c8.jpg&dir=green-prod-thumb&ofilename=12.jpg",
+    title: "보그너 여성 캐주얼 캐디백",
+    discript: "BOGNER",
+    discount: 0,
+    point: 862200,
+    discountPoint: 0,
+    link: "/login/",
+  },
+];
+
+const LIST_ITEM_TOUR = [
+  {
+    id: 1,
+    img: "https://erp.galleryk.co.kr/download?filename=83c1abe6-b74c-4aff-9007-0453e59ae3bc.jpg&dir=green-prod-thumb&ofilename=thumnail_09.jpg",
+    title: "태국 방콕 프리미엄",
+    discript: "3박5일 ㅣ 골프 18홀 라운딩, 3회 그린피",
+    discount: 0,
+    point: 880000,
+    discountPoint: 0,
+    link: "/login/",
+  },
+  {
+    id: 2,
+    img: "https://erp.galleryk.co.kr/download?filename=a827dba9-f02d-47fe-94ba-3d9c7bba3d91.jpg&dir=green-prod-thumb&ofilename=thumnail_39.jpg",
+    title: "일본 북해도 골프&온천",
+    discript: "3박4일 ㅣ 노보리베츠 온천투어",
+    discount: 0,
+    point: 880000,
+    discountPoint: 0,
+    link: "/login/",
+  },
+  {
+    id: 3,
+    img: "https://erp.galleryk.co.kr/download?filename=f5d12522-0778-4946-b969-cb0b1da7e31a.jpg&dir=green-prod-thumb&ofilename=thumnail_08.jpg",
+    title: "태국 방콕 VVIP",
+    discript: "3박5일 ㅣ 골프 18홀 라운딩, 3회 그린피",
+    discount: 0,
+    point: 1150000,
+    discountPoint: 0,
+    link: "/login/",
+  },
+];
+
+const LIST_ITEM_GALLERY = [
+  {
+    id: 1,
+    img: "https://erp.galleryk.co.kr/download?filename=83c1abe6-b74c-4aff-9007-0453e59ae3bc.jpg&dir=green-prod-thumb&ofilename=thumnail_09.jpg",
+    title: "월.매화-21-32",
+    name: "이군우",
+    discript:
+      "매화가 진채를 만나 새롭게 태어나다! 자개와 칠보 재료를 통해 사대부들의 고결한 정신과 인간세계를 표현하였다.",
+    link: "https://naver.com/",
+  },
+  {
+    id: 2,
+    img: "https://erp.galleryk.co.kr/download?filename=a827dba9-f02d-47fe-94ba-3d9c7bba3d91.jpg&dir=green-prod-thumb&ofilename=thumnail_39.jpg",
+    title: "영월의 가을",
+    name: "김복동",
+    discript:
+      "풍경, 초상, 기독 성화 등을 주요 소재로 자연의 미감을 노래하는 작가",
+    link: "# ",
+  },
+  {
+    id: 3,
+    img: "https://erp.galleryk.co.kr/download?filename=f5d12522-0778-4946-b969-cb0b1da7e31a.jpg&dir=green-prod-thumb&ofilename=thumnail_08.jpg",
+    title: "Dreaming2350130",
+    name: "안말환",
+    discript:
+      "나의 나무는 일상의 짐을 내려놓고 편히 쉴 수 있는 신선한 숲, 가장 깨끗한 당신의 호흡이 되기를...",
+    link: "#",
   },
 ];
 
@@ -52,15 +151,38 @@ const MainBanner = ({ showReservationModal }) => {
 
   const opts = {
     width: "100%",
-    height: "100%",
+    height: "97vh",
     playerVars: {
-      autoplay: 1,
+      autoplay: 1, // 자동재생
+      rel: 0, // 관련 동영상 표시 여부
+      modestbranding: 0, // 컨트롤 바에 youtube 로고를 표시 여부
+      loop: 1, //반복 재생 여부
+      controls: 0, // 컨트롤러 표시 여부
+      disablekb: 1, // 키보드 제어 여부
+      fs: 0, // 풀스크린 제어 여부
+      showinfo: 0, // 정보 표시 여부
+      iv_load_policy: 3, // 특수효과
     },
   };
 
   let options = {
     anchors: ["sectionOne", "GolfBooking", "sectionThree", "sectionFour"],
   };
+
+  const [tabMenu, setTabMenu] = useState("first");
+
+  const handleTabMenu = (e) => {
+    console.log(e.target.dataset.rrUiEventKey);
+    if (e.target.dataset.rrUiEventKey === "first") {
+      setTabMenu("first");
+    } else if (e.target.dataset.rrUiEventKey === "second") {
+      setTabMenu("second");
+    } else {
+      setTabMenu("third");
+    }
+  };
+
+  // const handleTabMenu = () => {};
 
   const submitBooking = (e) => {
     e.preventDefault();
@@ -89,12 +211,12 @@ const MainBanner = ({ showReservationModal }) => {
                   e.target.mute(1);
                   e.target.setVolume(0);
                   e.target.hideVideoInfo(1);
-                  console.log(
-                    e.target.videoTitle,
-                    e.target.hideVideoInfo,
-                    e.target.mute,
-                    "ready1"
-                  );
+                  // console.log(
+                  //   e.target.videoTitle,
+                  //   e.target.hideVideoInfo,
+                  //   e.target.mute,
+                  //   "ready1"
+                  // );
                 }}
                 onPlay={(e) => {
                   e.target.mute(1);
@@ -236,116 +358,43 @@ const MainBanner = ({ showReservationModal }) => {
                 modules={[Pagination, A11y, Autoplay, Navigation]}
                 className={`hero-swiper ${styles.swiper}`}
               >
-                <SwiperSlide>
-                  <div className={`row ${styles.sildeSize}`}>
-                    <div className="d-table">
-                      <div className="d-table-cell">
-                        <div className={`container`}>
-                          <div
-                            className={`jumpx-slider-text overflow-hidden one`}
-                          >
-                            <h1>
-                              <b>시대의 가치</b>를 창조해 온 당신
-                              <br />
-                              결이 다른 행보로 <br className="mobile" />
-                              <b>격이 높은 인생</b>을 살아 온 당신
-                              <br />
-                              당신에게 바치는 가장 <b>명예로운 멤버십</b>
-                            </h1>
-                            <p>
-                              골프의 세계에서 최고의 명성을 자랑하는
-                              그린갤러리는&nbsp;
-                              <br className="mobile" />
-                              당신의 위대한 업적을 상징하는 멤버십으로, <br />
-                              최고의 품격과 프리미엄 멤버십 서비스로 당신만을
-                              위한 품격 있는 환경을 제공합니다.
-                            </p>
-                            <div className="slider-btn">
-                              <Link
-                                href="#"
-                                className="default-btn black"
-                                onClick={showModal}
-                              >
-                                소개영상
-                              </Link>
-                            </div>
-                            <div className="slider-btn">
-                              <div
-                                onClick={showReservationModal}
-                                className="default-btn black"
-                              >
-                                Golf Booking
+                {LIST_ITEM_GALLERY.map((itemList) => (
+                  <SwiperSlide key={itemList.id}>
+                    <div className={`row ${styles.sildeSize}`}>
+                      <div className="d-table">
+                        <div className="d-table-cell">
+                          <div className={`container`}>
+                            <div
+                              className={`jumpx-slider-text overflow-hidden one`}
+                            >
+                              <div className={`${styles.slideWrap}`}>
+                                <div className={`${styles.sectionLeft}`}>
+                                  <h1>{itemList.title}</h1>
+                                  <span>{itemList.name}</span>
+                                  <p>{itemList.discript}</p>
+                                  <div className={`${styles.buttonWrap}`}>
+                                    <Link
+                                      href={`${itemList.link}`}
+                                      className={`${styles.defaultBtnBlack}`}
+                                    >
+                                      VIEW MORE
+                                    </Link>
+                                  </div>
+                                </div>
+                                <div className={`${styles.sectionRight}`}>
+                                  <img
+                                    src={`${itemList.img}`}
+                                    alt={`${itemList.title}`}
+                                  />
+                                </div>
                               </div>
-                            </div>
-                            <div className="slider-btn">
-                              <Link
-                                href="ggmall/list/shop/"
-                                className="default-btn black"
-                              >
-                                GG Mall
-                              </Link>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className={`row ${styles.sildeSize}`}>
-                    <div className="d-table">
-                      <div className="d-table-cell">
-                        <div className="container">
-                          <div className="jumpx-slider-text overflow-hidden two">
-                            <div className={styles.mainCopy}>
-                              <h1>
-                                국내 프리미엄 골프장 300여 곳 포함
-                                <br /> 전 세계 유명 골프장을
-                                <br />
-                                <b>회원 이상의 가치</b>로 <b>이용</b>
-                              </h1>
-                              <p>
-                                한국 내 프리미엄 골프장 뿐만 아니라,&nbsp;
-                                <br className="mobile" />
-                                PGA / LPGA 등 경기가 개최되는 전 세계 유명
-                                골프장과 제휴를 통해 <br />
-                                회원 이상의 가치로 자유롭게 이용할 수 있는
-                                특권을 제공합니다.
-                              </p>
-                            </div>
-                            {/* <div className={styles.mapImage}></div> */}
-
-                            <div className="slider-btn">
-                              <Link
-                                href="#"
-                                className="default-btn black"
-                                onClick={showModal}
-                              >
-                                소개영상
-                              </Link>
-                            </div>
-                            <div className="slider-btn">
-                              <div
-                                onClick={showReservationModal}
-                                className="default-btn black"
-                              >
-                                Golf Booking
-                              </div>
-                            </div>
-                            <div className="slider-btn">
-                              <Link
-                                href="ggmall/list/shop/"
-                                className="default-btn black"
-                              >
-                                GG Mall
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>
@@ -374,6 +423,7 @@ const MainBanner = ({ showReservationModal }) => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="first"
+                        onClick={handleTabMenu}
                         className={`col-lg-12 col-md-6 ${styles.navLink}`}
                       >
                         제휴서비스
@@ -382,6 +432,7 @@ const MainBanner = ({ showReservationModal }) => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="second"
+                        onClick={handleTabMenu}
                         className={`col-lg-12 col-md-6 ${styles.navLink}`}
                       >
                         GG쇼핑
@@ -390,6 +441,7 @@ const MainBanner = ({ showReservationModal }) => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="third"
+                        onClick={handleTabMenu}
                         className={`col-lg-12 col-md-6 ${styles.navLink}`}
                       >
                         GG투어
@@ -400,17 +452,28 @@ const MainBanner = ({ showReservationModal }) => {
               </div>
               <div className={`row col-lg-9 col-md-6 ${styles.itemListWrap}`}>
                 <Tab.Content>
-                  <Tab.Pane eventKey="first">
+                  {/* <Tab.Pane eventKey="first">
                     1
                     <MainListWrap LIST_ITEM={LIST_ITEM} />
                   </Tab.Pane>
                   <Tab.Pane eventKey="second">
                     2
-                    <MainListWrap LIST_ITEM={LIST_ITEM} />
+                    <MainListWrap LIST_ITEM_SHOPING={LIST_ITEM} />
                   </Tab.Pane>
                   <Tab.Pane eventKey="third">
                     3
-                    <MainListWrap LIST_ITEM={LIST_ITEM} />
+                    <MainListWrap LIST_ITEM_TOUR={LIST_ITEM} />
+                  </Tab.Pane> */}
+                  <Tab.Pane eventKey={`${tabMenu}`}>
+                    <MainListWrap
+                      LIST_ITEM={
+                        tabMenu === "first"
+                          ? LIST_ITEM
+                          : tabMenu === "second"
+                          ? LIST_ITEM_SHOPING
+                          : LIST_ITEM_TOUR
+                      }
+                    />
                   </Tab.Pane>
                 </Tab.Content>
               </div>

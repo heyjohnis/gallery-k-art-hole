@@ -4,15 +4,13 @@ import Link from "next/link";
 import styles from "./MainBanner.module.scss";
 
 const MainListWrap = ({ LIST_ITEM }) => {
-  console.log(LIST_ITEM.title, "232323");
-
   return (
     <>
       <div className={`col col-lg-12 col-md-12 ${styles.itemListWrap}`}>
         <ul className={`row col-lg-12 col-md-12 ${styles.itemListUl}`}>
           {LIST_ITEM.map((itemList) => (
             <li className={`col col-lg-4 col-md-12 ${styles.itemListLi}`}>
-              <Link href="#">
+              <Link href={`${itemList.link}`}>
                 <div
                   className={
                     itemList.discount === 0
