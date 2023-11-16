@@ -1,7 +1,15 @@
 {
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "editor.wordBreak": "normal"
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#599620",
+    "titleBar.inactiveBackground": "#639930",
+    "titleBar.activeForeground": "#000000",
+    "titleBar.inactiveForeground": "#3c3c3c",
+    "statusBar.background": "#599620",
+    "statusBar.foreground": "#000000"
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.wordBreak": "normal"
 }
