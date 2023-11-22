@@ -297,6 +297,7 @@ const BookingForm = ({ user, updateReservation }, ref) => {
                 className={`form-group col-lg-12 col-sm-12 ${styles.timeWrap}`}
               >
                 <label>시간 선택</label>
+                <span className="text-danger"> *</span>
                 <div className={`d-flex ${styles.inputWrap}`}>
                   <input
                     type="time"
@@ -325,7 +326,7 @@ const BookingForm = ({ user, updateReservation }, ref) => {
               <label htmlFor={`hope_region_${REGION_LIST.length + 1}`}>
                 지역선택
               </label>
-              <div className="select-region">
+              <div className={`select-region  ${styles.inputWrap}`}>
                 <select
                   id={`hope_region_${REGION_LIST.length + 1}`}
                   className="selectbox form-control"
@@ -345,11 +346,11 @@ const BookingForm = ({ user, updateReservation }, ref) => {
                 >
                   전체선택
                 </label> */}
-                <div
+                {/* <div
                   className="form-check form-check-inline"
                   key={REGION_LIST.length + 1}
-                >
-                  {/* <input
+                > */}
+                {/* <input
                     type="checkbox"
                     id={`hope_region_${REGION_LIST.length + 1}`}
                     className="form-check-input"
@@ -364,10 +365,10 @@ const BookingForm = ({ user, updateReservation }, ref) => {
                   >
                     전체선택
                   </label> */}
-                </div>
+                {/* </div> */}
                 {/* {renderCheckbox()} */}
               </div>
-              <div className="form-group mt-2">
+              {/* <div className="form-group mt-2">
                 <label htmlFor=""></label>
                 <input
                   type="select"
@@ -378,13 +379,13 @@ const BookingForm = ({ user, updateReservation }, ref) => {
                   // onChange={handleChange}
                   readOnly
                 />
-              </div>
+              </div> */}
               <div className={styles.selectCc}>{selectedRegion}</div>
             </div>
 
-            <div className="col-lg-12 col-sm-12">
+            <div className={`col-lg-12 col-sm-12 ${styles.nameWarp}`}>
               <label>이용자명</label>
-              <span className="text-danger">*</span>
+              <span className="text-danger"> *</span>
               {user && (
                 <span className="option_user">
                   {user.user_option_name}{" "}
@@ -393,7 +394,7 @@ const BookingForm = ({ user, updateReservation }, ref) => {
                     : ""}
                 </span>
               )}
-              <div className="form-group">
+              <div className={`form-group  ${styles.inputWrap}`}>
                 <input
                   type="text"
                   name="user_name"
@@ -405,8 +406,8 @@ const BookingForm = ({ user, updateReservation }, ref) => {
                 />
               </div>
               <label>이용자 연락처</label>
-              <span className="text-danger">*</span>
-              <div className="form-group">
+              <span className="text-danger"> *</span>
+              <div className={`form-group  ${styles.inputWrap}`}>
                 <input
                   type="text"
                   name="user_phone"
@@ -418,7 +419,7 @@ const BookingForm = ({ user, updateReservation }, ref) => {
                 />
               </div>
               <label>요청사항</label>
-              <div className="form-group">
+              <div className={`form-group  ${styles.inputWrap}`}>
                 <textarea
                   name="etc"
                   cols="30"

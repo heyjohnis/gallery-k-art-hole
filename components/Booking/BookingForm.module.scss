@@ -10,6 +10,8 @@ $gray-color: #666666;
 $light-color: #999999;
 $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
+$margin_50: 50px 0;
+
 /* 골프 예약 서비스 */
 
 .page-title-area {
@@ -92,7 +94,35 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
     .areaWrap {
       margin: 50px 0;
-      
+
+      .inputWrap {
+        margin: 20px 0 10px;
+        font-weight: bold;
+        line-height: 50px;
+
+      }
+
+    }
+
+    .nameWarp {
+      margin: 50px 0;
+
+      .inputWrap {
+        margin: 20px 0 10px;
+        font-weight: bold;
+        line-height: 50px;
+
+        input {
+          width: 300px;
+          margin: 0 0 50px 0;
+          
+        }
+
+        textarea {
+          width: 300px;
+        }
+      }
+
     }
 
     .submitButtonWrap {
