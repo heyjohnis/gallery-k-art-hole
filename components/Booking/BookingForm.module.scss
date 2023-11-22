@@ -1,0 +1,152 @@
+$body-font-family: "Pretendard";
+$main-color: #111;
+$sub-color: #242424;
+// $body-color: #4d4d4d;
+$body-color: #f9f9f9;
+$heading-color: #212121;
+$white-color: #ffffff;
+$black-color: #000000;
+$gray-color: #666666;
+$light-color: #999999;
+$box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+
+/* 골프 예약 서비스 */
+
+.page-title-area {
+  background-color: #111 !important;
+}
+
+.section {
+  background-color: $body-color;
+
+  .container {
+    padding: 50px 0;
+
+    label {
+      font-family: Noto Sans KR;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: -0.16px;
+      color: #333;
+    }
+
+    .titleWrap {
+      margin: 20px 0 50px;
+      border-bottom: 1px solid #333;
+
+      h1 {
+        margin: 30px 0 80px;
+        font-family: Noto Sans KR;
+        font-size: 44px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -0.44px;
+        color: #111;
+      }
+
+      span {
+        font-family: Noto Sans KR;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.24px;
+        color: #333;
+      }
+
+    }
+
+    .datePickerWrap {
+      margin: 50px 0;
+
+    }
+
+    .timeWrap {
+      margin: 50px 0;
+
+      .inputWrap {
+        margin: 20px 0 10px;
+        font-weight: bold;
+        line-height: 50px;
+
+        input {
+          width: 150px;
+          margin: 0 10px 0 0;
+        }
+
+        input:nth-child(2) {
+          margin: 0 0 0 10px;
+        }
+      }
+
+      p {
+        font-family: Noto Sans KR;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: -0.14px;
+        color: #aaa;
+      }
+    }
+
+    .areaWrap {
+      margin: 50px 0;
+      
+    }
+
+    .submitButtonWrap {
+      width: 487px;
+      height: 296px;
+      padding: 40px;
+      background-color: #fff;
+
+      input { 
+        font-family: Noto Sans KR;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: -0.16px;
+        overflow: hidden;
+        color: #666;
+        text-overflow: ellipsis;
+      }
+      
+      p {
+        margin: 30px 0;
+        font-family: Noto Sans KR;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: -0.16px;
+        color: #666;
+      }
+
+      .submitBtn {
+        display: flex;
+        flex-shrink: 0;
+        width: 407px;
+        height: 70px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background-color: #333;
+        border-radius: 2px;
+      }
+
+    }
+  }
+}
+
+@media only screen and (max-width : 1280px) {
+  .pay_warp {
+    padding-left: 1em;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .pay_warp {
+    padding-left: 0;
+    box-shadow: none;
+  }
+}
