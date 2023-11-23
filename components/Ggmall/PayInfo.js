@@ -49,21 +49,23 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
       alert("구매 동의에 체크해주세요.");
       return;
     }
+
     if (payInfo.pay_money !== 0) {
-      const { IMP } = window;
-      IMP.init("imp47778223");
-      const data = {
-        pg: "html5_inicis",
-        pay_method: "card",
-        merchant_uid: `mid_${new Date().getTime()}`,
-        amount: payInfo.pay_money,
-        name: product.pd_name,
-        buyer_name: user.user_name,
-        buyer_tel: user.mobile,
-        buyer_email: user.email,
-        order_status: product.pd_type === "01" ? "01" : "09",
-      };
-      IMP.request_pay(data, callback);
+      // const { IMP } = window;
+      // IMP.init("imp47778223");
+      // const data = {
+      //   pg: "html5_inicis",
+      //   pay_method: "card",
+      //   merchant_uid: `mid_${new Date().getTime()}`,
+      //   amount: payInfo.pay_money,
+      //   name: product.pd_name,
+      //   buyer_name: user.user_name,
+      //   buyer_tel: user.mobile,
+      //   buyer_email: user.email,
+      //   order_status: product.pd_type === "01" ? "01" : "09",
+      // };
+      // IMP.request_pay(data, callback);
+      alert("포인트가 부족합니다. \n고객센터로 문의바랍니다.");
     } else {
       buyProduct(payInfo);
     }
@@ -150,12 +152,12 @@ const PayInfo = ({ user, product, total, buyProduct }) => {
             />
             <span>사용 가능한 포인트: {commaFormat(payInfo.my_point)}P</span>
           </div>
-          {payInfo.pay_money > 0 && (
+          {/* {payInfo.pay_money > 0 && (
             <div className={styles.pay_group}>
               <h2>카드결제</h2>
               <span>{payInfo.pay_money.toLocaleString()}원</span>
             </div>
-          )}
+          )} */}
           {/* 
           <div className={styles.pay_group}>
             <h2>이용약관안내</h2>
