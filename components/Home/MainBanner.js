@@ -151,7 +151,7 @@ const MainBanner = ({ showReservationModal }) => {
 
   const opts = {
     width: "100%",
-    height: "97vh",
+    height: "100%",
     playerVars: {
       autoplay: 1, // 자동재생
       rel: 0, // 관련 동영상 표시 여부
@@ -166,7 +166,9 @@ const MainBanner = ({ showReservationModal }) => {
   };
 
   let options = {
-    anchors: ["sectionOne", "GolfBooking", "sectionThree", "sectionFour"],
+    anchors: ["Intro", "GolfBooking", "Gallery", "GGmall"],
+    autoScrolling: false,
+    fixedElements: ".footer",
   };
 
   const [tabMenu, setTabMenu] = useState("first");
@@ -196,8 +198,8 @@ const MainBanner = ({ showReservationModal }) => {
   return (
     <>
       <SectionsContainer {...options}>
-        <Section className="slider-area">
-          <div className={styles.youtube_wrap}>
+        <Section className={`slider-area`}>
+          {/* <div className={styles.youtube_wrap}>
             <div
               className={styles.youtube}
               style={{ backgroundColor: "black" }}
@@ -229,12 +231,102 @@ const MainBanner = ({ showReservationModal }) => {
                 }}
               />
             </div>
-          </div>
+          </div> */}
+          <Swiper
+            navigation={true}
+            spaceBetween={0}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: true,
+              pauseOnMouseEnter: true,
+            }}
+            pagination={{
+              clickable: true,
+              type: "bullets",
+            }}
+            modules={[Pagination, A11y, Autoplay, Navigation]}
+            className={`hero-swiper ${styles.swiper}`}
+          >
+            <SwiperSlide>
+              <div className={`jumpx-slider-item ${styles.slide1}`}>
+                <div className="d-table">
+                  <div className="d-table-cell">
+                    <div className="container">
+                      <div className={`col-lg-12 col-md-12 ${styles.titleBox}`}>
+                        <h1>
+                          PREMIUM <br />
+                          GOLF MEMBERSHIP
+                          <span>.</span>
+                        </h1>
+                      </div>
+                      <div className={`${styles.discriptionWrap}`}>
+                        <p>
+                          시대의 가치를 창조해 온 당신, 결이 다른 행보로 격이
+                          높은 인생을 살아 온 당신
+                          <br />
+                          당신에게 바치는 가장 명예로운 멤버십
+                        </p>
+                      </div>
+                      {/* <div className="jumpx-slider-text overflow-hidden one">
+                        <h1>
+                          <b>시대의 가치</b>를 창조해 온 당신
+                          <br />
+                          결이 다른 행보로 <br className="mobile" />
+                          <b>격이 높은 인생</b>을 살아 온 당신
+                          <br />
+                          당신에게 바치는 가장 <b>명예로운 멤버십</b>
+                        </h1>
+                        <p>
+                          골프의 세계에서 최고의 명성을 자랑하는
+                          그린갤러리는&nbsp;
+                          <br className="mobile" />
+                          당신의 위대한 업적을 상징하는 멤버십으로, <br />
+                          최고의 품격과 프리미엄 멤버십 서비스로 당신만을 위한
+                          품격 있는 환경을 제공합니다.
+                        </p>
+                        <div className="slider-btn">
+                          <Link
+                            href="#"
+                            className="default-btn black"
+                            onClick={showModal}
+                          >
+                            소개영상
+                          </Link>
+                        </div>
+                        <div className="slider-btn">
+                          <div
+                            onClick={showReservationModal}
+                            className="default-btn black"
+                          >
+                            Golf Booking
+                          </div>
+                        </div>
+                        <div className="slider-btn">
+                          <Link
+                            href="ggmall/list/shop/"
+                            className="default-btn black"
+                          >
+                            GG Mall
+                          </Link>
+                        </div>
+                        <div className="slider-partner-logo">
+                          <img
+                            src="/images/main/main_partner.png"
+                            alt="파트너안내"
+                          />
+                        </div>
+                      </div> */}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </Section>
         <Section>
           <div className={`row ${styles.onePage}`}>
             <div
-              className={`col-lg-6 col-md-12 ${styles.bookingPageLeftSection}`}
+              className={`col-lg-6 col-md-6 ${styles.bookingPageLeftSection}`}
             >
               <div className={`col-lg-12 col-md-12 ${styles.titleBox}`}>
                 <h1>
@@ -292,8 +384,9 @@ const MainBanner = ({ showReservationModal }) => {
                 </form>
               </div>
             </div>
+
             <div
-              className={`col-lg-6 col-md-12 ${styles.bookingPageRightSection}`}
+              className={`col-lg-6 col-md-6 ${styles.bookingPageRightSection}`}
             >
               <Swiper
                 navigation={false}
@@ -329,9 +422,10 @@ const MainBanner = ({ showReservationModal }) => {
             </div>
           </div>
         </Section>
+
         <Section>
           <div
-            className={`col-lg-6 col-md-12 ${styles.onePage} ${styles.sliderPageSection}`}
+            className={`col-lg-6 col-md-6 ${styles.onePage} ${styles.sliderPageSection}`}
           >
             <div className={`${styles.titleWrap}`}>
               <h1>
@@ -399,7 +493,7 @@ const MainBanner = ({ showReservationModal }) => {
             </div>
           </div>
         </Section>
-        <Section>
+        <Section className={`${styles.backgroundDark}`}>
           <div
             className={`row col-lg-12 col-md-12 ${styles.onePage} ${styles.itemListPageSection}`}
           >
@@ -479,6 +573,7 @@ const MainBanner = ({ showReservationModal }) => {
               </div>
             </Tab.Container>
           </div>
+          <Footer />
         </Section>
       </SectionsContainer>
       {/* <Footer /> */}
