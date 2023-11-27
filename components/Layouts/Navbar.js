@@ -17,14 +17,14 @@ const Navbar = ({ user }) => {
   const [menu, setMenu] = useState(true);
   const modalRef = useRef(null);
 
-  const showReservationModal = () => {
-    console.log("showReservationModal");
-    if (!user) {
-      router.push("/login");
-    } else {
-      modalRef.current.showModal();
-    }
-  };
+  // const showReservationModal = () => {
+  //   console.log("showReservationModal");
+  //   if (!user) {
+  //     router.push("/login");
+  //   } else {
+  //     modalRef.current.showModal();
+  //   }
+  // };
 
   useEffect(() => {
     setCurrentPath(router.asPath);
@@ -63,8 +63,8 @@ const Navbar = ({ user }) => {
   });
 
   const classOne = menu
-    ? "collapse navbar-collapse mean-menu"
-    : "collapse navbar-collapse show";
+    ? "collapse flex-column mean-menu"
+    : "collapse flex-column show";
   const classTwo = menu
     ? "navbar-toggler navbar-toggler-right collapsed"
     : "navbar-toggler navbar-toggler-right";
@@ -81,7 +81,8 @@ const Navbar = ({ user }) => {
           </Link>
         </div>
         <div className={styles.backdrop}></div>
-        <nav className="navbar navbar-expand-xl navbar-light">
+        {/* <nav className="navbar navbar-expand-xl navbar-light"> */}
+        <nav className="navbar navbar-light">
           <div className="container">
             <Link href="/" className="navbar-brand light_logo">
               <img
@@ -114,20 +115,23 @@ const Navbar = ({ user }) => {
               <span className="icon-bar middle-bar"></span>
               <span className="icon-bar bottom-bar"></span>
             </button>
-
-            <div className={classOne} id="navbarSupportedContent">
-              <ul className="navbar-nav m-auto">
-                <li className="nav-item">
-                  <Link
-                    href="/"
-                    className={`nav-link ${currentPath == "/" && "active"}`}
-                    onClick={toggleNavbar}
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
+          </div>
+          <div
+            className={`${classOne} ${styles.menu}`}
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav m-auto">
+              <li className="nav-item">
+                <Link
+                  href="/"
+                  className={`nav-link ${currentPath == "/" && "active"}`}
+                  onClick={toggleNavbar}
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                {/* <Link
                     href="/"
                     className={`nav-link pr-3`}
                     style={{ paddingRight: "15px" }}
@@ -137,213 +141,222 @@ const Navbar = ({ user }) => {
                     }}
                   >
                     Golf Booking
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    href="/artworks"
-                    className={`nav-link ${
-                      (currentPath.indexOf("artworks") > -1 ||
-                        currentPath.indexOf("gift") > -1) &&
-                      "active"
-                    }`}
-                    onClick={toggleNavbar}
-                  >
-                    Member Privileges<i className="bx bx-chevron-down"></i>{" "}
-                  </Link>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link href="/artworks/" onClick={toggleNavbar}>
-                        미술품
-                      </Link>
-                      <Link href="/ggmall/list/gift" onClick={toggleNavbar}>
-                        사은품
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-
-                <li className="nav-item">
-                  <Link
-                    href="/ggmall/list/service"
-                    className={`nav-link ${
-                      (currentPath.indexOf("/ggmall/list/") > -1 ||
-                        currentPath.indexOf("/ggmall/detail/") > -1) &&
-                      currentPath.indexOf("/gift") === -1 &&
-                      "active"
-                    }`}
-                    onClick={toggleNavbar}
-                  >
-                    GG Mall
-                    <i className="bx bx-chevron-down"></i>
-                  </Link>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link href="/ggmall/list/service" onClick={toggleNavbar}>
-                        제휴서비스
-                      </Link>
-                      <Link href="/ggmall/list/shop" onClick={toggleNavbar}>
-                        GG 쇼핑
-                      </Link>
-                      <Link href="/ggmall/list/tour" onClick={toggleNavbar}>
-                        GG 투어
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    href="/contact"
-                    className={`nav-link ${
-                      [
-                        "/contact/",
-                        "/bbs/notice/",
-                        "/bbs/news/",
-                        "/faq/",
-                      ].includes(currentPath) && "active"
-                    }`}
-                    onClick={toggleNavbar}
-                  >
-                    Support <i className="bx bx-chevron-down"></i>{" "}
-                  </Link>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        href="/contact"
-                        className={`nav-link ${
-                          currentPath == "/contact/" && "active"
-                        }`}
-                        onClick={toggleNavbar}
-                      >
-                        상담/문의
-                      </Link>
-                    </li>
-                    {user && (
-                      <li className="nav-item">
-                        <Link
-                          href="/bbs/notice"
-                          className={`nav-link ${
-                            currentPath == "/bbs/notice" && "active"
-                          }`}
-                          onClick={toggleNavbar}
-                        >
-                          공지사항
-                        </Link>
-                      </li>
-                    )}
-                    <li className="nav-item">
-                      <Link
-                        href="/bbs/news"
-                        className={`nav-link ${
-                          currentPath == "/bbs/news/" && "active"
-                        }`}
-                        onClick={toggleNavbar}
-                      >
-                        뉴스
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        href="/bbs/event"
-                        className={`nav-link ${
-                          currentPath == "/bbs/event/" && "active"
-                        }`}
-                        onClick={toggleNavbar}
-                      >
-                        이벤트
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        href="/bbs/review"
-                        className={`nav-link ${
-                          currentPath == "/bbs/review/" && "active"
-                        }`}
-                        onClick={toggleNavbar}
-                      >
-                        이용후기
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        href="/faq"
-                        className={`nav-link ${
-                          currentPath == "/faq/" && "active"
-                        }`}
-                        onClick={toggleNavbar}
-                      >
-                        FAQ
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-
-              <div className="others-options">
-                <ul className="top-menu">
-                  {user ? (
-                    <>
-                      <li>
-                        <Link
-                          href="/mypage/home"
-                          className="menu-items"
-                          onClick={toggleNavbar}
-                        >
-                          마이페이지
-                        </Link>
-                      </li>
-                      <li>
-                        <span></span>
-                      </li>
-                      <li>
-                        <Link href="#" className="menu-items">
-                          <div
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleLogout();
-                              toggleNavbar();
-                            }}
-                          >
-                            로그아웃
-                          </div>
-                        </Link>
-                      </li>
-                    </>
-                  ) : (
-                    <>
-                      <li>
-                        <Link
-                          href="/sign-up-1"
-                          className="menu-items"
-                          onClick={toggleNavbar}
-                        >
-                          회원가입
-                        </Link>
-                      </li>
-                      <li>
-                        <span></span>
-                      </li>
-                      <li>
-                        <Link
-                          href="/login"
-                          className="menu-items"
-                          onClick={toggleNavbar}
-                        >
-                          로그인
-                        </Link>
-                      </li>
-                    </>
-                  )}
-                </ul>
-
+                  </Link> */}
                 <Link
-                  href="/mypage/reservation/"
-                  className="default-btn"
+                  href="/booking"
+                  className={`nav-link pr-3`}
+                  style={{ paddingRight: "15px" }}
+                  onClick={() => {
+                    toggleNavbar();
+                  }}
+                >
+                  Golf Booking
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  href="/artworks"
+                  className={`nav-link ${
+                    (currentPath.indexOf("artworks") > -1 ||
+                      currentPath.indexOf("gift") > -1) &&
+                    "active"
+                  }`}
                   onClick={toggleNavbar}
                 >
-                  예약 내역
+                  Member Privileges<i className="bx bx-chevron-down"></i>{" "}
                 </Link>
-              </div>
+                <ul className="dropdown-menu">
+                  <li className="nav-item">
+                    <Link href="/artworks/" onClick={toggleNavbar}>
+                      미술품
+                    </Link>
+                    <Link href="/ggmall/list/gift" onClick={toggleNavbar}>
+                      사은품
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li className="nav-item">
+                <Link
+                  href="/ggmall/list/service"
+                  className={`nav-link ${
+                    (currentPath.indexOf("/ggmall/list/") > -1 ||
+                      currentPath.indexOf("/ggmall/detail/") > -1) &&
+                    currentPath.indexOf("/gift") === -1 &&
+                    "active"
+                  }`}
+                  onClick={toggleNavbar}
+                >
+                  GG Mall
+                  <i className="bx bx-chevron-down"></i>
+                </Link>
+                <ul className="dropdown-menu">
+                  <li className="nav-item">
+                    <Link href="/ggmall/list/service" onClick={toggleNavbar}>
+                      제휴서비스
+                    </Link>
+                    <Link href="/ggmall/list/shop" onClick={toggleNavbar}>
+                      GG 쇼핑
+                    </Link>
+                    <Link href="/ggmall/list/tour" onClick={toggleNavbar}>
+                      GG 투어
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li className="nav-item">
+                <Link
+                  href="/contact"
+                  className={`nav-link ${
+                    [
+                      "/contact/",
+                      "/bbs/notice/",
+                      "/bbs/news/",
+                      "/faq/",
+                    ].includes(currentPath) && "active"
+                  }`}
+                  onClick={toggleNavbar}
+                >
+                  Support <i className="bx bx-chevron-down"></i>{" "}
+                </Link>
+                <ul className="dropdown-menu">
+                  <li className="nav-item">
+                    <Link
+                      href="/contact"
+                      className={`nav-link ${
+                        currentPath == "/contact/" && "active"
+                      }`}
+                      onClick={toggleNavbar}
+                    >
+                      상담/문의
+                    </Link>
+                  </li>
+                  {user && (
+                    <li className="nav-item">
+                      <Link
+                        href="/bbs/notice"
+                        className={`nav-link ${
+                          currentPath == "/bbs/notice" && "active"
+                        }`}
+                        onClick={toggleNavbar}
+                      >
+                        공지사항
+                      </Link>
+                    </li>
+                  )}
+                  <li className="nav-item">
+                    <Link
+                      href="/bbs/news"
+                      className={`nav-link ${
+                        currentPath == "/bbs/news/" && "active"
+                      }`}
+                      onClick={toggleNavbar}
+                    >
+                      뉴스
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      href="/bbs/event"
+                      className={`nav-link ${
+                        currentPath == "/bbs/event/" && "active"
+                      }`}
+                      onClick={toggleNavbar}
+                    >
+                      이벤트
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      href="/bbs/review"
+                      className={`nav-link ${
+                        currentPath == "/bbs/review/" && "active"
+                      }`}
+                      onClick={toggleNavbar}
+                    >
+                      이용후기
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      href="/faq"
+                      className={`nav-link ${
+                        currentPath == "/faq/" && "active"
+                      }`}
+                      onClick={toggleNavbar}
+                    >
+                      FAQ
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <div className="others-options">
+              <ul className="top-menu">
+                {user ? (
+                  <>
+                    <li>
+                      <Link
+                        href="/mypage/home"
+                        className="menu-items"
+                        onClick={toggleNavbar}
+                      >
+                        마이페이지
+                      </Link>
+                    </li>
+                    <li>
+                      <span></span>
+                    </li>
+                    <li>
+                      <Link href="#" className="menu-items">
+                        <div
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleLogout();
+                            toggleNavbar();
+                          }}
+                        >
+                          로그아웃
+                        </div>
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <Link
+                        href="/sign-up-1"
+                        className="menu-items"
+                        onClick={toggleNavbar}
+                      >
+                        회원가입
+                      </Link>
+                    </li>
+                    <li>
+                      <span></span>
+                    </li>
+                    <li>
+                      <Link
+                        href="/login"
+                        className="menu-items"
+                        onClick={toggleNavbar}
+                      >
+                        로그인
+                      </Link>
+                    </li>
+                  </>
+                )}
+              </ul>
+
+              <Link
+                href="/mypage/reservation/"
+                className="default-btn"
+                onClick={toggleNavbar}
+              >
+                예약 내역
+              </Link>
             </div>
           </div>
         </nav>
