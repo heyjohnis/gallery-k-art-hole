@@ -264,16 +264,7 @@ const BookingForm = ({ user, updateReservation }, ref) => {
             <div className="col-lg-12 col-sm-12">
               <div className={`${styles.titleWrap}`}>
                 <h1>골프장 예약 서비스</h1>
-
                 <span>골프장 정보</span>
-
-                {/* <div className={`logo_wrap ${styles.logo_wrap}`}>
-                  <img
-                    src="/images/company/cooperation.png"
-                    className={`greengallery_showgolf ${styles.greengallery_showgolf}`}
-                    alt="쇼골프 협업"
-                  />
-                </div> */}
               </div>
               <div className={`${styles.datePickerWrap}`}>
                 <label>날짜 선택</label>
@@ -281,16 +272,6 @@ const BookingForm = ({ user, updateReservation }, ref) => {
                   placeholder="날짜를 선택하세요"
                   dateKind="hope_date1"
                 />
-                {/* <DatePicker
-                  label="2차 선택"
-                  pickDate={pickedDates}
-                  dateKind="hope_date2"
-                />
-                <DatePicker
-                  label="3차 선택"
-                  pickDate={pickedDates}
-                  dateKind="hope_date3"
-                /> */}
               </div>
 
               <div
