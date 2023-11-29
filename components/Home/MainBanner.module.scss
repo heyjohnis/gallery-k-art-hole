@@ -51,6 +51,51 @@
   //     }
   //   }
   // }
+
+    .landing {
+      .landingSlide1 {
+        background-image: url(/images/main/main_1.png);
+      }
+
+      .landingSlide2 {
+        background-image: url(/images/main/main_2.png);
+      }
+
+      .landingSlide3 {
+        background-image: url(/images/main/main_3.png);
+      }
+      
+      .titleBox {
+				width: 702px;
+				height: 167px;
+
+          h1 {
+            font-family: Jost;
+            font-size: 70px;
+            font-weight: 700;
+            line-height: 60px;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            color: #fff;
+
+            span {
+              font-size: 110px;
+              letter-spacing: -0.8px;
+              color: #6ED338;
+            }
+          }
+			}
+
+      .discriptionWrap {
+        font-family: Jost;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 60px;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+        color: #fff;
+      }
+    }
   
   
   .swiper {
@@ -226,19 +271,19 @@
     padding: 0;
 
     .slide1 {
-      background-image: url(/images/main/main_01.jpg);
+      background-image: url(/images/main/main_gogh.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   
     .slide2 {
-      background-image: url(/images/main/main_02.jpg);
+      background-image: url(/images/main/main_renoir.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
 
     .slide3 {
-      background-image: url(/images/main/main_03.jpg);
+      background-image: url(/images/main/main_monet.png);
       background-repeat: no-repeat;
       background-size: cover;
     }

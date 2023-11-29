@@ -23,7 +23,6 @@ const MyPag = ({ user }) => {
         activePageText="예약"
       />
       <BookingForm />
-      <div>111</div>
       <Footer />
     </>
   );

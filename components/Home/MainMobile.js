@@ -143,7 +143,7 @@ const LIST_ITEM_GALLERY = [
   },
 ];
 
-const MainBanner = ({ showReservationModal }) => {
+const MainMobile = ({ showReservationModal }) => {
   const [show, setShow] = useState(false);
   const showModal = () => {
     setShow(true);
@@ -166,7 +166,7 @@ const MainBanner = ({ showReservationModal }) => {
   };
 
   let options = {
-    anchors: ["Intro", "GolfBooking", "Gallery", "GGmall"],
+    anchors: ["Intro", "GolfBooking", "Gallery", "GGmall", "Footer"],
     autoScrolling: false,
     fixedElements: ".footer",
   };
@@ -198,103 +198,45 @@ const MainBanner = ({ showReservationModal }) => {
   return (
     <>
       <SectionsContainer {...options}>
-        <Section className={`slider-area ${styles.landing}`}>
-          <Swiper
-            navigation={true}
-            spaceBetween={0}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: true,
-              pauseOnMouseEnter: true,
-            }}
-            pagination={{
-              clickable: true,
-              type: "bullets",
-            }}
-            modules={[Pagination, A11y, Autoplay, Navigation]}
-            className={`hero-swiper ${styles.swiper}`}
-          >
-            <SwiperSlide>
-              <div className={`jumpx-slider-item ${styles.landingSlide1}`}>
-                <div className="d-table">
-                  <div className="d-table-cell">
-                    <div className="container">
-                      <div className={`col-lg-12 col-md-12 ${styles.titleBox}`}>
-                        <h1>
-                          PREMIUM <br />
-                          GOLF MEMBERSHIP
-                          <span>.</span>
-                        </h1>
-                      </div>
-                      <div className={`${styles.discriptionWrap}`}>
-                        <p>
-                          시대의 가치를 창조해 온 당신, 결이 다른 행보로 격이
-                          높은 인생을 살아 온 당신
-                          <br />
-                          당신에게 바치는 가장 명예로운 멤버십
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={`jumpx-slider-item ${styles.landingSlide2}`}>
-                <div className="d-table">
-                  <div className="d-table-cell">
-                    <div className="container">
-                      <div className={`col-lg-12 col-md-12 ${styles.titleBox}`}>
-                        <h1>
-                          PREMIUM <br />
-                          GOLF MEMBERSHIP
-                          <span>.</span>
-                        </h1>
-                      </div>
-                      <div className={`${styles.discriptionWrap}`}>
-                        <p>
-                          시대의 가치를 창조해 온 당신, 결이 다른 행보로 격이
-                          높은 인생을 살아 온 당신
-                          <br />
-                          당신에게 바치는 가장 명예로운 멤버십
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={`jumpx-slider-item ${styles.landingSlide3}`}>
-                <div className="d-table">
-                  <div className="d-table-cell">
-                    <div className="container">
-                      <div className={`col-lg-12 col-md-12 ${styles.titleBox}`}>
-                        <h1>
-                          PREMIUM <br />
-                          GOLF MEMBERSHIP
-                          <span>.</span>
-                        </h1>
-                      </div>
-                      <div className={`${styles.discriptionWrap}`}>
-                        <p>
-                          시대의 가치를 창조해 온 당신, 결이 다른 행보로 격이
-                          높은 인생을 살아 온 당신
-                          <br />
-                          당신에게 바치는 가장 명예로운 멤버십
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+        <Section className="slider-area">
+          <div className={styles.youtube_wrap}>
+            <div
+              className={styles.youtube}
+              style={{ backgroundColor: "black" }}
+            >
+              <YouTube
+                videoId="ZQw7meQJWTk"
+                className={styles.scaleVideo}
+                opts={opts}
+                onReady={(e) => {
+                  // e.target.stopVideo(0);
+                  e.target.mute(1);
+                  e.target.setVolume(0);
+                  e.target.hideVideoInfo(1);
+                  // console.log(
+                  //   e.target.videoTitle,
+                  //   e.target.hideVideoInfo,
+                  //   e.target.mute,
+                  //   "ready1"
+                  // );
+                }}
+                onPlay={(e) => {
+                  e.target.mute(1);
+                  console.log(e.target, "play");
+                }}
+                onEnd={(e) => {
+                  // e.target.stopVideo(1);
+                  e.target.mute(1);
+                  console.log(e.target);
+                }}
+              />
+            </div>
+          </div>
         </Section>
         <Section>
           <div className={`row ${styles.onePage}`}>
             <div
-              className={`col-lg-6 col-md-6 ${styles.bookingPageLeftSection}`}
+              className={`col-lg-6 col-md-12 ${styles.bookingPageLeftSection}`}
             >
               <div className={`col-lg-12 col-md-12 ${styles.titleBox}`}>
                 <h1>
@@ -352,9 +294,8 @@ const MainBanner = ({ showReservationModal }) => {
                 </form>
               </div>
             </div>
-
             <div
-              className={`col-lg-6 col-md-6 ${styles.bookingPageRightSection}`}
+              className={`col-lg-6 col-md-12 ${styles.bookingPageRightSection}`}
             >
               <Swiper
                 navigation={false}
@@ -390,10 +331,9 @@ const MainBanner = ({ showReservationModal }) => {
             </div>
           </div>
         </Section>
-
         <Section>
           <div
-            className={`col-lg-6 col-md-6 ${styles.onePage} ${styles.sliderPageSection}`}
+            className={`col-lg-6 col-md-12 ${styles.onePage} ${styles.sliderPageSection}`}
           >
             <div className={`${styles.titleWrap}`}>
               <h1>
@@ -461,7 +401,7 @@ const MainBanner = ({ showReservationModal }) => {
             </div>
           </div>
         </Section>
-        <Section className={`${styles.backgroundDark}`}>
+        <Section>
           <div
             className={`row col-lg-12 col-md-12 ${styles.onePage} ${styles.itemListPageSection}`}
           >
@@ -541,12 +481,14 @@ const MainBanner = ({ showReservationModal }) => {
               </div>
             </Tab.Container>
           </div>
-          <Footer />
         </Section>
+        {/* <Section>
+          <Footer />
+        </Section> */}
       </SectionsContainer>
       {/* <Footer /> */}
     </>
   );
 };
 
-export default MainBanner;
+export default MainMobile;
