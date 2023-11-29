@@ -23,7 +23,7 @@ const Point = () => {
       .then(({ data }) => {
         setPoints(data);
       })
-      .finally(() => {});
+      .finally(() => { });
   }, []);
 
   return (
@@ -48,7 +48,13 @@ const Point = () => {
                   {point.pd_name}
                 </td>
                 <td className="text-right">
-                  {commaFormat(point.point || 0)} P
+                  {point.point == 0 ? (
+                    0) :
+                    point.delt_yn == 'N' ? (
+                      "-" + commaFormat(point.point || 0) + "P"
+                    ) : (
+                      "+" + commaFormat(point.point || 0) + "P"
+                    )}
                 </td>
               </tr>
             ))}
