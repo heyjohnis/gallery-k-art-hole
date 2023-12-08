@@ -32,6 +32,8 @@ const Navbar = ({ user }) => {
 
   const toggleNavbar = () => {
     setMenu(!menu);
+    if (menu === true) {
+    }
   };
 
   const getReservationData = () => {
@@ -66,8 +68,8 @@ const Navbar = ({ user }) => {
     ? "collapse flex-column mean-menu"
     : "collapse flex-column show";
   const classTwo = menu
-    ? "navbar-toggler navbar-toggler-right collapsed"
-    : "navbar-toggler navbar-toggler-right";
+    ? `navbar-toggler navbar-toggler-right collapsed`
+    : `navbar-toggler navbar-toggler-right`;
 
   return (
     <>
@@ -120,7 +122,72 @@ const Navbar = ({ user }) => {
             className={`${classOne} ${styles.menu}`}
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav m-auto">
+            <div className="others-options">
+              <ul className="top-menu">
+                {user ? (
+                  <>
+                    <li>
+                      <Link
+                        href="/mypage/home"
+                        className="menu-items"
+                        onClick={toggleNavbar}
+                      >
+                        마이페이지
+                      </Link>
+                    </li>
+                    <li>
+                      <span></span>
+                    </li>
+                    <li>
+                      <Link href="#" className="menu-items">
+                        <div
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleLogout();
+                            toggleNavbar();
+                          }}
+                        >
+                          로그아웃
+                        </div>
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <Link
+                        href="/sign-up-1"
+                        className="menu-items"
+                        onClick={toggleNavbar}
+                      >
+                        회원가입
+                      </Link>
+                    </li>
+                    <li>
+                      <span></span>
+                    </li>
+                    <li>
+                      <Link
+                        href="/login"
+                        className="menu-items"
+                        onClick={toggleNavbar}
+                      >
+                        로그인
+                      </Link>
+                    </li>
+                  </>
+                )}
+              </ul>
+
+              {/* <Link
+                href="/mypage/reservation/"
+                className="default-btn"
+                onClick={toggleNavbar}
+              >
+                예약 내역
+              </Link> */}
+            </div>
+            <ul className="navbar-nav dropright flex-column">
               <li className="nav-item">
                 <Link
                   href="/"
@@ -163,7 +230,7 @@ const Navbar = ({ user }) => {
                   }`}
                   onClick={toggleNavbar}
                 >
-                  Member Privileges<i className="bx bx-chevron-down"></i>{" "}
+                  Member Privileges<i className="bx bx-chevron-down"></i>
                 </Link>
                 <ul className="dropdown-menu">
                   <li className="nav-item">
@@ -292,72 +359,6 @@ const Navbar = ({ user }) => {
                 </ul>
               </li>
             </ul>
-
-            <div className="others-options">
-              <ul className="top-menu">
-                {user ? (
-                  <>
-                    <li>
-                      <Link
-                        href="/mypage/home"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
-                        마이페이지
-                      </Link>
-                    </li>
-                    <li>
-                      <span></span>
-                    </li>
-                    <li>
-                      <Link href="#" className="menu-items">
-                        <div
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleLogout();
-                            toggleNavbar();
-                          }}
-                        >
-                          로그아웃
-                        </div>
-                      </Link>
-                    </li>
-                  </>
-                ) : (
-                  <>
-                    <li>
-                      <Link
-                        href="/sign-up-1"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
-                        회원가입
-                      </Link>
-                    </li>
-                    <li>
-                      <span></span>
-                    </li>
-                    <li>
-                      <Link
-                        href="/login"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
-                        로그인
-                      </Link>
-                    </li>
-                  </>
-                )}
-              </ul>
-
-              <Link
-                href="/mypage/reservation/"
-                className="default-btn"
-                onClick={toggleNavbar}
-              >
-                예약 내역
-              </Link>
-            </div>
           </div>
         </nav>
       </div>
