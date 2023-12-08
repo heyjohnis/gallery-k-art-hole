@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, A11y, Navigation } from "swiper";
@@ -144,6 +145,7 @@ const LIST_ITEM_GALLERY = [
 ];
 
 const MainBanner = ({ showReservationModal }) => {
+  const router = useRouter();
   const [show, setShow] = useState(false);
   const showModal = () => {
     setShow(true);
@@ -188,7 +190,7 @@ const MainBanner = ({ showReservationModal }) => {
 
   const submitBooking = (e) => {
     e.preventDefault();
-    console.log("test");
+    router.replace("/booking");
   };
 
   const handleClose = () => {
@@ -200,7 +202,7 @@ const MainBanner = ({ showReservationModal }) => {
       <SectionsContainer {...options}>
         <Section className={`slider-area ${styles.landing}`}>
           <Swiper
-            navigation={true}
+            navigation={false}
             spaceBetween={0}
             autoplay={{
               delay: 4000,
@@ -211,7 +213,8 @@ const MainBanner = ({ showReservationModal }) => {
               clickable: true,
               type: "bullets",
             }}
-            modules={[Pagination, A11y, Autoplay, Navigation]}
+            //  modules={[Pagination, A11y, Autoplay, Navigation]}
+            modules={[A11y, Autoplay]}
             className={`hero-swiper ${styles.swiper}`}
           >
             <SwiperSlide>
@@ -326,7 +329,7 @@ const MainBanner = ({ showReservationModal }) => {
                         <label htmlFor="location">LOCATION</label>
                       </div>
                       <input
-                        type="date"
+                        type="list"
                         id="location"
                         name="location"
                         data-placeholder="지역 선택"
