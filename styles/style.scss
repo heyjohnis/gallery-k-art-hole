@@ -22,6 +22,10 @@
   font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Noto Sans KR', sans-serif; */
+
 /*
 Default Style
 ============================*/
@@ -29,9 +33,23 @@ Default Style
 $body-font-family: "Pretendard";
 $heading-font-family: "Hahmlet";
 
-$main-color: #4e7d22;
-$sub-color: #0e5039;
-$body-color: #4d4d4d;
+// $main-color: #4e7d22;
+// $sub-color: #0e5039;
+// $body-color: #4d4d4d;
+// $heading-color: #212121;
+// $white-color: #ffffff;
+// $black-color: #000000;
+// $gray-color: #666666;
+// $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+// $transition: all 0.6s ease;
+// $border-radius: 4px;
+// $sub-content-color-home-four: #e7e7e7;
+
+$main-color: #111;
+$sub-color: #3E8B3C;
+$point-color: #6ED338;
+$brand-color: #083f22;
+$body-color: #333;
 $heading-color: #212121;
 $white-color: #ffffff;
 $black-color: #000000;
@@ -333,7 +351,7 @@ textarea {
   .top {
     position: fixed;
     cursor: pointer;
-    bottom: 15px;
+    bottom: 115px;
     right: 15px;
     background-color: $heading-color;
     z-index: 4;
@@ -767,16 +785,20 @@ Nav 메뉴
 ======================================================*/
 .navbar-area {
   nav {
-    padding-top: 38px;
-    padding-bottom: 20px;
+    // padding-top: 38px;
+    padding-top: 28px;
+    padding-bottom: 28px;
     transition: $transition;
     flex-direction: column;
+    // background-color: $main-color;
 
     .top-menu {
       width: 100%;
       position: absolute;
-      right: 0;
-      top: -35px;
+      // right: 0;
+      // top: -35px;
+      right: 50px;
+      top: -55px;
       list-style: none;
       display: flex;
       justify-content: flex-end;
@@ -786,6 +808,7 @@ Nav 메뉴
         .menu-items {
           font-size: 12px;
           color: $white-color;
+          color: #111;
           font-weight: 400;
         }
 
@@ -833,7 +856,8 @@ Nav 메뉴
             weight: 500;
           }
 
-          color: $white-color;
+          // color: $white-color;
+          color: #111;
           text-transform: uppercase;
 
           padding: {
@@ -851,7 +875,8 @@ Nav 메뉴
           &:hover,
           &:focus,
           &.active {
-            color: #b1ea0c;
+            //color: #b1ea0c;
+            color: $main-color;
           }
 
           i {
@@ -876,22 +901,24 @@ Nav 메뉴
         &:hover,
         &.active {
           a {
-            color: #b1ea0c;
+            color: $main-color;
           }
         }
 
         .dropdown-menu {
-          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
-          background: rgba(0, 0, 0, 0.5);
-          position: absolute;
+          display: none;
+          // box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+          // background: rgba(0, 0, 0, 0.5);
+          background: rgba(0, 0, 0, 0);
+          // position: absolute;
           border: none;
           top: 80px;
           left: 0;
           width: 250px;
           z-index: 99;
-          display: block;
-          opacity: 0;
-          visibility: hidden;
+          //display: block;
+          // opacity: 0;
+          // visibility: hidden;
           border-radius: 5px;
           transition: all 0.3s ease-in-out;
 
@@ -913,7 +940,7 @@ Nav 메뉴
             a {
               padding: 5px 15px;
               margin: 0;
-              color: $white-color;
+              color: #111;
               text-transform: capitalize;
 
               font: {
@@ -924,7 +951,8 @@ Nav 메뉴
               &:hover,
               &:focus,
               &.active {
-                color: #b1ea0c;
+                //color: #b1ea0c;
+                color: $main-color;
               }
             }
 
@@ -943,7 +971,8 @@ Nav 메뉴
                   &:hover,
                   &:focus,
                   &.active {
-                    color: #b1ea0c;
+                    //color: #b1ea0c;
+                    color: $main-color;
                   }
                 }
 
@@ -1137,8 +1166,9 @@ Nav 메뉴
 
         &:hover {
           .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
+            display: block;
+            // opacity: 1;
+            // visibility: visible;
             top: 100%;
           }
         }
@@ -1170,10 +1200,10 @@ Nav 메뉴
 
   &.is-sticky {
     nav {
-      background-color: $white-color;
-      padding-top: 38px;
-      padding-bottom: 15px;
-      box-shadow: $box-shadow;
+      // background-color: $white-color;
+      // padding-top: 38px;
+      // padding-bottom: 15px;
+      // box-shadow: $box-shadow;
 
       .top-menu {
         li {
@@ -1247,11 +1277,15 @@ Nav 메뉴
   border: none;
   padding: 10px;
   border-radius: 0;
+  z-index: 1;
+  position:relative;
+  left: 260px;
 
   .icon-bar {
     width: 28px;
     transition: all 0.3s;
-    background: $main-color;
+    // background: $main-color;
+    background: $white-color;
     height: 2px;
     display: block;
   }
@@ -1261,6 +1295,7 @@ Nav 메뉴
     transform-origin: 10% 10%;
     left: 4px;
     position: relative;
+    background: #111;
   }
 
   .middle-bar {
@@ -1273,12 +1308,14 @@ Nav 메뉴
     transform-origin: 10% 90%;
     left: 4px;
     position: relative;
+    background: #111;
   }
 
   &.collapsed {
     .top-bar {
       transform: rotate(0);
       left: 0;
+      background: $white-color;
     }
 
     .middle-bar {
@@ -1288,6 +1325,7 @@ Nav 메뉴
     .bottom-bar {
       transform: rotate(0);
       left: 0;
+      background: #fff;
     }
   }
 
@@ -2747,10 +2785,11 @@ GGmall 리스트
 .page-title-area {
   position: relative;
   z-index: 1;
-  padding-top: 200px;
-  padding-bottom: 150px;
-  background-color: #0a3e2c;
-  overflow: hidden;
+  // padding-top: 200px;
+  // padding-bottom: 150px;
+  // background-color: #0a3e2c;
+  height: 104px;
+  background-color: $main-color;
   text-align: center;
 
   .page-title-content {
@@ -2760,6 +2799,7 @@ GGmall 리스트
       color: $white-color;
       font-size: 40px;
       font-weight: 700;
+      display: none;
     }
 
     ul {

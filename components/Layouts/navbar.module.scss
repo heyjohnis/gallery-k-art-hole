@@ -1,15 +1,31 @@
 $body-font-family: "Pretendard";
-$main-color: #4E7D22;
-$sub-color: #0E5039;
-$body-color: #4d4d4d;
+// $main-color: #4E7D22;
+// $sub-color: #0E5039;
+// $body-color: #4d4d4d;
+// $heading-color: #212121;
+// $white-color: #ffffff;
+// $black-color: #000000;
+// $gray-color: #666666;
+// $light-color: #999999;
+// $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+
+$main-color: #111;
+$sub-color: #3E8B3C;
+$point-color: #6ED338;
+$brand-color: #083f22;
+$body-color: #333;
 $heading-color: #212121;
 $white-color: #ffffff;
 $black-color: #000000;
 $gray-color: #666666;
 $light-color: #999999;
 $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+$transition: all 0.6s ease;
+$border-radius: 4px;
+$sub-content-color-home-four: #e7e7e7;
 
 .top_event {
+    display: none;
     background-color: #006349;
     padding: 5px 0;
     a {
@@ -22,6 +38,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     }
 
 }
+
 .backdrop {
     display: none;
     position: absolute;
@@ -29,4 +46,18 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     height: 100vh;
     background: rgba(0,0,0, 0.3);
     
+}
+
+.menu {
+    width: 345px;
+    height: 100vh;
+    padding: 100px 50px 50px 50px;
+    position: absolute;
+    top: 0vh;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.menuBtn {
+    z-index: 1;
 }

@@ -28,6 +28,13 @@ const MyApp = ({ Component, pageProps }) => {
   React.useEffect(() => {
     AOS.init();
   }, []);
+  function setScreenSize() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+  React.useEffect(() => {
+    setScreenSize();
+  });
   return (
     <>
       <Head>

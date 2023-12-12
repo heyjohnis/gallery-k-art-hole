@@ -15,14 +15,14 @@ const PageBanner = ({
         <div className="container">
           <div className="page-title-content">
             <h2>{pageTitle}</h2>
-            {/* <ul>
+            <ul>
               <li>
                 <Link href={homePageUrl}>{homePageText}</Link>
               </li>
               <li>
                 <Link href={activePageUrl}>{activePageText}</Link>
               </li>
-            </ul> */}
+            </ul>
           </div>
         </div>
         <div className="offer-shape">
