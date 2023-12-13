@@ -15,7 +15,7 @@ import "../styles/flaticon.css";
 import "../public/fonts/font.css";
 import "../styles/style.scss";
 import "../styles/responsive.scss";
-
+import Layout from "../layouts/defaultLayout";
 import Head from "next/head";
 import GoTop from "../components/Shared/GoTop";
 
@@ -55,10 +55,9 @@ const MyApp = ({ Component, pageProps }) => {
         />
         <title>GREEN GALLERY</title>
       </Head>
-
-      <Navbar user={pageProps.user} />
-      <Component {...pageProps} />
-
+      <Layout {...pageProps}>
+        <Component {...pageProps} />
+      </Layout>
       {/* Go Top Button */}
       <GoTop scrollStepInPx="100" delayInMs="10.50" />
     </>
