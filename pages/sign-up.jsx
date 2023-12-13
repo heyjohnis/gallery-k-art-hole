@@ -8,7 +8,7 @@ import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
 import { handleLogin } from "../utils/auth";
 import baseUrl from "../utils/baseUrl";
-import styles from "./login.module.scss";
+import styles from "./sign-up.module.scss";
 import "swiper/scss/pagination";
 
 const SERVICE_LIST = [
