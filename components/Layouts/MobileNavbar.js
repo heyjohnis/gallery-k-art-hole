@@ -6,7 +6,7 @@ import { handleLogout } from "../../utils/auth";
 import cookie from "js-cookie";
 import axios from "axios";
 
-import styles from "./navbar.module.scss";
+import styles from "./navbar.mobile.module.scss";
 import Script from "next/script";
 import ReservationModal from "../Mypage/ReservationModal";
 import baseUrl from "../../utils/baseUrl";
@@ -64,12 +64,10 @@ const MobileNavbar = ({ user }) => {
 
   return (
     <>
-      <div id="navbar" className="navbar-area fixed-top">
-        <div className={styles.backdrop}></div>
-        {/* <nav className="navbar navbar-expand-xl navbar-light"> */}
-        <nav className="navbar navbar-light">
-          <div className="container">
-            <Link href="/" className="navbar-brand light_logo">
+      <div id="navbar" className={`navbar-area fixed-top`}>
+        <nav className={`navbar navbar-light ${styles.mo_navbar}`}>
+          <div className={`container`}>
+            <Link href="/" className={`navbar-brand light_logo`}>
               <img
                 src="/images/white-logo.svg"
                 width={180}
@@ -77,7 +75,7 @@ const MobileNavbar = ({ user }) => {
                 alt="logo"
               />
             </Link>
-            <Link href="/" className="navbar-brand dark_logo">
+            <Link href="/" className={`navbar-brand dark_logo`}>
               <img
                 src="/images/dark-logo.svg"
                 width={180}
@@ -86,126 +84,89 @@ const MobileNavbar = ({ user }) => {
               />
             </Link>
 
-            <button
-              onClick={toggleNavbar}
-              className={classTwo}
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="icon-bar top-bar"></span>
-              <span className="icon-bar middle-bar"></span>
-              <span className="icon-bar bottom-bar"></span>
-            </button>
+            <div class={`${styles.button_wrap}`}>
+              <button class={`${styles.login_btn}`}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="22"
+                  viewBox="0 0 20 22"
+                  fill="#fff"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10 9C12.2091 9 14 7.20914 14 5C14 2.79086 12.2091 1 10 1C7.79086 1 6 2.79086 6 5C6 7.20914 7.79086 9 10 9Z"
+                    stroke="#333333"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M1 21C1 16.2136 5.02943 12.3334 10 12.3334C14.9706 12.3334 19 16.2136 19 21"
+                    stroke="#333333"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <button
+                onClick={toggleNavbar}
+                className={classTwo}
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="icon-bar top-bar"></span>
+                <span className="icon-bar middle-bar"></span>
+                <span className="icon-bar bottom-bar"></span>
+              </button>
+            </div>
           </div>
           <div
             className={`${classOne} ${styles.menu}`}
             id="navbarSupportedContent"
           >
-            <div className="others-options">
-              <ul className="top-menu">
-                {user ? (
-                  <>
-                    <li>
-                      <Link
-                        href="/mypage/home"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
-                        마이페이지
-                      </Link>
-                    </li>
-                    <li>
-                      <span></span>
-                    </li>
-                    <li>
-                      <Link href="#" className="menu-items">
-                        <div
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleLogout();
-                            toggleNavbar();
-                          }}
-                        >
-                          로그아웃
-                        </div>
-                      </Link>
-                    </li>
-                  </>
-                ) : (
-                  <>
-                    <li>
-                      <Link
-                        href="/sign-up-1"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
-                        회원가입
-                      </Link>
-                    </li>
-                    <li>
-                      <span></span>
-                    </li>
-                    <li>
-                      <Link
-                        href="/login"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
-                        로그인
-                      </Link>
-                    </li>
-                  </>
-                )}
-              </ul>
-            </div>
-            <ul className="navbar-nav dropright flex-column">
-              <li className="nav-item">
-                <Link
-                  href="/"
-                  className={`nav-link ${currentPath == "/" && "active"}`}
-                  onClick={toggleNavbar}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
+            <ul
+              className={`navbar-nav dropright flex-column ${styles.navbarUl}`}
+            >
+              <li className={`nav-item ${styles.firstLi}`}>
                 <Link
                   href="/booking"
                   className={`nav-link pr-3`}
-                  style={{ paddingRight: "15px" }}
                   onClick={() => {
                     toggleNavbar();
                   }}
                 >
                   Golf Booking
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  href="/artworks"
-                  className={`nav-link ${
-                    (currentPath.indexOf("artworks") > -1 ||
-                      currentPath.indexOf("gift") > -1) &&
-                    "active"
-                  }`}
-                  onClick={toggleNavbar}
-                >
-                  Member Privileges<i className="bx bx-chevron-down"></i>
+                  <i className="bx bx-chevron-down"></i>
                 </Link>
                 <ul className="dropdown-menu">
-                  <li className="nav-item">
-                    <Link href="/artworks/" onClick={toggleNavbar}>
-                      미술품
+                  <li className={`nav-item ${styles.ulLiBackground}`}>
+                    <Link href="/ggmall/list/service" onClick={toggleNavbar}>
+                      골프장 예약 서비스
                     </Link>
-                    <Link href="/ggmall/list/gift" onClick={toggleNavbar}>
-                      사은품
+                    <Link href="/ggmall/list/shop" onClick={toggleNavbar}>
+                      스크린골프 포인트 서비스
                     </Link>
                   </li>
                 </ul>
+              </li>
+              <li className={`nav-item`}>
+                <Link
+                  href="/booking"
+                  className={`nav-link pr-3`}
+                  onClick={() => {
+                    toggleNavbar();
+                  }}
+                >
+                  Gallery
+                </Link>
               </li>
 
               <li className="nav-item">
@@ -223,7 +184,7 @@ const MobileNavbar = ({ user }) => {
                   <i className="bx bx-chevron-down"></i>
                 </Link>
                 <ul className="dropdown-menu">
-                  <li className="nav-item">
+                  <li className={`nav-item ${styles.ulLiBackground}`}>
                     <Link href="/ggmall/list/service" onClick={toggleNavbar}>
                       제휴서비스
                     </Link>
@@ -249,10 +210,10 @@ const MobileNavbar = ({ user }) => {
                   }`}
                   onClick={toggleNavbar}
                 >
-                  Support <i className="bx bx-chevron-down"></i>{" "}
+                  Support <i className="bx bx-chevron-down"></i>
                 </Link>
-                <ul className="dropdown-menu">
-                  <li className="nav-item">
+                <ul className={`dropdown-menu`}>
+                  <li className={`nav-item ${styles.ulLiBackground}`}>
                     <Link
                       href="/contact"
                       className={`nav-link ${
@@ -264,7 +225,7 @@ const MobileNavbar = ({ user }) => {
                     </Link>
                   </li>
                   {user && (
-                    <li className="nav-item">
+                    <li className={`nav-item ${styles.ulLiBackground}`}>
                       <Link
                         href="/bbs/notice"
                         className={`nav-link ${
@@ -276,7 +237,7 @@ const MobileNavbar = ({ user }) => {
                       </Link>
                     </li>
                   )}
-                  <li className="nav-item">
+                  <li className={`nav-item ${styles.ulLiBackground}`}>
                     <Link
                       href="/bbs/news"
                       className={`nav-link ${
@@ -284,40 +245,7 @@ const MobileNavbar = ({ user }) => {
                       }`}
                       onClick={toggleNavbar}
                     >
-                      뉴스
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      href="/bbs/event"
-                      className={`nav-link ${
-                        currentPath == "/bbs/event/" && "active"
-                      }`}
-                      onClick={toggleNavbar}
-                    >
-                      이벤트
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      href="/bbs/review"
-                      className={`nav-link ${
-                        currentPath == "/bbs/review/" && "active"
-                      }`}
-                      onClick={toggleNavbar}
-                    >
-                      이용후기
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      href="/faq"
-                      className={`nav-link ${
-                        currentPath == "/faq/" && "active"
-                      }`}
-                      onClick={toggleNavbar}
-                    >
-                      FAQ
+                      NEWS
                     </Link>
                   </li>
                 </ul>
@@ -381,11 +309,6 @@ const MobileNavbar = ({ user }) => {
               }
             });`,
         }}
-      />
-      <ReservationModal
-        user={user}
-        updateReservation={getReservationData}
-        ref={modalRef}
       />
     </>
   );
