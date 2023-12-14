@@ -6,7 +6,7 @@ const MobileFooter = () => {
   const currentYear = new Date().getFullYear();
   return (
     <>
-      <footer className="footer-top-area pb-70 footer">
+      <footer className={`footer-top-area pb-70 footer ${styles.footer}`}>
         <div className={`${styles.footer}`}>
           <div className={`${styles.leftWrap}`}>
             <div className={`${styles.csWrap}`}>
