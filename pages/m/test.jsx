@@ -5,7 +5,6 @@ import React, { useRef } from "react";
 import { Modal } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Tab from "react-bootstrap/Tab";
-import FooterNav from "../../components/Layouts/MobileFooterNav"
 import styles from "../../components/Layouts/navbar.mobile.module.scss";
 
 export default function Index({ user }) {
@@ -39,7 +38,6 @@ export default function Index({ user }) {
 
         </div>
       </header> */}
-      <FooterNav />
     </>
   );
 }
