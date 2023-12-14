@@ -22,7 +22,7 @@
   font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap");
 /* font-family: 'Montserrat', sans-serif; */
 /* font-family: 'Noto Sans KR', sans-serif; */
 
@@ -46,8 +46,8 @@ $heading-font-family: "Hahmlet";
 // $sub-content-color-home-four: #e7e7e7;
 
 $main-color: #111;
-$sub-color: #3E8B3C;
-$point-color: #6ED338;
+$sub-color: #3e8b3c;
+$point-color: #6ed338;
 $brand-color: #083f22;
 $body-color: #333;
 $heading-color: #212121;
@@ -1278,7 +1278,7 @@ Nav 메뉴
   padding: 10px;
   border-radius: 0;
   z-index: 1;
-  position:relative;
+  position: relative;
   left: 0px;
 
   .icon-bar {
@@ -1338,7 +1338,7 @@ Nav 메뉴
 Main Banner 
 ======================================================*/
 .main-banner-area {
-  background-image: linear-gradient(#00095e, #000638);
+  background: #f8faf7;
   padding-top: 200px;
   padding-bottom: 300px;
   position: relative;
