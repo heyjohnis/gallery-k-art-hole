@@ -1,0 +1,349 @@
+.mainContainer {
+  overflow: hidden;
+}
+
+.mainContainer,
+.mainContainer * {
+  box-sizing: border-box;
+}
+
+.mainContainer {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  min-width: 360px;
+  margin: 60px auto 0;
+  background: rgb(249, 249, 249);
+  overflow: hidden;
+
+  .wrapper {
+    position: relative;
+    width: 390px;
+    height: 90px;
+    margin: 0;
+    background: rgb(244, 244, 244);
+  }
+
+  .titleTop {
+    display: inline-block;
+    position: relative;
+    width: 100vw;
+    height: 64px;
+    margin: 50px 0 0;
+    padding: 0 20px;
+    font-family: Noto Sans KR, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+    color: rgb(51, 51, 51);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    letter-spacing: -0.2px;
+    overflow: hidden;
+  }
+
+  .btnWrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    // position: relative;
+    width: 100%;
+    // height: 175px;
+    margin: 20px 0%;
+
+    .leftBox {
+      position: relative;
+      width: 165px;
+      height: 165px;
+      // top: 10px;
+      background: rgb(31, 94, 29);
+      border-radius: 8px;
+
+      .leftImg {
+        position: absolute;
+        top: -10px;
+        left: 45px;
+      }
+
+      .leftImg2 {
+        position: absolute;
+        top: 66px;
+        left: 20px;
+      }
+
+      .leftText {
+        position: absolute;
+        width: 93px;
+        height: 40px;
+        top: 105px;
+        left: 52px;
+        font-family: Noto Sans KR, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+          "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+          "Source Han Sans CN", sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20.272px;
+        text-align: right;
+        letter-spacing: -0.14px;
+      }
+    }
+
+    .rightBox {
+      position: relative;
+      width: 165px;
+      height: 165px;
+      // top: 10px;
+      // left: 185px;
+      background: rgb(176, 140, 13);
+      border-radius: 8px;
+
+      .rightImg {
+        position: relative;
+        top: -10px;
+        left: 10px;
+      }
+
+      .rightText {
+        position: absolute;
+        width: 93px;
+        height: 40px;
+        top: 105px;
+        left: 52px;
+        font-family: Noto Sans KR, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+          "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+          "Source Han Sans CN", sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20.272px;
+        text-align: right;
+        letter-spacing: -0.14px;
+      }
+    }
+  }
+
+  .titleWrapMid {
+    width: 100vw;
+    height: 64px;
+    margin: 60px 0 0;
+    padding: 0 20px;
+
+
+    .titleMid {
+      width: 124px;
+      height: 64px;
+      top: 0;
+      left: 0;
+      font-family: Noto Sans KR, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+      color: rgb(51, 51, 51);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 32px;
+      text-align: left;
+      text-overflow: initial;
+      white-space: nowrap;
+      letter-spacing: -0.2px;
+      overflow: hidden;
+    }
+  }
+
+  .tabMenuWrap {
+    ul, li { 
+      margin: 0;
+      padding: 0;
+      list-style: none; 
+    }
+
+    margin-top: 25px;
+
+    .tabMenuUl {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 0 20px;
+
+      .tabMenuUlLi {
+        font-family: Noto Sans KR;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 23px;
+        letter-spacing: -0.01em;
+        text-align: left;
+        color: #aaa;
+        
+        &:nth-child(1) {
+          color: #333;
+          
+        }
+
+        &:nth-child(2) span {
+          margin: 0 10px;
+        }
+
+        span {
+          margin: 0;
+          padding: 0;
+
+        }
+      }
+    }
+  }
+
+  .slideSec {
+    margin:  30px 0;
+    padding: 30px 0 30px 20px;
+    background-color: #e7e9eb;
+
+    .slideWrap {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      .swiperSlide {
+        width: 90%;
+      }
+  
+
+    .slideLi {
+
+        .slideImg {
+          display: inline-block;
+          width: 260px;
+          height: 290px;
+          border-radius: 8px;
+
+        }
+
+        .slideTitle {
+          width: 80%;
+          margin: 20px 0 5px;
+          font-family: Noto Sans KR;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 28px;
+          letter-spacing: -0.01em;
+          text-align: left;
+          color: #333;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .slideText{
+          width: 80%;
+          display: block;
+          margin: 5px 0 15px;
+          font-family: Noto Sans KR;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 21px;
+          letter-spacing: -0.01em;
+          text-align: left;
+          color: #999;
+        }
+
+        .slidePoint {
+          width: 80%;
+          display: block;
+          font-family: Noto Sans KR;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 26px;
+          letter-spacing: -0.01em;
+          text-align: left;
+          color: #333;
+        }
+
+      }
+    }
+  }
+
+  .galleryWrap {
+    margin: 60px 20px 0;
+
+    .galleryTitleWrap {
+      width: 351px;
+      height: 64px;
+
+      .galleryTitle {
+        width: 124px;
+        height: 64px;
+        top: 0;
+        left: 0;
+        font-family: Noto Sans KR, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+          "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+          "Source Han Sans CN", sans-serif;
+        color: rgb(51, 51, 51);
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 32px;
+        text-align: left;
+        text-overflow: initial;
+        white-space: nowrap;
+        letter-spacing: -0.2px;
+        overflow: hidden;
+      }
+    }
+
+    .galleryImgWrap {
+      margin: 20px 0 100px;
+
+      .galleryImg {
+        display: block;
+        width: 350px;
+        height: 250px;
+        border-radius: 8px;
+      }
+
+      .galleryTitle {
+        display: block;
+        margin-top: 20px;
+        font-family: Noto Sans CJK KR;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 35px;
+        letter-spacing: -0.01em;
+        text-align: left;
+
+      }
+
+      .galleryName{
+        display: block;
+        margin-top: 10px;
+        font-family: Noto Sans KR;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 23px;
+        letter-spacing: -0.01em;
+        text-align: left;
+
+      }
+
+      .galleryScript {
+        display: block;
+        margin-top: 20px;
+        font-family: Noto Sans KR;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: -0.01em;
+        text-align: left;
+        
+      }
+      
+    }
+  }
+
+}
