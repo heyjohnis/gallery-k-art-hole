@@ -2057,6 +2057,7 @@ Company 그린갤러리
 Footer
 ======================================================*/
 .footer-top-area {
+  padding: 60px 0 70px;
   background-color: #333333;
   position: relative;
   z-index: 1;
@@ -2086,12 +2087,94 @@ Footer
 .single-widget {
   margin-bottom: 30px;
 
-  .logo {
-    color: #ffffff;
-    margin-bottom: 25px;
-    font-size: 25px;
-    font-weight: bold;
-  }
+    .logo-wrap {
+      margin-bottom: 120px;
+
+      .logo {
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
+
+    .selectbox-wrap {
+      margin-bottom: 51px;
+      
+    }
+
+    .copy-right-wrap {
+
+      span {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: -0.18px;
+        color: #fff;
+      }
+    }
+
+    .contact-wrap {
+      margin-bottom: 102px;
+
+        a {
+          display: inline-block;
+          font-family: Montserrat;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 40px;
+          letter-spacing: -0.2px;
+          color: #FFF;
+          
+        }
+
+        .time {
+          font-family: Montserrat;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 40px;
+          letter-spacing: -0.2px;
+          color: #FFF;
+        }
+    }
+
+    .privacy-policy-wrap {
+
+      a {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: -0.16px;
+        color: #FFF;
+      }
+
+      span {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: -0.16px;
+        color: #FFF;
+
+        &:nth-child(6) {
+          font-weight: 100;
+  
+        }
+      }
+
+    }
+
+    .address {
+      margin-top: 170px;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: -0.16px;
+      text-align: right;
+      color: #aaa;
+
+    }
 
   p {
     color: #d9d6d6;

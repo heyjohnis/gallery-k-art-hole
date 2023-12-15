@@ -69,7 +69,7 @@ export default function Login() {
             <div className="col-12">
               <div className="contact-form-action">
                 <div className="form-heading text-center">
-                  <h3 className="form-title">JOIN US</h3>
+                  <h3 className="form-title">로그인</h3>
                   <span className="form-text ">그린갤러리 멤버십 소유자만 가입과 로그인이 가능합니다.</span>
                 </div>
 
