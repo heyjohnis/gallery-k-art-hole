@@ -796,12 +796,17 @@ Nav 메뉴
     // background-color: $main-color;
 
     .top-menu {
-      width: 100%;
-      position: absolute;
+      // width: 18%;
+      // position: absolute;
       // right: 0;
       // top: -35px;
-      right: 50px;
-      top: -55px;
+      // right: 50px;
+      // top: -55px;
+      right: 0px;
+      top: -60px;
+      margin: 0;
+      padding-right: 10px;
+      padding: 0;
       list-style: none;
       display: flex;
       justify-content: flex-end;
@@ -811,7 +816,7 @@ Nav 메뉴
         .menu-items {
           font-size: 12px;
           color: $white-color;
-          color: #111;
+          color: #fff;
           font-weight: 400;
         }
 
@@ -888,18 +893,18 @@ Nav 메뉴
           }
         }
 
-        &:last-child {
-          a {
-            margin-right: 0;
-          }
-        }
+        // &:last-child {
+        //   a {
+        //     margin-right: 0;
+        //   }
+        // }
 
-        &:first-child {
-          a {
-            margin-left: 0;
-            padding-right: 15px;
-          }
-        }
+        // &:first-child {
+        //   a {
+        //     margin-left: 0;
+        //     padding-right: 15px;
+        //   }
+        // }
 
         &:hover,
         &.active {
@@ -1186,8 +1191,9 @@ Nav 메뉴
   }
 
   .others-options {
-    position: relative;
-    top: 3px;
+    display: flex;
+    // position: relative;
+    // top: 3px;
 
     .default-btn {
       padding: 12px 20px 10px;
@@ -1282,7 +1288,6 @@ Nav 메뉴
   border-radius: 0;
   z-index: 1;
   position:relative;
-  left: 260px;
 
   .icon-bar {
     width: 28px;

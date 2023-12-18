@@ -103,25 +103,6 @@ const Navbar = ({ user }) => {
               />
             </Link>
 
-            <button
-              onClick={toggleNavbar}
-              className={classTwo}
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="icon-bar top-bar"></span>
-              <span className="icon-bar middle-bar"></span>
-              <span className="icon-bar bottom-bar"></span>
-            </button>
-          </div>
-          <div
-            className={`${classOne} ${styles.menu}`}
-            id="navbarSupportedContent"
-          >
             <div className="others-options">
               <ul className="top-menu">
                 {user ? (
@@ -186,7 +167,27 @@ const Navbar = ({ user }) => {
               >
                 예약 내역
               </Link> */}
+              <button
+                onClick={toggleNavbar}
+                className={classTwo}
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="icon-bar top-bar"></span>
+                <span className="icon-bar middle-bar"></span>
+                <span className="icon-bar bottom-bar"></span>
+              </button>
             </div>
+          </div>
+
+          <div
+            className={`${classOne} ${styles.menu}`}
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav dropright flex-column">
               <li className="nav-item">
                 <Link
