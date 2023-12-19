@@ -351,9 +351,6 @@
   .banner-four-main-img {
     margin-top: 30px;
   }
-  .single-team {
-    background-color: #060542;
-  }
   .jumpx-slider-item .jumpx-slider-text h1 {
     font-size: 35px;
   }
@@ -1253,9 +1250,6 @@
   .banner-four-main-img {
     margin-top: 30px;
   }
-  .single-team {
-    background-color: #060542;
-  }
   .jumpx-slider-item .jumpx-slider-text h1 {
     font-size: 35px;
   }
@@ -1686,6 +1680,9 @@
   }
 }
 @media only screen and (max-width: 991px) {
+  .lg-pl-3 {
+    padding-left: 12px !important;
+  }
   .mobile-nav .logo {
     top: 12px;
   }
@@ -1712,6 +1709,7 @@
   }
   .news-details-area .widget-area .widget_categories .post-wrap {
     width: 100%;
+    padding: 15px 0;
     position: fixed;
     display: flex;
     bottom: 0;
@@ -1726,15 +1724,25 @@
     font-size: 14px;
   }
   .news-details-area .widget-area .widget_categories .post-wrap ul li {
+    width: 20%;
     padding-bottom: 0;
     margin-bottom: 0;
     border-bottom: 0;
+    padding: 0;
     text-align: center;
   }
   .news-details-area .widget-area .widget_categories .post-wrap ul li a {
-    font-size: 14px;
+    font-size: 11px;
     color: #fff;
     line-height: 1.2;
+  }
+  .news-details-area .widget-area .widget_categories .post-wrap ul li a .icon {
+    display: block !important;
+    width: 24px;
+    margin: 0 auto 5px;
+  }
+  .news-details-area .widget-area .widget_categories .post-wrap ul li.myinfo_update {
+    display: none;
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1535px) {
@@ -1749,7 +1757,9 @@
   .table_mb {
     display: block;
   }
-  table, th, td {
+  table,
+th,
+td {
     font-size: 15px;
   }
   .table_golf th {
@@ -1762,6 +1772,13 @@
   }
   .main-product {
     transform: translateY(0) !important;
+  }
+  .swiper-button-next,
+.swiper-button-prev {
+    display: none;
+  }
+  .md-pl-3 {
+    padding-left: 12px !important;
   }
 }
 @media only screen and (min-width: 577px) {
@@ -1840,6 +1857,9 @@
   }
   .navbar-area nav .navbar-nav .nav-item .dropdown-toggle::before {
     display: none;
+  }
+  .navbar-area .navbar-toggler {
+    left: 0;
   }
   .navbar-area .others-options {
     left: 0;

@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 import Link from "next/link";
+import PageBreadCrumb from '../Common/PageBreadCrumb';
 
 const alertContent = () => {
   MySwal.fire({
@@ -81,13 +82,12 @@ const ContactForm = () => {
     <div className="main-contact-area pb-100">
       <div className="container">
         <div className="section-title mt-5">
-          <span>Contact Us</span>
-          <h2>상담/문의</h2>
-          <p>
-            상딤신청을 남겨주시면 빠른 시간 내에
-            <br />
-            답변 드리도록 하겠습니다
-          </p>
+          <PageBreadCrumb
+            pageTitle="상담문의"
+            homePageUrl="/contact"
+            homePageText="Support"
+            activePageText="상담문의"
+          />
         </div>
 
         <div className="row align-items-center justify-content-center">
