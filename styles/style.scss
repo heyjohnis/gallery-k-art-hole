@@ -32,6 +32,7 @@ Default Style
 
 $body-font-family: "Pretendard";
 $heading-font-family: "Hahmlet";
+$main-font-family-eng: "Montserrat";
 
 // $main-color: #4e7d22;
 // $sub-color: #0e5039;
@@ -869,15 +870,15 @@ Nav 메뉴
           text-transform: uppercase;
 
           padding: {
-            left: 0;
-            right: 0;
+            left: 50px;
+            right: 50px;
             top: 0;
             bottom: 0;
           }
 
           margin: {
-            left: 18px;
-            right: 18px;
+            left: 0px;
+            right: 0px;
           }
 
           &:hover,
@@ -922,38 +923,42 @@ Nav 메뉴
           border: none;
           top: 80px;
           left: 0;
-          width: 250px;
+          width: 100%;
           z-index: 99;
           //display: block;
           // opacity: 0;
           // visibility: hidden;
           border-radius: 5px;
           transition: all 0.3s ease-in-out;
+          background: #f5f5f5;
 
           padding: {
-            top: 18px;
-            left: 10px;
-            right: 10px;
-            bottom: 18px;
+            left: 0;
+            right: 0;
+            top: 10px;
+            bottom: 10px;
           }
 
           li {
             padding: {
-              left: 0;
-              right: 0;
-              top: 0;
-              bottom: 0;
+              left: 40px;
+              right: 40px;
+              top: 5px;
+              bottom: 5px;
             }
 
             a {
-              padding: 5px 15px;
+              display: block;
+              padding: 5px 10px;
               margin: 0;
-              color: #111;
+              color: #666;
+              font-family: $main-font-family-eng;
+              letter-spacing: -0.14px;
               text-transform: capitalize;
 
               font: {
-                size: 14.5px;
-                weight: 400;
+                size: 14px;
+                weight: 500;
               }
 
               &:hover,
@@ -965,6 +970,7 @@ Nav 메뉴
             }
 
             .dropdown-menu {
+              width: 100%;
               left: -250px;
               top: 0;
               opacity: 0;

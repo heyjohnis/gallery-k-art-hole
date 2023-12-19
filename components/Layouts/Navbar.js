@@ -74,14 +74,14 @@ const Navbar = ({ user }) => {
   return (
     <>
       <div id="navbar" className="navbar-area fixed-top">
-        <div className={styles.top_event}>
+        {/* <div className={styles.top_event}>
           <Link href="/landing">
             <span>
               {" "}
               📣 아트와 골프가 만나다! 그린갤러리 오픈프로모션 진행중!
             </span>
           </Link>
-        </div>
+        </div> */}
         <div className={styles.backdrop}></div>
         {/* <nav className="navbar navbar-expand-xl navbar-light"> */}
         <nav className="navbar navbar-light">
@@ -167,6 +167,7 @@ const Navbar = ({ user }) => {
               >
                 예약 내역
               </Link> */}
+
               <button
                 onClick={toggleNavbar}
                 className={classTwo}
@@ -183,13 +184,12 @@ const Navbar = ({ user }) => {
               </button>
             </div>
           </div>
-
           <div
             className={`${classOne} ${styles.menu}`}
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav dropright flex-column">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   href="/"
                   className={`nav-link ${currentPath == "/" && "active"}`}
@@ -197,7 +197,7 @@ const Navbar = ({ user }) => {
                 >
                   Home
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 {/* <Link
                     href="/"
@@ -238,6 +238,8 @@ const Navbar = ({ user }) => {
                     <Link href="/artworks/" onClick={toggleNavbar}>
                       미술품
                     </Link>
+                  </li>
+                  <li className="nav-item">
                     <Link href="/ggmall/list/gift" onClick={toggleNavbar}>
                       사은품
                     </Link>
@@ -264,9 +266,13 @@ const Navbar = ({ user }) => {
                     <Link href="/ggmall/list/service" onClick={toggleNavbar}>
                       제휴서비스
                     </Link>
+                  </li>
+                  <li className="nav-item">
                     <Link href="/ggmall/list/shop" onClick={toggleNavbar}>
                       GG 쇼핑
                     </Link>
+                  </li>
+                  <li className="nav-item">
                     <Link href="/ggmall/list/tour" onClick={toggleNavbar}>
                       GG 투어
                     </Link>
