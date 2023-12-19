@@ -2062,6 +2062,9 @@ Company 그린갤러리
 Footer
 ======================================================*/
 .footer-top-area {
+  width: 100%;
+  min-width: 1320px;
+  height: 540px;
   padding: 60px 0 70px;
   background-color: #333333;
   position: relative;
@@ -2089,21 +2092,76 @@ Footer
   }
 }
 
+.no-wrap {
+  flex-wrap: nowrap !important;
+}
+
+.left-wrap {
+  width: 380px;
+}
+
+.center-wrap {
+  width: 480px;
+}
+
+.right-wrap {
+  width: 460px;
+}
+
+
 .single-widget {
   margin-bottom: 30px;
 
     .logo-wrap {
-      margin-bottom: 120px;
+      margin-bottom: 200px;
 
       .logo {
-        color: #ffffff;
         font-size: 25px;
         font-weight: bold;
+
+        & img {
+        color: #fff;
+        }
+        
       }
     }
 
     .selectbox-wrap {
       margin-bottom: 51px;
+
+      .selectbox {
+
+        select {
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          appearance: none;
+          
+          width: 245px;
+          height: 60px;
+          padding: 14px 20px;
+          font-family: Montserrat;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 30px;
+          letter-spacing: -0.18px;
+          color: #fff;
+          border: 1px solid #fff;
+          background: url('/images/selectBox.png') calc(100% - 15px) center no-repeat;
+          background-size: 15px;
+
+          &:focus {
+            outline: none;
+          }
+
+          & option {
+            color: #111;
+            border-radius: 0;
+
+          }
+
+        }
+      }
+
       
     }
 
@@ -2267,11 +2325,20 @@ Footer
 }
 
 .footer-bottom-area {
-  background-color: #535353;
-  padding: 20px 0;
+  width: 100%;
+  min-width: 1320px;
+  height: 150px;
+  padding: 56px 0;
+  background-color: #eee;
 
   .copy-right {
-    color: #d9d6d6;
+    text-align: right;
+    font-family: Noto Sans KR;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: -0.14px;
+    color: #999;
 
     i {
       position: relative;
@@ -2280,10 +2347,10 @@ Footer
     }
 
     a {
-      color: #d9d6d6;
+      color: #666;
 
       &:hover {
-        color: $main-color;
+        color: #666;
       }
     }
   }
@@ -2299,28 +2366,38 @@ Footer
 
       li {
         display: inline-block;
-        padding-right: 20px;
+        padding-right: 24px;
+        font-family: Noto Sans KR;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: -0.14px;
+        color: #666;
+
+        span {
+          font-weight: 900;
+        }
 
         &:last-child {
           margin-right: 0;
         }
 
         a {
-          color: #d9d6d6;
+          color: #666;
           position: relative;
 
-          &::before {
-            content: "";
-            position: absolute;
-            top: 13px;
-            left: -13px;
-            width: 5px;
-            height: 1px;
-            background-color: #d9d6d6;
-          }
+          // &::before {
+          //   content: "";
+          //   position: absolute;
+          //   top: 13px;
+          //   left: -13px;
+          //   width: 5px;
+          //   height: 1px;
+          //   background-color: #d9d6d6;
+          // }
 
           &:hover {
-            color: $main-color;
+            color: #666;
           }
         }
 

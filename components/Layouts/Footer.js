@@ -7,26 +7,23 @@ const Footer = () => {
     <>
       <footer className="footer-top-area footer">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-3 col-md-6">
-              <div
-                className="single-widget"
-                data-aos="fade-in"
-                data-aos-duration="1200"
-                data-aos-delay="200"
-              >
+          <div className="row no-wrap">
+            <div className="left-wrap">
+              <div className="single-widget">
                 <div className="logo-wrap">
                   <Link href="/" className="logo">
-                    <img src="/images/footer-logo.png" alt="Image" />
+                    <img src="/images/white-logo.png" alt="Image" />
                   </Link>
                 </div>
 
                 <div className="selectbox-wrap">
-                  <select name="selectSite" id="">
-                    <option value="">FAMILY SITE</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                  </select>
+                  <div className="selectbox">
+                    <select name="selectSite" id="">
+                      <option value="">FAMILY SITE</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div className="copy-right-wrap">
@@ -35,27 +32,22 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-5 col-md-6">
-              <div
-                className="single-widget tel_service"
-                data-aos="fade-in"
-                data-aos-duration="1200"
-                data-aos-delay="300"
-              >
+            <div className="center-wrap">
+              <div className="single-widget tel_service">
                 <div className="contact-wrap">
-                  <Link className="sns-link" href="/">
+                  <Link className="sns-link" href="/" target="_blank">
                     INSTAGRAM
                   </Link>
                   <br />
-                  <Link className="sns-link" href="/">
+                  <Link className="sns-link" href="/" target="_blank">
                     YOUTUBE
                   </Link>
                   <br />
                   <br />
                   <p className="time">
-                    상담문의 1588-1778
+                    상담문의 1588 - 1778
                     <br />
-                    상담시간 10:00 ~ 19:00
+                    상담시간 10am - 7pm
                   </p>
                 </div>
 
@@ -74,13 +66,8 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-6">
-              <div
-                className="single-widget"
-                data-aos="fade-in"
-                data-aos-duration="1200"
-                data-aos-delay="500"
-              >
+            <div className="right-wrap">
+              <div className="single-widget">
                 <p className="address">
                   주식회사 갤러리케이 <br />
                   대표자 <span>|</span> 김정필 <br />
@@ -103,18 +90,25 @@ const Footer = () => {
       <footer className="footer-bottom-area">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-6">
-              <div className="copy-right">
-                <p>
-                  Copyright &copy; {currentYear} GREEN GALLERY. All Rights
-                  Reserved
-                </p>
+            <div className="col-lg-2">
+              <div className="logo-wrap">
+                <Link href="/" className="logo">
+                  <img src="/images/white-logo.png" alt="Image" />
+                </Link>
               </div>
             </div>
 
-            <div className="col-lg-6">
+            <div className="col-lg-5">
               <div className="privacy">
                 <ul>
+                  <li>
+                    <Link href="tel:15881778">
+                      상담문의 <span>1588 - 1778</span>
+                    </Link>
+                  </li>
+                  <li>
+                    상담시간 <span>10am - 7pm</span>
+                  </li>
                   <li>
                     <Link
                       href="https://sprinkle-justice-3a1.notion.site/11de65f3be1241efb4e542bbb897a52c"
@@ -132,6 +126,15 @@ const Footer = () => {
                     </Link>
                   </li>
                 </ul>
+              </div>
+            </div>
+
+            <div className="col-lg-5">
+              <div className="copy-right">
+                <p>
+                  Copyright &copy; {currentYear} GREEN GALLERY. All Rights
+                  Reserved
+                </p>
               </div>
             </div>
           </div>
