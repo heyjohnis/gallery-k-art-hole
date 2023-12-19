@@ -7,10 +7,12 @@ export const ContactItem = ({
   itemText,
 }) => {
   return (
-    <article className={`contack_item col-lg-3 col-sm-6 ${styles.item_card}`}>
-      <h1>{itemNumber}</h1>
-      <h2>{itemTitle}</h2>
-      <p>{itemText}</p>
-    </article>
+    <div className={`contack_item col-lg-3 col-sm-6 ${styles.item_card}`}>
+      <article>
+        <h1>{itemNumber}</h1>
+        <h2>{itemTitle}</h2>
+        <p>{itemText}</p>
+      </article>
+    </div>
   )
 }

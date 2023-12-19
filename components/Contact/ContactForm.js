@@ -6,6 +6,7 @@ const MySwal = withReactContent(Swal);
 import Link from "next/link";
 import PageBreadCrumb from '../Common/PageBreadCrumb';
 import { ContactItem } from './ContactItem';
+import ContactFaq from './ContactFaq';
 
 const alertContent = () => {
   MySwal.fire({
@@ -92,7 +93,7 @@ const ContactForm = () => {
         </div>
 
         <div className="row align-items-center justify-content-center">
-          <div className="col">
+          <div className="row">
             <ContactItem
               itemNumber="01"
               itemTitle="CS 관련 문의"
@@ -115,7 +116,18 @@ const ContactForm = () => {
               />
           </div>
           <div className="col-md-12">
+          
+          <ContactFaq
+                        question="04"
+                        answer="홍보ㆍPR 문의"
+          />
+                    <ContactFaq
+                        question="04"
+                        answer="홍보ㆍPR 문의"
+          />
+          </div>
 
+          <div className="col-md-12">
             <div className="contact-wrap contact-pages mb-0">
               <div className="contact-form">
                 <form onSubmit={handleSubmit}>
