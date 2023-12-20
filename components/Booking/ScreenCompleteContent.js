@@ -11,7 +11,7 @@ export const ScreenCompleteContent = () => {
 	
   const person = [
 		["희망날짜", "2023. 08. 04"], 
-		["인원수", 3],
+		["인원수", "3명"],
 		["주문자명", "홍길동"],
     ["연락처", "010 -1234 - 5678"],
     ["이메일", "greengallery1234@galleryk.co.kr"],
