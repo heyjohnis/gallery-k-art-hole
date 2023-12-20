@@ -65,11 +65,11 @@ const MobileNavbar = ({ user }) => {
   return (
     <>
       <div id="navbar" className={`navbar-area fixed-top`}>
-        <nav className={`navbar navbar-light ${styles.mo_navbar}`}>
+        <nav className={`navbar navbar-dark ${styles.mo_navbar}`}>
           <div className={`container`}>
             <Link href="/" className={`navbar-brand light_logo`}>
               <img
-                src="/images/white-logo.svg"
+                src="/images/dark-logo.svg"
                 width={180}
                 height={36}
                 alt="logo"
@@ -91,7 +91,7 @@ const MobileNavbar = ({ user }) => {
                   width="20"
                   height="22"
                   viewBox="0 0 20 22"
-                  fill="#fff"
+                  fill="#f4f4f4"
                 >
                   <path
                     fill-rule="evenodd"
@@ -151,6 +151,8 @@ const MobileNavbar = ({ user }) => {
                     <Link href="/ggmall/list/service" onClick={toggleNavbar}>
                       골프장 예약 서비스
                     </Link>
+                  </li>
+                  <li className={`nav-item ${styles.ulLiBackground}`}>
                     <Link href="/ggmall/list/shop" onClick={toggleNavbar}>
                       스크린골프 포인트 서비스
                     </Link>
@@ -188,9 +190,13 @@ const MobileNavbar = ({ user }) => {
                     <Link href="/ggmall/list/service" onClick={toggleNavbar}>
                       제휴서비스
                     </Link>
+                  </li>
+                  <li className={`nav-item ${styles.ulLiBackground}`}>
                     <Link href="/ggmall/list/shop" onClick={toggleNavbar}>
                       GG 쇼핑
                     </Link>
+                  </li>
+                  <li className={`nav-item ${styles.ulLiBackground}`}>
                     <Link href="/ggmall/list/tour" onClick={toggleNavbar}>
                       GG 투어
                     </Link>

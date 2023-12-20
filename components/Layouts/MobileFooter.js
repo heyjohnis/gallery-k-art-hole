@@ -7,7 +7,7 @@ const MobileFooter = () => {
   return (
     <>
       <footer className={`footer-top-area pb-70 footer ${styles.footer}`}>
-        <div className={`${styles.footer}`}>
+        <div className={`${styles.footerWrap}`}>
           <div className={`${styles.leftWrap}`}>
             <div className={`${styles.csWrap}`}>
               <span className={`${styles.csNumber}`}>상담문의 1588 - 1778</span>

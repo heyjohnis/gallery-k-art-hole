@@ -1,3 +1,4 @@
+$main-font-family-eng: "Montserrat";
 $body-font-family: "Pretendard";
 
 $main-color: #111;
@@ -39,13 +40,12 @@ $sub-content-color-home-four: #e7e7e7;
     
 }
 
-
-
 .mo_navbar {
     width: 100%;
     min-width: 320px;
-    max-width: 768px;
+    max-width: 480px;
     margin: 0 auto;
+    background: #f4f4f4;
 
     .button_wrap {
         width: 88px;
@@ -55,11 +55,19 @@ $sub-content-color-home-four: #e7e7e7;
         
         .login_btn {
             padding: 10px;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        & button:last-child {
+          
+          span {
+            background-color: #666 !important;
+          }
+
         }
     }
 }
-
-
 
 .menu {
     width: 345px;
@@ -68,15 +76,18 @@ $sub-content-color-home-four: #e7e7e7;
     position: absolute;
     top: 0vh;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 1);
 
     .navbarUl {
+        padding: 0 !important;
+        border-radius: 0 !important;
 
         li {
-            
+            padding: 0 !important;
+
             a {
                 margin: 0px !important;
-                padding: 0 40px !important;
+                padding: 10px 40px !important;
                 font-family: Montserrat !important;
                 font-size: 18px !important;
                 font-weight: 700 !important;
@@ -93,22 +104,35 @@ $sub-content-color-home-four: #e7e7e7;
                     display: flex;
                     flex-direction: column;
                     width: 100% !important;
-                    border-radius: 0;
+                    padding: 10px 0 !important;
+                    border-radius: 0 !important;
                     background: #f5f5f5 !important;
         
                     a {
+                      padding: 0 40px !important;
                         font-size: 14px !important;
                         font-weight: 500 !important;
                         letter-spacing: -0.14px !important;
                         color: #666 !important;
                     }
+
+                    &:first-child {
+                      padding: 20px 0 10px !important;
+                    }
+
+                    &:last-child {
+                      padding: 10px 0 20px !important;
+                    }
                 }
             }
+
+
         }
     }
 
     .firstLi {
-        margin: 0;
+        margin: 0 !important;
+        padding: 0 !important;
 
         & a {
             margin: 0px !important;
@@ -124,13 +148,17 @@ $sub-content-color-home-four: #e7e7e7;
 
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 40px 5% 40px;
+
+  .footerWrap {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    max-width: 480px;
-    min-width: 320px;
-    margin: 0 auto;
-    padding: 40px 20px 40px;
     background-color: #333;
     color: #fff;
 
@@ -138,13 +166,13 @@ $sub-content-color-home-four: #e7e7e7;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 55%;
+      width: 59%;
 
       .csWrap {
 
         .csNumber, .csTime {
           display: block;
-          font-family: Montserrat, Noto Sans KR;
+          font-family: $main-font-family-eng, Noto Sans KR;
           font-size: 12px;
           font-weight: 700;
           line-height: 24px;
@@ -155,17 +183,21 @@ $sub-content-color-home-four: #e7e7e7;
       }
 
       .privacyWrap {
-        // margin-top: 20px;
-        // margin-bottom: 30px;
+        margin: 20px 0;
 
         .privacy, .tos, .cpo {
           display: block;
-          font-family: Montserrat, Noto Sans KR;
+          font-family: $main-font-family-eng, Noto Sans KR;
           font-size: 8px;
           font-weight: 400;
           line-height: 18px;
           letter-spacing: -0.01em;
           text-align: left;
+
+          a {
+            color: #fff;
+
+          }
         }
       }
 
@@ -173,7 +205,7 @@ $sub-content-color-home-four: #e7e7e7;
 
         span {
           display: block;
-          font-family: Montserrat, Noto Sans KR;
+          font-family: $main-font-family-eng, Noto Sans KR;
           font-size: 8px;
           font-weight: 400;
           line-height: 14px;
@@ -193,8 +225,8 @@ $sub-content-color-home-four: #e7e7e7;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 45%;
-      font-family: Montserrat, Noto Sans KR;
+      width: 41%;
+      font-family: $main-font-family-eng, Noto Sans KR;
       font-size: 12px;
       font-weight: 700;
       line-height: 24px;
@@ -219,11 +251,11 @@ $sub-content-color-home-four: #e7e7e7;
       }
     }
   }
+}
 
 
-
-/* navMobile */
-.navMobile {
+/* MobileFooterNav */
+.mobileFooterNav {
     position: sticky;
     bottom: 0;
     width: 100%;
@@ -247,7 +279,7 @@ $sub-content-color-home-four: #e7e7e7;
         margin: 0;
         padding: 0;
         list-style: none;
-        background-color: #ddd;
+        background-color: #f1f1f1;
         
 
         & li {
