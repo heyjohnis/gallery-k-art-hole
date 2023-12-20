@@ -218,7 +218,7 @@ const Navbar = ({ user }) => {
                     toggleNavbar();
                   }}
                 >
-                  Golf Booking
+                  Golf Booking <i className="bx bx-chevron-down"></i>
                 </Link>
                 <ul className="dropdown-menu">
                   <li className="nav-item">
@@ -243,7 +243,7 @@ const Navbar = ({ user }) => {
                   }`}
                   onClick={toggleNavbar}
                 >
-                  Gallery<i className="bx bx-chevron-down"></i>
+                  Gallery
                 </Link>
               </li>
 
@@ -258,8 +258,7 @@ const Navbar = ({ user }) => {
                   }`}
                   onClick={toggleNavbar}
                 >
-                  GG Mall
-                  <i className="bx bx-chevron-down"></i>
+                  GG Mall <i className="bx bx-chevron-down"></i>
                 </Link>
                 <ul className="dropdown-menu">
                   <li className="nav-item">
