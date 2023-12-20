@@ -220,6 +220,18 @@ const Navbar = ({ user }) => {
                 >
                   Golf Booking
                 </Link>
+                <ul className="dropdown-menu">
+                  <li className="nav-item">
+                    <Link href="/" onClick={toggleNavbar}>
+                      골프장 예약 서비스
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/" onClick={toggleNavbar}>
+                      스크린골프 포인트 서비스
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li className="nav-item">
                 <Link
@@ -231,20 +243,8 @@ const Navbar = ({ user }) => {
                   }`}
                   onClick={toggleNavbar}
                 >
-                  Member Privileges<i className="bx bx-chevron-down"></i>
+                  Gallery<i className="bx bx-chevron-down"></i>
                 </Link>
-                <ul className="dropdown-menu">
-                  <li className="nav-item">
-                    <Link href="/artworks/" onClick={toggleNavbar}>
-                      미술품
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link href="/ggmall/list/gift" onClick={toggleNavbar}>
-                      사은품
-                    </Link>
-                  </li>
-                </ul>
               </li>
 
               <li className="nav-item">
@@ -327,40 +327,7 @@ const Navbar = ({ user }) => {
                       }`}
                       onClick={toggleNavbar}
                     >
-                      뉴스
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      href="/bbs/event"
-                      className={`nav-link ${
-                        currentPath == "/bbs/event/" && "active"
-                      }`}
-                      onClick={toggleNavbar}
-                    >
-                      이벤트
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      href="/bbs/review"
-                      className={`nav-link ${
-                        currentPath == "/bbs/review/" && "active"
-                      }`}
-                      onClick={toggleNavbar}
-                    >
-                      이용후기
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      href="/faq"
-                      className={`nav-link ${
-                        currentPath == "/faq/" && "active"
-                      }`}
-                      onClick={toggleNavbar}
-                    >
-                      FAQ
+                      NEWS
                     </Link>
                   </li>
                 </ul>
