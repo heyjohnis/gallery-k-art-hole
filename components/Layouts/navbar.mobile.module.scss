@@ -183,8 +183,7 @@ $sub-content-color-home-four: #e7e7e7;
       }
 
       .privacyWrap {
-        // margin-top: 20px;
-        // margin-bottom: 30px;
+        margin: 20px 0;
 
         .privacy, .tos, .cpo {
           display: block;
@@ -194,6 +193,11 @@ $sub-content-color-home-four: #e7e7e7;
           line-height: 18px;
           letter-spacing: -0.01em;
           text-align: left;
+
+          a {
+            color: #fff;
+
+          }
         }
       }
 
