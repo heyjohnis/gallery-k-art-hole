@@ -39,13 +39,12 @@ $sub-content-color-home-four: #e7e7e7;
     
 }
 
-
-
 .mo_navbar {
     width: 100%;
     min-width: 320px;
-    max-width: 768px;
+    max-width: 480px;
     margin: 0 auto;
+    background: #f4f4f4;
 
     .button_wrap {
         width: 88px;
@@ -55,11 +54,19 @@ $sub-content-color-home-four: #e7e7e7;
         
         .login_btn {
             padding: 10px;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        & button:last-child {
+          
+          span {
+            background-color: #666 !important;
+          }
+
         }
     }
 }
-
-
 
 .menu {
     width: 345px;
@@ -68,15 +75,18 @@ $sub-content-color-home-four: #e7e7e7;
     position: absolute;
     top: 0vh;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 1);
 
     .navbarUl {
+        padding: 0 !important;
+        border-radius: 0 !important;
 
         li {
-            
+            padding: 0 !important;
+
             a {
                 margin: 0px !important;
-                padding: 0 40px !important;
+                padding: 10px 40px !important;
                 font-family: Montserrat !important;
                 font-size: 18px !important;
                 font-weight: 700 !important;
@@ -93,22 +103,35 @@ $sub-content-color-home-four: #e7e7e7;
                     display: flex;
                     flex-direction: column;
                     width: 100% !important;
-                    border-radius: 0;
+                    padding: 10px 0 !important;
+                    border-radius: 0 !important;
                     background: #f5f5f5 !important;
         
                     a {
+                      padding: 0 40px !important;
                         font-size: 14px !important;
                         font-weight: 500 !important;
                         letter-spacing: -0.14px !important;
                         color: #666 !important;
                     }
+
+                    &:first-child {
+                      padding: 20px 0 10px !important;
+                    }
+
+                    &:last-child {
+                      padding: 10px 0 20px !important;
+                    }
                 }
             }
+
+
         }
     }
 
     .firstLi {
-        margin: 0;
+        margin: 0 !important;
+        padding: 0 !important;
 
         & a {
             margin: 0px !important;
