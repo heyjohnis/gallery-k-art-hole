@@ -7,7 +7,7 @@ const MobileFooterNav = () => {
   return (
     <>
       <div
-        className={`footer-top-area pt-100 pb-70 footer ${styles.navMobile}`}
+        className={`footer-top-area pt-100 pb-70 footer ${styles.mobileFooterNav}`}
       >
         <div>
           <ul>

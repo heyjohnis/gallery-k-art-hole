@@ -1,3 +1,4 @@
+$main-font-family-eng: "Montserrat";
 $body-font-family: "Pretendard";
 
 $main-color: #111;
@@ -147,13 +148,17 @@ $sub-content-color-home-four: #e7e7e7;
 
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 40px 5% 40px;
+
+  .footerWrap {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    max-width: 480px;
-    min-width: 320px;
-    margin: 0 auto;
-    padding: 40px 20px 40px;
     background-color: #333;
     color: #fff;
 
@@ -161,13 +166,13 @@ $sub-content-color-home-four: #e7e7e7;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 55%;
+      width: 59%;
 
       .csWrap {
 
         .csNumber, .csTime {
           display: block;
-          font-family: Montserrat, Noto Sans KR;
+          font-family: $main-font-family-eng, Noto Sans KR;
           font-size: 12px;
           font-weight: 700;
           line-height: 24px;
@@ -183,7 +188,7 @@ $sub-content-color-home-four: #e7e7e7;
 
         .privacy, .tos, .cpo {
           display: block;
-          font-family: Montserrat, Noto Sans KR;
+          font-family: $main-font-family-eng, Noto Sans KR;
           font-size: 8px;
           font-weight: 400;
           line-height: 18px;
@@ -196,7 +201,7 @@ $sub-content-color-home-four: #e7e7e7;
 
         span {
           display: block;
-          font-family: Montserrat, Noto Sans KR;
+          font-family: $main-font-family-eng, Noto Sans KR;
           font-size: 8px;
           font-weight: 400;
           line-height: 14px;
@@ -216,8 +221,8 @@ $sub-content-color-home-four: #e7e7e7;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 45%;
-      font-family: Montserrat, Noto Sans KR;
+      width: 41%;
+      font-family: $main-font-family-eng, Noto Sans KR;
       font-size: 12px;
       font-weight: 700;
       line-height: 24px;
@@ -242,11 +247,11 @@ $sub-content-color-home-four: #e7e7e7;
       }
     }
   }
+}
 
 
-
-/* navMobile */
-.navMobile {
+/* MobileFooterNav */
+.mobileFooterNav {
     position: sticky;
     bottom: 0;
     width: 100%;
