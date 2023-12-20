@@ -108,11 +108,7 @@ const Navbar = ({ user }) => {
                 {user ? (
                   <>
                     <li>
-                      <Link
-                        href="/mypage/home"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
+                      <Link href="/mypage/home" className="menu-items">
                         마이페이지
                       </Link>
                     </li>
@@ -125,7 +121,6 @@ const Navbar = ({ user }) => {
                           onClick={(e) => {
                             e.preventDefault();
                             handleLogout();
-                            toggleNavbar();
                           }}
                         >
                           로그아웃
@@ -136,11 +131,7 @@ const Navbar = ({ user }) => {
                 ) : (
                   <>
                     <li>
-                      <Link
-                        href="/sign-up-1"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
+                      <Link href="/sign-up-1" className="menu-items">
                         회원가입
                       </Link>
                     </li>
@@ -148,11 +139,7 @@ const Navbar = ({ user }) => {
                       <span></span>
                     </li>
                     <li>
-                      <Link
-                        href="/login"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
+                      <Link href="/login" className="menu-items">
                         로그인
                       </Link>
                     </li>
