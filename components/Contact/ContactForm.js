@@ -4,6 +4,9 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 import Link from "next/link";
+import PageBreadCrumb from '../Common/PageBreadCrumb';
+import { ContactItem } from './ContactItem';
+import ContactFaq from './ContactFaq';
 
 const alertContent = () => {
   MySwal.fire({
@@ -81,16 +84,49 @@ const ContactForm = () => {
     <div className="main-contact-area pb-100">
       <div className="container">
         <div className="section-title mt-5">
-          <span>Contact Us</span>
-          <h2>상담/문의</h2>
-          <p>
-            상딤신청을 남겨주시면 빠른 시간 내에
-            <br />
-            답변 드리도록 하겠습니다
-          </p>
+          <PageBreadCrumb
+            pageTitle="상담문의"
+            homePageUrl="/contact"
+            homePageText="Support"
+            activePageText="상담문의"
+          />
         </div>
 
         <div className="row align-items-center justify-content-center">
+          <div className="row">
+            <ContactItem
+              itemNumber="01"
+              itemTitle="CS 관련 문의"
+              itemText="상품 및 서비스 불편사항"
+            />
+            <ContactItem
+              itemNumber="02"
+              itemTitle="상품ㆍ작품 문의"
+              itemText="상품 제휴 및 갤러리 작품 구매 문의"
+            />
+            <ContactItem
+              itemNumber="03"
+              itemTitle="마케팅 제휴"
+              itemText="신규사업 및 프로모션, 브랜드 제휴 제안"
+            />
+            <ContactItem
+              itemNumber="04"
+              itemTitle="홍보ㆍPR 문의"
+              itemText="그린갤러리 홍보 및 PR 관련 문의"
+              />
+          </div>
+          <div className="col-md-12">
+          
+          <ContactFaq
+                        question="04"
+                        answer="홍보ㆍPR 문의"
+          />
+                    <ContactFaq
+                        question="04"
+                        answer="홍보ㆍPR 문의"
+          />
+          </div>
+
           <div className="col-md-12">
             <div className="contact-wrap contact-pages mb-0">
               <div className="contact-form">

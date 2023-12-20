@@ -7,13 +7,14 @@ export default function Contact() {
   return (
     <>
       <PageBanner
-        pageTitle="상담/문의"
+        pageTitle="상담문의"
         homePageUrl="/contact"
-        homePageText="SUPPORT"
-        activePageText="상담/문의"
+        homePageText="Support"
+        activePageText="상담문의"
       />
 
       {/* <ContactInfo /> */}
+
 
       <ContactForm />
 

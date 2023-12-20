@@ -74,6 +74,15 @@
   color: #666666;
 }
 
+.menu .icon {
+  display: none !important;
+}
+
+/*메이페이지 컨텐츠 레이아웃*/
+.my_con_wrap {
+  padding-left: 50px;
+}
+
 /*잔여혜액 및 포인트*/
 .point {
   margin: 0;
@@ -86,18 +95,34 @@
   text-align: center;
 }
 .point .item_txt.border {
-  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
 }
 .point .item_txt p {
   font-weight: 300;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .point .item_txt h3 {
   font-weight: 600;
 }
 .point .item_txt .smaller {
   font-size: 14px;
-  color: #999999;
+  color: #000000;
+}
+
+.info_data {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-family: "Pretendard";
+}
+.info_data span.smaller {
+  font-size: 16px;
+}
+
+.period {
+  margin: 5px 10px 16px;
+  font-size: 16px;
+  text-align: right;
 }
 
 .user_point {
@@ -121,16 +146,84 @@
 }
 
 /*혜원혜택*/
+.btn_booking {
+  width: 150px;
+  height: 48px;
+  margin-bottom: 45px;
+  padding: 0 24px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0e5039;
+  border-radius: 30px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+.btn_booking .ani_booking {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+}
+.btn_booking span {
+  position: unset;
+  left: none;
+  bottom: none;
+  transform: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
 .benefit_info {
-  margin-bottom: 70px;
+  margin-bottom: 200px;
 }
 .benefit_info h3 {
-  margin: 30px 0 10px;
+  font-family: "Pretendard";
+  margin: 40px 0 10px;
   font-weight: 600;
   margin-bottom: 12px;
 }
+.benefit_info form {
+  display: flex;
+  align-items: center;
+}
+.benefit_info form .filter_wrap {
+  display: flex;
+  justify-content: space-between;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+}
+.benefit_info input {
+  height: 44px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn_wrap {
+  text-align: right;
+}
+
+.btn {
+  height: 44px;
+  padding: 0 20px;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+.btn_outline {
+  margin-right: 16px;
+  border: 1px solid #ddd;
+  color: #4d4d4d;
+}
+
+.btn_conform {
+  background-color: #4e7d22;
+  color: #ffffff;
+}
 
 .table_membership {
+  border: 1px solid #eaeaea;
   font-size: 14px;
   line-height: 1;
   margin-bottom: 35px;
@@ -139,12 +232,12 @@
   padding: 15px 10px;
 }
 .table_membership th {
-  background: #386f5c;
+  background: #ddd;
   text-align: center;
   vertical-align: middle;
-  color: #ffffff;
+  color: #000000;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 500;
 }
 .table_membership th span {
   font-size: 12px;
@@ -155,7 +248,7 @@
   color: #000000;
 }
 
-/*centent*/
+/*content*/
 .content {
   display: flex;
   justify-content: center;
@@ -169,6 +262,172 @@
   margin-top: 30px;
 }
 
+/*content-예약내역*/
+.info_booking {
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+.info_booking thead {
+  background-color: #ddd;
+}
+.info_booking tbody td {
+  vertical-align: middle;
+  line-height: 1.5;
+}
+.info_booking tbody td:first-child {
+  width: 60%;
+}
+.info_booking tbody td:last-child {
+  text-align: right;
+  padding-right: 16px;
+}
+
+.btn_detail {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn_oneon {
+  padding: 4px 10px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.point_txt {
+  color: #4e7d22;
+}
+
+/* 스크린 골프 예약 버튼 2023. 09. 26.*/
+.logo_wrap {
+  display: inline-block;
+  width: calc(100% - 10px);
+  padding-right: 10px;
+  text-align: right;
+}
+
+.menu_wrap {
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0 20px;
+  border-bottom: 2px solid #eee;
+}
+.menu_wrap .menu_wrap_title {
+  display: inline-block;
+  width: 180px;
+  font-size: 19px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.9;
+  text-align: center;
+  border-radius: 7px 7px 0 0;
+  background-color: #4e7d22;
+}
+.menu_wrap .screen_golf {
+  width: 180px;
+  margin-left: 1px;
+  font-size: 19px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.9;
+  text-align: center;
+  border-radius: 7px 7px 0 0;
+  background-color: #1a2b21;
+}
+
+@media only screen and (max-width: 575px) {
+  /*잔여혜액 및 포인트*/
+  .info_data {
+    flex-direction: column;
+    align-items: center;
+  }
+  .user_point {
+    flex-direction: column;
+  }
+  .user_point p {
+    margin-top: 6px;
+    font-size: 16px;
+  }
+  .period {
+    font-size: 14px;
+  }
+  /*혜원혜택*/
+  .benefit_info .btn_wrap {
+    margin-top: 24px;
+    text-align: center;
+  }
+  .benefit_info .btn_wrap .btn {
+    padding: 0 35px;
+  }
+  /*content-예약내역*/
+  .info_booking tbody td:first-child {
+    width: 50%;
+  }
+  .info_booking tbody td .btn_detail {
+    font-size: 13px;
+  }
+  /* 스크린 골프 예약 버튼 2023. 09. 25.*/
+  .menu_wrap {
+    display: block;
+    width: 100%;
+  }
+  .menu_wrap .menu_wrap_title {
+    display: inline-block;
+    width: 49.9%;
+    font-size: 15px;
+  }
+  .menu_wrap .screen_golf {
+    width: 49.9%;
+    margin-left: 0.2%;
+    font-size: 15px;
+  }
+  .logo_wrap {
+    display: block;
+    width: 56%;
+    padding: 10px 0 5px;
+    text-align: right;
+  }
+}
+@media only screen and (max-width: 991px) {
+  /*메이페이지 컨텐츠 레이아웃*/
+  .my_con_wrap {
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+  }
+  .btn_booking {
+    width: 80px;
+    height: 80px;
+    padding: 0 16px;
+    align-items: flex-start;
+    position: fixed;
+    bottom: 40px;
+    right: 16px;
+    background-color: #0e5039;
+    border-radius: 50%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    animation: booking 2s 3s infinite ease-in-out;
+    z-index: 100;
+  }
+  .btn_booking .ani_booking {
+    margin-top: 3px;
+    width: 90%;
+    height: auto;
+  }
+  .btn_booking span {
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.85em;
+    margin: 0;
+  }
+  /*content-예약내역*/
+  .info_booking {
+    margin-top: 1em;
+  }
+}
 @media only screen and (max-width: 991px) {
   .widget.black {
     background: linear-gradient(to top, rgb(255, 255, 255) 90%, rgb(25, 25, 25) 90%);
@@ -194,4 +453,66 @@
   .widget .info {
     text-align: left;
   }
+  .widget .thumb {
+    width: 100px;
+    height: 100px;
+  }
+}
+@keyframes booking {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.ccInfo {
+  cursor: pointer;
+}
+.ccInfo p {
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ccInfo p span {
+  margin-left: 0.3rem;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.selectCc {
+  padding: 0.5rem;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.recomandProduct {
+  position: relative;
+}
+
+.moreButton {
+  position: absolute;
+  right: 5px;
+  top: 15px;
+}
+
+.quickIcon {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.quickIcon span {
+  margin-top: 0 !important;
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
 }/*# sourceMappingURL=Mypage.module.css.map */
