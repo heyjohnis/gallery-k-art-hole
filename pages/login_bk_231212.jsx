@@ -70,7 +70,6 @@ export default function Login() {
               <div className="contact-form-action">
                 <div className="form-heading text-center">
                   <h3 className="form-title">로그인</h3>
-                  <span className="form-text ">그린갤러리 멤버십 소유자만 가입과 로그인이 가능합니다.</span>
                 </div>
 
                 <form onSubmit={handleSubmit}>
@@ -83,7 +82,7 @@ export default function Login() {
                           name="login_id"
                           value={user.login_id}
                           onChange={handleChange}
-                          placeholder="ID"
+                          placeholder="아이디"
                         />
                       </div>
                     </div>
@@ -96,26 +95,26 @@ export default function Login() {
                           name="password"
                           value={user.password}
                           onChange={handleChange}
-                          placeholder="Password"
+                          placeholder="비밀번호"
                         />
                       </div>
                     </div>
 
-                    <div className="col-lg-12 col-sm-12 form-condition"></div>
+                    <div className="col-lg-6 col-sm-6 form-condition"></div>
 
-                    <div className="col-lg-12 col-sm-12 mb-30 d-flex justify-content-center">
+                    <div className="col-lg-6 col-sm-6 mb-30">
                       <Link href="find-password" className="forget">
                         아이디/비밀번호 찾기
                       </Link>
                     </div>
 
-                    <div className="col-12 d-grid gap-2">
-                      <button className="default-btn btn-one" style={{margin: "initial", borderRadius: "0"}} type="submit">
-                        LOGIN
+                    <div className="col-12">
+                      <button className="default-btn btn-two" type="submit">
+                        로그인
                       </button>
                     </div>
-                    {/* <hr className="mt-30" /> */}
-                    {/* <div className="col-12">
+                    <hr className="mt-30" />
+                    <div className="col-12">
                       <p className="account-desc">
                         그린갤러리 멤버십 소유자신가요?
                       </p>
@@ -124,15 +123,15 @@ export default function Login() {
                         가능합니다. <br />
                         그린갤러리 가입을 원하시면 1588-1778 로 문의주세요.
                       </p>
-                    </div> */}
+                    </div>
 
-                    <div className="col-12 mt-30 d-flex justify-content-center">
+                    <div className="col-12 mt-30">
                       <Link href="sign-up-1" className="forget">
                         <button
-                          className="btn-two btn-border"
+                          className="default-btn btn-two btn-border"
                           type="submit"
                         >
-                          회원가입
+                          멤버십 가입하기
                         </button>
                       </Link>
                     </div>

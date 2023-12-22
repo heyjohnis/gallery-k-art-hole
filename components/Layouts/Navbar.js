@@ -74,14 +74,14 @@ const Navbar = ({ user }) => {
   return (
     <>
       <div id="navbar" className="navbar-area fixed-top">
-        <div className={styles.top_event}>
+        {/* <div className={styles.top_event}>
           <Link href="/landing">
             <span>
               {" "}
               📣 아트와 골프가 만나다! 그린갤러리 오픈프로모션 진행중!
             </span>
           </Link>
-        </div>
+        </div> */}
         <div className={styles.backdrop}></div>
         {/* <nav className="navbar navbar-expand-xl navbar-light"> */}
         <nav className="navbar navbar-light">
@@ -103,35 +103,12 @@ const Navbar = ({ user }) => {
               />
             </Link>
 
-            <button
-              onClick={toggleNavbar}
-              className={classTwo}
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="icon-bar top-bar"></span>
-              <span className="icon-bar middle-bar"></span>
-              <span className="icon-bar bottom-bar"></span>
-            </button>
-          </div>
-          <div
-            className={`${classOne} ${styles.menu}`}
-            id="navbarSupportedContent"
-          >
             <div className="others-options">
               <ul className="top-menu">
                 {user ? (
                   <>
                     <li>
-                      <Link
-                        href="/mypage/home"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
+                      <Link href="/mypage/home" className="menu-items">
                         마이페이지
                       </Link>
                     </li>
@@ -144,7 +121,6 @@ const Navbar = ({ user }) => {
                           onClick={(e) => {
                             e.preventDefault();
                             handleLogout();
-                            toggleNavbar();
                           }}
                         >
                           로그아웃
@@ -155,11 +131,7 @@ const Navbar = ({ user }) => {
                 ) : (
                   <>
                     <li>
-                      <Link
-                        href="/sign-up-1"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
+                      <Link href="/sign-up-1" className="menu-items">
                         회원가입
                       </Link>
                     </li>
@@ -167,11 +139,7 @@ const Navbar = ({ user }) => {
                       <span></span>
                     </li>
                     <li>
-                      <Link
-                        href="/login"
-                        className="menu-items"
-                        onClick={toggleNavbar}
-                      >
+                      <Link href="/login" className="menu-items">
                         로그인
                       </Link>
                     </li>
@@ -186,9 +154,29 @@ const Navbar = ({ user }) => {
               >
                 예약 내역
               </Link> */}
+
+              <button
+                onClick={toggleNavbar}
+                className={classTwo}
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="icon-bar top-bar"></span>
+                <span className="icon-bar middle-bar"></span>
+                <span className="icon-bar bottom-bar"></span>
+              </button>
             </div>
+          </div>
+          <div
+            className={`${classOne} ${styles.menu}`}
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav dropright flex-column">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   href="/"
                   className={`nav-link ${currentPath == "/" && "active"}`}
@@ -196,7 +184,7 @@ const Navbar = ({ user }) => {
                 >
                   Home
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 {/* <Link
                     href="/"
@@ -217,8 +205,20 @@ const Navbar = ({ user }) => {
                     toggleNavbar();
                   }}
                 >
-                  Golf Booking
+                  Golf Booking <i className="bx bx-chevron-down"></i>
                 </Link>
+                <ul className="dropdown-menu">
+                  <li className="nav-item">
+                    <Link href="/" onClick={toggleNavbar}>
+                      골프장 예약 서비스
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link href="/" onClick={toggleNavbar}>
+                      스크린골프 포인트 서비스
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li className="nav-item">
                 <Link
@@ -230,18 +230,8 @@ const Navbar = ({ user }) => {
                   }`}
                   onClick={toggleNavbar}
                 >
-                  Member Privileges<i className="bx bx-chevron-down"></i>
+                  Gallery
                 </Link>
-                <ul className="dropdown-menu">
-                  <li className="nav-item">
-                    <Link href="/artworks/" onClick={toggleNavbar}>
-                      미술품
-                    </Link>
-                    <Link href="/ggmall/list/gift" onClick={toggleNavbar}>
-                      사은품
-                    </Link>
-                  </li>
-                </ul>
               </li>
 
               <li className="nav-item">
@@ -255,17 +245,20 @@ const Navbar = ({ user }) => {
                   }`}
                   onClick={toggleNavbar}
                 >
-                  GG Mall
-                  <i className="bx bx-chevron-down"></i>
+                  GG Mall <i className="bx bx-chevron-down"></i>
                 </Link>
                 <ul className="dropdown-menu">
                   <li className="nav-item">
                     <Link href="/ggmall/list/service" onClick={toggleNavbar}>
                       제휴서비스
                     </Link>
+                  </li>
+                  <li className="nav-item">
                     <Link href="/ggmall/list/shop" onClick={toggleNavbar}>
                       GG 쇼핑
                     </Link>
+                  </li>
+                  <li className="nav-item">
                     <Link href="/ggmall/list/tour" onClick={toggleNavbar}>
                       GG 투어
                     </Link>
@@ -320,40 +313,7 @@ const Navbar = ({ user }) => {
                       }`}
                       onClick={toggleNavbar}
                     >
-                      뉴스
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      href="/bbs/event"
-                      className={`nav-link ${
-                        currentPath == "/bbs/event/" && "active"
-                      }`}
-                      onClick={toggleNavbar}
-                    >
-                      이벤트
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      href="/bbs/review"
-                      className={`nav-link ${
-                        currentPath == "/bbs/review/" && "active"
-                      }`}
-                      onClick={toggleNavbar}
-                    >
-                      이용후기
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      href="/faq"
-                      className={`nav-link ${
-                        currentPath == "/faq/" && "active"
-                      }`}
-                      onClick={toggleNavbar}
-                    >
-                      FAQ
+                      NEWS
                     </Link>
                   </li>
                 </ul>

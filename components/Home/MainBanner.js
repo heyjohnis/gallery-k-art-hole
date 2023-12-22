@@ -168,9 +168,8 @@ const MainBanner = ({ showReservationModal }) => {
   };
 
   let options = {
-    anchors: ["Intro", "GolfBooking", "Gallery", "GGmall"],
-    autoScrolling: false,
-    fixedElements: ".footer",
+    anchors: ["Intro", "GolfBooking", "Gallery", "GGmall", "Footer"],
+    verticalCentered: true,
   };
 
   const [tabMenu, setTabMenu] = useState("first");
@@ -544,10 +543,12 @@ const MainBanner = ({ showReservationModal }) => {
               </div>
             </Tab.Container>
           </div>
+        </Section>
+
+        <Section>
           <Footer />
         </Section>
       </SectionsContainer>
-      {/* <Footer /> */}
     </>
   );
 };

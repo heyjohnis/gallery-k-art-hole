@@ -8,6 +8,9 @@ Default Style
 
 $body-font-family: 'Noto Sans KR', sans-serif;
 $heading-font-family:'Noto Sans KR', sans-serif;
+$body-font-family: "Pretendard";
+$heading-font-family: "Hahmlet";
+$main-font-family-eng: "Montserrat";
 
 // $main-color: #4e7d22;
 // $sub-color: #0e5039;
@@ -125,8 +128,11 @@ img {
 .form-control {
   height: 50px;
   color: $heading-color;
-  border: 1px solid #e8e8e8;
-  background-color: #f7f7f7;
+  // border: 1px solid #e8e8e8;
+  // background-color: #f7f7f7;
+  border: 0;
+  border-bottom: 1px solid #111;
+  background-color: none;
   border-radius: 0;
   padding: 0;
   font-size: 15px;
@@ -785,12 +791,17 @@ Nav 메뉴
     // background-color: $main-color;
 
     .top-menu {
-      width: 100%;
-      position: absolute;
+      // width: 18%;
+      // position: absolute;
       // right: 0;
       // top: -35px;
-      right: 50px;
-      top: -55px;
+      // right: 50px;
+      // top: -55px;
+      right: 0px;
+      top: -60px;
+      margin: 0;
+      padding-right: 10px;
+      padding: 0;
       list-style: none;
       display: flex;
       justify-content: flex-end;
@@ -800,7 +811,7 @@ Nav 메뉴
         .menu-items {
           font-size: 12px;
           color: $white-color;
-          color: #111;
+          color: #fff;
           font-weight: 400;
         }
 
@@ -853,15 +864,15 @@ Nav 메뉴
           text-transform: uppercase;
 
           padding: {
-            left: 0;
-            right: 0;
+            left: 50px;
+            right: 50px;
             top: 0;
             bottom: 0;
           }
 
           margin: {
-            left: 18px;
-            right: 18px;
+            left: 0px;
+            right: 0px;
           }
 
           &:hover,
@@ -877,18 +888,18 @@ Nav 메뉴
           }
         }
 
-        &:last-child {
-          a {
-            margin-right: 0;
-          }
-        }
+        // &:last-child {
+        //   a {
+        //     margin-right: 0;
+        //   }
+        // }
 
-        &:first-child {
-          a {
-            margin-left: 0;
-            padding-right: 15px;
-          }
-        }
+        // &:first-child {
+        //   a {
+        //     margin-left: 0;
+        //     padding-right: 15px;
+        //   }
+        // }
 
         &:hover,
         &.active {
@@ -906,38 +917,42 @@ Nav 메뉴
           border: none;
           top: 80px;
           left: 0;
-          width: 250px;
+          width: 100%;
           z-index: 99;
           //display: block;
           // opacity: 0;
           // visibility: hidden;
           border-radius: 5px;
           transition: all 0.3s ease-in-out;
+          background: #f5f5f5;
 
           padding: {
-            top: 18px;
-            left: 10px;
-            right: 10px;
-            bottom: 18px;
+            left: 0;
+            right: 0;
+            top: 10px;
+            bottom: 10px;
           }
 
           li {
             padding: {
-              left: 0;
-              right: 0;
-              top: 0;
-              bottom: 0;
+              left: 40px;
+              right: 40px;
+              top: 5px;
+              bottom: 5px;
             }
 
             a {
-              padding: 5px 15px;
+              display: block;
+              padding: 5px 10px;
               margin: 0;
-              color: #111;
+              color: #666;
+              font-family: $main-font-family-eng;
+              letter-spacing: -0.14px;
               text-transform: capitalize;
 
               font: {
-                size: 14.5px;
-                weight: 400;
+                size: 14px;
+                weight: 500;
               }
 
               &:hover,
@@ -949,6 +964,7 @@ Nav 메뉴
             }
 
             .dropdown-menu {
+              width: 100%;
               left: -250px;
               top: 0;
               opacity: 0;
@@ -1175,8 +1191,9 @@ Nav 메뉴
   }
 
   .others-options {
-    position: relative;
-    top: 3px;
+    display: flex;
+    // position: relative;
+    // top: 3px;
 
     .default-btn {
       padding: 12px 20px 10px;
@@ -1270,8 +1287,12 @@ Nav 메뉴
   padding: 10px;
   border-radius: 0;
   z-index: 1;
+<<<<<<< HEAD
   position: relative;
   left: 0px;
+=======
+  position:relative;
+>>>>>>> feature/login
 
   .icon-bar {
     width: 28px;
@@ -2046,6 +2067,10 @@ Company 그린갤러리
 Footer
 ======================================================*/
 .footer-top-area {
+  width: 100%;
+  min-width: 1320px;
+  height: 540px;
+  padding: 60px 0 70px;
   background-color: #333333;
   position: relative;
   z-index: 1;
@@ -2072,15 +2097,152 @@ Footer
   }
 }
 
+.no-wrap {
+  flex-wrap: nowrap !important;
+}
+
+.left-wrap {
+  width: 380px;
+}
+
+.center-wrap {
+  width: 480px;
+}
+
+.right-wrap {
+  width: 460px;
+}
+
+
 .single-widget {
   margin-bottom: 30px;
 
-  .logo {
-    color: #ffffff;
-    margin-bottom: 25px;
-    font-size: 25px;
-    font-weight: bold;
-  }
+    .logo-wrap {
+      margin-bottom: 200px;
+
+      .logo {
+        font-size: 25px;
+        font-weight: bold;
+
+        & img {
+        color: #fff;
+        }
+        
+      }
+    }
+
+    .selectbox-wrap {
+      margin-bottom: 51px;
+
+      .selectbox {
+
+        select {
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          appearance: none;
+          
+          width: 245px;
+          height: 60px;
+          padding: 14px 20px;
+          font-family: Montserrat;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 30px;
+          letter-spacing: -0.18px;
+          color: #fff;
+          border: 1px solid #fff;
+          background: url('/images/selectBox.png') calc(100% - 15px) center no-repeat;
+          background-size: 15px;
+
+          &:focus {
+            outline: none;
+          }
+
+          & option {
+            color: #111;
+            border-radius: 0;
+
+          }
+
+        }
+      }
+
+      
+    }
+
+    .copy-right-wrap {
+
+      span {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: -0.18px;
+        color: #fff;
+      }
+    }
+
+    .contact-wrap {
+      margin-bottom: 102px;
+
+        a {
+          display: inline-block;
+          font-family: Montserrat;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 40px;
+          letter-spacing: -0.2px;
+          color: #FFF;
+          
+        }
+
+        .time {
+          font-family: Montserrat;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 40px;
+          letter-spacing: -0.2px;
+          color: #FFF;
+        }
+    }
+
+    .privacy-policy-wrap {
+
+      a {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: -0.16px;
+        color: #FFF;
+      }
+
+      span {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: -0.16px;
+        color: #FFF;
+
+        &:nth-child(6) {
+          font-weight: 100;
+  
+        }
+      }
+
+    }
+
+    .address {
+      margin-top: 170px;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: -0.16px;
+      text-align: right;
+      color: #aaa;
+
+    }
 
   p {
     color: #d9d6d6;
@@ -2168,11 +2330,20 @@ Footer
 }
 
 .footer-bottom-area {
-  background-color: #535353;
-  padding: 20px 0;
+  width: 100%;
+  min-width: 1320px;
+  height: 150px;
+  padding: 56px 0;
+  background-color: #eee;
 
   .copy-right {
-    color: #d9d6d6;
+    text-align: right;
+    font-family: Noto Sans KR;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: -0.14px;
+    color: #999;
 
     i {
       position: relative;
@@ -2181,10 +2352,10 @@ Footer
     }
 
     a {
-      color: #d9d6d6;
+      color: #666;
 
       &:hover {
-        color: $main-color;
+        color: #666;
       }
     }
   }
@@ -2200,28 +2371,38 @@ Footer
 
       li {
         display: inline-block;
-        padding-right: 20px;
+        padding-right: 24px;
+        font-family: Noto Sans KR;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: -0.14px;
+        color: #666;
+
+        span {
+          font-weight: 900;
+        }
 
         &:last-child {
           margin-right: 0;
         }
 
         a {
-          color: #d9d6d6;
+          color: #666;
           position: relative;
 
-          &::before {
-            content: "";
-            position: absolute;
-            top: 13px;
-            left: -13px;
-            width: 5px;
-            height: 1px;
-            background-color: #d9d6d6;
-          }
+          // &::before {
+          //   content: "";
+          //   position: absolute;
+          //   top: 13px;
+          //   left: -13px;
+          //   width: 5px;
+          //   height: 1px;
+          //   background-color: #d9d6d6;
+          // }
 
           &:hover {
-            color: $main-color;
+            color: #666;
           }
         }
 
@@ -2902,19 +3083,34 @@ GGmall 리스트
     background-color: $white-color;
     border-radius: 4px;
     box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
-    padding: 40px;
-    max-width: 620px;
+    padding: 95px 108px;
+    max-width: 540px;
     margin: auto;
 
     .form-heading {
       margin-bottom: 33px;
 
       .form-title {
-        font-family: $body-font-family;
+        font-family: Montserrat;
         font-size: 28px;
-        color: $sub-color;
+        color: #111;
         margin-bottom: 10px;
         text-transform: capitalize;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: -0.3px;
+      }
+
+      .form-text {
+        display: block;
+        margin-top: 30px;
+        text-align: center;
+        font-family: Noto Sans KR;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: -0.14px;
       }
 
       .form-desc {
@@ -2947,8 +3143,11 @@ GGmall 리스트
       }
 
       .default-btn {
-        font-size: 14px;
         padding: 12px 20px;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.14px;
 
         &.btn-two {
           display: table;
