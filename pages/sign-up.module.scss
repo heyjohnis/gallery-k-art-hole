@@ -249,8 +249,125 @@ $main-font-eng: "Montserrat";
 
   }
 
+
+  .signUpCompPageRightSection {
+    display: flex;
+    flex-direction: column;
+    width: 520vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0vw 50px;
+    background-color: #fff;
+
+    .pageWrap {
+      display: flex;
+      flex-direction: row;
+      width: 78vw;
+      height: auto;
+      margin: 0;
+      padding: 21vh 50px 5vh;
+
+      .leftWrap {
+        width: 25vw;
+        height: auto;
+
+        h1 {
+          font-family: $main-font-eng;
+          font-size: 36px;
+          font-weight: 700;
+          line-height: 50px;
+          letter-spacing: -0.36px;
+          color:#333;
+        }
+
+        p {
+          margin: 20px 0 180px;
+          font-family: $main-font-eng;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+          letter-spacing: -0.16px;
+          color:#333;
+        }
+
+        .groupTabWrap {
+          width: 230px;
+          height: 170px;
+
+          a {
+            font-family: $main-font-eng;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 50px;
+            letter-spacing: -0.2px;
+            color:#333;
+
+            &:focus {
+              font-weight: 700;
+              text-decoration-line: underline;
+
+            }
+          }
+        }
+      }
+
+      .rightWrap {
+        width: 48vw;
+
+        .imageWrap {
+          margin: 0 0 30px;
+
+          image {
+            width: 100%;
+          }
+        }
+    
+        .textWrap {
+
+          h2 {
+            font-family: $main-font-eng;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.32px;
+            color: #111;
+          }
+
+                
+          .mainLink{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            p {
+              display: inline;
+              font-family: $main-font-eng;
+              font-family: Noto Sans KR;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              letter-spacing: -0.18px;
+              color: #666;
+            }
+            
+            a {
+              padding-right: 20px;
+              font-family: $main-font-eng;
+              font-size: 18px;
+              font-weight: 700;
+              letter-spacing: -0.18px;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  
+  }
+
+
   .footer {
-    margin: 106px 70px 50px 0;
+    margin: 106px 72px 0px 0;
     text-align: right;
   }
 }

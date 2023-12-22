@@ -10,7 +10,7 @@ import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Layouts/Footer";
 import { handleLogin } from "../utils/auth";
 import baseUrl from "../utils/baseUrl";
-import styles from "./sign-up-comp.module.scss";
+import styles from "./sign-up.module.scss";
 import "swiper/scss/pagination";
 
 const SERVICE_LIST = [
@@ -98,17 +98,10 @@ export default function Login() {
       <div className={`${styles.signUpWrap}`}>
 
         <div className={`${styles.signUpPageLeftSection}`}>
-
-          {/* <div className={`${styles.titleWrap}`}>
-            <h1>
-              <span>Welcome to </span><br/>
-              GREEN GALLERY
-            </h1>
-          </div> */}
           
         </div>
 
-        <div className={`${styles.signUpPageRightSection}`}>
+        <div className={`${styles.signUpCompPageRightSection}`}>
           
             <div className={`${styles.pageWrap}`}>
               <div className={`${styles.leftWrap}`}>
@@ -127,7 +120,7 @@ export default function Login() {
                           </p>
                         </div>
                         <div
-                          className={`${styles.itemIntoroduceWrap}`}
+                          className={`${styles.groupTabWrap}`}
                         >
                           <Nav className="flex-column">
                             <Nav.Item>
@@ -170,23 +163,27 @@ export default function Login() {
                     </Tab.Container>
 
               </div>
-            </div>
 
-            <div className={`${styles.rightWrap}`}>
-              <div>
-                <img src="" alt="" />
+              <div className={`${styles.rightWrap}`}>
+                <div className={`${styles.imageWrap}`}>
+                  <img src="/images/vincent_van_gogh_sign_up_comp.jpg" alt="" />
+                </div>
+                <div className={`${styles.textWrap}`}>
+                  <h2>
+                    Vincent Van Gogh
+                  </h2>
+                  <div className={`${styles.mainLink}`}>
+                    <p>
+                      결이 다른 행보로 격이 높은 인생을 살아 온 당신을 위해
+                    </p>
+                    <Link href="/">
+                      Go to Main
+                    </Link>
+                </div>
+                </div>
+                
               </div>
-              <div>
-                <h2>
-                  Vincent Van Gogh
-                </h2>
-                <p>
-                  결이 다른 행보로 격이 높은 인생을 살아 온 당신을 위해
-                </p>
-              </div>
-              <Link href="/">
-                Go to Main
-              </Link>
+
             </div>
 
             <div className={`${styles.footer}`}>
