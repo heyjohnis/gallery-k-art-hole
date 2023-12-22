@@ -8,8 +8,8 @@ Default Style
 
 $body-font-family: "Noto Sans KR", sans-serif;
 $heading-font-family: "Noto Sans KR", sans-serif;
-$body-font-family: "Pretendard";
-$heading-font-family: "Hahmlet";
+$body-font-family: "Noto Sans KR", sans-serif;
+$heading-font-family: "Noto Sans KR", sans-serif;
 $main-font-family-eng: "Montserrat";
 
 // $main-color: #4e7d22;
@@ -4530,12 +4530,89 @@ Golf Booking
 /*
 Booking Complete
 ================================*/
-.complete_container {
+
+.complete_application_container {
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #999;
+  span {
+    color: #999;
+    font-family: Noto Sans KR;
+    font-size: 16px;
+    letter-spacing: -0.16px;
+  }
+  .bar {
+    font-size: 14px;
+    color: #CCC;
+    margin: 0 20px;
+  }
+}
+
+.complete_tbl_container {
   background: $white-color;
   padding: 40px;
+  margin-bottom: 50px;
 }
-.complete_content_tit {
-  font-size: 24px;
+
+.complete_btn {
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+  padding: 20px 0px;
+  border: 1px solid $body-color;
+  background: $white-color;
+  color: $body-color;
+  font-family: $main-font-family-eng;
+  font-size: 16px;
   font-weight: 500;
-  letter-spacing: -1px;
+  letter-spacing: -0.16px;
 }
+
+.tbl_complete_content{
+  td{
+    border: none;
+  }
+  .complete_content_tit {
+    .content_hr_bottom {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ddd;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -1px;
+    }
+    .tit_point {
+      color: $body-color;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: -0.16px;
+      vertical-align: bottom;
+    }
+    .tit_status {
+      color: $sub-color;
+      text-align: right;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+  }
+  .complete_content_items {
+    .content_padding {
+      padding: 15px 0;
+    }
+    .items_item {
+      color: $body-color;
+      font-weight: 500;
+      letter-spacing: -1px;
+    }
+    .items_detail {
+      color: $gray-color;
+      letter-spacing: -1px;
+      text-align: right;
+    }
+  }
+}
+
