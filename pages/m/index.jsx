@@ -1,6 +1,7 @@
 import MainBanner from "../../components/Home/MainBanner";
 import { useRouter } from "next/router";
 import React, { useRef } from "react";
+import Main from "../../components/Home/MobileMain"
 
 export default function Index({ user }) {
   const router = useRouter();
@@ -13,7 +14,7 @@ export default function Index({ user }) {
   };
   return (
     <>
-      <div className="main-banner-area">모바일 내용</div>
+      <Main />
     </>
   );
 }
