@@ -25,7 +25,7 @@ export const ScreenCompleteContent = () => {
     <Table>
       <tbody>
         <tr>
-          <td colSpan={2}>{complete.title}</td>
+          <td colSpan={2} className="complete_content_tit">{complete.title}</td>
         </tr>
         <tr>
           <td>{complete.date}</td>
