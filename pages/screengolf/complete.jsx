@@ -23,12 +23,14 @@ const MyPag = ({ user }) => {
         homePageText="Golf Booking"
         activePageText="스크린 골프 예약완료"
       />
-      <CompleteTitle
-        iconUrl={`/images/booking/screen_point.png`}
-        title = '포인트 신청이 완료되었습니다!'
-        text = '담당자 확인 후 포인트 사용이 확정됩니다.'
-      />
-      <ScreenCompleteContent/>
+      <section className='container' >
+        <CompleteTitle
+          iconUrl={`/images/booking/screen_point.png`}
+          title = '포인트 신청이 완료되었습니다!'
+          text = '담당자 확인 후 포인트 사용이 확정됩니다.'
+        />
+        <ScreenCompleteContent/>
+      </section>
       <Footer />
     </>
   );
