@@ -21,7 +21,7 @@ export const ScreenCompleteContent = () => {
   const tableList = person.map((i) => (<CompleteContents item={i[0]} info={i[1]}/>));
 
 	return (
-    <div>
+    <div class="complete_container">
     <Table>
       <tbody>
         <tr>

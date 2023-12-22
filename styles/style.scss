@@ -43,6 +43,7 @@ body {
   line-height: 1.8;
   font-family: $body-font-family;
   color: $body-color;
+  background: #F9F9F9;
   word-break: keep-all;
 }
 
@@ -4342,4 +4343,12 @@ Golf Booking
     font-weight: 400;
     letter-spacing: -0.16px;
   }
+}
+
+/*
+Booking Complete
+================================*/
+.complete_container {
+  background: $white-color;
+  padding: 40px;
 }
