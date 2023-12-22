@@ -6,8 +6,8 @@
 Default Style
 ============================*/
 
-$body-font-family: 'Noto Sans KR', sans-serif;
-$heading-font-family:'Noto Sans KR', sans-serif;
+$body-font-family: "Noto Sans KR", sans-serif;
+$heading-font-family: "Noto Sans KR", sans-serif;
 $body-font-family: "Pretendard";
 $heading-font-family: "Hahmlet";
 $main-font-family-eng: "Montserrat";
@@ -616,7 +616,7 @@ Section Title
     }
   }
 
-  .bread{
+  .bread {
     display: flex;
     align-items: baseline;
   }
@@ -643,7 +643,7 @@ Section Title
   .item_crumb {
     color: $light-gray;
     margin-left: 50px;
-    .txt_breadcrumb{
+    .txt_breadcrumb {
       color: $light-gray;
     }
     span {
@@ -1287,12 +1287,8 @@ Nav 메뉴
   padding: 10px;
   border-radius: 0;
   z-index: 1;
-<<<<<<< HEAD
   position: relative;
   left: 0px;
-=======
-  position:relative;
->>>>>>> feature/login
 
   .icon-bar {
     width: 28px;
@@ -2113,136 +2109,124 @@ Footer
   width: 460px;
 }
 
-
 .single-widget {
   margin-bottom: 30px;
 
-    .logo-wrap {
-      margin-bottom: 200px;
+  .logo-wrap {
+    margin-bottom: 200px;
 
-      .logo {
-        font-size: 25px;
-        font-weight: bold;
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
 
-        & img {
+      & img {
         color: #fff;
-        }
-        
       }
     }
+  }
 
-    .selectbox-wrap {
-      margin-bottom: 51px;
+  .selectbox-wrap {
+    margin-bottom: 51px;
 
-      .selectbox {
+    .selectbox {
+      select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
 
-        select {
-          -moz-appearance: none;
-          -webkit-appearance: none;
-          appearance: none;
-          
-          width: 245px;
-          height: 60px;
-          padding: 14px 20px;
-          font-family: Montserrat;
-          font-size: 18px;
-          font-weight: 400;
-          line-height: 30px;
-          letter-spacing: -0.18px;
-          color: #fff;
-          border: 1px solid #fff;
-          background: url('/images/selectBox.png') calc(100% - 15px) center no-repeat;
-          background-size: 15px;
-
-          &:focus {
-            outline: none;
-          }
-
-          & option {
-            color: #111;
-            border-radius: 0;
-
-          }
-
-        }
-      }
-
-      
-    }
-
-    .copy-right-wrap {
-
-      span {
+        width: 245px;
+        height: 60px;
+        padding: 14px 20px;
         font-family: Montserrat;
         font-size: 18px;
         font-weight: 400;
+        line-height: 30px;
         letter-spacing: -0.18px;
         color: #fff;
-      }
-    }
+        border: 1px solid #fff;
+        background: url("/images/selectBox.png") calc(100% - 15px) center
+          no-repeat;
+        background-size: 15px;
 
-    .contact-wrap {
-      margin-bottom: 102px;
-
-        a {
-          display: inline-block;
-          font-family: Montserrat;
-          font-size: 20px;
-          font-weight: 700;
-          line-height: 40px;
-          letter-spacing: -0.2px;
-          color: #FFF;
-          
+        &:focus {
+          outline: none;
         }
 
-        .time {
-          font-family: Montserrat;
-          font-size: 20px;
-          font-weight: 700;
-          line-height: 40px;
-          letter-spacing: -0.2px;
-          color: #FFF;
-        }
-    }
-
-    .privacy-policy-wrap {
-
-      a {
-        font-family: Montserrat;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 30px;
-        letter-spacing: -0.16px;
-        color: #FFF;
-      }
-
-      span {
-        font-family: Montserrat;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 30px;
-        letter-spacing: -0.16px;
-        color: #FFF;
-
-        &:nth-child(6) {
-          font-weight: 100;
-  
+        & option {
+          color: #111;
+          border-radius: 0;
         }
       }
+    }
+  }
 
+  .copy-right-wrap {
+    span {
+      font-family: Montserrat;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -0.18px;
+      color: #fff;
+    }
+  }
+
+  .contact-wrap {
+    margin-bottom: 102px;
+
+    a {
+      display: inline-block;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: -0.2px;
+      color: #fff;
     }
 
-    .address {
-      margin-top: 170px;
+    .time {
+      font-family: Montserrat;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: -0.2px;
+      color: #fff;
+    }
+  }
+
+  .privacy-policy-wrap {
+    a {
       font-family: Montserrat;
       font-size: 16px;
       font-weight: 400;
       line-height: 30px;
       letter-spacing: -0.16px;
-      text-align: right;
-      color: #aaa;
-
+      color: #fff;
     }
+
+    span {
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: -0.16px;
+      color: #fff;
+
+      &:nth-child(6) {
+        font-weight: 100;
+      }
+    }
+  }
+
+  .address {
+    margin-top: 170px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.16px;
+    text-align: right;
+    color: #aaa;
+  }
 
   p {
     color: #d9d6d6;
@@ -2711,17 +2695,17 @@ FAQ
     }
 
     .accordion__panel {
-      background-color: #F1F1F1;
+      background-color: #f1f1f1;
       position: relative;
       padding-top: 33px;
       padding-right: 111px;
       padding-bottom: 27px;
-      padding-left: 30px;  
+      padding-left: 30px;
 
       p {
         font-size: 18px;
         font-weight: 400;
-        line-height: 30px; 
+        line-height: 30px;
         letter-spacing: -0.18px;
       }
     }
@@ -4517,7 +4501,6 @@ span.option_price {
     color: #fff;
   }
 }
-
 
 /*
 Golf Booking 
