@@ -12,17 +12,6 @@ $body-font-family: "Noto Sans KR", sans-serif;
 $heading-font-family: "Noto Sans KR", sans-serif;
 $main-font-family-eng: "Montserrat";
 
-// $main-color: #4e7d22;
-// $sub-color: #0e5039;
-// $body-color: #4d4d4d;
-// $heading-color: #212121;
-// $white-color: #ffffff;
-// $black-color: #000000;
-// $gray-color: #666666;
-// $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
-// $transition: all 0.6s ease;
-// $border-radius: 4px;
-// $sub-content-color-home-four: #e7e7e7;
 
 $main-color: #111;
 $sub-color: #3e8b3c;
@@ -4673,5 +4662,87 @@ Booking Complete
       font-weight: 700;
       letter-spacing: -0.22px;
     }
+  }
+}
+
+
+/*
+Booking
+================================*/
+
+.booking_content {
+  margin-top: 100px;
+  h1 {
+    padding-bottom: 35px;
+    margin: 0;
+    color: $main-color;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.44px;
+  }
+  h2 {
+    margin-top: 45px;
+    padding-bottom: 6px;
+    color: $body-color;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.24px;
+    border-bottom: 1px solid $body-color;
+  }
+  
+  .form_item {
+    margin-top: 80px;
+  }
+
+  label {
+    display: block;
+    color: $main-color;
+    font-family: $main-font-family-eng;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.14px;
+  }
+  .item_gruop {
+    display:flex;
+    label {
+      margin: 0 30px 0 8px;
+      color: $gray-color;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none; 
+    width: 245px;
+    height: 60px;
+    padding: 20px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.18px;
+    color: #ccc;
+    border-bottom: 1px solid #ccc;
+    background: url("/images/selectBox.png") calc(100% - 15px) center no-repeat;
+    background:$white-color;
+    background-size: 15px;
+
+    &:focus {
+      outline: none;
+    }
+
+    & option {
+      color: #111;
+      border-radius: 0;
+    }
+  }
+
+  .info {
+    color: $light-gray;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.12px;
   }
 }

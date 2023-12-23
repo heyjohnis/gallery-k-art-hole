@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
-import ScreenBookingForm from '../../components/Booking/ScreenBookingForm';
+import { GolfBookingPage } from '../../components/Booking/GolfBookingPage';
+
 
 const MyPag = ({ user }) => {
   useEffect(() => {
@@ -16,12 +17,12 @@ const MyPag = ({ user }) => {
   return (
     <>
       <PageBanner
-        pageTitle="스크린 골프"
+        pageTitle="골프장 예약"
         homePageUrl="/booking/"
         homePageText="Golf Booking"
-        activePageText="스크린 골프"
+        activePageText="골프장 예약"
       />
-      <ScreenBookingForm/>
+      <GolfBookingPage/>
       <Footer />
     </>
   );
