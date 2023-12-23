@@ -5,6 +5,7 @@ import Footer from "../../components/Layouts/Footer";
 import ScreenBookingForm from '../../components/Booking/ScreenBookingForm';
 import { CompleteTitle } from '../../components/Common/CompleteTitle';
 import { ScreenCompleteContent } from '../../components/Booking/ScreenCompleteContent';
+import { ScreenCompleteRecommend } from '../../components/Booking/ScreenCompleteRecommend';
 
 const MyPag = ({ user }) => {
   useEffect(() => {
@@ -30,6 +31,7 @@ const MyPag = ({ user }) => {
           text = '담당자 확인 후 포인트 사용이 확정됩니다.'
         />
         <ScreenCompleteContent/>
+        <ScreenCompleteRecommend/>
       </section>
       <Footer />
     </>
