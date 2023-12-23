@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Router from "next/router";
-import PageBanner from "./../../components/Common/PageBanner";
-import Footer from "./../../components/Layouts/Footer";
-import ArtworkList from "./../../components/Artworks/ArtworkList";
+import PageBanner from "../../components/Common/PageBanner";
+import Footer from "../../components/Layouts/Footer";
+import ArtworkList from "../../components/Artworks/ArtworkList";
 import BookingForm from "../../components/Booking/BookingForm";
 
 const MyPag = ({ user }) => {
