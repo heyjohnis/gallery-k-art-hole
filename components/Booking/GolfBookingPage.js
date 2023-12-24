@@ -7,7 +7,7 @@ export const GolfBookingPage = () => {
     <section className='container'>
 
       <div className='booking_container row'>
-        <div className='col-lg-7'>
+        <div className='col-lg-6'>
           <GolfBookingForm/>
         </div>  
         <div className='col-lg-5'>
