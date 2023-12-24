@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
-import ScreenBookingForm from '../../components/Booking/ScreenBookingForm';
+import { ScreenBookingPage } from '../../components/Booking/ScreenBookingPage';
 
 const MyPag = ({ user }) => {
   useEffect(() => {
@@ -21,7 +21,7 @@ const MyPag = ({ user }) => {
         homePageText="Golf Booking"
         activePageText="스크린 골프"
       />
-      <ScreenBookingForm/>
+      <ScreenBookingPage/>
       <Footer />
     </>
   );
