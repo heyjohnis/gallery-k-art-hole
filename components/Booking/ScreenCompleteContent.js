@@ -11,49 +11,45 @@ export const ScreenCompleteContent = () => {
       <span>신청일자 : <span>2023. 08 .10</span></span>
     </div>
     <div class="complete_tbl_container">
-      <Table className='tbl_complete_content'>
-        <tbody className='complete_content_tit'>
-          <tr>
-            <td colSpan={2}><h3>스크린골프 포인트 서비스</h3></td>
-          </tr>
-          <tr>
-            <td className='tit_point'>300,000 P</td>
-            <td className='tit_status'><span>신청완료</span></td>
-          </tr>
-          <tr>
-            <td colSpan={2} className="content_hr_bottom"></td>
-          </tr>
-        </tbody>
-        <tbody className='complete_content_items'> 
-          <tr>
-            <td colSpan={2} className='content_padding'></td>
-          </tr>
-          <tr>
-            <td>희망날짜</td>
-            <td className='items_detail'><span>2023. 08. 04</span></td>
-          </tr>
-          <tr>
-            <td>인원수</td>
-            <td className='items_detail'><span>3명</span></td>
-          </tr>
-          <tr>
-            <td>주문자명</td>
-            <td className='items_detail'><span>홍길동</span></td>
-          </tr>
-          <tr>
-            <td>연락처</td>
-            <td className='items_detail'><span>010 - 1234 - 5678</span></td>
-          </tr>
-          <tr>
-            <td>이메일</td>
-            <td className='items_detail'><span>greengallery1234@galleryk.co.kr</span></td>
-          </tr>
-          <tr>
-            <td>기타사항</td>
-            <td className='items_detail'>기타 스크린골프 포인트 서비스 문의사항을 작성해 주시기 바랍니다.</td>
-          </tr>
-        </tbody>
-      </Table>
+      <div className='complete_content_tit'>
+        <h3>스크린골프 포인트 서비스</h3>
+        <div class = "complete_status">
+          <div className='tit_point'>300,000 P</div>
+          <div className='tit_status'>신청완료</div>
+        </div>
+        <div className="content_hr_bottom"></div>
+      </div>
+
+      <div className='tbl_complete_content'>
+        <div className='complete_content_items'> 
+          <span className='items_item'>희망날짜</span>
+          <span className='items_detail'>2023. 08. 30</span>
+        </div>
+        <div className='complete_content_items'> 
+          <span className='items_item'>인원수</span>
+          <span className='items_detail'>3명</span>
+        </div>
+        <div className='complete_content_items'> 
+          <span className='items_item'>주문자명</span>
+          <span className='items_detail'>홍길동</span>
+        </div>
+        <div className='complete_content_items'> 
+          <span className='items_item'>연락처</span>
+          <span className='items_detail'>010 - 1234 - 5678</span>
+        </div>
+        <div className='complete_content_items'> 
+          <span className='items_item'>이메일</span>
+          <span className='items_detail'>greengallery1234@galleryk.co.kr</span>
+        </div>
+        <div className='complete_content_items'> 
+          <span className='items_item'>3차 골프장</span>
+          <span className='items_detail'>홍천 세이지우드 홍천</span>
+        </div>
+        <div className='complete_content_items'> 
+          <span className='items_item'>기타사항</span>
+          <span className='items_detail'>기타 스크린골프 포인트 서비스 문의사항을 작성해 주시기 바랍니다.</span>
+        </div>
+      </div>
 
     </div>
     <button
