@@ -4779,6 +4779,20 @@ Booking
       }
     }
 
+    .item_name {
+      position: relative;
+      display: inline-block;
+      svg {
+        width:20px;
+        height: 20px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: $sub-color;
+      }
+    }
+
     .info {
       padding-left: 19px;
       margin-top: 10px;
