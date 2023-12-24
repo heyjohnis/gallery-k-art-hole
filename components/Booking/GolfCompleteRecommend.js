@@ -9,11 +9,22 @@ export const GolfCompleteRecommend = () => {
       <section className='complete_recomend_content'>
         <h3>추천서비스 <span className='total'>4</span></h3>
         <Swiper
-          slidesPerView={3.3}
           spaceBetween={30}
           grabCursor={true}
-          pagination={{
-            clickable: true,
+          slidesPerView="auto"
+          breakpoints={{
+            320: {
+              slidesPerView: 1.5,
+              spaceBetween: 30,
+            },
+            576: {
+              slidesPerView: 2.5,
+              spaceBetween: 10,
+            },
+            1024: {
+              slidesPerView: 3.3,
+              spaceBetween: 30,
+            },
           }}
           className="mySwiper"
         >

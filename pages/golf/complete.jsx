@@ -26,7 +26,8 @@ const MyPag = ({ user }) => {
       <section className='container' >
         <CompleteTitle
           iconUrl={`/images/booking/ico_golf_tit.png`}
-          title = '골프장 신청이 완료되었습니다!'
+          title = '골프장 신청이 '
+          title2 = '완료되었습니다!'
           text = '담당자 확인 후 예약 안내드리겠습니다.'
         />
         <GolfCompleteContent/>

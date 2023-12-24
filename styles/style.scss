@@ -4505,7 +4505,7 @@ Golf Booking
     font-weight: 700;
     letter-spacing: -0.36px;
   }
-  span {
+  p {
     color: $gray-color;
     font-size: 16px;
     font-weight: 400;
@@ -4556,23 +4556,16 @@ Booking Complete
   letter-spacing: -0.16px;
 }
 
-.tbl_complete_content{
-  td{
-    border: none;
+.complete_content_tit {
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -1px;
   }
-  .bar {
-    margin: 0 20px;
-  }
-  .complete_content_tit {
-    .content_hr_bottom {
-      padding-bottom: 30px;
-      border-bottom: 1px solid #ddd;
-    }
-    h3 {
-      font-size: 24px;
-      font-weight: 500;
-      letter-spacing: -1px;
-    }
+  .complete_status {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     .tit_point {
       color: $body-color;
       font-size: 16px;
@@ -4582,16 +4575,27 @@ Booking Complete
     }
     .tit_status {
       color: $sub-color;
-      text-align: right;
       font-size: 20px;
       font-weight: 700;
       letter-spacing: -0.2px;
     }
   }
+  .bar {
+    margin: 0 20px;
+  }
+  .content_hr_bottom {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.tbl_complete_content{
+  margin-top: 30px;
   .complete_content_items {
-    .content_padding {
-      padding: 15px 0;
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 8px 0;
     .items_item {
       color: $body-color;
       font-weight: 500;
@@ -4662,6 +4666,132 @@ Booking Complete
   }
 }
 
+@media only screen and (max-width: 911px) {
+  .complete_title {
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      letter-spacing: -0.24px;
+      span {
+        display: block;
+        margin-top: 8px;
+      }
+    }
+  }
+  .complete_application_container {
+    padding: 20px 0 23px 0;
+    span {
+      color: #999;
+      font-family: Noto Sans KR;
+      font-size: 14px;
+      letter-spacing: -0.14px;
+    }
+    .bar {
+      margin: 0 10px;
+      letter-spacing: -0.14px;
+    }
+  }
+  .complete_tbl_container {
+    padding: 30px 20px;
+    margin-bottom: 60px;
+    .complete_content_tit {
+      h3 {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+      .complete_status {
+        flex-direction: column;
+        align-items: flex-start;
+        .tit_point {
+          font-size: 14px;
+          letter-spacing: -0.14px;
+          margin-bottom: 33px;
+        }
+        .tit_status {
+          margin-bottom: 10px;
+        }
+      }
+      .bar {
+        margin: 0 15px;
+        font-weight: 200;
+      }
+      .content_hr_bottom {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .tbl_complete_content{
+    margin-top: 30px;
+    .complete_content_items {
+      display: flex;
+      flex-direction: column;
+      justify-content:flex-start;
+      align-items:flex-start;
+      padding: 8px 0;
+      .items_item {
+        color: $body-color;
+        font-weight: 500;
+        letter-spacing: -1px;
+      }
+      .items_detail {
+        color: $gray-color;
+        letter-spacing: -1px;
+        text-align: right;
+      }
+    }
+  }
+
+  .complete_recomend_content {
+  
+    h3 {
+      font-size: 24px;
+      letter-spacing: -0.16px;
+    }
+    .complete_recommend_items {
+      .recommend_item_img {
+        width: 274px;
+        height: 274px;
+      }
+      h4 {
+        margin-bottom: 5px;
+        font-size: 18px;
+        letter-spacing: -0.18px;
+      }
+      .item_name {
+        margin-bottom: 20px;
+        font-size: 14px;
+        letter-spacing: -0.14px;
+      }
+      .item_price {
+        font-size: 20px;
+        letter-spacing: -0.2px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .complete_recomend_content {
+    .complete_recommend_items {
+      .recommend_item_img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .complete_recomend_content {
+    .complete_recommend_items {
+      .recommend_item_img {
+        width: 234px;
+        height: 234px;
+      }
+    }
+  }
+}
 
 /*
 Booking Page
@@ -5038,4 +5168,8 @@ Booking Page
       word-break: break-all;
     }
   }
+  .complete_btn {
+    width: 100%;
+  }
 }
+
