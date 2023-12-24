@@ -1,6 +1,7 @@
 import React from 'react';
 import DatePicker from '../Common/DatePicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck} from '@fortawesome/free-regular-svg-icons';
 import Form from 'react-bootstrap/Form';
 
 const GolfBookingForm = () => {
@@ -69,7 +70,10 @@ const GolfBookingForm = () => {
 
         <div className='form_item'>
           <Form.Label>이용자명</Form.Label>
-          <Form.Control type="text" placeholder="이름을 입력해주세요." />
+          <div className='item_name'>
+            <Form.Control type="text" placeholder="이름을 입력해주세요." />
+            <FontAwesomeIcon icon={faCircleCheck}/>
+          </div>
           <p className='info'>무기명 회원인 경우 예약자명을 기입해주세요.</p>
         </div>
 
