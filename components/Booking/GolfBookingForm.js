@@ -38,7 +38,7 @@ const GolfBookingForm = () => {
         
         <div className='form_item'>
           <label>권역 선택</label>
-          <div className='item_group'>
+          <div className='item_group item_select'>
             <Form.Select aria-label="Default select example">
               <option>1차 권역을 선택해 주세요</option>
               <option value="1">One</option>
@@ -67,7 +67,7 @@ const GolfBookingForm = () => {
       </Form>
         
       <h2>이용자 정보</h2>
-
+      <Form>
         <div className='form_item'>
           <Form.Label>이용자명</Form.Label>
           <div className='item_name'>
@@ -95,7 +95,7 @@ const GolfBookingForm = () => {
             </div>
           </div>
         </div>
-
+      </Form>
     </div>
   )
 }

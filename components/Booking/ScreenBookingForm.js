@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 const ScreenBookingForm = () => {
   return (
     <div className='booking_content'>
-      <h1>스크린골프 포인트 예약 서비스</h1>
+      <h1>스크린골프 포인트 <span>예약 서비스</span></h1>
 
       <ul className='booking_notice'>
         <li>ㆍ라운드 2일 전 18시까지 사용 신청해주시기 바랍니다.</li>

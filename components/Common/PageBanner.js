@@ -17,14 +17,6 @@ const PageBanner = ({
             <h2>{pageTitle}</h2>
           </div>
         </div>
-        <div className="offer-shape">
-          <img src="/images/shape/services-shape/1_1.png" alt="Image" />
-          <img src="/images/shape/services-shape/2_1.png" alt="Image" />
-          <img src="/images/shape/services-shape/3.png" alt="Image" />
-          <img src="/images/shape/services-shape/4.png" alt="Image" />
-          <img src="/images/shape/services-shape/5.png" alt="Image" />
-          <img src="/images/shape/services-shape/6.png" alt="Image" />
-        </div>
       </div>
     </>
   );
