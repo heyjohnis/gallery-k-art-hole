@@ -4695,6 +4695,7 @@ Booking
   }
 
   label {
+    margin-bottom: 10px;
     display: block;
     color: $main-color;
     font-family: $main-font-family-eng;
@@ -4702,6 +4703,7 @@ Booking
     font-weight: 700;
     letter-spacing: -0.14px;
   }
+
   .item_gruop {
     display:flex;
     label {
@@ -4712,37 +4714,25 @@ Booking
     }
   }
 
+  textarea {
+    width: 500px;
+    height: 200px;
+    background: $white-color;
+    white-space: pre-line;
+  }
+
   select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none; 
-    width: 245px;
-    height: 60px;
-    padding: 20px;
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.18px;
-    color: #ccc;
-    border-bottom: 1px solid #ccc;
-    background: url("/images/selectBox.png") calc(100% - 15px) center no-repeat;
-    background:$white-color;
-    background-size: 15px;
-
-    &:focus {
-      outline: none;
-    }
-
-    & option {
-      color: #111;
-      border-radius: 0;
-    }
+    border-radius: 0;
   }
 
   .info {
+    padding-left: 19px;
+    margin-top: 10px;
     color: $light-gray;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: -0.12px;
+    background: url("/images/booking/icon_info.svg") left center no-repeat;
+    background-size: 14px;
   }
 }

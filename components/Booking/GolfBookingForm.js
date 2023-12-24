@@ -1,12 +1,15 @@
 import React from 'react';
 import DatePicker from '../Common/DatePicker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Form from 'react-bootstrap/Form';
 
 const GolfBookingForm = () => {
   return (
     <>
       <h1>골프장 예약 서비스</h1>
       <h2>골프장 정보</h2>
-      <form>
+
+      <Form>
         <div className='form_item'>
           <label>날짜 선택</label>
           <DatePicker/>
@@ -15,73 +18,49 @@ const GolfBookingForm = () => {
         <div className='form_item'>
           <label>시간 선택</label>
           <div className='item_gruop'>
-            <input type="checkbox"/><label>1부</label>
-            <input type="checkbox"/><label>2부</label>
+            <Form.Check
+              inline
+              label="1부"
+              name="group1"
+              type="radio"
+              id="radio_1"
+            />
+            <Form.Check
+              inline
+              label="2부"
+              name="group1"
+              type="radio"
+              id="radio_2"
+            />
           </div>
         </div>
-
+        
         <div className='form_item'>
           <label>권역 선택</label>
-          <select name="" id="">
-            <option value="">1차 권역을 선택해 주세요</option>
-            <option value="">2</option>
-            <option value="">3</option>
-          </select>
-          <select name="" id="">
-            <option value="">2차 권역을 선택해 주세요 </option>
-            <option value="">2</option>
-            <option value="">3</option>
-          </select>
+          <Form.Select aria-label="Default select example">
+            <option>1차 권역을 선택해 주세요</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </Form.Select>
+          <Form.Select aria-label="Default select example">
+            <option>2차 권역을 선택해 주세요</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </Form.Select>
           <p className='info'>1차 권역 예약이 어려울 시 원하시는 2차 권역을 선택해주시기 바랍니다.</p>
         </div>
-
         <div className='form_item'>
-          <label>요청사항</label>
-          <textarea
-            name=""
-            cols="30"
-            rows="3"
-            value=""  
-          />
+          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Label>Example textarea</Form.Label>
+            <Form.Control as="textarea" rows={3} />
+          </Form.Group>
         </div>
-      </form>
-
+      </Form>
         
       <h2>이용자 정보</h2>
-      <form>
-        <label htmlFor="name">이용자명</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="이름"
-        />
-        <p>무기명 회원인 경우 예약자명을 기입해주세요.</p>
-
-
-        <label htmlFor="">이용자 연락처</label>
-        <input
-          type="tel"
-          id=""
-          name=""
-          placeholder="010"
-        />
-        <span>-</span>
-        <input
-          type="tel"
-          id=""
-          name=""
-          placeholder="010"
-        />
-        <span>-</span>
-        <input
-          type="tel"
-          id=""
-          name=""
-          placeholder="010"
-        />
-
-      </form>
+      
     </>
   )
 }
