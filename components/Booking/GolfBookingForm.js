@@ -80,16 +80,16 @@ const GolfBookingForm = () => {
         <div className='form_item'>
           <Form.Label>이용자 연락처</Form.Label>
           <div className='item_group row'>
-            <div className='col-6 row tel_group'>
-              <div className="col-lg-2">
+            <div className='col row tel_group'>
+              <div className="col-lg-2 col-3">
                 <Form.Control type="tel" maxlength="3" placeholder="010" />
               </div>
               <span>-</span>
-              <div className="col-lg-3">
+              <div className="col-lg-3 col-3">
                 <Form.Control type="tel" maxlength="4" placeholder="1234" />
               </div>
               <span>-</span>
-              <div className="col-lg-3">
+              <div className="col-lg-3 col-3">
                 <Form.Control type="tel" maxlength="4" placeholder="5678" />
               </div>
             </div>
