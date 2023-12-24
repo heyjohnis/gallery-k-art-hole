@@ -4664,7 +4664,7 @@ Booking Complete
 
 
 /*
-Booking
+Booking Page
 ================================*/
 
 .booking_container {
@@ -4689,6 +4689,17 @@ Booking
       border-bottom: 1px solid $body-color;
     }
     
+    .booking_notice {
+      display: block;
+      padding: 15px;
+      margin-bottom: 15px;
+      background: #f5f5f5;
+      li {
+        color: $gray-color;
+        font-size: 14px;
+      }
+    }
+
     .form_item {
       margin-top: 80px;
     }
