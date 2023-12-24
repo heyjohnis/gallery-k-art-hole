@@ -72,7 +72,7 @@ const GolfBookingForm = () => {
           <Form.Label>이용자명</Form.Label>
           <div className='item_name'>
             <Form.Control type="text" placeholder="이름을 입력해주세요." />
-            <FontAwesomeIcon icon={faCircleCheck}/>
+            <FontAwesomeIcon icon={faCircleCheck} className="icon_complete"/>
           </div>
           <p className='info'>무기명 회원인 경우 예약자명을 기입해주세요.</p>
         </div>
