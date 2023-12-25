@@ -33,24 +33,12 @@ export const GolfCompleteContent = () => {
           <span className='items_detail'>13:00 ~ 15:00</span>
         </div>
         <div className='complete_content_items'> 
-          <span className='items_item'>희망 지역</span>
-          <span className='items_detail'>강원특별자치도</span>
-        </div>
-        <div className='complete_content_items'> 
-          <span className='items_item'>1차 골프장</span>
-          <span className='items_detail'>강원 더플레이스</span>
-        </div>
-        <div className='complete_content_items'> 
-          <span className='items_item'>2차 골프장</span>
-          <span className='items_detail'>춘천 제이드팰리스</span>
-        </div>
-        <div className='complete_content_items'> 
-          <span className='items_item'>3차 골프장</span>
-          <span className='items_detail'>홍천 세이지우드 홍천</span>
+          <span className='items_item'>희망 권역</span>
+          <span className='items_detail'>1순위 <span>경기남부</span>, 2순위 <span>강원영서</span></span>
         </div>
         <div className='complete_content_items'> 
           <span className='items_item'>기타사항</span>
-          <span className='items_detail'>기타 골프장 문의사항을 작성해 주시기 바랍니다.</span>
+          <span className='items_detail'>한성CC 선호합니다. 1부 7시 초반 원합니다.</span>
         </div>
       </div>
 
