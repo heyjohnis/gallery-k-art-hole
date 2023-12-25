@@ -22,15 +22,15 @@ const GolfBookingForm = () => {
             <Form.Check
               label="1부"
               name="group1"
-              type="radio"
-              id="radio_1"
+              type="checkbox"
+              id="check_1"
               className='item'
             />
             <Form.Check
               label="2부"
               name="group1"
-              type="radio"
-              id="radio_2"
+              type="checkbox"
+              id="check_2"
               className='item'
             />
           </div>
