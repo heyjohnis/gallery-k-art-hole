@@ -30,7 +30,7 @@ export const GolfCompleteContent = () => {
         </div>
         <div className='complete_content_items'> 
           <span className='items_item'>희망 시간</span>
-          <span className='items_detail'>13:00 ~ 15:00</span>
+          <span className='items_detail'>1부</span>
         </div>
         <div className='complete_content_items'> 
           <span className='items_item'>희망 권역</span>
