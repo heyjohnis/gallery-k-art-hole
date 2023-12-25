@@ -4820,7 +4820,9 @@ Booking Page
       letter-spacing: -0.24px;
       border-bottom: 1px solid $body-color;
     }
-    
+    .md_screen_payment_tit {
+      display: none;
+    }
     form {
       margin-bottom: 100px;
     }
@@ -5105,6 +5107,9 @@ Booking Page
   .booking_container {
     margin-top: 50px;
     .booking_content {
+      .md_screen_payment_tit {
+        display: block;
+      }
       h1 {
         margin-bottom: 15px;
         font-size: 30px;
@@ -5116,12 +5121,17 @@ Booking Page
         }
       }
 
+      form {
+        margin-bottom: 60px;
+      }
+
       .form_item {
         margin-top: 50px;
       }
 
       .item_name{
         display: block;
+        margin-bottom: 50px;
       }
 
       .form-control {
@@ -5166,8 +5176,23 @@ Booking Page
       padding:0;
       background: none;
       word-break: break-all;
+
+      .total_payment {
+        margin-bottom: 50px;
+      }
+    }
+
+    .screen {
+      .form_item {
+        margin-bottom: 50px;
+        padding-bottom: 0; 
+      }
+      .notice {
+        background: #EAEAEA;
+      }
     }
   }
+
   .complete_btn {
     width: 100%;
   }

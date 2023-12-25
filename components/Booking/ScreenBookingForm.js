@@ -75,7 +75,7 @@ const ScreenBookingForm = () => {
       </Form>
         
 
-
+      <h2 className='md_screen_payment_tit'>결제 정보</h2>
 
 
     </div>
