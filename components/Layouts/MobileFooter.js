@@ -4,6 +4,7 @@ import styles from "./navbar.mobile.module.scss";
 
 const MobileFooter = () => {
   const currentYear = new Date().getFullYear();
+
   return (
     <>
       <footer className={`footer-top-area pb-70 footer ${styles.footer}`}>
@@ -69,7 +70,10 @@ const MobileFooter = () => {
               </Link>
             </div>
 
-            <span className={`${styles.copyright}`}>ⓒ 2023 GREEN GALLERY</span>
+            <span className={`${styles.copyright}`}>
+              ⓒ 2023 {currentYear === 2023 ? ` ` : ` -  ${currentYear} `}
+              GREEN GALLERY
+            </span>
           </div>
         </div>
       </footer>

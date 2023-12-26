@@ -3,8 +3,8 @@ import Router from "next/router";
 import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
 import { CompleteTitle } from '../../components/Common/CompleteTitle';
-import { ScreenCompleteContent } from '../../components/Booking/ScreenCompleteContent';
-import { ScreenCompleteRecommend } from '../../components/Booking/ScreenCompleteRecommend';
+import { GolfCompleteContent } from '../../components/Booking/GolfCompleteContent';
+import { GolfCompleteRecommend } from '../../components/Booking/GolfCompleteRecommend';
 
 const MyPag = ({ user }) => {
   useEffect(() => {
@@ -18,19 +18,20 @@ const MyPag = ({ user }) => {
   return (
     <>
       <PageBanner
-        pageTitle="스크린 골프"
+        pageTitle="골프장 예약"
         homePageUrl="/booking/"
         homePageText="Golf Booking"
-        activePageText="스크린 골프 예약완료"
+        activePageText="골프장 예약 완료"
       />
       <section className='container' >
         <CompleteTitle
-          iconUrl={`/images/booking/screen_point.png`}
-          title = '포인트 신청이 완료되었습니다!'
-          text = '담당자 확인 후 포인트 사용이 확정됩니다.'
+          iconUrl={`/images/booking/ico_golf_tit.png`}
+          title = '골프장 신청이 '
+          title2 = '완료되었습니다!'
+          text = '담당자 확인 후 예약 안내드리겠습니다.'
         />
-        <ScreenCompleteContent/>
-        <ScreenCompleteRecommend/>
+        <GolfCompleteContent/>
+        <GolfCompleteRecommend/>
       </section>
       <Footer />
     </>

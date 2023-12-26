@@ -26,7 +26,7 @@ const DatePicker = ({ label, pickDate, dateKind }) => {
         <label>{label}</label>
         <input
           type="text"
-          className="form-control"
+          className="form-control select_date"
           value={selectedDay && format(selectedDay, "yyyy-MM-dd")}
           readOnly
           onClick={handleOnClick}
