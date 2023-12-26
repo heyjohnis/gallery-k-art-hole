@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
-import { GolfBookingPage } from '../../components/Booking/GolfBookingPage';
-
+import { GolfBookingPage } from "../../components/Booking/GolfBookingPage";
 
 const MyPag = ({ user }) => {
   useEffect(() => {
@@ -13,7 +12,9 @@ const MyPag = ({ user }) => {
     }
   }, [user]);
 
-  {/* harry 0605 pagebanner 정보 변경 */ }
+  {
+    /* harry 0605 pagebanner 정보 변경 */
+  }
   return (
     <>
       <PageBanner
@@ -22,7 +23,7 @@ const MyPag = ({ user }) => {
         homePageText="Golf Booking"
         activePageText="골프장 예약"
       />
-      <GolfBookingPage/>
+      <GolfBookingPage />
       <Footer />
     </>
   );

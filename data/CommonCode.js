@@ -1,0 +1,16 @@
+export const REGION_LIST = [
+  { id: "02", data: "서울/인천" },
+  { id: "031NE", data: "경기북동" },
+  { id: "031NW", data: "경기북서" },
+  { id: "031SE", data: "경기남동" },
+  { id: "031SW", data: "경기남서" },
+  { id: "033E", data: "강원영동" },
+  { id: "033W", data: "강원영서" },
+  { id: "041", data: "충남" },
+  { id: "043", data: "충북" },
+  { id: "054", data: "경북" },
+  { id: "055", data: "경남" },
+  { id: "061", data: "전남" },
+  { id: "063", data: "전북" },
+  { id: "064", data: "제주" },
+];

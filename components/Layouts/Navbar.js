@@ -209,7 +209,7 @@ const Navbar = ({ user }) => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li className="nav-item">
-                    <Link href="/" onClick={toggleNavbar}>
+                    <Link href="/golf/booking" onClick={toggleNavbar}>
                       골프장 예약 서비스
                     </Link>
                   </li>
