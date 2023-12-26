@@ -5,7 +5,7 @@ import { Pagination, Autoplay, A11y, Navigation } from "swiper";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import PageBanner from "../components/Common/PageBanner";
-import Footer from "../components/Layouts/Footer";
+import Footer from "../components/Signup/SignupFooter";
 import { handleLogin } from "../utils/auth";
 import baseUrl from "../utils/baseUrl";
 import styles from "./sign-up.module.scss";
@@ -134,7 +134,7 @@ const INITIAL_USER = {
   password: "",
 };
 
-export default function Login() {
+export default function SignUp() {
   const router = useRouter();
 
   const [user, setUser] = useState(INITIAL_USER);
@@ -320,15 +320,12 @@ export default function Login() {
               </ul>
             </nav>
 
-            <div className={`${styles.footer}`}>
-              <p>
-                <span>CONTACT</span> <span>ㅣ</span> cs@galleryk.co.kr ㆍ 1588 - 1778 ㆍ 10am - 7pm
-              </p>
-            </div>
+            <Footer />
+            
           </div>
         </div>
 
-      {/* <Footer /> */}
+      {/* */}
     </>
   );
 }

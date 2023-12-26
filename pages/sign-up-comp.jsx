@@ -7,7 +7,7 @@ import Nav from "react-bootstrap/Nav";
 import Tab from "react-bootstrap/Tab";
 import { useRouter } from "next/router";
 import PageBanner from "../components/Common/PageBanner";
-import Footer from "../components/Layouts/Footer";
+import Footer from "../components/Signup/SignupFooter";
 import { handleLogin } from "../utils/auth";
 import baseUrl from "../utils/baseUrl";
 import styles from "./sign-up.module.scss";
@@ -16,21 +16,24 @@ import "swiper/scss/pagination";
 const SERVICE_LIST = [
   {
     id: 1,
+    title: "Vincent Van Gogh",
     group: "Vincent Van Gogh",
     discript:"결이 다른 행보로 격이 높은 인생을 살아 온 당신을 위해",
-    img: "",
+    img: "/images/vincent_van_gogh_sign_up_comp.jpg",
   },
   {
     id: 2,
+    title: "Auguste Renoir",
     group: "Auguste Renoir",
     discript:"남다른 대한민국의 다이아 수저 0.1%",
-    img: "",
+    img: "/images/vincent_auguste_renoir_sign_up_comp.jpg",
   },
   {
     id: 3,
+    title: "Claude Monet",
     group: "Claude Monet",
     discript:"알바트로스를 꿈꾸며 비상하는 독수리처럼",
-    img: "",
+    img: "/images/vincent_van_claude_monet_up_comp.jpg",
   },
 ];
 
@@ -39,7 +42,7 @@ const INITIAL_USER = {
   password: "",
 };
 
-export default function Login() {
+export default function SignUpComp() {
   const router = useRouter();
 
   const [user, setUser] = useState(INITIAL_USER);
@@ -129,7 +132,7 @@ export default function Login() {
                                 onClick={handleTabMenu}
                                 className={`${styles.navLink}`}
                               >
-                                Vincent Van Gogh
+                                {SERVICE_LIST[0].title}
                               </Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
@@ -138,7 +141,7 @@ export default function Login() {
                                 onClick={handleTabMenu}
                                 className={`${styles.navLink}`}
                               >
-                                Auguste Renoir
+                                {SERVICE_LIST[1].title}
                               </Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
@@ -147,7 +150,7 @@ export default function Login() {
                                 onClick={handleTabMenu}
                                 className={` ${styles.navLink}`}
                               >
-                                Claude Monet
+                                {SERVICE_LIST[2].title}
                               </Nav.Link>
                             </Nav.Item>
                           </Nav>
@@ -166,15 +169,15 @@ export default function Login() {
 
               <div className={`${styles.rightWrap}`}>
                 <div className={`${styles.imageWrap}`}>
-                  <img src="/images/vincent_van_gogh_sign_up_comp.jpg" alt="" />
+                  <img src={SERVICE_LIST[0].img} alt={SERVICE_LIST[0].title} />
                 </div>
                 <div className={`${styles.textWrap}`}>
                   <h2>
-                    Vincent Van Gogh
+                    {SERVICE_LIST[0].title}
                   </h2>
                   <div className={`${styles.mainLink}`}>
                     <p>
-                      결이 다른 행보로 격이 높은 인생을 살아 온 당신을 위해
+                      {SERVICE_LIST[0].discript}
                     </p>
                     <Link href="/">
                       Go to Main
@@ -186,15 +189,11 @@ export default function Login() {
 
             </div>
 
-            <div className={`${styles.footer}`}>
-              <p>
-                <span>CONTACT</span> <span>ㅣ</span> cs@galleryk.co.kr ㆍ 1588 - 1778 ㆍ 10am - 7pm
-              </p>
-            </div>
+            <Footer />           
           </div>
         </div>
 
-      {/* <Footer /> */}
+      
     </>
   );
 }

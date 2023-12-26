@@ -315,6 +315,8 @@ $main-font-eng: "Montserrat";
         width: 48vw;
 
         .imageWrap {
+          height: 400px;
+          min-height: 400px;
           margin: 0 0 30px;
 
           image {
@@ -364,7 +366,6 @@ $main-font-eng: "Montserrat";
     }
   
   }
-
 
   .footer {
     margin: 106px 72px 0px 0;
