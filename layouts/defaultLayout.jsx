@@ -7,7 +7,7 @@ import MobileFooterNav from "../components/Layouts/MobileFooterNav";
 export default function defaultLayout({ children, user }) {
   const router = useRouter();
   const { pathname } = router;
-  if (pathname.indexOf("/m") > -1) {
+  if (pathname.indexOf("/m/") > -1) {
     return (
       <>
         <MobileNavbar user={user} />
