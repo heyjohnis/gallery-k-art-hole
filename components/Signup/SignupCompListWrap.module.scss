@@ -1,4 +1,4 @@
-$main-font-eng: "Montserrat";
+$main-font-family-eng: "Montserrat";
 
 .rightWrap {
     width: 48vw;
@@ -16,7 +16,7 @@ $main-font-eng: "Montserrat";
     .textWrap {
 
       h2 {
-        font-family: $main-font-eng;
+        font-family: $main-font-family-eng;
         font-size: 32px;
         font-weight: 600;
         letter-spacing: -0.32px;
@@ -31,7 +31,7 @@ $main-font-eng: "Montserrat";
 
         p {
           display: inline;
-          font-family: $main-font-eng;
+          font-family: $main-font-family-eng;
           font-family: Noto Sans KR;
           font-size: 18px;
           font-style: normal;
@@ -43,7 +43,7 @@ $main-font-eng: "Montserrat";
         
         a {
           padding-right: 20px;
-          font-family: $main-font-eng;
+          font-family: $main-font-family-eng;
           font-size: 18px;
           font-weight: 700;
           letter-spacing: -0.18px;

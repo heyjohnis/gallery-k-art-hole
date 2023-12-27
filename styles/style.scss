@@ -2394,7 +2394,20 @@ Signup Footer */
 
 .signup-footer {
   margin: 106px 72px 0px 0;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.14px;
+  color:#333;
   text-align: right;
+
+  span {
+    font-weight: 700;
+
+    &:nth-child(2) {
+      font-weight: 100;
+    }
+  }
 }
 
 /*
