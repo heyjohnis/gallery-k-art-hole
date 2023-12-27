@@ -36,13 +36,6 @@ $main-font-eng: "Montserrat";
         }
       }
     }
-
-    // .backgroundImage {
-    //   width: 50vw;
-    //   height: 100vh;
-    //   margin: 0;
-    //   padding: 0;
-    // }
   }
 
   .signUpPageRightSection {
@@ -211,42 +204,8 @@ $main-font-eng: "Montserrat";
           cursor: pointer;
           
         }
-      }   
-
-      // .slide1 {
-      //   // background-image: url(/images/main/main_gogh.png);
-      //   // background-repeat: no-repeat;
-      //   // background-size: cover;
-      // }
-
-      // .slide2 {
-        
-      // }
-
-      // .slide3 {
-        
-      // }
-
-      // .backgroundImage {
-      //   width: 50vw;
-      //   height: 100vh;
-      //   margin: 0;
-      //   padding: 0;
-      // }
-
-      /* 스크롤바 비활성화*/
-
-      & {
-        -ms-overflow-style: none; /* 익스플로러, 앳지 */
-        scrollbar-width: none; /* 파이어폭스 */
-      }
-      
-      &::-webkit-scrollbar {
-          display: none; /* 크롬, 사파리, 오페라 */
-      }
+      } 
     }
-
-
   }
 
 
@@ -302,7 +261,7 @@ $main-font-eng: "Montserrat";
             letter-spacing: -0.2px;
             color:#333;
 
-            &:focus {
+            &[aria-selected = true] {
               font-weight: 700;
               text-decoration-line: underline;
 
@@ -364,11 +323,5 @@ $main-font-eng: "Montserrat";
       //   }
       // }
     }
-  
-  }
-
-  .footer {
-    margin: 106px 72px 0px 0;
-    text-align: right;
   }
 }
