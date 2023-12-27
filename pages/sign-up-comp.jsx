@@ -182,9 +182,8 @@ export default function SignUpComp() {
                     <Link href="/">
                       Go to Main
                     </Link>
+                  </div>
                 </div>
-                </div>
-                
               </div>
 
             </div>
