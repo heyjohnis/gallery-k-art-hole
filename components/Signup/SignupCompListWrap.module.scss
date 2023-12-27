@@ -1,0 +1,54 @@
+$main-font-eng: "Montserrat";
+
+.rightWrap {
+    width: 48vw;
+
+    .imageWrap {
+      height: 400px;
+      min-height: 400px;
+      margin: 0 0 30px;
+
+      image {
+        width: 100%;
+      }
+    }
+
+    .textWrap {
+
+      h2 {
+        font-family: $main-font-eng;
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: -0.32px;
+        color: #111;
+      }
+
+            
+      .mainLink{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          display: inline;
+          font-family: $main-font-eng;
+          font-family: Noto Sans KR;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.18px;
+          color: #666;
+        }
+        
+        a {
+          padding-right: 20px;
+          font-family: $main-font-eng;
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: -0.18px;
+          color: #333;
+        }
+      }
+    }
+  }

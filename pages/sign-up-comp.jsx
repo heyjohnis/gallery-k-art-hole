@@ -1,13 +1,10 @@
 import axios from "axios";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, A11y, Navigation } from "swiper";
 import React, { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import Tab from "react-bootstrap/Tab";
 import { useRouter } from "next/router";
-import PageBanner from "../components/Common/PageBanner";
 import Footer from "../components/Signup/SignupFooter";
+import SignupCompListWrap from "../components/Signup/SignupCompListWrap";
 import { handleLogin } from "../utils/auth";
 import baseUrl from "../utils/baseUrl";
 import styles from "./sign-up.module.scss";
@@ -26,14 +23,14 @@ const SERVICE_LIST = [
     title: "Auguste Renoir",
     group: "Auguste Renoir",
     discript:"남다른 대한민국의 다이아 수저 0.1%",
-    img: "/images/vincent_auguste_renoir_sign_up_comp.jpg",
+    img: "/images/auguste_renoir_sign_up_comp.jpg",
   },
   {
     id: 3,
     title: "Claude Monet",
     group: "Claude Monet",
     discript:"알바트로스를 꿈꾸며 비상하는 독수리처럼",
-    img: "/images/vincent_van_claude_monet_up_comp.jpg",
+    img: "/images/claude_monet_sign_up_comp.jpg",
   },
 ];
 
@@ -107,87 +104,73 @@ export default function SignUpComp() {
         <div className={`${styles.signUpCompPageRightSection}`}>
           
             <div className={`${styles.pageWrap}`}>
-              <div className={`${styles.leftWrap}`}>
 
-                    <Tab.Container id="left-tabs" defaultActiveKey="first">
-                      <div className={``}>
-                        <div className={`${styles.titleWrap}`}>
-                          <h1>
-                            Nice to meet you!
-                            <br />
-                            We will contact soon.
-                          </h1>
-                          <p>
-                            가입 승인 완료 후 서비스 이용이 가능합니다. <br />
-                            그린갤러리의 멤버십을 확인하세요!
-                          </p>
-                        </div>
-                        <div
-                          className={`${styles.groupTabWrap}`}
-                        >
-                          <Nav className="flex-column">
-                            <Nav.Item>
-                              <Nav.Link
-                                eventKey="first"
-                                onClick={handleTabMenu}
-                                className={`${styles.navLink}`}
-                              >
-                                {SERVICE_LIST[0].title}
-                              </Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                              <Nav.Link
-                                eventKey="second"
-                                onClick={handleTabMenu}
-                                className={`${styles.navLink}`}
-                              >
-                                {SERVICE_LIST[1].title}
-                              </Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                              <Nav.Link
-                                eventKey="third"
-                                onClick={handleTabMenu}
-                                className={` ${styles.navLink}`}
-                              >
-                                {SERVICE_LIST[2].title}
-                              </Nav.Link>
-                            </Nav.Item>
-                          </Nav>
-                        </div>
-                      </div>
-                      <div className={`${styles.itemListWrap}`}>
-                        <Tab.Content>
-                          <Tab.Pane eventKey={`${tabMenu}`}>
-                          
-                          </Tab.Pane>
-                        </Tab.Content>
-                      </div>
-                    </Tab.Container>
-
-              </div>
-
-              <div className={`${styles.rightWrap}`}>
-                <div className={`${styles.imageWrap}`}>
-                  <img src={SERVICE_LIST[0].img} alt={SERVICE_LIST[0].title} />
-                </div>
-                <div className={`${styles.textWrap}`}>
-                  <h2>
-                    {SERVICE_LIST[0].title}
-                  </h2>
-                  <div className={`${styles.mainLink}`}>
-                    <p>
-                      {SERVICE_LIST[0].discript}
-                    </p>
-                    <Link href="/">
-                      Go to Main
-                    </Link>
+              <Tab.Container id="left-tabs" defaultActiveKey="first">
+                <div className={`${styles.leftWrap}`}>
+                  <div className={``}>
+                    <div className={`${styles.titleWrap}`}>
+                      <h1>
+                        Nice to meet you!
+                        <br />
+                        We will contact soon.
+                      </h1>
+                      <p>
+                        가입 승인 완료 후 서비스 이용이 가능합니다. <br />
+                        그린갤러리의 멤버십을 확인하세요!
+                      </p>
+                    </div>
+                    <div
+                      className={`${styles.groupTabWrap}`}
+                    >
+                      <Nav className="flex-column">
+                        <Nav.Item>
+                          <Nav.Link
+                            eventKey="first"
+                            onClick={handleTabMenu}
+                            className={`${styles.navLink}`}
+                          >
+                            {SERVICE_LIST[0].title}
+                          </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                          <Nav.Link
+                            eventKey="second"
+                            onClick={handleTabMenu}
+                            className={`${styles.navLink}`}
+                          >
+                            {SERVICE_LIST[1].title}
+                          </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                          <Nav.Link
+                            eventKey="third"
+                            onClick={handleTabMenu}
+                            className={` ${styles.navLink}`}
+                          >
+                            {SERVICE_LIST[2].title}
+                          </Nav.Link>
+                        </Nav.Item>
+                      </Nav>
+                    </div>
                   </div>
                 </div>
-              </div>
 
+                <Tab.Content>
+                  <Tab.Pane eventKey={`${tabMenu}`}>
+                    <SignupCompListWrap
+                        LIST_ITEM = {
+                          tabMenu === "first"
+                            ? Object.entries(SERVICE_LIST[0])
+                            : tabMenu === "second"
+                            ? Object.entries(SERVICE_LIST[1])
+                            : Object.entries(SERVICE_LIST[2])
+                        }
+                      />
+                  </Tab.Pane>
+                </Tab.Content>
+              </Tab.Container>
             </div>
-
+                  
             <Footer />           
           </div>
         </div>
