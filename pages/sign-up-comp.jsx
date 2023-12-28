@@ -1,13 +1,10 @@
 import axios from "axios";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, A11y, Navigation } from "swiper";
 import React, { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import Tab from "react-bootstrap/Tab";
 import { useRouter } from "next/router";
-import PageBanner from "../components/Common/PageBanner";
-import Footer from "../components/Layouts/Footer";
+import Footer from "../components/Signup/SignupFooter";
+import SignupCompListWrap from "../components/Signup/SignupCompListWrap";
 import { handleLogin } from "../utils/auth";
 import baseUrl from "../utils/baseUrl";
 import styles from "./sign-up.module.scss";
@@ -16,21 +13,24 @@ import "swiper/scss/pagination";
 const SERVICE_LIST = [
   {
     id: 1,
+    title: "Vincent Van Gogh",
     group: "Vincent Van Gogh",
     discript:"결이 다른 행보로 격이 높은 인생을 살아 온 당신을 위해",
-    img: "",
+    img: "/images/vincent_van_gogh_sign_up_comp.jpg",
   },
   {
     id: 2,
+    title: "Auguste Renoir",
     group: "Auguste Renoir",
     discript:"남다른 대한민국의 다이아 수저 0.1%",
-    img: "",
+    img: "/images/auguste_renoir_sign_up_comp.jpg",
   },
   {
     id: 3,
+    title: "Claude Monet",
     group: "Claude Monet",
     discript:"알바트로스를 꿈꾸며 비상하는 독수리처럼",
-    img: "",
+    img: "/images/claude_monet_sign_up_comp.jpg",
   },
 ];
 
@@ -39,7 +39,7 @@ const INITIAL_USER = {
   password: "",
 };
 
-export default function Login() {
+export default function SignUpComp() {
   const router = useRouter();
 
   const [user, setUser] = useState(INITIAL_USER);
@@ -104,97 +104,78 @@ export default function Login() {
         <div className={`${styles.signUpCompPageRightSection}`}>
           
             <div className={`${styles.pageWrap}`}>
-              <div className={`${styles.leftWrap}`}>
 
-                    <Tab.Container id="left-tabs" defaultActiveKey="first">
-                      <div className={``}>
-                        <div className={`${styles.titleWrap}`}>
-                          <h1>
-                            Nice to meet you!
-                            <br />
-                            We will contact soon.
-                          </h1>
-                          <p>
-                            가입 승인 완료 후 서비스 이용이 가능합니다. <br />
-                            그린갤러리의 멤버십을 확인하세요!
-                          </p>
-                        </div>
-                        <div
-                          className={`${styles.groupTabWrap}`}
-                        >
-                          <Nav className="flex-column">
-                            <Nav.Item>
-                              <Nav.Link
-                                eventKey="first"
-                                onClick={handleTabMenu}
-                                className={`${styles.navLink}`}
-                              >
-                                Vincent Van Gogh
-                              </Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                              <Nav.Link
-                                eventKey="second"
-                                onClick={handleTabMenu}
-                                className={`${styles.navLink}`}
-                              >
-                                Auguste Renoir
-                              </Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                              <Nav.Link
-                                eventKey="third"
-                                onClick={handleTabMenu}
-                                className={` ${styles.navLink}`}
-                              >
-                                Claude Monet
-                              </Nav.Link>
-                            </Nav.Item>
-                          </Nav>
-                        </div>
-                      </div>
-                      <div className={`${styles.itemListWrap}`}>
-                        <Tab.Content>
-                          <Tab.Pane eventKey={`${tabMenu}`}>
-                          
-                          </Tab.Pane>
-                        </Tab.Content>
-                      </div>
-                    </Tab.Container>
-
-              </div>
-
-              <div className={`${styles.rightWrap}`}>
-                <div className={`${styles.imageWrap}`}>
-                  <img src="/images/vincent_van_gogh_sign_up_comp.jpg" alt="" />
+              <Tab.Container id="left-tabs" defaultActiveKey="first">
+                <div className={`${styles.leftWrap}`}>
+                  <div className={``}>
+                    <div className={`${styles.titleWrap}`}>
+                      <h1>
+                        Nice to meet you!
+                        <br />
+                        We will contact soon.
+                      </h1>
+                      <p>
+                        가입 승인 완료 후 서비스 이용이 가능합니다. <br />
+                        그린갤러리의 멤버십을 확인하세요!
+                      </p>
+                    </div>
+                    <div
+                      className={`${styles.groupTabWrap}`}
+                    >
+                      <Nav className="flex-column">
+                        <Nav.Item>
+                          <Nav.Link
+                            eventKey="first"
+                            onClick={handleTabMenu}
+                            className={`${styles.navLink}`}
+                          >
+                            {SERVICE_LIST[0].title}
+                          </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                          <Nav.Link
+                            eventKey="second"
+                            onClick={handleTabMenu}
+                            className={`${styles.navLink}`}
+                          >
+                            {SERVICE_LIST[1].title}
+                          </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                          <Nav.Link
+                            eventKey="third"
+                            onClick={handleTabMenu}
+                            className={` ${styles.navLink}`}
+                          >
+                            {SERVICE_LIST[2].title}
+                          </Nav.Link>
+                        </Nav.Item>
+                      </Nav>
+                    </div>
+                  </div>
                 </div>
-                <div className={`${styles.textWrap}`}>
-                  <h2>
-                    Vincent Van Gogh
-                  </h2>
-                  <div className={`${styles.mainLink}`}>
-                    <p>
-                      결이 다른 행보로 격이 높은 인생을 살아 온 당신을 위해
-                    </p>
-                    <Link href="/">
-                      Go to Main
-                    </Link>
-                </div>
-                </div>
-                
-              </div>
 
+                <Tab.Content>
+                  <Tab.Pane eventKey={`${tabMenu}`}>
+                    <SignupCompListWrap
+                        LIST_ITEM = {
+                          tabMenu === "first"
+                            ? Object.entries(SERVICE_LIST[0])
+                            : tabMenu === "second"
+                            ? Object.entries(SERVICE_LIST[1])
+                            : Object.entries(SERVICE_LIST[2])
+                        }
+                      />
+                  </Tab.Pane>
+                </Tab.Content>
+              </Tab.Container>
             </div>
-
-            <div className={`${styles.footer}`}>
-              <p>
-                <span>CONTACT</span> <span>ㅣ</span> cs@galleryk.co.kr ㆍ 1588 - 1778 ㆍ 10am - 7pm
-              </p>
-            </div>
+                  
+            <Footer />           
           </div>
         </div>
 
-      {/* <Footer /> */}
+      
     </>
   );
 }

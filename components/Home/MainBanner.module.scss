@@ -65,7 +65,7 @@
         background-image: url(/images/main/main_3.png);
       }
       
-      .titleBox {
+      .titleWrap {
 				width: 702px;
 				height: 167px;
 
@@ -167,7 +167,7 @@
     padding: 226px 0 100px 199px;
     background-color: #fff;
 		
-			.titleBox {
+			.titleWrap {
 				width: 270px;
 				height: 140px;
 				background-color: #fff;
@@ -194,8 +194,8 @@
 
 				.inputWrap {
 					display: flex;
-				 justify-content: flex-start;
-				 width: 511px;
+          justify-content: flex-start;
+          width: 511px;
 					padding: 80px 0 30px;
 
 					label {
@@ -413,8 +413,8 @@
       }
   
       & > div:nth-child(4) {
-        width: 360px;
-        left: 100px;
+        width: 100px;
+        left: 240px;
         bottom: 60px !important;
       }
     }
@@ -461,16 +461,24 @@
           color: #aaa;
         }
 
-        .navLink {
-          color: #aaa;
-          font-size: 26px;
-          font-weight: 700;
-          line-height: 50px;
-          letter-spacing: -0.26px;
-        }
+        .menuTab {
+          display: flex;
+          flex-direction: column;
 
-        .navLink[aria-selected = true] {
-          color: #fff;
+          .itemTab {
+
+            .navLink {
+              color: #aaa;
+              font-size: 26px;
+              font-weight: 700;
+              line-height: 50px;
+              letter-spacing: -0.26px;
+            }
+
+            .navLink[aria-selected = true] {
+              color: #fff;
+            }
+          }
         }
     }
 
@@ -557,9 +565,7 @@
             display: none;
           }
         }
-        
       }
-
     }
 	}
 
@@ -568,18 +574,46 @@
   @media only screen and (max-width: 768px) {
     .mainModal {
       transform: translateY(-120px);
+
+    }
+
+    .landing {
+      
+      .titleWrap {
+				width: 94vw;
+				height: auto;
+
+        h1 {
+          font-size: 1.8rem;
+          line-height: 1.3;
+
+          span {
+            font-size: 70px;
+            line-height: 0;
+
+          }
+        }
+			}
+
+      .discriptionWrap {
+
+        p {
+          font-size: 10px;
+
+        }
+      }
     }
   
     .swiper {
-      h1 {
-        font-size: 1.3rem !important;
-        letter-spacing: 0 !important;
-      }
+      // h1 {
+      //   font-size: 1.8rem;
+      //   letter-spacing: 0;
+      // }
   
-      p {
-        font-size: 10px !important;
-        letter-spacing: -0.05rem !important;
-      }
+      // p {
+      //   font-size: 10px;
+      //   letter-spacing: -0.05rem;
+      // }
   
       .slide1 {
         background-image: url(/images/main/main_001.jpg);
@@ -587,20 +621,6 @@
   
       .slide2 {
         background-image: url(/images/main/main_002.jpg);
-  
-        .mainCopy {
-          width: 100%;
-        }
-  
-        .mapImage {
-          position: inherit;
-          float: left;
-          margin-bottom: 30px;
-          transform: translateY(0);
-          width: 100%;
-          min-height: 180px;
-          background-image: url(/images/main/main_002_map.png);
-        }
       }
   
       .slide3 {
@@ -613,18 +633,347 @@
   
       .slide5 {
         background-image: url(/images/main/main_005.jpg);
-  
-        .mainCopy {
-          width: 100%;
+      }
+    }
+
+    .onePage {
+      position: relative;
+      width: 100%;
+      min-width: 360px;
+      height: 100%;
+      margin: 0;
+    
+      .bookingPageLeftSection {
+        height: 100vh;
+        padding: 10vh 0px;
+        
+        .titleWrap {
+          width: calc(100vw - 40px);
+          height: auto;
+          margin: 0 auto;
+          padding: 30px 0px 0px;
+    
+          h1 {
+            font-size: 1.8rem;
+            line-height: 1.3;
+      
+            span {
+              font-size: 70px;
+              line-height: 0;
+
+            }
+          }
         }
   
-        .slide5Icons {
-          position: inherit;
-          float: left;
-          margin-bottom: 30px;
-          transform: translateY(0);
+        .formWrap {
+          width: calc(100vw - 40px);
+          margin: 0 auto;
+  
+          .inputWrap {
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 0;
+  
+            label {
+              padding: 50px 0 0;
+              font-size: 1rem;
+              line-height: 1.3;
+
+            }
+  
+            input {
+              width: 70%;
+              margin: 20px 0 10px;
+              padding: 0 10px 10px;
+
+            }
+          }
+  
+          .discriptionWrap {
+            width: 100%;
+            height: initial;
+            margin: 50px 0;
+            padding: 15px 0;
+  
+            p {
+              padding: 0 20px;
+              font-size: 14px;
+              line-height: 25px;
+              text-align: left;
+  
+              span {
+                font-weight: 700;
+
+              }
+            }
+          }
+  
+          .buttonWrap {
+            margin: 50px 0 30px;
+            
+            .submitButton {
+              width: 100%;
+              height: 56px;
+              margin: 0px;
+              font-size: 18px;
+
+            }
+          }
+        }
+      }
+    
+      .bookingPageRightSection {
+        display: none;
+        width: 0;
+        margin: 0;
+        padding: 0;
+
+      }
+    }
+
+    .sliderPageSection {
+      height: 100vh;
+      margin: 0 auto;
+      padding: 7vh 0px 0 !important;
+
+      .titleWrap {
+        width: calc(100vw - 40px);
+        height: auto;
+        padding: 30px 20px 0px;
+
+        h1 {
+          font-size: 1.8rem;
+          line-height: 1.3;
+    
+          span {
+            font-size: 70px;
+            line-height: 0;
+
+          }
+        }
+    
+        p {
+          display: none;
+          padding-left: 40px;
+
+        }
+      }
+  
+      .sildeSize {
+        height: 100%;
+
+      }
+
+        .slide2 {
+          // background-image: url(/images/main/main_001.jpg);
+          height: 465px;
+
+      }
+  
+      .swiper {
+        padding-top: 20px;
+
+        .slideWrap {
+          flex-direction: column-reverse;
+          width: 90%;
+          margin: 0 auto;
+
+          .sectionLeft {
+            width: 100%;
+            height: auto;
+            padding: 0px;
+
+            h1 {
+              display: inline-block;
+              margin: 10px 20px;
+              padding: 0;
+              font-size: 1.3rem;
+              line-height: 2;
+
+            }
+            
+            span {
+              margin: 0px 20px 10px;
+              font-size: 1rem;
+
+            }
+
+            p {
+              display: inline-block;
+              height: 40px;
+              margin: 0 20px;
+              font-size: 0.6rem;
+              line-height: 1.5;
+
+            }
+
+            .buttonWrap {
+              position:initial;
+              bottom: 0px;
+              
+              .defaultBtnBlack {
+                margin: 10px 20px 50px;
+                font-size: 0.8rem;
+                line-height: 1.5;
+
+              }
+            }
+          }
+  
+          .sectionRight {
+            width: 100%;
+            height: auto;
+
+          }
+        }
+  
+        & > div:nth-child(2) {
+          left: 5px;
+
+        }
+  
+        & > div:nth-child(3) {
+          right: 5px;
+
+        }
+    
+        & > div:nth-child(4) {
           width: 100%;
-          min-height: 180px;
+          left: 0px;
+          bottom: 10px !important;
+
+        }
+      }
+    }
+
+    .itemListPageSection {
+      height: 100vh;
+      margin: 0 auto;
+      padding: 10vh 0px !important;
+  
+      .titleWrap {
+        width: calc(100vw - 40px);
+        height: auto;
+        padding: 30px 20px 0px;
+  
+        h1 {
+          font-size: 1.8rem;
+          line-height: 1.3;
+    
+          span {
+            font-size: 70px;
+            line-height: 0;
+  
+          }
+        }
+    
+        p {
+          display: none;
+          padding-left: 40px;
+  
+        }
+      }
+  
+      .itemIntoroduceWrap {
+        margin-top: 30px;
+  
+        h3 {
+          margin: 20px 0;
+          font-size: 26px;
+
+        }
+
+        .menuTab {
+          display: flex;
+          flex-direction: row;
+          padding: 0 12px;
+
+          .itemTab {
+            width: 20%;
+
+            .navLink {
+              padding: 5px 10px;
+              font-size: 1rem;
+              line-height: 50px;
+              text-align: center;
+    
+            }
+          }
+        }
+      }
+  
+      .itemListWrap {
+  
+        .itemListUl {
+          margin: 0;
+          padding: 0;
+          
+          .itemListLi {
+            justify-content: center;
+            width: 32%;
+            padding: 0;
+            list-style: none;
+  
+            .imageWrap {
+  
+              &::before
+              {
+                content: 'SALE';
+                width: 60px;
+                height: 30px;
+                padding: 4px 0;
+                font-size: 0.8rem;
+              }
+            }
+  
+            img {
+              width: 100%;
+              height: auto;
+            }
+  
+            h4 {
+              margin: 20px 0 10px;
+              padding: 0;
+              font-size: 1.1rem;
+            }
+  
+            span {
+              margin: 0;
+              padding: 0px;
+              font-size: 0.9rem;
+              letter-spacing: -0.24px;
+            }
+  
+            span.discript {
+              margin: 20px 0;
+              padding: 0;
+              font-size: 1rem;
+            }
+  
+            .discountPercent {
+              margin: 20px 0;
+              padding-right: 10px;
+              font-size: 1rem;
+              letter-spacing: -0.24px;
+            }
+  
+            .discountPoint {
+              padding-left: 10px;
+              font-size: 0.7rem;
+              letter-spacing: -0.16px;
+              text-decoration: line-through;
+            }
+  
+            .displayNone {
+              display: none;
+            }
+
+            &:nth-child(2) {
+              margin: 0 2%;
+
+            }
+          }
         }
       }
     }

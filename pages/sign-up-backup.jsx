@@ -192,14 +192,8 @@ export default function SignUp() {
         </div>
 
         <div className={`${styles.signUpPageRightSection}`}>
-        <div className={`${styles.pageWrap}`}>
-          <Swiper
-              navigation={false}
-              spaceBetween={0}
-              className={`hero-swiper1 ${styles.rightSlide}`}
-            >
-            <SwiperSlide>
           
+            <div className={`${styles.pageWrap}`}>
               <div className={`${styles.page}`} id="First">
                 <div className={`${styles.firstWrap}`}>
 
@@ -234,8 +228,7 @@ export default function SignUp() {
                   </div>
                 </div>
               </div>
-              </SwiperSlide>
-              <SwiperSlide>
+
               <div className={`${styles.page}`} id="Second">
                 <div className={`${styles.secondWrap}`}>
                   <div className={`${styles.titleWrap}`}>
@@ -260,8 +253,6 @@ export default function SignUp() {
                   </div>
                 </div>
               </div>
-              </SwiperSlide>
-              <SwiperSlide>
 
               <div className={`${styles.page}`} id="Third">
                 <div className={`${styles.thirdWrap}`}>
@@ -297,8 +288,6 @@ export default function SignUp() {
                   </div>
                 </div>
               </div>
-              </SwiperSlide>
-              <SwiperSlide>
 
               <div className={`${styles.page}`} id="Fourth">
                 <div className={`${styles.fourthWrap}`}>
@@ -322,15 +311,14 @@ export default function SignUp() {
                   </div>
                 </div>
               </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
+            </div>
 
-          <Footer />
+            <Footer />
             
+          </div>
         </div>
-      </div>
 
+      {/* */}
     </>
   );
 }

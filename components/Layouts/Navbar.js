@@ -198,7 +198,7 @@ const Navbar = ({ user }) => {
                     Golf Booking
                   </Link> */}
                 <Link
-                  href="/booking"
+                  href="/golf/booking"
                   className={`nav-link pr-3`}
                   style={{ paddingRight: "15px" }}
                   onClick={() => {
@@ -214,7 +214,7 @@ const Navbar = ({ user }) => {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/" onClick={toggleNavbar}>
+                    <Link href="/screengolf/booking" onClick={toggleNavbar}>
                       스크린골프 포인트 서비스
                     </Link>
                   </li>

@@ -1,14 +1,15 @@
-$main-font-eng: "Montserrat";
+$main-font-family-eng: "Montserrat";
 
 .signUpWrap {
   display: flex;
   flex-direction: row;
+  width: 100%;
 
   background: url('../public/images/join_bg.jpg') no-repeat left top;
   background-size: cover;
 
   .signUpPageLeftSection {
-    width: 100vh;
+    width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -19,7 +20,7 @@ $main-font-eng: "Montserrat";
       margin: 600px 100px 200px;
 
       h1 {
-        font-family: $main-font-eng;
+        font-family: $main-font-family-eng;
         font-size: 50px;
         font-style: normal;
         font-weight: 700;
@@ -45,7 +46,7 @@ $main-font-eng: "Montserrat";
   }
 
   .signUpPageRightSection {
-    width: 270vh;
+    width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 21vh 50px;
@@ -95,7 +96,7 @@ $main-font-eng: "Montserrat";
 
           label {
             padding: 0 0 0 2px;
-            font-family: $main-font-eng;
+            font-family: $main-font-family-eng;
             font-size: 14px;
             font-weight: 700;
             letter-spacing: -0.14px;
@@ -123,7 +124,7 @@ $main-font-eng: "Montserrat";
 
               input {
                 display: inline-block;
-                width: 29%;
+                width: 23%;
                 text-align: center;
                 border: 0;
                 border-bottom: 1px solid #ccc;
@@ -136,11 +137,11 @@ $main-font-eng: "Montserrat";
                   margin-right: 1.8%;
                 }
 
-                &:nth-child(2) {
+                &:nth-child(3) {
                   margin: 0 1.8%;
                 }
 
-                &:nth-child(3) {
+                &:nth-child(5) {
                   margin-left: 1.8%;
                 }
               }
@@ -248,8 +249,126 @@ $main-font-eng: "Montserrat";
 
   }
 
+
+  .signUpCompPageRightSection {
+    display: flex;
+    flex-direction: column;
+    width: 520vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0vw 50px;
+    background-color: #fff;
+
+    .pageWrap {
+      display: flex;
+      flex-direction: row;
+      width: 78vw;
+      height: auto;
+      margin: 0;
+      padding: 21vh 50px 5vh;
+
+      .leftWrap {
+        width: 25vw;
+        height: auto;
+
+        h1 {
+          font-family: $main-font-family-eng;
+          font-size: 36px;
+          font-weight: 700;
+          line-height: 50px;
+          letter-spacing: -0.36px;
+          color:#333;
+        }
+
+        p {
+          margin: 20px 0 180px;
+          font-family: $main-font-family-eng;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+          letter-spacing: -0.16px;
+          color:#333;
+        }
+
+        .groupTabWrap {
+          width: 230px;
+          height: 170px;
+
+          a {
+            font-family: $main-font-family-eng;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 50px;
+            letter-spacing: -0.2px;
+            color:#333;
+
+            &:focus {
+              font-weight: 700;
+              text-decoration-line: underline;
+
+            }
+          }
+        }
+      }
+
+      .rightWrap {
+        width: 48vw;
+
+        .imageWrap {
+          height: 400px;
+          min-height: 400px;
+          margin: 0 0 30px;
+
+          image {
+            width: 100%;
+          }
+        }
+    
+        .textWrap {
+
+          h2 {
+            font-family: $main-font-family-eng;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.32px;
+            color: #111;
+          }
+
+                
+          .mainLink{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            p {
+              display: inline;
+              font-family: $main-font-family-eng;
+              font-family: Noto Sans KR;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              letter-spacing: -0.18px;
+              color: #666;
+            }
+            
+            a {
+              padding-right: 20px;
+              font-family: $main-font-family-eng;
+              font-size: 18px;
+              font-weight: 700;
+              letter-spacing: -0.18px;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  
+  }
+
   .footer {
-    margin: 106px 70px 50px 0;
+    margin: 106px 72px 0px 0;
     text-align: right;
   }
 }

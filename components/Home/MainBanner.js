@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import DatePicker from "../Common/DatePicker";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, A11y, Navigation } from "swiper";
 import { Modal } from "react-bootstrap";
@@ -221,7 +222,9 @@ const MainBanner = ({ showReservationModal }) => {
                 <div className="d-table">
                   <div className="d-table-cell">
                     <div className="container">
-                      <div className={`col-lg-12 col-md-12 ${styles.titleBox}`}>
+                      <div
+                        className={`col-lg-12 col-md-12 ${styles.titleWrap}`}
+                      >
                         <h1>
                           PREMIUM <br />
                           GOLF MEMBERSHIP
@@ -230,8 +233,8 @@ const MainBanner = ({ showReservationModal }) => {
                       </div>
                       <div className={`${styles.discriptionWrap}`}>
                         <p>
-                          시대의 가치를 창조해 온 당신, 결이 다른 행보로 격이
-                          높은 인생을 살아 온 당신
+                          시대의 가치를 창조해 온 당신, <br />
+                          결이 다른 행보로 격이 높은 인생을 살아 온 당신
                           <br />
                           당신에게 바치는 가장 명예로운 멤버십
                         </p>
@@ -246,7 +249,9 @@ const MainBanner = ({ showReservationModal }) => {
                 <div className="d-table">
                   <div className="d-table-cell">
                     <div className="container">
-                      <div className={`col-lg-12 col-md-12 ${styles.titleBox}`}>
+                      <div
+                        className={`col-lg-12 col-md-12 ${styles.titleWrap}`}
+                      >
                         <h1>
                           PREMIUM <br />
                           GOLF MEMBERSHIP
@@ -255,8 +260,8 @@ const MainBanner = ({ showReservationModal }) => {
                       </div>
                       <div className={`${styles.discriptionWrap}`}>
                         <p>
-                          시대의 가치를 창조해 온 당신, 결이 다른 행보로 격이
-                          높은 인생을 살아 온 당신
+                          시대의 가치를 창조해 온 당신, <br />
+                          결이 다른 행보로 격이 높은 인생을 살아 온 당신
                           <br />
                           당신에게 바치는 가장 명예로운 멤버십
                         </p>
@@ -271,7 +276,9 @@ const MainBanner = ({ showReservationModal }) => {
                 <div className="d-table">
                   <div className="d-table-cell">
                     <div className="container">
-                      <div className={`col-lg-12 col-md-12 ${styles.titleBox}`}>
+                      <div
+                        className={`col-lg-12 col-md-12 ${styles.titleWrap}`}
+                      >
                         <h1>
                           PREMIUM <br />
                           GOLF MEMBERSHIP
@@ -280,8 +287,8 @@ const MainBanner = ({ showReservationModal }) => {
                       </div>
                       <div className={`${styles.discriptionWrap}`}>
                         <p>
-                          시대의 가치를 창조해 온 당신, 결이 다른 행보로 격이
-                          높은 인생을 살아 온 당신
+                          시대의 가치를 창조해 온 당신, <br />
+                          결이 다른 행보로 격이 높은 인생을 살아 온 당신
                           <br />
                           당신에게 바치는 가장 명예로운 멤버십
                         </p>
@@ -298,7 +305,7 @@ const MainBanner = ({ showReservationModal }) => {
             <div
               className={`col-lg-6 col-md-6 ${styles.bookingPageLeftSection}`}
             >
-              <div className={`col-lg-12 col-md-12 ${styles.titleBox}`}>
+              <div className={`col-lg-12 col-md-6 ${styles.titleWrap}`}>
                 <h1>
                   GOLF
                   <br />
@@ -306,22 +313,11 @@ const MainBanner = ({ showReservationModal }) => {
                   <span>.</span>
                 </h1>
               </div>
-              <div className={`col-lg-12 col-md-12 ${styles.formWrap}`}>
+              <div className={`col-lg-12 col-md-6 ${styles.formWrap}`}>
                 <form>
-                  <div
-                    className={`row col-lg-12 col-md-12 ${styles.inputWrap}`}
-                  >
+                  <div className={`row col-lg-12 col-md-6 ${styles.inputWrap}`}>
                     <div className={`col`}>
-                      <div>
-                        <label htmlFor="schedule">SCHEDULE</label>
-                      </div>
-                      <input
-                        type="date"
-                        id="schedule"
-                        name="schedule"
-                        data-placeholder="날짜 선택"
-                        required
-                      />
+                      <DatePicker label={`SCHEDULE`} />
                     </div>
                     <div className={`col`}>
                       <div>
@@ -483,8 +479,8 @@ const MainBanner = ({ showReservationModal }) => {
                 <div
                   className={`row col-lg-12 col-md-6 ${styles.itemIntoroduceWrap}`}
                 >
-                  <Nav className="flex-column">
-                    <Nav.Item>
+                  <Nav className={`${styles.menuTab}`}>
+                    <Nav.Item className={`${styles.itemTab}`}>
                       <Nav.Link
                         eventKey="first"
                         onClick={handleTabMenu}
@@ -493,7 +489,7 @@ const MainBanner = ({ showReservationModal }) => {
                         제휴서비스
                       </Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
+                    <Nav.Item className={`${styles.itemTab}`}>
                       <Nav.Link
                         eventKey="second"
                         onClick={handleTabMenu}
@@ -502,7 +498,7 @@ const MainBanner = ({ showReservationModal }) => {
                         GG쇼핑
                       </Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
+                    <Nav.Item className={`${styles.itemTab}`}>
                       <Nav.Link
                         eventKey="third"
                         onClick={handleTabMenu}
