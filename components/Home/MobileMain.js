@@ -151,7 +151,7 @@ const MainGogh = ({ showReservationModal }) => {
   };
 
   const [tabMenu, setTabMenu] = useState("first");
-  console.log(tabMenu);
+
   const handleTabMenu = (e) => {
     console.log(e.target.dataset.rrUiEventKey);
     if (e.target.dataset.rrUiEventKey === "first") {
