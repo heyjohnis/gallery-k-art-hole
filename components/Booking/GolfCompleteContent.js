@@ -55,11 +55,16 @@ export const GolfCompleteContent = () => {
           </div>
           <div className="complete_content_items">
             <span className="items_item">기타사항</span>
-            <span className="items_detail">{form.etc ? form.etc : "없음"}</span>
+            <span className="items_detail">
+              <pre>{form.etc ? form.etc : "없음"}</pre>
+            </span>
           </div>
         </div>
       </div>
-      <button type="submit" className="complete_btn">
+      <button
+        className="complete_btn"
+        onClick={() => router.push("/mypage/reservation/")}
+      >
         예약현황
       </button>
     </>

@@ -4,7 +4,7 @@ import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
 import { CompleteTitle } from "../../components/Common/CompleteTitle";
 import { GolfCompleteContent } from "../../components/Booking/GolfCompleteContent";
-import { GolfCompleteRecommend } from "../../components/Booking/GolfCompleteRecommend";
+import GolfCompleteRecommend from "../../components/Booking/GolfCompleteRecommend";
 
 const Complete = ({ user }) => {
   useEffect(() => {
