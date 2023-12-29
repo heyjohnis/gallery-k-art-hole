@@ -3,8 +3,8 @@ import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
 
-const DatePicker = ({ label, pickDate, dateKind }) => {
-  const [selectedDay, setSelectedDay] = useState("");
+const DatePicker = ({ label, pickDate, dateKind, selectedDate }) => {
+  const [selectedDay, setSelectedDay] = useState();
   const [isShow, setIsShow] = useState(false);
 
   const handleOnClick = () => {
@@ -19,6 +19,12 @@ const DatePicker = ({ label, pickDate, dateKind }) => {
       pickDate({ [dateKind]: format(selectedDay, "yyyy-MM-dd") });
     }
   }, [selectedDay]);
+
+  useEffect(() => {
+    if (selectedDate) {
+      setSelectedDay(new Date(selectedDate));
+    }
+  }, [selectedDate]);
 
   return (
     <div>

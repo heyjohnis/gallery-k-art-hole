@@ -12,7 +12,6 @@ $body-font-family: "Noto Sans KR", sans-serif;
 $heading-font-family: "Noto Sans KR", sans-serif;
 $main-font-family-eng: "Montserrat";
 
-
 $main-color: #111;
 $sub-color: #3e8b3c;
 $point-color: #6ed338;
@@ -35,7 +34,7 @@ body {
   line-height: 1.8;
   font-family: $body-font-family;
   color: $body-color;
-  background: #F9F9F9;
+  background: #f9f9f9;
   word-break: keep-all;
 }
 
@@ -2398,7 +2397,7 @@ Signup Footer */
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.14px;
-  color:#333;
+  color: #333;
   text-align: right;
 
   span {
@@ -4552,7 +4551,7 @@ Booking Complete
   }
   .bar {
     font-size: 14px;
-    color: #CCC;
+    color: #ccc;
     margin: 0 20px;
   }
 }
@@ -4610,7 +4609,7 @@ Booking Complete
   }
 }
 
-.tbl_complete_content{
+.tbl_complete_content {
   margin-top: 30px;
   .complete_content_items {
     display: flex;
@@ -4630,11 +4629,10 @@ Booking Complete
   }
 }
 
-
 .complete_recomend_content {
   margin: 100px 0 150px;
   padding-top: 100px;
-  border-top: 1px solid #DDD;
+  border-top: 1px solid #ddd;
 
   h3 {
     font-size: 30px;
@@ -4742,13 +4740,13 @@ Booking Complete
     }
   }
 
-  .tbl_complete_content{
+  .tbl_complete_content {
     margin-top: 30px;
     .complete_content_items {
       display: flex;
       flex-direction: column;
-      justify-content:flex-start;
-      align-items:flex-start;
+      justify-content: flex-start;
+      align-items: flex-start;
       padding: 8px 0;
       .items_item {
         color: $body-color;
@@ -4764,7 +4762,6 @@ Booking Complete
   }
 
   .complete_recomend_content {
-  
     h3 {
       font-size: 24px;
       letter-spacing: -0.16px;
@@ -4859,21 +4856,21 @@ Booking Page
         font-size: 14px;
         position: relative;
         padding-left: 12px;
-        
-        &::before{
+
+        &::before {
           content: "ㆍ";
           position: absolute;
-          left:0;
+          left: 0;
         }
       }
-    } 
+    }
 
     .form_item {
       margin-top: 80px;
     }
 
     .item_group {
-      display:flex;
+      display: flex;
     }
 
     label {
@@ -4909,12 +4906,12 @@ Booking Page
       height: auto;
       padding: 20px;
       color: $body-color;
-      border:0;
+      border: 0;
       border-bottom: 1px solid #ccc;
       background: $white-color;
       &:focus {
         background: $white-color;
-        border:0;
+        border: 0;
         border-bottom: 1px solid #333;
       }
       &::placeholder {
@@ -4922,7 +4919,7 @@ Booking Page
       }
     }
 
-    input[type='tel'] {
+    input[type="tel"] {
       width: 100%;
     }
 
@@ -4933,7 +4930,8 @@ Booking Page
       white-space: pre-line;
     }
 
-    select,  input.select_date {
+    select,
+    input.select_date {
       width: 266px;
       padding: 20px;
       margin-right: 20px;
@@ -4941,7 +4939,8 @@ Booking Page
       border-radius: 0;
       border: 0;
       border-bottom: 1px solid #ccc;
-      background: url("/images/booking/icon_select.svg") calc(100% - 20px) center no-repeat;
+      background: url("/images/booking/icon_select.svg") calc(100% - 20px)
+        center no-repeat;
       background-size: 11px;
       background-color: $white-color;
     }
@@ -4964,7 +4963,7 @@ Booking Page
       position: relative;
       display: inline-block;
       .icon_complete {
-        width:20px;
+        width: 20px;
         height: 20px;
         position: absolute;
         right: 20px;
@@ -5006,7 +5005,7 @@ Booking Page
         line-height: 50px;
         letter-spacing: -0.4px;
       }
-      strong{
+      strong {
         span {
           color: $sub-color;
         }
@@ -5021,12 +5020,12 @@ Booking Page
       width: 100%;
       height: auto;
       padding: 20px;
-      border:0;
+      border: 0;
       border-bottom: 1px solid #ccc;
-      background: #F9F9F9;
+      background: #f9f9f9;
       &:focus {
         background: $white-color;
-        border:0;
+        border: 0;
         border-bottom: 1px solid #ccc;
       }
       &::placeholder {
@@ -5068,7 +5067,6 @@ Booking Page
         height: 24px;
         border-radius: 0;
         border: 1px solid #ccc;
-        background: #f5f5f5;
       }
       .form-check-label {
         font-size: 14px;
@@ -5079,7 +5077,7 @@ Booking Page
     }
 
     .notice {
-      background: #F9F9F9;
+      background: #f9f9f9;
       padding: 20px;
       h6 {
         color: $body-color;
@@ -5106,12 +5104,13 @@ Booking Page
         text-align: center;
         thead {
           border-top: 1px solid $gray-color;
-          background-color:#eee;
+          background-color: #eee;
         }
-        tbody{
+        tbody {
           background-color: $white-color;
         }
-        th, td {
+        th,
+        td {
           font-size: 10px;
           font-weight: 400;
           line-height: 120%;
@@ -5123,7 +5122,7 @@ Booking Page
         }
       }
     }
-  
+
     button {
       width: 100%;
       padding: 20px 0;
@@ -5160,7 +5159,7 @@ Booking Page
         margin-top: 50px;
       }
 
-      .item_name{
+      .item_name {
         display: block;
         margin-bottom: 50px;
       }
@@ -5174,7 +5173,8 @@ Booking Page
         }
       }
 
-      select,  input.select_date {
+      select,
+      input.select_date {
         width: 100%;
         margin-right: 0;
         border: 1px solid #ccc;
@@ -5203,8 +5203,8 @@ Booking Page
       }
     }
 
-    .agree_content{
-      padding:0;
+    .agree_content {
+      padding: 0;
       background: none;
       word-break: break-all;
 
@@ -5216,10 +5216,10 @@ Booking Page
     .screen {
       .form_item {
         margin-bottom: 50px;
-        padding-bottom: 0; 
+        padding-bottom: 0;
       }
       .notice {
-        background: #EAEAEA;
+        background: #eaeaea;
       }
     }
   }
@@ -5228,4 +5228,3 @@ Booking Page
     width: 100%;
   }
 }
-

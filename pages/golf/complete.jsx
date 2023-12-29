@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
-import { CompleteTitle } from '../../components/Common/CompleteTitle';
-import { GolfCompleteContent } from '../../components/Booking/GolfCompleteContent';
-import { GolfCompleteRecommend } from '../../components/Booking/GolfCompleteRecommend';
+import { CompleteTitle } from "../../components/Common/CompleteTitle";
+import { GolfCompleteContent } from "../../components/Booking/GolfCompleteContent";
+import { GolfCompleteRecommend } from "../../components/Booking/GolfCompleteRecommend";
 
-const MyPag = ({ user }) => {
+const Complete = ({ user }) => {
   useEffect(() => {
     if (!user) {
       alert("로그인이 필요합니다.");
@@ -14,7 +14,6 @@ const MyPag = ({ user }) => {
     }
   }, [user]);
 
-  {/* harry 0605 pagebanner 정보 변경 */ }
   return (
     <>
       <PageBanner
@@ -23,19 +22,19 @@ const MyPag = ({ user }) => {
         homePageText="Golf Booking"
         activePageText="골프장 예약 완료"
       />
-      <section className='container' >
+      <section className="container">
         <CompleteTitle
           iconUrl={`/images/booking/ico_golf_tit.png`}
-          title = '골프장 신청이 '
-          title2 = '완료되었습니다!'
-          text = '담당자 확인 후 예약 안내드리겠습니다.'
+          title="골프장 신청이 "
+          title2="완료되었습니다!"
+          text="담당자 확인 후 예약 안내드리겠습니다."
         />
-        <GolfCompleteContent/>
-        <GolfCompleteRecommend/>
+        <GolfCompleteContent />
+        <GolfCompleteRecommend />
       </section>
       <Footer />
     </>
   );
 };
 
-export default MyPag;
+export default Complete;
