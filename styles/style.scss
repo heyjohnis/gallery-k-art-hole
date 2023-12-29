@@ -2389,6 +2389,122 @@ Footer
   }
 }
 
+@media screen and (max-width: 768px) {
+    /*
+  Footer
+  ======================================================*/
+  .footer-top-area {
+    width: 100%;
+    min-width: 480px;
+    height: 540px;
+    padding: 60px 0 70px;
+    background-color: #333333;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    .footer-shape {
+      img {
+        position: absolute;
+
+        &:nth-child(1) {
+          top: 35%;
+          right: 0;
+          z-index: -1;
+          animation: rotation 20s linear infinite;
+        }
+
+        &:nth-child(2) {
+          top: 35%;
+          right: 0;
+          z-index: -1;
+          animation: focus-one 1s linear 1s infinite;
+        }
+      }
+    }
+  }
+
+  .footer-bottom-area {
+    width: 100%;
+    min-width: 480px;
+    height: 150px;
+    padding: 56px 0;
+    background-color: #eee;
+  
+    .copy-right {
+      text-align: right;
+      font-family: Noto Sans KR;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 30px;
+      letter-spacing: -0.14px;
+      color: #999;
+  
+      i {
+        position: relative;
+        top: 1px;
+        margin-right: -5px;
+      }
+  
+      a {
+        color: #666;
+  
+        &:hover {
+          color: #666;
+        }
+      }
+    }
+  
+    .privacy {
+      text-align: center;
+  
+      ul {
+        text-align: right;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+  
+        li {
+          display: inline-block;
+          padding-right: 24px;
+          font-family: Noto Sans KR;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 30px;
+          letter-spacing: -0.14px;
+          color: #666;
+  
+          span {
+            font-weight: 900;
+          }
+  
+          &:last-child {
+            margin-right: 0;
+          }
+  
+          a {
+            color: #666;
+            position: relative;
+  
+            &:hover {
+              color: #666;
+            }
+          }
+  
+          &:first-child {
+            a {
+              &::before {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}
+
 /*
 Signup Footer */
 
