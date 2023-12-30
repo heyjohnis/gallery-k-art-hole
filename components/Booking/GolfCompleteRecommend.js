@@ -1,12 +1,25 @@
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { POST } from "../../hooks/restApi";
+import { commaFormat } from "../../utils/number";
+import { useRouter } from "next/router";
+
+const cntGoods = 5;
 
 export default function GolfCompleteRecommend() {
+  const router = useRouter();
+  const [goods, setGoods] = React.useState([]);
   const getRecommendService = () => {
-    POST("/mall/rand", { pd_kind: "service" }).then((res) => {
-      console.log("/mall/rand: ", res);
-    });
+    POST("/mall/rand", { pd_kind: "service", limit_cnt: cntGoods }).then(
+      (res) => {
+        console.log("/mall/rand: ", res.data);
+        setGoods(res.data);
+      }
+    );
+  };
+
+  const gotoGoodDetail = (pdNo) => () => {
+    router.push(`/ggmall/detail/service/${pdNo}`);
   };
 
   useEffect(() => {
@@ -17,7 +30,7 @@ export default function GolfCompleteRecommend() {
     <>
       <section className="complete_recomend_content">
         <h3>
-          추천서비스 <span className="total">4</span>
+          추천서비스 <span className="total">{cntGoods}</span>
         </h3>
         <Swiper
           spaceBetween={30}
@@ -39,86 +52,22 @@ export default function GolfCompleteRecommend() {
           }}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <article className="complete_recommend_items">
-              <div className="recommend_item_img">
-                <img src="/images/booking/recommend_01.png"></img>
-              </div>
-              <h4>개인 제트기 서비스</h4>
-              <span className="item_name">JETCAP</span>
-              <span className="item_price">별도문의</span>
-            </article>
-          </SwiperSlide>
-          <SwiperSlide>
-            <article className="complete_recommend_items">
-              <div className="recommend_item_img">
-                <img src="/images/booking/recommend_02.png"></img>
-              </div>
-              <h4>리무진 서비스</h4>
-              <span className="item_name">벤트 스플린터</span>
-              <span className="item_price">600,000 P</span>
-            </article>
-          </SwiperSlide>
-          <SwiperSlide>
-            <article className="complete_recommend_items">
-              <div className="recommend_item_img">
-                <img src="/images/booking/recommend_03.png"></img>
-              </div>
-              <h4>제주 스위트룸 이용권</h4>
-              <span className="item_name">제주 에어시티 호텔</span>
-              <span className="item_price">150,000 P</span>
-            </article>
-          </SwiperSlide>
-          <SwiperSlide>
-            <article className="complete_recommend_items">
-              <div className="recommend_item_img">
-                <img src="/images/booking/recommend_04.png"></img>
-              </div>
-              <h4>골프연습장</h4>
-              <span className="item_name">쇼골프</span>
-              <span className="item_price">230,000 P</span>
-            </article>
-          </SwiperSlide>
-          <SwiperSlide>
-            <article className="complete_recommend_items">
-              <div className="recommend_item_img">
-                <img src="/images/booking/recommend_01.png"></img>
-              </div>
-              <h4>개인 제트기 서비스</h4>
-              <span className="item_name">JETCAP</span>
-              <span className="item_price">별도문의</span>
-            </article>
-          </SwiperSlide>
-          <SwiperSlide>
-            <article className="complete_recommend_items">
-              <div className="recommend_item_img">
-                <img src="/images/booking/recommend_02.png"></img>
-              </div>
-              <h4>리무진 서비스</h4>
-              <span className="item_name">벤트 스플린터</span>
-              <span className="item_price">600,000 P</span>
-            </article>
-          </SwiperSlide>
-          <SwiperSlide>
-            <article className="complete_recommend_items">
-              <div className="recommend_item_img">
-                <img src="/images/booking/recommend_03.png"></img>
-              </div>
-              <h4>제주 스위트룸 이용권</h4>
-              <span className="item_name">제주 에어시티 호텔</span>
-              <span className="item_price">150,000 P</span>
-            </article>
-          </SwiperSlide>
-          <SwiperSlide>
-            <article className="complete_recommend_items">
-              <div className="recommend_item_img">
-                <img src="/images/booking/recommend_04.png"></img>
-              </div>
-              <h4>골프연습장</h4>
-              <span className="item_name">쇼골프</span>
-              <span className="item_price">230,000 P</span>
-            </article>
-          </SwiperSlide>
+          {goods.map((item, index) => (
+            <SwiperSlide key={index}>
+              <a onClick={gotoGoodDetail(item.pd_no)} href="#">
+                <article className="complete_recommend_items">
+                  <div className="recommend_item_img">
+                    <img src={item.thumb_img}></img>
+                  </div>
+                  <h4>{item?.pd_name}</h4>
+                  <span className="item_name">{item?.brand}</span>
+                  <span className="item_price">
+                    {item?.price ? commaFormat(item?.price) : "별도문의"}
+                  </span>
+                </article>
+              </a>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </section>
     </>
