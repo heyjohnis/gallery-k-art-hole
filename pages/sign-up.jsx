@@ -59,7 +59,7 @@ const SERVICE_LIST = [
   },
   {
     id: 10,
-    item: "골프채", 
+    item: "골프채",
     checked: true,
   },
   {
@@ -149,7 +149,7 @@ export default function SignUp() {
     setUser({
       login_id: window.localStorage.getItem("userId") || "",
       password: window.localStorage.getItem("password") || "",
-    })
+    });
   }, [router.query]);
 
   const handleChange = (e) => {
@@ -165,8 +165,8 @@ export default function SignUp() {
       const url = `${baseUrl}/login`;
       const payload = { ...user };
       const response = await axios.post(url, payload);
-      window.localStorage.setItem("userId", user.login_id)
-      window.localStorage.setItem("password", user.password)
+      window.localStorage.setItem("userId", user.login_id);
+      window.localStorage.setItem("password", user.password);
       handleLogin(response.data.token, goto);
     } catch (error) {
       if (error.response) alert(error.response.data.message);
@@ -179,158 +179,180 @@ export default function SignUp() {
   return (
     <>
       <div className={`${styles.signUpWrap}`}>
-
         <div className={`${styles.signUpPageLeftSection}`}>
-
           <div className={`${styles.titleWrap}`}>
             <h1>
-              <span>Welcome to </span><br/>
+              <span>Welcome to </span>
+              <br />
               GREEN GALLERY
             </h1>
           </div>
-          
         </div>
 
         <div className={`${styles.signUpPageRightSection}`}>
-        <div className={`${styles.pageWrap}`}>
-          <Swiper
-              navigation={false}
+          <div className={`${styles.pageWrap}`}>
+            <Swiper
+              navigation={true}
               spaceBetween={0}
               className={`hero-swiper1 ${styles.rightSlide}`}
             >
-            <SwiperSlide>
-          
-              <div className={`${styles.page}`} id="First">
-                <div className={`${styles.firstWrap}`}>
-
+              <SwiperSlide>
+                <div className={`${styles.page}`} id="First">
+                  <div className={`${styles.firstWrap}`}>
                     <div className={`${styles.titleWrap}`}>
                       <h1>
-                        하이엔드 골프 서비스<br />
+                        하이엔드 골프 서비스
+                        <br />
                         그린갤러리에 오신 것을 환영합니다.
                       </h1>
                     </div>
 
                     <div className={`${styles.inputWrap}`}>
-                      <div className={`${styles.inputFname} ${styles.inputItems}`}>
+                      <div
+                        className={`${styles.inputFname} ${styles.inputItems}`}
+                      >
                         <label htmlFor="">First Name</label>
                         <input type="text" />
                       </div>
-                      <div className={`${styles.inputLname} ${styles.inputItems}`}>
+                      <div
+                        className={`${styles.inputLname} ${styles.inputItems}`}
+                      >
                         <label htmlFor="">Last Name</label>
                         <input type="text" />
                       </div>
-                      <div className={`${styles.inputPhone} ${styles.inputItems}`}>
+                      <div
+                        className={`${styles.inputPhone} ${styles.inputItems}`}
+                      >
                         <label htmlFor="">Phone</label>
                         <div className={`${styles.phoneWrap}`}>
-                          <input type="tel" maxlength="3" /> - 
-                          <input type="tel" maxlength="4"/> - 
-                          <input type="tel" maxlength="4"/>
+                          <input type="tel" maxlength="3" /> -
+                          <input type="tel" maxlength="4" /> -
+                          <input type="tel" maxlength="4" />
                         </div>
                       </div>
-                      <div className={`${styles.inputEmail} ${styles.inputItems}`}>
+                      <div
+                        className={`${styles.inputEmail} ${styles.inputItems}`}
+                      >
                         <label htmlFor="">Email</label>
                         <input type="email" />
                       </div>
-                  </div>
-                </div>
-              </div>
-              </SwiperSlide>
-              <SwiperSlide>
-              <div className={`${styles.page}`} id="Second">
-                <div className={`${styles.secondWrap}`}>
-                  <div className={`${styles.titleWrap}`}>
-                    <h1>
-                      사용하실 아이디와 <br />
-                      비밀번호를 입력해 주세요.
-                    </h1>
-                  </div>
-                  <div className={`${styles.inputWrap}`}>
-                    <div className={`${styles.inputId} ${styles.inputItems}`}>
-                      <label htmlFor="">ID</label>
-                      <input type="text" />
-                    </div>
-                    <div className={`${styles.inputPass} ${styles.inputItems}`}>
-                      <label htmlFor="">Password</label>
-                      <input type="text" />
-                    </div>
-                    <div className={`${styles.inputDealer} ${styles.inputItems}`}>
-                      <label htmlFor="">Dealer Code</label>
-                      <input type="text" />
                     </div>
                   </div>
                 </div>
-              </div>
               </SwiperSlide>
               <SwiperSlide>
-
-              <div className={`${styles.page}`} id="Third">
-                <div className={`${styles.thirdWrap}`}>
-                  <div className={`${styles.titleWrap}`}>
-                    <h1>
-                      자주 이용하시거나<br />
-                      선호하시는 골프장을 선택해 주세요.
-                    </h1>
-                  </div>
-                  <div className={`${styles.selectWraper}`}>
-                    <div className={`${styles.selectLocation} ${styles.selectItems}`}>
-                      <label htmlFor="">Location</label>
-                      <div className={`${styles.selectWrap}`}>
-                        <select name="" id="">
-                          <option disabled selected>1차 희망 지역</option>
-                        </select>
-                        <select name="" id="">
-                          <option disabled selected>2차 희망 지역</option>
-                        </select>
+                <div className={`${styles.page}`} id="Second">
+                  <div className={`${styles.secondWrap}`}>
+                    <div className={`${styles.titleWrap}`}>
+                      <h1>
+                        사용하실 아이디와 <br />
+                        비밀번호를 입력해 주세요.
+                      </h1>
+                    </div>
+                    <div className={`${styles.inputWrap}`}>
+                      <div className={`${styles.inputId} ${styles.inputItems}`}>
+                        <label htmlFor="">ID</label>
+                        <input type="text" />
                       </div>
-                    </div>
-                    <div className={`${styles.selectGolfCourse} ${styles.selectItems}`}>
-                      <label htmlFor="">Golf Course</label>
-                      <div className={`${styles.selectWrap}`}>
-                        <select name="" id="">
-                          <option disabled selected>1차 골프장</option>
-                        </select>
-                        <select name="" id="">
-                          <option disabled selected>2차 골프장</option>
-                        </select>
+                      <div
+                        className={`${styles.inputPass} ${styles.inputItems}`}
+                      >
+                        <label htmlFor="">Password</label>
+                        <input type="text" />
+                      </div>
+                      <div
+                        className={`${styles.inputDealer} ${styles.inputItems}`}
+                      >
+                        <label htmlFor="">Dealer Code</label>
+                        <input type="text" />
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </SwiperSlide>
               <SwiperSlide>
-
-              <div className={`${styles.page}`} id="Fourth">
-                <div className={`${styles.fourthWrap}`}>
-
-                  <div className={`${styles.titleWrap}`}>
-                    <h1>
-                      가입 후 이용하고 싶은<br />
-                      그린갤러리 서비스를 선택해 주세요.
-                    </h1>
-                  </div>
-
-                  <div className={`${styles.checkedWrap}`}>
-                    {SERVICE_LIST.map((itemList) => (
-                      <>
-                        <input type="checkbox" id={itemList.id} name="service" />
-                        <label htmlFor={itemList.id} key={itemList.id}>
-                          { itemList.item }
-                        </label>
-                      </>
-                    ))}
+                <div className={`${styles.page}`} id="Third">
+                  <div className={`${styles.thirdWrap}`}>
+                    <div className={`${styles.titleWrap}`}>
+                      <h1>
+                        자주 이용하시거나
+                        <br />
+                        선호하시는 골프장을 선택해 주세요.
+                      </h1>
+                    </div>
+                    <div className={`${styles.selectWraper}`}>
+                      <div
+                        className={`${styles.selectLocation} ${styles.selectItems}`}
+                      >
+                        <label htmlFor="">Location</label>
+                        <div className={`${styles.selectWrap}`}>
+                          <select name="" id="">
+                            <option disabled selected>
+                              1차 희망 지역
+                            </option>
+                          </select>
+                          <select name="" id="">
+                            <option disabled selected>
+                              2차 희망 지역
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div
+                        className={`${styles.selectGolfCourse} ${styles.selectItems}`}
+                      >
+                        <label htmlFor="">Golf Course</label>
+                        <div className={`${styles.selectWrap}`}>
+                          <select name="" id="">
+                            <option disabled selected>
+                              1차 골프장
+                            </option>
+                          </select>
+                          <select name="" id="">
+                            <option disabled selected>
+                              2차 골프장
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className={`${styles.page}`} id="Fourth">
+                  <div className={`${styles.fourthWrap}`}>
+                    <div className={`${styles.titleWrap}`}>
+                      <h1>
+                        가입 후 이용하고 싶은
+                        <br />
+                        그린갤러리 서비스를 선택해 주세요.
+                      </h1>
+                    </div>
+
+                    <div className={`${styles.checkedWrap}`}>
+                      {SERVICE_LIST.map((itemList) => (
+                        <>
+                          <input
+                            type="checkbox"
+                            id={itemList.id}
+                            name="service"
+                          />
+                          <label htmlFor={itemList.id} key={itemList.id}>
+                            {itemList.item}
+                          </label>
+                        </>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </SwiperSlide>
             </Swiper>
           </div>
 
           <Footer />
-            
         </div>
       </div>
-
     </>
   );
 }
