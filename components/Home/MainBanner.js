@@ -323,13 +323,20 @@ const MainBanner = ({ showReservationModal }) => {
                       <div>
                         <label htmlFor="location">LOCATION</label>
                       </div>
-                      <input
+                      {/* <input
                         type="list"
                         id="location"
                         name="location"
                         data-placeholder="지역 선택"
                         required
-                      />
+                      /> */}
+                      <select name="" id="location">
+                        <option value="" selected disabled>
+                          권역 선택
+                        </option>
+                        <option value="권역">권역</option>
+                        <option value="권역">권역</option>
+                      </select>
                     </div>
                   </div>
                   <div className={`${styles.discriptionWrap}`}>
