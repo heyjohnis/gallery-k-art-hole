@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "../Common/DatePicker";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
@@ -6,16 +6,20 @@ import Form from "react-bootstrap/Form";
 import FormSelect from "react-bootstrap/FormSelect";
 import { setDate } from "date-fns";
 import { REGION_LIST } from "../../data/CommonCode";
+import { useRouter } from "next/router";
 
-const GolfBookingForm = ({ setBookingData }) => {
-  const [form, setForm] = React.useState({});
-  const [pickDate, setPickDate] = React.useState("");
+const GolfBookingForm = ({ setBookingData, user }) => {
+  const router = useRouter();
+  const [form, setForm] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevState) => ({ ...prevState, [name]: value }));
   };
-
+  const handleCheck = (e) => {
+    const { name, checked } = e.target;
+    setForm((prevState) => ({ ...prevState, [name]: checked }));
+  };
   const selectedPickDate = (date) => {
     console.log("date: ", date);
     setForm((prevState) => ({ ...prevState, ...date }));
@@ -23,7 +27,11 @@ const GolfBookingForm = ({ setBookingData }) => {
 
   const renderRegionOptions = () => {
     return REGION_LIST.map((item) => {
-      return <option value={item.id}>{item.data}</option>;
+      return (
+        <option key={item.id} value={item.id}>
+          {item.data}
+        </option>
+      );
     });
   };
 
@@ -33,9 +41,20 @@ const GolfBookingForm = ({ setBookingData }) => {
   };
 
   useEffect(() => {
-    console.log("form: ", form);
     setBookingData(form);
+
+    console.log("useEffect form: ", form);
   }, [form]);
+
+  useEffect(() => {
+    router.query && setBookingData(router.query);
+    setForm((prevState) => ({ ...prevState, ...router.query }));
+  }, [router.query]);
+
+  useEffect(() => {
+    if (!user) return;
+    setForm((prevState) => ({ ...prevState, ...user }));
+  }, [user]);
 
   return (
     <div className="booking_content">
@@ -48,6 +67,7 @@ const GolfBookingForm = ({ setBookingData }) => {
             label="날짜 선택"
             pickDate={(date) => selectedPickDate(date)}
             dateKind="resv_datetime"
+            selectedDate={form.resv_datetime}
           />
         </div>
         <div className="form_item">
@@ -55,17 +75,19 @@ const GolfBookingForm = ({ setBookingData }) => {
           <div className="item_group">
             <Form.Check
               label="1부"
-              name="time"
+              name="time1"
               type="checkbox"
               id="check_1"
               className="item"
+              onChange={(e) => handleCheck(e)}
             />
             <Form.Check
               label="2부"
-              name="group1"
+              name="time2"
               type="checkbox"
               id="check_2"
               className="item"
+              onChange={(e) => handleCheck(e)}
             />
           </div>
         </div>
@@ -76,6 +98,7 @@ const GolfBookingForm = ({ setBookingData }) => {
             <Form.Select
               aria-label="Default select example"
               onChange={(e) => selectedRegion(1, e.target.value)}
+              value={form.region1}
             >
               <option value="">1차 권역을 선택해 주세요</option>
               {renderRegionOptions()}
@@ -97,6 +120,8 @@ const GolfBookingForm = ({ setBookingData }) => {
           <Form.Label>요청사항</Form.Label>
           <Form.Control
             as="textarea"
+            name="etc"
+            onChange={handleChange}
             rows={3}
             placeholder={`선호하시는 골프장을 작성해주세요.
           예) 한성CC 선호합니다.
@@ -110,7 +135,13 @@ const GolfBookingForm = ({ setBookingData }) => {
         <div className="form_item">
           <Form.Label>이용자명</Form.Label>
           <div className="item_name">
-            <Form.Control type="text" placeholder="이름을 입력해주세요." />
+            <Form.Control
+              type="text"
+              name="user_name"
+              value={form.user_name}
+              placeholder="이름을 입력해주세요."
+              onChange={handleChange}
+            />
             <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
           </div>
           <p className="info">무기명 회원인 경우 예약자명을 기입해주세요.</p>
@@ -121,15 +152,14 @@ const GolfBookingForm = ({ setBookingData }) => {
           <div className="item_group row">
             <div className="col row tel_group">
               <div className="col-lg-2 col-3">
-                <Form.Control type="tel" maxlength="3" placeholder="010" />
-              </div>
-              <span>-</span>
-              <div className="col-lg-3 col-3">
-                <Form.Control type="tel" maxlength="4" placeholder="1234" />
-              </div>
-              <span>-</span>
-              <div className="col-lg-3 col-3">
-                <Form.Control type="tel" maxlength="4" placeholder="5678" />
+                <Form.Control
+                  type="text"
+                  name="mobile"
+                  maxlength="15"
+                  value={form?.mobile}
+                  placeholder="010-1234-5678"
+                  onChange={handleChange}
+                />
               </div>
             </div>
           </div>

@@ -12,9 +12,6 @@ const MyPag = ({ user }) => {
     }
   }, [user]);
 
-  {
-    /* harry 0605 pagebanner 정보 변경 */
-  }
   return (
     <>
       <PageBanner
@@ -23,7 +20,7 @@ const MyPag = ({ user }) => {
         homePageText="Golf Booking"
         activePageText="골프장 예약"
       />
-      <GolfBookingPage />
+      <GolfBookingPage user={user} />
       <Footer />
     </>
   );
