@@ -2051,7 +2051,7 @@ Footer
 ======================================================*/
 .footer-top-area {
   width: 100%;
-  min-width: 1320px;
+  // min-width: 1320px;
   height: 540px;
   padding: 60px 0 70px;
   background-color: #333333;
@@ -2085,15 +2085,18 @@ Footer
 }
 
 .left-wrap {
-  width: 380px;
+  // width: 380px;
+  width: 28%;
 }
 
 .center-wrap {
-  width: 480px;
+  // width: 480px;
+  width: 37%;
 }
 
 .right-wrap {
-  width: 460px;
+  // width: 460px;
+  width: 35%;
 }
 
 .single-widget {
@@ -2302,7 +2305,7 @@ Footer
 
 .footer-bottom-area {
   width: 100%;
-  min-width: 1320px;
+  // min-width: 1320px;
   height: 150px;
   padding: 56px 0;
   background-color: #eee;
@@ -2389,13 +2392,13 @@ Footer
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     /*
   Footer
   ======================================================*/
   .footer-top-area {
     width: 100%;
-    min-width: 480px;
+    min-width: 100%;
     height: auto;
     padding: 30px 0;
     background-color: #333333;
@@ -2537,7 +2540,7 @@ Footer
 
   .footer-bottom-area {
     width: 100%;
-    min-width: 480px;
+    min-width: 100%;
     height: auto;
     padding: 3vh 0;
     background-color: #eee;
