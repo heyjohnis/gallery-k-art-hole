@@ -7,7 +7,7 @@ const Footer = () => {
     <>
       <footer className="footer-top-area footer">
         <div className="container">
-          <div className="row no-wrap">
+          <div className="row no-wrap col-sm-12">
             <div className="left-wrap">
               <div className="single-widget">
                 <div className="logo-wrap">
