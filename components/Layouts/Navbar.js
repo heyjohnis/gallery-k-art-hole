@@ -3,22 +3,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState, useRef } from "react";
 import { handleLogout } from "../../utils/auth";
-import cookie from "js-cookie";
-import axios from "axios";
-
 import styles from "./navbar.module.scss";
 import Script from "next/script";
-import ReservationModal from "../Mypage/ReservationModal";
-import baseUrl from "../../utils/baseUrl";
 
 const Navbar = ({ user }) => {
   const router = useRouter();
   const [currentPath, setCurrentPath] = useState("");
   const [menu, setMenu] = useState(true);
-<<<<<<< HEAD
-  const modalRef = useRef(null);
-=======
->>>>>>> bdaed7ddaf51362c027d97ba535a974ac422a414
 
   useEffect(() => {
     setCurrentPath(router.asPath);
