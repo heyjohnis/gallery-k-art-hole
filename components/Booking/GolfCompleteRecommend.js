@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { POST } from "../../hooks/restApi";
 import { commaFormat } from "../../utils/number";
 import { useRouter } from "next/router";
-
+import Link from "next/link";
 const cntGoods = 5;
 
 export default function GolfCompleteRecommend() {
@@ -54,7 +54,7 @@ export default function GolfCompleteRecommend() {
         >
           {goods.map((item, index) => (
             <SwiperSlide key={index}>
-              <a onClick={gotoGoodDetail(item.pd_no)} href="#">
+              <Link href={`/ggmall/detail/service/${item.pd_no}`}>
                 <article className="complete_recommend_items">
                   <div className="recommend_item_img">
                     <img src={item.thumb_img}></img>
@@ -65,7 +65,7 @@ export default function GolfCompleteRecommend() {
                     {item?.price ? commaFormat(item?.price) : "별도문의"}
                   </span>
                 </article>
-              </a>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
