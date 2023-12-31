@@ -33,7 +33,11 @@ export default function BookingComp() {
 
   const renderRegionOptions = () => {
     return REGION_LIST.map((item) => {
-      return <option value={item.id}>{item.data}</option>;
+      return (
+        <option value={item.id} key={item.id}>
+          {item.data}
+        </option>
+      );
     });
   };
 
