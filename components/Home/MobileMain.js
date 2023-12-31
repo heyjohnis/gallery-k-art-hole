@@ -285,7 +285,7 @@ const MainGogh = ({ showReservationModal }) => {
             {/* <span className='text-16'>전체보기</span> */}
           </div>
 
-          <div class={`${styles.galleryImgWrap}`}>
+          <div className={`${styles.galleryImgWrap}`}>
             <img
               className={`${styles.galleryImg}`}
               src="/images/mobile/main/gogh/galleryImg.png"

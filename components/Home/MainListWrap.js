@@ -8,8 +8,8 @@ const MainListWrap = ({ LIST_ITEM }) => {
     <>
       <div className={`col col-lg-12 col-md-12 ${styles.itemListWrap}`}>
         <ul className={`row col-lg-12 col-md-12 ${styles.itemListUl}`}>
-          {LIST_ITEM.map((itemList) => (
-            <li className={`col col-lg-4 ${styles.itemListLi}`}>
+          {LIST_ITEM.map((itemList, index) => (
+            <li className={`col col-lg-4 ${styles.itemListLi}`} key={index}>
               <Link href={`${itemList.link}`}>
                 <div
                   className={

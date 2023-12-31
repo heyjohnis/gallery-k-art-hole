@@ -8,18 +8,17 @@ import { setDate } from "date-fns";
 import { REGION_LIST } from "../../data/CommonCode";
 import { useRouter } from "next/router";
 
-const GolfBookingForm = ({ setBookingData, user }) => {
+const GolfBookingForm = ({ setBookingInfo, user }) => {
   const router = useRouter();
   const [form, setForm] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    let value = e.target.value;
+    if (e.target.type === "checkbox") value = e.target.checked;
     setForm((prevState) => ({ ...prevState, [name]: value }));
   };
-  const handleCheck = (e) => {
-    const { name, checked } = e.target;
-    setForm((prevState) => ({ ...prevState, [name]: checked }));
-  };
+
   const selectedPickDate = (date) => {
     console.log("date: ", date);
     setForm((prevState) => ({ ...prevState, ...date }));
@@ -35,13 +34,8 @@ const GolfBookingForm = ({ setBookingData, user }) => {
     });
   };
 
-  const selectedRegion = (id, val) => {
-    console.log("id: ", id, val);
-    setForm((prevState) => ({ ...prevState, ["region" + id]: val }));
-  };
-
   useEffect(() => {
-    setBookingData(form);
+    setBookingInfo(form);
 
     console.log("useEffect form: ", form);
   }, [form]);
@@ -79,7 +73,7 @@ const GolfBookingForm = ({ setBookingData, user }) => {
               type="checkbox"
               id="check_1"
               className="item"
-              onChange={(e) => handleCheck(e)}
+              onChange={handleChange}
             />
             <Form.Check
               label="2부"
@@ -87,7 +81,7 @@ const GolfBookingForm = ({ setBookingData, user }) => {
               type="checkbox"
               id="check_2"
               className="item"
-              onChange={(e) => handleCheck(e)}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -97,7 +91,8 @@ const GolfBookingForm = ({ setBookingData, user }) => {
           <div className="item_group item_select">
             <Form.Select
               aria-label="Default select example"
-              onChange={(e) => selectedRegion(1, e.target.value)}
+              name="region1"
+              onChange={handleChange}
               value={form.region1}
             >
               <option value="">1차 권역을 선택해 주세요</option>
@@ -105,7 +100,8 @@ const GolfBookingForm = ({ setBookingData, user }) => {
             </Form.Select>
             <Form.Select
               aria-label="Default select example"
-              onChange={(e) => selectedRegion(2, e.target.value)}
+              name="region2"
+              onChange={handleChange}
             >
               <option value="">2차 권역을 선택해 주세요</option>
               {renderRegionOptions()}

@@ -15,7 +15,10 @@ const Navbar = ({ user }) => {
   const router = useRouter();
   const [currentPath, setCurrentPath] = useState("");
   const [menu, setMenu] = useState(true);
+<<<<<<< HEAD
   const modalRef = useRef(null);
+=======
+>>>>>>> bdaed7ddaf51362c027d97ba535a974ac422a414
 
   useEffect(() => {
     setCurrentPath(router.asPath);
@@ -24,23 +27,6 @@ const Navbar = ({ user }) => {
   const toggleNavbar = () => {
     setMenu(!menu);
     if (menu === true) {
-    }
-  };
-
-  const getReservationData = () => {
-    if (user.user_no) {
-      const url = `${baseUrl}/mypage/reservation`;
-      const medq_token = cookie.get("medq_token");
-      axios({
-        method: "post",
-        url: url,
-        headers: { Authorization: `Bearer ${medq_token}` },
-        data: {},
-      })
-        .then(({ data }) => {
-          console.log("data: ", data);
-        })
-        .finally(() => {});
     }
   };
 
@@ -98,7 +84,7 @@ const Navbar = ({ user }) => {
                       <span></span>
                     </li>
                     <li>
-                      <Link href="#" className="menu-items">
+                      <Link href="/" className="menu-items">
                         <div
                           onClick={(e) => {
                             e.preventDefault();
@@ -129,14 +115,6 @@ const Navbar = ({ user }) => {
                 )}
               </ul>
 
-              {/* <Link
-                href="/mypage/reservation/"
-                className="default-btn"
-                onClick={toggleNavbar}
-              >
-                예약 내역
-              </Link> */}
-
               <button
                 onClick={toggleNavbar}
                 className={classTwo}
@@ -158,27 +136,7 @@ const Navbar = ({ user }) => {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav dropright flex-column">
-              {/* <li className="nav-item">
-                <Link
-                  href="/"
-                  className={`nav-link ${currentPath == "/" && "active"}`}
-                  onClick={toggleNavbar}
-                >
-                  Home
-                </Link>
-              </li> */}
               <li className="nav-item">
-                {/* <Link
-                    href="/"
-                    className={`nav-link pr-3`}
-                    style={{ paddingRight: "15px" }}
-                    onClick={() => {
-                      showReservationModal();
-                      toggleNavbar();
-                    }}
-                  >
-                    Golf Booking
-                  </Link> */}
                 <Link
                   href="/golf/booking"
                   className={`nav-link pr-3`}
@@ -359,11 +317,6 @@ const Navbar = ({ user }) => {
               }
             });`,
         }}
-      />
-      <ReservationModal
-        user={user}
-        updateReservation={getReservationData}
-        ref={modalRef}
       />
     </>
   );

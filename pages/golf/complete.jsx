@@ -4,7 +4,7 @@ import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
 import { CompleteTitle } from "../../components/Common/CompleteTitle";
 import { GolfCompleteContent } from "../../components/Booking/GolfCompleteContent";
-import GolfCompleteRecommend from "../../components/Booking/GolfCompleteRecommend";
+import RecommendService from "../../components/Booking/RecommendService";
 
 const Complete = ({ user }) => {
   useEffect(() => {
@@ -30,7 +30,7 @@ const Complete = ({ user }) => {
           text="담당자 확인 후 예약 안내드리겠습니다."
         />
         <GolfCompleteContent />
-        <GolfCompleteRecommend />
+        <RecommendService />
       </section>
       <Footer />
     </>

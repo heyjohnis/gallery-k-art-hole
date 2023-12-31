@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
-import { ScreenBookingPage } from '../../components/Booking/ScreenBookingPage';
+import { ScreenBookingPage } from "../../components/Booking/ScreenBookingPage";
 
-const MyPag = ({ user }) => {
+const ScreenBooking = ({ user }) => {
   useEffect(() => {
     if (!user) {
       alert("로그인이 필요합니다.");
@@ -12,7 +12,9 @@ const MyPag = ({ user }) => {
     }
   }, [user]);
 
-  {/* harry 0605 pagebanner 정보 변경 */ }
+  {
+    /* harry 0605 pagebanner 정보 변경 */
+  }
   return (
     <>
       <PageBanner
@@ -21,10 +23,10 @@ const MyPag = ({ user }) => {
         homePageText="Golf Booking"
         activePageText="스크린 골프"
       />
-      <ScreenBookingPage/>
+      <ScreenBookingPage user={user} />
       <Footer />
     </>
   );
 };
 
-export default MyPag;
+export default ScreenBooking;

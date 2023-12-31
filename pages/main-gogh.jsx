@@ -48,7 +48,6 @@ const MainGogh = ({ showReservationModal }) => {
   return (
     <>
       <div className={`${styles.mainContainer}`}>
-
         {/* <div className='wrapper'>
           <div className='img' />
           <div className='pic' />
@@ -62,11 +61,18 @@ const MainGogh = ({ showReservationModal }) => {
         </h1>
 
         <div className={`${styles.btnWrap}`}>
-
           <div className={`${styles.leftBox}`}>
             <Link href="/">
-              <img className={`${styles.leftImg}`} src="/images/mobile/main/golfbag.png" alt="golfbag" />
-              <img className={`${styles.leftImg2}`} src="/images/mobile/main/ball.png" alt="ball" />
+              <img
+                className={`${styles.leftImg}`}
+                src="/images/mobile/main/golfbag.png"
+                alt="golfbag"
+              />
+              <img
+                className={`${styles.leftImg2}`}
+                src="/images/mobile/main/ball.png"
+                alt="ball"
+              />
               <span className={`${styles.leftText}`}>
                 내가 원하는
                 <br />
@@ -77,7 +83,11 @@ const MainGogh = ({ showReservationModal }) => {
 
           <div className={`${styles.rightBox}`}>
             <Link href="/">
-              <img className={`${styles.rightImg}`} src="/images/mobile/main/coin.png" alt="coin" />
+              <img
+                className={`${styles.rightImg}`}
+                src="/images/mobile/main/coin.png"
+                alt="coin"
+              />
               <span className={`${styles.rightText}`}>
                 스크린골프
                 <br />
@@ -85,7 +95,6 @@ const MainGogh = ({ showReservationModal }) => {
               </span>
             </Link>
           </div>
-
         </div>
 
         <div className={`${styles.titleWrapMid}`}>
@@ -115,20 +124,28 @@ const MainGogh = ({ showReservationModal }) => {
           <div className={`${styles.slideWrap}`}>
             <div className={`${styles.slide}`}>
               <div className={`${styles.slideLi}`}>
-                <img className={`${styles.slideImg}`} src="/images/mobile/main/gogh/japan.png" alt="3박 4일 타루마에 골프, 노보리베츠 온천투어" />
+                <img
+                  className={`${styles.slideImg}`}
+                  src="/images/mobile/main/gogh/japan.png"
+                  alt="3박 4일 타루마에 골프, 노보리베츠 온천투어"
+                />
                 <h3 className={`${styles.slideTitle}`}>
                   3박 4일 타루마에 골프, 노보리베츠 온천투어
                 </h3>
                 <span className={`${styles.slideText}`}>일본 북해도</span>
                 <span className={`${styles.slidePoint}`}>1,600,000 P ~</span>
               </div>
-                <div className={`${styles.slideLi}`}>
-                  <img className={`${styles.slideImg}`} src="/images/mobile/main/gogh/tai.png" alt="3박5일 프리미엄 골프 18홀 라운딩, 3회 그린피" />
-                  <h3 className={`${styles.slideTitle}`}>
-                    3박5일 프리미엄 골프 18홀 라운딩, 3회 그린피
-                  </h3>
-                  <span className={`${styles.slideText}`}>태국 방콕</span>
-                  <span className={`${styles.slidePoint}`}>880,000 P ~</span>
+              <div className={`${styles.slideLi}`}>
+                <img
+                  className={`${styles.slideImg}`}
+                  src="/images/mobile/main/gogh/tai.png"
+                  alt="3박5일 프리미엄 골프 18홀 라운딩, 3회 그린피"
+                />
+                <h3 className={`${styles.slideTitle}`}>
+                  3박5일 프리미엄 골프 18홀 라운딩, 3회 그린피
+                </h3>
+                <span className={`${styles.slideText}`}>태국 방콕</span>
+                <span className={`${styles.slidePoint}`}>880,000 P ~</span>
               </div>
               {/* <div className={``}>
                 <div className={``} />
@@ -159,78 +176,74 @@ const MainGogh = ({ showReservationModal }) => {
             </span>
             {/* <span className='text-16'>전체보기</span> */}
           </div>
-          
-          <div class={`${styles.galleryImgWrap}`}>
-            <img className={`${styles.galleryImg}`} src="/images/mobile/main/gogh/galleryImg.png" alt="피카소의 집" />
+
+          <div className={`${styles.galleryImgWrap}`}>
+            <img
+              className={`${styles.galleryImg}`}
+              src="/images/mobile/main/gogh/galleryImg.png"
+              alt="피카소의 집"
+            />
             <span className={`${styles.galleryTitle}`}>피카소의 집</span>
             <span className={`${styles.galleryName}`}>이해성</span>
             <span className={`${styles.galleryScript}`}>
-              인간 내면에 잠재된 생명의 에너지를 초현실주의적 형상과 색채로 표출하다
+              인간 내면에 잠재된 생명의 에너지를 초현실주의적 형상과 색채로
+              표출하다
             </span>
           </div>
         </div>
 
         <div className={`${styles.footer}`}>
-
-          <div class={`${styles.leftWrap}`}>
-
-            <div class={`${styles.csWrap}`}>
-                  <span className={`${styles.csNumber}`}>
-                    상담문의 1588 - 1778
-                  </span>
-                  <span className={`${styles.csTime}`}>
-                    상담시간 10am - 7pm
-                  </span>
+          <div className={`${styles.leftWrap}`}>
+            <div className={`${styles.csWrap}`}>
+              <span className={`${styles.csNumber}`}>상담문의 1588 - 1778</span>
+              <span className={`${styles.csTime}`}>상담시간 10am - 7pm</span>
             </div>
 
             <div className={`${styles.privacyWrap}`}>
               <span className={`${styles.privacy}`}>개인정보처리방침</span>
               <span className={`${styles.tos}`}>이용약관</span>
-              <span className={`${styles.cpo}`}>개인정보관리책임자 : cs@galleryk.co.kr</span>
+              <span className={`${styles.cpo}`}>
+                개인정보관리책임자 : cs@galleryk.co.kr
+              </span>
             </div>
 
             <div className={`${styles.infoWrap}`}>
-              <span className={`${styles.company}`}>
-                주식회사 갤러리케이
-              </span>
-              <span className={`${styles.infoWrap}`}>
-                대표자 | 김정필
-              </span>
+              <span className={`${styles.company}`}>주식회사 갤러리케이</span>
+              <span className={`${styles.infoWrap}`}>대표자 | 김정필</span>
               <span className={`${styles.infoWrap}`}>
                 사업자등록번호 | 359 - 86 - 00885
               </span>
               <span className={`${styles.infoWrap}`}>
                 통신판매업신고 | 2023 - 서울동대문 - 3064호
               </span>
-              <span className={`${styles.infoWrap}`}>
-                TEL | 1644 - 8826
-              </span>
+              <span className={`${styles.infoWrap}`}>TEL | 1644 - 8826</span>
               <span className={`${styles.infoWrap}`}>
                 FAX | 02 - 557 - 5466
               </span>
               <span className={`${styles.infoWrap}`}>
                 주소 | 서울특별시 동대문구 왕산로 16(신설동)
-                </span>
+              </span>
             </div>
-
           </div>
 
-          <div class={`${styles.rightWrap}`}>
+          <div className={`${styles.rightWrap}`}>
             <div className={`${styles.snsWrap}`}>
-                <Link className={`${styles.link}`} href="/" target="_blank" >
-                  INSTAGRAM
-                </Link>
-                <Link className={`${styles.link}`} href="https://www.youtube.com/@GREENGALLERY072" target="_blank" >
-                  YOUTUBE
-                </Link>
+              <Link className={`${styles.link}`} href="/" target="_blank">
+                INSTAGRAM
+              </Link>
+              <Link
+                className={`${styles.link}`}
+                href="https://www.youtube.com/@GREENGALLERY072"
+                target="_blank"
+              >
+                YOUTUBE
+              </Link>
             </div>
 
             <span className={`${styles.copyright}`}>ⓒ 2023 GREEN GALLERY</span>
           </div>
         </div>
 
-        
-        
         {/* <div className='wrapper-7'>
           <div className='section-3'>
             <div className='group-8'>
@@ -252,41 +265,43 @@ const MainGogh = ({ showReservationModal }) => {
           </div>
           <div className='section-4' />
         </div> */}
-
       </div>
 
       <div className={`footer ${styles.navMobile}`}>
-          <div>
-            <ul>
-              <li>
-                <Link  href="/mainmobile" >
-                  <img src="/images/mobile/home_black.png" alt="home" />
-                  <span>HOME</span>
-                </Link>
-              </li>
-              <li>
-                <Link  href="/mainmobile" >
-                  <img src="/images/mobile/nav_reserve_gray.png" alt="reserve" />
-                  <span>예약조회</span>
-                </Link>
-                </li>
-              <li>
-                <Link  href="/mainmobile" >
-                  <img src="/images/mobile/nav_order_gray.png" alt="order" />
-                  <span>주문배송</span>
-                </Link>
-              </li>
-              <li>
-                <Link  href="/mainmobile" >
-                  <img src="/images/mobile/nav_customer_gray.png" alt="customer" />
-                  <span>1:1 상담</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div>
+          <ul>
+            <li>
+              <Link href="/mainmobile">
+                <img src="/images/mobile/home_black.png" alt="home" />
+                <span>HOME</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/mainmobile">
+                <img src="/images/mobile/nav_reserve_gray.png" alt="reserve" />
+                <span>예약조회</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/mainmobile">
+                <img src="/images/mobile/nav_order_gray.png" alt="order" />
+                <span>주문배송</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/mainmobile">
+                <img
+                  src="/images/mobile/nav_customer_gray.png"
+                  alt="customer"
+                />
+                <span>1:1 상담</span>
+              </Link>
+            </li>
+          </ul>
         </div>
+      </div>
     </>
   );
 };
 
-export default MainGogh
+export default MainGogh;

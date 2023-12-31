@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const ContactInfo = () => {
   return (
@@ -11,7 +12,7 @@ const ContactInfo = () => {
                 <i className="bx bx-envelope"></i>
                 <h3>Email</h3>
                 <p>
-                  <a href="mailto:cs@galleryk.co.kr">cs@galleryk.co.kr</a>
+                  <Link href="mailto:cs@galleryk.co.kr">cs@galleryk.co.kr</Link>
                 </p>
               </div>
             </div>
@@ -21,7 +22,7 @@ const ContactInfo = () => {
                 <i className="bx bx-phone-call"></i>
                 <h3>상담번호</h3>
                 <p>
-                  Tel. <a href="tel:1588-1778">1588-1778</a>
+                  Tel. <Link href="tel:1588-1778">1588-1778</Link>
                 </p>
               </div>
             </div>

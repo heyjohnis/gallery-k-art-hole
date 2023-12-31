@@ -4,7 +4,7 @@ import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
 import { GolfBookingPage } from "../../components/Booking/GolfBookingPage";
 
-const MyPag = ({ user }) => {
+const GolfBooking = ({ user }) => {
   useEffect(() => {
     if (!user) {
       alert("로그인이 필요합니다.");
@@ -26,4 +26,4 @@ const MyPag = ({ user }) => {
   );
 };
 
-export default MyPag;
+export default GolfBooking;
