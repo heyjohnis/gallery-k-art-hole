@@ -5,7 +5,7 @@ $main-font-family-eng: "Montserrat";
   flex-direction: row;
   width: 100%;
 
-  background: url('../public/images/join_bg.jpg') no-repeat left top;
+  background: url("../public/images/join_bg.jpg") no-repeat left top;
   background-size: cover;
 
   .signUpPageLeftSection {
@@ -32,7 +32,6 @@ $main-font-family-eng: "Montserrat";
         span {
           font-size: 40px;
           letter-spacing: -0.4px;
-
         }
       }
     }
@@ -74,7 +73,9 @@ $main-font-family-eng: "Montserrat";
         }
       }
 
-      .inputWrap, .selectWraper, .checkedWrap {
+      .inputWrap,
+      .selectWraper,
+      .checkedWrap {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -82,7 +83,8 @@ $main-font-family-eng: "Montserrat";
         width: 100%;
         min-width: 560px;
 
-        .inputItems, .selectItems {
+        .inputItems,
+        .selectItems {
           width: 50%;
           padding: 0 5% 0 0;
           margin: 10px 0;
@@ -96,7 +98,8 @@ $main-font-family-eng: "Montserrat";
             color: #111;
           }
 
-          input, select {
+          input,
+          select {
             display: block;
             width: 230px;
             padding: 20px;
@@ -114,7 +117,6 @@ $main-font-family-eng: "Montserrat";
             margin-top: 50px;
 
             .phoneWrap {
-
               input {
                 display: inline-block;
                 width: 23%;
@@ -202,12 +204,10 @@ $main-font-family-eng: "Montserrat";
           border-radius: 28px;
           background-color: #fff;
           cursor: pointer;
-          
         }
-      } 
+      }
     }
   }
-
 
   .signUpCompPageRightSection {
     display: flex;
@@ -236,7 +236,7 @@ $main-font-family-eng: "Montserrat";
           font-weight: 700;
           line-height: 50px;
           letter-spacing: -0.36px;
-          color:#333;
+          color: #333;
         }
 
         p {
@@ -246,7 +246,7 @@ $main-font-family-eng: "Montserrat";
           font-weight: 400;
           line-height: 26px;
           letter-spacing: -0.16px;
-          color:#333;
+          color: #333;
         }
 
         .groupTabWrap {
@@ -259,12 +259,11 @@ $main-font-family-eng: "Montserrat";
             font-weight: 500;
             line-height: 50px;
             letter-spacing: -0.2px;
-            color:#333;
+            color: #333;
 
-            &[aria-selected = true] {
+            &[aria-selected="true"] {
               font-weight: 700;
               text-decoration-line: underline;
-
             }
           }
         }
@@ -282,7 +281,7 @@ $main-font-family-eng: "Montserrat";
       //       width: 100%;
       //     }
       //   }
-    
+
       //   .textWrap {
 
       //     h2 {
@@ -293,7 +292,6 @@ $main-font-family-eng: "Montserrat";
       //       color: #111;
       //     }
 
-                
       //     .mainLink{
       //       display: flex;
       //       flex-direction: row;
@@ -310,7 +308,7 @@ $main-font-family-eng: "Montserrat";
       //         letter-spacing: -0.18px;
       //         color: #666;
       //       }
-            
+
       //       a {
       //         padding-right: 20px;
       //         font-family: $main-font-family-eng;
@@ -324,4 +322,7 @@ $main-font-family-eng: "Montserrat";
       // }
     }
   }
+}
+.signUpBtn {
+  float: right;
 }

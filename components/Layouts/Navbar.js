@@ -17,15 +17,6 @@ const Navbar = ({ user }) => {
   const [menu, setMenu] = useState(true);
   const modalRef = useRef(null);
 
-  // const showReservationModal = () => {
-  //   console.log("showReservationModal");
-  //   if (!user) {
-  //     router.push("/login");
-  //   } else {
-  //     modalRef.current.showModal();
-  //   }
-  // };
-
   useEffect(() => {
     setCurrentPath(router.asPath);
   }, [router]);
@@ -74,16 +65,7 @@ const Navbar = ({ user }) => {
   return (
     <>
       <div id="navbar" className="navbar-area fixed-top">
-        {/* <div className={styles.top_event}>
-          <Link href="/landing">
-            <span>
-              {" "}
-              📣 아트와 골프가 만나다! 그린갤러리 오픈프로모션 진행중!
-            </span>
-          </Link>
-        </div> */}
         <div className={styles.backdrop}></div>
-        {/* <nav className="navbar navbar-expand-xl navbar-light"> */}
         <nav className="navbar navbar-light">
           <div className="container">
             <Link href="/" className="navbar-brand light_logo">
@@ -131,7 +113,7 @@ const Navbar = ({ user }) => {
                 ) : (
                   <>
                     <li>
-                      <Link href="/sign-up-1" className="menu-items">
+                      <Link href="/sign-up" className="menu-items">
                         회원가입
                       </Link>
                     </li>

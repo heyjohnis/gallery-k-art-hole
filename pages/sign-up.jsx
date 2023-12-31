@@ -1,180 +1,36 @@
-import axios from "axios";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, A11y, Navigation } from "swiper";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import PageBanner from "../components/Common/PageBanner";
+import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+
 import Footer from "../components/Signup/SignupFooter";
-import { handleLogin } from "../utils/auth";
-import baseUrl from "../utils/baseUrl";
 import styles from "./sign-up.module.scss";
-import "swiper/scss/pagination";
-
-const SERVICE_LIST = [
-  {
-    id: 1,
-    item: "골프장 예약",
-    checked: true,
-  },
-  {
-    id: 2,
-    item: "스크린 골프",
-    checked: true,
-  },
-  {
-    id: 3,
-    item: "리무진",
-    checked: true,
-  },
-  {
-    id: 4,
-    item: "요트",
-    checked: true,
-  },
-  {
-    id: 5,
-    item: "호텔",
-    checked: true,
-  },
-  {
-    id: 6,
-    item: "전용기",
-    checked: true,
-  },
-  {
-    id: 7,
-    item: "골프공",
-    checked: true,
-  },
-  {
-    id: 8,
-    item: "골프백",
-    checked: true,
-  },
-  {
-    id: 9,
-    item: "골프웨어",
-    checked: true,
-  },
-  {
-    id: 10,
-    item: "골프채",
-    checked: true,
-  },
-  {
-    id: 11,
-    item: "전자제품",
-    checked: true,
-  },
-  {
-    id: 12,
-    item: "국내 골프장",
-    checked: true,
-  },
-  {
-    id: 13,
-    item: "해외 골프장",
-    checked: true,
-  },
-  {
-    id: 14,
-    item: "프리미엄 골프장",
-    checked: true,
-  },
-  {
-    id: 15,
-    item: "미술품",
-    checked: true,
-  },
-  {
-    id: 16,
-    item: "사은품",
-    checked: true,
-  },
-  {
-    id: 17,
-    item: "커뮤니티",
-    checked: true,
-  },
-  {
-    id: 18,
-    item: "파티",
-    checked: true,
-  },
-  {
-    id: 19,
-    item: "모임",
-    checked: true,
-  },
-  {
-    id: 20,
-    item: "레스토랑",
-    checked: true,
-  },
-  {
-    id: 21,
-    item: "엔터테인먼트",
-    checked: true,
-  },
-  {
-    id: 22,
-    item: "스파",
-    checked: true,
-  },
-  {
-    id: 23,
-    item: "와인",
-    checked: true,
-  },
-];
-
-const INITIAL_USER = {
-  login_id: "",
-  password: "",
-};
+import { POST } from "../hooks/restApi";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export default function SignUp() {
   const router = useRouter();
+  const swiper = useSwiper();
+  const swiperSlide = useSwiperSlide();
 
-  const [user, setUser] = useState(INITIAL_USER);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [userId, setUserId] = useState("");
+  const [keywords, setKeywords] = useState([]);
 
   const { goto } = router.query;
 
-  useEffect(() => {
-    console.log("useEffect router.query");
-    setUser({
-      login_id: window.localStorage.getItem("userId") || "",
-      password: window.localStorage.getItem("password") || "",
+  const getServiceKeyword = () => {
+    POST("/mall/keyword", { pd_kind: "all" }).then((res) => {
+      const keys = Array.from(new Set((res?.data?.keyword || "").split(",")));
+      setKeywords(keys);
     });
-  }, [router.query]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      setLoading(true);
-      setError("");
-      const url = `${baseUrl}/login`;
-      const payload = { ...user };
-      const response = await axios.post(url, payload);
-      window.localStorage.setItem("userId", user.login_id);
-      window.localStorage.setItem("password", user.password);
-      handleLogin(response.data.token, goto);
-    } catch (error) {
-      if (error.response) alert(error.response.data.message);
-      else alert(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    getServiceKeyword();
+  }, []);
 
   return (
     <>
@@ -192,9 +48,17 @@ export default function SignUp() {
         <div className={`${styles.signUpPageRightSection}`}>
           <div className={`${styles.pageWrap}`}>
             <Swiper
-              navigation={true}
               spaceBetween={0}
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
               className={`hero-swiper1 ${styles.rightSlide}`}
+              navigation={{
+                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-button-next",
+              }}
+              loopPreventsSlide={false}
+              onReachEnd={() => {
+                console.log("end");
+              }}
             >
               <SwiperSlide>
                 <div className={`${styles.page}`} id="First">
@@ -331,22 +195,24 @@ export default function SignUp() {
                     </div>
 
                     <div className={`${styles.checkedWrap}`}>
-                      {SERVICE_LIST.map((itemList) => (
-                        <>
+                      {keywords.map((keyword, index) => (
+                        <div key={index}>
                           <input
                             type="checkbox"
-                            id={itemList.id}
+                            id={keyword}
                             name="service"
+                            value={keyword}
                           />
-                          <label htmlFor={itemList.id} key={itemList.id}>
-                            {itemList.item}
-                          </label>
-                        </>
+                          <label htmlFor={keyword}>{keyword}</label>
+                        </div>
                       ))}
                     </div>
                   </div>
                 </div>
+                <button className={styles.signUpBtn}>Submit</button>
               </SwiperSlide>
+              <div className="swiper-button-prev">Back</div>
+              <div className="swiper-button-next">Next</div>
             </Swiper>
           </div>
 

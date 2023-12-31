@@ -13,3 +13,121 @@ export const bbs = {
   review: "이용후기",
   "": "게시판",
 };
+
+export const SERVICE_LIST = [
+  {
+    id: 1,
+    item: "골프장 예약",
+    checked: true,
+  },
+  {
+    id: 2,
+    item: "스크린 골프",
+    checked: true,
+  },
+  {
+    id: 3,
+    item: "리무진",
+    checked: true,
+  },
+  {
+    id: 4,
+    item: "요트",
+    checked: true,
+  },
+  {
+    id: 5,
+    item: "호텔",
+    checked: true,
+  },
+  {
+    id: 6,
+    item: "전용기",
+    checked: true,
+  },
+  {
+    id: 7,
+    item: "골프공",
+    checked: true,
+  },
+  {
+    id: 8,
+    item: "골프백",
+    checked: true,
+  },
+  {
+    id: 9,
+    item: "골프웨어",
+    checked: true,
+  },
+  {
+    id: 10,
+    item: "골프채",
+    checked: true,
+  },
+  {
+    id: 11,
+    item: "전자제품",
+    checked: true,
+  },
+  {
+    id: 12,
+    item: "국내 골프장",
+    checked: true,
+  },
+  {
+    id: 13,
+    item: "해외 골프장",
+    checked: true,
+  },
+  {
+    id: 14,
+    item: "프리미엄 골프장",
+    checked: true,
+  },
+  {
+    id: 15,
+    item: "미술품",
+    checked: true,
+  },
+  {
+    id: 16,
+    item: "사은품",
+    checked: true,
+  },
+  {
+    id: 17,
+    item: "커뮤니티",
+    checked: true,
+  },
+  {
+    id: 18,
+    item: "파티",
+    checked: true,
+  },
+  {
+    id: 19,
+    item: "모임",
+    checked: true,
+  },
+  {
+    id: 20,
+    item: "레스토랑",
+    checked: true,
+  },
+  {
+    id: 21,
+    item: "엔터테인먼트",
+    checked: true,
+  },
+  {
+    id: 22,
+    item: "스파",
+    checked: true,
+  },
+  {
+    id: 23,
+    item: "와인",
+    checked: true,
+  },
+];

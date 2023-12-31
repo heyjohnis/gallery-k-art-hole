@@ -11,7 +11,8 @@ import ReservationModal from "../ReservationModal";
 import Lottie from "react-lottie";
 import Booking from "../data/booking.json";
 import ReservationComp from "./ReservationComp";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import "swiper/scss";
 
 const lottieOptions = {
   animationData: Booking,
@@ -20,6 +21,7 @@ const lottieOptions = {
 };
 
 const Home = ({ user }) => {
+  const swiper = useSwiper();
   const [, setLoading] = useState(false);
   const [reservations, setReservations] = useState([]);
   const modalRef = useRef(null);
@@ -236,12 +238,7 @@ const Home = ({ user }) => {
         <Link href="/ggmall/list/shop/" className={styles.moreButton}>
           MORE &gt;
         </Link>
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={"auto"}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
+        <Swiper spaceBetween={20}>
           {products.map((product, i) => (
             <SwiperSlide key={i} style={{ width: "280px", paddingTop: "20px" }}>
               <Link
