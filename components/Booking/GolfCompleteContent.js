@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { hyphenForPhone } from "../../utils/number";
 
 export const GolfCompleteContent = () => {
   const router = useRouter();
-  const [form, setForm] = React.useState({});
+  const [form, setForm] = useState({});
   useEffect(() => {
     setForm({ ...router.query });
   }, [router.query]);
@@ -26,7 +27,7 @@ export const GolfCompleteContent = () => {
             <div className="tit_point">
               <span>{form.user_name}</span>
               <span className="bar">|</span>
-              <span>{form.mobile}</span>
+              <span>{hyphenForPhone(form.mobile)}</span>
             </div>
             <div className="tit_status">신청완료</div>
           </div>
@@ -42,15 +43,16 @@ export const GolfCompleteContent = () => {
             <span className="items_item">희망 시간</span>
             <span className="items_detail">
               {" "}
-              {form.time1 && "1부"} {form.time2 && "2부"}
+              {form.time1 && "1부"} {form.time2 && "2부"}{" "}
+              {!form.time1 && !form.time2 && "미지정"}
             </span>
           </div>
           <div className="complete_content_items">
             <span className="items_item">희망 권역</span>
             <span className="items_detail">
-              1순위 <span>{form.region1Name || ""}</span>
+              1순위 <span>{form.region1Name || "미지정"}</span>
               <br />
-              2순위 <span>{form.region2Name || "없음"}</span>
+              2순위 <span>{form.region2Name || "미지정"}</span>
             </span>
           </div>
           <div className="complete_content_items">

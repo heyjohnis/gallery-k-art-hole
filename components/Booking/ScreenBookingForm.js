@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "../Common/DatePicker";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Form from "react-bootstrap/Form";
 
-const ScreenBookingForm = () => {
+const ScreenBookingForm = ({ user, setBookingInfo }) => {
   const [form, setForm] = useState({});
 
   const selectedPickDate = (date) => {
     console.log("date: ", date);
     setForm((prevState) => ({ ...prevState, ...date }));
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  useEffect(() => {
+    setBookingInfo(form);
+    console.log("useEffect form: ", form);
+  }, [form]);
+
+  useEffect(() => {
+    if (!user) return;
+    setForm((prevState) => ({ ...prevState, ...user }));
+  }, [user]);
 
   return (
     <div className="booking_content">
@@ -42,18 +57,29 @@ const ScreenBookingForm = () => {
 
         <div className="form_item">
           <label>인원 선택</label>
-          <Form.Select aria-label="Default select example">
-            <option>인원을 선택해 주세요</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <Form.Select
+            aria-label="Default select example"
+            name="user_cnt"
+            onChange={handleChange}
+          >
+            <option value="">인원을 선택해 주세요</option>
+            <option value="1">1명</option>
+            <option value="2">2명 (+25,000P)</option>
+            <option value="3">3명 (+50,000P)</option>
+            <option value="4">4명 (+75,000P)</option>
           </Form.Select>
         </div>
 
         <div className="form_item">
           <Form.Label>이용자명</Form.Label>
           <div className="item_name">
-            <Form.Control type="text" placeholder="이름을 입력해주세요." />
+            <Form.Control
+              type="text"
+              placeholder="이름을 입력해주세요."
+              value={form.user_name}
+              name="user_name"
+              onChange={handleChange}
+            />
             <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
           </div>
           <p className="info">무기명 회원인 경우 예약자명을 기입해주세요.</p>
@@ -64,15 +90,14 @@ const ScreenBookingForm = () => {
           <div className="item_group row">
             <div className="col row tel_group">
               <div className="col-lg-2 col-3">
-                <Form.Control type="tel" maxlength="3" placeholder="010" />
-              </div>
-              <span>-</span>
-              <div className="col-lg-3 col-3">
-                <Form.Control type="tel" maxlength="4" placeholder="1234" />
-              </div>
-              <span>-</span>
-              <div className="col-lg-3 col-3">
-                <Form.Control type="tel" maxlength="4" placeholder="5678" />
+                <Form.Control
+                  type="text"
+                  name="mobile"
+                  maxlength="15"
+                  value={form?.mobile}
+                  placeholder="010-1234-5678"
+                  onChange={handleChange}
+                />
               </div>
             </div>
           </div>
@@ -80,13 +105,21 @@ const ScreenBookingForm = () => {
 
         <div className="form_item">
           <Form.Label>이메일</Form.Label>
-          <Form.Control type="email" placeholder="mple@galleryk.co.kr" />
+          <Form.Control
+            type="email"
+            placeholder="email@galleryk.co.kr"
+            value={form.email}
+            name="email"
+            onChange={handleChange}
+          />
         </div>
 
         <div className="form_item">
           <Form.Label>요청사항</Form.Label>
           <Form.Control
             as="textarea"
+            name="etc"
+            onChange={handleChange}
             rows={3}
             placeholder="문의하실 요청사항을 작성해주세요."
           />

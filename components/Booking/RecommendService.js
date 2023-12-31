@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 const cntGoods = 5;
 
-export default function GolfCompleteRecommend() {
+export default function RecommendService() {
   const router = useRouter();
   const [goods, setGoods] = React.useState([]);
   const getRecommendService = () => {
@@ -16,10 +16,6 @@ export default function GolfCompleteRecommend() {
         setGoods(res.data);
       }
     );
-  };
-
-  const gotoGoodDetail = (pdNo) => () => {
-    router.push(`/ggmall/detail/service/${pdNo}`);
   };
 
   useEffect(() => {
