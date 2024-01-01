@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { validateForm } from "../../utils/validation";
+import { isValidateForm } from "../../utils/validation";
 import { POST } from "../../hooks/restApi";
 import { REGION_LIST } from "../../data/CommonCode";
 import { useRouter } from "next/router";
@@ -12,7 +12,7 @@ export const GolfBookingAgreement = ({ bookingInfo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!isValidateForm(bookingInfo)) return;
+    if (!isisValidateForm(bookingInfo)) return;
 
     bookingInfo.memo = setMemo();
     bookingInfo.resv_kind = "01";
@@ -56,9 +56,9 @@ ${bookingInfo.etc || ""}`;
     setForm((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const isValidateForm = (data) => {
-    if (!validateForm(data, "resv_datetime")) return false;
-    if (!validateForm(form, "agree_service")) return false;
+  const isisValidateForm = (data) => {
+    if (!isValidateForm(data, "resv_datetime")) return false;
+    if (!isValidateForm(form, "agree_service")) return false;
     return true;
   };
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Table from "react-bootstrap/Table";
-import { validateForm } from "../../utils/validation";
+import { isValidateForm } from "../../utils/validation";
 import { commaFormat } from "../../utils/number";
 import { POST } from "../../hooks/restApi";
 import { useRouter } from "next/router";
@@ -23,7 +23,7 @@ export const ScreenBookingAgreement = ({ bookingInfo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!isValidateForm(bookingInfo)) return;
+    if (!isisValidateForm(bookingInfo)) return;
     bookingInfo.memo = setMemo();
     bookingInfo.total_pay_point = totalPayPoint;
     bookingInfo.use_point = form.use_point || usePoint;
@@ -64,14 +64,14 @@ ${bookingInfo.etc || ""}`;
     setUsePoint(useP);
   }, [form, bookingInfo]);
 
-  const isValidateForm = (data) => {
-    if (!validateForm(data, "resv_datetime")) return false;
-    if (!validateForm(data, "user_cnt")) return false;
-    if (!validateForm(data, "user_name")) return false;
-    if (!validateForm(data, "mobile")) return false;
-    if (!validateForm(data, "email")) return false;
-    if (!validateForm(form, "agree_payment")) return false;
-    if (!validateForm(form, "agree_service")) return false;
+  const isisValidateForm = (data) => {
+    if (!isValidateForm(data, "resv_datetime")) return false;
+    if (!isValidateForm(data, "user_cnt")) return false;
+    if (!isValidateForm(data, "user_name")) return false;
+    if (!isValidateForm(data, "mobile")) return false;
+    if (!isValidateForm(data, "email")) return false;
+    if (!isValidateForm(form, "agree_payment")) return false;
+    if (!isValidateForm(form, "agree_service")) return false;
 
     return true;
   };

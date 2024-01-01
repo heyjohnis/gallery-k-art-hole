@@ -120,7 +120,7 @@ ${reservation.etc}`;
     console.log("memo: ", memo);
   };
 
-  const validateForm = () => {
+  const isValidateForm = () => {
     if (!reservation.user_name) {
       alert("이용자명을 입력해주세요.");
       return false;
@@ -171,7 +171,7 @@ ${reservation.etc}`;
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) return;
+    if (!isValidateForm()) return;
     sendReservation();
   };
 

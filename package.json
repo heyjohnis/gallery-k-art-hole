@@ -36,6 +36,7 @@
     "react-dom": "^18.2.0",
     "react-fullpage": "^0.1.19",
     "react-lottie": "^1.2.3",
+    "react-step-progress": "^1.0.3",
     "react-youtube": "^10.1.0",
     "sass": "^1.54.4",
     "sweetalert2": "^11.7.2",

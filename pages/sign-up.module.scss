@@ -48,7 +48,10 @@ $main-font-family-eng: "Montserrat";
       width: 100%;
       height: 55vh;
       padding: 0 50px;
-
+      /* progress bar 숨김 */
+      ul {
+        display: none;
+      }
       .page {
         display: flex;
         flex-direction: row;
@@ -338,4 +341,8 @@ $main-font-family-eng: "Montserrat";
   border-radius: 5px;
   background-color: #fff;
   outline: none;
+}
+
+.subtitleClass {
+  display: none;
 }
