@@ -16,7 +16,7 @@ export const GolfCompleteContent = () => {
         </span>
         <span className="bar">|</span>
         <span>
-          신청일자 : <span>{form.reg_date}</span>
+          신청일시 : <span>{form.reg_date.substring(0, 16)}</span>
         </span>
       </div>
       <div class="complete_tbl_container">

@@ -3,8 +3,6 @@ import DatePicker from "../Common/DatePicker";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Form from "react-bootstrap/Form";
-import FormSelect from "react-bootstrap/FormSelect";
-import { setDate } from "date-fns";
 import { REGION_LIST } from "../../data/CommonCode";
 import { useRouter } from "next/router";
 
@@ -36,12 +34,11 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
 
   useEffect(() => {
     setBookingInfo(form);
-
     console.log("useEffect form: ", form);
   }, [form]);
 
   useEffect(() => {
-    router.query && setBookingData(router.query);
+    router?.query && setBookingInfo(router.query);
     setForm((prevState) => ({ ...prevState, ...router.query }));
   }, [router.query]);
 
