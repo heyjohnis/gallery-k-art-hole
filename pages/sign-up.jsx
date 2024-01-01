@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
 
 import Footer from "../components/Signup/SignupFooter";
 import styles from "./sign-up.module.scss";
 import { POST } from "../hooks/restApi";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import useRenderRegionOptions from "../hooks/useRenderRegionOptions";
+import { render } from "react-dom";
+import { set } from "date-fns";
 
 export default function SignUp() {
-  const router = useRouter();
-  const swiper = useSwiper();
-  const swiperSlide = useSwiperSlide();
-
+  const regionOptions = useRenderRegionOptions();
+  const [form, setForm] = useState({});
   const [keywords, setKeywords] = useState([]);
-
-  const { goto } = router.query;
+  const [ccList, setCcList] = useState([]);
+  const [ccSelect1, setCcSelect1] = useState([]);
+  const [ccSelect2, setCcSelect2] = useState([]);
 
   const getServiceKeyword = () => {
     POST("/mall/keyword", { pd_kind: "all" }).then((res) => {
@@ -28,9 +26,80 @@ export default function SignUp() {
     });
   };
 
+  const handleChange = (e) => {
+    const { name } = e.target;
+    let value = e.target.value;
+    // 희망서비스 선택
+    if (e.target.name === "prefer_service") {
+      const arr = form.prefer_service || [];
+      if (e.target.checked) {
+        arr.push(value);
+      } else {
+        const index = arr.indexOf(value);
+        if (index > -1) {
+          arr.splice(index, 1);
+        }
+      }
+      value = arr;
+    }
+    setForm((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = () => {
+    if (typeof form.prefer_service === "object")
+      form.prefer_service = form.prefer_service.join(",");
+    form.user_name = form.last_name + form.first_name;
+    POST("/signup", form).then((res) => {
+      console.log(res);
+      alert(res?.response?.data?.message);
+    });
+  };
+
+  const getCCList = () => {
+    try {
+      POST("/reservation/cc-info", {}).then((res) => {
+        console.log("res: ", res);
+        setCcList(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleChangeCcInput = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+    setCcSelect1([]);
+    setCcSelect2([]);
+    if (value.length > 0) {
+      const cc = ccList.filter((cc) => cc?.cc_name.includes(value));
+      name === "cc1" ? setCcSelect1(cc) : setCcSelect2(cc);
+    }
+  };
+
+  const handleClickCcSelect = (ccSel, ccNo, ccName) => () => {
+    console.log("handleClickCcSelet: ", ccSel, ccNo);
+    if (ccSel === 1) {
+      setForm({ ...form, cc1: ccName });
+    } else {
+      setForm({ ...form, cc2: ccName });
+    }
+    setCcSelect1([]);
+    setCcSelect2([]);
+  };
+
   useEffect(() => {
     getServiceKeyword();
+    getCCList();
   }, []);
+
+  useEffect(() => {
+    console.log(form);
+  }, [form]);
+
+  useEffect(() => {
+    console.log("ccList: ", ccList);
+  }, [ccList]);
 
   return (
     <>
@@ -49,7 +118,7 @@ export default function SignUp() {
           <div className={`${styles.pageWrap}`}>
             <Swiper
               spaceBetween={0}
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              modules={[Navigation]}
               className={`hero-swiper1 ${styles.rightSlide}`}
               navigation={{
                 prevEl: ".swiper-button-prev",
@@ -76,29 +145,43 @@ export default function SignUp() {
                         className={`${styles.inputFname} ${styles.inputItems}`}
                       >
                         <label htmlFor="">First Name</label>
-                        <input type="text" />
+                        <input
+                          type="text"
+                          name="first_name"
+                          onChange={handleChange}
+                          placeholder="이름"
+                        />
                       </div>
                       <div
                         className={`${styles.inputLname} ${styles.inputItems}`}
                       >
                         <label htmlFor="">Last Name</label>
-                        <input type="text" />
+                        <input
+                          type="text"
+                          name="last_name"
+                          onChange={handleChange}
+                          placeholder="성"
+                        />
                       </div>
                       <div
                         className={`${styles.inputPhone} ${styles.inputItems}`}
                       >
                         <label htmlFor="">Phone</label>
-                        <div className={`${styles.phoneWrap}`}>
-                          <input type="tel" maxlength="3" /> -
-                          <input type="tel" maxlength="4" /> -
-                          <input type="tel" maxlength="4" />
-                        </div>
+                        <input
+                          type="tel"
+                          name="mobile"
+                          onChange={handleChange}
+                        />
                       </div>
                       <div
                         className={`${styles.inputEmail} ${styles.inputItems}`}
                       >
                         <label htmlFor="">Email</label>
-                        <input type="email" />
+                        <input
+                          type="email"
+                          name="email"
+                          onChange={handleChange}
+                        />
                       </div>
                     </div>
                   </div>
@@ -116,19 +199,31 @@ export default function SignUp() {
                     <div className={`${styles.inputWrap}`}>
                       <div className={`${styles.inputId} ${styles.inputItems}`}>
                         <label htmlFor="">ID</label>
-                        <input type="text" />
+                        <input
+                          type="text"
+                          name="login_id"
+                          onChange={handleChange}
+                        />
                       </div>
                       <div
                         className={`${styles.inputPass} ${styles.inputItems}`}
                       >
                         <label htmlFor="">Password</label>
-                        <input type="text" />
+                        <input
+                          type="password"
+                          name="password"
+                          onChange={handleChange}
+                        />
                       </div>
                       <div
                         className={`${styles.inputDealer} ${styles.inputItems}`}
                       >
                         <label htmlFor="">Dealer Code</label>
-                        <input type="text" />
+                        <input
+                          type="text"
+                          name="dlr_cd"
+                          onChange={handleChange}
+                        />
                       </div>
                     </div>
                   </div>
@@ -150,15 +245,25 @@ export default function SignUp() {
                       >
                         <label htmlFor="">Location</label>
                         <div className={`${styles.selectWrap}`}>
-                          <select name="" id="">
+                          <select
+                            name="local1"
+                            id="local1"
+                            onChange={handleChange}
+                          >
                             <option disabled selected>
                               1차 희망 지역
                             </option>
+                            {regionOptions}
                           </select>
-                          <select name="" id="">
+                          <select
+                            name="local2"
+                            id="local2"
+                            onChange={handleChange}
+                          >
                             <option disabled selected>
                               2차 희망 지역
                             </option>
+                            {regionOptions}
                           </select>
                         </div>
                       </div>
@@ -167,16 +272,64 @@ export default function SignUp() {
                       >
                         <label htmlFor="">Golf Course</label>
                         <div className={`${styles.selectWrap}`}>
-                          <select name="" id="">
-                            <option disabled selected>
-                              1차 골프장
-                            </option>
-                          </select>
-                          <select name="" id="">
-                            <option disabled selected>
-                              2차 골프장
-                            </option>
-                          </select>
+                          <div className={styles.cc_input}>
+                            <input
+                              type="text"
+                              name="cc1"
+                              id="cc1"
+                              onChange={handleChangeCcInput}
+                              placeholder="1차 골프장"
+                              value={form.cc1}
+                            />
+                            {ccSelect1.length > 0 && (
+                              <div className={styles.cc_selectbox}>
+                                {ccSelect1.map((cc) => {
+                                  return (
+                                    <div
+                                      key={cc.cc_no}
+                                      className={styles.cc_select}
+                                      onClick={handleClickCcSelect(
+                                        1,
+                                        cc.cc_no,
+                                        cc.cc_name
+                                      )}
+                                    >
+                                      [{cc.region_nm}] {cc.cc_name}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            )}
+                          </div>
+                          <div className={styles.cc_input}>
+                            <input
+                              type="text"
+                              name="cc2"
+                              id="cc2"
+                              onChange={handleChangeCcInput}
+                              placeholder="2차 골프장"
+                              value={form.cc2}
+                            />
+                            {ccSelect2.length > 0 && (
+                              <div className={styles.cc_selectbox}>
+                                {ccSelect2.map((cc) => {
+                                  return (
+                                    <div
+                                      key={cc.cc_no}
+                                      className={styles.cc_select}
+                                      onClick={handleClickCcSelect(
+                                        2,
+                                        cc.cc_no,
+                                        cc.cc_name
+                                      )}
+                                    >
+                                      [{cc.region_nm}] {cc.cc_name}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -199,17 +352,22 @@ export default function SignUp() {
                         <div key={index}>
                           <input
                             type="checkbox"
-                            id={keyword}
-                            name="service"
+                            id={`prefer_service_${index}`}
+                            name="prefer_service"
                             value={keyword}
+                            onChange={handleChange}
                           />
-                          <label htmlFor={keyword}>{keyword}</label>
+                          <label htmlFor={`prefer_service_${index}`}>
+                            {keyword}
+                          </label>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
-                <button className={styles.signUpBtn}>Submit</button>
+                <button className={styles.signUpBtn} onClick={handleSubmit}>
+                  Submit
+                </button>
               </SwiperSlide>
               <div className="swiper-button-prev">Back</div>
               <div className="swiper-button-next">Next</div>

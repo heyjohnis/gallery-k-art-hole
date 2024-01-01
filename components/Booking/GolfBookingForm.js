@@ -5,9 +5,11 @@ import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Form from "react-bootstrap/Form";
 import { REGION_LIST } from "../../data/CommonCode";
 import { useRouter } from "next/router";
+import useRenderRegionOptions from "../../hooks/useRenderRegionOptions";
 
 const GolfBookingForm = ({ setBookingInfo, user }) => {
   const router = useRouter();
+  const regegionOptions = useRenderRegionOptions();
   const [form, setForm] = useState({});
 
   const handleChange = (e) => {
@@ -20,16 +22,6 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
   const selectedPickDate = (date) => {
     console.log("date: ", date);
     setForm((prevState) => ({ ...prevState, ...date }));
-  };
-
-  const renderRegionOptions = () => {
-    return REGION_LIST.map((item) => {
-      return (
-        <option key={item.id} value={item.id}>
-          {item.data}
-        </option>
-      );
-    });
   };
 
   useEffect(() => {
@@ -93,7 +85,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
               value={form.region1}
             >
               <option value="">1차 권역을 선택해 주세요</option>
-              {renderRegionOptions()}
+              {regegionOptions}
             </Form.Select>
             <Form.Select
               aria-label="Default select example"
@@ -101,7 +93,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
               onChange={handleChange}
             >
               <option value="">2차 권역을 선택해 주세요</option>
-              {renderRegionOptions()}
+              {regegionOptions}
             </Form.Select>
           </div>
           <p className="info">

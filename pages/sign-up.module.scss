@@ -326,3 +326,16 @@ $main-font-family-eng: "Montserrat";
 .signUpBtn {
   float: right;
 }
+.cc_input {
+  width: 50%;
+}
+.cc_selectbox {
+  width: 100%;
+  height: 100px;
+  padding: 10px 20px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  outline: none;
+}
