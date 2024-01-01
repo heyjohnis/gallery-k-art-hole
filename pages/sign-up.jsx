@@ -3,8 +3,11 @@ import Footer from "../components/Signup/SignupFooter";
 import styles from "./sign-up.module.scss";
 import { POST } from "../hooks/restApi";
 import "react-step-progress/dist/index.css";
-import StepProgressBar from "react-step-progress";
-import { isValidateForm } from "../utils/validation";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
 import SignupStep1 from "../components/Signup/SignupStep1";
 import SignupStep2 from "../components/Signup/SignupStep2";
 import SignupStep3 from "../components/Signup/SignupStep3";
@@ -12,13 +15,6 @@ import SignupStep4 from "../components/Signup/SignupStep4";
 
 export default function SignUp() {
   const [form, setForm] = useState({});
-  const [validation1, setValidation1] = useState(false);
-  const signupStep1 = (
-    <SignupStep1 setForm={setForm} form={form} setValidation={setValidation1} />
-  );
-  const signupStep2 = <SignupStep2 setForm={setForm} />;
-  const signupStep3 = <SignupStep3 setForm={setForm} />;
-  const signupStep4 = <SignupStep4 setForm={setForm} />;
 
   const handleSubmit = () => {
     if (typeof form.prefer_service === "object")
@@ -30,13 +26,8 @@ export default function SignUp() {
     });
   };
 
-  const validateStep1 = () => {
-    console.log("validateStep1: ", validation1);
-    return validation1;
-  };
-
   useEffect(() => {
-    console.log("useEffect form: ", form, validation1);
+    console.log("useEffect form: ", form);
   }, [form]);
 
   return (
@@ -54,29 +45,40 @@ export default function SignUp() {
 
         <div className={`${styles.signUpPageRightSection}`}>
           <div className={`${styles.pageWrap}`}>
-            <StepProgressBar
-              startingStep={0}
-              onSubmit={handleSubmit}
-              subtitleClass={styles.subtitleClass}
-              previousBtnName="Back"
-              steps={[
-                {
-                  content: signupStep1,
-                },
-                {
-                  content: signupStep2,
-                },
-                {
-                  content: signupStep3,
-                },
-                {
-                  content: signupStep4,
-                },
-              ]}
-            />
-          </div>
+            <Swiper
+              spaceBetween={0}
+              modules={[Navigation]}
+              className={`hero-swiper1 ${styles.rightSlide}`}
+              navigation={{
+                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-button-next",
+              }}
+              loopPreventsSlide={false}
+              onReachEnd={() => {
+                console.log("end");
+              }}
+            >
+              <SwiperSlide>
+                <SignupStep1 form={form} setForm={setForm} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SignupStep2 form={form} setForm={setForm} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SignupStep3 form={form} setForm={setForm} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SignupStep4 form={form} setForm={setForm} />
+                <button className={styles.signUpBtn} onClick={handleSubmit}>
+                  Submit
+                </button>
+              </SwiperSlide>
+              <div className="swiper-button-prev">Back</div>
+              <div className="swiper-button-next">Next</div>
+            </Swiper>
 
-          <Footer />
+            <Footer />
+          </div>
         </div>
       </div>
     </>

@@ -10,7 +10,7 @@ export default function SignupStep4({ form, setForm }) {
     let value = e.target.value;
     // 희망서비스 선택
     if (e.target.name === "prefer_service") {
-      const arr = form.prefer_service || [];
+      const arr = form?.prefer_service || [];
       if (e.target.checked) {
         arr.push(value);
       } else {

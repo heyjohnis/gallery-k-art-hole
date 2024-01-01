@@ -31,7 +31,7 @@ export default function SignupStep3({ form, setForm }) {
 
   const handleChangeCcInput = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+    setForm((prevState) => ({ ...prevState, [name]: value }));
     setCcSelect1([]);
     setCcSelect2([]);
     if (value.length > 0) {
@@ -43,9 +43,9 @@ export default function SignupStep3({ form, setForm }) {
   const handleClickCcSelect = (ccSel, ccNo, ccName) => () => {
     console.log("handleClickCcSelet: ", ccSel, ccNo);
     if (ccSel === 1) {
-      setForm({ ...form, cc1: ccName });
+      setForm((prevState) => ({ ...prevState, cc1: ccName }));
     } else {
-      setForm({ ...form, cc2: ccName });
+      setForm((prevState) => ({ ...prevState, cc2: ccName }));
     }
     setCcSelect1([]);
     setCcSelect2([]);
