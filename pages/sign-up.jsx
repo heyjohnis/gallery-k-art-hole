@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Footer from "../components/Signup/SignupFooter";
 import styles from "./sign-up.module.scss";
 import { POST } from "../hooks/restApi";
 import "react-step-progress/dist/index.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation, Controller } from "swiper";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import SignupStep1 from "../components/Signup/SignupStep1";
@@ -15,7 +16,7 @@ import SignupStep4 from "../components/Signup/SignupStep4";
 
 export default function SignUp() {
   const [form, setForm] = useState({});
-
+  const swiperRef = useRef(null);
   const handleSubmit = () => {
     if (typeof form.prefer_service === "object")
       form.prefer_service = form.prefer_service.join(",");
@@ -30,6 +31,10 @@ export default function SignUp() {
     console.log("useEffect form: ", form);
   }, [form]);
 
+  const handleSlideChange = () => {
+    const swiperInstance = swiperRef.current.swiper;
+    console.log("swiperInstance.activeIndex: ", swiperInstance.activeIndex);
+  };
   return (
     <>
       <div className={`${styles.signUpWrap}`}>
@@ -46,14 +51,16 @@ export default function SignUp() {
         <div className={`${styles.signUpPageRightSection}`}>
           <div className={`${styles.pageWrap}`}>
             <Swiper
+              ref={swiperRef}
               spaceBetween={0}
-              modules={[Navigation]}
+              modules={[Navigation, Controller]}
               className={`hero-swiper1 ${styles.rightSlide}`}
               navigation={{
                 prevEl: ".swiper-button-prev",
                 nextEl: ".swiper-button-next",
               }}
               loopPreventsSlide={false}
+              onSlideChange={handleSlideChange}
               onReachEnd={() => {
                 console.log("end");
               }}
