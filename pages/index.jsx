@@ -9,9 +9,10 @@ import GoghBanner from "../components/Home/Banner/GoghBanner";
 import RenoirBanner from "../components/Home/Banner/RenoirBanner";
 import MonetBanner from "../components/Home/Banner/MonetBanner";
 import { ro } from "date-fns/locale";
+import GalleryComp from "../components/Home/GalleryComp";
 
 const options = {
-  anchors: ["Intro", "GolfBooking", "Gallery", "GGmall", "Footer"],
+  anchors: ["intro", "booking", "mall", "gallery", "footer"],
   verticalCentered: true,
 };
 export default function Index({ user }) {
@@ -62,6 +63,9 @@ export default function Index({ user }) {
           <BookingComp />
         </>
       )}
+      <Section>
+        <GalleryComp />
+      </Section>
       <Section>
         <Footer />
       </Section>
