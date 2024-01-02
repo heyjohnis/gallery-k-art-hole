@@ -68,6 +68,7 @@ export default function BookingComp() {
                     <label htmlFor="location">LOCATION</label>
                   </div>
                   <Form.Select
+                    className={`${styles.formSelect}`}
                     aria-label="Default select example"
                     onChange={(e) => selectedRegion(e.target.value)}
                   >

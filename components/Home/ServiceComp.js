@@ -5,6 +5,7 @@ import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import MainListWrap from "./MainListWrap";
 import { POST } from "../../hooks/restApi";
+import Link from "next/link";
 
 export default function ServiceComp() {
   const [tourRecommoed, setTourRecommend] = React.useState([]);
@@ -57,8 +58,8 @@ export default function ServiceComp() {
         className={`row col-lg-12 col-md-12 ${styles.onePage} ${styles.itemListPageSection}`}
       >
         <Tab.Container id="left-tabs" defaultActiveKey="first">
-          <div className={`col col-lg-3 col-md-12`}>
-            <div className={`col col-lg-12 col-md-6 ${styles.titleWrap}`}>
+          <div className={`col-lg-3 col-md-12`}>
+            <div className={`col-lg-12 col-md-12 ${styles.titleWrap}`}>
               <h1>
                 BEST
                 <br />
@@ -69,15 +70,13 @@ export default function ServiceComp() {
                 GG Mall만의 프리미엄 서비스를 제공합니다.
               </p>
             </div>
-            <div
-              className={`row col-lg-12 col-md-6 ${styles.itemIntoroduceWrap}`}
-            >
+            <div className={`col-lg-12 col-md-12 ${styles.itemIntoroduceWrap}`}>
               <Nav className={`${styles.menuTab}`}>
                 <Nav.Item className={`${styles.itemTab}`}>
                   <Nav.Link
                     eventKey="first"
                     onClick={handleTabMenu}
-                    className={`col-lg-12 col-md-6 ${styles.navLink}`}
+                    className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
                     제휴서비스
                   </Nav.Link>
@@ -86,7 +85,7 @@ export default function ServiceComp() {
                   <Nav.Link
                     eventKey="second"
                     onClick={handleTabMenu}
-                    className={`col-lg-12 col-md-6 ${styles.navLink}`}
+                    className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
                     GG쇼핑
                   </Nav.Link>
@@ -95,15 +94,21 @@ export default function ServiceComp() {
                   <Nav.Link
                     eventKey="third"
                     onClick={handleTabMenu}
-                    className={`col-lg-12 col-md-6 ${styles.navLink}`}
+                    className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
                     GG투어
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
             </div>
+            <div style={{ marginTop: "30px" }}>
+              <Link href="/" style={{ color: "#fff" }}>
+                VIEW MORE
+              </Link>
+            </div>
           </div>
-          <div className={`row col-lg-9 col-md-6 ${styles.itemListWrap}`}>
+
+          <div className={`col-lg-9 col-md-12 ${styles.itemListWrap}`}>
             <Tab.Content>
               <Tab.Pane eventKey={`${tabMenu}`}>
                 <MainListWrap
