@@ -185,6 +185,10 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   &::after {
     top:12px;
     transform: rotate(315deg);
+
+    @media screen and (max-width: 768px) {
+      left: 90px;
+    }
   }
 }
 
@@ -353,7 +357,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 .contactButton {
   position: absolute;
   top: -70px;
-  right: 360px;
+  right: 339px;
   width: 288px;
   height: 70px;
   margin:0;
@@ -373,6 +377,18 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     &:hover {
       color: #111;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    right: 0px;
+    width: 200px;
+    height: 50px;
+
+    button {
+      padding: 11px 20px;
+      font-size: 1rem;
+    }
+
   }
 }
 
@@ -527,7 +543,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
 .youtube_wrap {
 
-  min-height: 600px;
+  // min-height: 600px;
   background-color: #171717;
   padding: 0 0 60px;
   h3 {
