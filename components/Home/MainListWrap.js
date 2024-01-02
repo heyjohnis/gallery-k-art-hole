@@ -2,61 +2,46 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./MainBanner.module.scss";
+import { commaFormat } from "../../utils/number";
 
-const MainListWrap = ({ LIST_ITEM }) => {
+const MainListWrap = ({ items }) => {
+  console.log("MainListWrap: ", items);
   return (
     <>
       <div className={`col col-lg-12 col-md-12 ${styles.itemListWrap}`}>
         <ul className={`row col-lg-12 col-md-12 ${styles.itemListUl}`}>
-          {LIST_ITEM.map((itemList, index) => (
+          {items.map((item, index) => (
             <li className={`col col-lg-4 ${styles.itemListLi}`} key={index}>
-              <Link href={`${itemList.link}`}>
+              <Link href={`/ggmall/detail/${item.pd_kind}/${item.pd_no}`}>
                 <div
                   className={
-                    itemList.discount === 0
+                    item.discount === 0
                       ? `${styles.img}`
                       : `${styles.imageWrap}`
                   }
                 >
-                  <img src={itemList.img} alt={itemList.title} />
+                  <img src={item.thumb_img} alt={item.pd_name} />
                 </div>
                 <div>
-                  <h4>{itemList.title}</h4>
-                  <span className={`${styles.discript}`}>
-                    {itemList.discript
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                  </span>
+                  <h4>{item.pd_name}</h4>
+                  <span className={`${styles.discript}`}>{item?.brand}</span>
                   <div>
-                    <span
-                      className={
-                        itemList.discount === 0
-                          ? `${styles.displayNone}`
-                          : `${styles.discountPercent}`
-                      }
-                    >
-                      {itemList.discount}%
-                    </span>
+                    {item.discount_rate !== 0 && (
+                      <span className={styles.discountPercent}>
+                        {item.discount_rate}%
+                      </span>
+                    )}
                     <span>
-                      {itemList.point === 0
+                      {item.price === 0
                         ? `가격별도문의`
-                        : (itemList.point * (1 - itemList.discount / 100))
-                            .toString()
-                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                      {itemList.point === 0 ? "" : " P"}
+                        : commaFormat(item?.price)}
+                      P
                     </span>
-                    <span
-                      className={
-                        itemList.discount === 0
-                          ? `${styles.displayNone}`
-                          : `${styles.discountPoint}`
-                      }
-                    >
-                      {itemList.point
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                      &nbsp;P
-                    </span>
+                    {item?.discount !== 0 && (
+                      <span className={styles.discountPoint}>
+                        {item?.discount}P
+                      </span>
+                    )}
                   </div>
                 </div>
               </Link>
