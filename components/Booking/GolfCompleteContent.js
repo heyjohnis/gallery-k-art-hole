@@ -21,7 +21,7 @@ export const GolfCompleteContent = () => {
       </div>
       <div class="complete_tbl_container">
         <div className="complete_content_tit">
-          <h3>골프장 예약</h3>
+          <h3>골프장 예약 서비스</h3>
           <div class="complete_status">
             <div className="tit_point">
               <span>{form.user_name}</span>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Footer from "../components/Layouts/Footer";
 import BookingComp from "../components/Home/BookingComp";
 import { SectionsContainer } from "react-fullpage";
@@ -7,12 +8,14 @@ import { Section } from "react-fullpage";
 import GoghBanner from "../components/Home/Banner/GoghBanner";
 import RenoirBanner from "../components/Home/Banner/RenoirBanner";
 import MonetBanner from "../components/Home/Banner/MonetBanner";
+import { ro } from "date-fns/locale";
 
 const options = {
   anchors: ["Intro", "GolfBooking", "Gallery", "GGmall", "Footer"],
   verticalCentered: true,
 };
 export default function Index({ user }) {
+  const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
   const [serviceGroup, setServiceGroup] = useState("gogh");
   useEffect(() => {
@@ -22,6 +25,24 @@ export default function Index({ user }) {
       setServiceGroup(user.service_group);
     }
   }, [user]);
+
+  useEffect(() => {
+    const handWindowSize = () => {
+      const { innerWidth } = window;
+      if (innerWidth < 768) {
+        console.log("mobile");
+        router.push("/m");
+      } else {
+        console.log("pc");
+        router.push("/");
+      }
+    };
+    handWindowSize();
+    window.addEventListener("resize", handWindowSize);
+    return () => {
+      window.removeEventListener("resize", handWindowSize);
+    };
+  }, []);
   return (
     <SectionsContainer {...options}>
       <Section>
