@@ -33,8 +33,7 @@ const MainListWrap = ({ items }) => {
                     <span>
                       {item.price === 0
                         ? `가격별도문의`
-                        : commaFormat(item?.price)}
-                      P
+                        : commaFormat(item?.price) + "P"}
                     </span>
                     {item?.discount !== 0 && (
                       <span className={styles.discountPoint}>
