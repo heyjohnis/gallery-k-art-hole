@@ -26,9 +26,24 @@ const landing = () => {
   return (
     <div className={`container ${styles.container}`}>
       <div>
-        <img src="/images/landing.jpg" alt="landing" />
+        {/* <img src="/images/landing.jpg" alt="landing" /> */}
+        <img src="/images/landing_new_1.jpg" alt="landing" />
+        <img src="/images/landing_new_2.jpg" alt="landing" />
+        <img src="/images/landing_new_3.jpg" alt="landing" />
       </div>
-      <div className={styles.youtube_wrap}>
+      <div className={styles.youtube_wrap} style={{backgroundColor: "#171717"}}>
+        <div className={styles.youtube} style={{margin: "0 auto"}}>
+          <YouTube
+            videoId="ZQw7meQJWTk"
+            className={styles.scaleVideo}
+            opts={opts}
+            onEnd={(e) => {
+              e.target.stopVideo(0);
+            }}
+          />
+        </div>
+      </div>
+      {/* <div className={styles.youtube_wrap}>
         <h3>
           최고의 품격과 서비스로 당신의 자부심이 될<br />
           그린갤러리 멤버십을 지금 시작하세요.
@@ -43,7 +58,7 @@ const landing = () => {
             }}
           />
         </div>
-      </div>
+      </div> */}
       <div style={{ position: "absolute" }}>
         <Link href="#contact" onClick={() => setOpenContact(!openContact)}>
           <div className={`btn ${styles.btn_booking}`}>
