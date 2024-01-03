@@ -63,3 +63,8 @@ $sub-content-color-home-four: #e7e7e7;
 .menuBtn {
     z-index: 1;
 }
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 80vw;
+    }
+}

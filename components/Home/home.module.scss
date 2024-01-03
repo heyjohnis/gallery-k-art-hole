@@ -17,8 +17,6 @@
 }
 
 .titleWrap {
-  width: 702px;
-  height: 167px;
 
   h1 {
     font-family: Jost;
@@ -107,12 +105,9 @@
   position: relative;
   width: 100%;
   height: 100%;
-  // background-color: blue;
+  margin: 0;
 
   .bookingPageLeftSection {
-    // position: absolute;
-    // top: 50%;
-    // transform: translateY(-400px);
     padding: 226px 0 100px 199px;
     background-color: #fff;
 
@@ -240,18 +235,24 @@
     padding: 0;
 
     .slide1 {
+      margin: 0 !important;
+      padding: 0 !important;
       background-image: url(/images/main/main_gogh.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
 
     .slide2 {
+      margin: 0 !important;
+      padding: 0 !important;
       background-image: url(/images/main/main_renoir.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
 
     .slide3 {
+      margin: 0 !important;
+      padding: 0 !important;
       background-image: url(/images/main/main_monet.png);
       background-repeat: no-repeat;
       background-size: cover;
