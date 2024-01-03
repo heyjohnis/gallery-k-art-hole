@@ -6,6 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import MainListWrap from "./MainListWrap";
 import { POST } from "../../hooks/restApi";
 import Link from "next/link";
+import ta from "date-fns/locale/ta/index";
 
 export default function ServiceComp() {
   const [tourRecommoed, setTourRecommend] = React.useState([]);
@@ -102,7 +103,16 @@ export default function ServiceComp() {
               </Nav>
             </div>
             <div style={{ marginTop: "30px" }}>
-              <Link href="/" style={{ color: "#fff" }}>
+              <Link
+                href={
+                  tabMenu === "third"
+                    ? "/ggmall/list/tour/"
+                    : tabMenu === "second"
+                    ? "/ggmall/list/shop/"
+                    : "/ggmall/list/service/"
+                }
+                style={{ color: "#fff" }}
+              >
                 VIEW MORE
               </Link>
             </div>
