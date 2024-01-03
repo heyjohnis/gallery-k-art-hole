@@ -12,7 +12,10 @@ import SignupStep1 from "../components/Signup/SignupStep1";
 import SignupStep2 from "../components/Signup/SignupStep2";
 import SignupStep3 from "../components/Signup/SignupStep3";
 import SignupStep4 from "../components/Signup/SignupStep4";
+import SignupStep5 from "../components/Signup/SignupStep5";
 import { set } from "date-fns";
+
+
 
 export default function SignUp() {
   const [form, setForm] = useState({});
@@ -88,6 +91,9 @@ export default function SignUp() {
               </SwiperSlide>
               <SwiperSlide>
                 <SignupStep4 form={form} setForm={setForm} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SignupStep5 form={form} setForm={setForm} />
                 <button className={styles.signUpBtn} onClick={handleSubmit}>
                   Submit
                 </button>
