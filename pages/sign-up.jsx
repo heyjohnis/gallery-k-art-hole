@@ -98,8 +98,8 @@ export default function SignUp() {
                   Submit
                 </button>
               </SwiperSlide>
-              <div className="swiper-button-prev">Back</div>
-              <div className="swiper-button-next">Next</div>
+              <div className={`swiper-button-prev ${styles.backBtn}`}>Back</div>
+              <div className={`swiper-button-next ${styles.nextBtn}`}>Next</div>
             </Swiper>
 
             <Footer />

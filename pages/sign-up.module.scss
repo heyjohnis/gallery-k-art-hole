@@ -263,7 +263,21 @@ $main-font-family-eng: "Montserrat";
         }
       }
 
+      .backBtn {
+        font-family: $main-font-family-eng;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.18px;
+        color: #333;
+      }
 
+      .nextBtn {
+        font-family: $main-font-family-eng;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.18px;
+        color: #333;
+      }
     }
   }
 
@@ -381,16 +395,28 @@ $main-font-family-eng: "Montserrat";
     }
   }
 }
+
 .signUpBtn {
+  font-family: $main-font-family-eng;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.18px;
+  color: #333;
   float: right;
 }
+
 .cc_input {
-  width: 50%;
+  width: 230px;
+  height: 64px;
 }
+
 .cc_selectbox {
+  position: relative;
+  top: -220px;
   width: 100%;
-  height: 100px;
-  padding: 10px 20px;
+  height: 150px;
+  padding: 10px 10px;
+  font-size: 12px;
   overflow-y: scroll;
   border: 1px solid #ccc;
   border-radius: 5px;
