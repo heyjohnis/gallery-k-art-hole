@@ -230,11 +230,21 @@ $main-font-family-eng: "Montserrat";
           overflow-y: scroll;
 
           h5 {
-            font-size: 15px;
+            font-family: Noto Sans KR;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: -0.12px;
+            color: #666;
           }
 
           p {
-            font-size: 13px;
+            font-family: Noto Sans KR;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: -0.12px;
+            color: #666;
+            text-overflow: ellipsis;
+            white-space: wrap;
           }
         }
       }
@@ -242,6 +252,14 @@ $main-font-family-eng: "Montserrat";
       .agreeButtonWrap {
         input {
           margin-right: 5px;
+          vertical-align: middle;
+
+          &[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            border-radius: 0;
+            
+          }
         }
       }
 
