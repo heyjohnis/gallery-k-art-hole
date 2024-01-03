@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import Tab from "react-bootstrap/Tab";
 import MobileTourListWrap from "./MobileTourListWrap";
+import { POST } from "../../hooks/restApi";
 
 import styles from "./MobileMain.module.scss";
 const LIST_ITEM_ABROAD = [
@@ -134,6 +135,31 @@ const LIST_ITEM_PREMIUM = [
 ];
 export default function MobileHomeItems() {
   const [tabMenu, setTabMenu] = useState("first");
+  const [tourRecommoed, setTourRecommend] = React.useState([]);
+  const [shopRecommend, setShopRecommend] = React.useState([]);
+  const [serviceRecommend, setServiceRecommend] = React.useState([]);
+
+  const getRandService = (pd_kind) => {
+    POST("/mall/rand", { pd_kind, limit_cnt: 3 }).then((res) => {
+      console.log(res.data);
+      const items = res?.data.map((item) => {
+        return { ...item, ...calcDiscount(item.origin_price, item.price) };
+      });
+      if (pd_kind === "tour") {
+        setTourRecommend(items);
+      } else if (pd_kind === "shop") {
+        setShopRecommend(items);
+      } else {
+        setServiceRecommend(items);
+      }
+    });
+  };
+
+  const calcDiscount = (originPrice, price) => {
+    const discountPrice = originPrice - price;
+    const rate = Math.floor((discountPrice / originPrice) * 100);
+    return { discount: discountPrice, discount_rate: rate };
+  };
 
   const handleTabMenu = (e) => {
     console.log(e.target.dataset.rrUiEventKey);
@@ -145,6 +171,13 @@ export default function MobileHomeItems() {
       setTabMenu("third");
     }
   };
+
+  useEffect(() => {
+    getRandService("tour");
+    getRandService("shop");
+    getRandService("service");
+  }, []);
+
   return (
     <>
       <div className={`${styles.titleWrapMid}`}>
@@ -160,17 +193,17 @@ export default function MobileHomeItems() {
           <Nav className={`${styles.tabMenuUl}`}>
             <Nav.Item className={`${styles.tabMenuUlLi}`}>
               <Nav.Link eventKey="first" onClick={handleTabMenu}>
-                해외투어
+                제휴서비스
               </Nav.Link>
             </Nav.Item>
             <Nav.Item className={`${styles.tabMenuUlLi}`}>
               <Nav.Link eventKey="second" onClick={handleTabMenu}>
-                국내투어
+                GG쇼핑
               </Nav.Link>
             </Nav.Item>
             <Nav.Item className={`${styles.tabMenuUlLi}`}>
               <Nav.Link eventKey="third" onClick={handleTabMenu}>
-                프리미엄투어
+                GG투어
               </Nav.Link>
             </Nav.Item>
           </Nav>
@@ -180,12 +213,12 @@ export default function MobileHomeItems() {
               <Tab.Content>
                 <Tab.Pane eventKey={`${tabMenu}`}>
                   <MobileTourListWrap
-                    LIST_ITEM={
+                    items={
                       tabMenu === "first"
-                        ? LIST_ITEM_ABROAD
+                        ? serviceRecommend
                         : tabMenu === "second"
-                        ? LIST_ITEM
-                        : LIST_ITEM_PREMIUM
+                        ? shopRecommend
+                        : tourRecommoed
                     }
                   />
                 </Tab.Pane>

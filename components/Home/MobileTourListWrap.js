@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, A11y, Navigation } from "swiper";
+import { Autoplay, A11y, Navigation } from "swiper";
 import styles from "./MobileMain.module.scss";
+import { commaFormat } from "../../utils/number";
 
-const MainListWrap = ({ LIST_ITEM }) => {
+const MainListWrap = ({ items }) => {
   return (
     <>
       <div className={`${styles.slideSec}`}>
@@ -28,25 +29,26 @@ const MainListWrap = ({ LIST_ITEM }) => {
             modules={[A11y, Autoplay]}
             className={`hero-swiper ${styles.swiper}`}
           >
-            {LIST_ITEM.map((itemList) => (
+            {items.map((item) => (
               <SwiperSlide className={`${styles.swiperSlide}`}>
-                <div className={`${styles.slideLi}`}>
-                  <img
-                    className={`${styles.slideImg}`}
-                    src={itemList.img}
-                    alt={itemList.title}
-                  />
-                  <h3 className={`${styles.slideTitle}`}>{itemList.title}</h3>
-                  <span className={`${styles.slideText}`}>
-                    {itemList.discript}
-                  </span>
-                  <span className={`${styles.slidePoint}`}>
-                    {itemList.point
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                    P ~
-                  </span>
-                </div>
+                <Link href={`/ggmall/detail/${item.pd_kind}/${item.pd_no}`}>
+                  <div className={`${styles.slideLi}`}>
+                    <img
+                      className={`${styles.slideImg}`}
+                      src={item.thumb_img}
+                      alt={item.pd_name}
+                    />
+                    <h3 className={`${styles.slideTitle}`}>{item.pd_name}</h3>
+                    <span className={`${styles.slideText}`}>
+                      {item.info_short}
+                    </span>
+                    <span className={`${styles.slidePoint}`}>
+                      {item.price === 0
+                        ? `가격별도문의`
+                        : commaFormat(item?.price) + "P"}
+                    </span>
+                  </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

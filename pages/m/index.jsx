@@ -2,20 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "../../components/Home/MobileMain.module.scss";
-import MobileTourService from "../../components/Home/MobileTourService";
+import MobileHomeItems from "../../components/Home/MobileHomeItems";
 import MobileReservation from "../../components/Home/MobileReservation";
 import MobileGallery from "../../components/Home/MobileGallery";
+import Footer from "../../components/Layouts/Footer";
 
 export default function Index({ user }) {
   const router = useRouter();
   const [show, setShow] = useState(false);
-  const showModal = () => {
-    setShow(false);
-  };
-
-  const handleClose = () => {
-    setShow(false);
-  };
 
   useEffect(() => {
     const handWindowSize = () => {
@@ -39,9 +33,10 @@ export default function Index({ user }) {
     <>
       <div className={`${styles.mainContainer}`}>
         <MobileReservation user={user} />
-        <MobileTourService />
+        <MobileHomeItems />
         <MobileGallery />
       </div>
+      <Footer />
     </>
   );
 }
