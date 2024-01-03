@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Footer from "../components/Signup/SignupFooter";
 import styles from "./sign-up.module.scss";
 import { POST } from "../hooks/restApi";
-import "react-step-progress/dist/index.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Controller } from "swiper";
@@ -13,10 +12,14 @@ import SignupStep1 from "../components/Signup/SignupStep1";
 import SignupStep2 from "../components/Signup/SignupStep2";
 import SignupStep3 from "../components/Signup/SignupStep3";
 import SignupStep4 from "../components/Signup/SignupStep4";
+import { set } from "date-fns";
 
 export default function SignUp() {
   const [form, setForm] = useState({});
+  const [swiper, setSwiper] = useState(null);
   const swiperRef = useRef(null);
+  const [allowNext, setAllowNext] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   const handleSubmit = () => {
     if (typeof form.prefer_service === "object")
       form.prefer_service = form.prefer_service.join(",");
@@ -27,14 +30,23 @@ export default function SignUp() {
     });
   };
 
+  const validation1 = () => {
+    return true;
+  };
+
   useEffect(() => {
-    console.log("useEffect form: ", form);
-  }, [form]);
+    console.log(form);
+    if (form.first_name) setAllowNext(true);
+  }, [form, activeIndex]);
 
   const handleSlideChange = () => {
-    const swiperInstance = swiperRef.current.swiper;
-    console.log("swiperInstance.activeIndex: ", swiperInstance.activeIndex);
+    setAllowNext(false);
   };
+
+  useEffect(() => {
+    const swiperInstance = swiperRef.current.swiper;
+    setSwiper(swiperInstance);
+  }, []);
   return (
     <>
       <div className={`${styles.signUpWrap}`}>
@@ -59,7 +71,7 @@ export default function SignUp() {
                 prevEl: ".swiper-button-prev",
                 nextEl: ".swiper-button-next",
               }}
-              loopPreventsSlide={false}
+              allowSlideNext={allowNext}
               onSlideChange={handleSlideChange}
               onReachEnd={() => {
                 console.log("end");
