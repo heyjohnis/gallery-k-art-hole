@@ -393,6 +393,9 @@
   background-color: #111;
 
   .titleWrap {
+    width: 354px;
+    height: auto;
+
     h1 {
       display: inline-block;
       font-family: Jost;
@@ -420,7 +423,7 @@
   }
 
   .itemIntoroduceWrap {
-    margin-top: 80px;
+    margin-top: 30px;
 
     h3 {
       margin: 20px 0;
@@ -465,11 +468,17 @@
       padding: 0;
 
       .itemListLi {
+        width: 32%;
         max-width: 345px ;
         margin: 0 auto 50px;
         padding: 0;
         list-style: none;
         // border: 1px solid #ddd;
+
+        a {
+          width: 100%;
+        }
+
 
         .imageWrap {
           position: relative;
@@ -589,38 +598,6 @@
     }
   }
 
-  .swiper {
-    // h1 {
-    //   font-size: 1.8rem;
-    //   letter-spacing: 0;
-    // }
-
-    // p {
-    //   font-size: 10px;
-    //   letter-spacing: -0.05rem;
-    // }
-
-    .slide1 {
-      background-image: url(/images/main/main_001.jpg);
-    }
-
-    .slide2 {
-      background-image: url(/images/main/main_002.jpg);
-    }
-
-    .slide3 {
-      background-image: url(/images/main/main_003.jpg);
-    }
-
-    .slide4 {
-      background-image: url(/images/main/main_004.jpg);
-    }
-
-    .slide5 {
-      background-image: url(/images/main/main_005.jpg);
-    }
-  }
-
   .onePage {
     position: relative;
     width: 100%;
@@ -629,11 +606,12 @@
     margin: 0;
 
     .bookingPageLeftSection {
+      width: 100vw;
       height: 100vh;
-      padding: 10vh 0px;
+      padding: 10vh 20px;
 
       .titleWrap {
-        width: calc(100vw - 40px);
+        width: 100%;
         height: auto;
         margin: 0 auto;
         padding: 30px 0px 0px;
@@ -650,7 +628,7 @@
       }
 
       .formWrap {
-        width: calc(100vw - 40px);
+        width: 100%;
         margin: 0 auto;
 
         .inputWrap {
@@ -721,7 +699,7 @@
     padding: 7vh 0px 0 !important;
 
     .titleWrap {
-      width: calc(100vw - 40px);
+      width: 100%;
       height: auto;
       padding: 30px 20px 0px;
 
