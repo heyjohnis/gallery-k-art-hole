@@ -64,7 +64,7 @@ $main-font-family-eng: "Montserrat";
       }
 
       .titleWrap {
-        margin-bottom: 100px;
+        margin-bottom: 70px;
 
         h1 {
           font-family: Noto Sans KR;
@@ -264,6 +264,7 @@ $main-font-family-eng: "Montserrat";
       }
 
       .backBtn {
+        width: 77px;
         font-family: $main-font-family-eng;
         font-size: 18px;
         font-weight: 700;
@@ -272,6 +273,7 @@ $main-font-family-eng: "Montserrat";
       }
 
       .nextBtn {
+        width: 77px;
         font-family: $main-font-family-eng;
         font-size: 18px;
         font-weight: 700;

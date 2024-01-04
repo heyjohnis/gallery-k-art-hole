@@ -98,8 +98,17 @@ export default function SignUp() {
                   Submit
                 </button>
               </SwiperSlide>
-              <div className={`swiper-button-prev ${styles.backBtn}`}>Back</div>
-              <div className={`swiper-button-next ${styles.nextBtn}`}>Next</div>
+              <div className={`swiper-button-prev ${styles.backBtn}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">
+                  <path d="M4.80952 1L1 5M1 5L4.80952 9M1 5H21" stroke="#333333" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>&ensp;Back
+              </div>
+              <div className={`swiper-button-next ${styles.nextBtn}`}>
+                Next&ensp;
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">
+                  <path d="M17.1905 1L21 5M21 5L17.1905 9M21 5H1" stroke="#333333" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
             </Swiper>
 
             <Footer />
