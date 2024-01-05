@@ -168,29 +168,33 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   position: relative;
   &::after {
     position: absolute;
-    left: 20px;
+    left: 120px;
     content: '';
     width: 10px;
     /* 사이즈 */
     height: 10px;
     /* 사이즈 */
-    border-top: 2px solid #fff;
+    border-top: 2px solid #aaa;
     /* 선 두께 */
-    border-right: 2px solid #fff;
+    border-right: 2px solid #aaa;
     /* 선 두께 */
   }
 }
 
 .toggle_on {
   &::after {
-    top: 8px;
+    top:12px;
     transform: rotate(315deg);
+
+    @media screen and (max-width: 768px) {
+      left: 90px;
+    }
   }
 }
 
 .toggle_off {
   &::after {
-    top: 4px;
+    top: 8px;
     transform: rotate(135deg);
   }
 }
@@ -351,20 +355,45 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
 
 .contactButton {
-  font-family:'S-CoreDream-6Bold';
-  background-color: $main-color;
-  text-align: center;
-  color: #fff;
+  position: absolute;
+  top: -70px;
+  right: 339px;
+  width: 288px;
+  height: 70px;
   margin:0;
+  background-color: $white-color;
+  border-radius: 15px 15px 0px 0px;
+
   button {
-    font-size: 20px;
     width: 100%;
-    color: #fff;
+    padding: 22px 40px;
+    font-family: Noto Sans KR;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.18px;
+    color: #111;
+    text-align: left;
+
+    &:hover {
+      color: #111;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    right: 0px;
+    width: 200px;
+    height: 50px;
+
+    button {
+      padding: 11px 20px;
+      font-size: 1rem;
+    }
+
   }
 }
 
 .contactFormContainer {
-  background-color: #afc899 ;
+  background-color: #fff ;
   overflow: hidden;
   &.open {
     height: 250px;
@@ -506,14 +535,16 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 /*랜딩페이지*/
 
 .container {
-  padding: 140px 0 44px;
-  background-color: #011e14;
+  width: 100%;
+  max-width: 100%;
+  padding: 0px 0px 50px;
+  background-color: #171717;
 }
 
 .youtube_wrap {
 
-  min-height: 600px;
-  background-color: #005032;
+  // min-height: 600px;
+  background-color: #171717;
   padding: 0 0 60px;
   h3 {
     padding: 60px 10px 30px;
@@ -552,9 +583,11 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 }
 
 .event_form {
-  padding: 0;
   position: fixed;
   bottom:0;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
 }
 
 .items {
@@ -568,8 +601,6 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
     font-weight: 700;
   }
   &.items_form{
-    border-right: 1px dashed #666;
-    border-left: 1px dashed #666;
   }
   &.conform {
     display: flex;
