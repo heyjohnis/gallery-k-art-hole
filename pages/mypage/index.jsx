@@ -1,5 +1,6 @@
 import React from 'react'
 import PageBanner from '../../components/Common/PageBanner'
+import { UserInfo } from '../../components/NewMypage/UserInfo'
 
 function Mypage() {
   return (
@@ -18,7 +19,16 @@ function Mypage() {
           <li>포인트 이용내역</li>
           <li>1:1 상담</li>
         </ul>
+        <div className="row">
+          <div className="col-lg-4">
+            <UserInfo/>
+          </div>
+          <div className="col-lg-8">
+            dd
+          </div>
+        </div>
       </section>
+
     </>
   )
 }

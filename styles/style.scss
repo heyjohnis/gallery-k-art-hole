@@ -5459,10 +5459,13 @@ Booking Page
 /*
 My Page
 ================================*/
+
 .mypage_tab_menu {
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  margin: 100px 0 80px;
   list-style: none;
   li{
     width: 100%;
@@ -5480,4 +5483,183 @@ My Page
       font-family: $main-font-family-eng;
     }
   }
+}
+
+.user_info {
+  display: flex;
+  justify-content: space-between;
+  .info_items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 32px;
+      letter-spacing: -0.2px;
+    }
+    h3 {
+      margin:0;
+      color: $body-color;
+      font-family: $main-font-family-eng;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: -0.18px;
+    }
+    button{
+      padding: 4px 10px;
+      margin: 0;
+      color: #999;
+      font-size: 10px;
+      border-radius: 20px;
+      background: #eee;
+      letter-spacing: -0.1px;
+    }
+  }
+  .user_icon {
+    width: 100px;
+    height: 100px; 
+    border-radius: 50%;
+    overflow: hidden;
+    background:  center /cover no-repeat url(/images/mypage/green_man.png);
+  }
+}
+
+.user_point {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: $white-color;
+  h4 {
+    color: $main-color;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.16px;
+  }
+  .point{
+    margin: 10px 0;
+    color: $sub-color;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .total_point {
+    color: #999;
+    font-size: 14px;
+    letter-spacing: -0.14px;
+    .bar{
+      margin: 0 8px;
+      color: $gray-color;
+    }
+  }
+  button {
+    padding: 12px 24px;
+    margin-top: 20px;
+    color: $main-color;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+  }
+}
+
+.use_status {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #eee;
+  h4{
+    color: $main-color;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.16px;
+  }
+  .status_list{
+    padding: 0;
+    margin: 20px 0 0;
+    li{
+      display: flex;
+      justify-content: space-between;
+      color: $gray-color;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 36px;
+      letter-spacing: -0.12px;
+      .list_item {
+        color: $body-color;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.level_green {
+  .user_info{
+    h3 {
+      &::before{
+        content: 'GREEN MEMBER';
+        color: $sub-color;
+      }
+    }
+    .user_icon {
+      background-image: url(/images/mypage/green_man.png);
+      &.gender_female {
+        background-image: url(/images/mypage/green_women.png);
+      }
+    }
+  }
+}
+
+.level_blue {
+  .user_info{
+    h3 {
+      &::before{
+        content: 'BLUE MEMBER';
+        color: $sub-color;
+      }
+    }
+    .user_icon {
+      background-image: url(/images/mypage/green_man.png);
+      &.gender_female {
+        background-image: url(/images/mypage/green_women.png);
+      }
+    }
+  }
+}
+
+.point_update {
+  margin: 10px 0 20px;
+  text-align: right;
+  color: #aaa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: -0.1px;
+}
+.point_notice {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: $white-color;
+  border-radius: 110px;
+  margin-top: 20px;
+  .icon{
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%;
+    background-color: #C7EDF9;
+    background-image: url(/images/mypage/ico_point_info.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    &.red {
+      background-color: #FFC7C7;
+      background-image: url(/images/mypage/ico_point_warning.png);
+    }
+  }
+
 }
