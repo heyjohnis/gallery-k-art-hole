@@ -5454,3 +5454,30 @@ Booking Page
     display: none;
   }
 }
+
+
+/*
+My Page
+================================*/
+.mypage_tab_menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  list-style: none;
+  li{
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    color: #999;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+    &.active{
+      color: #333;
+      border-bottom: 4px solid $sub-color;
+    }
+    &:first-child {
+      font-family: $main-font-family-eng;
+    }
+  }
+}
