@@ -52,3 +52,74 @@ $main-font-family-eng: "Montserrat";
       }
     }
   }
+
+
+  @media screen and (max-width: 768px) {
+    .rightWrap {
+      width: 100%;
+  
+      .imageWrap {
+        height: 53vh;
+        margin: 0;
+
+        background: url(/images/mobile/main/Vincent_Van_Gogh_Mobile_Complete.jpg) no-repeat center center;
+          background-size: cover;
+
+        // &.vincent {
+        //   background: url(/images/mobile/main/Vincent_Van_Gogh_Mobile_Complete.jpg) no-repeat center center;
+        //   background-size: cover;
+        // }
+
+        // &.auguste {
+        //   background: url(/images/mobile/main/Auguste_Renoir_Mobile_Complete.jpg) no-repeat center center;
+        //   background-size: cover;
+        // }
+
+        // &.claude {
+        //   background: url(/images/mobile/main/Claude_Monet_Mobile_Complete.jpg) no-repeat center center;
+        //   background-size: cover;
+        // }
+
+
+        img {
+          display: none;
+          width: 100%;
+
+        }
+        
+        .textWrap {
+          width: 100%;
+          padding: 50px 30px;
+  
+          h2 {
+            font-family: $main-font-family-eng;
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.4px;
+            color: #fff;
+          }
+    
+                
+          .mainLink{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+    
+            p {
+              display: none;
+            }
+            
+            a {
+              font-family: $main-font-family-eng;
+              font-size: 16px;
+              font-weight: 700;
+              letter-spacing: -0.16px;
+              color: #fff;
+            }
+          }
+        }
+      }
+  
+      
+    }
+  }
