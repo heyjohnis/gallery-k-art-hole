@@ -3,15 +3,16 @@ $main-font-family-kor: "Noto Sans KR";
 
 .section {
   width: 100%;
+  min-width: 320px;
   max-width: 390px;
   margin: 0 auto;
   background: #f9f9f9;
 
-  .personalInfo {
+  .personalInfo, .loginInfo, .locationInfo, .checkedService .privacyPolicy {
     width: 100%;
-    padding: 0 30px;
 
     .titleWrap {
+      display: flex;
       width: 100%;
       height: 248px;
       padding: 130px 20px 50px;
@@ -19,7 +20,7 @@ $main-font-family-kor: "Noto Sans KR";
 
       h1 {
         font-family: $main-font-family-kor;
-        font-size: 22px;
+        font-size: 19px;
         font-weight: 700;
         line-height: 34px;
         letter-spacing: -0.22px;
@@ -28,7 +29,16 @@ $main-font-family-kor: "Noto Sans KR";
     }
 
     .inputWrap {
+      height: 430px;
       padding: 40px 30px;
+      overflow-y: scroll;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+
+      &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+      }
+      
 
       label {
         width: 100%;
@@ -76,8 +86,183 @@ $main-font-family-kor: "Noto Sans KR";
       .phoneNumber {
 
       }
+
+      
     }
 
+    .checkedService {
+      .titleWrap {
+        margin-bottom: 20px;
+      }
+    }
+
+    .checkboxWrap {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      min-width: 320px;
+      max-width: 390px;
+      height: 430px;
+      padding: 20px;
+      overflow-y: scroll;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+
+      &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+      }
+
+      .checkebox {
+        margin: 0;
+        padding: 0;
+
+        input {
+          width: 0px;
+          height: 0px;
+          padding: 0;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+
+          &:checked + label {
+            background-color: #fff;
+            color: #3e8b3c;
+            border: 2px solid #3e8b3c;
+          }
+        }
+
+        label {
+          margin: 5px;
+          padding: 10px 18px;
+          font-family: $main-font-family-kor;
+          font-size: 16px;
+          font-weight: 700;
+          letter-spacing: -0.16px;
+          color: #666;
+          text-align: center;
+          border: 2px solid #ccc;
+          border-radius: 24px;
+          background-color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+      
+    .guide {
+      padding: 10px 20px 30px;
+
+      span {
+        font-family: $main-font-family-kor;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: -0.12px;
+        color: #999;
+      }
+    }
+
+    .contentsWrap {
+      height: 450px;
+      padding: 40px 20px;
+      overflow-y: scroll;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+
+      &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+      }
+
+      .privacyPolicyWrap, .termsOfServiceWrap {
+
+        h4 {
+          font-family: $main-font-family-eng;
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: -0.14px;
+          color: #333;
+        }
+
+        .boxWrap {
+          box-sizing: border-box;
+          width: 100%;
+          height: 130px;
+          margin: 0px 0 15px;
+          padding: 14px 20px;
+          border: 1px solid #ccc;
+          overflow-y: scroll;
+
+          h5 {
+            font-family: $main-font-family-kor;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: -0.12px;
+            color: #666;
+          }
+
+          p {
+            font-family: $main-font-family-kor;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: -0.12px;
+            color: #666;
+            text-overflow: ellipsis;
+            white-space: wrap;
+          }
+        }
+      }
+
+      .agreeButtonWrap {
+        padding: 0px;
+  
+        input {
+          margin-right: 5px;
+          vertical-align: middle;
+  
+          &[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            border-radius: 0;
+            
+          }
+        }
+      }
+    }
+  }
+
+  .nextBtn, .previewBtn {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+
+    button, a {
+      width: 90%;
+      padding: 20px 0;
+      font-family: $main-font-family-eng;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: -0.16px;
+      color: #fff;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #333;
+
+    }
+
+    button:nth-child(1) {
+      display: none;
+
+    }
+  }
+
+  .previewBtn {
+
+    a {
+      color: #111;
+      background: #fff;
+      
+    }
   }
 
 }

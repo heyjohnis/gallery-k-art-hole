@@ -49,14 +49,14 @@ export default function SignupStep5({ form, setForm }) {
         </div>
 
         <div className={styles.privacyPolicyWrap}>
-          <span>개인정보처리방침</span>
+          <h4>개인정보처리방침</h4>
           <div className={styles.boxWrap}>
             <PrivacyPolicyText />
           </div>
         </div>
 
-        <div className={styles.termsOfServiceyWrap}>
-          <span>서비스 이용약관</span>
+        <div className={styles.termsOfServiceWrap}>
+          <h4>서비스 이용약관</h4>
           <div className={styles.boxWrap}>
             <TermsConditionsText />
           </div>

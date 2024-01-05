@@ -143,13 +143,9 @@ const PrivacyPolicyText = () => {
         위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.
         <br />▶ 개인정보 보호책임자
         <br />
-        성명 :표영식
+        성명 : 양승철
         <br />
-        직책 :과장
-        <br />
-        직급 :과장
-        <br />
-        연락처 :1644-8826, cs@galleryk.co.kr, 02-557-5466
+        연락처 : 1644-8826, cs@galleryk.co.kr
         <br />※ 개인정보 보호 담당부서로 연결됩니다.
         <br />② 정보주체께서는
         그린갤러리(‘[greengallery.kr](http://greengallery.kr/)’이하 ‘그린갤러리
@@ -223,12 +219,11 @@ const PrivacyPolicyText = () => {
         <br />
         부서명 : IT기획본부
         <br />
-        담당자 : 표영식
+        담당자 : 남장현
         <br />
-        연락처 : 1644-8826, cs@galleryk.co.kr, 02-557-5466
+        연락처 : 1644-8826, cs@galleryk.co.kr
         <br />② 정보주체께서는 제1항의 열람청구 접수․처리부서 이외에,
-        행정안전부의 ‘개인정보보호 종합지원 포털’
-        웹사이트(www.privacy.go.kr)를
+        행정안전부의 ‘개인정보보호 종합지원 포털’ 웹사이트(www.privacy.go.kr)를
         통하여서도 개인정보 열람청구를 하실 수 있습니다.
         <br />▶ 행정안전부 개인정보보호 종합지원 포털 → 개인정보 민원 → 개인정보
         열람등 요구 (본인확인을 위하여 아이핀(I-PIN)이 있어야 함)
@@ -253,10 +248,8 @@ const PrivacyPolicyText = () => {
         <br />- 홈페이지 : [www.kopico.go.kr](http://www.kopico.go.kr/)
         <br />- 전화 : (국번없이) 1833-6972
         <br />- 주소 : (03171)서울특별시 종로구 세종대로 209 정부서울청사 4층
-        <br />▶ 대검찰청 사이버범죄수사단 : 02-3480-3573
-        (www.spo.go.kr)
-        <br />▶ 경찰청 사이버안전국 : 182
-        (http://cyberbureau.police.go.kr)
+        <br />▶ 대검찰청 사이버범죄수사단 : 02-3480-3573 (www.spo.go.kr)
+        <br />▶ 경찰청 사이버안전국 : 182 (http://cyberbureau.police.go.kr)
       </p>
     </>
   );
