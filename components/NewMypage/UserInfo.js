@@ -29,7 +29,7 @@ export const UserInfo = () => {
       </section>
       <section className='user_point'>
         <h4>나의 포인트</h4>
-        <div className='point'><span>1,234,567,890,000 P</span> P</div>
+        <div className='point'><span>1,234,567,890,000</span> P</div>
         <div className='total_point'>
           <span>총 연간 포인트</span>
           <span className='bar'>|</span>
