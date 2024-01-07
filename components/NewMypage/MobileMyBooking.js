@@ -72,7 +72,7 @@ export const MobileMyBooking = () => {
       <section className='reser_content_list'>
         <ul className='reser_list'>
           <li>
-            <Link href="#">
+            <Link href="/mypage/reserdetail">
             <h3>골프장 예약 서비스</h3>
             <span>예약확정일 : <span>2023. 11. 19</span></span>
             <div className='reser_type_info'>
@@ -84,7 +84,7 @@ export const MobileMyBooking = () => {
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="/mypage/reserdetail">
             <h3>골프장 예약 서비스</h3>
             <span>담당자 확인중</span>
             <div className='reser_type_info'>
@@ -96,7 +96,7 @@ export const MobileMyBooking = () => {
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="/mypage/reserdetail">
             <h3>개인 제트기 서비스</h3>
             <span>예약 진행중</span>
             <div className='reser_type_info'>
@@ -108,7 +108,7 @@ export const MobileMyBooking = () => {
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="/mypage/reserdetail">
             <h3>일본 북해도 골프&온천</h3>
             <span>예약취소일 : <span>2023. 11. 19</span></span>
             <div className='reser_type_info'>

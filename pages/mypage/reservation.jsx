@@ -1,5 +1,4 @@
 import React from 'react'
-import PageBanner from '../../components/Common/PageBanner'
 import Footer from '../../components/Layouts/Footer'
 import { MobileMyBooking } from '../../components/NewMypage/MobileMyBooking'
 import { PcMyBooking } from '../../components/NewMypage/PcMyBooking'
@@ -8,12 +7,6 @@ import { PcMyBooking } from '../../components/NewMypage/PcMyBooking'
 function Reservation() {
   return (
     <>
-      <PageBanner
-        pageTitle="나의 예약"
-        homePageUrl="/mypage/"
-        homePageText="My Reservation"
-        activePageText="My Reservation"
-      />
       <section className="container">
         <ul className='mypage_tab_menu'>
           <li>HOME</li>
