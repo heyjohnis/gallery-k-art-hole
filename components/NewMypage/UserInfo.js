@@ -26,7 +26,7 @@ export const UserInfo = () => {
           </div>
           <button>회원정보수정</button>
         </div>
-        <div class={`user_icon ${userLevel.female}`}></div> 
+        <div class={`user_icon ${userLevel.male}`}></div> 
         {/* TODO: 성별 프로필 이미지 변경 */}
       </section>
       <section className='user_point'>

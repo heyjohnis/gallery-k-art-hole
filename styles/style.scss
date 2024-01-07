@@ -5534,7 +5534,7 @@ My Page
     height: 100px; 
     border-radius: 50%;
     overflow: hidden;
-    background:  center /cover no-repeat url(/images/mypage/green_man.png);
+    background:  center /cover no-repeat url(/images/mypage/green_man.jpg);
   }
 }
 
@@ -5616,10 +5616,17 @@ My Page
       }
     }
     .user_icon {
-      background-image: url(/images/mypage/green_man.png);
-      &.gender_female {
-        background-image: url(/images/mypage/green_women.png);
+      &.gender_man {
+        background-image: url(/images/mypage/green_man.jpg);
       }
+      &.gender_female {
+        background-image: url(/images/mypage/green_women.jpg);
+      }
+    }
+  }
+  .user_point {
+    .point {
+      color: $sub-color;
     }
   }
 }
@@ -5629,14 +5636,107 @@ My Page
     h3 {
       &::before{
         content: 'BLUE MEMBER';
-        color: $sub-color;
+        color: #1A4769;
       }
     }
     .user_icon {
-      background-image: url(/images/mypage/green_man.png);
+      background-image: url(/images/mypage/blue_man.jpg);
       &.gender_female {
-        background-image: url(/images/mypage/green_women.png);
+        background-image: url(/images/mypage/blue_women.jpg);
       }
+    }
+  }
+  .user_point {
+    .point {
+      color: #1A4769;
+    }
+  }
+}
+
+.level_red {
+  .user_info{
+    h3 {
+      &::before{
+        content: 'RED MEMBER';
+        color: #831F1F;
+      }
+    }
+    .user_icon {
+      background-image: url(/images/mypage/red_man.jpg);
+      &.gender_female {
+        background-image: url(/images/mypage/red_women.jpg);
+      }
+    }
+  }
+  .user_point {
+    .point {
+      color: #831F1F;
+    }
+  }
+}
+
+.level_purple {
+  .user_info{
+    h3 {
+      &::before{
+        content: 'PURPLE MEMBER';
+        color: #493C61;
+      }
+    }
+    .user_icon {
+      background-image: url(/images/mypage/purple_man.jpg);
+      &.gender_female {
+        background-image: url(/images/mypage/purple_women.jpg);
+      }
+    }
+  }
+  .user_point {
+    .point {
+      color: #493C61;
+    }
+  }
+}
+
+.level_black {
+  .user_info{
+    h3 {
+      &::before{
+        content: 'BLACK MEMBER';
+        color: #252428;
+      }
+    }
+    .user_icon {
+      background-image: url(/images/mypage/black_man.jpg);
+      &.gender_female {
+        background-image: url(/images/mypage/black_women.jpg);
+      }
+    }
+  }
+  .user_point {
+    .point {
+      color: #252428;
+    }
+  }
+}
+
+.level_platinum {
+  .user_info{
+    h3 {
+      &::before{
+        content: 'PLATINUM MEMBER';
+        color: #273748;
+      }
+    }
+    .user_icon {
+      background-image: url(/images/mypage/platinum_man.jpg);
+      &.gender_female {
+        background-image: url(/images/mypage/platinum_women.jpg);
+      }
+    }
+  }
+  .user_point {
+    .point {
+      color: #273748;
     }
   }
 }
