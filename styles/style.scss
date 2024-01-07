@@ -6023,5 +6023,139 @@ My Page
       }
     }
   }
+}
 
+/*
+My Page > 예약확인
+================================*/
+.accordion {
+  padding: 50px;
+  margin-top: 33px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  .card {
+    padding:0;
+    border:0;
+    background: none;
+    .card-header {
+      padding: 50px 0;
+      border-bottom: 1px solid #ddd;
+      background: none;
+      .reser_info {
+        display: flex;
+        justify-content: space-between;
+        color: $gray-color;
+        font-size: 16px;
+        font-weight:100;
+        letter-spacing: -0.16px;
+        .bar {
+          margin: 0 20px;
+        }
+        button {
+          color: $gray-color;
+          font-size: 16px;
+          font-weight:100;
+          letter-spacing: -0.16px;
+          text-decoration: underline;
+        }
+      }
+      .reser_detail {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .reser_info_items {
+          display: flex;
+          .thumb_img {
+            width: 160px;
+            height: 160px;
+            border-radius: 10px;
+            overflow: hidden;
+            object-fit: cover;
+          }
+          article {
+            margin-left: 40px;
+            display: flex;
+            flex-direction: column;
+            h3 {
+              margin-bottom: 10px;
+              color: $main-color;
+              font-size: 22px;
+              font-weight: 500;
+              letter-spacing: -1px;
+            }
+            span {
+              color: #999;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 28px;
+              letter-spacing: -0.16px;
+            }
+          }
+        }
+        .reser_staus {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          .status {
+            margin-bottom: 30px;
+            color: $gray-color;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            &.complete {
+              color: $sub-color;
+            }
+          }
+          button {
+            display: flex;
+            align-items: center;
+            padding: 12px 40px;
+            background-color: #ddd;
+            border-radius: 5px;
+            span {
+              color: $body-color;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: normal;
+              letter-spacing: -1px;
+              margin-right: 20px;
+            }
+            .arr {
+              position: relative;
+              margin:0;
+              width: 16px;
+              height: 6px;
+              &::after {
+                position: absolute;
+                left: 0; 
+                top: 0; 
+                content: '';
+                width: 10px;
+                height: 10px;
+                border-top: 2px solid #333;
+                border-right: 2px solid #333; 
+              }
+            }
+            &.none {
+              .arr::after {
+                transform: rotate(135deg) translate(-50% , 0);
+                
+              }
+            }
+            &.active {
+              .arr::after {
+                  top: -50%;
+                  transform: rotate(315deg) translate(0 , 50%);
+              }
+            }
+          }
+        }
+      }
+
+    }
+    &:first-child .card-header{
+      padding-top : 0;
+    }
+  }
 }

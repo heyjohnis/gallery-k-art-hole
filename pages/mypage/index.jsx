@@ -1,7 +1,7 @@
 import React from 'react'
 import PageBanner from '../../components/Common/PageBanner'
 import Footer from '../../components/Layouts/Footer'
-import { MyArtwork } from '../../components/NewMypage/ MyArtwork'
+import { MyArtwork } from '../../components/NewMypage/MyArtwork'
 import MyContract from '../../components/NewMypage/MyContract'
 import { UserInfo } from '../../components/NewMypage/UserInfo'
 
