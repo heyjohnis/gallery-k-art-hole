@@ -1,12 +1,19 @@
-import React from 'react'
-import Footer from '../../components/Layouts/Footer'
-import { MyArtwork } from '../../components/NewMypage/MyArtwork'
-import MyContract from '../../components/NewMypage/MyContract'
-import { UserInfo } from '../../components/NewMypage/UserInfo'
+import React from 'react';
+import PageBanner from "../../components/Common/PageBanner";
+import Footer from '../../components/Layouts/Footer';
+import { MyArtwork } from '../../components/NewMypage/MyArtwork';
+import MyContract from '../../components/NewMypage/MyContract';
+import { UserInfo } from '../../components/NewMypage/UserInfo';
 
 function Mypage() {
   return (
     <>
+      <PageBanner
+        pageTitle="My page"
+        homePageUrl="/mypage/"
+        homePageText="My page"
+        activePageText="마이페이지"
+      />
       <section className="container">
         <ul className='mypage_tab_menu'>
           <li className='active'>HOME</li>

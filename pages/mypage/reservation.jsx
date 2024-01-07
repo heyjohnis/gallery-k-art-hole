@@ -1,12 +1,19 @@
-import React from 'react'
-import Footer from '../../components/Layouts/Footer'
-import { MobileMyBooking } from '../../components/NewMypage/MobileMyBooking'
-import { PcMyBooking } from '../../components/NewMypage/PcMyBooking'
+import React from 'react';
+import PageBanner from "../../components/Common/PageBanner";
+import Footer from '../../components/Layouts/Footer';
+import { MobileMyBooking } from '../../components/NewMypage/MobileMyBooking';
+import { PcMyBooking } from '../../components/NewMypage/PcMyBooking';
 
 
 function Reservation() {
   return (
     <>
+      <PageBanner
+        pageTitle="예약확인"
+        homePageUrl="/mypage/"
+        homePageText="예약확인"
+        activePageText="예약확인"
+      />
       <section className="container">
         <ul className='mypage_tab_menu'>
           <li>HOME</li>
