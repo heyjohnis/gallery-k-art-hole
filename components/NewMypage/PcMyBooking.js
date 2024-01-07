@@ -38,7 +38,7 @@ export const PcMyBooking = () => {
   const statusComplete = "complete"; 
 
   return (
-    <>
+    <div className='pc_reser_content'>
       <div className='reservation_select_form'>
         <Form.Select
           aria-label="Default select example"
@@ -499,6 +499,6 @@ export const PcMyBooking = () => {
           </Card>
       </Accordion>
       </section>
-    </>
+    </div>
   )
 }
