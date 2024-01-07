@@ -17,6 +17,7 @@ const userLevel = {
 export const UserInfo = () => {
   return (
     <div className={userLevel.green}> 
+    {/* TODO: 색상변경 */}
       <section className='user_info'>
         <div className='info_items'>
           <div>
@@ -25,7 +26,8 @@ export const UserInfo = () => {
           </div>
           <button>회원정보수정</button>
         </div>
-        <div class={`user_icon ${userLevel.female}`}></div>
+        <div class={`user_icon ${userLevel.female}`}></div> 
+        {/* TODO: 성별 프로필 이미지 변경 */}
       </section>
       <section className='user_point'>
         <h4>나의 포인트</h4>
@@ -68,7 +70,7 @@ export const UserInfo = () => {
       </section>
       <div className='point_update'><FontAwesomeIcon icon={faClock}/> update  :  2023-11-13-21:00</div>
       <div className='point_notice'><div className='icon'></div>부킹의 경우 두달 전에도 신청이 가능합니다.</div>
-      <div className='point_notice'><div className='icon red'></div>현재 제한 횟수를 넘어서 신청중입니다!</div>
+      <div className='point_notice red'><div className='icon'></div>현재 제한 횟수를 넘어서 신청중입니다!</div>
     </div>
   )
 }

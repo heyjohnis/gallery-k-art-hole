@@ -2,10 +2,11 @@ import React from 'react';
 
 export default function MyContract() {
   return (
-    <div className='mapage_content_item'>
+    <div className='mypage_content_item'>
       <h2>나의 계약</h2>
       <div className='contract_content'>
         <div className='contract_info'>
+          <div className='membership_tit'>멤버쉽</div>
           <div className='membership_name'>
             <span>Vincent Van Gogh</span>
             <span className='bigger'>Green</span>
