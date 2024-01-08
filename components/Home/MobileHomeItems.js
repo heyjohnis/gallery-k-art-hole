@@ -180,38 +180,38 @@ export default function MobileHomeItems() {
 
   return (
     <>
-      <div className={`${styles.titleWrapMid}`}>
-        <span className={`${styles.titleMid}`}>
+      <div className={styles.titleWrapMid}>
+        <span className={styles.titleMid}>
           골프투어
           <br />
           어디로 갈까요?
         </span>
       </div>
 
-      <div className={`${styles.tabMenuWrap}`}>
+      <div className={styles.tabMenuWrap}>
         <Tab.Container id="left-tabs" defaultActiveKey="first">
-          <Nav className={`${styles.tabMenuUl}`}>
-            <Nav.Item className={`${styles.tabMenuUlLi}`}>
+          <Nav className={styles.tabMenuUl}>
+            <Nav.Item className={styles.tabMenuUlLi}>
               <Nav.Link eventKey="first" onClick={handleTabMenu}>
                 제휴서비스
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item className={`${styles.tabMenuUlLi}`}>
+            <Nav.Item className={styles.tabMenuUlLi}>
               <Nav.Link eventKey="second" onClick={handleTabMenu}>
                 GG쇼핑
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item className={`${styles.tabMenuUlLi}`}>
+            <Nav.Item className={styles.tabMenuUlLi}>
               <Nav.Link eventKey="third" onClick={handleTabMenu}>
                 GG투어
               </Nav.Link>
             </Nav.Item>
           </Nav>
 
-          <div className={`${styles.slideSec}`}>
-            <div className={`${styles.slideWrap}`}>
+          <div className={styles.slideSecWrap}>
+            <div className={styles.slideWrap}>
               <Tab.Content>
-                <Tab.Pane eventKey={`${tabMenu}`}>
+                <Tab.Pane eventKey={tabMenu}>
                   <MobileTourListWrap
                     items={
                       tabMenu === "first"

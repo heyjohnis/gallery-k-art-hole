@@ -4,20 +4,24 @@ import Link from "next/link";
 import styles from "./SignupCompListWrap.module.scss";
 
 const SignupCompListWrap = ({ LIST_ITEM }) => {
-  console.log(LIST_ITEM);
+  // console.log(LIST_ITEM);
 
   let imageName = LIST_ITEM[1][1].split(" ");
-  const imageName1 = () => {
-    return `styles.` + imageName[0].toLowerCase();
-  };
-
-  console.log(imageName);
+  imageName = imageName[0].toLowerCase();
 
   return (
     <>
-      <div className={styles.rightWrap} key={LIST_ITEM[0][1]}>
-        <div className={styles.imageWrap}>
-          <img src={LIST_ITEM[4][1]} alt={LIST_ITEM[1][1]} />
+      <div className={styles.contentsWrap} key={LIST_ITEM[0][1]}>
+        <div
+          className={
+            imageName == "vincent"
+              ? styles.imageWrapVincent
+              : imageName == "auguste"
+              ? styles.imageWrapAuguste
+              : styles.imageWrapClaude
+          }
+        >
+          {/* <img src={LIST_ITEM[4][1]} alt={LIST_ITEM[1][1]} /> */}
           <div className={styles.textWrap}>
             <h2>{LIST_ITEM[2][1]}</h2>
             <div className={styles.mainLink}>
