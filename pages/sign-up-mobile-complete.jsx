@@ -65,7 +65,7 @@ const SignupMobileComplete = ({ showReservationModal }) => {
 
       <div className={styles.completeWrap}>
         <div className={styles.tabMenuWrap}>
-          <Tab.Container id="left-tabs" defaultActiveKey="first">
+          <Tab.Container id="menu-tabs" defaultActiveKey="first">
               <div>
                 <div className={styles.titleWrap}>
                   <img src="/images/dark-logo.svg" alt="logo" />
