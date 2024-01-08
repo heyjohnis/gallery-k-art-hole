@@ -19,12 +19,12 @@ export const UserInfo = ({ user, gotoMypageService }) => {
     console.log("UserInfo: ", user);
   }, [user]);
   return (
-    <div className={userLevel[user.membership || "green"]}>
+    <div className={userLevel[user?.membership || "green"]}>
       <section className="user_info">
         <div className="info_items">
           <div>
             <h2>
-              <span>{user.user_name}</span>님
+              <span>{user?.user_name}</span>님
             </h2>
             <h3></h3>
           </div>
@@ -38,7 +38,7 @@ export const UserInfo = ({ user, gotoMypageService }) => {
       <section className="user_point">
         <h4>나의 포인트</h4>
         <div className="point">
-          <span></span> P
+          <span>{commaFormat(user?.yearly_point - user?.use_point)}</span> P
         </div>
         <div className="total_point">
           <span>총 연간 포인트</span>

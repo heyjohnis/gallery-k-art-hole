@@ -9,8 +9,18 @@ export default function MyContract({ user }) {
         <div className="contract_info">
           <div className="membership_tit">멤버쉽</div>
           <div className="membership_name">
-            <span>Vincent Van Gogh</span>
-            <span className="bigger">Green</span>
+            <span>
+              {user.service_group === "gogh"
+                ? "Vincent Van Gogh"
+                : user.service_group === "renoir"
+                ? "Auguste Renoir"
+                : "Claude Monet"}
+            </span>
+            <span className="bigger">
+              {user?.membership?.replace(/\b[a-z]/, (letter) =>
+                letter.toUpperCase()
+              )}
+            </span>
           </div>
           <button>멤버십 혜택 안내</button>
         </div>

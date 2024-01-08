@@ -1,57 +1,43 @@
-import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { POST } from "../../hooks/restApi";
+import { commaFormat } from "../../utils/number";
 
-export const  MyArtwork = () => {
+export const MyArtwork = ({ user }) => {
+  const [artworks, setArtworks] = useState([]);
+  useEffect(() => {
+    if (user.cntc_no) {
+      POST("/mypage/artwork", { cntc_no: user.cntc_no }).then(({ data }) => {
+        console.log("artworks: ", data);
+        setArtworks(data);
+      });
+    }
+  }, [user]);
+
   return (
-    <div className='mypage_content_item'>
+    <div className="mypage_content_item">
       <h2>나의 보유 작품</h2>
-      <ul className='artwork_list'>
-        <li>
-          <div className='artwork_items'>
-            <div className='artwork_img'>
-              <img src="/images/mypage/myartwork_01.png"/>
-            </div>
-            <article>
-              <div>
-                <h5>생명의 샘 ‧ 자연으로부터 생명의 씨II 2222</h5>
-                <p>김복동</p>
+      <ul className="artwork_list">
+        {artworks.map((artwork, i) => (
+          <li>
+            <div className="artwork_items">
+              <div className="artwork_img">
+                <img
+                  src={`https://www.artnomics.co.kr/data/artworks/${artwork.atwk_no}/thumb-image_286.jpg`}
+                />
               </div>
-              <div className='art_price'>18,000,000 원</div>
-            </article>
-          </div>
-          <Link href="#">작품상세</Link>
-        </li>
-        <li>
-          <div className='artwork_items'>
-            <div className='artwork_img'>
-              <img src="/images/mypage/myartwork_01.png"/>
+              <article>
+                <div>
+                  <h5>{artwork.atwk_nm}</h5>
+                  <p>{artwork.atst_nm}</p>
+                </div>
+                <div className="art_price">{commaFormat(artwork.price)}원</div>
+              </article>
             </div>
-            <article>
-              <div>
-                <h5>생명의 샘 ‧ 자연으로부터 생명의 씨II 2222</h5>
-                <p>김복동</p>
-              </div>
-              <div className='art_price'>18,000,000 원</div>
-            </article>
-          </div>
-          <Link href="#">작품상세</Link>
-        </li>
-        <li>
-          <div className='artwork_items'>
-            <div className='artwork_img'>
-              <img src="/images/mypage/myartwork_01.png"/>
-            </div>
-            <article>
-              <div>
-                <h5>생명의 샘 ‧ 자연으로부터 생명의 씨II 2222</h5>
-                <p>김복동</p>
-              </div>
-              <div className='art_price'>18,000,000 원</div>
-            </article>
-          </div>
-          <Link href="#">작품상세</Link>
-        </li>
+            <Link href="#">작품상세</Link>
+          </li>
+        ))}
       </ul>
     </div>
-  )
-}
+  );
+};
