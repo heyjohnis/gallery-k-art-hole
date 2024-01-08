@@ -408,7 +408,11 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
   }
   transition: height 0.3s ease-in-out;
   .contact_items {
-    padding: 20px 0;
+    padding: 50px 0 20px;
+
+    @media screen and (max-width: 768px) {
+      padding: 20px 0 10px;
+    }
   }
 }
 
@@ -633,11 +637,31 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
         img {
           position: absolute;
-          top: -27px;
+          top: -35px;
           left: 165px;
           width: 80px;
           height: 80px;
 
+        }
+      }
+        
+      @media screen and (max-width: 768px) {
+        p {
+          margin-bottom: 5px;
+          font-size: 21px;
+          line-height: 30px;
+
+          span {
+            font-size: 27px;
+          }
+
+          img {
+            top: -20px;
+            left: 125px;
+            width: 50px;
+            height: 50px;
+  
+          }
         }
       }
 
@@ -676,6 +700,19 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
               padding-left: 10px;
               font-weight: 300;
               color: #333;
+            }
+          }
+        }
+        
+        @media screen and (max-width: 768px) {
+          ul {
+            li {
+              line-height: 25px;
+
+              span {
+                line-height: 25px;
+
+              }
             }
           }
         }
@@ -736,6 +773,15 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
       transition: all 0.4s ease-in-out;
     }
   }
+
+  @media only screen and (max-width: 767px) { 
+    flex-direction: row;
+
+    .form_control { 
+      font-size: 12px;
+    }
+  }
+
 }
 
 .buttonWrap {
