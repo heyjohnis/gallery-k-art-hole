@@ -1,22 +1,21 @@
-import Link from 'next/link';
-import React from 'react';
-import ToggleButton from 'react-bootstrap/ToggleButton';
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import Link from "next/link";
+import React from "react";
+import ToggleButton from "react-bootstrap/ToggleButton";
+import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 
-export const MobileMyBooking = () => {
-
+export default function MobileMyBooking() {
   const reservationLabel = {
-    golf : "golf",
-    screen : "screen",
-    service : "service",
+    golf: "golf",
+    screen: "screen",
+    service: "service",
     tour: "tour",
-  }
+  };
   const complete = "complete";
 
   return (
-    <div className='mb_reser_content'>
+    <div className="mb_reser_content">
       <h2>예약조회</h2>
-      <section className='mb_reser_filter'>
+      <section className="mb_reser_filter">
         <ToggleButtonGroup type="radio" name="period" defaultValue={1}>
           <ToggleButton id="period-radio-1" value={1} className="btn_filter">
             전체
@@ -69,58 +68,62 @@ export const MobileMyBooking = () => {
           </ToggleButton>
         </ToggleButtonGroup>
       </section>
-      <section className='reser_content_list'>
-        <ul className='reser_list'>
+      <section className="reser_content_list">
+        <ul className="reser_list">
           <li>
             <Link href="/mypage/reserdetail">
-            <h3>골프장 예약 서비스</h3>
-            <span>예약확정일 : <span>2023. 11. 19</span></span>
-            <div className='reser_type_info'>
-              <span className={`label ${reservationLabel.golf}`}></span>
-              {/* TODO: 예약 타입에 따라 className 변경 */}
-              <button className={`status ${complete}`}>예약완료</button>
-              {/* TODO: 예약완료일때만 complete 추가 */}
-            </div>
+              <h3>골프장 예약 서비스</h3>
+              <span>
+                예약확정일 : <span>2023. 11. 19</span>
+              </span>
+              <div className="reser_type_info">
+                <span className={`label ${reservationLabel.golf}`}></span>
+                {/* TODO: 예약 타입에 따라 className 변경 */}
+                <button className={`status ${complete}`}>예약완료</button>
+                {/* TODO: 예약완료일때만 complete 추가 */}
+              </div>
             </Link>
           </li>
           <li>
             <Link href="/mypage/reserdetail">
-            <h3>골프장 예약 서비스</h3>
-            <span>담당자 확인중</span>
-            <div className='reser_type_info'>
-              <span className={`label ${reservationLabel.screen}`}></span>
-              {/* TODO: 예약 타입에 따라 className 변경 */}
-              <button className={`status`}>예약접수</button>
-              {/* TODO: 예약완료일때만 complete 추가 */}
-            </div>
+              <h3>골프장 예약 서비스</h3>
+              <span>담당자 확인중</span>
+              <div className="reser_type_info">
+                <span className={`label ${reservationLabel.screen}`}></span>
+                {/* TODO: 예약 타입에 따라 className 변경 */}
+                <button className={`status`}>예약접수</button>
+                {/* TODO: 예약완료일때만 complete 추가 */}
+              </div>
             </Link>
           </li>
           <li>
             <Link href="/mypage/reserdetail">
-            <h3>개인 제트기 서비스</h3>
-            <span>예약 진행중</span>
-            <div className='reser_type_info'>
-              <span className={`label ${reservationLabel.service}`}></span>
-              {/* TODO: 예약 타입에 따라 className 변경 */}
-              <button className={`status`}>예약중</button>
-              {/* TODO: 예약완료일때만 complete 추가 */}
-            </div>
+              <h3>개인 제트기 서비스</h3>
+              <span>예약 진행중</span>
+              <div className="reser_type_info">
+                <span className={`label ${reservationLabel.service}`}></span>
+                {/* TODO: 예약 타입에 따라 className 변경 */}
+                <button className={`status`}>예약중</button>
+                {/* TODO: 예약완료일때만 complete 추가 */}
+              </div>
             </Link>
           </li>
           <li>
             <Link href="/mypage/reserdetail">
-            <h3>일본 북해도 골프&온천</h3>
-            <span>예약취소일 : <span>2023. 11. 19</span></span>
-            <div className='reser_type_info'>
-              <span className={`label ${reservationLabel.tour}`}></span>
-              {/* TODO: 예약 타입에 따라 className 변경 */}
-              <button className={`status`}>예약취소</button>
-              {/* TODO: 예약완료일때만 complete 추가 */}
-            </div>
+              <h3>일본 북해도 골프&온천</h3>
+              <span>
+                예약취소일 : <span>2023. 11. 19</span>
+              </span>
+              <div className="reser_type_info">
+                <span className={`label ${reservationLabel.tour}`}></span>
+                {/* TODO: 예약 타입에 따라 className 변경 */}
+                <button className={`status`}>예약취소</button>
+                {/* TODO: 예약완료일때만 complete 추가 */}
+              </div>
             </Link>
           </li>
         </ul>
       </section>
     </div>
-  )
+  );
 }

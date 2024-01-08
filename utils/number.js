@@ -1,5 +1,5 @@
 export function commaFormat(str) {
-  str = String(parseInt(str));
+  str = String(parseInt(str || "0"));
   return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 

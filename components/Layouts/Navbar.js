@@ -67,7 +67,7 @@ const Navbar = ({ user }) => {
                 {user ? (
                   <>
                     <li>
-                      <Link href="/mypage/home" className="menu-items">
+                      <Link href="/mypage" className="menu-items">
                         마이페이지
                       </Link>
                     </li>
