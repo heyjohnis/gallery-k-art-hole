@@ -105,48 +105,22 @@ const LandingContactForm = ({ openContact }) => {
         }`}
       >
         <div className={`row ${styles.contact_items}`}>
-          <div className={`col-lg-3 col-md-6`}></div>
-          <div
-            className={`col-lg-3 col-md-6 ${styles.items} ${styles.textWrap}`}
-          >
-            <div className={styles.text}>
-              <p>
-                <span>지금 바로! </span>
-                <img src="/images/landing_cs_icon.png" alt="sc_icon" />
-                <br />
-                문의사항을 남겨주시면
-                <br />
-                빠른 상담 도와드립니다!
-              </p>
-              <div className={`${styles.contactWrap}`}>
-                <ul>
-                  <li>
-                    <span>Email</span> |
-                    <span> greengallery@galleryk.co.kr</span>
-                  </li>
-                  <li>
-                    <span>TEL</span> |<span> 1588 - 1778</span>
-                  </li>
-                  <li>
-                    <span>FAX</span> |<span> +82(2) 557 - 5466</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <div className={`col-lg-3 col-md-3 ${styles.items} ${styles.tel}`}>
+            <div>1588-1778</div>
           </div>
           <div
-            className={`col-lg-3 col-md-6 ${styles.items} ${styles.items_form}`}
+            className={`col-lg-6 col-md-6 ${styles.items} ${styles.items_form}`}
           >
             <form onSubmit={handleSubmit}>
               <div className="row">
-                <div className="col-lg-6 col-sm-12">
+                <div className="col-lg-12 col-sm-12">
                   <div className={styles.form_group}>
-                    <label htmlFor="name">성함</label>
+                    <label htmlFor="name">이름</label>
                     <input
                       type="text"
                       id="name"
                       name="name"
-                      placeholder="홍길동"
+                      placeholder="이름"
                       className={styles.form_control}
                       value={contact.name}
                       onChange={handleChange}
@@ -154,14 +128,14 @@ const LandingContactForm = ({ openContact }) => {
                     />
                   </div>
                 </div>
-                <div className="col-lg-6 col-sm-12">
+                <div className="col-lg-12 col-sm-12">
                   <div className={styles.form_group}>
                     <label htmlFor="number">연락처</label>
                     <input
                       type="text"
                       id="number"
                       name="number"
-                      placeholder="01012345678"
+                      placeholder="연락처"
                       className={styles.form_control}
                       value={contact.number}
                       onChange={handleChange}
@@ -184,7 +158,7 @@ const LandingContactForm = ({ openContact }) => {
                 </div> */}
                 <div className="col-lg-12 col-md-12">
                   <div className={styles.form_group}>
-                    <label htmlFor="text">문의내용</label>
+                    <label htmlFor="text">문의 내용</label>
                     <textarea
                       id="text"
                       name="text"
@@ -208,24 +182,14 @@ const LandingContactForm = ({ openContact }) => {
                       href="https://sprinkle-justice-3a1.notion.site/11de65f3be1241efb4e542bbb897a52c"
                       target="_blank"
                     >
-                      개인정보 활용에 동의합니다.
+                      개인정보 동의
                     </Link>
                   </label>
-                </div>
-
-                <div className={`col-lg-12 col-sm-12 ${styles.buttonWrap}`}>
-                  <button
-                    type="submit"
-                    className="default-btn btn-two"
-                    onClick={handleSubmit}
-                  >
-                    상담신청
-                  </button>
                 </div>
               </div>
             </form>
           </div>
-          {/* <div
+          <div
             className={`col-lg-3 col-md-3 ${styles.items}  ${styles.conform}`}
           >
             <div className="col-lg-12 col-sm-12">
@@ -233,7 +197,16 @@ const LandingContactForm = ({ openContact }) => {
                 계약 NO! <span className={styles.small}>지금은 문의만</span>
               </span>
             </div>
-          </div> */}
+            <div className="col-lg-12 col-sm-12">
+              <button
+                type="submit"
+                className="default-btn btn-two"
+                onClick={handleSubmit}
+              >
+                상담신청
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

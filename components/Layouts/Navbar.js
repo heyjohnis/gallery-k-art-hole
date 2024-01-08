@@ -5,6 +5,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { handleLogout } from "../../utils/auth";
 import styles from "./navbar.module.scss";
 import Script from "next/script";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay, A11y, Navigation } from "swiper";
 
 const Navbar = ({ user }) => {
   const router = useRouter();
@@ -43,6 +45,24 @@ const Navbar = ({ user }) => {
     <>
       <div id="navbar" className="navbar-area fixed-top">
         <div className={styles.backdrop}></div>
+        <div className={styles.top_event}>
+          <Swiper
+            navigation={true}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: true,
+              pauseOnMouseEnter: true,
+            }}
+            modules={[A11y, Autoplay, Navigation]}
+            className={`hero-swiper ${styles.swiper}`}
+          >
+            <SwiperSlide>
+              <Link href="/landing">
+                <span>What is GREEN GALLERY?</span>
+              </Link>
+            </SwiperSlide>
+          </Swiper>
+        </div>
         <nav className="navbar navbar-light">
           <div className="container">
             <Link href="/" className="navbar-brand light_logo">
