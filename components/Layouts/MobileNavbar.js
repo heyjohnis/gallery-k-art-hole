@@ -85,7 +85,7 @@ const MobileNavbar = ({ user }) => {
             </Link>
 
             <div className={`${styles.button_wrap}`}>
-              <button class={`${styles.login_btn}`}>
+              <button className={`${styles.login_btn}`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

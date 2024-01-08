@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Table from "react-bootstrap/Table";
 import { commaFormat, hyphenForPhone } from "../../utils/number";
 
 export const ScreenCompleteContent = () => {
@@ -23,7 +22,7 @@ export const ScreenCompleteContent = () => {
       <div className="complete_tbl_container">
         <div className="complete_content_tit">
           <h3>스크린골프 포인트 서비스</h3>
-          <div class="complete_status">
+          <div className="complete_status">
             <div className="tit_point">
               {commaFormat(form.total_pay_point)}P
             </div>

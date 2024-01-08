@@ -44,25 +44,25 @@ function Mypage({ user }) {
       <section className="container">
         <ul className="mypage_tab_menu">
           <li
-            className={selectedService === "home" && "active"}
+            className={selectedService === "home" ? "active" : ""}
             onClick={() => gotoMypageService("home")}
           >
             HOME
           </li>
           <li
-            className={selectedService === "reservation" && "active"}
+            className={selectedService === "reservation" ? "active" : ""}
             onClick={() => gotoMypageService("reservation")}
           >
             예약조회
           </li>
           <li
-            className={selectedService === "order" && "active"}
+            className={selectedService === "order" ? "active" : ""}
             onClick={() => gotoMypageService("order")}
           >
             주문ㆍ배송조회
           </li>
           <li
-            className={selectedService === "point" && "active"}
+            className={selectedService === "point" ? "active" : ""}
             onClick={() => gotoMypageService("point")}
           >
             포인트 이용내역

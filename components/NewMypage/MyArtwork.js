@@ -19,7 +19,7 @@ export const MyArtwork = ({ user }) => {
       <h2>나의 보유 작품</h2>
       <ul className="artwork_list">
         {artworks.map((artwork, i) => (
-          <li>
+          <li key={i}>
             <div className="artwork_items">
               <div className="artwork_img">
                 <img

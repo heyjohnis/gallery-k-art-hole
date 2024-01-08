@@ -19,6 +19,12 @@ export default function PcMyBooking() {
     });
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+    console.log("form: ", form);
+  };
+
   useEffect(() => {
     getReservationData();
   }, [form]);
@@ -51,26 +57,47 @@ export default function PcMyBooking() {
   return (
     <div className="pc_reser_content">
       <div className="reservation_select_form">
-        <Form.Select aria-label="Default select example" name="" value="">
+        <Form.Select
+          aria-label="조회기간"
+          name=""
+          value="resv_seach_term"
+          onChange={handleChange}
+        >
           <option value="">기간</option>
-          <option value="">1</option>
-          <option value="">2</option>
+          <option value="all">전체</option>
+          <option value="m1">1달</option>
+          <option value="m3">3달</option>
+          <option value="y1">1년</option>
+          <option value="y3">3년</option>
         </Form.Select>
-        <Form.Select aria-label="Default select example" name="" value="">
+        <Form.Select
+          aria-label="서비스구분"
+          name="resv_kind"
+          onChange={handleChange}
+        >
           <option value="">서비스구분</option>
-          <option value="">골프</option>
-          <option value="">스크린</option>
+          <option value="01">골프장예약 서비스</option>
+          <option value="02">스크린골프 포인트 서비스</option>
+          <option value="03">제휴서비스</option>
+          <option value="04">GG투어</option>
         </Form.Select>
-        <Form.Select aria-label="Default select example" name="" value="">
-          <option value="">예약상태</option>
-          <option value="">예약완료</option>
-          <option value="">예약중</option>
+        <Form.Select
+          aria-label="예약상태"
+          name="resv_stts"
+          onChange={handleChange}
+        >
+          <option value="01">예약신청</option>
+          <option value="05">예약접수</option>
+          <option value="04">예약완료</option>
+          <option value="02">이용완료</option>
+          <option value="03">예약취소</option>
+          <option value="07">이용취소</option>
         </Form.Select>
       </div>
       <section>
         <Accordion>
           {reservations.map((resv, i) => (
-            <Card>
+            <Card key={i}>
               <Card.Header>
                 <div className="reser_num">
                   <div>
@@ -82,9 +109,11 @@ export default function PcMyBooking() {
                       예약일자 : <span>{resv.reg_date}</span>
                     </span>
                   </div>
-                  <div>
-                    <button>예약취소</button>
-                  </div>
+                  {["01", "05"].includes(resv?.resv_stts) && (
+                    <div>
+                      <button>예약취소</button>
+                    </div>
+                  )}
                 </div>
                 <section className="reser_info">
                   <div className="reser_info_items">
@@ -209,10 +238,7 @@ export default function PcMyBooking() {
                         <li className="request">
                           <span className="tit">답변</span>
                           <span>
-                            이명섭님으로 예약자 변경하였습니다. 1인 그린피
-                            210,000원, 카트피 100,000원입니다. 이명섭님은 수원
-                            2023.11.21 08:20 신in코스 예약 위 내용으로 예약
-                            완료입니다.
+                            <pre>{resv.feedback}</pre>
                           </span>
                         </li>
                       </ul>

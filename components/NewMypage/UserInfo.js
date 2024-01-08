@@ -32,7 +32,7 @@ export const UserInfo = ({ user, gotoMypageService }) => {
             회원정보수정
           </button>
         </div>
-        <div class={`user_icon ${userLevel[user?.gender || "male"]}`}></div>
+        <div className={`user_icon ${userLevel[user?.gender || "male"]}`}></div>
         {/* TODO: 성별 프로필 이미지 변경 */}
       </section>
       <section className="user_point">
@@ -51,7 +51,7 @@ export const UserInfo = ({ user, gotoMypageService }) => {
       </section>
       <section className="use_status">
         <h4>회원님의 이용현황</h4>
-        <ul class="status_list">
+        <ul className="status_list">
           {!user.quartly_count && (
             <>
               <li>
