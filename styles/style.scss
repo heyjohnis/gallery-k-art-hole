@@ -6042,7 +6042,7 @@ My Page > 예약확인
       &:nth-of-type(2) {
         width: 215px;
       }
-      &:nth-of-type(2) {
+      &:nth-of-type(3) {
         width:128px;
       }
     }
@@ -6187,7 +6187,7 @@ My Page > 예약확인
           margin: 0;
           list-style: none;
           .reser_detail_items {
-            padding: 40px;
+            padding: 40px 0;
             display: flex;
             border-bottom: 1px solid #eee;
             h4 {
@@ -6207,7 +6207,7 @@ My Page > 예약확인
               li {
                 display: flex;
                 justify-content: space-between;
-                span {
+                span, pre {
                   color: $gray-color;
                   font-size: 16px;
                   font-weight: 400;
@@ -6293,76 +6293,74 @@ My Page > 예약확인
       li {
         padding: 30px 0;
         border-bottom: 1px solid #ddd;
-        a{
-          width: 100%;
-          h3 {
-            margin-bottom:5px;
-            color: $main-color;
-            font-size: 18px;
+        h3 {
+          margin-bottom:5px;
+          color: $main-color;
+          font-size: 18px;
+          font-weight: 500;
+          letter-spacing: -1px;
+        }
+        span {
+          color: #999;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: -0.12px;
+        }
+        .reser_type_info {
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+          .label {
+            padding: 4px 10px;
+            border-radius: 30px;
+            background: #E3F3EB;
+            color: $body-color;
+            text-align: center;
+            font-size: 10px;
             font-weight: 500;
-            letter-spacing: -1px;
-          }
-          span {
-            color: #999;
-            font-size: 12px;
-            font-weight: 400;
-            letter-spacing: -0.12px;
-          }
-          .reser_type_info {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            .label {
-              padding: 4px 10px;
-              border-radius: 30px;
+            letter-spacing: -0.1px;
+            &::before {
+              content : "골프장 예약 서비스";
+            }
+            &.golf {
               background: #E3F3EB;
-              color: $body-color;
-              text-align: center;
-              font-size: 10px;
-              font-weight: 500;
-              letter-spacing: -0.1px;
-              &::before {
-                content : "골프장 예약 서비스";
-              }
-              &.golf {
-                background: #E3F3EB;
-                &::before{
-                  content: "골프장 예약 서비스";
-                }
-              }
-              &.screen {
-                background: #E3E3F3;
-                &::before{
-                  content: "스크린골프 포인트 서비스";
-                }
-              }
-              &.service {
-                background: #F3E3E3;
-                &::before {
-                  content: "제휴서비스";
-                }
-              }
-              &.tour{
-                background: #E3F3EB;
-                &::before {
-                  content: "GG 투어";
-                }
+              &::before{
+                content: "골프장 예약 서비스";
               }
             }
-            .status {
-              padding-right: 10px;
-              background: no-repeat url(/images/mypage/ico_arr_right.png);
-              background-position: right;
-              background-size: 6px 8px;
-              color: $gray-color;
-              font-size: 14px;
-              font-weight: 700;
-              letter-spacing: -0.14px;
-              &.complete {
-                color: $sub-color;
+            &.screen {
+              background: #E3E3F3;
+              &::before{
+                content: "스크린골프 포인트 서비스";
+              }
+            }
+            &.service {
+              background: #F3E3E3;
+              &::before {
+                content: "제휴서비스";
+              }
+            }
+            &.tour{
+              background: #E3F3EB;
+              &::before {
+                content: "GG 투어";
               }
             }
           }
+          .status {
+            padding-right: 10px;
+            background: no-repeat url(/images/mypage/ico_arr_right.png);
+            background-position: right;
+            background-size: 6px 8px;
+            color: $gray-color;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.14px;
+            &.complete {
+              color: $sub-color;
+            }
+          }
+
         }
         &:first-child {
           padding-top: 0;
@@ -6377,7 +6375,8 @@ My Page > 예약확인
 }
 
 .md_reser_detail_content {
-  margin: 50px 0 100px;
+  padding: 50px 20px 100px;
+  background: #f7f7f7;
   .md_reser_detail_head {
     display: flex;
     justify-content: space-between;
