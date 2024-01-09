@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import { RESV_KIND, RESV_STTS } from "../../utils/cmmCode";
 import ModalReservation from "./ModalReservation";
-import { set } from "date-fns";
 
 export default function MobileMyBooking({ resvData, setSearchData }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -84,6 +83,7 @@ export default function MobileMyBooking({ resvData, setSearchData }) {
             <ToggleButton id="types-radio-1" value="" className="btn_filter">
               전체
             </ToggleButton>
+
             <ToggleButton id="types-radio-2" value="01" className="btn_filter">
               골프장 예약 서비스
             </ToggleButton>
@@ -106,24 +106,17 @@ export default function MobileMyBooking({ resvData, setSearchData }) {
             <ToggleButton id="status-radio-1" value="" className="btn_filter">
               전체
             </ToggleButton>
-            <ToggleButton id="status-radio-2" value="01" className="btn_filter">
-              예약신청
-            </ToggleButton>
-            <ToggleButton id="status-radio-3" value="05" className="btn_filter">
-              예약접수
-            </ToggleButton>
-            <ToggleButton id="status-radio-4" value="04" className="btn_filter">
-              예약완료
-            </ToggleButton>
-            <ToggleButton id="status-radio-5" value="02" className="btn_filter">
-              이용완료
-            </ToggleButton>
-            <ToggleButton id="status-radio-5" value="03" className="btn_filter">
-              예약취소
-            </ToggleButton>
-            <ToggleButton id="status-radio-5" value="07" className="btn_filter">
-              이용취소
-            </ToggleButton>
+
+            {Object.keys(RESV_STTS).map((key, i) => (
+              <ToggleButton
+                key={i}
+                id="status-radio-2"
+                value={key}
+                className="btn_filter"
+              >
+                {RESV_STTS[key]}
+              </ToggleButton>
+            ))}
           </ToggleButtonGroup>
         </section>
         <section className="reser_content_list">

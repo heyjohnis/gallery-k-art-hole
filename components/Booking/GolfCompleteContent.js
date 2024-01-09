@@ -61,7 +61,7 @@ export const GolfCompleteContent = () => {
           <div className="complete_content_items">
             <span className="items_item">기타사항</span>
             <span className="items_detail">
-              <pre>{form.etc ? form.etc : "없음"}</pre>
+              <pre>{form.memo ? form.memo : "없음"}</pre>
             </span>
           </div>
         </div>
