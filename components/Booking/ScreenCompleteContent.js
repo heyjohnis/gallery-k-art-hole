@@ -62,7 +62,7 @@ export const ScreenCompleteContent = () => {
       </div>
       <button
         className="complete_btn"
-        onClick={() => router.push("/mypage/reservation/")}
+        onClick={() => router.push("/mypage?service=reservation")}
       >
         예약현황
       </button>

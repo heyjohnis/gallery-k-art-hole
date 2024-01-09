@@ -4,7 +4,11 @@ import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import { RESV_KIND, RESV_STTS } from "../../utils/cmmCode";
 import ModalReservation from "./ModalReservation";
 
-export default function MobileMyBooking({ resvData, setSearchData }) {
+export default function MobileMyBooking({
+  resvData,
+  setSearchData,
+  cancelReservation,
+}) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [resv, setResv] = useState({});
   const [form, setForm] = useState({});

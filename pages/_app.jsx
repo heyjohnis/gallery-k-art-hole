@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import "animate.css";
 import AOS from "aos";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
 import "swiper/css/bundle";
@@ -21,20 +21,20 @@ import GoTop from "../components/Shared/GoTop";
 
 import axios from "axios";
 import { destroyCookie, parseCookies } from "nookies";
-import Navbar from "../components/Layouts/Navbar";
 import baseUrl from "../utils/baseUrl";
 
 const MyApp = ({ Component, pageProps }) => {
-  React.useEffect(() => {
+  useEffect(() => {
     AOS.init();
   }, []);
   function setScreenSize() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }
-  React.useEffect(() => {
+  useEffect(() => {
     setScreenSize();
   });
+
   return (
     <>
       <Head>
@@ -65,6 +65,7 @@ const MyApp = ({ Component, pageProps }) => {
 };
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {
+  const [isMobile, setIsMobile] = React.useState(false);
   const { medq_token } = parseCookies(ctx);
   let pageProps = {};
 
@@ -78,6 +79,22 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
       redirectUser(ctx, "/auth");
     }
   } else {
+    useEffect(() => {
+      const handWindowSize = () => {
+        const { innerWidth } = window;
+        if (innerWidth < 768) {
+          setIsMobile(true);
+        } else {
+          setIsMobile(false);
+        }
+      };
+      handWindowSize();
+      window.addEventListener("resize", handWindowSize);
+      return () => {
+        window.removeEventListener("resize", handWindowSize);
+      };
+    }, []);
+
     try {
       const url = `${baseUrl}/myinfo`;
 
@@ -95,6 +112,7 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
         redirectUser(ctx, "/products");
       }
       pageProps.user = user;
+      pageProps.isMobile = isMobile;
     } catch (error) {
       destroyCookie(ctx, "medq_token");
     }

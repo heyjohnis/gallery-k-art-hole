@@ -15,6 +15,19 @@ export default function Reservation({ user }) {
     });
   };
 
+  const cancelReservation = (resv_no) => {
+    console.log("cancelReservation: ", resv_no);
+    POST("/reservation/cancel", { resv_no })
+      .then(({ data }) => {
+        console.log("data: ", data);
+        alert("예약이 취소되었습니다.");
+        getReservationData();
+      })
+      .catch((error) => {
+        console.log("error: ", error);
+      });
+  };
+
   useEffect(() => {
     getReservationData();
   }, [form]);
@@ -34,9 +47,18 @@ export default function Reservation({ user }) {
       window.removeEventListener("resize", handWindowSize);
     };
   }, []);
+
   return isMobile ? (
-    <MobileMyBooking resvData={resvData} setSearchData={setForm} />
+    <MobileMyBooking
+      resvData={resvData}
+      setSearchData={setForm}
+      cancelReservation={cancelReservation}
+    />
   ) : (
-    <PcMyBooking resvData={resvData} setSearchData={setForm} />
+    <PcMyBooking
+      resvData={resvData}
+      setSearchData={setForm}
+      cancelReservation={cancelReservation}
+    />
   );
 }

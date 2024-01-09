@@ -9,8 +9,9 @@ import Point from "../../components/Mypage/Content/Point";
 import Order from "../../components/Mypage/Content/Order";
 import Update from "../../components/Mypage/Content/Update";
 import Reservation from "../../components/NewMypage/Reservation";
+import { is } from "date-fns/locale";
 
-function Mypage({ user }) {
+function Mypage({ user, isMobile }) {
   const router = useRouter();
   const [selectedService, setSelectedService] = useState("home"); // ['reservation', 'order', 'point', 'consult'
   const gotoMypageService = (serivce) => {
@@ -19,9 +20,13 @@ function Mypage({ user }) {
 
   useEffect(() => {
     if (router.query) {
-      setSelectedService(router.query.service);
+      setSelectedService(router.query.service || "home");
     }
   }, [router.query]);
+
+  useEffect(() => {
+    console.log("isMobile", isMobile);
+  }, [isMobile]);
 
   return (
     <>

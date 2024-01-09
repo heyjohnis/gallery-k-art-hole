@@ -7,8 +7,13 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import Card from "react-bootstrap/Card";
 import { POST } from "../../hooks/restApi";
 import { hyphenForPhone } from "../../utils/number";
+import { RESV_KIND } from "../../utils/cmmCode";
 
-export default function PcMyBooking({ resvData, setSearchData }) {
+export default function PcMyBooking({
+  resvData,
+  setSearchData,
+  cancelReservation,
+}) {
   const [form, setForm] = useState({});
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -100,7 +105,9 @@ export default function PcMyBooking({ resvData, setSearchData }) {
                   </div>
                   {["01", "05"].includes(resv?.resv_stts) && (
                     <div>
-                      <button>예약취소</button>
+                      <button onClick={() => cancelReservation(resv.resv_no)}>
+                        예약취소
+                      </button>
                     </div>
                   )}
                 </div>
@@ -115,7 +122,7 @@ export default function PcMyBooking({ resvData, setSearchData }) {
                       {/* TODO: 타입에 따른 썸네일 변경 */}
                     </div>
                     <article>
-                      <h3>골프장 예약 서비스</h3>
+                      <h3>{RESV_KIND[resv?.resv_kind]}</h3>
                       <span>
                         예약자명 : <span>{resv.resv_user_name}</span>
                       </span>
