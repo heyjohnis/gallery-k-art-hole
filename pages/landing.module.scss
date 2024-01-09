@@ -564,22 +564,8 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
     .imageWrap {
       width: 390px;
-
-      img {
-        width: 100%;
-      }
     }
 
-  }
-
-  @media only screen and (max-width: 390px) {
-    .imageWrap {
-      width: 100%;
-
-      img {
-        width: 100%;
-      }
-    }
   }
 }
 
