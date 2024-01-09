@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import "animate.css";
 import AOS from "aos";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
 import "swiper/css/bundle";
@@ -21,20 +21,20 @@ import GoTop from "../components/Shared/GoTop";
 
 import axios from "axios";
 import { destroyCookie, parseCookies } from "nookies";
+import Navbar from "../components/Layouts/Navbar";
 import baseUrl from "../utils/baseUrl";
 
 const MyApp = ({ Component, pageProps }) => {
-  useEffect(() => {
+  React.useEffect(() => {
     AOS.init();
   }, []);
   function setScreenSize() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }
-  useEffect(() => {
+  React.useEffect(() => {
     setScreenSize();
   });
-
   return (
     <>
       <Head>
@@ -95,7 +95,6 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
         redirectUser(ctx, "/products");
       }
       pageProps.user = user;
-      pageProps.isMobile = isMobile;
     } catch (error) {
       destroyCookie(ctx, "medq_token");
     }
