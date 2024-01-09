@@ -47,10 +47,10 @@ useEffect(() => {
 
   return (
     <div className={`container ${styles.container}`}>
-      <div>
+      <div className={styles.imageWrap}>
         {/* <img src="/images/landing.jpg" alt="landing" /> */}
 
-        <img src={ changeImg } style={{width: "100%"}} alt="그린갤러리 상품 설명 이미지" />
+        <img src={ changeImg } className="landing_img" alt="그린갤러리 상품 설명 이미지" />
         
       </div>
       {/* <div className={styles.youtube_wrap} style={{backgroundColor: "#171717"}}>

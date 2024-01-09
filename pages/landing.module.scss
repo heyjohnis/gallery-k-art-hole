@@ -546,11 +546,25 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 .container {
   width: 100%;
   max-width: 100%;
+  margin: 0 auto;
   padding: 0px 0px 50px;
   background-color: #171717;
 
+  .imageWrap {
+    width: 1920px;
+    margin: 0 auto;
+
+    img {
+      max-width: unset;
+    }
+  }
+
   @media only screen and (max-width: 991px) {
     padding: 96px 0px 50px;
+
+    .imageWrap {
+      width: 390px;
+    }
 
   }
 }
