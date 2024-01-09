@@ -8,8 +8,16 @@ import Card from "react-bootstrap/Card";
 import { POST } from "../../hooks/restApi";
 import { hyphenForPhone } from "../../utils/number";
 
-export default function PcMyBooking({ resvData, form, handleChange }) {
-  function ContextAwareToggle({ children, eventKey, callback }) {
+export default function PcMyBooking({ resvData, setSearchData }) {
+  const [form, setForm] = useState({});
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+    setSearchData({ ...form, [name]: value });
+    console.log("form: ", form);
+  };
+
+  const ContextAwareToggle = ({ children, eventKey, callback }) => {
     const { activeEventKey } = useContext(AccordionContext);
     const decoratedOnClick = useAccordionButton(
       eventKey,
@@ -25,7 +33,7 @@ export default function PcMyBooking({ resvData, form, handleChange }) {
         {children}
       </button>
     );
-  }
+  };
 
   const reservationType = {
     "01": "thumb_golf.png",
@@ -39,16 +47,15 @@ export default function PcMyBooking({ resvData, form, handleChange }) {
       <div className="reservation_select_form">
         <Form.Select
           aria-label="조회기간"
-          name=""
-          value="resv_seach_term"
+          name="resv_search_term"
           onChange={handleChange}
         >
           <option value="">기간</option>
-          <option value="all">전체</option>
-          <option value="m1">1달</option>
-          <option value="m3">3달</option>
-          <option value="y1">1년</option>
-          <option value="y3">3년</option>
+          <option value="">전체</option>
+          <option value="30">1달</option>
+          <option value="90">3달</option>
+          <option value="365">1년</option>
+          <option value="1095">3년</option>
         </Form.Select>
         <Form.Select
           aria-label="서비스구분"
@@ -66,6 +73,8 @@ export default function PcMyBooking({ resvData, form, handleChange }) {
           name="resv_stts"
           onChange={handleChange}
         >
+          {" "}
+          <option value="">예약상태</option>
           <option value="01">예약신청</option>
           <option value="05">예약접수</option>
           <option value="04">예약완료</option>
@@ -108,31 +117,37 @@ export default function PcMyBooking({ resvData, form, handleChange }) {
                     <article>
                       <h3>골프장 예약 서비스</h3>
                       <span>
-                        예약자명 : <span>{resv.user_name}</span>
+                        예약자명 : <span>{resv.resv_user_name}</span>
                       </span>
-                      <span>
-                        확정골프장 : <span>{resv.resv_place}</span>
-                      </span>
-                      <span>
-                        예약확정일 : <span>{resv.resv_date}</span>
-                      </span>
-                      <span>
-                        사용포인트 : <span>{resv.point}</span>
-                      </span>
+                      {resv.resv_place && (
+                        <span>
+                          확정골프장 : <span>{resv.resv_place}</span>
+                        </span>
+                      )}
+                      {resv.resv_date && (
+                        <span>
+                          예약확정일 : <span>{resv.resv_date}</span>
+                        </span>
+                      )}
+                      {resv.resv_point && (
+                        <span>
+                          사용포인트 : <span>{resv.resv_point}</span>
+                        </span>
+                      )}
                     </article>
                   </div>
                   <div className="reser_staus">
                     <span className={`status statusComplete`}>
                       {resv.resv_stts_nm}
                     </span>
-                    <ContextAwareToggle eventKey="0">
+                    <ContextAwareToggle eventKey={i}>
                       <span>상세보기</span>
                       <span className="arr"></span>
                     </ContextAwareToggle>
                   </div>
                 </section>
               </Card.Header>
-              <Accordion.Collapse eventKey="0">
+              <Accordion.Collapse eventKey={i}>
                 <Card.Body>
                   <ul className="reser_detail_list">
                     <li className="reser_detail_items">
@@ -182,25 +197,27 @@ export default function PcMyBooking({ resvData, form, handleChange }) {
                         </ul>
                       </li>
                     )}
-                    <li className="reser_detail_items">
-                      <h4>골프장 정보</h4>
-                      <ul className="reser_detail_info">
-                        <li>
-                          <span className="tit">희망 날짜</span>
-                          <span>{resv.hope_date}</span>
-                        </li>
-                        <li>
-                          <span className="tit">희망 시간</span>
-                          <span>{resv.hope_time}</span>
-                        </li>
-                        <li>
-                          <span className="tit">희망 권역</span>
-                          <span>
-                            1차 {resv.hope_local1}, 2차 {resv.hope_local2}
-                          </span>
-                        </li>
-                      </ul>
-                    </li>
+                    {resv.hope_date && (
+                      <li className="reser_detail_items">
+                        <h4>골프장 정보</h4>
+                        <ul className="reser_detail_info">
+                          <li>
+                            <span className="tit">희망 날짜</span>
+                            <span>{resv.hope_date}</span>
+                          </li>
+                          <li>
+                            <span className="tit">희망 시간</span>
+                            <span>{resv.hope_time}</span>
+                          </li>
+                          <li>
+                            <span className="tit">희망 권역</span>
+                            <span>
+                              1차 {resv.hope_local1}, 2차 {resv.hope_local2}
+                            </span>
+                          </li>
+                        </ul>
+                      </li>
+                    )}
                     <li className="reser_detail_items">
                       <h4>고객 요청사항</h4>
                       <ul className="reser_detail_info">

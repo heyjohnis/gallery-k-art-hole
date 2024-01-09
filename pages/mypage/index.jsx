@@ -1,22 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
 import { MyArtwork } from "../../components/NewMypage/MyArtwork";
 import MyContract from "../../components/NewMypage/MyContract";
 import { UserInfo } from "../../components/NewMypage/UserInfo";
-import PcMyBooking from "../../components/NewMypage/PcMyBooking";
-import MobileMyBooking from "../../components/NewMypage/MobileMyBooking";
 import Point from "../../components/Mypage/Content/Point";
 import Order from "../../components/Mypage/Content/Order";
 import Update from "../../components/Mypage/Content/Update";
 import Reservation from "../../components/NewMypage/Reservation";
 
 function Mypage({ user }) {
+  const router = useRouter();
   const [selectedService, setSelectedService] = useState("home"); // ['reservation', 'order', 'point', 'consult'
-  const [isMobile, setIsMobile] = useState(false);
   const gotoMypageService = (serivce) => {
     setSelectedService(serivce);
   };
+
+  useEffect(() => {
+    if (router.query) {
+      setSelectedService(router.query.service);
+    }
+  }, [router.query]);
 
   return (
     <>

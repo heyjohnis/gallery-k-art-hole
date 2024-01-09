@@ -105,7 +105,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
           <Form.Label>요청사항</Form.Label>
           <Form.Control
             as="textarea"
-            name="etc"
+            name="memo"
             onChange={handleChange}
             rows={3}
             placeholder={`선호하시는 골프장을 작성해주세요.

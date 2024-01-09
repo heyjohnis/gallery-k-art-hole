@@ -14,7 +14,11 @@ export const GolfBookingAgreement = ({ bookingInfo }) => {
     e.preventDefault();
     if (!isisValidateForm(bookingInfo)) return;
 
-    bookingInfo.memo = setMemo();
+    bookingInfo.hope_time = `${bookingInfo.time1 ? "1부" : ""} ${
+      bookingInfo.time2 ? "2부" : ""
+    }`;
+    bookingInfo.hope_local1 = bookingInfo.region1;
+    bookingInfo.hope_local2 = bookingInfo.region2;
     bookingInfo.resv_kind = "01";
     POST("/reservation/request", bookingInfo)
       .then((res) => {
@@ -31,18 +35,6 @@ export const GolfBookingAgreement = ({ bookingInfo }) => {
         }
       })
       .catch((err) => console.log("err: ", err));
-  };
-
-  const setMemo = () => {
-    const memo = `
-희망일자 / 시간: ${bookingInfo.resv_datetime} / ${
-      bookingInfo.time1 ? "1부" : ""
-    } ${bookingInfo.time2 ? "2부" : ""}
-권역1: ${getRegionName(bookingInfo.region1)}
-권역2: ${getRegionName(bookingInfo.region2)} 
-요청사항: 
-${bookingInfo.etc || ""}`;
-    return memo;
   };
 
   const getRegionName = (id) => {

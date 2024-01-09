@@ -3,17 +3,33 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import { RESV_KIND, RESV_STTS } from "../../utils/cmmCode";
 import ModalReservation from "./ModalReservation";
+import { set } from "date-fns";
 
-export default function MobileMyBooking({ resvData, handleChange, form }) {
+export default function MobileMyBooking({ resvData, setSearchData }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [resv, setResv] = useState({});
+  const [form, setForm] = useState({});
   const reservationLabel = {
     "01": "golf",
     "02": "screen",
     "03": "service",
     "04": "tour",
   };
-  const complete = "complete";
+
+  const handleChangeTerm = (val) => {
+    setForm({ ...form, resv_search_term: val });
+    setSearchData({ ...form, resv_search_term: val });
+  };
+
+  const handleChangeService = (val) => {
+    setForm({ ...form, resv_kind: val });
+    setSearchData({ ...form, resv_kind: val });
+  };
+
+  const handleChangeStatus = (val) => {
+    setForm({ ...form, resv_stts: val });
+    setSearchData({ ...form, resv_stts: val });
+  };
 
   const openModal = (resv) => {
     setIsOpenModal(true);
@@ -31,45 +47,53 @@ export default function MobileMyBooking({ resvData, handleChange, form }) {
         <section className="mb_reser_filter">
           <ToggleButtonGroup
             type="radio"
-            name="period"
-            defaultValue={1}
-            onChange={handleChange}
+            name="term"
+            defaultValue=""
+            onChange={handleChangeTerm}
           >
-            <ToggleButton id="period-radio-1" value={1} className="btn_filter">
+            <ToggleButton id="period-radio-1" value="" className="btn_filter">
               전체
             </ToggleButton>
-            <ToggleButton id="period-radio-2" value={2} className="btn_filter">
+            <ToggleButton id="period-radio-2" value="30" className="btn_filter">
               1달
             </ToggleButton>
-            <ToggleButton id="period-radio-3" value={3} className="btn_filter">
+            <ToggleButton id="period-radio-3" value="90" className="btn_filter">
               3달
             </ToggleButton>
-            <ToggleButton id="period-radio-4" value={4} className="btn_filter">
+            <ToggleButton
+              id="period-radio-4"
+              value="365"
+              className="btn_filter"
+            >
               1년
             </ToggleButton>
-            <ToggleButton id="period-radio-5" value={5} className="btn_filter">
+            <ToggleButton
+              id="period-radio-5"
+              value="1095"
+              className="btn_filter"
+            >
               3년
             </ToggleButton>
           </ToggleButtonGroup>
           <ToggleButtonGroup
             type="radio"
             name="types"
-            defaultValue={1}
-            onChange={handleChange}
+            defaultValue=""
+            onChange={handleChangeService}
           >
-            <ToggleButton id="types-radio-1" value={1} className="btn_filter">
+            <ToggleButton id="types-radio-1" value="" className="btn_filter">
               전체
             </ToggleButton>
-            <ToggleButton id="types-radio-2" value={2} className="btn_filter">
+            <ToggleButton id="types-radio-2" value="01" className="btn_filter">
               골프장 예약 서비스
             </ToggleButton>
-            <ToggleButton id="types-radio-3" value={3} className="btn_filter">
+            <ToggleButton id="types-radio-3" value="02" className="btn_filter">
               스크린골프 포인트 서비스
             </ToggleButton>
-            <ToggleButton id="types-radio-4" value={4} className="btn_filter">
+            <ToggleButton id="types-radio-4" value="03" className="btn_filter">
               제휴서비스
             </ToggleButton>
-            <ToggleButton id="types-radio-5" value={5} className="btn_filter">
+            <ToggleButton id="types-radio-5" value="04" className="btn_filter">
               GG투어
             </ToggleButton>
           </ToggleButtonGroup>
@@ -77,22 +101,28 @@ export default function MobileMyBooking({ resvData, handleChange, form }) {
             type="radio"
             name="status"
             defaultValue={1}
-            onChange={handleChange}
+            onChange={handleChangeStatus}
           >
-            <ToggleButton id="status-radio-1" value={1} className="btn_filter">
+            <ToggleButton id="status-radio-1" value="" className="btn_filter">
               전체
             </ToggleButton>
-            <ToggleButton id="status-radio-2" value={2} className="btn_filter">
+            <ToggleButton id="status-radio-2" value="01" className="btn_filter">
+              예약신청
+            </ToggleButton>
+            <ToggleButton id="status-radio-3" value="05" className="btn_filter">
               예약접수
             </ToggleButton>
-            <ToggleButton id="status-radio-3" value={3} className="btn_filter">
-              예약중
-            </ToggleButton>
-            <ToggleButton id="status-radio-4" value={4} className="btn_filter">
+            <ToggleButton id="status-radio-4" value="04" className="btn_filter">
               예약완료
             </ToggleButton>
-            <ToggleButton id="status-radio-5" value={5} className="btn_filter">
+            <ToggleButton id="status-radio-5" value="02" className="btn_filter">
+              이용완료
+            </ToggleButton>
+            <ToggleButton id="status-radio-5" value="03" className="btn_filter">
               예약취소
+            </ToggleButton>
+            <ToggleButton id="status-radio-5" value="07" className="btn_filter">
+              이용취소
             </ToggleButton>
           </ToggleButtonGroup>
         </section>
