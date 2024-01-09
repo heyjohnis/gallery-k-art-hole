@@ -609,8 +609,9 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
   &.textWrap {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 0 40px;
     color: $black-color;
     font-size: 1.5em;
     font-weight: 700;
@@ -657,7 +658,7 @@ $box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
 
           img {
             top: -20px;
-            left: 125px;
+            left: 120px;
             width: 50px;
             height: 50px;
   

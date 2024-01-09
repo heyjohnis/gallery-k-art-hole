@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./landing.module.scss";
 import Booking from "../components/Mypage/data/booking.json";
 import Lottie from "react-lottie";
@@ -14,6 +14,7 @@ const lottieOptions = {
 
 const landing = () => {
   const [openContact, setOpenContact] = useState(false);
+  const [changeImg, setChangeImg] = useState("/images/landing_240109.jpg");
 
   const opts = {
     width: "100%",
@@ -22,16 +23,37 @@ const landing = () => {
       autoplay: 1,
     },
   };
+  
+useEffect(() => {
+  const handWindowSize = () => {
+    const { innerWidth } = window;
+    if (innerWidth < 768) {
+      setChangeImg("/images/landing_240109_m.jpg");
+    } else {
+      setChangeImg("/images/landing_240109.jpg");
+    }
+  };
+  
+  handWindowSize();
+  
+  window.addEventListener("resize", handWindowSize);
+  return () => {
+    window.removeEventListener("resize", handWindowSize);
+  };
+  
+}, []);
+
+
 
   return (
     <div className={`container ${styles.container}`}>
       <div>
         {/* <img src="/images/landing.jpg" alt="landing" /> */}
-        <img src="/images/landing_new_1.jpg" alt="landing" />
-        <img src="/images/landing_new_2.jpg" alt="landing" />
-        <img src="/images/landing_new_3.jpg" alt="landing" />
+
+        <img src={ changeImg } style={{width: "100%"}} alt="그린갤러리 상품 설명 이미지" />
+        
       </div>
-      <div className={styles.youtube_wrap} style={{backgroundColor: "#171717"}}>
+      {/* <div className={styles.youtube_wrap} style={{backgroundColor: "#171717"}}>
         <div className={styles.youtube} style={{margin: "0 auto"}}>
           <YouTube
             videoId="ZQw7meQJWTk"
@@ -42,7 +64,7 @@ const landing = () => {
             }}
           />
         </div>
-      </div>
+      </div> */}
       {/* <div className={styles.youtube_wrap}>
         <h3>
           최고의 품격과 서비스로 당신의 자부심이 될<br />
