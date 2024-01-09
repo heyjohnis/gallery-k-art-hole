@@ -5,6 +5,11 @@ import styles from "./navbar.mobile.module.scss";
 const MobileFooter = () => {
   const currentYear = new Date().getFullYear();
 
+  const preparingAlert = (e) => {
+    e.preventDefault();
+    alert("현재 서비스를 준비중입니다.");
+  };
+
   return (
     <>
       <footer className={`footer-top-area pb-70 footer ${styles.footer}`}>
@@ -58,7 +63,12 @@ const MobileFooter = () => {
 
           <div className={`${styles.rightWrap}`}>
             <div className={`${styles.snsWrap}`}>
-              <Link className={`${styles.link}`} href="/" target="_blank">
+              <Link
+                className={`${styles.link}`}
+                onClick={preparingAlert}
+                href="/"
+                target="_blank"
+              >
                 INSTAGRAM
               </Link>
               <Link
