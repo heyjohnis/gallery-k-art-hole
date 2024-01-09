@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 import PageBanner from "../../components/Common/PageBanner";
-import Footer from '../../components/Layouts/Footer';
-import { MobileMyBooking } from '../../components/NewMypage/MobileMyBooking';
-import { PcMyBooking } from '../../components/NewMypage/PcMyBooking';
-
+import Footer from "../../components/Layouts/Footer";
+import MobileMyBooking from "../../components/NewMypage/MobileMyBooking";
+import { PcMyBooking } from "../../components/NewMypage/PcMyBooking";
 
 function Reservation() {
   return (
@@ -15,21 +14,21 @@ function Reservation() {
         activePageText="예약확인"
       />
       <section className="container">
-        <ul className='mypage_tab_menu'>
+        <ul className="mypage_tab_menu">
           <li>HOME</li>
-          <li className='active'>예약조회</li>
+          <li className="active">예약조회</li>
           <li>주문ㆍ배송조회</li>
           <li>포인트 이용내역</li>
           <li>1:1 상담</li>
         </ul>
-        <div className='my_reservation_contanier'>
+        <div className="my_reservation_contanier">
           {/* <PcMyBooking/> */}
-          <MobileMyBooking/>
+          <MobileMyBooking />
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default Reservation
+export default Reservation;
