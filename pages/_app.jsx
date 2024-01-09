@@ -65,7 +65,6 @@ const MyApp = ({ Component, pageProps }) => {
 };
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {
-  const [isMobile, setIsMobile] = React.useState(false);
   const { medq_token } = parseCookies(ctx);
   let pageProps = {};
 
@@ -79,22 +78,6 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
       redirectUser(ctx, "/auth");
     }
   } else {
-    useEffect(() => {
-      const handWindowSize = () => {
-        const { innerWidth } = window;
-        if (innerWidth < 768) {
-          setIsMobile(true);
-        } else {
-          setIsMobile(false);
-        }
-      };
-      handWindowSize();
-      window.addEventListener("resize", handWindowSize);
-      return () => {
-        window.removeEventListener("resize", handWindowSize);
-      };
-    }, []);
-
     try {
       const url = `${baseUrl}/myinfo`;
 
