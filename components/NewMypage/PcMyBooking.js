@@ -8,27 +8,7 @@ import Card from "react-bootstrap/Card";
 import { POST } from "../../hooks/restApi";
 import { hyphenForPhone } from "../../utils/number";
 
-export default function PcMyBooking() {
-  const [form, setForm] = useState({});
-  const [reservations, setReservations] = useState([]);
-
-  const getReservationData = () => {
-    POST("/mypage/reservation", form).then(({ data }) => {
-      console.log("data: ", data);
-      setReservations(data || []);
-    });
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-    console.log("form: ", form);
-  };
-
-  useEffect(() => {
-    getReservationData();
-  }, [form]);
-
+export default function PcMyBooking({ resvData, form, handleChange }) {
   function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
     const decoratedOnClick = useAccordionButton(
@@ -96,7 +76,7 @@ export default function PcMyBooking() {
       </div>
       <section>
         <Accordion>
-          {reservations.map((resv, i) => (
+          {resvData.map((resv, i) => (
             <Card key={i}>
               <Card.Header>
                 <div className="reser_num">

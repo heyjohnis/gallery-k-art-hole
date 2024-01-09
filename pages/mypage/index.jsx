@@ -9,6 +9,7 @@ import MobileMyBooking from "../../components/NewMypage/MobileMyBooking";
 import Point from "../../components/Mypage/Content/Point";
 import Order from "../../components/Mypage/Content/Order";
 import Update from "../../components/Mypage/Content/Update";
+import Reservation from "../../components/NewMypage/Reservation";
 
 function Mypage({ user }) {
   const [selectedService, setSelectedService] = useState("home"); // ['reservation', 'order', 'point', 'consult'
@@ -16,22 +17,6 @@ function Mypage({ user }) {
   const gotoMypageService = (serivce) => {
     setSelectedService(serivce);
   };
-
-  useEffect(() => {
-    const handWindowSize = () => {
-      const { innerWidth } = window;
-      if (innerWidth < 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-    handWindowSize();
-    window.addEventListener("resize", handWindowSize);
-    return () => {
-      window.removeEventListener("resize", handWindowSize);
-    };
-  }, []);
 
   return (
     <>
@@ -79,12 +64,7 @@ function Mypage({ user }) {
                 <MyContract user={user} /> <MyArtwork user={user} />
               </>
             )}
-            {selectedService === "reservation" && (
-              <>
-                {!isMobile && <PcMyBooking />}
-                {isMobile && <MobileMyBooking />}
-              </>
-            )}
+            {selectedService === "reservation" && <Reservation user={user} />}
             {selectedService === "order" && <Order />}
             {selectedService === "point" && <Point />}
             {selectedService === "userInfo" && <Update user={user} />}
