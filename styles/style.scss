@@ -5455,13 +5455,12 @@ Booking Page
   }
 }
 
-
 /*
 My Page
 ================================*/
 .mypage_content {
   display: flex;
-  .content_user_info{
+  .content_user_info {
     margin-right: 30px;
     width: 357px;
   }
@@ -5477,7 +5476,7 @@ My Page
   padding: 0;
   margin: 100px 0 80px;
   list-style: none;
-  li{
+  li {
     width: 100%;
     padding: 20px 0;
     text-align: center;
@@ -5485,7 +5484,7 @@ My Page
     font-size: 18px;
     font-weight: 500;
     border-bottom: 1px solid #ddd;
-    &.active{
+    &.active {
       color: #333;
       border-bottom: 4px solid $sub-color;
     }
@@ -5511,7 +5510,7 @@ My Page
       letter-spacing: -0.2px;
     }
     h3 {
-      margin:0;
+      margin: 0;
       color: $body-color;
       font-family: $main-font-family-eng;
       font-size: 18px;
@@ -5519,7 +5518,7 @@ My Page
       line-height: 30px;
       letter-spacing: -0.18px;
     }
-    button{
+    button {
       padding: 4px 10px;
       margin: 0;
       color: #999;
@@ -5531,10 +5530,10 @@ My Page
   }
   .user_icon {
     width: 100px;
-    height: 100px; 
+    height: 100px;
     border-radius: 50%;
     overflow: hidden;
-    background:  center /cover no-repeat url(/images/mypage/green_man.jpg);
+    background: center / cover no-repeat url(/images/mypage/green_man.jpg);
   }
 }
 
@@ -5549,7 +5548,7 @@ My Page
     font-weight: 700;
     letter-spacing: -0.16px;
   }
-  .point{
+  .point {
     margin: 10px 0;
     color: $sub-color;
     font-size: 30px;
@@ -5560,7 +5559,7 @@ My Page
     color: #999;
     font-size: 14px;
     letter-spacing: -0.14px;
-    .bar{
+    .bar {
       margin: 0 8px;
       color: $gray-color;
     }
@@ -5582,16 +5581,16 @@ My Page
   margin-top: 20px;
   border-radius: 10px;
   background: #eee;
-  h4{
+  h4 {
     color: $main-color;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: -0.16px;
   }
-  .status_list{
+  .status_list {
     padding: 0;
     margin: 20px 0 0;
-    li{
+    li {
       display: flex;
       justify-content: space-between;
       color: $gray-color;
@@ -5608,10 +5607,10 @@ My Page
 }
 
 .level_green {
-  .user_info{
+  .user_info {
     h3 {
-      &::before{
-        content: 'GREEN MEMBER';
+      &::before {
+        content: "GREEN MEMBER";
         color: $sub-color;
       }
     }
@@ -5632,11 +5631,11 @@ My Page
 }
 
 .level_blue {
-  .user_info{
+  .user_info {
     h3 {
-      &::before{
-        content: 'BLUE MEMBER';
-        color: #1A4769;
+      &::before {
+        content: "BLUE MEMBER";
+        color: #1a4769;
       }
     }
     .user_icon {
@@ -5648,17 +5647,17 @@ My Page
   }
   .user_point {
     .point {
-      color: #1A4769;
+      color: #1a4769;
     }
   }
 }
 
 .level_red {
-  .user_info{
+  .user_info {
     h3 {
-      &::before{
-        content: 'RED MEMBER';
-        color: #831F1F;
+      &::before {
+        content: "RED MEMBER";
+        color: #831f1f;
       }
     }
     .user_icon {
@@ -5670,17 +5669,17 @@ My Page
   }
   .user_point {
     .point {
-      color: #831F1F;
+      color: #831f1f;
     }
   }
 }
 
 .level_purple {
-  .user_info{
+  .user_info {
     h3 {
-      &::before{
-        content: 'PURPLE MEMBER';
-        color: #493C61;
+      &::before {
+        content: "PURPLE MEMBER";
+        color: #493c61;
       }
     }
     .user_icon {
@@ -5692,16 +5691,16 @@ My Page
   }
   .user_point {
     .point {
-      color: #493C61;
+      color: #493c61;
     }
   }
 }
 
 .level_black {
-  .user_info{
+  .user_info {
     h3 {
-      &::before{
-        content: 'BLACK MEMBER';
+      &::before {
+        content: "BLACK MEMBER";
         color: #252428;
       }
     }
@@ -5720,10 +5719,10 @@ My Page
 }
 
 .level_platinum {
-  .user_info{
+  .user_info {
     h3 {
-      &::before{
-        content: 'PLATINUM MEMBER';
+      &::before {
+        content: "PLATINUM MEMBER";
         color: #273748;
       }
     }
@@ -5759,23 +5758,22 @@ My Page
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.14px;
-  .icon{
+  .icon {
     width: 40px;
     height: 40px;
     margin-right: 15px;
     border-radius: 50%;
-    background-color: #C7EDF9;
+    background-color: #c7edf9;
     background-image: url(/images/mypage/ico_point_info.png);
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: center;
   }
   &.red {
-    .icon{
-      background-color: #FFC7C7;
+    .icon {
+      background-color: #ffc7c7;
       background-image: url(/images/mypage/ico_point_warning.png);
     }
-
   }
 }
 
@@ -5786,14 +5784,14 @@ My Page
     margin-bottom: 30px;
     background-color: $white-color;
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
-    h2{
+    h2 {
       padding-bottom: 10px;
       color: $body-color;
       font-size: 30px;
       font-weight: 700;
       letter-spacing: -0.3px;
     }
-    .contract_content{
+    .contract_content {
       margin-top: 68px;
       .contract_info {
         display: flex;
@@ -5803,7 +5801,7 @@ My Page
           display: none;
         }
         .membership_name {
-          color:#44593D;
+          color: #44593d;
           font-family: $main-font-family-eng;
           font-size: 32px;
           font-weight: 700;
@@ -5812,7 +5810,7 @@ My Page
             display: block;
             line-height: normal;
           }
-          .bigger{
+          .bigger {
             font-size: 40px;
           }
         }
@@ -5822,10 +5820,9 @@ My Page
           font-size: 14px;
           font-weight: 500;
           letter-spacing: -0.14px;
-          background-color: #F1F1F1;
+          background-color: #f1f1f1;
           border-radius: 5px;
         }
-  
       }
       .contract_list {
         padding: 0;
@@ -5848,9 +5845,9 @@ My Page
         }
       }
     }
-  
+
     .artwork_list {
-      padding:0;
+      padding: 0;
       list-style: none;
       li {
         display: flex;
@@ -5884,7 +5881,7 @@ My Page
               line-height: normal;
               letter-spacing: -1px;
             }
-            p{
+            p {
               color: $body-color;
               font-size: 16px;
               font-weight: 250;
@@ -5899,7 +5896,7 @@ My Page
             letter-spacing: -0.24px;
           }
         }
-        a{
+        a {
           color: $light-gray;
           font-size: 14px;
           font-weight: 400;
@@ -5917,23 +5914,24 @@ My Page
     li {
       min-width: 160px;
     }
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
     scrollbar-width: none;
-    &::-webkit-scrollbar{
-      display: none; 
-    }       
+    &::-webkit-scrollbar {
+      display: none;
     }
+  }
   .mypage_content {
     flex-direction: column;
-    .content_user_info{
+    .content_user_info {
       margin-right: 0px;
       width: 100%;
-      .point_notice, .red{
+      .point_notice,
+      .red {
         margin-bottom: 30px;
       }
     }
   }
-  .content_items{
+  .content_items {
     .mypage_content_item {
       padding: 50px 0;
       position: relative;
@@ -5974,9 +5972,9 @@ My Page
             right: 0;
           }
         }
-        .contract_list{
-          margin:0;
-          border:0;
+        .contract_list {
+          margin: 0;
+          border: 0;
           li {
             padding: 20px;
             flex-direction: column;
@@ -5991,24 +5989,24 @@ My Page
               border-bottom: 0;
             }
           }
-        } 
+        }
       }
       .artwork_list {
         li {
           .artwork_items {
-            .artwork_img{
+            .artwork_img {
               width: 100px;
               height: 100px;
             }
-            article{
-              h5{
+            article {
+              h5 {
                 max-width: 230px;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 font-size: 16px;
               }
-              p{
+              p {
                 font-size: 14px;
               }
             }
@@ -6043,7 +6041,7 @@ My Page > 예약확인
         width: 215px;
       }
       &:nth-of-type(3) {
-        width:128px;
+        width: 128px;
       }
     }
   }
@@ -6053,8 +6051,8 @@ My Page > 예약확인
     border: 1px solid #ddd;
     border-radius: 0;
     .card {
-      padding:0;
-      border:0;
+      padding: 0;
+      border: 0;
       background: none;
       .card-header {
         padding: 50px 0;
@@ -6065,7 +6063,7 @@ My Page > 예약확인
           justify-content: space-between;
           color: $gray-color;
           font-size: 16px;
-          font-weight:100;
+          font-weight: 100;
           letter-spacing: -0.16px;
           .bar {
             margin: 0 20px;
@@ -6073,7 +6071,7 @@ My Page > 예약확인
           button {
             color: $gray-color;
             font-size: 16px;
-            font-weight:100;
+            font-weight: 100;
             letter-spacing: -0.16px;
             text-decoration: underline;
           }
@@ -6142,38 +6140,37 @@ My Page > 예약확인
               }
               .arr {
                 position: relative;
-                margin:0;
+                margin: 0;
                 width: 16px;
                 height: 6px;
                 &::after {
                   position: absolute;
-                  left: 0; 
-                  top: 0; 
-                  content: '';
+                  left: 0;
+                  top: 0;
+                  content: "";
                   width: 10px;
                   height: 10px;
                   border-top: 2px solid #333;
-                  border-right: 2px solid #333; 
+                  border-right: 2px solid #333;
                 }
               }
               &.none {
                 .arr::after {
-                  transform: rotate(135deg) translate(-50% , 0);
-                  
+                  transform: rotate(135deg) translate(-50%, 0);
                 }
               }
               &.active {
                 .arr::after {
-                    top: -50%;
-                    transform: rotate(315deg) translate(0 , 50%);
+                  top: -50%;
+                  transform: rotate(315deg) translate(0, 50%);
                 }
               }
             }
           }
         }
       }
-      &:first-child .card-header{
-        padding-top : 0;
+      &:first-child .card-header {
+        padding-top: 0;
       }
       &:last-child .card-header {
         border: 0;
@@ -6182,7 +6179,7 @@ My Page > 예약확인
       .card-body {
         padding: 40px;
         background: $white-color;
-        .reser_detail_list{
+        .reser_detail_list {
           padding: 0;
           margin: 0;
           list-style: none;
@@ -6192,7 +6189,7 @@ My Page > 예약확인
             border-bottom: 1px solid #eee;
             h4 {
               width: 162px;
-              margin:0;
+              margin: 0;
               color: $main-color;
               font-size: 18px;
               font-weight: 700;
@@ -6207,7 +6204,8 @@ My Page > 예약확인
               li {
                 display: flex;
                 justify-content: space-between;
-                span, pre {
+                span,
+                pre {
                   color: $gray-color;
                   font-size: 16px;
                   font-weight: 400;
@@ -6241,7 +6239,7 @@ My Page > 예약확인
 }
 
 .mb_reser_content {
-  h2{
+  h2 {
     margin-bottom: 30px;
     color: $body-color;
     font-size: 30px;
@@ -6268,24 +6266,24 @@ My Page > 예약확인
         font-weight: 400;
         letter-spacing: -0.12px;
       }
-      .btn-check:checked+.btn {
+      .btn-check:checked + .btn {
         background: $sub-color;
         color: $white-color;
       }
-      -ms-overflow-style: none; 
+      -ms-overflow-style: none;
       scrollbar-width: none;
-      &::-webkit-scrollbar{
-        display: none; 
-      }       
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
-    .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
       border-radius: 20px;
       border: 0;
     }
   }
   .reser_content_list {
     margin: 40px 0 84px;
-    ul{
+    ul {
       padding: 30px 20px;
       background-color: $white-color;
       border: 1px solid #eee;
@@ -6294,7 +6292,7 @@ My Page > 예약확인
         padding: 30px 0;
         border-bottom: 1px solid #ddd;
         h3 {
-          margin-bottom:5px;
+          margin-bottom: 5px;
           color: $main-color;
           font-size: 18px;
           font-weight: 500;
@@ -6313,35 +6311,35 @@ My Page > 예약확인
           .label {
             padding: 4px 10px;
             border-radius: 30px;
-            background: #E3F3EB;
+            background: #e3f3eb;
             color: $body-color;
             text-align: center;
             font-size: 10px;
             font-weight: 500;
             letter-spacing: -0.1px;
             &::before {
-              content : "골프장 예약 서비스";
+              content: "골프장 예약 서비스";
             }
             &.golf {
-              background: #E3F3EB;
-              &::before{
+              background: #e3f3eb;
+              &::before {
                 content: "골프장 예약 서비스";
               }
             }
             &.screen {
-              background: #E3E3F3;
-              &::before{
+              background: #e3e3f3;
+              &::before {
                 content: "스크린골프 포인트 서비스";
               }
             }
             &.service {
-              background: #F3E3E3;
+              background: #f3e3e3;
               &::before {
                 content: "제휴서비스";
               }
             }
-            &.tour{
-              background: #E3F3EB;
+            &.tour {
+              background: #e3f3eb;
               &::before {
                 content: "GG 투어";
               }
@@ -6360,7 +6358,6 @@ My Page > 예약확인
               color: $sub-color;
             }
           }
-
         }
         &:first-child {
           padding-top: 0;
@@ -6381,19 +6378,19 @@ My Page > 예약확인
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    h2{
+    h2 {
       color: $main-color;
       font-size: 18px;
       font-weight: 700;
       letter-spacing: -1px;
     }
-    span{
+    span {
       color: #999;
       font-size: 12px;
       font-weight: 400;
       letter-spacing: -0.12px;
     }
-    .status{
+    .status {
       color: $gray-color;
       font-size: 14px;
       font-weight: 700;
@@ -6403,21 +6400,21 @@ My Page > 예약확인
       }
     }
   }
-  
+
   .md_reser_detail_body {
     margin: 50px 0 60px;
     h3 {
-      margin-bottom: 30px;;
+      margin-bottom: 30px;
       color: $body-color;
       font-size: 16px;
       font-weight: 700;
       letter-spacing: -0.16px;
-      &.point{
+      &.point {
         color: $sub-color;
       }
     }
     ul {
-      padding: 20px 30px;   
+      padding: 20px 30px;
       margin-bottom: 50px;
       background-color: $white-color;
       list-style: none;
@@ -6431,7 +6428,7 @@ My Page > 예약확인
           font-size: 14px;
           font-weight: 400;
           letter-spacing: -0.14px;
-          &.tit{
+          &.tit {
             margin-bottom: 10px;
           }
           &.item {
@@ -6453,7 +6450,6 @@ My Page > 예약확인
   }
 }
 
-
 .btn_white {
   width: 250px;
   padding: 20px 0;
@@ -6470,4 +6466,8 @@ My Page > 예약확인
   .btn_white {
     width: 100%;
   }
+}
+
+.fp-watermark {
+  display: none !important;
 }

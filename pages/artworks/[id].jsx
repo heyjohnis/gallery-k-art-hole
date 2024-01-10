@@ -1,33 +1,33 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-
-import axios from "axios";
 import baseUrl from "./../../utils/baseUrl";
 import Footer from "./../../components/Layouts/Footer";
 import PageBanner from "./../../components/Common/PageBanner";
 import ArtworkItem from "../../components/Artworks/ArtworkItem";
 import ArtworkContent from "../../components/Artworks/ArtworkContent";
+import { POST } from "../../hooks/restApi";
 
 const ArtworkDetail = ({ user }) => {
   const router = useRouter();
   const [, setLoading] = useState({});
+
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    setLoading(true);
-
-    const atwk_no = router.query.id;
-    const url = `${baseUrl}/artwork/`;
-    axios({ method: "post", url, data: { atwk_no } })
-      .then(({ data }) => {
-        console.log("data: ", data);
-        setContent(data);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, [router.query.id]);
+    console.log("id: ", router.query.id);
+    if (router.query.id) {
+      const atwk_no = router.query.id;
+      POST("/artwork", { atwk_no })
+        .then(({ data }) => {
+          console.log("data: ", data);
+          setContent(data);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
+  }, [router.query]);
 
   return (
     <>

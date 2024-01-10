@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Footer from "../components/Layouts/Footer";
 import BookingComp from "../components/Home/BookingComp";
-import { SectionsContainer } from "react-fullpage";
 import ServiceComp from "../components/Home/ServiceComp";
-import { Section } from "react-fullpage";
 import GoghBanner from "../components/Home/Banner/GoghBanner";
 import RenoirBanner from "../components/Home/Banner/RenoirBanner";
 import MonetBanner from "../components/Home/Banner/MonetBanner";
-import { ro } from "date-fns/locale";
 import GalleryComp from "../components/Home/GalleryComp";
+import ReactFullpage from "@fullpage/react-fullpage";
 
 const options = {
   anchors: ["intro", "booking", "mall", "gallery", "footer"],
@@ -45,30 +43,43 @@ export default function Index({ user }) {
     };
   }, []);
   return (
-    <SectionsContainer {...options}>
-      <Section>
-        {serviceGroup === "gogh" && <GoghBanner />}
-        {serviceGroup === "renoir" && <RenoirBanner />}
-        {serviceGroup === "monet" && <MonetBanner />}
-      </Section>
-      {serviceGroup === "gogh" && (
-        <>
-          <BookingComp />
-          <ServiceComp />
-        </>
+    <ReactFullpage
+      navigation
+      render={() => (
+        <ReactFullpage.Wrapper scrollingSpeed={1000} scrollHorizontally={true}>
+          <div className="section">
+            {serviceGroup === "gogh" && <GoghBanner />}
+            {serviceGroup === "renoir" && <RenoirBanner />}
+            {serviceGroup === "monet" && <MonetBanner />}
+          </div>
+          {serviceGroup === "gogh" && (
+            <>
+              <div className="section">
+                <BookingComp />
+              </div>
+              <div className="section">
+                <ServiceComp />
+              </div>
+            </>
+          )}
+          {serviceGroup !== "gogh" && (
+            <>
+              <div className="section">
+                <ServiceComp />
+              </div>
+              <div className="section">
+                <BookingComp />
+              </div>
+            </>
+          )}
+          <div className="section">
+            <GalleryComp />
+          </div>
+          <div className="section">
+            <Footer />
+          </div>
+        </ReactFullpage.Wrapper>
       )}
-      {serviceGroup !== "gogh" && (
-        <>
-          <ServiceComp />
-          <BookingComp />
-        </>
-      )}
-      <Section>
-        <GalleryComp />
-      </Section>
-      <Section>
-        <Footer />
-      </Section>
-    </SectionsContainer>
+    />
   );
 }

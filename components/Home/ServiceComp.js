@@ -54,7 +54,7 @@ export default function ServiceComp() {
   }, []);
 
   return (
-    <Section className={`${styles.backgroundDark}`}>
+    <div className={`${styles.backgroundDark}`}>
       <div
         className={`row col-lg-12 col-md-12 ${styles.onePage} ${styles.itemListPageSection}`}
       >
@@ -135,6 +135,6 @@ export default function ServiceComp() {
           </div>
         </Tab.Container>
       </div>
-    </Section>
+    </div>
   );
 }
