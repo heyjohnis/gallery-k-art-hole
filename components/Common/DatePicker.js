@@ -28,7 +28,7 @@ const DatePicker = ({ label, pickDate, dateKind, selectedDate }) => {
   }, [selectedDate]);
 
   return (
-    <div className={styles.rdpWrap}>
+    <div>
       <div className="col-lg-12 col-sm-12">
         <label>{label}</label>
         <input
