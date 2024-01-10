@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { hyphenForCorpNum } from "../../utils/number";
 
 export default function MyContract({ user }) {
@@ -22,7 +23,9 @@ export default function MyContract({ user }) {
               )}
             </span>
           </div>
-          <button>멤버십 혜택 안내</button>
+          <Link href="/landing">
+            <button>멤버십 혜택 안내</button>
+          </Link>
         </div>
         <ul className="contract_list">
           <li>

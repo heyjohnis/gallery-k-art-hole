@@ -23,19 +23,19 @@ const MobileFooterNav = () => {
             </Link>
           </li>
           <li>
-            <Link href="/mypage">
+            <Link href="/mypage?service=reservation">
               <img src="/images/mobile/nav_reserve_gray.png" alt="reserve" />
               <span>예약조회</span>
             </Link>
           </li>
           <li>
-            <Link href="/mypage">
+            <Link href="/mypage?service=order">
               <img src="/images/mobile/nav_order_gray.png" alt="order" />
               <span>주문배송</span>
             </Link>
           </li>
           <li>
-            <Link href="/" onClick={preparingAlert}>
+            <Link href={"#"} onClick={() => alert("준비중입니다.")}>
               <img src="/images/mobile/nav_customer_gray.png" alt="customer" />
               <span>1:1 상담</span>
             </Link>
