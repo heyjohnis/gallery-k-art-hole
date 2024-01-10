@@ -17,7 +17,7 @@ const MobileFooterNav = ({ service }) => {
       >
         <ul>
           <li>
-            <Link href="/mypage?service=home">
+            <Link href="/mypage">
               <img
                 src={`/images/mobile/home_${
                   service === "home" ? "black" : "gray"
