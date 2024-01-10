@@ -9,15 +9,12 @@ import Point from "../../components/Mypage/Content/Point";
 import Order from "../../components/Mypage/Content/Order";
 import Update from "../../components/Mypage/Content/Update";
 import Reservation from "../../components/NewMypage/Reservation";
-import { is } from "date-fns/locale";
-import MobileFooter from "../../components/Layouts/MobileFooter";
-import MobileNavbar from "../../components/Layouts/MobileNavbar";
 import MobileFooterNav from "../../components/Layouts/MobileFooterNav";
 
 function Mypage({ user }) {
   const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
-  const [selectedService, setSelectedService] = useState("home"); // ['reservation', 'order', 'point', 'consult'
+  const [selectedService, setSelectedService] = useState("home");
   const gotoMypageService = (serivce) => {
     setSelectedService(serivce);
   };

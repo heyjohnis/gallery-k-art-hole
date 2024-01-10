@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../pages/sign-up.module.scss";
+import { POST } from "../../hooks/restApi";
 
 export default function SignupStep2({ form, setForm }) {
   const handleChange = (e) => {
@@ -10,8 +11,28 @@ export default function SignupStep2({ form, setForm }) {
       value !== form.password
     ) {
       alert("비밀번호가 일치하지 않습니다.");
+      e.target.value = "";
+      e.target.focus();
+      return;
+    } else if (name === "password" && value.length < 8) {
+      alert("비밀번호는 8자리 이상이어야 합니다.");
+      e.target.value = "";
+      e.target.focus();
+      return;
     }
     setForm((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const checkRegistedLoginId = (e) => {
+    const value = e.target.value;
+    POST("/checkLoginId", { login_id: value }).then((res) => {
+      if (res?.data?.having_id) {
+        alert("이미 등록된 아이디입니다.");
+        e.target.value = "";
+        e.target.focus();
+      }
+      setForm((prevState) => ({ ...prevState, login_id: value }));
+    });
   };
   return (
     <div className={`${styles.page}`} id="Second">
@@ -25,7 +46,7 @@ export default function SignupStep2({ form, setForm }) {
         <div className={`${styles.inputWrap}`}>
           <div className={`${styles.inputId} ${styles.inputItems}`}>
             <label htmlFor="">ID</label>
-            <input type="text" name="login_id" onChange={handleChange} />
+            <input type="text" name="login_id" onBlur={checkRegistedLoginId} />
           </div>
           <div className={`${styles.inputDealer} ${styles.inputItems}`}>
             <label htmlFor="">Dealer Code</label>

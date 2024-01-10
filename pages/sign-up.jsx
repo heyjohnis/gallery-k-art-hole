@@ -35,14 +35,14 @@ export default function SignUp() {
       mobile,
       email,
       password,
-      password2,
+      confirm_password,
       login_id,
     } = form;
     let isValidate = false;
     if (idx === 0) {
       isValidate = first_name && last_name && mobile && email ? true : false;
     } else if (idx === 1) {
-      isValidate = login_id && password ? true : false;
+      isValidate = login_id && password && confirm_password ? true : false;
     } else if (idx === 2) {
       isValidate = true;
     } else if (idx === 3) {

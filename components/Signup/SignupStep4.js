@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../pages/sign-up.module.scss";
 import { POST } from "../../hooks/restApi";
+import { HOPE_SERVICE } from "../../utils/cmmCode";
 
 export default function SignupStep4({ form, setForm }) {
   const [keywords, setKeywords] = useState([]);
@@ -24,17 +25,6 @@ export default function SignupStep4({ form, setForm }) {
     setForm((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const getServiceKeyword = () => {
-    POST("/mall/keyword", { pd_kind: "all" }).then((res) => {
-      const keys = Array.from(new Set((res?.data?.keyword || "").split(",")));
-      setKeywords(keys);
-    });
-  };
-
-  useEffect(() => {
-    getServiceKeyword();
-  }, []);
-
   return (
     <div className={`${styles.page}`} id="Fourth">
       <div className={`${styles.fourthWrap}`}>
@@ -45,9 +35,8 @@ export default function SignupStep4({ form, setForm }) {
             그린갤러리 서비스를 선택해 주세요.
           </h1>
         </div>
-
         <div className={`${styles.checkedWrap}`}>
-          {keywords.map((keyword, index) => (
+          {HOPE_SERVICE?.map((keyword, index) => (
             <div key={index}>
               <input
                 type="checkbox"
