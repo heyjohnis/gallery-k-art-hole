@@ -191,6 +191,21 @@
         }
       }
 
+      .datepickerWrap {
+        position: relative;
+
+        .rdp {
+          position: absolute;
+          top: 94px;
+          left: 0;
+          margin: 5px;
+          padding: 10px;
+          border: 1px solid #666;
+          background: #fff;
+          box-shadow: 0.5px, 0.5px 0.5px 0.5px #555;
+        }
+      }
+
       .discriptionWrap {
         width: 487px;
         height: 50px;
