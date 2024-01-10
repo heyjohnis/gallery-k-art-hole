@@ -8,7 +8,8 @@ export const MyPoint = () => {
   }
 
   return (
-    <>
+    <div className='mypoint_container'>
+      <h1>포인트 이용내역</h1>
       <article className='complete_title mypoint_tit'>
         <img src="/images/mypage/ico_mypoint.png"/>
         <h2 className='mypoint_headline'>사용 가능 포인트</h2>
@@ -120,6 +121,6 @@ export const MyPoint = () => {
         </section>
       </section>
     
-    </>
+    </div>
   )
 }
