@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Footer from "../components/Signup/SignupFooter";
 import styles from "./sign-up.module.scss";
 import { POST } from "../hooks/restApi";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Controller } from "swiper";
 
@@ -13,9 +12,8 @@ import SignupStep2 from "../components/Signup/SignupStep2";
 import SignupStep3 from "../components/Signup/SignupStep3";
 import SignupStep4 from "../components/Signup/SignupStep4";
 import SignupStep5 from "../components/Signup/SignupStep5";
-import { set } from "date-fns";
-
-
+import { isValid, set } from "date-fns";
+import { is } from "date-fns/locale";
 
 export default function SignUp() {
   const [form, setForm] = useState({});
@@ -33,23 +31,52 @@ export default function SignUp() {
     });
   };
 
-  const validation1 = () => {
-    return true;
+  const validation = (idx) => {
+    const {
+      first_name,
+      last_name,
+      mobile,
+      email,
+      password,
+      password2,
+      login_id,
+    } = form;
+    let isValidate = false;
+    if (idx === 0) {
+      isValidate = first_name && last_name && mobile && email ? true : false;
+    } else if (idx === 1) {
+      isValidate = login_id && password ? true : false;
+    } else if (idx === 2) {
+      isValidate = true;
+    } else if (idx === 3) {
+      isValidate = true;
+    } else if (idx === 4) {
+      isValidate = true;
+    } else {
+      isValidate = true;
+    }
+    setAllowNext(isValidate);
   };
 
   useEffect(() => {
-    console.log(form);
-    if (form.first_name) setAllowNext(true);
+    validation(activeIndex);
+    console.log(activeIndex, form);
   }, [form, activeIndex]);
 
   const handleSlideChange = () => {
-    setAllowNext(false);
+    const activeIndex = swiper.activeIndex;
+    setActiveIndex(activeIndex);
+  };
+
+  const handleClickNext = () => {
+    alert("aaa");
   };
 
   useEffect(() => {
     const swiperInstance = swiperRef.current.swiper;
     setSwiper(swiperInstance);
   }, []);
+
   return (
     <>
       <div className={`${styles.signUpWrap}`}>
@@ -76,6 +103,7 @@ export default function SignUp() {
               }}
               allowSlideNext={allowNext}
               onSlideChange={handleSlideChange}
+              onSwiper={(swiper) => console.log(swiper)}
               onReachEnd={() => {
                 console.log("end");
               }}
@@ -99,14 +127,37 @@ export default function SignUp() {
                 </button>
               </SwiperSlide>
               <div className={`swiper-button-prev ${styles.backBtn}`}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">
-                  <path d="M4.80952 1L1 5M1 5L4.80952 9M1 5H21" stroke="#333333" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>&ensp;Back
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="10"
+                  viewBox="0 0 22 10"
+                  fill="none"
+                >
+                  <path
+                    d="M4.80952 1L1 5M1 5L4.80952 9M1 5H21"
+                    stroke="#333333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                &ensp;Back
               </div>
               <div className={`swiper-button-next ${styles.nextBtn}`}>
                 Next&ensp;
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">
-                  <path d="M17.1905 1L21 5M21 5L17.1905 9M21 5H1" stroke="#333333" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="10"
+                  viewBox="0 0 22 10"
+                  fill="none"
+                >
+                  <path
+                    d="M17.1905 1L21 5M21 5L17.1905 9M21 5H1"
+                    stroke="#333333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
             </Swiper>
