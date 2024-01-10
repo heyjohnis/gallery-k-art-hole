@@ -46,6 +46,7 @@ export default function Index({ user }) {
     <ReactFullpage
       navigation
       licenseKey={"0CVM9-4IA6I-SKM1I-SNVJ9-JYYGL"}
+      normalScrollElements={".scrollable-content"}
       render={() => (
         <ReactFullpage.Wrapper scrollingSpeed={1000} scrollHorizontally={true}>
           <div className="section">
@@ -76,7 +77,7 @@ export default function Index({ user }) {
           <div className="section">
             <GalleryComp />
           </div>
-          <div className="section">
+          <div className="section scrollable-content">
             <Footer />
           </div>
         </ReactFullpage.Wrapper>
