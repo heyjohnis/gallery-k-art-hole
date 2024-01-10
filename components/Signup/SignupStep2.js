@@ -4,6 +4,13 @@ import styles from "../../pages/sign-up.module.scss";
 export default function SignupStep2({ form, setForm }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (
+      form.confirm_password &&
+      name === "confirm_password" &&
+      value !== form.password
+    ) {
+      alert("비밀번호가 일치하지 않습니다.");
+    }
     setForm((prevState) => ({ ...prevState, [name]: value }));
   };
   return (
@@ -20,13 +27,21 @@ export default function SignupStep2({ form, setForm }) {
             <label htmlFor="">ID</label>
             <input type="text" name="login_id" onChange={handleChange} />
           </div>
-          <div className={`${styles.inputPass} ${styles.inputItems}`}>
-            <label htmlFor="">Password</label>
-            <input type="password" name="password" onChange={handleChange} />
-          </div>
           <div className={`${styles.inputDealer} ${styles.inputItems}`}>
             <label htmlFor="">Dealer Code</label>
             <input type="text" name="dlr_cd" onChange={handleChange} />
+          </div>
+          <div className={`${styles.inputPass} ${styles.inputItems} password`}>
+            <label htmlFor="">Password</label>
+            <input type="password" name="password" onBlur={handleChange} />
+          </div>
+          <div className={`${styles.inputPass} ${styles.inputItems} password`}>
+            <label htmlFor="">Confirm Password</label>
+            <input
+              type="password"
+              name="confirm_password"
+              onBlur={handleChange}
+            />
           </div>
         </div>
       </div>
