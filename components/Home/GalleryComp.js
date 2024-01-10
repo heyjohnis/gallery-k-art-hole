@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { Section } from "react-fullpage";
 import styles from "./home.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, A11y, Navigation, Pagination } from "swiper";

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./home.module.scss";
-import { Section } from "react-fullpage";
 import DatePicker from "../Common/DatePicker";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, A11y, Navigation } from "swiper";

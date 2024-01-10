@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Section } from "react-fullpage";
 import styles from "./home.module.scss";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
