@@ -5,7 +5,8 @@ import styles from "../../components/Home/MobileMain.module.scss";
 import MobileHomeItems from "../../components/Home/MobileHomeItems";
 import MobileReservation from "../../components/Home/MobileReservation";
 import MobileGallery from "../../components/Home/MobileGallery";
-import Footer from "../../components/Layouts/Footer";
+import Footer from "../../components/Layouts/MobileFooter";
+import FooterNav from "../../components/Layouts/MobileFooterNav";
 
 export default function Index({ user }) {
   const router = useRouter();
@@ -37,6 +38,7 @@ export default function Index({ user }) {
         <MobileGallery />
       </div>
       <Footer />
+      <FooterNav />
     </>
   );
 }

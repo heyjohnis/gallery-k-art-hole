@@ -13,8 +13,8 @@ const MainListWrap = ({ items }) => {
         <div className={`${styles.slideWrap}`}>
           <Swiper
             slidesPerView={"auto"}
-            navigation={false}
-            loop={true}
+            navigation={true}
+            loop={false}
             spaceBetween={0}
             autoplay={{
               delay: 4000,
@@ -26,7 +26,7 @@ const MainListWrap = ({ items }) => {
               type: "bullets",
             }}
             //  modules={[Pagination, A11y, Autoplay, Navigation]}
-            modules={[A11y, Autoplay]}
+            modules={[A11y, Autoplay, Navigation]}
             className={`hero-swiper ${styles.swiper}`}
           >
             {items.map((item, i) => (

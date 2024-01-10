@@ -224,14 +224,14 @@
 
         .slideImg {
           display: inline-block;
-          width: 260px;
-          height: 290px;
+          width: 80%;
+          // height: 290px;
           border-radius: 8px;
 
         }
 
         .slideTitle {
-          width: 70%;
+          width: 80%;
           margin: 20px 0 5px;
           font-family: Noto Sans KR, sans-serif;
           font-size: 18px;
@@ -246,7 +246,7 @@
         }
 
         .slideText{
-          width: 70%;
+          width: 80%;
           display: block;
           margin: 5px 0 15px;
           font-family: Noto Sans KR, sans-serif;
@@ -269,7 +269,28 @@
           text-align: left;
           color: #333;
         }
+        
+        .imageWrap {
+          position: relative;
 
+          &::before
+          {
+            content: 'SALE';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 40px;
+            padding: 6px 0;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: -0.18px;
+            text-align: center;
+            color: #fff;
+            background-color: #666;
+          }
+        }
       }
     }
   }
