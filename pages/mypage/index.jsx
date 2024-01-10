@@ -100,7 +100,7 @@ function Mypage({ user }) {
         </div>
       </section>
       <Footer />
-      {isMobile && <MobileFooterNav />}
+      {isMobile && <MobileFooterNav service={selectedService} />}
     </>
   );
 }
