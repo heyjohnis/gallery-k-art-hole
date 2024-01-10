@@ -283,7 +283,12 @@ $sub-content-color-home-four: #e7e7e7;
       & a {
         display: contents;
 
-        & span {
+        img {
+          width: 24px;
+
+        }
+
+        span {
           text-align: center;
           font-family: Noto Sans KR;
           font-size: 10px;
