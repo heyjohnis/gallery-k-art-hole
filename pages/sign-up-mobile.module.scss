@@ -8,7 +8,10 @@ $main-font-family-kor: "Noto Sans KR";
   margin: 0 auto;
   background: #f9f9f9;
 
-  .personalInfo, .loginInfo, .locationInfo, .checkedService .privacyPolicy {
+  .personalInfo,
+  .loginInfo,
+  .locationInfo,
+  .checkedService .privacyPolicy {
     width: 100%;
 
     .titleWrap {
@@ -24,7 +27,7 @@ $main-font-family-kor: "Noto Sans KR";
         font-weight: 700;
         line-height: 34px;
         letter-spacing: -0.22px;
-        color: #FFF;
+        color: #fff;
       }
     }
 
@@ -38,7 +41,6 @@ $main-font-family-kor: "Noto Sans KR";
       &::-webkit-scrollbar {
         display: none; /* Chrome, Safari, Opera*/
       }
-      
 
       label {
         width: 100%;
@@ -60,7 +62,7 @@ $main-font-family-kor: "Noto Sans KR";
         outline: 0;
         border: 0;
         color: #111;
-        background: #FFF;
+        background: #fff;
         border-bottom: 1px solid #ccc;
 
         &:focus {
@@ -79,7 +81,6 @@ $main-font-family-kor: "Noto Sans KR";
     .checkedService {
       .titleWrap {
         margin-bottom: 20px;
-
       }
     }
 
@@ -98,7 +99,6 @@ $main-font-family-kor: "Noto Sans KR";
 
       &::-webkit-scrollbar {
         display: none; /* Chrome, Safari, Opera*/
-
       }
 
       .checkebox {
@@ -118,7 +118,6 @@ $main-font-family-kor: "Noto Sans KR";
             background-color: #fff;
             color: #3e8b3c;
             border: 2px solid #3e8b3c;
-
           }
         }
 
@@ -135,11 +134,10 @@ $main-font-family-kor: "Noto Sans KR";
           border-radius: 24px;
           background-color: #fff;
           cursor: pointer;
-
         }
       }
     }
-      
+
     .guide {
       padding: 10px 20px 30px;
 
@@ -149,7 +147,6 @@ $main-font-family-kor: "Noto Sans KR";
         font-weight: 400;
         letter-spacing: -0.12px;
         color: #999;
-
       }
     }
 
@@ -162,18 +159,16 @@ $main-font-family-kor: "Noto Sans KR";
 
       &::-webkit-scrollbar {
         display: none; /* Chrome, Safari, Opera*/
-
       }
 
-      .privacyPolicyWrap, .termsOfServiceWrap {
-
+      .privacyPolicyWrap,
+      .termsOfServiceWrap {
         h4 {
           font-family: $main-font-family-eng;
           font-size: 14px;
           font-weight: 700;
           letter-spacing: -0.14px;
           color: #333;
-
         }
 
         .boxWrap {
@@ -192,7 +187,6 @@ $main-font-family-kor: "Noto Sans KR";
             font-weight: 400;
             letter-spacing: -0.12px;
             color: #666;
-
           }
 
           p {
@@ -203,35 +197,35 @@ $main-font-family-kor: "Noto Sans KR";
             color: #666;
             text-overflow: ellipsis;
             white-space: wrap;
-
           }
         }
       }
 
       .agreeButtonWrap {
         padding: 0px;
-  
+
         input {
           margin-right: 5px;
           vertical-align: middle;
-  
+
           &[type="checkbox"] {
             width: 20px;
             height: 20px;
             border-radius: 0;
-            
           }
         }
       }
     }
   }
 
-  .nextBtn, .previewBtn {
+  .nextBtn,
+  .previewBtn {
     width: 100%;
     margin: 20px auto;
     text-align: center;
 
-    button, a {
+    button,
+    a {
       width: 90%;
       padding: 20px 0;
       font-family: $main-font-family-eng;
@@ -243,21 +237,17 @@ $main-font-family-kor: "Noto Sans KR";
       border: 1px solid #333;
       border-radius: 8px;
       background: #333;
-
     }
 
     button:nth-child(1) {
       display: none;
-
     }
   }
 
   .previewBtn {
-
     a {
       color: #111;
       background: #fff;
-      
     }
   }
 
@@ -272,7 +262,7 @@ $main-font-family-kor: "Noto Sans KR";
       width: 100%;
       height: 53vh;
       padding: 0 20px;
-      
+
       img {
         width: 142px;
         height: 40px;
@@ -303,26 +293,30 @@ $main-font-family-kor: "Noto Sans KR";
     .groupTabWrap {
       width: 100%;
 
-        .navLink {
-          width: 100%;
-          height: 35px;
-          margin: 0;
-          padding: 0;
-          font-family: $main-font-family-eng;
-          font-size: 14px;
+      .navLink {
+        width: 100%;
+        height: 35px;
+        margin: 0;
+        padding: 0;
+        font-family: $main-font-family-eng;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.14px;
+        color: #666;
+        text-align: left;
+
+        &[aria-selected="true"] {
           font-weight: 700;
-          letter-spacing: -0.14px;
-          color: #666;
-          text-align: left;
-
-          &[aria-selected="true"] {
-            font-weight: 700;
-            color: #333;
-            text-decoration-line: underline;
-          }
+          color: #333;
+          text-decoration-line: underline;
         }
+      }
     }
-
   }
+}
 
+.swiperContainer {
+  position: relative;
+  width: 100%;
+  height: 90vh;
 }

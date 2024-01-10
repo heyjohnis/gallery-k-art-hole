@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import Footer from "../components/Signup/SignupFooter";
 import styles from "./sign-up.module.scss";
 import { POST } from "../hooks/restApi";
@@ -13,6 +14,7 @@ import SignupStep4 from "../components/Signup/SignupStep4";
 import SignupStep5 from "../components/Signup/SignupStep5";
 
 export default function SignUp() {
+  const router = useRouter();
   const [form, setForm] = useState({});
   const [swiper, setSwiper] = useState(null);
   const swiperRef = useRef(null);
@@ -23,8 +25,14 @@ export default function SignUp() {
       form.prefer_service = form.prefer_service.join(",");
     form.user_name = form.last_name + form.first_name;
     POST("/signup", form).then((res) => {
-      console.log(res);
-      alert(res?.response?.data?.message);
+      if (res.status === 200) {
+        alert(
+          "회원가입이 완료되었습니다. \n관리자 승인 후 로그인이 가능합니다."
+        );
+        router.push("/");
+      } else {
+        alert(res?.data?.message);
+      }
     });
   };
 
@@ -68,6 +76,21 @@ export default function SignUp() {
   useEffect(() => {
     const swiperInstance = swiperRef.current.swiper;
     setSwiper(swiperInstance);
+  }, []);
+
+  useEffect(() => {
+    const handWindowSize = () => {
+      const { innerWidth } = window;
+      if (innerWidth < 768) {
+        console.log("mobile");
+        router.push("/sign-up-mobile");
+      }
+    };
+    handWindowSize();
+    window.addEventListener("resize", handWindowSize);
+    return () => {
+      window.removeEventListener("resize", handWindowSize);
+    };
   }, []);
 
   return (
