@@ -4,7 +4,6 @@ import styles from "./sign-up.module.scss";
 import { POST } from "../hooks/restApi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Controller } from "swiper";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import SignupStep1 from "../components/Signup/SignupStep1";
@@ -12,8 +11,6 @@ import SignupStep2 from "../components/Signup/SignupStep2";
 import SignupStep3 from "../components/Signup/SignupStep3";
 import SignupStep4 from "../components/Signup/SignupStep4";
 import SignupStep5 from "../components/Signup/SignupStep5";
-import { isValid, set } from "date-fns";
-import { is } from "date-fns/locale";
 
 export default function SignUp() {
   const [form, setForm] = useState({});
@@ -66,10 +63,6 @@ export default function SignUp() {
   const handleSlideChange = () => {
     const activeIndex = swiper.activeIndex;
     setActiveIndex(activeIndex);
-  };
-
-  const handleClickNext = () => {
-    alert("aaa");
   };
 
   useEffect(() => {
