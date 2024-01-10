@@ -45,6 +45,7 @@ export default function Index({ user }) {
   return (
     <ReactFullpage
       navigation
+      licenseKey={"0CVM9-4IA6I-SKM1I-SNVJ9-JYYGL"}
       render={() => (
         <ReactFullpage.Wrapper scrollingSpeed={1000} scrollHorizontally={true}>
           <div className="section">
