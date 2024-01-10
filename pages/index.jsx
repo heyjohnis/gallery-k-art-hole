@@ -8,6 +8,7 @@ import RenoirBanner from "../components/Home/Banner/RenoirBanner";
 import MonetBanner from "../components/Home/Banner/MonetBanner";
 import GalleryComp from "../components/Home/GalleryComp";
 import ReactFullpage from "@fullpage/react-fullpage";
+import styles from "./index.module.scss";
 
 const options = {
   anchors: ["intro", "booking", "mall", "gallery", "footer"],
@@ -49,35 +50,35 @@ export default function Index({ user }) {
       normalScrollElements={".scrollable-content"}
       render={() => (
         <ReactFullpage.Wrapper scrollingSpeed={1000} scrollHorizontally={true}>
-          <div className="section">
+          <div className={`section`}>
             {serviceGroup === "gogh" && <GoghBanner />}
             {serviceGroup === "renoir" && <RenoirBanner />}
             {serviceGroup === "monet" && <MonetBanner />}
           </div>
           {serviceGroup === "gogh" && (
             <>
-              <div className="section">
+              <div className={`section`}>
                 <BookingComp />
               </div>
-              <div className="section">
+              <div className={`section`}>
                 <ServiceComp />
               </div>
             </>
           )}
           {serviceGroup !== "gogh" && (
             <>
-              <div className="section">
+              <div className={`section ${styles.fullSize}`}>
                 <ServiceComp />
               </div>
-              <div className="section">
+              <div className={`section ${styles.fullSize}`}>
                 <BookingComp />
               </div>
             </>
           )}
-          <div className="section">
+          <div className={`section ${styles.fullSize}`}>
             <GalleryComp />
           </div>
-          <div className="section scrollable-content">
+          <div className={`section scrollable-content`}>
             <Footer />
           </div>
         </ReactFullpage.Wrapper>

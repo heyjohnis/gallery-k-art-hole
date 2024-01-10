@@ -17,7 +17,6 @@
 }
 
 .titleWrap {
-
   h1 {
     font-family: Jost;
     font-size: 70px;
@@ -104,7 +103,7 @@
 .onePage {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   margin: 0;
 
   .bookingPageLeftSection {
@@ -472,7 +471,7 @@
 
       .itemListLi {
         width: 32%;
-        max-width: 345px ;
+        max-width: 345px;
         margin: 0 auto 50px;
         padding: 0;
         list-style: none;
@@ -481,7 +480,6 @@
         a {
           width: 100%;
         }
-
 
         .imageWrap {
           position: relative;
@@ -506,15 +504,15 @@
 
         img {
           width: 100%;
-          max-width: 345px ;
+          max-width: 345px;
           height: 100%;
-          max-height: 345px ;
+          max-height: 345px;
         }
 
         h4 {
           display: block;
           width: 100%;
-          max-width: 345px ;
+          max-width: 345px;
           margin: 30px 0;
           padding: 0;
           font-size: 24px;
@@ -535,7 +533,7 @@
         span.discript {
           display: block;
           width: 100%;
-          max-width: 345px ;
+          max-width: 345px;
           margin: 20px 0 0;
           padding: 0;
           font-size: 16px;
@@ -865,7 +863,6 @@
           }
 
           .imageWrap {
-
             &::before {
               content: "SALE";
               width: 60px;
