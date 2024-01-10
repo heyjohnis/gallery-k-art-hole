@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./home.module.scss";
 import DatePicker from "../Common/DatePicker";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, A11y, Navigation } from "swiper";
+import { Autoplay, A11y, Navigation, EffectFade } from "swiper";
 import { REGION_LIST } from "../../data/CommonCode";
 import Form from "react-bootstrap/Form";
 import { useRouter } from "next/router";
@@ -54,7 +54,7 @@ export default function BookingComp() {
         <div className={`col-lg-12 col-md-6 ${styles.formWrap}`}>
           <form>
             <div className={`row col-lg-12 col-md-6 ${styles.inputWrap}`}>
-              <div className={`col`}>
+              <div className={`col ${styles.datepickerWrap}`}>
                 <DatePicker
                   label="날짜 선택"
                   pickDate={(date) => selectedPickDate(date)}
@@ -96,6 +96,7 @@ export default function BookingComp() {
 
       <div className={`col-lg-6 col-md-6 ${styles.bookingPageRightSection}`}>
         <Swiper
+          effect="fade"
           navigation={false}
           spaceBetween={0}
           autoplay={{
@@ -107,7 +108,7 @@ export default function BookingComp() {
             clickable: false,
             type: "bullets",
           }}
-          modules={[A11y, Autoplay, Navigation]}
+          modules={[A11y, Autoplay, Navigation, EffectFade]}
           className={`hero-swiper1 ${styles.onePage}`}
         >
           <SwiperSlide>

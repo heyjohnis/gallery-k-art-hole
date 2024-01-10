@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
+import styles from "../Home/home.module.scss";
 
 const DatePicker = ({ label, pickDate, dateKind, selectedDate }) => {
   const [selectedDay, setSelectedDay] = useState();
@@ -27,7 +28,7 @@ const DatePicker = ({ label, pickDate, dateKind, selectedDate }) => {
   }, [selectedDate]);
 
   return (
-    <div>
+    <div className={styles.rdpWrap}>
       <div className="col-lg-12 col-sm-12">
         <label>{label}</label>
         <input
@@ -42,6 +43,7 @@ const DatePicker = ({ label, pickDate, dateKind, selectedDate }) => {
       </div>
       {isShow && (
         <DayPicker
+          className={styles.rdp}
           mode="single"
           required
           selected={selectedDay}
