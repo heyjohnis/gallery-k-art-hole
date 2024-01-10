@@ -67,7 +67,7 @@ const Navbar = ({ user }) => {
           <div className="container">
             <Link href="/" className="navbar-brand light_logo">
               <img
-                src="/images/dark-logo.svg"
+                src="/images/white-logo.svg"
                 width={180}
                 height={36}
                 alt="logo"

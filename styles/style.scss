@@ -6550,3 +6550,68 @@ My Page > 예약확인
     }
   }
 }
+
+.fp-viewing-1 {
+  nav {
+
+    .top-menu {
+      li {
+        .menu-items {
+          color: $white-color;
+        }
+
+        span {
+          background-color: $white-color;
+        }
+      }
+    }
+  }
+}
+
+.fp-viewing-2 {
+  nav {
+
+    .top-menu {
+      li {
+        .menu-items {
+          color: $white-color;
+        }
+
+        span {
+          background-color: $white-color;
+        }
+      }
+    }
+
+    .navbar-brand {
+      &.light_logo {
+        display: block;
+      }
+
+      &.dark_logo {
+        display: none;
+      }
+    }
+
+  }
+}
+
+.fp-viewing-3 {
+  nav {
+
+    button {
+      .top-bar, .middle-bar, .bottom-bar {
+        background-color: #333 !important;
+      }
+    }
+
+  }
+}
+
+.fp-viewing-4 {
+  nav {
+    
+    display: none;
+
+  }
+}
