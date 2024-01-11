@@ -38,7 +38,7 @@ const DatePicker = ({ label, pickDate, dateKind, selectedDate }) => {
           readOnly
           onClick={handleOnClick}
           onChange={hideDayicker}
-          placeholder="날짜를 선택하세요"
+          placeholder="날짜 선택"
         />
       </div>
       {isShow && (

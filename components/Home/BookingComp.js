@@ -56,10 +56,10 @@ export default function BookingComp() {
             <div className={`row col-lg-12 col-md-6 ${styles.inputWrap}`}>
               <div className={`col ${styles.datepickerWrap}`}>
                 <DatePicker
-                  label="날짜 선택"
+                  label="SCHEDULE"
                   pickDate={(date) => selectedPickDate(date)}
                   dateKind="resv_datetime"
-                />{" "}
+                />
               </div>
               <div className={`col`}>
                 <div>
@@ -70,7 +70,7 @@ export default function BookingComp() {
                   aria-label="Default select example"
                   onChange={(e) => selectedRegion(e.target.value)}
                 >
-                  <option value="">1차 권역을 선택해 주세요</option>
+                  <option value="">권역 선택</option>
                   {renderRegionOptions()}
                 </Form.Select>
               </div>
