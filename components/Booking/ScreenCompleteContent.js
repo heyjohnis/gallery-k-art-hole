@@ -58,6 +58,13 @@ export const ScreenCompleteContent = () => {
               <pre>{form.etc}</pre>
             </span>
           </div>
+
+          <div className="complete_content_items">
+            <span className="items_item">총 결제포인트</span>
+            <span className="items_detail">
+              {commaFormat(form.total_pay_point)} P
+            </span>
+          </div>
         </div>
       </div>
       <button
