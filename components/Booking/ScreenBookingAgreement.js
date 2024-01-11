@@ -30,7 +30,6 @@ export const ScreenBookingAgreement = ({ bookingInfo }) => {
     bookingInfo.resv_kind = "02";
     POST("/reservation/request", bookingInfo).then((res) => {
       if (res.status === 200) {
-        alert("예약신청되었습니다. 관리자 확인 후 연락드리겠습니다");
         bookingInfo.resv_no = res.data.insertId;
         bookingInfo.reg_date = nowDateFormat();
         router.push({
