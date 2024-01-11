@@ -43,9 +43,18 @@ const Navbar = ({ user }) => {
 
   return (
     <>
-      <div id="navbar" className="navbar-area fixed-top">
+      <div
+        id="navbar"
+        className={`navbar-area fixed-top ${
+          currentPath.indexOf("landing") > -1 ? styles.navbarAbsolute : ""
+        }`}
+      >
         <div className={styles.backdrop}></div>
-        <div className={styles.top_event}>
+        <div
+          className={`${styles.top_event} ${
+            currentPath.indexOf("landing") > -1 ? styles.topEventRemove : ""
+          }`}
+        >
           <Swiper
             navigation={true}
             autoplay={{
