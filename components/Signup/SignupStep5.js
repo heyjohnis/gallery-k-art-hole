@@ -21,17 +21,19 @@ export default function SignupStep5({ form, setForm }) {
           </h1>
         </div>
 
-        <div className={styles.privacyPolicyWrap}>
-          <h4>개인정보처리방침</h4>
-          <div className={styles.boxWrap}>
-            <PrivacyPolicyText />
+        <div class={styles.contentsWrap}>
+          <div className={styles.privacyPolicyWrap}>
+            <h4>개인정보처리방침</h4>
+            <div className={styles.boxWrap}>
+              <PrivacyPolicyText />
+            </div>
           </div>
-        </div>
 
-        <div className={styles.termsOfServiceWrap}>
-          <h4>서비스 이용약관</h4>
-          <div className={styles.boxWrap}>
-            <TermsConditionsText />
+          <div className={styles.termsOfServiceWrap}>
+            <h4>서비스 이용약관</h4>
+            <div className={styles.boxWrap}>
+              <TermsConditionsText />
+            </div>
           </div>
         </div>
 
