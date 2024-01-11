@@ -20,6 +20,13 @@ export default function SignupStep4({ form, setForm }) {
           arr.splice(index, 1);
         }
       }
+      if (arr.length > 5) {
+        alert("최대 5개까지 선택 가능합니다.");
+        const index = arr.indexOf(value);
+        arr.splice(index, 1);
+        e.target.checked = false;
+        return;
+      }
       value = arr;
     }
     setForm((prevState) => ({ ...prevState, [name]: value }));
