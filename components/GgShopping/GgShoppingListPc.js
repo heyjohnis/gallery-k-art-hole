@@ -14,7 +14,8 @@ export default function GgShoppingListPc() {
         <div>
           <Form.Control
             type="text"
-            placeholder="Disabled readonly input"
+            placeholder="Search"
+            className='shopping_search'
           />
         </div>
       </div>

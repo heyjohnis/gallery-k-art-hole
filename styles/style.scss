@@ -6817,6 +6817,7 @@ My Page > 예약확인
   margin: 100px 0 50px;
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   h1 {
     margin: 0 50px 0 0;
     color: $main-color;
@@ -6829,6 +6830,22 @@ My Page > 예약확인
     font-size: 14px;
     font-weight: 500;
     letter-spacing: -0.14px;
+  }
+  .shopping_search {
+    width: 357px;
+    height: 40px;
+    padding: 20px;
+    color: #333;
+    font-family: $main-font-family-eng;
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: -0.14px;
+    background: none;
+    border-bottom: 1px solid #ccc;
+    &:focus {
+      border: 0;
+      border-bottom: 1px solid #ccc;
+    }
   }
 }
 
@@ -6880,6 +6897,7 @@ My Page > 예약확인
 
 .shopping_list_container {
   .items {
+    position: relative;
     margin-bottom: 79px;
     .list_img {
       width: 100%;
@@ -6919,7 +6937,22 @@ My Page > 예약확인
       }
       .product_price_info {
         display: flex;
+        .label_sale {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 9px 16px;
+          background: $gray-color;
+          color: $white-color;
+          font-family: $main-font-family-eng;
+          font-size: 18px;
+          font-weight: 600;
+          letter-spacing: -0.18px;
+        }
         .product_sales{
+          display: none;
+          margin-right: 6px;
           color: $sub-color;
           font-size: 22px;
           font-weight: 700;
@@ -6933,11 +6966,23 @@ My Page > 예약확인
           letter-spacing: -0.22px;
         }
         .product_ori {
+          display: none;
           color: #ccc;
           font-size: 20px;
           font-weight: 300;
           letter-spacing: -0.2px;
           text-decoration-line: line-through;
+        }
+        &.sale {
+          .label_sale {
+            display: block;
+          }
+          .product_sales {
+            display: block;
+          }
+          .product_ori {
+            display: block;
+          }
         }
       }
     }
