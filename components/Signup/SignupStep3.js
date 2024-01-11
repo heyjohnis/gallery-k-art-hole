@@ -6,8 +6,6 @@ import { POST } from "../../hooks/restApi";
 export default function SignupStep3({ form, setForm }) {
   const regionOptions = useRenderRegionOptions();
   const [ccList, setCcList] = useState([]);
-  const [ccSelect1, setCcSelect1] = useState([]);
-  const [ccSelect2, setCcSelect2] = useState([]);
 
   const getCCList = () => {
     try {
@@ -27,17 +25,6 @@ export default function SignupStep3({ form, setForm }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevState) => ({ ...prevState, [name]: value }));
-  };
-
-  const handleChangeCcInput = (e) => {
-    const { name, value } = e.target;
-    setForm((prevState) => ({ ...prevState, [name]: value }));
-    setCcSelect1([]);
-    setCcSelect2([]);
-    if (value.length > 0) {
-      const cc = ccList.filter((cc) => cc?.cc_name.includes(value));
-      name === "cc1" ? setCcSelect1(cc) : setCcSelect2(cc);
-    }
   };
 
   const handleClickCcSelect = (ccSel, ccNo, ccName) => () => {
@@ -87,54 +74,35 @@ export default function SignupStep3({ form, setForm }) {
             <label htmlFor="">Golf Course</label>
             <div className={`${styles.selectWrap}`}>
               <div className={styles.cc_input}>
-                <input
-                  type="text"
-                  name="cc1"
-                  id="cc1"
-                  onChange={handleChangeCcInput}
-                  placeholder="1차 골프장"
-                  value={form?.cc1}
-                />
-                {ccSelect1.length > 0 && (
-                  <div className={styles.cc_selectbox}>
-                    {ccSelect1.map((cc) => {
-                      return (
-                        <div
-                          key={cc.cc_no}
-                          className={styles.cc_select}
-                          onClick={handleClickCcSelect(1, cc.cc_no, cc.cc_name)}
-                        >
-                          [{cc.region_nm}] {cc.cc_name}
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+                <select name="cc1" id="cc1" onChange={handleChange}>
+                  <option value="">권역을 선택하세요</option>
+                  {ccList.map((cc) => {
+                    return (
+                      <option
+                        key={cc.cc_no}
+                        value={`[${cc.region_nm}] ${cc.cc_name}`}
+                      >
+                        [{cc.region_nm}] {cc.cc_name}
+                      </option>
+                    );
+                  })}
+                </select>
               </div>
               <div className={styles.cc_input}>
-                <input
-                  type="text"
-                  name="cc2"
-                  id="cc2"
-                  onChange={handleChangeCcInput}
-                  placeholder="2차 골프장"
-                  value={form?.cc2}
-                />
-                {ccSelect2.length > 0 && (
-                  <div className={styles.cc_selectbox}>
-                    {ccSelect2.map((cc) => {
-                      return (
-                        <div
-                          key={cc.cc_no}
-                          className={styles.cc_select}
-                          onClick={handleClickCcSelect(2, cc.cc_no, cc.cc_name)}
-                        >
-                          [{cc.region_nm}] {cc.cc_name}
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+                <select name="cc1" id="cc1" onChange={handleChange}>
+                  <option value="">권역을 선택하세요</option>
+
+                  {ccList.map((cc) => {
+                    return (
+                      <option
+                        key={cc.cc_no}
+                        value={`[${cc.region_nm}] ${cc.cc_name}`}
+                      >
+                        [{cc.region_nm}] {cc.cc_name}
+                      </option>
+                    );
+                  })}
+                </select>
               </div>
             </div>
           </div>

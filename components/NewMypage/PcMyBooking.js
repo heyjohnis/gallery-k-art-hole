@@ -7,7 +7,8 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import Card from "react-bootstrap/Card";
 import { POST } from "../../hooks/restApi";
 import { hyphenForPhone } from "../../utils/number";
-import { RESV_KIND } from "../../utils/cmmCode";
+import { REGION_CODE, RESV_KIND } from "../../utils/cmmCode";
+import { REGION_LIST } from "../../data/CommonCode";
 
 export default function PcMyBooking({
   resvData,
@@ -219,7 +220,8 @@ export default function PcMyBooking({
                           <li>
                             <span className="tit">희망 권역</span>
                             <span>
-                              1차 {resv.hope_local1}, 2차 {resv.hope_local2}
+                              1차 {REGION_CODE[resv?.hope_local1]}, 2차{" "}
+                              {REGION_CODE[resv?.hope_local2]}
                             </span>
                           </li>
                         </ul>
