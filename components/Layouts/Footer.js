@@ -59,7 +59,7 @@ const Footer = () => {
                   </Link>
                   <br />
                   <span>개인정보관리책임자</span> <span>:</span>{" "}
-                  <span>cs@galleryk.co.kr</span>
+                  <span>gg@galleryk.co.kr</span>
                 </div>
               </div>
             </div>

@@ -36,7 +36,7 @@ const MobileFooter = () => {
                 </Link>
               </span>
               <span className={`${styles.cpo}`}>
-                개인정보관리책임자 : cs@galleryk.co.kr
+                개인정보관리책임자 : gg@galleryk.co.kr
               </span>
             </div>
 

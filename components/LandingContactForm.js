@@ -121,8 +121,7 @@ const LandingContactForm = ({ openContact }) => {
               <div className={`${styles.contactWrap}`}>
                 <ul>
                   <li>
-                    <span>Email</span> |
-                    <span> greengallery@galleryk.co.kr</span>
+                    <span>Email</span> |<span> gg@galleryk.co.kr</span>
                   </li>
                   <li>
                     <span>TEL</span> |<span> 1588 - 1778</span>
