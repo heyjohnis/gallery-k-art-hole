@@ -3,8 +3,6 @@ import Link from "next/link";
 import styles from "./navbar.mobile.module.scss";
 
 const MobileFooterNav = ({ service }) => {
-  const currentYear = new Date().getFullYear();
-
   const preparingAlert = (e) => {
     e.preventDefault();
     alert("현재 서비스를 준비중입니다.");

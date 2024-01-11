@@ -3,8 +3,6 @@ import Link from "next/link";
 import styles from "./navbar.mobile.module.scss";
 
 const MobileFooter = () => {
-  const currentYear = new Date().getFullYear();
-
   const preparingAlert = (e) => {
     e.preventDefault();
     alert("현재 서비스를 준비중입니다.");
@@ -80,10 +78,7 @@ const MobileFooter = () => {
               </Link>
             </div>
 
-            <span className={`${styles.copyright}`}>
-              ⓒ 2023 {currentYear === 2023 ? ` ` : ` -  ${currentYear} `}
-              GREEN GALLERY
-            </span>
+            <span className={`${styles.copyright}`}>ⓒ 2024 GREEN GALLERY</span>
           </div>
         </div>
       </footer>
