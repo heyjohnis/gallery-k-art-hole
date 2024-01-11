@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
+import { hyphenForPhone } from "../../utils/number";
 
 export const GolfCompleteContent = () => {
   const router = useRouter();
@@ -31,7 +32,7 @@ export const GolfCompleteContent = () => {
             <div className="tit_point">
               <span>{form.user_name}</span>
               <span className="bar">|</span>
-              <span>{form.mobile}</span>
+              <span>{hyphenForPhone(form.mobile)}</span>
             </div>
             <div className="tit_status">신청완료</div>
           </div>
@@ -58,6 +59,22 @@ export const GolfCompleteContent = () => {
               2순위 <span>{form.region2Name || "없음"}</span>
             </span>
           </div>
+          <div className="complete_content_items">
+            <span className="items_item">이용자 1</span>
+            <span className="items_detail">
+              {form.option_name1}
+              <span> {hyphenForPhone(form.option_phone1) || ""}</span>
+            </span>
+          </div>
+          {form.option_name2 && (
+            <div className="complete_content_items">
+              <span className="items_item">이용자 2</span>
+              <span className="items_detail">
+                {form.option_name2}
+                <span> {hyphenForPhone(form.option_phone2) || ""}</span>
+              </span>
+            </div>
+          )}
           <div className="complete_content_items">
             <span className="items_item">기타사항</span>
             <span className="items_detail">

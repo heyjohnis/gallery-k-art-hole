@@ -3,7 +3,6 @@ import DatePicker from "../Common/DatePicker";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Form from "react-bootstrap/Form";
-import { REGION_LIST } from "../../data/CommonCode";
 import { useRouter } from "next/router";
 import useRenderRegionOptions from "../../hooks/useRenderRegionOptions";
 
@@ -36,6 +35,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
 
   useEffect(() => {
     if (!user) return;
+    console.log("user: ", user);
     setForm((prevState) => ({ ...prevState, ...user }));
   }, [user]);
 
@@ -118,36 +118,45 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
       <h2>이용자 정보</h2>
       <Form>
         <div className="form_item">
-          <Form.Label>이용자명</Form.Label>
-          <div className="item_name">
+          <Form.Label>이용자1</Form.Label>
+          <div className="item_group">
             <Form.Control
               type="text"
-              name="user_name"
-              value={form.user_name}
+              name="option_name1"
+              value={form.option_name1}
               placeholder="이름을 입력해주세요."
+              onChange={handleChange}
+            />
+            <Form.Control
+              type="text"
+              name="option_phone1"
+              maxLength="15"
+              value={form?.option_phone1}
+              placeholder="010-1234-5678"
               onChange={handleChange}
             />
             <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
           </div>
-          <p className="info">무기명 회원인 경우 예약자명을 기입해주세요.</p>
-        </div>
-
-        <div className="form_item">
-          <Form.Label>이용자 연락처</Form.Label>
-          <div className="item_group row">
-            <div className="col row tel_group">
-              <div className="col-lg-2 col-3">
-                <Form.Control
-                  type="text"
-                  name="mobile"
-                  maxlength="15"
-                  value={form?.mobile}
-                  placeholder="010-1234-5678"
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
+          <Form.Label>이용자2</Form.Label>
+          <div className="item_group">
+            <Form.Control
+              type="text"
+              name="option_name2"
+              value={form.option_name2}
+              placeholder="이름을 입력해주세요."
+              onChange={handleChange}
+            />
+            <Form.Control
+              type="text"
+              name="option_phone2"
+              maxLength="15"
+              value={form?.option_phone2}
+              placeholder="010-1234-5678"
+              onChange={handleChange}
+            />
+            <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
           </div>
+          {/* <p className="info">무기명 회원인 경우 예약자명을 기입해주세요.</p> */}
         </div>
       </Form>
     </div>
