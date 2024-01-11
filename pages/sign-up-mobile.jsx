@@ -98,7 +98,7 @@ export default function SignupMobile() {
       ref={swiperRef}
       spaceBetween={0}
       modules={[Navigation, Controller]}
-      className={`hero-swiper1 ${styles.rightSlide}`}
+      className={`hero-swiper1 ${styles.swiperContainer} `}
       navigation={{
         prevEl: ".swiper-button-prev",
         nextEl: ".swiper-button-next",
@@ -109,66 +109,65 @@ export default function SignupMobile() {
       onReachEnd={() => {
         console.log("end");
       }}
-      className={styles.swiperContainer}
     >
       <SwiperSlide>
         <div className={styles.personalInfo}>
-          <div className={styles.titleWrap}>
+          {/* <div className={styles.titleWrap_mo}>
             <h1>
               하이엔드 골프서비스 <br />
               그린갤러리에 오신 것을 환영합니다!
             </h1>
-          </div>
+          </div> */}
           <SignupStep1 form={form} setForm={setForm} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className={styles.loginInfo}>
-          <div className={styles.titleWrap}>
+          {/* <div className={styles.titleWrap_mo}>
             <h1>
               사용하실 아이디와 <br />
               비밀번호를 입력해 주세요.
             </h1>
-          </div>
+          </div> */}
           <SignupStep2 form={form} setForm={setForm} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className={styles.locationInfo}>
-          <div className={styles.titleWrap}>
+          {/* <div className={styles.titleWrap_mo}>
             <h1>
               자주 이용하시거나 선호하시는 <br />
               골프장을 선택해 주세요.
             </h1>
-          </div>
+          </div> */}
           <SignupStep3 form={form} setForm={setForm} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className={styles.checkedService}>
-          <div className={styles.titleWrap}>
+          {/* <div className={styles.titleWrap_mo}>
             <h1>
               가입 후 이용하고 싶은 <br />
               그린갤러리 서비스를 선택해 주세요.
             </h1>
-          </div>
+          </div> */}
           <SignupStep4 form={form} setForm={setForm} />
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className={styles.privacyPolicy}>
-          <div className={styles.titleWrap}>
+          {/* <div className={styles.titleWrap_mo}>
             <h1>
               서비스 약관에 동의하시고 <br />
               그린갤러리를 만나보세요.
             </h1>
-          </div>
+          </div> */}
           <SignupStep5 form={form} setForm={setForm} />
         </div>
       </SwiperSlide>
       <div className={styles.navigation}>
-        <div className="swiper-button-next">Next</div>
-        <div className="swiper-button-prev">Previous</div>
+        <div className={`swiper-button-next ${styles.buttonNext}`}>Next</div>
+        <div className={`swiper-button-prev ${styles.buttonPrev}`}>Previous</div>
       </div>
     </Swiper>
   );
