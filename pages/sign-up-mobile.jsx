@@ -19,6 +19,7 @@ export default function SignupMobile() {
   const swiperRef = useRef(null);
   const [allowNext, setAllowNext] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isEnd, setIsEnd] = useState(false);
 
   const handleSubmit = () => {
     if (typeof form.prefer_service === "object")
@@ -111,7 +112,7 @@ export default function SignupMobile() {
       onSlideChange={handleSlideChange}
       onSwiper={(swiper) => console.log(swiper)}
       onReachEnd={() => {
-        console.log("end");
+        setIsEnd(true);
       }}
     >
       <SwiperSlide>
@@ -170,8 +171,18 @@ export default function SignupMobile() {
         </div>
       </SwiperSlide>
       <div className={styles.navigation}>
+        {isEnd && (
+          <div
+            className={`swiper-button-next ${styles.buttonNext}`}
+            onClick={handleSubmit}
+          >
+            Submit
+          </div>
+        )}
         <div className={`swiper-button-next ${styles.buttonNext}`}>Next</div>
-        <div className={`swiper-button-prev ${styles.buttonPrev}`}>Previous</div>
+        <div className={`swiper-button-prev ${styles.buttonPrev}`}>
+          Previous
+        </div>
       </div>
     </Swiper>
   );
