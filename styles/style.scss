@@ -6808,5 +6808,74 @@ My Page > 포인트 이용내역
       }
     } 
   }
-
 }
+
+/*
+My Page > 예약확인
+================================*/
+.shopping_tit {
+  margin: 100px 0 50px;
+  display: flex;
+  align-items: flex-end;
+  h1 {
+    margin: 0 50px 0 0;
+    color: $main-color;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.44px;
+  }
+  span {
+    color: $light-gray;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.14px;
+  }
+}
+
+.shopping_filter {
+  h2 {
+    margin-bottom: 11px;
+    color: $main-color;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.18px;
+    &.total {
+      margin-bottom: 25px;
+    }
+  }
+  .filter_group {
+    padding-top: 20px;
+    margin-bottom: 30px;
+    border-top: 2px solid $main-color;
+    .item {
+      margin: 0; 
+      padding: 13px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+      .form-check-input {
+        width: 24px;
+        height: 24px;
+        border-radius: 0;
+        &:checked[type=checkbox] {
+          background-image: url(/images/form/check_active.png);
+        }
+      }
+      label {
+        color: $body-color;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.14px;
+      }
+      input:checked + label {
+        color: $body-color;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.14px;
+      }
+    }
+  }
+}
+
+
