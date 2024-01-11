@@ -1,4 +1,5 @@
 import React from 'react'
+import { Form } from 'react-bootstrap'
 import GgShoppingFilter from './GgShoppingFilter'
 import GgshoppingListItems from './GgshoppingListItems'
 
@@ -6,8 +7,16 @@ export default function GgShoppingListPc() {
   return (
     <>      
       <div className='shopping_tit'>
-        <h1>GG 쇼핑</h1>
-        <span>{`GG Mall > GG 쇼핑`}</span>
+        <div>
+          <h1>GG 쇼핑</h1>
+          <span>{`GG Mall > GG 쇼핑`}</span>
+        </div>
+        <div>
+          <Form.Control
+            type="text"
+            placeholder="Disabled readonly input"
+          />
+        </div>
       </div>
       <div className='row'>
 
