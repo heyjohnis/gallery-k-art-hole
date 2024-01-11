@@ -5,38 +5,11 @@ import PrivacyPolicyText from "../../components/Private/PrivacyPolicyText";
 import TermsConditionsText from "../../components/Private/TermsConditionsText";
 
 export default function SignupStep5({ form, setForm }) {
-  const [keywords, setKeywords] = useState([]);
-
   const handleChange = (e) => {
-    const { name } = e.target;
-    let value = e.target.value;
-    // 희망서비스 선택
-    if (e.target.name === "prefer_service") {
-      const arr = form?.prefer_service || [];
-      if (e.target.checked) {
-        arr.push(value);
-      } else {
-        const index = arr.indexOf(value);
-        if (index > -1) {
-          arr.splice(index, 1);
-        }
-      }
-      value = arr;
-    }
-    setForm((prevState) => ({ ...prevState, [name]: value }));
+    const { name, checked } = e.target;
+    console.log("name: ", name, "value: ", checked);
+    setForm((prevState) => ({ ...prevState, [name]: checked }));
   };
-
-  const getServiceKeyword = () => {
-    POST("/mall/keyword", { pd_kind: "all" }).then((res) => {
-      const keys = Array.from(new Set((res?.data?.keyword || "").split(",")));
-      setKeywords(keys);
-    });
-  };
-
-  useEffect(() => {
-    getServiceKeyword();
-  }, []);
-
   return (
     <div className={styles.page} id="Fifth">
       <div className={styles.fifthWrap}>
@@ -66,8 +39,7 @@ export default function SignupStep5({ form, setForm }) {
           <input
             type="checkbox"
             id={`agreeBtn`}
-            name="agreeBtn"
-            value="agree"
+            name="is_agree_service"
             onChange={handleChange}
           />
           <label htmlFor={`agreeBtn`}> 전체 약관에 동의합니다.</label>

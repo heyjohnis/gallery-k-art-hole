@@ -24,12 +24,16 @@ export default function SignupMobile() {
     if (typeof form.prefer_service === "object")
       form.prefer_service = form.prefer_service.join(",");
     form.user_name = form.last_name + form.first_name;
+    if (!form.is_agree_service) {
+      alert("전체 약관에 동의해주세요.");
+      return;
+    }
     POST("/signup", form).then((res) => {
       if (res.status === 200) {
         alert(
           "회원가입이 완료되었습니다. \n관리자 승인 후 로그인이 가능합니다."
         );
-        router.push("/");
+        router.push("/sign-up-mobile-complete");
       } else {
         alert(res?.data?.message);
       }
@@ -109,7 +113,6 @@ export default function SignupMobile() {
       onReachEnd={() => {
         console.log("end");
       }}
-      className={styles.swiperContainer}
     >
       <SwiperSlide>
         <div className={styles.personalInfo}>
