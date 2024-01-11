@@ -24,6 +24,7 @@ const ScreenBookingForm = ({ user, setBookingInfo }) => {
 
   useEffect(() => {
     if (!user) return;
+    console.log("user: ", user);
     setForm((prevState) => ({ ...prevState, ...user }));
   }, [user]);
 
@@ -93,7 +94,7 @@ const ScreenBookingForm = ({ user, setBookingInfo }) => {
                 <Form.Control
                   type="text"
                   name="mobile"
-                  maxlength="15"
+                  maxLength="15"
                   value={form?.mobile}
                   placeholder="010-1234-5678"
                   onChange={handleChange}

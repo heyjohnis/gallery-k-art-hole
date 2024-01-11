@@ -16,14 +16,14 @@ export const GolfBookingAgreement = ({ bookingInfo }) => {
 
     bookingInfo.hope_time = `${bookingInfo.time1 ? "1부" : ""} ${
       bookingInfo.time2 ? "2부" : ""
-    }`;s
+    }`;
     bookingInfo.hope_local1 = bookingInfo.region1;
     bookingInfo.hope_local2 = bookingInfo.region2;
     bookingInfo.resv_kind = "01";
     POST("/reservation/request", bookingInfo)
       .then((res) => {
         if (res.status === 200) {
-s          bookingInfo.resv_no = res.data.insertId;
+          bookingInfo.resv_no = res.data.insertId;
           bookingInfo.reg_date = nowDateFormat();
           bookingInfo.region1Name = getRegionName(bookingInfo.region1);
           bookingInfo.region2Name = getRegionName(bookingInfo.region2);
