@@ -6,7 +6,7 @@ export default function GgshoppingListItems() {
 
   return (
     <div className='shopping_list_container row'>
-      <div className='col-lg-4'>
+      <div className='col-xxl-3 col-lg-4'>
         <div className='items'>
           <div className='list_img'>
             <img src="/images/ggshopping/product01.png" alt="상품사진"/>
@@ -24,7 +24,7 @@ export default function GgshoppingListItems() {
           </div>
         </div>
       </div>
-      <div className='col-lg-4'>
+      <div className='col-xxl-3 col-lg-4'>
         <div className='items'>
           <div className='list_img'>
           <img src="/images/ggshopping/product02.png" alt="상품사진"/>
@@ -42,7 +42,7 @@ export default function GgshoppingListItems() {
           </div>
         </div>
       </div>
-      <div className='col-lg-4'>
+      <div className='col-xxl-3 col-lg-4'>
         <div className='items'>
           <div className='list_img'>
           <img src="/images/ggshopping/product03.png" alt="상품사진"/>
@@ -60,7 +60,7 @@ export default function GgshoppingListItems() {
           </div>
         </div>
       </div>
-      <div className='col-lg-4'>
+      <div className='col-xxl-3 col-lg-4'>
         <div className='items'>
           <div className='list_img'>
           <img src="/images/ggshopping/product04.png" alt="상품사진"/>
@@ -78,7 +78,7 @@ export default function GgshoppingListItems() {
           </div>
         </div>
       </div>
-      <div className='col-lg-4'>
+      <div className='col-xxl-3 col-lg-4'>
         <div className='items'>
           <div className='list_img'>
           <img src="/images/ggshopping/product05.png" alt="상품사진"/>
@@ -96,7 +96,7 @@ export default function GgshoppingListItems() {
           </div>
         </div>
       </div>
-      <div className='col-lg-4'>
+      <div className='col-xxl-3 col-lg-4'>
         <div className='items'>
           <div className='list_img'>
           <img src="/images/ggshopping/product06.png" alt="상품사진"/>
@@ -114,7 +114,7 @@ export default function GgshoppingListItems() {
           </div>
         </div>
       </div>
-      <div className='col-lg-4'>
+      <div className='col-xxl-3 col-lg-4'>
         <div className='items'>
           <div className='list_img'>
           <img src="/images/ggshopping/product07.png" alt="상품사진"/>
@@ -132,7 +132,7 @@ export default function GgshoppingListItems() {
           </div>
         </div>
       </div>
-      <div className='col-lg-4'>
+      <div className='col-xxl-3 col-lg-4'>
         <div className='items'>
           <div className='list_img'>
           <img src="/images/ggshopping/product08.png" alt="상품사진"/>
@@ -150,7 +150,7 @@ export default function GgshoppingListItems() {
           </div>
         </div>
       </div>
-      <div className='col-lg-4'>
+      <div className='col-xxl-3 col-lg-4'>
         <div className='items'>
           <div className='list_img'>
           <img src="/images/ggshopping/product09.png" alt="상품사진"/>

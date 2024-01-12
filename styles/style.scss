@@ -6811,8 +6811,12 @@ My Page > 포인트 이용내역
 }
 
 /*
-My Page > 예약확인
+Shopping
 ================================*/
+.shopping_content {
+  width:100%;
+  padding: 4.374em;
+}
 .shopping_tit {
   margin: 100px 0 50px;
   display: flex;
@@ -6896,6 +6900,7 @@ My Page > 예약확인
 }
 
 .shopping_list_container {
+  padding-left: 2em;
   .items {
     position: relative;
     margin-bottom: 79px;
@@ -6937,6 +6942,7 @@ My Page > 예약확인
       }
       .product_price_info {
         display: flex;
+        align-items: center;
         .label_sale {
           display: none;
           position: absolute;
@@ -6988,3 +6994,25 @@ My Page > 예약확인
     }
   }
 }
+
+@media only screen and (max-width: 1466px) and (min-width: 1400px){
+  .shopping_list_container {
+    .items {
+      .list_product{
+        .product_price_info {
+          .product_sales {
+            font-size: 20px;
+          }
+          .product_price{
+            font-size: 20px;
+          }
+          .product_ori {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+

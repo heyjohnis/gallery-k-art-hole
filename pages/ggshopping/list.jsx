@@ -12,7 +12,7 @@ export default function list() {
         homePageText="GG shopping"
         activePageText="GG shopping"
       />
-      <section className="container">
+      <section className="shopping_content">
         <GgShoppingListPc/>
       </section>
       <Footer/>
