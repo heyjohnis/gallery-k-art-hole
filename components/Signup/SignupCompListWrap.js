@@ -15,7 +15,23 @@ const SignupCompListWrap = ({ LIST_ITEM }) => {
           <h2>{LIST_ITEM[2][1]}</h2>
           <div className={styles.mainLink}>
             <p>{LIST_ITEM[3][1]}</p>
-            <Link href="/">Go to Main</Link>
+            <Link href="/">
+              Go to Main&ensp;
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="10"
+                viewBox="0 0 22 10"
+                fill="none"
+              >
+                <path
+                  d="M17.1905 1L21 5M21 5L17.1905 9M21 5H1"
+                  stroke="#333333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>

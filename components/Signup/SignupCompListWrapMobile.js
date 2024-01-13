@@ -8,15 +8,16 @@ const SignupCompListWrap = ({ LIST_ITEM }) => {
 
   let imageName = LIST_ITEM[1][1].split(" ");
   imageName = imageName[0].toLowerCase();
+  console.log(imageName);
 
   return (
     <>
-      <div className={styles.contentsWrap} key={LIST_ITEM[0][1]}>
+      <div className={styles.contentsWrapMobile} key={LIST_ITEM[0][1]}>
         <div
           className={
-            imageName == "vincent"
+            imageName === "president"
               ? styles.imageWrapVincent
-              : imageName == "auguste"
+              : imageName === "noblesee"
               ? styles.imageWrapAuguste
               : styles.imageWrapClaude
           }
@@ -25,7 +26,7 @@ const SignupCompListWrap = ({ LIST_ITEM }) => {
           <div className={styles.textWrap}>
             <h2>{LIST_ITEM[2][1]}</h2>
             <div className={styles.mainLink}>
-              <p>{LIST_ITEM[3][1]}</p>
+              {/* <p>{LIST_ITEM[3][1]}</p> */}
               <Link href="/">
                 More&ensp;
                 <svg
@@ -37,7 +38,7 @@ const SignupCompListWrap = ({ LIST_ITEM }) => {
                 >
                   <path
                     d="M17.1905 1L21 5M21 5L17.1905 9M21 5H1"
-                    stroke="white"
+                    stroke="#333333"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
