@@ -17,7 +17,7 @@ const SignupCompListWrap = ({ LIST_ITEM }) => {
           className={
             imageName === "president"
               ? styles.imageWrapVincent
-              : imageName === "noblesee"
+              : imageName === "noblesse"
               ? styles.imageWrapAuguste
               : styles.imageWrapClaude
           }
