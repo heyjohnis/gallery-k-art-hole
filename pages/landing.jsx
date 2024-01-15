@@ -28,9 +28,9 @@ useEffect(() => {
   const handWindowSize = () => {
     const { innerWidth } = window;
     if (innerWidth < 768) {
-      setChangeImg("/images/landing_240115_m.jpg");
+      setChangeImg("/images/landing_240115_m_v2.jpg");
     } else {
-      setChangeImg("/images/landing_240115.jpg");
+      setChangeImg("/images/landing_240115_v2.jpg");
     }
   };
   
