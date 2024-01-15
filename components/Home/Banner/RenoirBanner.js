@@ -9,7 +9,7 @@ export default function RenoirBanner() {
       effect="fade"
       spaceBetween={0}
       autoplay={{
-        delay: 1000000000,
+        delay: 6000,
         disableOnInteraction: false,
         pauseOnMouseEnter: false,
       }}
@@ -43,7 +43,7 @@ export default function RenoirBanner() {
                       stroke-width="2"
                     />
                   </svg>
-                  <div className={styles.imageWrap}>
+                  <div className={styles.imageWrapTop}>
                     <img src="/images/main/noblesse.png" alt="noblesse k" />
                   </div>
                 </div>
@@ -79,7 +79,7 @@ export default function RenoirBanner() {
                       stroke-width="2"
                     />
                   </svg>
-                  <div className={styles.imageWrap}>
+                  <div className={styles.imageWrapTop}>
                     <img src="/images/main/noblesse.png" alt="noblesse k" />
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export default function RenoirBanner() {
                       stroke-width="2"
                     />
                   </svg>
-                  <div className={styles.imageWrap}>
+                  <div className={styles.imageWrapTop}>
                     <img src="/images/main/noblesse.png" alt="noblesse k" />
                   </div>
                 </div>

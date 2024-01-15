@@ -9,9 +9,10 @@ export default function MonetBanner() {
       effect="fade"
       spaceBetween={0}
       autoplay={{
-        delay: 1000000000,
+        delay: 6000,
         disableOnInteraction: false,
         pauseOnMouseEnter: false,
+        resistance: false,
       }}
       modules={[Autoplay, A11y, EffectFade]}
       className={`hero-swiper ${styles.swiper}`}
@@ -43,7 +44,7 @@ export default function MonetBanner() {
                       stroke-width="2"
                     />
                   </svg>
-                  <div className={styles.imageWrap}>
+                  <div className={styles.imageWrapTop}>
                     <img src="/images/main/elite.png" alt="elite k" />
                   </div>
                 </div>
@@ -79,7 +80,7 @@ export default function MonetBanner() {
                       stroke-width="2"
                     />
                   </svg>
-                  <div className={styles.imageWrap}>
+                  <div className={styles.imageWrapTop}>
                     <img src="/images/main/elite.png" alt="elite k" />
                   </div>
                 </div>
@@ -115,7 +116,7 @@ export default function MonetBanner() {
                       stroke-width="2"
                     />
                   </svg>
-                  <div className={styles.imageWrap}>
+                  <div className={styles.imageWrapTop}>
                     <img src="/images/main/elite.png" alt="elite k" />
                   </div>
                 </div>
