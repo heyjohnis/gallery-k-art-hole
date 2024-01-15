@@ -5132,7 +5132,14 @@ Booking Page
 
     .item_group {
       display: flex;
+      .form_label_input_column {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+      }
     }
+
+
 
     label {
       margin-bottom: 10px;
@@ -5243,7 +5250,11 @@ Booking Page
       letter-spacing: -0.12px;
       background: url("/images/booking/icon_info.svg") left center no-repeat;
       background-size: 14px;
+      &.margin_b_80 {
+        margin-bottom: 80px;
+      }
     }
+    
   }
 
   .agree_content {
@@ -5450,6 +5461,9 @@ Booking Page
           }
         }
       }
+      .form_label_input_column {
+        margin:m
+      }
 
       textarea.form-control {
         width: 100%;
@@ -5460,6 +5474,15 @@ Booking Page
       .tel_group {
         div {
           flex-grow: 1;
+        }
+      }
+    }
+
+    .booking_form_gruop {
+      .item_group {
+        flex-direction: column; 
+        .form_label_input_column {
+   
         }
       }
     }

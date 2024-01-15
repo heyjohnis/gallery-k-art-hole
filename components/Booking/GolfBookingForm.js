@@ -118,43 +118,56 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
       <h2>이용자 정보</h2>
       <Form>
         <div className="form_item">
-          <Form.Label>이용자1</Form.Label>
-          <div className="item_group">
-            <Form.Control
-              type="text"
-              name="option_name1"
-              value={form.option_name1}
-              placeholder="이름을 입력해주세요."
-              onChange={handleChange}
-            />
-            <Form.Control
-              type="text"
-              name="option_phone1"
-              maxLength="15"
-              value={form?.option_phone1}
-              placeholder="010-1234-5678"
-              onChange={handleChange}
-            />
-            <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
+          <div className='booking_form_gruop'>
+            <div className="item_group">
+              <div className='form_label_input_column'>            
+                <Form.Label>이용자1</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="option_name1"
+                  value={form.option_name1}
+                  placeholder="이름을 입력해주세요."
+                  onChange={handleChange}
+                />
+              </div>
+              <div className='form_label_input_column'>
+                <Form.Label>이용자 1 연락처</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="option_phone1"
+                  maxLength="15"
+                  value={form?.option_phone1}
+                  placeholder="010-1234-5678"
+                  onChange={handleChange}
+                />
+                {/* <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" /> */}
+              </div>
+            </div>
+            <p className="info margin_b_80">1차 권역 예약이 어려울 시 원하시는 2차 권역을 선택해주시기 바랍니다.</p>
           </div>
-          <Form.Label>이용자2</Form.Label>
           <div className="item_group">
-            <Form.Control
-              type="text"
-              name="option_name2"
-              value={form.option_name2}
-              placeholder="이름을 입력해주세요."
-              onChange={handleChange}
-            />
-            <Form.Control
-              type="text"
-              name="option_phone2"
-              maxLength="15"
-              value={form?.option_phone2}
-              placeholder="010-1234-5678"
-              onChange={handleChange}
-            />
-            <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
+            <div className='form_label_input_column'>   
+              <Form.Label>이용자2</Form.Label>
+              <Form.Control
+                type="text"
+                name="option_name2"
+                value={form.option_name2}
+                placeholder="이름을 입력해주세요."
+                onChange={handleChange}
+              />
+            </div>
+            <div className='form_label_input_column'>   
+              <Form.Label>이용자 2 연락처</Form.Label>
+              <Form.Control
+                type="text"
+                name="option_phone2"
+                maxLength="15"
+                value={form?.option_phone2}
+                placeholder="010-1234-5678"
+                onChange={handleChange}
+              />
+              {/* <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" /> */}
+            </div>
           </div>
           {/* <p className="info">무기명 회원인 경우 예약자명을 기입해주세요.</p> */}
         </div>
