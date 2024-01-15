@@ -4,44 +4,241 @@
   transform: translateY(-220px);
 }
 
-.slideGogh {
-  background-image: url(/images/main/main_1.png);
+.slideGogh1 {
+  background-image: url(/images/main/top_president01.jpg);
+
+  &::after {
+    content : '';
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0, 0, 0, 0.4);
+  }
+
+  & .titleWrap, & .discriptionWrap {
+    position: relative;
+    z-index: 9;
+  }
 }
 
-.slideRenoir {
-  background-image: url(/images/main/main_2.png);
+.slideGogh2 {
+  background-image: url(/images/main/top_president02.jpg);
+
+  &::after {
+    content : '';
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0, 0, 0, 0.4)
+  }
+
+  & .titleWrap, & .discriptionWrap {
+    position: relative;
+    z-index: 9;
+  }
 }
 
-.slideMonet {
-  background-image: url(/images/main/main_3.png);
+.slideGogh3 {
+  background-image: url(/images/main/top_president03.jpg);
+
+  &::after {
+    content : '';
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0, 0, 0, 0.4);
+  }
+
+  & .titleWrap, & .discriptionWrap {
+    position: relative;
+    z-index: 9;
+  }
+}
+.slideRenoir1 {
+  background-image: url(/images/main/top_noblesse01.jpg);
+
+  &::after {
+    content : '';
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0, 0, 0, 0.4)
+  }
+
+  & .titleWrap, & .discriptionWrap {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.slideRenoir2 {
+  background-image: url(/images/main/top_noblesse02.jpg);
+
+  &::after {
+    content : '';
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0, 0, 0, 0.4)
+  }
+
+  & .titleWrap, & .discriptionWrap {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.slideRenoir3 {
+  background-image: url(/images/main/top_noblesse03.jpg);
+
+  &::after {
+    content : '';
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0, 0, 0, 0.4)
+  }
+
+  & .titleWrap, & .discriptionWrap {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.slideMonet1 {
+  background-image: url(/images/main/top_elite01.jpg);
+
+  &::after {
+    content : '';
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0, 0, 0, 0.4)
+  }
+
+  & .titleWrap, & .discriptionWrap {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.slideMonet2 {
+  background-image: url(/images/main/top_elite02.jpg);
+
+  &::after {
+    content : '';
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0, 0, 0, 0.4)
+  }
+
+  & .titleWrap, & .discriptionWrap {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.slideMonet3 {
+  background-image: url(/images/main/top_elite03.jpg);
+
+  &::after {
+    content : '';
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color : rgba(0, 0, 0, 0.4)
+  }
+
+  & .titleWrap, & .discriptionWrap {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.container1 {
+  position: relative;
+  top: -1010px;
+  color:#fff;
 }
 
 .titleWrap {
+  text-align: center;
+
+  // h1 {
+  //   font-family: Jost;
+  //   font-size: 70px;
+  //   font-weight: 700;
+  //   line-height: 60px;
+  //   letter-spacing: -0.5px;
+  //   text-transform: uppercase;
+  //   color: #fff;
+
+  //   span {
+  //     font-size: 110px;
+  //     letter-spacing: -0.8px;
+  //     color: #6ed338;
+  //   }
+  // }
+
   h1 {
-    font-family: Jost;
+    font-family: Noto Sans KR;
     font-size: 70px;
     font-weight: 700;
-    line-height: 60px;
-    letter-spacing: -0.5px;
-    text-transform: uppercase;
+    letter-spacing: -0.7px;
     color: #fff;
 
     span {
-      font-size: 110px;
-      letter-spacing: -0.8px;
+      font-family: Noto Sans KR;
+      font-size: 70px;
+      font-weight: 700;
+      letter-spacing: -0.7px;
       color: #6ed338;
     }
   }
 }
 
 .discriptionWrap {
-  font-family: Jost;
+  padding-top: 60px;
+  font-family: Montserrat;
   font-size: 16px;
-  font-weight: 500;
-  line-height: 60px;
-  letter-spacing: -0.5px;
-  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.16px;
   color: #fff;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  
+  svg {
+    padding: 10px 0 0 0;
+  }
+}
+
+.imageWrap {
+  position: absolute;
+  bottom: -370px;
+  opacity: 0.3;
+
+  img{
+  }
 }
 
 .swiper {
