@@ -235,7 +235,14 @@
 .imageWrapTop {
   position: absolute;
   bottom: -370px;
+  // bottom: -365px;
+  // left: -50%;
   opacity: 0.3;
+
+  // img {
+  //   width: 100%;
+  //   height: auto;
+  // }
 
 }
 
@@ -302,13 +309,21 @@
   margin: 0;
 
   .bookingPageLeftSection {
-    padding: 226px 0 100px 199px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    align-content: center;
+    // padding: 226px 0 100px 199px;
     background-color: #fff;
 
     .titleWrap {
       width: 270px;
       height: 140px;
       background-color: #fff;
+      text-align: left;
 
       h1 {
         font-family: Jost;
@@ -329,6 +344,8 @@
     }
 
     .formWrap {
+      width: initial;
+
       .inputWrap {
         display: flex;
         justify-content: flex-start;
@@ -589,6 +606,11 @@
         width: 50%;
         height: 520px;
         background-color: #fff;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
 
@@ -611,36 +633,54 @@
 }
 
 .itemListPageSection {
-  padding: 226px 199px;
+  display: flex;
+  background-color: #111;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   background-color: #111;
 
-  .titleWrap {
-    width: 354px;
-    height: auto;
+  .menuWrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: flex-start;
+    
+    .titleWrap {
+      width: 354px;
+      height: auto;
 
-    h1 {
-      display: inline-block;
-      font-family: Jost;
-      font-size: 50px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 60px;
-      letter-spacing: -0.5px;
-      text-transform: uppercase;
-      color: #fff;
+      h1 {
+        width: 100%;
+        display: inline-block;
+        font-family: Jost;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 60px;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+        text-align: left;
+        color: #fff;
 
-      span {
-        font-size: 80px;
-        letter-spacing: -0.8px;
-        color: #6ed338;
+        span {
+          font-size: 80px;
+          letter-spacing: -0.8px;
+          color: #6ed338;
+        }
       }
-    }
 
-    p {
-      display: block;
-      padding-top: 20px;
-      letter-spacing: -0.26px;
-      color: #ccc;
+      p {
+        display: block;
+        padding-top: 20px;
+        letter-spacing: -0.26px;
+        text-align: left;
+        color: #ccc;
+      }
     }
   }
 

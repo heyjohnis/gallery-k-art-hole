@@ -58,7 +58,7 @@ export default function ServiceComp() {
         className={`row col-lg-12 col-md-12 ${styles.onePage} ${styles.itemListPageSection}`}
       >
         <Tab.Container id="left-tabs" defaultActiveKey="first">
-          <div className={`col-lg-3 col-md-12`}>
+          <div className={`col-lg-4 col-md-12 ${styles.menuWrap}`}>
             <div className={`col-lg-12 col-md-12 ${styles.titleWrap}`}>
               <h1>
                 BEST
@@ -117,7 +117,7 @@ export default function ServiceComp() {
             </div>
           </div>
 
-          <div className={`col-lg-9 col-md-12 ${styles.itemListWrap}`}>
+          <div className={`col-lg-8 col-md-12 ${styles.itemListWrap}`}>
             <Tab.Content>
               <Tab.Pane eventKey={`${tabMenu}`}>
                 <MainListWrap
