@@ -36,6 +36,7 @@ export default function RenoirBanner() {
                     height="52"
                     viewBox="0 0 32 52"
                     fill="none"
+                    className={styles.intro_arrow}
                   >
                     <path
                       d="M16 0V50M16 50L1 35.8491M16 50L31 35.8491"
@@ -72,6 +73,7 @@ export default function RenoirBanner() {
                     height="52"
                     viewBox="0 0 32 52"
                     fill="none"
+                    className={styles.intro_arrow}
                   >
                     <path
                       d="M16 0V50M16 50L1 35.8491M16 50L31 35.8491"
@@ -108,6 +110,7 @@ export default function RenoirBanner() {
                     height="52"
                     viewBox="0 0 32 52"
                     fill="none"
+                    className={styles.intro_arrow}
                   >
                     <path
                       d="M16 0V50M16 50L1 35.8491M16 50L31 35.8491"
