@@ -1,9 +1,9 @@
-import React from 'react';
-import PageBanner from '../../components/Common/PageBanner';
-import GgShoppingListPc from '../../components/GgShopping/GgShoppingListPc';
-import Footer from '../../components/Layouts/Footer';
+import React from "react";
+import PageBanner from "../../components/Common/PageBanner";
+import GgShoppingListPc from "../../components/GgShopping/GgShoppingListPc";
+import Footer from "../../components/Layouts/Footer";
 
-export default function list() {
+export default function list({ user }) {
   return (
     <div>
       <PageBanner
@@ -13,10 +13,9 @@ export default function list() {
         activePageText="GG shopping"
       />
       <section className="shopping_content">
-        <GgShoppingListPc/>
+        <GgShoppingListPc user={user} />
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
-

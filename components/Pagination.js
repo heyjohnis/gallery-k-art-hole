@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 
-const PaginationComp = ({ page, goto }) => {
-  const [currentPage, setCurrentPage] = useState(page.currentPage || 1);
+const PaginationComp = ({ pageInfo, gotoPage }) => {
+  const [currentPage, setCurrentPage] = useState(pageInfo?.currentPage || 1);
 
-  const totalPage = page.totalPages;
+  const totalPage = pageInfo?.totalPages;
   const countDisplayPage = totalPage - 5 > 0 ? 5 : totalPage;
   const middlePage = parseInt(countDisplayPage / 2);
   let startPageNumber =
@@ -22,7 +22,7 @@ const PaginationComp = ({ page, goto }) => {
       <li
         className={`page-item ${pageNumber === currentPage ? "active" : ""}`}
         key={pageNumber}
-        onClick={() => gotoPage(pageNumber)}
+        onClick={() => setGotoPage(pageNumber)}
       >
         <a className="page-link">{pageNumber}</a>
       </li>
@@ -33,7 +33,7 @@ const PaginationComp = ({ page, goto }) => {
     const pageNumber =
       currentPage - countDisplayPage > 0 ? currentPage - countDisplayPage : 1;
     setCurrentPage(pageNumber);
-    goto(pageNumber);
+    gotoPage(pageNumber);
   };
 
   const gotoAfterPageSet = () => {
@@ -42,11 +42,11 @@ const PaginationComp = ({ page, goto }) => {
         ? countDisplayPage + currentPage
         : totalPage;
     setCurrentPage(pageNumber);
-    goto(pageNumber);
+    gotoPage(pageNumber);
   };
 
-  const gotoPage = (pageNumber) => {
-    goto(pageNumber);
+  const setGotoPage = (pageNumber) => {
+    gotoPage(pageNumber);
     setCurrentPage(pageNumber);
   };
 

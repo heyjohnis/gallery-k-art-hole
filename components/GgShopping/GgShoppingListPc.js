@@ -1,12 +1,39 @@
-import React from 'react'
-import { Form } from 'react-bootstrap'
-import GgShoppingFilter from './GgShoppingFilter'
-import GgshoppingListItems from './GgshoppingListItems'
+import React, { useEffect, useState } from "react";
+import { Form } from "react-bootstrap";
+import GgShoppingFilter from "./GgShoppingFilter";
+import GgshoppingListItems from "./GgshoppingListItems";
+import { POST } from "../../hooks/restApi";
+import Pagination from "../Pagination";
+import { calcDiscount } from "../../utils/price";
 
-export default function GgShoppingListPc() {
+export default function GgShoppingListPc({ user }) {
+  const [items, setItems] = useState([]);
+  const [page, setPage] = useState({ currentPage: 1, totalPages: 1 });
+
+  const getGgShoppingList = (currentPage) => {
+    POST(`/mall`, {
+      pd_kind: "shop",
+      currentPage: currentPage || 1,
+      pageSize: 16,
+      membership: user?.membership,
+      service_group: user?.service_group,
+    }).then((res) => {
+      setPage(res?.data?.pagination);
+      const items = res?.data?.list?.map((item) => {
+        return { ...item, ...calcDiscount(item.origin_price, item.price) };
+      });
+      setItems(items);
+      console.log("getGgShoppingList res: ", items);
+    });
+  };
+
+  useEffect(() => {
+    getGgShoppingList();
+  }, []);
+
   return (
-    <>      
-      <div className='shopping_tit'>
+    <>
+      <div className="shopping_tit">
         <div>
           <h1>GG 쇼핑</h1>
           <span>{`GG Mall > GG 쇼핑`}</span>
@@ -15,20 +42,19 @@ export default function GgShoppingListPc() {
           <Form.Control
             type="text"
             placeholder="Search"
-            className='shopping_search'
+            className="shopping_search"
           />
         </div>
       </div>
-      <div className='row'>
-
-        <div className='col-lg-2'>
-          <GgShoppingFilter/>
+      <div className="row">
+        <div className="col-lg-2">
+          <GgShoppingFilter />
         </div>
-        <div className='col-lg-10'>
-          <GgshoppingListItems/>
+        <div className="col-lg-10">
+          <GgshoppingListItems items={items} />
+          <Pagination pageInfo={page} gotoPage={getGgShoppingList} />
         </div>
       </div>
     </>
-  )
+  );
 }
-

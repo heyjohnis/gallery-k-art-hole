@@ -121,7 +121,7 @@ const ArtworkList = () => {
           ))}
         </div>
       </div>
-      <Pagination page={page} goto={gotoPage} />
+      <Pagination pageInfo={page} gotoPage={gotoPage} />
     </section>
   );
 };

@@ -11,7 +11,7 @@ const MainListWrap = ({ items }) => {
     <>
       <div className={` ${styles.itemListWrap}`}>
         <ul className={`${styles.itemListUl}`}>
-          {items.map((item, index) => (
+          {items?.map((item, index) => (
             <li className={`${styles.itemListLi}`} key={index}>
               <Link href={`/ggmall/detail/${item.pd_kind}/${item.pd_no}`}>
                 <div

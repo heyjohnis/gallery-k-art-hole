@@ -51,8 +51,8 @@ const GgmallList = ({ contents, productKind }) => {
       <section className="team-area mt-5 pb-100">
         <div className="container">
           <div className="row justify-content-center">
-            {contents &&
-              contents.map((content, i) => (
+            {(contents && contents) ||
+              []?.map((content, i) => (
                 <div
                   className={`col-lg-3 col-sm-6`}
                   data-aos="fade-in"
