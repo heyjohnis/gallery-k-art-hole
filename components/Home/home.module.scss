@@ -1,3 +1,41 @@
+.blinking {
+  -webkit-animation: blink 0.5s ease-in-out infinite alternate;
+  -moz-animation: blink 0.5s ease-in-out infinite alternate;
+  animation: blink 0.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes blink{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes blink{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes blink{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+
+.intro_arrow {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  animation: up-down 1s 0s ease-in-out infinite alternate;	
+}
+@keyframes up-down {
+  0% {
+      top: 0px;
+  } 
+  100% {
+      top: 30px;
+  } 
+}
+
 .mainModal {
   position: fixed;
   top: 50%;

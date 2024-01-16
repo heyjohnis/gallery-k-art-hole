@@ -81,7 +81,7 @@ useEffect(() => {
           />
         </div>
       </div> */}
-      <div style={{ position: "absolute" }}>
+      <div style={{ position: "absolute", display: "none" }}>
         <Link href="#contact" onClick={() => setOpenContact(!openContact)}>
           <div className={`btn ${styles.btn_booking}`}>
             <div className={styles.ani_booking}>
