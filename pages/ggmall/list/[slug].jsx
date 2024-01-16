@@ -7,6 +7,7 @@ import PageBanner from "./../../../components/Common/PageBanner";
 import GgmallList from "../../../components/Ggmall/GgmallList";
 import SearchKeyword from "../../../components/Ggmall/SearchKeyword";
 import { ggmallKind } from "../../../utils/cmmCode";
+import { POST } from "../../../hooks/restApi";
 
 const INITIAL_SEARCH = {
   keyword: "",
@@ -15,23 +16,26 @@ const INITIAL_SEARCH = {
 
 const ggList = ({ user }) => {
   const router = useRouter();
-  const [, setLoading] = useState({});
-  const [contents, setContents] = useState("");
-  const [pdKind, setPdKind] = useState("");
+  const [contents, setContents] = useState([]);
   const [pdKindName, setPdKindName] = useState("");
+  const [pdKind, setPdKind] = useState(router.query.slug);
+  const [searchData, setSearchData] = useState(INITIAL_SEARCH);
 
-  const getContents = ({ keyword, search_word }) => {
-    console.log("pdKind: ", pdKind);
-    const url = `${baseUrl}/mall?pd_kind=${pdKind}&keyword=${keyword}&search_word=${search_word}`;
-    axios({ method: "get", url })
-      .then(({ data }) => {
-        setContents(data);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+  const getContents = ({ search_word, keyword }) => {
+    const req = {
+      pd_kind: pdKind,
+      keyword,
+      search_word: search_word,
+      membership: user?.membership,
+      service_group: user?.service_group,
+    };
+    console.log("getContents req: ", req);
+    POST("/mall", req).then((res) => {
+      console.log("mall res: ", res);
+
+      setContents(res?.data);
+    });
   };
-
   useEffect(() => {
     if (!user) {
       alert("로그인이 필요합니다.");
@@ -40,13 +44,13 @@ const ggList = ({ user }) => {
   }, [user]);
 
   useEffect(() => {
-    setPdKind(router.query.slug);
-  }, [router.query.slug]);
-
-  useEffect(() => {
-    if (pdKind) getContents(INITIAL_SEARCH);
+    if (!router.query.slug) return;
+    const pd_kind = router.query.slug;
+    console.log("pd_kind: ", pd_kind);
+    setPdKind(pd_kind);
+    if (pdKind) getContents({ ...searchData });
     setPdKindName(ggmallKind[pdKind]);
-  }, [pdKind]);
+  }, [router.query.slug, searchData]);
 
   return (
     <>
@@ -68,7 +72,7 @@ const ggList = ({ user }) => {
           </div>
         </section>
       )}
-      <SearchKeyword searchWords={getContents} serviceKind={pdKind} />
+      <SearchKeyword setSearchData={setSearchData} serviceKind={pdKind} />
 
       <GgmallList contents={contents} productKind={pdKind} />
 
