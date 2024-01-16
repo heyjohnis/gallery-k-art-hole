@@ -61,17 +61,17 @@ export default function Index({ user }) {
                 <BookingComp />
               </div>
               <div className={`section`}>
-                <ServiceComp />
+                <ServiceComp user={ user} />
               </div>
             </>
           )}
           {serviceGroup !== "01" && (
             <>
               <div className={`section ${styles.fullSize}`}>
-                <ServiceComp />
+                <ServiceComp user={ user} />
               </div>
               <div className={`section ${styles.fullSize}`}>
-                <BookingComp />
+                <BookingComp user={ user} />
               </div>
             </>
           )}

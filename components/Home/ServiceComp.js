@@ -7,7 +7,7 @@ import { POST } from "../../hooks/restApi";
 import Link from "next/link";
 import ta from "date-fns/locale/ta/index";
 
-export default function ServiceComp() {
+export default function ServiceComp({ user }) {
   const [tourRecommoed, setTourRecommend] = React.useState([]);
   const [shopRecommend, setShopRecommend] = React.useState([]);
   const [serviceRecommend, setServiceRecommend] = React.useState([]);
@@ -63,7 +63,13 @@ export default function ServiceComp() {
               <h1>
                 BEST
                 <br />
-                GG ITEMS<span>.</span>
+                GG{" "}
+                {user.user_kind === "01"
+                  ? "TOUR"
+                  : user.user_kind === "02"
+                  ? "SERVICE"
+                  : "ITEMS"}
+                <span>.</span>
               </h1>
               <p>
                 GG는 Green Gallery의 약자로 <br />
@@ -78,25 +84,39 @@ export default function ServiceComp() {
                     onClick={handleTabMenu}
                     className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
-                    제휴서비스
+                    {user.user_kind === "01"
+                      ? "GG투어"
+                      : user.user_kind === "02"
+                      ? "제휴서비스"
+                      : "GG쇼핑"}
                   </Nav.Link>
                 </Nav.Item>
+
                 <Nav.Item className={`${styles.itemTab}`}>
                   <Nav.Link
                     eventKey="second"
                     onClick={handleTabMenu}
                     className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
-                    GG쇼핑
+                    {user.user_kind === "01"
+                      ? "GG쇼핑"
+                      : user.user_kind === "02"
+                      ? "GG쇼핑"
+                      : "제휴서비스"}
                   </Nav.Link>
                 </Nav.Item>
+
                 <Nav.Item className={`${styles.itemTab}`}>
                   <Nav.Link
                     eventKey="third"
                     onClick={handleTabMenu}
                     className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
-                    GG투어
+                    {user.user_kind === "01"
+                      ? "제휴서비스"
+                      : user.user_kind === "02"
+                      ? "GG투어"
+                      : "GG투어"}
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
