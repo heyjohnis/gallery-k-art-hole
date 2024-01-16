@@ -11,7 +11,7 @@ const INITIAL_WORDS = {
   search_word: "",
 };
 
-const SearchKeyword = ({ searchWords, serviceKind }) => {
+const SearchKeyword = ({ setSearchData, serviceKind }) => {
   const [words, setWords] = useState(INITIAL_WORDS);
   const [keywordBtns, setKeywordBtns] = useState([]);
   const [keywords, setKeywords] = useState([]);
@@ -31,8 +31,7 @@ const SearchKeyword = ({ searchWords, serviceKind }) => {
   };
 
   const searchInputWord = () => {
-    searchWords(words);
-    console.log("words: ", words);
+    setSearchData((prev) => ({ ...prev, search_word: words.search_word }));
   };
 
   useEffect(() => {
@@ -40,15 +39,19 @@ const SearchKeyword = ({ searchWords, serviceKind }) => {
     checkedKeywords.forEach((id) => {
       keyword.push(keywords[id].key);
     });
-    searchWords({ ...words, keyword: keyword.join("|") });
+    console.log("keyword: ", keyword.join("|"));
+    setSearchData((prev) => ({ ...prev, keyword: keyword.join("|") }));
     setWords((prev) => ({ ...prev, keyword: keyword.join("|") }));
   }, [checkedKeywords]);
 
   // Keyword 추출
   useEffect(() => {
+    if (!serviceKind) return;
+    console.log("serviceKind: ", serviceKind);
     const url = `${baseUrl}/mall/keyword`;
     axios({ method: "post", url, data: { pd_kind: serviceKind } }).then(
       ({ data }) => {
+        console.log("keyword data: ", data);
         if (data.keyword) {
           let keywordSet = new Set(data.keyword.split(","));
           keywordSet.delete("");

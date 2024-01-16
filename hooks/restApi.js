@@ -27,8 +27,8 @@ async function commonApi(uri, data, method) {
       return res;
     })
     .catch((err) => {
-      console.log("commonApi error: ", err.response.status);
-      if (err.response.status === 401) {
+      console.log("commonApi error: ", err?.response?.status);
+      if (err?.response?.status === 401) {
         Router.push("/login");
       } else {
         return err;

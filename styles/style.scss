@@ -808,13 +808,13 @@ Nav 메뉴
           background-color: $white-color;
         }
       }
-      
+
       @media screen and (max-width: 768px) {
         li {
           .menu-items {
             color: #333;
           }
-  
+
           span {
             background-color: #333;
           }
@@ -841,12 +841,11 @@ Nav 메뉴
         &.light_logo {
           display: none;
         }
-  
+
         &.dark_logo {
           display: block;
         }
       }
-      
     }
 
     /* harry 0605_font size 15에서 16으로 마진 15에서 18로 변경 */
@@ -1349,12 +1348,12 @@ Nav 메뉴
       .top-bar {
         background: #333;
       }
-  
+
       .middle-bar {
         background: #333;
       }
-  
-      .bottom-bar { 
+
+      .bottom-bar {
         background: #333;
       }
     }
@@ -4789,7 +4788,7 @@ Golf Booking
       letter-spacing: -0.4px;
     }
   }
-  &.mypoint_tit{
+  &.mypoint_tit {
     margin: 80px 0;
   }
 }
@@ -5139,8 +5138,6 @@ Booking Page
       }
     }
 
-
-
     label {
       margin-bottom: 10px;
       display: block;
@@ -5254,7 +5251,6 @@ Booking Page
         margin-bottom: 80px;
       }
     }
-    
   }
 
   .agree_content {
@@ -5462,7 +5458,7 @@ Booking Page
         }
       }
       .form_label_input_column {
-        margin:m
+        margin: m;
       }
 
       textarea.form-control {
@@ -5480,9 +5476,8 @@ Booking Page
 
     .booking_form_gruop {
       .item_group {
-        flex-direction: column; 
+        flex-direction: column;
         .form_label_input_column {
-   
         }
       }
     }
@@ -6627,7 +6622,6 @@ My Page > 예약확인
 
 .fp-viewing-1 {
   nav {
-
     .top-menu {
       li {
         .menu-items {
@@ -6644,7 +6638,6 @@ My Page > 예약확인
 
 .fp-viewing-2 {
   nav {
-
     .top-menu {
       li {
         .menu-items {
@@ -6666,27 +6659,24 @@ My Page > 예약확인
         display: none;
       }
     }
-
   }
 }
 
 .fp-viewing-3 {
   nav {
-
     button {
-      .top-bar, .middle-bar, .bottom-bar {
+      .top-bar,
+      .middle-bar,
+      .bottom-bar {
         background-color: #333 !important;
       }
     }
-
   }
 }
 
 .fp-viewing-4 {
   nav {
-    
     display: none;
-
   }
 }
 
@@ -6753,7 +6743,7 @@ My Page > 포인트 이용내역
         border-bottom: 1px solid #ddd;
         .mypoint_history_items {
           display: flex;
-          align-items: center; 
+          align-items: center;
           .label {
             padding: 5px 10px;
             margin-right: 50px;
@@ -6775,7 +6765,7 @@ My Page > 포인트 이용내역
               font-weight: 500;
               letter-spacing: -1px;
             }
-            p{
+            p {
               color: #aaa;
               font-size: 16px;
               font-weight: 400;
@@ -6799,7 +6789,6 @@ My Page > 포인트 이용내역
     }
   }
 }
-
 
 @media only screen and (max-width: 991px) {
   .mypoint_container {
@@ -6827,21 +6816,21 @@ My Page > 포인트 이용내역
           li {
             span {
               font-size: 12px;
-              line-height: 36px; 
+              line-height: 36px;
               letter-spacing: -0.12px;
             }
           }
         }
       }
       .mypoint_history {
-        h3{
+        h3 {
           font-size: 30px;
         }
         .mypoint_history_list {
           li {
-            align-items:flex-start;
+            align-items: flex-start;
             flex-direction: column;
-            .mypoint_history_items{
+            .mypoint_history_items {
               align-items: flex-start;
               flex-direction: column;
               .label {
@@ -6854,7 +6843,7 @@ My Page > 포인트 이용내역
                   font-size: 14px;
                   margin-bottom: 5px;
                 }
-                p{
+                p {
                   font-size: 12px;
                 }
               }
@@ -6865,7 +6854,211 @@ My Page > 포인트 이용내역
           }
         }
       }
-    } 
+    }
   }
+}
 
+/*
+Shopping
+================================*/
+.shopping_content {
+  width: 100%;
+  padding: 4.374em;
+}
+.shopping_tit {
+  margin: 100px 0 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  h1 {
+    margin: 0 50px 0 0;
+    color: $main-color;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.44px;
+  }
+  span {
+    color: $light-gray;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.14px;
+  }
+  .shopping_search {
+    width: 357px;
+    height: 40px;
+    padding: 20px;
+    color: #333;
+    font-family: $main-font-family-eng;
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: -0.14px;
+    background: none;
+    border-bottom: 1px solid #ccc;
+    &:focus {
+      border: 0;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}
+
+.shopping_filter {
+  h2 {
+    margin-bottom: 11px;
+    color: $main-color;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.18px;
+    &.total {
+      margin-bottom: 25px;
+    }
+  }
+  .filter_group {
+    padding-top: 20px;
+    margin-bottom: 30px;
+    border-top: 2px solid $main-color;
+    .item {
+      margin: 0;
+      padding: 13px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+      .form-check-input {
+        width: 24px;
+        height: 24px;
+        border-radius: 0;
+        &:checked[type="checkbox"] {
+          background-image: url(/images/form/check_active.png);
+        }
+      }
+      label {
+        color: $body-color;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.14px;
+      }
+      input:checked + label {
+        color: $body-color;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.14px;
+      }
+    }
+  }
+}
+
+.shopping_list_container {
+  padding-left: 2em;
+  .items {
+    position: relative;
+    margin-bottom: 79px;
+    .list_img {
+      width: 100%;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .list_product {
+      margin-top: 30px;
+      h3 {
+        margin: 0 0 10px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: $body-color;
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: -0.22px;
+      }
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: $gray-color;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: -0.16px;
+      }
+      .product_price_info {
+        display: flex;
+        align-items: center;
+        .label_sale {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 9px 16px;
+          background: $gray-color;
+          color: $white-color;
+          font-family: $main-font-family-eng;
+          font-size: 18px;
+          font-weight: 600;
+          letter-spacing: -0.18px;
+        }
+        .product_sales {
+          display: none;
+          margin-right: 6px;
+          color: $sub-color;
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: -0.22px;
+        }
+        .product_price {
+          margin-right: 10px;
+          color: $body-color;
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: -0.22px;
+        }
+        .product_ori {
+          display: none;
+          color: #ccc;
+          font-size: 20px;
+          font-weight: 300;
+          letter-spacing: -0.2px;
+          text-decoration-line: line-through;
+        }
+        &.sale {
+          .label_sale {
+            display: block;
+          }
+          .product_sales {
+            display: block;
+          }
+          .product_ori {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1466px) and (min-width: 1400px) {
+  .shopping_list_container {
+    .items {
+      .list_product {
+        .product_price_info {
+          .product_sales {
+            font-size: 20px;
+          }
+          .product_price {
+            font-size: 20px;
+          }
+          .product_ori {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
 }
