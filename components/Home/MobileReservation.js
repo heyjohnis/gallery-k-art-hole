@@ -9,19 +9,19 @@ const IMAGE_LIST = [
     id: 1,
     group: "president K",
     keyword: "명예",
-    img: "/images/mobile/main/president_mo_1.png",
+    img: "/images/mobile/main/president_mo_1.jpg",
   },
   {
     id: 2,
     group: "president K",
     keyword: "명예",
-    img: "/images/mobile/main/president_mo_2.png",
+    img: "/images/mobile/main/president_mo_2.jpg",
   },
   {
     id: 3,
     group: "president K",
     keyword: "명예",
-    img: "/images/mobile/main/president_mo_3.png",
+    img: "/images/mobile/main/president_mo_3.jpg",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function MobileReservation({ user }) {
               <SwiperSlide className={`${styles.swiperSlide}`} key={item.id}>
                 <img src={item.img} alt={item.group} />
 
-                <div className={styles.textWrap}>
+                {/* <div className={styles.textWrap}>
                   <p>
                     나의 명예를
                     <br />
@@ -56,7 +56,7 @@ export default function MobileReservation({ user }) {
                     <span>다</span>
                     <span>.</span>
                   </p>
-                </div>
+                </div> */}
               </SwiperSlide>
             </>
           ))}
