@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import MainListWrap from "./MainListWrap";
 import { POST } from "../../hooks/restApi";
 import Link from "next/link";
-import ta from "date-fns/locale/ta/index";
+import { calcDiscount } from "../../utils/price";
 
 export default function ServiceComp({ user }) {
   const [tourRecommoed, setTourRecommend] = React.useState([]);
@@ -13,8 +13,13 @@ export default function ServiceComp({ user }) {
   const [serviceRecommend, setServiceRecommend] = React.useState([]);
 
   const getRandService = (pd_kind) => {
-    POST("/mall/rand", { pd_kind, limit_cnt: 3 }).then((res) => {
-      console.log(res.data);
+    POST("/mall/rand", {
+      pd_kind,
+      limit_cnt: 3,
+      membership: user?.membership,
+      service_group: user?.service_group || "01",
+    }).then((res) => {
+      console.log(res?.data);
       const items = res?.data.map((item) => {
         return { ...item, ...calcDiscount(item.origin_price, item.price) };
       });
@@ -26,12 +31,6 @@ export default function ServiceComp({ user }) {
         setServiceRecommend(items);
       }
     });
-  };
-
-  const calcDiscount = (originPrice, price) => {
-    const discountPrice = originPrice - price;
-    const rate = Math.floor((discountPrice / originPrice) * 100);
-    return { discount: discountPrice, discount_rate: rate };
   };
 
   const [tabMenu, setTabMenu] = React.useState("first");
@@ -64,9 +63,9 @@ export default function ServiceComp({ user }) {
                 BEST
                 <br />
                 GG{" "}
-                {user.user_kind === "01"
+                {user?.user_kind === "01"
                   ? "TOUR"
-                  : user.user_kind === "02"
+                  : user?.user_kind === "02"
                   ? "SERVICE"
                   : "ITEMS"}
                 <span>.</span>
@@ -84,9 +83,9 @@ export default function ServiceComp({ user }) {
                     onClick={handleTabMenu}
                     className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
-                    {user.user_kind === "01"
+                    {user?.user_kind === "01"
                       ? "GG투어"
-                      : user.user_kind === "02"
+                      : user?.user_kind === "02"
                       ? "제휴서비스"
                       : "GG쇼핑"}
                   </Nav.Link>
@@ -98,9 +97,9 @@ export default function ServiceComp({ user }) {
                     onClick={handleTabMenu}
                     className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
-                    {user.user_kind === "01"
+                    {user?.user_kind === "01"
                       ? "GG쇼핑"
-                      : user.user_kind === "02"
+                      : user?.user_kind === "02"
                       ? "GG쇼핑"
                       : "제휴서비스"}
                   </Nav.Link>
@@ -112,9 +111,9 @@ export default function ServiceComp({ user }) {
                     onClick={handleTabMenu}
                     className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
-                    {user.user_kind === "01"
+                    {user?.user_kind === "01"
                       ? "제휴서비스"
-                      : user.user_kind === "02"
+                      : user?.user_kind === "02"
                       ? "GG투어"
                       : "GG투어"}
                   </Nav.Link>

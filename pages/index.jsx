@@ -10,10 +10,6 @@ import GalleryComp from "../components/Home/GalleryComp";
 import ReactFullpage from "@fullpage/react-fullpage";
 import styles from "./index.module.scss";
 
-const options = {
-  anchors: ["intro", "booking", "mall", "gallery", "footer"],
-  verticalCentered: true,
-};
 export default function Index({ user }) {
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
@@ -44,45 +40,94 @@ export default function Index({ user }) {
     };
   }, []);
   return (
-    <ReactFullpage
-      navigation
-      licenseKey={"0CVM9-4IA6I-SKM1I-SNVJ9-JYYGL"}
-      normalScrollElements={".scrollable-content"}
-      render={() => (
-        <ReactFullpage.Wrapper scrollingSpeed={1000} scrollHorizontally={true}>
-          <div className={`section`}>
-            {serviceGroup === "01" && <GoghBanner />}
-            {serviceGroup === "renoir" && <RenoirBanner />}
-            {serviceGroup === "monet" && <MonetBanner />}
-          </div>
-          {serviceGroup === "01" && (
-            <>
+    <>
+      {serviceGroup === "01" && (
+        <ReactFullpage
+          navigation
+          licenseKey={"0CVM9-4IA6I-SKM1I-SNVJ9-JYYGL"}
+          normalScrollElements={".scrollable-content"}
+          render={() => (
+            <ReactFullpage.Wrapper
+              scrollingSpeed={1000}
+              scrollHorizontally={true}
+            >
+              <div className={`section`}>
+                <GoghBanner />
+              </div>
               <div className={`section`}>
                 <BookingComp />
               </div>
               <div className={`section`}>
-                <ServiceComp user={ user} />
-              </div>
-            </>
-          )}
-          {serviceGroup !== "01" && (
-            <>
-              <div className={`section ${styles.fullSize}`}>
-                <ServiceComp user={ user} />
+                <ServiceComp user={user} />
               </div>
               <div className={`section ${styles.fullSize}`}>
-                <BookingComp user={ user} />
+                <GalleryComp />
               </div>
-            </>
+              <div className={`section scrollable-content`}>
+                <Footer />
+              </div>
+            </ReactFullpage.Wrapper>
           )}
-          <div className={`section ${styles.fullSize}`}>
-            <GalleryComp />
-          </div>
-          <div className={`section scrollable-content`}>
-            <Footer />
-          </div>
-        </ReactFullpage.Wrapper>
+        />
       )}
-    />
+      {serviceGroup === "02" && (
+        <ReactFullpage
+          navigation
+          licenseKey={"0CVM9-4IA6I-SKM1I-SNVJ9-JYYGL"}
+          normalScrollElements={".scrollable-content"}
+          render={() => (
+            <ReactFullpage.Wrapper
+              scrollingSpeed={1000}
+              scrollHorizontally={true}
+            >
+              <div className={`section`}>
+                <RenoirBanner />
+              </div>
+              <div className={`section`}>
+                <ServiceComp user={user} />
+              </div>
+              <div className={`section`}>
+                <BookingComp />
+              </div>
+              <div className={`section ${styles.fullSize}`}>
+                <GalleryComp />
+              </div>
+              <div className={`section scrollable-content`}>
+                <Footer />
+              </div>
+            </ReactFullpage.Wrapper>
+          )}
+        />
+      )}
+      {serviceGroup === "03" && (
+        <ReactFullpage
+          navigation
+          licenseKey={"0CVM9-4IA6I-SKM1I-SNVJ9-JYYGL"}
+          normalScrollElements={".scrollable-content"}
+          render={() => (
+            <ReactFullpage.Wrapper
+              scrollingSpeed={1000}
+              scrollHorizontally={true}
+            >
+              <div className={`section`}>
+                <MonetBanner />
+              </div>
+              <div className={`section`}>
+                <ServiceComp user={user} />
+              </div>
+              <div className={`section`}>
+                <BookingComp />
+              </div>
+              <div className={`section ${styles.fullSize}`}>
+                <GalleryComp />
+              </div>
+              <div className={`section scrollable-content`}>
+                <Footer />
+              </div>
+            </ReactFullpage.Wrapper>
+          )}
+        />
+      )}
+    </>
   );
 }

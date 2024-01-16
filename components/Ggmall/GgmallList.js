@@ -51,36 +51,33 @@ const GgmallList = ({ contents, productKind }) => {
       <section className="team-area mt-5 pb-100">
         <div className="container">
           <div className="row justify-content-center">
-            {contents &&
-              contents.map((content, i) => (
-                <div
-                  className={`col-lg-3 col-sm-6`}
-                  data-aos="fade-in"
-                  data-aos-duration="1200"
-                  data-aos-delay={100}
+            {contents?.map((content, i) => (
+              <div
+                className={`col-lg-3 col-sm-6`}
+                data-aos="fade-in"
+                data-aos-duration="1200"
+                data-aos-delay={100}
+                key={i}
+              >
+                <Link
                   key={i}
+                  href={`/ggmall/detail/${productKind}/${content.pd_no}`}
+                  style={{ width: "100%" }}
                 >
-                  <Link
-                    key={i}
-                    href={`/ggmall/detail/${productKind}/${content.pd_no}`}
-                    style={{ width: "100%" }}
-                  >
-                    <div className={`single-team active ${styles.product}`}>
-                      <div className="team-single-img">
-                        <img src={content.thumb_img} alt="Image" />
-                      </div>
-                      <div className="team-content">
-                        <label className={styles.brand}>{content.brand}</label>
-                        <h3 className={styles.pdName}>{content.pd_name}</h3>
-                        <h4 className={styles.infoShort}>
-                          {content.info_short}
-                        </h4>
-                        {priceComp(content)}
-                      </div>
+                  <div className={`single-team active ${styles.product}`}>
+                    <div className="team-single-img">
+                      <img src={content.thumb_img} alt="Image" />
                     </div>
-                  </Link>
-                </div>
-              ))}
+                    <div className="team-content">
+                      <label className={styles.brand}>{content.brand}</label>
+                      <h3 className={styles.pdName}>{content.pd_name}</h3>
+                      <h4 className={styles.infoShort}>{content.info_short}</h4>
+                      {priceComp(content)}
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
