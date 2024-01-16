@@ -24,6 +24,52 @@
     background: rgb(244, 244, 244);
   }
 
+  .topSlide {
+    position: relative;
+    margin: 50px auto 0;
+
+    .swiperTop {
+
+      img {
+        width: 100%;
+        height: 100% ;
+      }
+      
+      .textWrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+
+        p {
+          width: 100%;
+          font-family: Noto Sans KR;
+          font-size: 36px;
+          font-weight: 900;
+          line-height: 70px;
+          letter-spacing: -0.36px;
+          text-align: center;
+          color: #fff;
+
+          span {
+            font-family: Noto Sans KR;
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 70px;
+            letter-spacing: -0.6px;
+            color:#6ED338;
+
+            &:nth-child(3) {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .titleTop {
     display: inline-block;
     position: relative;

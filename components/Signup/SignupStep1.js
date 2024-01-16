@@ -12,7 +12,7 @@ export default function SignupStep1({ setForm }) {
       <div className={`${styles.firstWrap}`}>
         <div className={`${styles.titleWrap}`}>
           <h1>
-            하이엔드 골프 서비스
+            하이엔드 골프 멤버십
             <br />
             그린갤러리에 오신 것을 환영합니다.
           </h1>

@@ -2,30 +2,30 @@ import React, { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import Tab from "react-bootstrap/Tab";
 import { useRouter } from "next/router";
-import SignupCompListWrap from "../components/Signup/SignupCompListWrapMobile";
+import SignupCompListWrapMobile from "../components/Signup/SignupCompListWrapMobile";
 import styles from "./sign-up-mobile.module.scss";
 
 const SERVICE_LIST = [
   {
     id: 1,
-    title: "Vincent Van Gogh",
-    group: "Vincent Van Gogh",
+    title: "President K",
+    group: "President K",
     discript:"결이 다른 행보로 격이 높은 인생을 살아 온 당신을 위해",
-    img: "/images/vincent_van_gogh_sign_up_comp.jpg",
+    img: "/images/mobile/main/Vincent_Van_Gogh_Mobile_Complete.jpg",
   },
   {
     id: 2,
-    title: "Auguste Renoir",
-    group: "Auguste Renoir",
+    title: "Noblesse K",
+    group: "Noblesse K",
     discript:"남다른 대한민국의 다이아 수저 0.1%",
-    img: "/images/auguste_renoir_sign_up_comp.jpg",
+    img: "/images/mobile/main/Auguste_Renoir_Mobile_Complete.jpg",
   },
   {
     id: 3,
-    title: "Claude Monet",
-    group: "Claude Monet",
+    title: "Elite K",
+    group: "Elite K",
     discript:"알바트로스를 꿈꾸며 비상하는 독수리처럼",
-    img: "/images/claude_monet_sign_up_comp.jpg",
+    img: "/images/mobile/main/Claude_Monet_Mobile_Complete.jpg",
   },
 ];
 
@@ -116,7 +116,7 @@ const SignupMobileComplete = ({ showReservationModal }) => {
 
             <Tab.Content>
               <Tab.Pane eventKey={`${tabMenu}`}>
-                <SignupCompListWrap
+                <SignupCompListWrapMobile
                     LIST_ITEM = {
                       tabMenu === "first"
                         ? Object.entries(SERVICE_LIST[0])

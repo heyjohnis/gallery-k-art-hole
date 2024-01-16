@@ -797,7 +797,6 @@ Nav 메뉴
         .menu-items {
           font-size: 12px;
           color: $white-color;
-          color: #fff;
           font-weight: 400;
         }
 
@@ -807,6 +806,18 @@ Nav 메뉴
           display: block;
           margin: 0 10px;
           background-color: $white-color;
+        }
+      }
+      
+      @media screen and (max-width: 768px) {
+        li {
+          .menu-items {
+            color: #333;
+          }
+  
+          span {
+            background-color: #333;
+          }
         }
       }
     }
@@ -825,6 +836,17 @@ Nav 메뉴
         font-weight: bold;
         font-size: 25px;
       }
+
+      @media screen and (max-width: 768px) {
+        &.light_logo {
+          display: none;
+        }
+  
+        &.dark_logo {
+          display: block;
+        }
+      }
+      
     }
 
     /* harry 0605_font size 15에서 16으로 마진 15에서 18로 변경 */
@@ -1212,15 +1234,15 @@ Nav 메뉴
         }
       }
 
-      .navbar-brand {
-        &.light_logo {
-          display: none;
-        }
+      // .navbar-brand {
+      //   &.light_logo {
+      //     display: none;
+      //   }
 
-        &.dark_logo {
-          display: block;
-        }
-      }
+      //   &.dark_logo {
+      //     display: block;
+      //   }
+      // }
 
       .navbar-nav {
         .nav-item {
@@ -1320,7 +1342,21 @@ Nav 메뉴
     .bottom-bar {
       transform: rotate(0);
       left: 0;
-      background: #fff;
+      background: $white-color;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-bar {
+        background: #333;
+      }
+  
+      .middle-bar {
+        background: #333;
+      }
+  
+      .bottom-bar { 
+        background: #333;
+      }
     }
   }
 
@@ -5096,7 +5132,14 @@ Booking Page
 
     .item_group {
       display: flex;
+      .form_label_input_column {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+      }
     }
+
+
 
     label {
       margin-bottom: 10px;
@@ -5207,7 +5250,11 @@ Booking Page
       letter-spacing: -0.12px;
       background: url("/images/booking/icon_info.svg") left center no-repeat;
       background-size: 14px;
+      &.margin_b_80 {
+        margin-bottom: 80px;
+      }
     }
+    
   }
 
   .agree_content {
@@ -5414,6 +5461,9 @@ Booking Page
           }
         }
       }
+      .form_label_input_column {
+        margin:m
+      }
 
       textarea.form-control {
         width: 100%;
@@ -5424,6 +5474,15 @@ Booking Page
       .tel_group {
         div {
           flex-grow: 1;
+        }
+      }
+    }
+
+    .booking_form_gruop {
+      .item_group {
+        flex-direction: column; 
+        .form_label_input_column {
+   
         }
       }
     }

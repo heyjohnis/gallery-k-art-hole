@@ -1,115 +1,112 @@
 $main-font-family-eng: "Montserrat";
 
-.contentsWrap {
-    width: 48vw;
+.rightWrap {
+  width: 48vw;
 
-    .imageWrap {
-      height: 400px;
-      min-height: 400px;
-      margin: 0 0 30px;
+  .imageWrap {
+    height: 400px;
+    min-height: 400px;
+    margin: 0 0 30px;
 
-      image {
-        width: 100%;
-      }
-    }
-
-    .textWrap {
-
-      h2 {
-        font-family: $main-font-family-eng;
-        font-size: 32px;
-        font-weight: 600;
-        letter-spacing: -0.32px;
-        color: #111;
-      }
-
-            
-      .mainLink{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        p {
-          display: inline;
-          font-family: $main-font-family-eng;
-          font-family: Noto Sans KR;
-          font-size: 18px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          letter-spacing: -0.18px;
-          color: #666;
-        }
-        
-        a {
-          padding-right: 20px;
-          font-family: $main-font-family-eng;
-          font-size: 18px;
-          font-weight: 700;
-          letter-spacing: -0.18px;
-          color: #333;
-        }
-      }
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .contentsWrap {
+    image {
       width: 100%;
-      height: 50vh;
-  
-      .imageWrapVincent {
-        height: 100%;
-        margin: 0;
-        background: url(/images/mobile/main/Vincent_Van_Gogh_Mobile_Complete.jpg) no-repeat center center;
-        background-size: cover;
-      }
+    }
+  }
 
-      .imageWrapAuguste {
-        height: 100%;
-        margin: 0;
-        background: url(/images/mobile/main/Auguste_Renoir_Mobile_Complete.jpg) no-repeat center center;
-        background-size: cover;
-      }
+  .textWrap {
 
-      .imageWrapClaude {
-        height: 100%;
-        margin: 0;
-        background: url(/images/mobile/main/Claude_Monet_Mobile_Complete.jpg) no-repeat center center;
-        background-size: cover;
-      }
-        
-      .textWrap {
-        width: 100%;
-        padding: 50px 30px;
+    h2 {
+      font-family: $main-font-family-eng;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.32px;
+      color: #111;
+    }
 
-        h2 {
-          font-family: $main-font-family-eng;
-          font-size: 40px;
-          font-weight: 700;
-          letter-spacing: -0.4px;
-          color: #fff;
-        }
-  
-              
-        .mainLink{
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-  
-          p {
-            display: none;
-          }
           
-          a {
-            font-family: $main-font-family-eng;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: -0.16px;
-            color: #fff;
-          }
-        }
+    .mainLink{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        display: inline;
+        font-family: $main-font-family-eng;
+        font-family: Noto Sans KR;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.18px;
+        color: #666;
+      }
+      
+      a {
+        padding-right: 0px;
+        font-family: $main-font-family-eng;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.18px;
+        color: #333;
       }
     }
   }
+}
+
+.contentsWrapMobile {
+  width: 100%;
+  height: 50vh;
+
+  .imageWrapVincent {
+    height: 100%;
+    margin: 0;
+    background: url(/images/mobile/main/Vincent_Van_Gogh_Mobile_Complete.jpg) no-repeat center center;
+    background-size: cover;
+  }
+
+  .imageWrapAuguste {
+    height: 100%;
+    margin: 0;
+    background: url(/images/mobile/main/Auguste_Renoir_Mobile_Complete.jpg) no-repeat center center;
+    background-size: cover;
+  }
+
+  .imageWrapClaude {
+    height: 100%;
+    margin: 0;
+    background: url(/images/mobile/main/Claude_Monet_Mobile_Complete.jpg) no-repeat center center;
+    background-size: cover;
+  }
+    
+  .textWrap {
+    width: 100%;
+    padding: 50px 30px;
+
+    h2 {
+      font-family: $main-font-family-eng;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: #fff;
+    }
+
+          
+    .mainLink{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        display: none;
+      }
+      
+      a {
+        font-family: $main-font-family-eng;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -0.16px;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -11,11 +11,11 @@ export default function MyContract({ user }) {
           <div className="membership_tit">멤버쉽</div>
           <div className="membership_name">
             <span>
-              {user.service_group === "gogh"
-                ? "Vincent Van Gogh"
-                : user.service_group === "renoir"
-                ? "Auguste Renoir"
-                : "Claude Monet"}
+              {user.service_group === "01"
+                ? "President K"
+                : user.service_group === "02"
+                ? "Noblesse K"
+                : "Elite K"}
             </span>
             <span className="bigger">
               {user?.membership?.replace(/\b[a-z]/, (letter) =>

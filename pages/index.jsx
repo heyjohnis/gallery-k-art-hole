@@ -17,7 +17,7 @@ const options = {
 export default function Index({ user }) {
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
-  const [serviceGroup, setServiceGroup] = useState("gogh");
+  const [serviceGroup, setServiceGroup] = useState("01");
   useEffect(() => {
     console.log({ user });
     if (user?.service_group) {
@@ -51,11 +51,11 @@ export default function Index({ user }) {
       render={() => (
         <ReactFullpage.Wrapper scrollingSpeed={1000} scrollHorizontally={true}>
           <div className={`section`}>
-            {serviceGroup === "gogh" && <GoghBanner />}
+            {serviceGroup === "01" && <GoghBanner />}
             {serviceGroup === "renoir" && <RenoirBanner />}
             {serviceGroup === "monet" && <MonetBanner />}
           </div>
-          {serviceGroup === "gogh" && (
+          {serviceGroup === "01" && (
             <>
               <div className={`section`}>
                 <BookingComp />
@@ -65,7 +65,7 @@ export default function Index({ user }) {
               </div>
             </>
           )}
-          {serviceGroup !== "gogh" && (
+          {serviceGroup !== "01" && (
             <>
               <div className={`section ${styles.fullSize}`}>
                 <ServiceComp />

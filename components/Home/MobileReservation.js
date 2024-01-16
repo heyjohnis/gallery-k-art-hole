@@ -1,10 +1,67 @@
 import React from "react";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, A11y, EffectFade } from "swiper";
 import styles from "./MobileMain.module.scss";
+
+const IMAGE_LIST = [
+  {
+    id: 1,
+    group: "president K",
+    keyword: "명예",
+    img: "/images/mobile/main/president_mo_1.jpg",
+  },
+  {
+    id: 2,
+    group: "president K",
+    keyword: "명예",
+    img: "/images/mobile/main/president_mo_2.jpg",
+  },
+  {
+    id: 3,
+    group: "president K",
+    keyword: "명예",
+    img: "/images/mobile/main/president_mo_3.jpg",
+  },
+];
 
 export default function MobileReservation({ user }) {
   return (
     <>
+      <div className={styles.topSlide}>
+        <Swiper
+          effect="fade"
+          slidesPerView={"auto"}
+          navigation={true}
+          loop={true}
+          spaceBetween={0}
+          autoplay={{
+            delay: 10000,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true,
+          }}
+          modules={[A11y, Autoplay, EffectFade]}
+          className={`hero-swiper ${styles.swiperTop}`}
+        >
+          {IMAGE_LIST?.map((item, i) => (
+            <>
+              <SwiperSlide className={`${styles.swiperSlide}`} key={item.id}>
+                <img src={item.img} alt={item.group} />
+
+                {/* <div className={styles.textWrap}>
+                  <p>
+                    나의 명예를
+                    <br />
+                    <span>그린</span>
+                    <span>다</span>
+                    <span>.</span>
+                  </p>
+                </div> */}
+              </SwiperSlide>
+            </>
+          ))}
+        </Swiper>
+      </div>
       <h1 className={`${styles.titleTop}`}>
         {user?.user_name || "고객"}님
         <br />
