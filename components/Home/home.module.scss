@@ -504,10 +504,16 @@
 }
 
 .sliderPageSection {
-  padding: 226px 199px 80px;
+  // padding: 226px 199px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #fff;
 
   .titleWrap {
+    width: 1290px;
+    margin: 0 auto;
+    text-align: left;
     h1 {
       display: inline-block;
       font-family: Jost;
@@ -550,10 +556,14 @@
       .sectionLeft {
         display: flex;
         flex-direction: column;
+        align-content: center;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
         position: relative;
         width: 50%;
         height: 465px;
-        padding: 80px 140px;
+        //  padding: 80px 140px;
         background-color: #282828;
 
         h1 {
@@ -575,6 +585,7 @@
         }
 
         p {
+          width: 60%;
           display: inline-block;
           margin: 0;
           font-family: Noto Sans KR;
@@ -587,8 +598,9 @@
         }
 
         .buttonWrap {
-          position: absolute;
-          bottom: 150px;
+          // position: absolute;
+          // bottom: 150px;
+          margin-top: 50px;
 
           .defaultBtnBlack {
             font-family: Jost;
@@ -615,13 +627,16 @@
     }
 
     & > div:nth-child(2) {
-      left: 7%;
-      height: 50vh !important;
+      left: 11.8vw;
+      height: 465px !important;
+      background: rgba(0, 0, 0, 0.2);
     }
 
     & > div:nth-child(3) {
-      right: 7%;
-      height: 50vh !important;
+
+      right: 11.8vw;
+      height: 465px !important;
+      background: rgba(0, 0, 0, 0.2);
     }
 
     & > div:nth-child(4) {

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import styles from "./home.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { A11y, Navigation, Pagination } from "swiper";
+import { A11y, Navigation, Pagination, EffectFade } from "swiper";
 const LIST_ITEM_GALLERY = [
   {
     id: 1,
@@ -48,13 +48,14 @@ export default function GalleryComp() {
       </div>
       <div>
         <Swiper
-          navigation={true}
+          effect="fade"
+          navigation={false}
           spaceBetween={0}
-          pagination={{
-            clickable: true,
-            type: "bullets",
-          }}
-          modules={[Pagination, A11y, Navigation]}
+          // pagination={{
+          //   clickable: true,
+          //   type: "bullets",
+          // }}
+          modules={[Pagination, A11y, Navigation, EffectFade]}
           className={`hero-swiper ${styles.swiper}`}
         >
           {LIST_ITEM_GALLERY.map((itemList) => (
