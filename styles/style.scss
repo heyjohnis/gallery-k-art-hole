@@ -6869,3 +6869,9 @@ My Page > 포인트 이용내역
   }
 
 }
+
+// 풀페이지 하단 광고 제거
+
+.fp-watermark {
+  display: none;
+}
