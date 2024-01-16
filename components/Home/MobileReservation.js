@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, A11y } from "swiper";
+import { Autoplay, A11y, EffectFade } from "swiper";
 import styles from "./MobileMain.module.scss";
 
 const IMAGE_LIST = [
@@ -30,17 +30,17 @@ export default function MobileReservation({ user }) {
     <>
       <div className={styles.topSlide}>
         <Swiper
+          effect="fade"
           slidesPerView={"auto"}
           navigation={true}
-          loop={false}
+          loop={true}
           spaceBetween={0}
           autoplay={{
-            delay: 4000,
+            delay: 10000,
             disableOnInteraction: true,
             pauseOnMouseEnter: true,
           }}
-          //  modules={[Pagination, A11y, Autoplay, Navigation]}
-          modules={[A11y, Autoplay]}
+          modules={[A11y, Autoplay, EffectFade]}
           className={`hero-swiper ${styles.swiperTop}`}
         >
           {IMAGE_LIST?.map((item, i) => (
