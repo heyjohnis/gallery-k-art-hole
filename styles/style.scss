@@ -5537,6 +5537,9 @@ My Page
   .content_user_info {
     margin-right: 30px;
     width: 357px;
+    .mypage_identity {
+      display: none;
+    }
   }
   .content_items {
     flex-grow: 1;
@@ -5853,10 +5856,34 @@ My Page
 
 .content_items {
   margin-bottom: 120px;
+  .mypage_identity {
+    padding: 35px 50px;
+    margin-bottom: 20px;
+    background: center / cover no-repeat url(/images/mypage/bg_id_elite.png);
+    border-radius: 10px;
+    span {
+      color: $white-color;
+      font-family: $main-font-family-eng;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: -0.4px;
+    }
+    &.president {
+      background-image: url(/images/mypage/bg_id_elite.png);
+    }
+    &.noblesse {
+      background:#eee;
+    }
+    &.elite {
+      background: #ccc;
+    }
+  }
   .mypage_content_item {
     padding: 50px;
     margin-bottom: 30px;
     background-color: $white-color;
+    border-radius: 10px;
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
     h2 {
       padding-bottom: 10px;
@@ -5866,7 +5893,7 @@ My Page
       letter-spacing: -0.3px;
     }
     .contract_content {
-      margin-top: 68px;
+      margin-top: 120px;
       .contract_info {
         display: flex;
         justify-content: space-between;
@@ -5983,118 +6010,164 @@ My Page
 }
 
 @media only screen and (max-width: 991px) {
-  .mypage_tab_menu {
-    overflow-x: scroll;
-    li {
-      min-width: 160px;
-    }
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-  .mypage_content {
-    flex-direction: column;
-    .content_user_info {
-      margin-right: 0px;
-      width: 100%;
-      .point_notice,
-      .red {
-        margin-bottom: 30px;
+  .container {
+    position: relative;
+    .mypage_tab_menu {
+      overflow-x: scroll;
+      li {
+        min-width: 160px;
+      }
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
       }
     }
-  }
-  .content_items {
-    .mypage_content_item {
-      padding: 50px 0;
-      position: relative;
-      background: none;
-      box-shadow: none;
-      .contract_content {
-        background: $white-color;
-        border: 1px solid #eee;
-        padding: 10px;
-        margin-top: 30px;
-        .contract_info {
-          padding: 20px;
-          flex-direction: column;
-          align-items: flex-start;
-          border-bottom: 1px solid #eee;
-          .membership_tit {
-            display: inline;
-            color: $gray-color;
-            font-size: 14px;
-            font-weight: 400;
-            letter-spacing: -0.14px;
-            margin-bottom: 10px;
+    .mypage_content {
+      flex-direction: column;
+      .content_user_info {
+        margin-right: 0px;
+        width: 100%;
+        .mypage_identity {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 220px;
+          left: 0;
+          top: 76px;
+          z-index: -1;
+          background: center / cover no-repeat url(/images/mypage/bg_id_elite.png);
+          &.president {
+            background-image: url(/images/mypage/bg_id_elite.png);
           }
-          .membership_name {
-            line-height: 0;
-            span {
-              display: inline-block;
-              font-size: 14px;
-              font-weight: 400;
-              &.bigger {
-                font-size: 14px;
-              }
-            }
+          &.noblesse {
+            background:#eee;
           }
-          button {
-            position: absolute;
-            top: 40px;
-            right: 0;
+          &.elite {
+            background: #ccc;
+          }
+          span{
+            margin-left: 37px;
+            color: $white-color;
+            text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.30);
+            font-family: $main-font-family-eng;
+            font-size: 24px;
+            line-height: 182px;
+            font-weight: 700;
+            letter-spacing: -0.24px;
           }
         }
-        .contract_list {
-          margin: 0;
-          border: 0;
-          li {
+        .user_info {
+          margin-top: 40px;
+          padding: 20px;
+          border-radius: 10px;
+          background: $white-color;
+          border: 1px solid #eee;
+        }
+        .user_point {
+          border: 1px solid #eee;
+        }
+        .point_notice,
+        .red {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .content_items {
+      .mypage_identity {
+        display: none;
+      }
+      .mypage_content_item {
+        padding: 50px 0;
+        position: relative;
+        background: none;
+        box-shadow: none;
+        .contract_content {
+          background: $white-color;
+          border: 1px solid #eee;
+          padding: 10px;
+          margin-top: 30px;
+          .contract_info {
             padding: 20px;
             flex-direction: column;
-            line-height: normal;
-            border-color: #eee;
-            span {
-              &:first-child {
-                margin-bottom: 10px;
+            align-items: flex-start;
+            border-bottom: 1px solid #eee;
+            .membership_tit {
+              display: inline;
+              color: $gray-color;
+              font-size: 14px;
+              font-weight: 400;
+              letter-spacing: -0.14px;
+              margin-bottom: 10px;
+            }
+            .membership_name {
+              line-height: 0;
+              span {
+                display: inline-block;
+                font-size: 14px;
+                font-weight: 400;
+                &.bigger {
+                  font-size: 14px;
+                }
               }
             }
-            &:last-child {
-              border-bottom: 0;
+            button {
+              position: absolute;
+              top: 40px;
+              right: 0;
+            }
+          }
+          .contract_list {
+            margin: 0;
+            border: 0;
+            li {
+              padding: 20px;
+              flex-direction: column;
+              line-height: normal;
+              border-color: #eee;
+              span {
+                &:first-child {
+                  margin-bottom: 10px;
+                }
+              }
+              &:last-child {
+                border-bottom: 0;
+              }
             }
           }
         }
-      }
-      .artwork_list {
-        li {
-          .artwork_items {
-            .artwork_img {
-              width: 100px;
-              height: 100px;
-            }
-            article {
-              h5 {
-                max-width: 230px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
+        .artwork_list {
+          li {
+            .artwork_items {
+              .artwork_img {
+                width: 100px;
+                height: 100px;
+              }
+              article {
+                h5 {
+                  max-width: 230px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  font-size: 16px;
+                }
+                p {
+                  font-size: 14px;
+                }
+              }
+              .art_price {
                 font-size: 16px;
               }
-              p {
-                font-size: 14px;
-              }
             }
-            .art_price {
-              font-size: 16px;
+            a {
+              display: none;
             }
-          }
-          a {
-            display: none;
           }
         }
       }
     }
   }
+  
 }
 
 /*
