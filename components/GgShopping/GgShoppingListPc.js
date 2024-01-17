@@ -52,15 +52,11 @@ export default function GgShoppingListPc({ user }) {
         </div>
         <div className="col-lg-10">
           <GgshoppingListItems items={items} />
-<<<<<<< HEAD
           <Pagination
             pageInfo={page}
             gotoPage={getGgShoppingList}
             displayPage="5"
           />
-=======
-          <Pagination pageInfo={page} gotoPage={getGgShoppingList} />
->>>>>>> b42858b0c313394b6bd29fda5c5f0ab1451ab894
         </div>
       </div>
     </>
