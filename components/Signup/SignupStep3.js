@@ -58,13 +58,13 @@ export default function SignupStep3({ form, setForm }) {
             <div className={`${styles.selectWrap}`}>
               <select name="local1" id="local1" onChange={handleChange}>
                 <option disabled selected>
-                  1차 희망 지역
+                  1차 희망 권역
                 </option>
                 {regionOptions}
               </select>
               <select name="local2" id="local2" onChange={handleChange}>
                 <option disabled selected>
-                  2차 희망 지역
+                  2차 희망 권역
                 </option>
                 {regionOptions}
               </select>
@@ -75,7 +75,7 @@ export default function SignupStep3({ form, setForm }) {
             <div className={`${styles.selectWrap}`}>
               <div className={styles.cc_input}>
                 <select name="cc1" id="cc1" onChange={handleChange}>
-                  <option value="">권역을 선택하세요</option>
+                  <option value="">1차 골프장</option>
                   {ccList.map((cc) => {
                     return (
                       <option
@@ -90,7 +90,7 @@ export default function SignupStep3({ form, setForm }) {
               </div>
               <div className={styles.cc_input}>
                 <select name="cc1" id="cc1" onChange={handleChange}>
-                  <option value="">권역을 선택하세요</option>
+                  <option value="">2차 골프장</option>
 
                   {ccList.map((cc) => {
                     return (
