@@ -10,15 +10,21 @@ import GalleryComp from "../components/Home/GalleryComp";
 import ReactFullpage from "@fullpage/react-fullpage";
 import styles from "./index.module.scss";
 
-export default function Index({ user }) {
+export default function Index({ user}) {
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
   const [serviceGroup, setServiceGroup] = useState("01");
+  // const serviceGroup_ = location.state.data;
+
   useEffect(() => {
-    console.log({ user });
+    console.log({ user }, router.query.data);
     if (user?.service_group) {
       setIsLogin(true);
       setServiceGroup(user.service_group);
+    } else if(router.query.data) {
+      console.log(serviceGroup, "1");
+      setServiceGroup(router.query.data);
+      console.log(serviceGroup, "2");
     }
   }, [user]);
 
