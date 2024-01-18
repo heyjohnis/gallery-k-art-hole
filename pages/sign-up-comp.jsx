@@ -117,12 +117,16 @@ export default function SignUpComp() {
                         <br />
                         We will contact soon.
                       </h1>
-                      <p>
+                      {/* <p>
                         가입 승인 완료 후 서비스 이용이 가능합니다. <br />
                         그린갤러리의 멤버십을 확인하세요!
+                      </p> */}
+                      <p>
+                        가입 승인 완료 후 로그인이 가능합니다. <br />
+                        President K 홈페이지를 먼저 방문해주세요!
                       </p>
                     </div>
-                    <div
+                    {/* <div
                       className={`${styles.groupTabWrap}`}
                     >
                       <Nav className="flex-column">
@@ -154,19 +158,29 @@ export default function SignUpComp() {
                           </Nav.Link>
                         </Nav.Item>
                       </Nav>
-                    </div>
+                    </div> */} 
+                  {/* 회원가입 시 등급 선택 가능하게되면 적용 예정*/}
+                  <div style={{width: "160px", padding: "20px", borderRadius: "21px", background: "#25644E"}}>
+                    <img src="../images/white_round_logo.png" alt="logo" />
+                  </div>
                   </div>
                 </div>
 
                 <Tab.Content>
                   <Tab.Pane eventKey={`${tabMenu}`}>
                     <SignupCompListWrap
-                        LIST_ITEM = {
-                          tabMenu === "first"
-                            ? Object.entries(SERVICE_LIST[0])
-                            : tabMenu === "second"
-                            ? Object.entries(SERVICE_LIST[1])
-                            : Object.entries(SERVICE_LIST[2])
+                        // LIST_ITEM = {
+                        //   tabMenu === "first"
+                        //     ? Object.entries(SERVICE_LIST[0])
+                        //     : tabMenu === "second"
+                        //     ? Object.entries(SERVICE_LIST[1])
+                        //     : Object.entries(SERVICE_LIST[2])
+                        // }
+                        LIST_ITME = {
+                          tabMenu === "first" || tabMenu === "second"
+                            ? SERVICE_LIST
+                            : SERVICE_LIST
+                          
                         }
                       />
                   </Tab.Pane>
