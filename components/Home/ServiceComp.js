@@ -7,7 +7,7 @@ import { POST } from "../../hooks/restApi";
 import Link from "next/link";
 import { calcDiscount } from "../../utils/price";
 
-export default function ServiceComp({ user }) {
+export default function ServiceComp({ user, serviceGroup }) {
   const [tourRecommoed, setTourRecommend] = React.useState([]);
   const [shopRecommend, setShopRecommend] = React.useState([]);
   const [serviceRecommend, setServiceRecommend] = React.useState([]);
@@ -63,9 +63,9 @@ export default function ServiceComp({ user }) {
                 BEST
                 <br />
                 GG{" "}
-                {user?.user_kind === "01"
+                {user?.user_kind === "01" || serviceGroup === "01"
                   ? "TOUR"
-                  : user?.user_kind === "02"
+                  : user?.user_kind === "02" || serviceGroup === "02"
                   ? "SERVICE"
                   : "ITEMS"}
                 <span>.</span>
@@ -83,9 +83,9 @@ export default function ServiceComp({ user }) {
                     onClick={handleTabMenu}
                     className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
-                    {user?.user_kind === "01"
+                    {user?.user_kind === "01" || serviceGroup === "01"
                       ? "GG투어"
-                      : user?.user_kind === "02"
+                      : user?.user_kind === "02" || serviceGroup === "02"
                       ? "제휴서비스"
                       : "GG쇼핑"}
                   </Nav.Link>
@@ -97,9 +97,9 @@ export default function ServiceComp({ user }) {
                     onClick={handleTabMenu}
                     className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
-                    {user?.user_kind === "01"
+                    {user?.user_kind === "01" || serviceGroup === "01"
                       ? "GG쇼핑"
-                      : user?.user_kind === "02"
+                      : user?.user_kind === "02" || serviceGroup === "02"
                       ? "GG쇼핑"
                       : "제휴서비스"}
                   </Nav.Link>
@@ -111,9 +111,9 @@ export default function ServiceComp({ user }) {
                     onClick={handleTabMenu}
                     className={`col-lg-12 col-md-12 ${styles.navLink}`}
                   >
-                    {user?.user_kind === "01"
+                    {user?.user_kind === "01" || serviceGroup === "01"
                       ? "제휴서비스"
-                      : user?.user_kind === "02"
+                      : user?.user_kind === "02" || serviceGroup === "02"
                       ? "GG투어"
                       : "GG투어"}
                   </Nav.Link>

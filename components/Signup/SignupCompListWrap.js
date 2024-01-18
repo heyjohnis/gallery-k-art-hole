@@ -22,6 +22,7 @@ const SignupCompListWrap = ({ LIST_ITEM }) => {
                   data: LIST_ITEM[5][1],
                 },
               }}
+              as="/"
             >
               Go to Main&ensp;
               <svg
