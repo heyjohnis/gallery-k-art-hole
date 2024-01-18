@@ -23,7 +23,7 @@ export default function RenoirBanner() {
               <div className="container">
                 <div className={`col-lg-12 col-md-12 ${styles.titleWrap}`}>
                   <h1>
-                    나의 미래를 <span className={``}>그린</span>다
+                    나의 가치를 <span className={``}>그린</span>다
                     <span className={``}>.</span>
                   </h1>
                 </div>
@@ -60,7 +60,7 @@ export default function RenoirBanner() {
               <div className="container">
                 <div className={`col-lg-12 col-md-12 ${styles.titleWrap}`}>
                   <h1>
-                    나의 미래를 <span className={``}>그린</span>다
+                    나의 가치를 <span className={``}>그린</span>다
                     <span className={``}>.</span>
                   </h1>
                 </div>
@@ -97,7 +97,7 @@ export default function RenoirBanner() {
               <div className="container">
                 <div className={`col-lg-12 col-md-12 ${styles.titleWrap}`}>
                   <h1>
-                    나의 미래를 <span className={``}>그린</span>다
+                    나의 가치를 <span className={``}>그린</span>다
                     <span className={``}>.</span>
                   </h1>
                 </div>
