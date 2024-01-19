@@ -108,6 +108,7 @@ export default function SignupMobile() {
         prevEl: ".swiper-button-prev",
         nextEl: ".swiper-button-next",
       }}
+      allowTouchMove={false} // 버튼으로만 슬라이드 조작 가능(false)
       allowSlideNext={allowNext}
       onSlideChange={handleSlideChange}
       onSwiper={(swiper) => console.log(swiper)}
