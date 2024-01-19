@@ -23,6 +23,7 @@ export default function Reservation({ user }) {
 
   const cancelReservation = (resv_no) => {
     console.log("cancelReservation: ", resv_no);
+    if (confirm("예약을 취소하시겠습니까?") === false) return;
     POST("/reservation/cancel", { resv_no })
       .then(({ data }) => {
         console.log("data: ", data);
