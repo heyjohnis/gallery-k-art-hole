@@ -29,7 +29,7 @@ const MainListWrap = ({ items }) => {
             modules={[A11y, Autoplay, Navigation]}
             className={`hero-swiper ${styles.swiper}`}
           >
-            {items.map((item, i) => (
+            {items?.map((item, i) => (
               <SwiperSlide key={i} className={`${styles.swiperSlide}`}>
                 <Link href={`/ggmall/detail/${item.pd_kind}/${item.pd_no}`}>
                   <div className={`${styles.slideLi}`}>
