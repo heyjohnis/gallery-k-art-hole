@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { far, faClock } from "@fortawesome/free-regular-svg-icons";
 import React, { useEffect } from "react";
 import { commaFormat } from "../../utils/number";
+import UsePointMonitor from "./UsePointMonitor";
 
 const userLevel = {
   green: "level_green",
@@ -68,53 +69,7 @@ export const UserInfo = ({ user, gotoMypageService }) => {
       <section className="use_status">
         <h4>회원님의 이용현황</h4>
         <ul className="status_list">
-          {!user.quartly_count && (
-            <>
-              <li>
-                <span className="list_tit">
-                  {new Date().getMonth() + 1}월 혜택 횟수
-                </span>
-                <span className="list_item">
-                  {" "}
-                  {(user.monthly_count || 0) - (user.use_monthly_count || 0)}회
-                  / {user.monthly_count}회
-                </span>
-              </li>
-
-              <li>
-                <span className="list_tit">
-                  {new Date(
-                    new Date().setMonth(new Date().getMonth() + 1)
-                  ).getMonth() + 1}
-                  월 혜택 횟수
-                </span>
-                <span className="list_item">
-                  {(user.monthly_count || 0) -
-                    (user.use_next_monthly_count || 0)}
-                  회 / {user.monthly_count}회
-                </span>
-              </li>
-            </>
-          )}
-          <li>
-            <span className="list_tit">
-              {Math.ceil(new Date().getMonth() + 1 / 3)}분기 혜택 횟수
-            </span>
-            <span className="list_item">
-              {(user.quartly_count || user.monthly_count * 3) -
-                user.use_qaurterly_count}{" "}
-              회 / {user.quartly_count || user.monthly_count * 3}회
-            </span>
-          </li>
-          <li>
-            <span className="list_tit">연간 혜택 횟수</span>
-            <span className="list_item">
-              연{" "}
-              {(user.yearly_count || user.monthly_count * 12) -
-                user.use_yearly_count}
-              회 /{user.yearly_count || user.monthly_count * 12}회
-            </span>
-          </li>
+          <UsePointMonitor user={user} />
           <li>
             <span className="list_tit">시작일</span>
             <span className="list_item">{user.start_date}</span>
