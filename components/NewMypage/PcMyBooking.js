@@ -9,13 +9,17 @@ import { POST } from "../../hooks/restApi";
 import { hyphenForPhone } from "../../utils/number";
 import { REGION_CODE, RESV_KIND } from "../../utils/cmmCode";
 import { REGION_LIST } from "../../data/CommonCode";
+import Pagenation from "../Pagination";
 
 export default function PcMyBooking({
   resvData,
   setSearchData,
   cancelReservation,
+  getReservationData,
+  page,
 }) {
   const [form, setForm] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -255,6 +259,11 @@ export default function PcMyBooking({
             </Card>
           ))}
         </Accordion>
+        <Pagenation
+          pageInfo={page}
+          gotoPage={getReservationData}
+          displayPage={10}
+        />
       </section>
     </div>
   );

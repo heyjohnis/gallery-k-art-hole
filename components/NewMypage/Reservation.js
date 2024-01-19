@@ -7,11 +7,17 @@ export default function Reservation({ user }) {
   const [isMobile, setIsMobile] = useState(false);
   const [resvData, setResvData] = useState([]);
   const [form, setForm] = useState({});
+  const [page, setPage] = useState({ currentPage: 1, totalPages: 1 });
 
-  const getReservationData = () => {
-    POST("/mypage/reservation", form).then(({ data }) => {
+  const getReservationData = (currentPage = 1) => {
+    POST("/mypage/reservation/paging", {
+      ...form,
+      currentPage,
+      pageSize: 10,
+    }).then(({ data }) => {
       console.log("data: ", data);
-      setResvData(data || []);
+      setPage(data?.pagination || {});
+      setResvData(data?.list || []);
     });
   };
 
@@ -53,12 +59,16 @@ export default function Reservation({ user }) {
       resvData={resvData}
       setSearchData={setForm}
       cancelReservation={cancelReservation}
+      getReservationData={getReservationData}
+      page={page}
     />
   ) : (
     <PcMyBooking
       resvData={resvData}
       setSearchData={setForm}
       cancelReservation={cancelReservation}
+      getReservationData={getReservationData}
+      page={page}
     />
   );
 }

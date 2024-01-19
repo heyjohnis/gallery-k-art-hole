@@ -10,10 +10,10 @@ export default function GgShoppingListPc({ user }) {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState({ currentPage: 1, totalPages: 1 });
 
-  const getGgShoppingList = (currentPage) => {
+  const getGgShoppingList = (currentPage = 1) => {
     POST(`/mall/paging`, {
       pd_kind: "shop",
-      currentPage: currentPage || 1,
+      currentPage,
       pageSize: 16,
       membership: user?.membership,
       service_group: user?.service_group,

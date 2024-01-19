@@ -3,11 +3,14 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import { RESV_KIND, RESV_STTS } from "../../utils/cmmCode";
 import ModalReservation from "./ModalReservation";
+import Pagination from "../Pagination";
 
 export default function MobileMyBooking({
   resvData,
   setSearchData,
   cancelReservation,
+  getReservationData,
+  page,
 }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [resv, setResv] = useState({});
@@ -150,6 +153,11 @@ export default function MobileMyBooking({
               </li>
             ))}
           </ul>
+          <Pagination
+            pageInfo={page}
+            gotoPage={getReservationData}
+            displayPage="5"
+          />
         </section>
       </div>
       <ModalReservation

@@ -4,7 +4,7 @@ export default function GgshoppingListItems({ items }) {
 
   return (
     <div className="shopping_list_container row">
-      {items.map((item, i) => (
+      {items?.map((item, i) => (
         <div key={i} className="col-xxl-3 col-lg-4">
           <div className="items">
             <div className="list_img">
