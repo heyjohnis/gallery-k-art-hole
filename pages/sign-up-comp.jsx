@@ -110,7 +110,6 @@ export default function SignUpComp() {
 
               <Tab.Container id="left-tabs" defaultActiveKey="first">
                 <div className={`${styles.leftWrap}`}>
-                  <div className={``}>
                     <div className={`${styles.titleWrap}`}>
                       <h1>
                         Nice to meet you!
@@ -160,38 +159,37 @@ export default function SignUpComp() {
                       </Nav>
                     </div> */} 
                   {/* 회원가입 시 등급 선택 가능하게되면 적용 예정*/}
-                  <div style={{width: "160px", padding: "20px", borderRadius: "21px", background: "#25644E"}}>
+                  <div style={{width: "108px", padding: "20px", borderRadius: "21px"}}>
                     <img src="../images/white_round_logo.png" alt="logo" />
-                  </div>
                   </div>
                 </div>
 
-                <Tab.Content>
-                  <Tab.Pane eventKey={`${tabMenu}`}>
-                    <SignupCompListWrap
-                        // LIST_ITEM = {
-                        //   tabMenu === "first"
-                        //     ? Object.entries(SERVICE_LIST[0])
-                        //     : tabMenu === "second"
-                        //     ? Object.entries(SERVICE_LIST[1])
-                        //     : Object.entries(SERVICE_LIST[2])
-                        // }
-                        LIST_ITME = {
-                          tabMenu === "first" || tabMenu === "second"
-                            ? SERVICE_LIST
-                            : SERVICE_LIST
-                          
-                        }
-                      />
-                  </Tab.Pane>
-                </Tab.Content>
-              </Tab.Container>
-            </div>
-                  
-            <Footer />           
+                <div className={styles.tabContentsWrap}>
+                  <Tab.Content>
+                    <Tab.Pane eventKey={`${tabMenu}`}>
+                      <SignupCompListWrap
+                          // LIST_ITEM = {
+                          //   tabMenu === "first"
+                          //     ? Object.entries(SERVICE_LIST[0])
+                          //     : tabMenu === "second"
+                          //     ? Object.entries(SERVICE_LIST[1])
+                          //     : Object.entries(SERVICE_LIST[2])
+                          // }
+                          LIST_ITME = {
+                            tabMenu === "first" || tabMenu === "second"
+                              ? SERVICE_LIST
+                              : SERVICE_LIST
+                            
+                          }
+                        />
+                    </Tab.Pane>
+                  </Tab.Content>
+                  <Footer style={{position: "relative", top: "20px"}} />
+                </div>
+              </Tab.Container>    
+            </div>    
           </div>
         </div>
-
       
     </>
   );
