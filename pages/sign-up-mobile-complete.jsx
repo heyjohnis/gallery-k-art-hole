@@ -12,6 +12,7 @@ const SERVICE_LIST = [
     group: "President K",
     discript:"결이 다른 행보로 격이 높은 인생을 살아 온 당신을 위해",
     img: "/images/mobile/main/Vincent_Van_Gogh_Mobile_Complete.jpg",
+    serviceGroup: "01",
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const SERVICE_LIST = [
     group: "Noblesse K",
     discript:"남다른 대한민국의 다이아 수저 0.1%",
     img: "/images/mobile/main/Auguste_Renoir_Mobile_Complete.jpg",
+    serviceGroup: "02",
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const SERVICE_LIST = [
     group: "Elite K",
     discript:"알바트로스를 꿈꾸며 비상하는 독수리처럼",
     img: "/images/mobile/main/Claude_Monet_Mobile_Complete.jpg",
+    serviceGroup: "03",
   },
 ];
 
@@ -68,7 +71,7 @@ const SignupMobileComplete = ({ showReservationModal }) => {
           <Tab.Container id="menu-tabs" defaultActiveKey="first">
               <div>
                 <div className={styles.titleWrap}>
-                  <img src="/images/dark-logo.svg" alt="logo" />
+                  {/* <img src="/images/dark-logo.svg" alt="logo" /> */}
                   <h1>
                     Nice to meet you!
                     <br />
@@ -76,12 +79,12 @@ const SignupMobileComplete = ({ showReservationModal }) => {
                   </h1>
                   <p>
                     가입 승인 완료 후 서비스 이용이 가능합니다. <br />
-                    그린갤러리의 멤버십을 확인하세요!
+                    홈페이지를 먼저 방문해주세요!
                   </p>
                   <div
                     className={styles.groupTabWrap}
                   >
-                    <Nav className="flex-column">
+                    {/* <Nav className="flex-column">
                       <Nav.Item>
                         <Nav.Link
                           eventKey="first"
@@ -109,14 +112,19 @@ const SignupMobileComplete = ({ showReservationModal }) => {
                           {SERVICE_LIST[2].title}
                         </Nav.Link>
                       </Nav.Item>
-                    </Nav>
+                    </Nav> */}
+
+                    
+                    {/* <div style={{width: "60px"}}>
+                      <img src="../images/white_round_logo.png" style={{width: "69px"}} alt="logo" />
+                    </div> */}
                   </div>
                 </div>
               </div>
 
             <Tab.Content>
               <Tab.Pane eventKey={`${tabMenu}`}>
-                <SignupCompListWrapMobile
+                {/* <SignupCompListWrapMobile
                     LIST_ITEM = {
                       tabMenu === "first"
                         ? Object.entries(SERVICE_LIST[0])
@@ -124,7 +132,14 @@ const SignupMobileComplete = ({ showReservationModal }) => {
                         ? Object.entries(SERVICE_LIST[1])
                         : Object.entries(SERVICE_LIST[2])
                     }
-                  />
+                  /> */}
+                  <SignupCompListWrapMobile
+                  LIST_ITEM = {
+                    tabMenu === "first"
+                      ? SERVICE_LIST
+                      : SERVICE_LIST
+                  }
+                />
               </Tab.Pane>
             </Tab.Content>
           </Tab.Container>

@@ -122,7 +122,7 @@ export default function SignUpComp() {
                       </p> */}
                       <p>
                         가입 승인 완료 후 로그인이 가능합니다. <br />
-                        President K 홈페이지를 먼저 방문해주세요!
+                        홈페이지를 먼저 방문해주세요!
                       </p>
                     </div>
                     {/* <div
@@ -159,7 +159,7 @@ export default function SignUpComp() {
                       </Nav>
                     </div> */} 
                   {/* 회원가입 시 등급 선택 가능하게되면 적용 예정*/}
-                  <div style={{width: "108px", padding: "20px", borderRadius: "21px"}}>
+                  <div style={{width: "108px"}}>
                     <img src="../images/white_round_logo.png" alt="logo" />
                   </div>
                 </div>
@@ -175,7 +175,7 @@ export default function SignUpComp() {
                           //     ? Object.entries(SERVICE_LIST[1])
                           //     : Object.entries(SERVICE_LIST[2])
                           // }
-                          LIST_ITME = {
+                          LIST_ITEM = {
                             tabMenu === "first" || tabMenu === "second"
                               ? SERVICE_LIST
                               : SERVICE_LIST

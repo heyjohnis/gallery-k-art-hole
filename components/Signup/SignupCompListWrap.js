@@ -5,8 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, A11y, EffectFade } from "swiper";
 import styles from "./SignupCompListWrap.module.scss";
 
-const SignupCompListWrap = ({ LIST_ITME }) => {
-  console.log(LIST_ITME);
+const SignupCompListWrap = ({ LIST_ITEM }) => {
+  console.log(LIST_ITEM);
   return (
     <>
       {/* <div className={styles.rightWrap} key={LIST_ITEM[0][1]}>
@@ -52,8 +52,9 @@ const SignupCompListWrap = ({ LIST_ITME }) => {
           spaceBetween={0}
           loop={true}
           loopAdditionalSlides={1}
+          speed={800}
           autoplay={{
-            delay: 3000,
+            delay: 5000,
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
             // allowTouchMove: false,
@@ -61,7 +62,7 @@ const SignupCompListWrap = ({ LIST_ITME }) => {
           modules={[Autoplay, A11y, EffectFade]}
           className={`hero-swiper`}
         >
-          {LIST_ITME.map((item, i) => (
+          {LIST_ITEM?.map((item, i) => (
             <SwiperSlide>
               <div
                 className={styles.rightWrap}
@@ -69,7 +70,11 @@ const SignupCompListWrap = ({ LIST_ITME }) => {
                 style={{ background: "#fff" }}
               >
                 <div className={styles.imageWrap}>
-                  <img src={item.img} alt={item.title} />
+                  <img
+                    src={item.img}
+                    style={{ borderRadius: "5px" }}
+                    alt={item.title}
+                  />
                 </div>
                 <div className={styles.textWrap}>
                   <h2>{item.title}</h2>
