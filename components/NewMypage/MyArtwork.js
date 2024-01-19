@@ -34,7 +34,7 @@ export const MyArtwork = ({ user }) => {
                 <div className="art_price">{commaFormat(artwork.price)}원</div>
               </article>
             </div>
-            <Link href="#">작품상세</Link>
+            <Link href={`/artworks/${artwork.atwk_no}`}>작품상세</Link>
           </li>
         ))}
       </ul>

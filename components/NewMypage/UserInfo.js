@@ -16,10 +16,10 @@ const userLevel = {
 
 export const UserInfo = ({ user, gotoMypageService }) => {
   const identity = {
-    president : "president",
-    nobless : "nobless",
-    elite : "elite",
-  }
+    president: "president",
+    nobless: "nobless",
+    elite: "elite",
+  };
   useEffect(() => {
     console.log("UserInfo: ", user);
   }, [user]);
@@ -76,8 +76,8 @@ export const UserInfo = ({ user, gotoMypageService }) => {
                 </span>
                 <span className="list_item">
                   {" "}
-                  {user.monthly_count || 0 - user.use_monthly_count || 0}회 /{" "}
-                  {user.monthly_count}회
+                  {(user.monthly_count || 0) - (user.use_monthly_count || 0)}회
+                  / {user.monthly_count}회
                 </span>
               </li>
 
@@ -89,8 +89,9 @@ export const UserInfo = ({ user, gotoMypageService }) => {
                   월 혜택 횟수
                 </span>
                 <span className="list_item">
-                  {user.monthly_count || 0 - user.use_next_monthly_count || 0}회
-                  / {user.monthly_count}회
+                  {(user.monthly_count || 0) -
+                    (user.use_next_monthly_count || 0)}
+                  회 / {user.monthly_count}회
                 </span>
               </li>
             </>
