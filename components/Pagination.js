@@ -64,23 +64,27 @@ const PaginationComp = ({ pageInfo, gotoPage, displayPage = 5 }) => {
                 className="page-link page-links"
                 onClick={() => setGotoPage(1)}
               >
-                <i className="bx bx-chevrons-left"></i>
+                <img src="/images/all/arr_pagination_front.svg" />
+                {/* <i className="bx bx-chevrons-left"></i> */}
               </a>
             </li>
             <li className="page-item">
               <a className="page-link page-links" onClick={gotoBeforePageSet}>
-                <i className="bx bx-chevrons-left"></i>
+                <img src="/images/all/arr_pagination_pre.svg" />
+                {/* <i className="bx bx-chevrons-left"></i> */}
               </a>
             </li>
             {items}
             <li className="page-item">
               <a className="page-link" onClick={gotoAfterPageSet}>
-                <i className="bx bx-chevrons-right"></i>
+                <img src="/images/all/arr_pagination_next.svg" />
+                {/* <i className="bx bx-chevrons-right"></i> */}
               </a>
             </li>
             <li className="page-item">
               <a className="page-link" onClick={() => setGotoPage(totalPage)}>
-                <i className="bx bx-chevrons-right"></i>
+                <img src="/images/all/arr_pagination_end.svg" />
+                {/* <i className="bx bx-chevrons-right"></i> */}
               </a>
             </li>
           </ul>

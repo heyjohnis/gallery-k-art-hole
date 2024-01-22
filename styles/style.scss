@@ -434,7 +434,7 @@ Page-navigation
     height: 40px;
     padding: 0;
     color: $body-color;
-    background-color: #f9f9f9;
+    background: none;
     box-shadow: none;
     border: 0;
     line-height: 40px;
@@ -474,13 +474,13 @@ Page-navigation
 
     &:first-child {
       .page-link {
-        border-radius: none;
+        border-radius: 0;
       }
     }
 
     &:last-child {
       .page-link {
-        border-radius: none;
+        border-radius: 0;
       }
     }
   }
