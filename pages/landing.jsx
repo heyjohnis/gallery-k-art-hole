@@ -14,7 +14,7 @@ const lottieOptions = {
 
 const landing = () => {
   const [openContact, setOpenContact] = useState(false);
-  const [changeImg, setChangeImg] = useState("/images/landing_240109.jpg");
+  const [changeImg, setChangeImg] = useState("/images/landing_240122.jpg");
 
   const opts = {
     width: "100%",
@@ -23,14 +23,15 @@ const landing = () => {
       autoplay: 1,
     },
   };
-  
+
+// 랜딩페이지 이미지 디바이스에 맞도록 변경 노출
 useEffect(() => {
   const handWindowSize = () => {
     const { innerWidth } = window;
     if (innerWidth < 768) {
-      setChangeImg("/images/landing_240116_m.jpg");
+      setChangeImg("/images/landing_240122_m.jpg");
     } else {
-      setChangeImg("/images/landing_240116.jpg");
+      setChangeImg("/images/landing_240122.jpg");
     }
   };
   
