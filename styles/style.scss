@@ -5556,6 +5556,7 @@ My Page
     font-size: 18px;
     font-weight: 500;
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
     &.active {
       color: #333;
       border-bottom: 4px solid $sub-color;
@@ -5868,7 +5869,7 @@ My Page
       background-image: url(/images/mypage/bg_id_elite.png);
     }
     &.noblesse {
-      background:#eee;
+      background: #eee;
     }
     &.elite {
       background: #ccc;
@@ -6031,20 +6032,21 @@ My Page
           left: 0;
           top: 76px;
           z-index: -1;
-          background: center / cover no-repeat url(/images/mypage/bg_id_elite.png);
+          background: center / cover no-repeat
+            url(/images/mypage/bg_id_elite.png);
           &.president {
             background-image: url(/images/mypage/bg_id_elite.png);
           }
           &.noblesse {
-            background:#eee;
+            background: #eee;
           }
           &.elite {
             background: #ccc;
           }
-          span{
+          span {
             margin-left: 37px;
             color: $white-color;
-            text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.30);
+            text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
             font-family: $main-font-family-eng;
             font-size: 24px;
             line-height: 182px;
@@ -6162,7 +6164,6 @@ My Page
       }
     }
   }
-  
 }
 
 /*
