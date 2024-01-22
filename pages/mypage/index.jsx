@@ -41,6 +41,11 @@ function Mypage({ user }) {
     };
   }, []);
 
+  useEffect(() => {
+    console.log("user: ", user);
+    if (!user) router.push("/login");
+  }, []);
+
   return (
     <>
       <PageBanner

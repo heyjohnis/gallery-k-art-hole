@@ -4,19 +4,19 @@ import { hyphenForCorpNum } from "../../utils/number";
 
 export default function MyContract({ user }) {
   const identity = {
-    president : "president",
-    nobless : "nobless",
-    elite : "elite",
-  }
+    president: "president",
+    nobless: "nobless",
+    elite: "elite",
+  };
 
   return (
     <div>
       <div className={`mypage_identity ${identity.president}`}>
         {/* TODO: 사용자 계정에 따라 class 추가 */}
         <span>
-          {user.service_group === "01"
+          {user?.service_group === "01"
             ? "President K"
-            : user.service_group === "02"
+            : user?.service_group === "02"
             ? "Noblesse K"
             : "Elite K"}
         </span>
@@ -41,45 +41,45 @@ export default function MyContract({ user }) {
           <ul className="contract_list">
             <li>
               <span className="list_tit">계약기간</span>
-              <span className="list_item">{user.service_year_term}년</span>
+              <span className="list_item">{user?.service_year_term}년</span>
             </li>
 
             <li>
               <span className="list_tit">고객유형</span>
               <span className="list_item">
-                {user.user_kind === "01" ? "개인" : "사업자"}
+                {user?.user_kind === "01" ? "개인" : "사업자"}
               </span>
             </li>
-            {user.user_kind === "02" && (
+            {user?.user_kind === "02" && (
               <>
                 <li>
                   <span className="list_tit">사업자명</span>
-                  <span className="list_item">{user.corp_name}</span>
+                  <span className="list_item">{user?.corp_name}</span>
                 </li>
                 <li>
                   <span className="list_tit">사업자번호</span>
                   <span className="list_item">
-                    {hyphenForCorpNum(user.corp_ssn)}
+                    {hyphenForCorpNum(user?.corp_ssn)}
                   </span>
                 </li>
               </>
             )}
-            {user.dlr_cd && (
+            {user?.dlr_cd && (
               <li>
                 <span className="list_tit">담당딜러</span>
                 <span className="list_item">
-                  {user.dlr_nm}({user.dlr_cd})
+                  {user?.dlr_nm}({user?.dlr_cd})
                 </span>
               </li>
             )}
             <li>
               <span className="list_tit">계약일</span>
-              <span className="list_item">{user.contract_date}</span>
+              <span className="list_item">{user?.contract_date}</span>
             </li>
             <li>
               <span className="list_tit">이용기간</span>
               <span className="list_item">
-                {user.start_date} ~ {user.end_date}
+                {user?.start_date} ~ {user?.end_date}
               </span>
             </li>
           </ul>

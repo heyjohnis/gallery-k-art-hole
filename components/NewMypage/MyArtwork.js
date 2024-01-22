@@ -6,8 +6,8 @@ import { commaFormat } from "../../utils/number";
 export const MyArtwork = ({ user }) => {
   const [artworks, setArtworks] = useState([]);
   useEffect(() => {
-    if (user.cntc_no) {
-      POST("/mypage/artwork", { cntc_no: user.cntc_no }).then(({ data }) => {
+    if (user?.cntc_no) {
+      POST("/mypage/artwork", { cntc_no: user?.cntc_no }).then(({ data }) => {
         console.log("artworks: ", data);
         setArtworks(data);
       });

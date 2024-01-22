@@ -30,9 +30,9 @@ export const UserInfo = ({ user, gotoMypageService }) => {
       <div className={`mypage_identity ${identity.president}`}>
         {/* TODO: 사용자 계정에 따라 class 추가 */}
         <span>
-          {user.service_group === "01"
+          {user?.service_group === "01"
             ? "President K"
-            : user.service_group === "02"
+            : user?.service_group === "02"
             ? "Noblesse K"
             : "Elite K"}
         </span>
@@ -72,16 +72,16 @@ export const UserInfo = ({ user, gotoMypageService }) => {
           <UsePointMonitor user={user} />
           <li>
             <span className="list_tit">시작일</span>
-            <span className="list_item">{user.start_date}</span>
+            <span className="list_item">{user?.start_date}</span>
           </li>
           <li>
             <span className="list_tit">종료일</span>
-            <span className="list_item">{user.end_date}</span>
+            <span className="list_item">{user?.end_date}</span>
           </li>
         </ul>
       </section>
       <div className="point_update">
-        <FontAwesomeIcon icon={faClock} /> update : {user.update_date}
+        <FontAwesomeIcon icon={faClock} /> update : {user?.update_date}
       </div>
       <div className="point_notice">
         <div className="icon"></div>부킹의 경우 두달 전에도 신청이 가능합니다.
