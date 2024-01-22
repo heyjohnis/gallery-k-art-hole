@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
 import { hyphenForPhone } from "../../utils/number";
+import { RESV_STTS, REGION_CODE } from "../../utils/cmmCode";
 
-export default function ModalReservation({ resv, isOpenModal, handleClose }) {
+export default function ModalReservation({ resv, isOpenModal, handleClose, cancelReservation }) {
   useEffect(() => {
     console.log("resv: ", resv);
   }, [resv]);
@@ -18,8 +19,9 @@ export default function ModalReservation({ resv, isOpenModal, handleClose }) {
               예약확정일 : <span>2023. 11. 19</span>
             </span>
           </div>
-          <span className={`status complete`}>예약완료</span>
-          {/* TODO: 예약완료일때만 complete 추가 */}
+          <span className={`status complete`}>
+            {RESV_STTS[resv?.resv_stts]}
+          </span>
         </section>
         <section className="md_reser_detail_body">
           <h3>예약 정보</h3>
@@ -84,7 +86,8 @@ export default function ModalReservation({ resv, isOpenModal, handleClose }) {
             <li>
               <span className="tit">희망권역</span>
               <span className="item">
-                1차 {resv.hope_local1}, 2차 {resv.hope_local2}
+                1차 {REGION_CODE[resv?.hope_local1]}, 2차{" "}
+                {REGION_CODE[resv?.hope_local2]}
               </span>
             </li>
             <li>
@@ -112,7 +115,9 @@ export default function ModalReservation({ resv, isOpenModal, handleClose }) {
             </li>
           </ul>
         </section>
-        <button className="btn_white">예약취소</button>
+        {["01", "05"].includes(resv.resv_stts) && (
+          <button className="btn_white" onClick={() => cancelReservation(resv.resv_no)}>예약취소</button>
+        )}
       </div>
     </Modal>
   );

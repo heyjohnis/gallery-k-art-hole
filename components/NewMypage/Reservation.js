@@ -29,6 +29,7 @@ export default function Reservation({ user }) {
         console.log("data: ", data);
         alert("예약이 취소되었습니다.");
         getReservationData();
+        location.reload();
       })
       .catch((error) => {
         console.log("error: ", error);

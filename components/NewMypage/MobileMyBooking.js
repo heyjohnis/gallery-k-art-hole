@@ -135,9 +135,8 @@ export default function MobileMyBooking({
                   <span></span>
                   <div className="reser_type_info">
                     <span
-                      className={`label ${
-                        reservationLabel[resv.resv_kind || "01"]
-                      }`}
+                      className={`label ${reservationLabel[resv.resv_kind || "01"]
+                        }`}
                     ></span>
                     <button
                       className={
@@ -164,6 +163,7 @@ export default function MobileMyBooking({
         resv={resv}
         isOpenModal={isOpenModal}
         handleClose={closeModal}
+        cancelReservation={cancelReservation}
       />
     </>
   );
