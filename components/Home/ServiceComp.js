@@ -142,10 +142,10 @@ export default function ServiceComp({ user, serviceGroup }) {
                 <MainListWrap
                   items={
                     tabMenu === "first"
-                      ? serviceRecommend
+                      ? tourRecommoed
                       : tabMenu === "second"
                       ? shopRecommend
-                      : tourRecommoed
+                      : serviceRecommend
                   }
                 />
               </Tab.Pane>
