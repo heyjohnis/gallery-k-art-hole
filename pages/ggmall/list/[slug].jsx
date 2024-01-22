@@ -48,9 +48,12 @@ const ggList = ({ user }) => {
     const pd_kind = router.query.slug;
     console.log("pd_kind: ", pd_kind);
     setPdKind(pd_kind);
-    if (pdKind) getContents({ ...searchData });
     setPdKindName(ggmallKind[pdKind]);
   }, [router.query.slug, searchData]);
+
+  useEffect(() => {
+    if (pdKind) getContents({ ...searchData });
+  }, [pdKind]);
 
   return (
     <>
