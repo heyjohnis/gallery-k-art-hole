@@ -55,21 +55,30 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
         </div>
         <div className="form_item">
           <label>시간 선택</label>
-          <div className="item_group">
+          <div key="inline-radio" className="item_group">
             <Form.Check
               label="1부"
               name="time1"
-              type="checkbox"
-              id="check_1"
-              className="item"
+              type="radio"
+              id="inline-radio-1"
+              className="item btn_radio"
               onChange={handleChange}
+              checked
             />
             <Form.Check
               label="2부"
-              name="time2"
-              type="checkbox"
-              id="check_2"
-              className="item"
+              name="time1"
+              type="radio"
+              id="inline-radio-2"
+              className="item btn_radio"
+              onChange={handleChange}
+            />
+            <Form.Check
+              label="무관"
+              name="time1"
+              type="radio"
+              id="inline-radio-3"
+              className="item btn_radio"
               onChange={handleChange}
             />
           </div>
@@ -121,7 +130,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
           <div className='booking_form_gruop'>
             <div className="item_group">
               <div className='form_label_input_column'>            
-                <Form.Label>이용자1</Form.Label>
+                <Form.Label>이용자 1</Form.Label>
                 <Form.Control
                   type="text"
                   name="option_name1"
@@ -129,6 +138,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
                   placeholder="이름을 입력해주세요."
                   onChange={handleChange}
                 />
+                <p className="info mb_info">무기명 회원인 경우 예약자명을 기입해주세요.</p>
               </div>
               <div className='form_label_input_column'>
                 <Form.Label>이용자 1 연락처</Form.Label>
@@ -143,33 +153,34 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
                 {/* <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" /> */}
               </div>
             </div>
-            <p className="info margin_b_80">1차 권역 예약이 어려울 시 원하시는 2차 권역을 선택해주시기 바랍니다.</p>
+            <p className="info pc_info margin_b_80">무기명 회원인 경우 예약자명을 기입해주세요.</p>
           </div>
-          <div className="item_group">
-            <div className='form_label_input_column'>   
-              <Form.Label>이용자2</Form.Label>
-              <Form.Control
-                type="text"
-                name="option_name2"
-                value={form.option_name2}
-                placeholder="이름을 입력해주세요."
-                onChange={handleChange}
-              />
-            </div>
-            <div className='form_label_input_column'>   
-              <Form.Label>이용자 2 연락처</Form.Label>
-              <Form.Control
-                type="text"
-                name="option_phone2"
-                maxLength="15"
-                value={form?.option_phone2}
-                placeholder="010-1234-5678"
-                onChange={handleChange}
-              />
-              {/* <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" /> */}
+          <div className='booking_form_gruop'>
+            <div className="item_group">
+              <div className='form_label_input_column'>   
+                <Form.Label>이용자 2</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="option_name2"
+                  value={form.option_name2}
+                  placeholder="이름을 입력해주세요."
+                  onChange={handleChange}
+                />
+              </div>
+              <div className='form_label_input_column margin_0'>   
+                <Form.Label>이용자 2 연락처</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="option_phone2"
+                  maxLength="15"
+                  value={form?.option_phone2}
+                  placeholder="010-1234-5678"
+                  onChange={handleChange}
+                />
+                {/* <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" /> */}
+              </div>
             </div>
           </div>
-          {/* <p className="info">무기명 회원인 경우 예약자명을 기입해주세요.</p> */}
         </div>
       </Form>
     </div>

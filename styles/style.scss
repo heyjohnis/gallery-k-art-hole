@@ -4883,8 +4883,16 @@ Booking Complete
     }
     .items_detail {
       color: $gray-color;
-      letter-spacing: -1px;
       text-align: right;
+    }
+    &.total_points {
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: solid 1px #ddd;
+      .items_detail{
+        color: $body-color;
+        font-weight: 700;
+      }
     }
   }
 }
@@ -5018,6 +5026,11 @@ Booking Complete
         letter-spacing: -1px;
         text-align: left;
       }
+      &.total_points {
+        .items_detail {
+          font-weight: 400;
+        }
+      }
     }
   }
 
@@ -5074,7 +5087,17 @@ Booking Complete
 /*
 Booking Page
 ================================*/
-
+.form-check-input:checked[type=checkbox] {
+  background-image: url(/images/booking/check.svg);
+}
+.btn_radio {
+  .form-check-input {
+    border-radius: 0;
+    &:checked[type=radio] {
+      background-image: url(/images/booking/check.svg);
+    }
+  }
+}
 .booking_container {
   position: relative;
   margin: 100px 0 150px;
@@ -5249,6 +5272,12 @@ Booking Page
       background-size: 14px;
       &.margin_b_80 {
         margin-bottom: 80px;
+      }
+      &.mb_info{
+        display: none;
+      }
+      &.pc_info{
+        display: block;
       }
     }
   }
@@ -5472,12 +5501,24 @@ Booking Page
           flex-grow: 1;
         }
       }
+      .info{
+        &.pc_info{
+          display: none;
+        }
+        &.mb_info{
+          display: block;
+        }
+      }
     }
 
     .booking_form_gruop {
       .item_group {
         flex-direction: column;
         .form_label_input_column {
+          margin: 0 0 50px 0;
+          &.margin_0 {
+            margin: 0;
+          }
         }
       }
     }
@@ -5494,7 +5535,7 @@ Booking Page
 
     .screen {
       .form_item {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         padding-bottom: 0;
       }
       .notice {

@@ -279,6 +279,23 @@ const BookingForm = ({ user, updateReservation }, ref) => {
               >
                 <label>시간 선택</label>
                 <span className="text-danger"> *</span>
+
+                <div className="btn_radio">
+                  <Form.Check
+                    inline
+                    label="1"
+                    name="group1"
+                    type="radio"
+                    id="inline-radio-1"
+                  />
+                  <Form.Check
+                    inline
+                    label="2"
+                    name="group1"
+                    type="radio"
+                    id="inline-radio-2"
+                  />
+                </div>
                 <div className={`d-flex ${styles.inputWrap}`}>
                   <input
                     type="time"
