@@ -430,17 +430,18 @@ Page-navigation
   }
 
   .page-link {
-    color: $main-color;
-    background-color: $white-color;
-    box-shadow: $box-shadow;
     width: 40px;
     height: 40px;
-    border: 1px solid #ffffff;
-    line-height: 40px;
-    transition: $transition;
-    font-weight: 700;
-    border-radius: 10px !important;
     padding: 0;
+    color: $body-color;
+    background-color: #f9f9f9;
+    box-shadow: none;
+    border: 0;
+    line-height: 40px;
+    font-family: $main-font-family-eng;
+    font-size: 14px;
+    font-weight: 700;
+    font-weight: 500;
 
     i {
       margin-right: -4px;
