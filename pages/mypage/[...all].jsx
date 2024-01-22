@@ -49,8 +49,10 @@ const MyPage = ({ user }) => {
   }, []);
 
   useEffect(() => {
+    router.replace("/mypage");
+
     setMenu(router.query.all[0]);
-  }, [router.query.all[0]]);
+  }, []);
 
   return (
     <>
