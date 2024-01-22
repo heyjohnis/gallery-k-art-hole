@@ -86,9 +86,9 @@ export const UserInfo = ({ user, gotoMypageService }) => {
       <div className="point_notice">
         <div className="icon"></div>부킹의 경우 두달 전에도 신청이 가능합니다.
       </div>
-      <div className="point_notice red">
+      {/* <div className="point_notice red">
         <div className="icon"></div>현재 제한 횟수를 넘어서 신청중입니다!
-      </div>
+      </div> */}
     </div>
   );
 };
