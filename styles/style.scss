@@ -6179,6 +6179,21 @@ My Page
 /*
 My Page > 예약확인
 ================================*/
+.no_content {
+  margin-top: 30px;
+  padding: 50px 0;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  p {
+    color: $gray-color;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.14px;
+  }
+
+}
+
 .pc_reser_content {
   .reservation_select_form {
     display: flex;
