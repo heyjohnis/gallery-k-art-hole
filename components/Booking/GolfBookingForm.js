@@ -14,7 +14,10 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
   const handleChange = (e) => {
     const { name } = e.target;
     let value = e.target.value;
-    if (e.target.type === "checkbox") value = e.target.checked;
+    if (e.target.type === "radio") {
+      value = e.target.value;
+      console.log("e.target.checked: ", e.target.value);
+    }
     setForm((prevState) => ({ ...prevState, [name]: value }));
   };
 
@@ -62,8 +65,9 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
               type="radio"
               id="inline-radio-1"
               className="item btn_radio"
+              value="1부"
               onChange={handleChange}
-              checked
+              defaultChecked
             />
             <Form.Check
               label="2부"
@@ -71,6 +75,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
               type="radio"
               id="inline-radio-2"
               className="item btn_radio"
+              value="2부"
               onChange={handleChange}
             />
             <Form.Check
@@ -79,6 +84,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
               type="radio"
               id="inline-radio-3"
               className="item btn_radio"
+              value="무관"
               onChange={handleChange}
             />
           </div>
@@ -127,53 +133,57 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
       <h2>이용자 정보</h2>
       <Form>
         <div className="form_item">
-          <div className='booking_form_gruop'>
+          <div className="booking_form_gruop">
             <div className="item_group">
-              <div className='form_label_input_column'>            
+              <div className="form_label_input_column">
                 <Form.Label>이용자 1</Form.Label>
                 <Form.Control
                   type="text"
                   name="option_name1"
-                  value={form.option_name1}
+                  value={form.option_name1 || ""}
                   placeholder="이름을 입력해주세요."
                   onChange={handleChange}
                 />
-                <p className="info mb_info">무기명 회원인 경우 예약자명을 기입해주세요.</p>
+                <p className="info mb_info">
+                  무기명 회원인 경우 예약자명을 기입해주세요.
+                </p>
               </div>
-              <div className='form_label_input_column'>
+              <div className="form_label_input_column">
                 <Form.Label>이용자 1 연락처</Form.Label>
                 <Form.Control
                   type="text"
                   name="option_phone1"
                   maxLength="15"
-                  value={form?.option_phone1}
+                  value={form?.option_phone1 || ""}
                   placeholder="010-1234-5678"
                   onChange={handleChange}
                 />
                 {/* <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" /> */}
               </div>
             </div>
-            <p className="info pc_info margin_b_80">무기명 회원인 경우 예약자명을 기입해주세요.</p>
+            <p className="info pc_info margin_b_80">
+              무기명 회원인 경우 예약자명을 기입해주세요.
+            </p>
           </div>
-          <div className='booking_form_gruop'>
+          <div className="booking_form_gruop">
             <div className="item_group">
-              <div className='form_label_input_column'>   
+              <div className="form_label_input_column">
                 <Form.Label>이용자 2</Form.Label>
                 <Form.Control
                   type="text"
                   name="option_name2"
-                  value={form.option_name2}
+                  value={form?.option_name2 || ""}
                   placeholder="이름을 입력해주세요."
                   onChange={handleChange}
                 />
               </div>
-              <div className='form_label_input_column margin_0'>   
+              <div className="form_label_input_column margin_0">
                 <Form.Label>이용자 2 연락처</Form.Label>
                 <Form.Control
                   type="text"
                   name="option_phone2"
                   maxLength="15"
-                  value={form?.option_phone2}
+                  value={form?.option_phone2 || ""}
                   placeholder="010-1234-5678"
                   onChange={handleChange}
                 />
