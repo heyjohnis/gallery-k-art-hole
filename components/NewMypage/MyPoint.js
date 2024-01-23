@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { POST } from "../../hooks/restApi";
 import Pagination from "../Pagination";
 
-export default function MyPoint() {
+export default function MyPoint({ user }) {
   const [form, setForm] = useState({});
   const [points, setPoints] = useState([]);
   const [page, setPage] = useState({ currentPage: 1, totalPages: 1 });
@@ -36,7 +36,12 @@ export default function MyPoint() {
       <article className="complete_title mypoint_tit">
         <img src="/images/mypage/ico_mypoint.png" />
         <h2 className="mypoint_headline">사용 가능 포인트</h2>
-        <p className="mypoint_point">1,234,567,890,000 P</p>
+        <p className="mypoint_point">
+          {(
+            (user?.yearly_point || 0) - (user?.use_point || 0)
+          ).toLocaleString()}{" "}
+          P
+        </p>
       </article>
       <section className="mypoint_content">
         <section className="mypoint_info">
@@ -44,23 +49,41 @@ export default function MyPoint() {
           <ul className="mypoint_info_list">
             <li>
               <span className="tit">총 연간 포인트</span>
-              <span className="item">1,234,567,890,000P</span>
+              <span className="item">
+                {parseInt(user?.yearly_point || 0).toLocaleString()} P
+              </span>
             </li>
-            <li>
-              <span className="tit">월별 혜택 횟수</span>
-              <span className="item">월 7회</span>
-            </li>
-            <li>
-              <span className="tit">연간 혜택 횟수</span>
-              <span className="item">연 83회</span>
-            </li>
+            {user.monthly_count > 0 && (
+              <li>
+                <span className="tit">월별 혜택 횟수</span>
+                <span className="item">월 {user.monthly_count}회</span>
+              </li>
+            )}
+            {user.quarterly_count > 0 && (
+              <li>
+                <span className="tit">분기별 혜택 횟수</span>
+                <span className="item">월 {user.quarterly_count}회</span>
+              </li>
+            )}
+            {user.half_yearly_count > 0 && (
+              <li>
+                <span className="tit">반기 혜택 횟수</span>
+                <span className="item">월 {user.half_yearly_count}회</span>
+              </li>
+            )}
+            {user.yearly_count && (
+              <li>
+                <span className="tit">연간 혜택 횟수</span>
+                <span className="item">연 {user.yearly_count}회</span>
+              </li>
+            )}
             <li>
               <span className="tit">시작일</span>
-              <span className="item">2023년 5월 1일</span>
+              <span className="item">{user.start_date}</span>
             </li>
             <li>
               <span className="tit">종료일</span>
-              <span className="item">2028년 4월 30일</span>
+              <span className="item">{user.end_date}</span>
             </li>
           </ul>
         </section>

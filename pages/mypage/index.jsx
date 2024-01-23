@@ -96,7 +96,7 @@ function Mypage({ user }) {
             )}
             {selectedService === "reservation" && <Reservation user={user} />}
             {selectedService === "order" && <Order />}
-            {selectedService === "point" && <MyPoint />}
+            {selectedService === "point" && <MyPoint user={user} />}
             {selectedService === "userInfo" && <Update user={user} />}
           </div>
         </div>
