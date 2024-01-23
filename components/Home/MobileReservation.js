@@ -9,19 +9,19 @@ const IMAGE_LIST = [
     id: 1,
     group: "president K",
     keyword: "명예",
-    img: "/images/mobile/main/president_mo_1.jpg",
+    img: "/images/mobile/main/banner_240123/president_mo_1.jpg",
   },
   {
     id: 2,
     group: "president K",
     keyword: "명예",
-    img: "/images/mobile/main/president_mo_2.jpg",
+    img: "/images/mobile/main/banner_240123/president_mo_2.jpg",
   },
   {
     id: 3,
     group: "president K",
     keyword: "명예",
-    img: "/images/mobile/main/president_mo_3.jpg",
+    img: "/images/mobile/main/banner_240123/president_mo_3.jpg",
   },
 ];
 
