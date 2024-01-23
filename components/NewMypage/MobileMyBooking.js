@@ -4,7 +4,7 @@ import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import { RESV_KIND, RESV_STTS } from "../../utils/cmmCode";
 import ModalReservation from "./ModalReservation";
 import Pagination from "../Pagination";
-import { NoContent } from './NoContent';
+import { NoContent } from "./NoContent";
 
 export default function MobileMyBooking({
   resvData,
@@ -127,8 +127,7 @@ export default function MobileMyBooking({
             ))}
           </ToggleButtonGroup>
         </section>
-        <NoContent/>
-        {/* TODO: 이용내역 없을 때 */}
+        {resvData.length === 0 && <NoContent />}
         <section className="reser_content_list">
           <ul className="reser_list">
             {resvData.map((resv, i) => (
@@ -138,8 +137,9 @@ export default function MobileMyBooking({
                   <span></span>
                   <div className="reser_type_info">
                     <span
-                      className={`label ${reservationLabel[resv.resv_kind || "01"]
-                        }`}
+                      className={`label ${
+                        reservationLabel[resv.resv_kind || "01"]
+                      }`}
                     ></span>
                     <button
                       className={

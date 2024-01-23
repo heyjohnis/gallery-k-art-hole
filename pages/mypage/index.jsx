@@ -5,7 +5,7 @@ import Footer from "../../components/Layouts/Footer";
 import { MyArtwork } from "../../components/NewMypage/MyArtwork";
 import MyContract from "../../components/NewMypage/MyContract";
 import { UserInfo } from "../../components/NewMypage/UserInfo";
-import Point from "../../components/Mypage/Content/Point";
+import MyPoint from "../../components/NewMypage/MyPoint";
 import Order from "../../components/Mypage/Content/Order";
 import Update from "../../components/Mypage/Content/Update";
 import Reservation from "../../components/NewMypage/Reservation";
@@ -96,7 +96,7 @@ function Mypage({ user }) {
             )}
             {selectedService === "reservation" && <Reservation user={user} />}
             {selectedService === "order" && <Order />}
-            {selectedService === "point" && <Point />}
+            {selectedService === "point" && <MyPoint />}
             {selectedService === "userInfo" && <Update user={user} />}
           </div>
         </div>
