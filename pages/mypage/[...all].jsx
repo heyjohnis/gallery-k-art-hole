@@ -49,7 +49,7 @@ const MyPage = ({ user }) => {
   }, []);
 
   useEffect(() => {
-    router.replace("/mypage");
+    router.replace("/");
 
     setMenu(router.query.all[0]);
   }, []);
