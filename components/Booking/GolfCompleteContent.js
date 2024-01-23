@@ -46,10 +46,7 @@ export const GolfCompleteContent = () => {
           </div>
           <div className="complete_content_items">
             <span className="items_item">희망 시간</span>
-            <span className="items_detail">
-              {" "}
-              {form.time1 && "1부"} {form.time2 && "2부"}
-            </span>
+            <span className="items_detail"> {form.time1}</span>
           </div>
           <div className="complete_content_items">
             <span className="items_item">희망 권역</span>

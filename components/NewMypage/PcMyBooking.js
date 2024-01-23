@@ -9,8 +9,8 @@ import { POST } from "../../hooks/restApi";
 import { hyphenForPhone } from "../../utils/number";
 import { REGION_CODE, RESV_KIND } from "../../utils/cmmCode";
 import { REGION_LIST } from "../../data/CommonCode";
-import Pagenation from "../Pagination";
-import { NoContent } from './NoContent';
+import Pagination from "../Pagination";
+import { NoContent } from "./NoContent";
 
 export default function PcMyBooking({
   resvData,
@@ -94,10 +94,10 @@ export default function PcMyBooking({
           <option value="07">이용취소</option>
         </Form.Select>
       </div>
-      <NoContent/>
       {/* TODO: 이용한 내역이 없을 때 */}
       <section>
         <Accordion>
+          {resvData.length === 0 && <NoContent />}
           {resvData.map((resv, i) => (
             <Card key={i}>
               <Card.Header>
@@ -262,7 +262,7 @@ export default function PcMyBooking({
             </Card>
           ))}
         </Accordion>
-        <Pagenation
+        <Pagination
           pageInfo={page}
           gotoPage={getReservationData}
           displayPage={10}

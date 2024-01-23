@@ -98,14 +98,14 @@ const MobileNavbar = ({ user }) => {
                     clip-rule="evenodd"
                     d="M10 9C12.2091 9 14 7.20914 14 5C14 2.79086 12.2091 1 10 1C7.79086 1 6 2.79086 6 5C6 7.20914 7.79086 9 10 9Z"
                     stroke="#333333"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
                   <path
                     d="M1 21C1 16.2136 5.02943 12.3334 10 12.3334C14.9706 12.3334 19 16.2136 19 21"
                     stroke="#333333"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />

@@ -14,9 +14,7 @@ export const GolfBookingAgreement = ({ bookingInfo }) => {
     e.preventDefault();
     if (!isisValidateForm(bookingInfo)) return;
 
-    bookingInfo.hope_time = `${bookingInfo.time1 ? "1부" : ""} ${
-      bookingInfo.time2 ? "2부" : ""
-    }`;
+    bookingInfo.hope_time = bookingInfo.time1;
     bookingInfo.hope_local1 = bookingInfo.region1;
     bookingInfo.hope_local2 = bookingInfo.region2;
     bookingInfo.resv_kind = "01";

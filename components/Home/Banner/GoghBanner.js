@@ -42,7 +42,7 @@ export default function GoghBanner() {
                     <path
                       d="M16 0V50M16 50L1 35.8491M16 50L31 35.8491"
                       stroke="white"
-                      stroke-width="2"
+                      strokeWidth="2"
                     />
                   </svg>
                   <div className={styles.imageWrapTop}>
@@ -79,7 +79,7 @@ export default function GoghBanner() {
                     <path
                       d="M16 0V50M16 50L1 35.8491M16 50L31 35.8491"
                       stroke="white"
-                      stroke-width="2"
+                      strokeWidth="2"
                     />
                   </svg>
                   <div className={styles.imageWrapTop}>
@@ -116,7 +116,7 @@ export default function GoghBanner() {
                     <path
                       d="M16 0V50M16 50L1 35.8491M16 50L31 35.8491"
                       stroke="white"
-                      stroke-width="2"
+                      strokeWidth="2"
                     />
                   </svg>
                   <div className={styles.imageWrapTop}>
