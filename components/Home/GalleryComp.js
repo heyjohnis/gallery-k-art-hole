@@ -11,7 +11,7 @@ const LIST_ITEM_GALLERY = [
     name: "이군우",
     discript:
       "매화가 진채를 만나 새롭게 태어나다! 자개와 칠보 재료를 통해 사대부들의 고결한 정신과 인간세계를 표현하였다.",
-    link: "#",
+    link: "/artworks",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const LIST_ITEM_GALLERY = [
     name: "김복동",
     discript:
       "풍경, 초상, 기독 성화 등을 주요 소재로 자연의 미감을 노래하는 작가",
-    link: "#",
+    link: "/artworks",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const LIST_ITEM_GALLERY = [
     name: "정미애",
     discript:
       "고향에 대한 그리움을 모티브로 담아내는 작가, 프랑스 루브르 박물관 및 그랑팔레 초대 전시 작가 ",
-    link: "#",
+    link: "/artworks",
   },
 ];
 export default function GalleryComp() {
