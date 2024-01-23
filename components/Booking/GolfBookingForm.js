@@ -127,9 +127,9 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
       <h2>이용자 정보</h2>
       <Form>
         <div className="form_item">
-          <div className='booking_form_gruop'>
+          <div className="booking_form_gruop">
             <div className="item_group">
-              <div className='form_label_input_column'>            
+              <div className="form_label_input_column">
                 <Form.Label>이용자 1</Form.Label>
                 <Form.Control
                   type="text"
@@ -138,9 +138,11 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
                   placeholder="이름을 입력해주세요."
                   onChange={handleChange}
                 />
-                <p className="info mb_info">무기명 회원인 경우 예약자명을 기입해주세요.</p>
+                <p className="info mb_info">
+                  무기명 회원인 경우 이용자명을 기입해주세요.
+                </p>
               </div>
-              <div className='form_label_input_column'>
+              <div className="form_label_input_column">
                 <Form.Label>이용자 1 연락처</Form.Label>
                 <Form.Control
                   type="text"
@@ -153,11 +155,13 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
                 {/* <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" /> */}
               </div>
             </div>
-            <p className="info pc_info margin_b_80">무기명 회원인 경우 예약자명을 기입해주세요.</p>
+            <p className="info pc_info margin_b_80">
+              무기명 회원인 경우 이용자명을 기입해주세요.
+            </p>
           </div>
-          <div className='booking_form_gruop'>
+          <div className="booking_form_gruop">
             <div className="item_group">
-              <div className='form_label_input_column'>   
+              <div className="form_label_input_column">
                 <Form.Label>이용자 2</Form.Label>
                 <Form.Control
                   type="text"
@@ -167,7 +171,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
                   onChange={handleChange}
                 />
               </div>
-              <div className='form_label_input_column margin_0'>   
+              <div className="form_label_input_column margin_0">
                 <Form.Label>이용자 2 연락처</Form.Label>
                 <Form.Control
                   type="text"
