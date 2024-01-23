@@ -4,22 +4,16 @@ import { hyphenForCorpNum } from "../../utils/number";
 
 export default function MyContract({ user }) {
   const identity = {
-    president: "president",
-    nobless: "nobless",
-    elite: "elite",
+    president: "/images/mypage/bg_id_president.jpg",
+    noblesse: "/images/mypage/bg_id_noblesse.jpg",
+    elite: "/images/mypage/bg_id_elite.jpg",
   };
 
   return (
     <div>
-      <div className={`mypage_identity ${identity.president}`}>
-        {/* TODO: 사용자 계정에 따라 class 추가 */}
-        <span>
-          {user?.service_group === "01"
-            ? "President K"
-            : user?.service_group === "02"
-            ? "Noblesse K"
-            : "Elite K"}
-        </span>
+      <div className="mypage_identity">
+        <img src={identity.noblesse} alt="회원레벨 이미지"/>
+        {/* TODO: 회원레벨에 따라 이미지 변경 */}
       </div>
       <div className="mypage_content_item">
         <h2>나의 계약</h2>

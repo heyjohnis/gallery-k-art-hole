@@ -5901,26 +5901,11 @@ My Page
 .content_items {
   margin-bottom: 120px;
   .mypage_identity {
-    padding: 35px 50px;
+    overflow: hidden;
     margin-bottom: 20px;
-    background: center / cover no-repeat url(/images/mypage/bg_id_elite.png);
     border-radius: 10px;
-    span {
-      color: $white-color;
-      font-family: $main-font-family-eng;
-      font-size: 40px;
-      font-weight: 700;
-      line-height: normal;
-      letter-spacing: -0.4px;
-    }
-    &.president {
-      background-image: url(/images/mypage/bg_id_elite.png);
-    }
-    &.noblesse {
-      background: #eee;
-    }
-    &.elite {
-      background: #ccc;
+    img {
+      width: 100%;
     }
   }
   .mypage_content_item {
@@ -6085,15 +6070,15 @@ My Page
           top: 76px;
           z-index: -1;
           background: center / cover no-repeat
-            url(/images/mypage/bg_id_elite.png);
+            url(/images/mypage/bg_id_elite_m.jpg);
           &.president {
-            background-image: url(/images/mypage/bg_id_elite.png);
+            background-image: url(/images/mypage/bg_id_president_m.jpg);
           }
           &.noblesse {
-            background: #eee;
+            background: url(/images/mypage/bg_id_noblesse_m.jpg);
           }
           &.elite {
-            background: #ccc;
+            background: url(/images/mypage/bg_id_elite_m.jpg);
           }
           span {
             margin-left: 37px;

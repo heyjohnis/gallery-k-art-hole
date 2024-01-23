@@ -18,7 +18,7 @@ const userLevel = {
 export const UserInfo = ({ user, gotoMypageService }) => {
   const identity = {
     president: "president",
-    nobless: "nobless",
+    noblesse: "noblesse",
     elite: "elite",
   };
   useEffect(() => {
@@ -27,7 +27,7 @@ export const UserInfo = ({ user, gotoMypageService }) => {
 
   return (
     <div className={userLevel[user?.membership || "green"]}>
-      <div className={`mypage_identity ${identity.president}`}>
+      <div className={`mypage_identity ${identity.noblesse}`}>
         {/* TODO: 사용자 계정에 따라 class 추가 */}
         <span>
           {user?.service_group === "01"
