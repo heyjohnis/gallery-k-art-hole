@@ -5588,7 +5588,7 @@ My Page
   justify-content: space-between;
   width: 100%;
   padding: 0;
-  margin: 100px 0 80px;
+  margin: 100px 0 50px;
   list-style: none;
   li {
     width: 100%;
@@ -6823,9 +6823,46 @@ My Page > 예약확인
 /*
 My Page > 포인트 이용내역
 ================================*/
+
+.mb_reser_filter {
+  display: flex;
+  flex-direction: column;
+  .btn-group {
+    margin-bottom: 10px;
+    overflow-x: scroll;
+    .btn_filter {
+      display: inline-table;
+      white-space: nowrap;
+      min-width: 46px;
+      margin-right: 10px;
+      padding: 8px 12px;
+      background: #eee;
+      border: 0;
+      border-radius: 20px;
+      color: $gray-color;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: -0.12px;
+    }
+    .btn-check:checked + .btn {
+      background: $sub-color;
+      color: $white-color;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+    border-radius: 20px;
+    border: 0;
+  }
+}
+
 .mypoint_container {
   h1 {
-    display: none;
+    margin: 0 0 40px 0;
     color: $body-color;
     font-size: 30px;
     font-weight: 700;
@@ -6834,15 +6871,10 @@ My Page > 포인트 이용내역
 
   .mypoint_info {
     padding: 20px 50px;
-    margin-bottom: 80px;
-    background: #eee;
-    h3 {
-      display: none;
-      color: $body-color;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: -0.16px;
-    }
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
     .mypoint_info_list {
       padding: 0;
       margin: 0;
@@ -6864,7 +6896,30 @@ My Page > 포인트 이용내역
       }
     }
   }
-
+  .mypoint_filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .mb_reser_filter {
+      display: none;
+    }
+    .period {
+      margin-right: 30px;
+      color: $gray-color;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: -0.16px;
+    }
+    .form-select{
+      width: 128px;
+      padding: 12px 20px;
+      border-radius: 5px;
+      background-color: #eee;
+      color: $body-color;
+      font-size: 16px;
+      letter-spacing: -1px;
+    }
+  }
   .mypoint_history {
     h3 {
       color: $body-color;
@@ -6933,8 +6988,7 @@ My Page > 포인트 이용내역
 @media only screen and (max-width: 991px) {
   .mypoint_container {
     h1 {
-      display: block;
-      margin: 50px 0 0;
+      margin: 30px 0;
     }
     .complete_title.mypoint_tit {
       margin: 50px 0 90px;
@@ -6960,6 +7014,24 @@ My Page > 포인트 이용내역
               letter-spacing: -0.12px;
             }
           }
+        }
+      }
+      .mypoint_filter {
+        flex-direction: column;
+        align-items: flex-start;
+        .mb_reser_filter {
+          display: flex;
+          margin: 20px 0;
+        }
+        .period {
+          margin: 0 0 20px 0;
+          color: $gray-color;
+          font-size: 14px;
+          font-weight: 400;
+          letter-spacing: -0.14px;
+        }
+        .form-select{
+          display: none;
         }
       }
       .mypoint_history {
