@@ -123,7 +123,7 @@ export default function ServiceComp({ user, serviceGroup }) {
             <div style={{ marginTop: "30px" }}>
               <Link
                 href={
-                  tabMenu === "third"
+                  tabMenu === "first"
                     ? "/ggmall/list/tour/"
                     : tabMenu === "second"
                     ? "/ggmall/list/shop/"
