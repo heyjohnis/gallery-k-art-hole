@@ -3,6 +3,11 @@ import Link from "next/link";
 
 const Footer = () => {
   // const currentYear = new Date().getFullYear();
+
+  const handleSelect = (e) => {
+    window.open(e.target.value);
+  };
+
   return (
     <>
       <footer className="footer-top-area footer">
@@ -18,8 +23,11 @@ const Footer = () => {
 
                 <div className="selectbox-wrap">
                   <div className="selectbox">
-                    <select name="selectSite" id="">
+                    <select name="selectSite" id="" onChange={handleSelect}>
                       <option value="">FAMILY SITE</option>
+                      <option value="https://www.artnomics.co.kr/">
+                        아트노믹스
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -33,11 +41,19 @@ const Footer = () => {
             <div className="center-wrap">
               <div className="single-widget tel_service">
                 <div className="contact-wrap">
-                  <Link className="sns-link" href="/" target="_blank">
+                  <Link
+                    className="sns-link"
+                    href="https://www.instagram.com/green_gallery_official"
+                    target="_blank"
+                  >
                     INSTAGRAM
                   </Link>
                   <br />
-                  <Link className="sns-link" href="/" target="_blank">
+                  <Link
+                    className="sns-link"
+                    href="https://www.youtube.com/@GREENGALLERY072"
+                    target="_blank"
+                  >
                     YOUTUBE
                   </Link>
                   <br />
