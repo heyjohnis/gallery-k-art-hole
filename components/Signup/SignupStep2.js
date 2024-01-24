@@ -12,12 +12,10 @@ export default function SignupStep2({ form, setForm }) {
     ) {
       alert("비밀번호가 일치하지 않습니다.");
       e.target.value = "";
-      e.target.focus();
       return;
     } else if (name === "password" && value.length < 8) {
       alert("비밀번호는 8자리 이상이어야 합니다.");
       e.target.value = "";
-      e.target.focus();
       return;
     }
     setForm((prevState) => ({ ...prevState, [name]: value }));
