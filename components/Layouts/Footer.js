@@ -5,7 +5,9 @@ const Footer = () => {
   // const currentYear = new Date().getFullYear();
 
   const handleSelect = (e) => {
-    window.open(e.target.value);
+    if (e.target.value) {
+      window.open(e.target.value);
+    }
   };
 
   return (
