@@ -23,3 +23,15 @@ export function nowDateFormat() {
 
   return today;
 }
+
+export function dateToString(now) {
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1 + "";
+  const date = now.getDate() + "";
+  const hour = now.getHours() + "";
+  const min = now.getMinutes() + "";
+  const sec = now.getSeconds() + "";
+  const today = `${year}-${month.padStart(2, "0")}-${date.padStart(2, "0")}`;
+
+  return today;
+}

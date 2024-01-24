@@ -2,14 +2,17 @@ import React, { useState, useEffect } from "react";
 import { POST } from "../../hooks/restApi";
 import Pagination from "../Pagination";
 import Form from "react-bootstrap/Form";
-import { NoContent } from './NoContent';
+import { NoContent } from "./NoContent";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
+import { dateToString } from "../../utils/dateUtil";
 
 export default function MyPoint({ user }) {
   const [form, setForm] = useState({});
   const [points, setPoints] = useState([]);
   const [page, setPage] = useState({ currentPage: 1, totalPages: 1 });
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
   const getPointData = (currentPage = 1) => {
     POST("/points/paging", {
@@ -21,6 +24,38 @@ export default function MyPoint({ user }) {
       setPage(data?.pagination || {});
       setPoints(data?.list || []);
     });
+  };
+
+  const handleChangeToggleButton = (value) => {
+    const dates = setSearchDate(value);
+    setForm({ ...form, ...dates });
+  };
+
+  const handleChange = (e) => {
+    const dates = setSearchDate(e.target.value);
+    setForm({ ...form, ...dates });
+  };
+
+  const setSearchDate = (term) => {
+    if (!term) {
+      setStartDate("");
+      setEndDate("");
+      return {
+        start_date: "",
+        end_date: "",
+      };
+    }
+    const now = new Date();
+    const start_date = dateToString(
+      new Date(now.setMonth(now.getMonth() - term))
+    );
+    setStartDate(start_date);
+    const end_date = dateToString(new Date());
+    setEndDate(end_date);
+    return {
+      start_date,
+      end_date,
+    };
   };
 
   useEffect(() => {
@@ -37,146 +72,127 @@ export default function MyPoint({ user }) {
   return (
     <div className="mypoint_container">
       <h1>포인트 이용내역</h1>
-      {/* <article className="complete_title mypoint_tit">
-        <img src="/images/mypage/ico_mypoint.png" />
-        <h2 className="mypoint_headline">사용 가능 포인트</h2>
-        <p className="mypoint_point">
-          {(
-            (user?.yearly_point || 0) - (user?.use_point || 0)
-          ).toLocaleString()}{" "}
-          P
-        </p>
-      </article> */}
+
       <section className="mypoint_content">
         <section className="mypoint_info">
           <ul className="mypoint_info_list">
             {/* TODO: 내용바뀜 */}
             <li>
               <span className="tit">지급 포인트</span>
-              <span className="item">1,000,000,000 P</span>
+              <span className="item">{user?.yearly_point} P</span>
             </li>
             <li>
               <span className="tit">총 사용 포인트</span>
-              <span className="item">- 7,500,000 P</span>
+              <span className="item">{user?.use_point} P</span>
             </li>
             <li>
               <span className="tit">잔여 포인트</span>
               <span className="item">992,500,0000 P</span>
             </li>
-            {/* <li>
+            <li>
               <span className="tit">총 연간 포인트</span>
               <span className="item">
                 {parseInt(user?.yearly_point || 0).toLocaleString()} P
               </span>
             </li>
-            {user.monthly_count > 0 && (
-              <li>
-                <span className="tit">월별 혜택 횟수</span>
-                <span className="item">월 {user.monthly_count}회</span>
-              </li>
-            )}
-            {user.quarterly_count > 0 && (
-              <li>
-                <span className="tit">분기별 혜택 횟수</span>
-                <span className="item">월 {user.quarterly_count}회</span>
-              </li>
-            )}
-            {user.half_yearly_count > 0 && (
-              <li>
-                <span className="tit">반기 혜택 횟수</span>
-                <span className="item">월 {user.half_yearly_count}회</span>
-              </li>
-            )}
-            {user.yearly_count && (
-              <li>
-                <span className="tit">연간 혜택 횟수</span>
-                <span className="item">연 {user.yearly_count}회</span>
-              </li>
-            )}
-            <li>
-              <span className="tit">시작일</span>
-              <span className="item">{user.start_date}</span>
-            </li>
-            <li>
-              <span className="tit">종료일</span>
-              <span className="item">{user.end_date}</span>
-            </li> */}
           </ul>
         </section>
-        <section className='mypoint_filter'>
+        <section className="mypoint_filter">
           <section className="mb_reser_filter">
             <ToggleButtonGroup
               type="radio"
               name="term"
               defaultValue=""
+              onChange={handleChangeToggleButton}
             >
               <ToggleButton id="period-radio-1" value="" className="btn_filter">
                 전체
               </ToggleButton>
-              <ToggleButton id="period-radio-2" value="30" className="btn_filter">
+              <ToggleButton
+                id="period-radio-2"
+                value="1"
+                className="btn_filter"
+              >
                 1개월
               </ToggleButton>
-              <ToggleButton id="period-radio-3" value="90" className="btn_filter">
+              <ToggleButton
+                id="period-radio-3"
+                value="3"
+                className="btn_filter"
+              >
                 3개월
-              </ToggleButton>
-              <ToggleButton id="period-radio-3" value="180" className="btn_filter">
-                6개월
               </ToggleButton>
               <ToggleButton
                 id="period-radio-4"
-                value="365"
+                value="6"
+                className="btn_filter"
+              >
+                6개월
+              </ToggleButton>
+              <ToggleButton
+                id="period-radio-5"
+                value="12"
                 className="btn_filter"
               >
                 1년
               </ToggleButton>
               <ToggleButton
-                id="period-radio-5"
-                value="1095"
+                id="period-radio-6"
+                value="36"
                 className="btn_filter"
               >
                 3년
               </ToggleButton>
             </ToggleButtonGroup>
           </section>
-          <div className='period'>기준일자 : 2024-01-17 ~ 2024-02-16</div>
-          <Form.Select
-            aria-label="사용기간"
-          >
+          <div className="period">
+            기준일자 : {startDate ? `${startDate} ~ ${endDate}` : "전체"}
+          </div>
+          <Form.Select aria-label="사용기간" onChange={handleChange}>
             <option value="">사용기간</option>
             <option value="">전체</option>
-            <option value="30">1개월</option>
-            <option value="90">3개월</option>
-            <option value="365">6개월</option>
-            <option value="1095">1년</option>
-            <option value="1095">3년</option>
+            <option value="1">1개월</option>
+            <option value="3">3개월</option>
+            <option value="6">6개월</option>
+            <option value="12">1년</option>
+            <option value="36">3년</option>
           </Form.Select>
         </section>
-        {/* TODO: 필터 추가됨 */}
-        <NoContent/>
-        {/* TODO: 이용내역이 없을 경우 */}
         <section className="mypoint_history">
-          <ul className="mypoint_history_list">
-            {points.map((item, i) => (
-              <li key={i}>
-                <article className="mypoint_history_items">
-                  <span className={`label ${statuslabelColor(item)}`}>
-                    {item.resv_status_name || item.order_status_name}
-                  </span>
-                  <div className="item">
-                    <h4>
-                      [{item.point_type_name}] {item.pd_name || item.resv_place}
-                    </h4>
-                    <p>사용일시 : {item.point_date}</p>
-                  </div>
-                </article>
-                <div className="mypoint_history_amount">
-                  {((item.point || 0) * -1).toLocaleString()} P
-                </div>
-              </li>
-            ))}
-          </ul>
+          <h3>포인트 이용내역</h3>
+          {points.length === 0 ? (
+            <NoContent />
+          ) : (
+            <>
+              <ul className="mypoint_history_list">
+                {points.map((item, i) => (
+                  <li key={i}>
+                    <article className="mypoint_history_items">
+                      <span className={`label ${statuslabelColor(item)}`}>
+                        {item.resv_status_name || item.order_status_name}
+                      </span>
+                      <div className="item">
+                        <h4>
+                          [{item.point_type_name}]{" "}
+                          {item.pd_name || item.resv_place}
+                        </h4>
+                        <p>사용일시 : {item.point_date}</p>
+                      </div>
+                    </article>
+                    <div className="mypoint_history_amount">
+                      {((item.point || 0) * -1).toLocaleString()} P
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <Pagination
+                pageInfo={page}
+                gotoPage={getPointData}
+                displayPage={10}
+              />
+            </>
+          )}
         </section>
-        <Pagination pageInfo={page} gotoPage={getPointData} displayPage={10} />
       </section>
     </div>
   );
