@@ -14,6 +14,7 @@ export default function GgshoppingListItems({ items }) {
               <h3>{item.pd_name}</h3>
               <p>{item.brand}</p>
               <div className={`product_price_info ${productSale}`}>
+                {/* TODO 세일 %가 0일때 추가 ${productSale}*/}
                 <span className="label_sale">SALE</span>
                 <span className="product_sales">{item.discount_rate}% </span>
                 <span className="product_price">
