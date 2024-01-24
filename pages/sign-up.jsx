@@ -54,7 +54,16 @@ export default function SignUp() {
     if (idx === 0) {
       isValidate = first_name && last_name && mobile && email ? true : false;
     } else if (idx === 1) {
-      isValidate = login_id && password && confirm_password ? true : false;
+      if (login_id && password && confirm_password) {
+        if (password !== confirm_password) {
+          alert("비밀번호가 일치하지 않습니다.");
+          isValidate = false;
+        } else {
+          isValidate = true;
+        }
+      } else {
+        isValidate = false;
+      }
     } else if (idx === 2) {
       isValidate = true;
     } else if (idx === 3) {
