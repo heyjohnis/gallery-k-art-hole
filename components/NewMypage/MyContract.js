@@ -12,7 +12,7 @@ export default function MyContract({ user }) {
   return (
     <div>
       <div className="mypage_identity">
-        <img src={identity.noblesse} alt="회원레벨 이미지"/>
+        <img src={identity.president} alt="회원레벨 이미지" />
         {/* TODO: 회원레벨에 따라 이미지 변경 */}
       </div>
       <div className="mypage_content_item">
