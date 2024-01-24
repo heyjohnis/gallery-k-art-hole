@@ -79,20 +79,23 @@ export default function MyPoint({ user }) {
             {/* TODO: 내용바뀜 */}
             <li>
               <span className="tit">지급 포인트</span>
-              <span className="item">{user?.yearly_point} P</span>
+              <span className="item">
+                {parseInt(user?.yearly_point || 0).toLocaleString()} P
+              </span>
             </li>
             <li>
               <span className="tit">총 사용 포인트</span>
-              <span className="item">{user?.use_point} P</span>
+              <span className="item">
+                {(user?.use_point || 0).toLocaleString()} P
+              </span>
             </li>
             <li>
               <span className="tit">잔여 포인트</span>
-              <span className="item">992,500,0000 P</span>
-            </li>
-            <li>
-              <span className="tit">총 연간 포인트</span>
               <span className="item">
-                {parseInt(user?.yearly_point || 0).toLocaleString()} P
+                {(
+                  parseInt(user?.yearly_point || 0) - (user?.use_point || 0)
+                ).toLocaleString()}{" "}
+                P
               </span>
             </li>
           </ul>
