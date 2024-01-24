@@ -4,9 +4,9 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 import Link from "next/link";
-import PageBreadCrumb from '../Common/PageBreadCrumb';
-import { ContactItem } from './ContactItem';
-import ContactFaq from './ContactFaq';
+import PageBreadCrumb from "../Common/PageBreadCrumb";
+import { ContactItem } from "./ContactItem";
+import ContactFaq from "./ContactFaq";
 
 const alertContent = () => {
   MySwal.fire({
@@ -113,18 +113,14 @@ const ContactForm = () => {
               itemNumber="04"
               itemTitle="홍보ㆍPR 문의"
               itemText="그린갤러리 홍보 및 PR 관련 문의"
-              />
+            />
           </div>
           <div className="col-md-12">
-          
-          <ContactFaq
+            <ContactFaq question="04" answer="홍보ㆍPR 문의" />
+            {/* <ContactFaq
                         question="04"
                         answer="홍보ㆍPR 문의"
-          />
-                    <ContactFaq
-                        question="04"
-                        answer="홍보ㆍPR 문의"
-          />
+          /> */}
           </div>
 
           <div className="col-md-12">
