@@ -35,11 +35,12 @@ const MainListWrap = ({ items }) => {
                         ? `가격별도문의`
                         : commaFormat(item?.price) + "P"}
                     </span>
-                    {item?.discount !== 0 && (
-                      <span className={styles.discountPoint}>
-                        {item?.discount}P
-                      </span>
-                    )}
+                    {item?.origin_price !== 0 &&
+                      item?.origin_price !== item?.price && (
+                        <span className={styles.discountPoint}>
+                          {commaFormat(item?.origin_price)}P
+                        </span>
+                      )}
                   </div>
                 </div>
               </Link>
