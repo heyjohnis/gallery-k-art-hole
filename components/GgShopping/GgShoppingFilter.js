@@ -2,6 +2,7 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 
 export default function GgShoppingFilter() {
+
   return (
     <div className='shopping_filter'>
       <h2 className='total'>전체</h2>

@@ -7240,6 +7240,62 @@ Shopping
   }
 }
 
+.shopping_detail {
+  width: 100%;
+  padding: 0;
+  .product_img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .product_sale_info {
+    padding: 130px 0 0 150px;
+    .product_brand {
+      margin-bottom: 10px;
+      color: $gray-color;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: -0.3px;
+    }
+    .product_name{
+      margin-bottom: 30px;
+      color: $body-color;
+      font-size: 36px;
+      font-weight: 500;
+      letter-spacing: -1.5px;
+    }
+    .product_keyword {
+      display: flex;
+      align-items: center;
+      color: $gray-color;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: -1px;
+      .keyword_label {
+        margin-right: 10px;
+        padding: 6px 15px;
+        color: #999;
+        font-weight: 400;
+        border-radius: 30px;
+        border: 1px solid #ddd;
+        background: $white-color;
+        line-height: normal;
+      }
+      ul{
+        padding:0;
+        margin:0;
+        display: flex;
+        list-style: none;
+        li {
+
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1466px) and (min-width: 1400px) {
   .shopping_list_container {
     .items {
