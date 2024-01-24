@@ -24,7 +24,13 @@ const ArtworkCard = ({ artwork }) => {
           <h2>{artwork.atst_nm}</h2>
           <h3>{(artwork.atwk_nm || "").replace("(KK)", "")}</h3>
           <p>
-            <span className="price">{commaFormat(artwork.atwk_pric)}</span>원
+            <span className="price">
+              {commaFormat(
+                (artwork?.atwk_size_per_pric || 0) *
+                  (artwork?.atwk_size_no || 0)
+              )}
+            </span>
+            원
           </p>
         </div>
         <Link className="default-btn" href={`/artworks/${artwork.atwk_no}`}>
