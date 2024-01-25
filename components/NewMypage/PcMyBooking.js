@@ -132,6 +132,15 @@ export default function PcMyBooking({
                     <article>
                       <h3>{RESV_KIND[resv?.resv_kind]}</h3>
                       <span>
+                        {["01", "05"].includes(resv?.resv_stts) && (
+                          <span>
+                            {resv.resv_stts === "01"
+                              ? "담당자 확인 중"
+                              : "예약 진행중"}
+                          </span>
+                        )}
+                      </span>
+                      <span>
                         예약자명 : <span>{resv.resv_user_name}</span>
                       </span>
                       {resv.resv_place && (
@@ -146,7 +155,10 @@ export default function PcMyBooking({
                       )}
                       {resv.resv_point && (
                         <span>
-                          사용포인트 : <span>{resv.resv_point}</span>
+                          사용포인트 :{" "}
+                          <span>
+                            {(resv.resv_point || 0).toLocaleString()} P
+                          </span>
                         </span>
                       )}
                     </article>
@@ -212,7 +224,7 @@ export default function PcMyBooking({
                         </ul>
                       </li>
                     )}
-                    {resv.hope_date && (
+                    {resv.hope_date && resv.resv_kind === "01" && (
                       <li className="reser_detail_items">
                         <h4>골프장 정보</h4>
                         <ul className="reser_detail_info">

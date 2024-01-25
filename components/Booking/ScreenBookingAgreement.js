@@ -28,6 +28,7 @@ export const ScreenBookingAgreement = ({ bookingInfo }) => {
     bookingInfo.total_pay_point = totalPayPoint;
     bookingInfo.use_point = form.use_point || usePoint;
     bookingInfo.resv_kind = "02";
+    bookingInfo.resv_name = "스크린 골프 포인트 서비스";
     POST("/reservation/request", bookingInfo).then((res) => {
       if (res.status === 200) {
         bookingInfo.resv_no = res.data.insertId;

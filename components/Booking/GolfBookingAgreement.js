@@ -18,6 +18,7 @@ export const GolfBookingAgreement = ({ bookingInfo }) => {
     bookingInfo.hope_local1 = bookingInfo.region1;
     bookingInfo.hope_local2 = bookingInfo.region2;
     bookingInfo.resv_kind = "01";
+    bookingInfo.resv_name = "골프장 예약 신청";
     POST("/reservation/request", bookingInfo)
       .then((res) => {
         if (res.status === 200) {

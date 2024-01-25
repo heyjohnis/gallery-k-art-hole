@@ -29,11 +29,22 @@ export default function Reservation({ user }) {
         console.log("data: ", data);
         alert("예약이 취소되었습니다.");
         getReservationData();
-        location.reload();
       })
       .catch((error) => {
         console.log("error: ", error);
       });
+  };
+
+  const setResvStatusStr = (resv) => {
+    if (resv.resv_stts === "01") return "담당자 확인중";
+    else if (resv.resv_stts === "05") return "예약 진행중";
+    else if (resv.resv_stts === "04")
+      return `예약확정일 : ${resv.resv_date || resv.hope_date}`;
+    else if (resv.resv_stts === "02") return "이용 완료";
+    else if (resv.resv_stts === "03") return "예약 취소";
+    else if (resv.resv_stts === "07") return "이용 취소";
+    else if (resv.resv_stts === "06") return "지급 완료";
+    else return "";
   };
 
   useEffect(() => {
@@ -67,6 +78,7 @@ export default function Reservation({ user }) {
   ) : (
     <PcMyBooking
       resvData={resvData}
+      setResvStatusStr={setResvStatusStr}
       setSearchData={setForm}
       cancelReservation={cancelReservation}
       getReservationData={getReservationData}

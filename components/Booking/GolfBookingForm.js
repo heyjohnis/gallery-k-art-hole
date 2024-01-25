@@ -136,7 +136,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
           <div className="booking_form_gruop">
             <div className="item_group">
               <div className="form_label_input_column">
-                <Form.Label>이용자 1</Form.Label>
+                <Form.Label>이름</Form.Label>
                 <Form.Control
                   type="text"
                   name="option_name1"
@@ -149,7 +149,7 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
                 </p>
               </div>
               <div className="form_label_input_column">
-                <Form.Label>이용자 1 연락처</Form.Label>
+                <Form.Label>연락처</Form.Label>
                 <Form.Control
                   type="text"
                   name="option_phone1"
@@ -158,38 +158,11 @@ const GolfBookingForm = ({ setBookingInfo, user }) => {
                   placeholder="010-1234-5678"
                   onChange={handleChange}
                 />
-                {/* <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" /> */}
               </div>
             </div>
             <p className="info pc_info margin_b_80">
               무기명 회원인 경우 예약자명을 기입해주세요.
             </p>
-          </div>
-          <div className="booking_form_gruop">
-            <div className="item_group">
-              <div className="form_label_input_column">
-                <Form.Label>이용자 2</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="option_name2"
-                  value={form?.option_name2 || ""}
-                  placeholder="이름을 입력해주세요."
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form_label_input_column margin_0">
-                <Form.Label>이용자 2 연락처</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="option_phone2"
-                  maxLength="15"
-                  value={form?.option_phone2 || ""}
-                  placeholder="010-1234-5678"
-                  onChange={handleChange}
-                />
-                {/* <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" /> */}
-              </div>
-            </div>
           </div>
         </div>
       </Form>

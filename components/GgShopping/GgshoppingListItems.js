@@ -1,11 +1,21 @@
 import React from "react";
+import { useRouter } from "next/router";
 export default function GgshoppingListItems({ items }) {
+  const router = useRouter();
   const productSale = "sale";
+
+  const gotoDetail = (id) => {
+    router.push(`/ggshoping/${id}`);
+  };
 
   return (
     <div className="shopping_list_container row">
       {items?.map((item, i) => (
-        <div key={i} className="col-xxl-3 col-lg-4">
+        <div
+          key={i}
+          className="col-xxl-3 col-lg-4"
+          onClick={() => gotoDetail(item.pd_no)}
+        >
           <div className="items">
             <div className="list_img">
               <img src={`${item.thumb_img}`} alt="상품사진" />

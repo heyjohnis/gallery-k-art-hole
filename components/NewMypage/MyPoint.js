@@ -177,7 +177,7 @@ export default function MyPoint({ user }) {
                       <div className="item">
                         <h4>
                           [{item.point_type_name}]{" "}
-                          {item.pd_name || item.resv_place}
+                          {item.pd_name || item.resv_place || item.resv_name}
                         </h4>
                         <p>사용일시 : {item.point_date}</p>
                       </div>
