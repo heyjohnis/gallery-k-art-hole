@@ -34,7 +34,7 @@ export default function Index({ user }) {
     <>
       <div className={`${styles.mainContainer}`}>
         <MobileReservation user={user} />
-        <MobileHomeItems />
+        <MobileHomeItems user={user} />
         <MobileGallery />
       </div>
       <Footer />

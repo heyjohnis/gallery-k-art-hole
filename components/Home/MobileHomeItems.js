@@ -133,14 +133,19 @@ const LIST_ITEM_PREMIUM = [
     link: "/login/",
   },
 ];
-export default function MobileHomeItems() {
+export default function MobileHomeItems({ user }) {
   const [tabMenu, setTabMenu] = useState("first");
   const [tourRecommoed, setTourRecommend] = React.useState([]);
   const [shopRecommend, setShopRecommend] = React.useState([]);
   const [serviceRecommend, setServiceRecommend] = React.useState([]);
 
   const getRandService = (pd_kind) => {
-    POST("/mall/rand", { pd_kind, limit_cnt: 3 }).then((res) => {
+    POST("/mall/rand", {
+      pd_kind,
+      limit_cnt: 3,
+      membership: user?.membership,
+      service_group: user?.service_group || "01",
+    }).then((res) => {
       console.log(res.data);
       const items = res?.data.map((item) => {
         return { ...item, ...calcDiscount(item.origin_price, item.price) };
