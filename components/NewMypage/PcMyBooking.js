@@ -153,7 +153,7 @@ export default function PcMyBooking({
                           예약확정일 : <span>{resv.resv_date}</span>
                         </span>
                       )}
-                      {resv.resv_point && (
+                      {resv?.resv_point > 0 && (
                         <span>
                           사용포인트 :{" "}
                           <span>
