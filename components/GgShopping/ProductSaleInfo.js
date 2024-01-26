@@ -1,7 +1,11 @@
 import React from 'react';
+import { Table } from 'react-bootstrap';
 import Form from "react-bootstrap/Form";
 
 export const ProductSaleInfo = () => {
+
+  const productSale = "sale";
+
   return (
     <section className='product_sale_info'>
       <span className='product_brand'>BOGNER</span>
@@ -15,21 +19,24 @@ export const ProductSaleInfo = () => {
           <li>캐디백</li>
         </ul>
       </div>
-      <div className='price_info'>
+      <div className={`price_info ${productSale}`}>
+        {/* TODO: 세일 0%일때  ${productSale} 추가 */}
         <span className='discount_rate'>10%</span>
         <span className='price_original'>530,000 P</span>
-        <span className='price_discount'>398,000 P</span>
+        <span className='discount_price'>398,000 P</span>
       </div>
-      <ul className='delivery_notice'>
-        <li>
-          <span>배송비</span>
-          <p>제주도를 포함한 도서/산간지역은 추가배송비 1,000포인트 차감</p>
-        </li>
-        <li>
-          <span>배송예정</span>
-          <p>5일 이내 출고(주말, 공휴일 제외) / 본 상품은 자체배송상품이 아닙니다.</p>
-        </li>
-      </ul>
+      <Table className='delivery_notice'>
+        <tbody>
+          <tr>
+            <th>배송비</th>
+            <td>제주도를 포함한 도서/산간지역은 추가배송비 1,000포인트 차감</td>
+          </tr>
+          <tr>
+            <th>배송예정</th>
+            <td>5일 이내 출고(주말, 공휴일 제외) / 본 상품은 자체배송상품이 아닙니다.</td>
+          </tr>
+        </tbody>
+      </Table>
       <div className="form_item">
           <label>수량</label>
           <div key="product" className="item_group">
@@ -68,9 +75,9 @@ export const ProductSaleInfo = () => {
             />
           </div>
         </div>
-        <div className='shopping_btn'>
-          <button className='btn_cart'>장바구니</button>
-          <button className='btn_order'>주문하기</button>
+        <div className='shopping_btn row'>
+          <button className='btn_cart col-5'>장바구니</button>
+          <button className='btn_order col-5'>주문하기</button>
         </div>
     </section>
   )
