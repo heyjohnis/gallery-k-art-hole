@@ -27,8 +27,19 @@ export const UserInfo = ({ user, gotoMypageService }) => {
 
   return (
     <div className={userLevel[user?.membership || "green"]}>
-      <div className={`mypage_identity ${identity.noblesse}`}>
-        {/* TODO: 사용자 계정에 따라 class 추가 */}
+      <div
+        className={`mypage_identity ${
+          user?.service_group === "01"
+            ? identity.president
+            : user?.service_group === "02"
+            ? identity.noblesse
+            : identity.elite
+        }`}
+      >
+        {/* 
+          TODO: 사용자 계정에 따라 class 추가 
+          20240126 JH: 그룹에 따라 이미지 변경되도록 수정
+        */}
         <span>
           {user?.service_group === "01"
             ? "President K"

@@ -2,6 +2,17 @@ import React from "react";
 import Link from "next/link";
 import { hyphenForCorpNum } from "../../utils/number";
 
+const userLevel = {
+  green: "level_green",
+  blue: "level_blue",
+  red: "level_red",
+  purple: "level_purple",
+  black: "level_black",
+  platinum: "level_platinum",
+  female: "gender_female",
+  male: "gender_male",
+};
+
 export default function MyContract({ user }) {
   const identity = {
     president: "/images/mypage/bg_id_president.jpg",
@@ -12,16 +23,32 @@ export default function MyContract({ user }) {
   return (
     <div>
       <div className="mypage_identity">
-        <img src={identity.president} alt="회원레벨 이미지" />
-        {/* TODO: 회원레벨에 따라 이미지 변경 */}
+        <img
+          src={
+            user?.service_group === "01"
+              ? identity.president
+              : user?.service_group === "02"
+              ? identity.noblesse
+              : identity.elite
+          }
+          alt="회원레벨 이미지"
+        />
+        {/* 
+          TODO: 회원레벨에 따라 이미지 변경 
+          20240126 JH: 그룹에 따라 이미지 변경되도록 수정, 등급에 따라 등급명 폰트 색상 변경되도록 수정
+        */}
       </div>
       <div className="mypage_content_item">
         <h2>나의 계약</h2>
         <div className="contract_content">
           <div className="contract_info">
             <div className="membership_tit">멤버쉽</div>
-            <div className="membership_name">
-              <span className="bigger">
+            <div
+              className={`membership_name ${
+                userLevel[user?.membership || "green"]
+              }`}
+            >
+              <span className={`bigger`}>
                 {user?.membership?.replace(/\b[a-z]/, (letter) =>
                   letter.toUpperCase()
                 )}
