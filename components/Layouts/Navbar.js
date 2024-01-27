@@ -198,8 +198,8 @@ const Navbar = ({ user }) => {
                 <Link
                   href="/ggmall/list/service"
                   className={`nav-link ${
-                    (currentPath.indexOf("/ggmall/list/") > -1 ||
-                      currentPath.indexOf("/ggmall/detail/") > -1) &&
+                    (currentPath.indexOf("/ggshopping/list/") > -1 ||
+                      currentPath.indexOf("/ggshopping/detail/") > -1) &&
                     currentPath.indexOf("/gift") === -1 &&
                     "active"
                   }`}
@@ -209,12 +209,15 @@ const Navbar = ({ user }) => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li className="nav-item">
-                    <Link href="/ggmall/list/service" onClick={toggleNavbar}>
+                    <Link
+                      href="/ggshopping/list/service"
+                      onClick={toggleNavbar}
+                    >
                       제휴서비스
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/ggmall/list/shop" onClick={toggleNavbar}>
+                    <Link href="/ggshopping/list" onClick={toggleNavbar}>
                       GG 쇼핑
                     </Link>
                   </li>

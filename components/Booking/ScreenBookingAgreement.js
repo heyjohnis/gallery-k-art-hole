@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Table from "react-bootstrap/Table";
 import { isValidateForm } from "../../utils/validation";
 import { commaFormat } from "../../utils/number";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 import { useRouter } from "next/router";
 import { nowDateFormat } from "../../utils/dateUtil";
 

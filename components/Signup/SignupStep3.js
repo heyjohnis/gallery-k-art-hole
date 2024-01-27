@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../pages/sign-up.module.scss";
 import useRenderRegionOptions from "../../hooks/useRenderRegionOptions";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 
 export default function SignupStep3({ form, setForm }) {
   const regionOptions = useRenderRegionOptions();

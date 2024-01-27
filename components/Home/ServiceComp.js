@@ -3,7 +3,7 @@ import styles from "./home.module.scss";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import MainListWrap from "./MainListWrap";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 import Link from "next/link";
 import { calcDiscount } from "../../utils/price";
 

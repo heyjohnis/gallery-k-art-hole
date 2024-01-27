@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import POST from "../hooks/restApi";
+import POST from "../utils/restApi";
 
 export default function useCCList() {
   const [ccList, setCcList] = useState([]);

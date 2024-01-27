@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PcMyBooking from "./PcMyBooking";
 import MobileMyBooking from "./MobileMyBooking";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 
 export default function Reservation({ user }) {
   const [isMobile, setIsMobile] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 import { commaFormat } from "../../utils/number";
 import { useRouter } from "next/router";
 import Link from "next/link";

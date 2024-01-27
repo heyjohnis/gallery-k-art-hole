@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { isValidateForm } from "../../utils/validation";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 import { REGION_LIST } from "../../data/CommonCode";
 import { useRouter } from "next/router";
 import { nowDateFormat } from "../../utils/dateUtil";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import styles from "./sign-up-mobile.module.scss";
-import { POST } from "../hooks/restApi";
+import { POST } from "../utils/restApi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Controller } from "swiper";
 import "swiper/css";

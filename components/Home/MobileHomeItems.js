@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import Tab from "react-bootstrap/Tab";
 import MobileTourListWrap from "./MobileTourListWrap";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 
 import styles from "./MobileMain.module.scss";
 const LIST_ITEM_ABROAD = [

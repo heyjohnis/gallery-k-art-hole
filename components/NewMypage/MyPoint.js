@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 import Pagination from "../Pagination";
 import Form from "react-bootstrap/Form";
 import { NoContent } from "./NoContent";

@@ -5,7 +5,7 @@ import Accordion from "react-bootstrap/Accordion";
 import AccordionContext from "react-bootstrap/AccordionContext";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import Card from "react-bootstrap/Card";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 import { hyphenForPhone } from "../../utils/number";
 import { REGION_CODE, RESV_KIND } from "../../utils/cmmCode";
 import { REGION_LIST } from "../../data/CommonCode";

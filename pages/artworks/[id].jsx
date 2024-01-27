@@ -6,7 +6,7 @@ import Footer from "./../../components/Layouts/Footer";
 import PageBanner from "./../../components/Common/PageBanner";
 import ArtworkItem from "../../components/Artworks/ArtworkItem";
 import ArtworkContent from "../../components/Artworks/ArtworkContent";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 
 const ArtworkDetail = ({ user }) => {
   const router = useRouter();

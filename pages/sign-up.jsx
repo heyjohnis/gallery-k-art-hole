@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Footer from "../components/Signup/SignupFooter";
 import styles from "./sign-up.module.scss";
-import { POST } from "../hooks/restApi";
+import { POST } from "../utils/restApi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Controller } from "swiper";
 import "swiper/css";

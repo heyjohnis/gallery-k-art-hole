@@ -1,25 +1,30 @@
-import React from 'react';
-import { ProductDetailContent } from './ProductDetailContent';
-import { ProductSaleInfo } from './ProductSaleInfo';
+import React from "react";
+import Image from "next/image";
+import { ProductDetailContent } from "./ProductDetailContent";
+import { ProductSaleInfo } from "./ProductSaleInfo";
 
-export default function GgShoppingDetail() {
+export default function GgShoppingDetail({ content, options }) {
   return (
     <>
       <div className="row">
         <div className="col-lg-5 p-0 product_img">
-          <img src="/images/ggshopping/product01.png" />
+          <Image
+            src={content?.thumb_img}
+            width="350"
+            height="350"
+            alt={content?.pd_name}
+          />
         </div>
         <div className="col-lg-7 p-0">
-          <ProductSaleInfo/>
+          <ProductSaleInfo content={content} options={options} />
         </div>
       </div>
       <div className="row">
         <div className="col-lg-5"></div>
         <div className="col-lg-7 p-0">
-          <ProductDetailContent/>
+          <ProductDetailContent content={content} />
         </div>
       </div>
     </>
   );
 }
-

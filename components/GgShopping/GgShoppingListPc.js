@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import GgShoppingFilter from "./GgShoppingFilter";
 import GgshoppingListItems from "./GgshoppingListItems";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 import Pagination from "../Pagination";
 import { calcDiscount } from "../../utils/price";
 

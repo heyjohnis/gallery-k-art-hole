@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 import { commaFormat } from "../../utils/number";
 
 export const MyArtwork = ({ user }) => {

@@ -5,7 +5,7 @@ export default function GgshoppingListItems({ items }) {
   const productSale = "sale";
 
   const gotoDetail = (id) => {
-    router.push(`/ggshoping/${id}`);
+    router.push(`/ggshopping/detail/${id}`);
   };
 
   return (

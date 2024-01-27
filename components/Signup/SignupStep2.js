@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../pages/sign-up.module.scss";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 
 export default function SignupStep2({ form, setForm }) {
   const handleChange = (e) => {

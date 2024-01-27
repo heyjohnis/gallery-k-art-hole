@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../pages/sign-up.module.scss";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 import PrivacyPolicyText from "../../components/Private/PrivacyPolicyText";
 import TermsConditionsText from "../../components/Private/TermsConditionsText";
 

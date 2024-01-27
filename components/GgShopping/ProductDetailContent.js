@@ -1,8 +1,11 @@
-import React from 'react';
+import React from "react";
 
-
-export const ProductDetailContent = () => {
+export const ProductDetailContent = ({ content }) => {
   return (
-    <div>상품 디테일</div>
-  )
-}
+    <div
+      dangerouslySetInnerHTML={{
+        __html: content?.info_contents,
+      }}
+    ></div>
+  );
+};

@@ -7,7 +7,7 @@ import PageBanner from "./../../../components/Common/PageBanner";
 import GgmallList from "../../../components/Ggmall/GgmallList";
 import SearchKeyword from "../../../components/Ggmall/SearchKeyword";
 import { ggmallKind } from "../../../utils/cmmCode";
-import { POST } from "../../../hooks/restApi";
+import { POST } from "../../../utils/restApi";
 
 const INITIAL_SEARCH = {
   keyword: "",

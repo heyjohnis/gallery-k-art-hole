@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../pages/sign-up.module.scss";
-import { POST } from "../../hooks/restApi";
+import { POST } from "../../utils/restApi";
 import { HOPE_SERVICE } from "../../utils/cmmCode";
 
 export default function SignupStep4({ form, setForm }) {
