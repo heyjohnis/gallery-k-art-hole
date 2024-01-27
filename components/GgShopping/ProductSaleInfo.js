@@ -75,9 +75,9 @@ export const ProductSaleInfo = () => {
             />
           </div>
         </div>
-        <div className='shopping_btn row'>
-          <button className='btn_cart col-5'>장바구니</button>
-          <button className='btn_order col-5'>주문하기</button>
+        <div className='shopping_btn'>
+          <button className='btn_cart'>장바구니</button>
+          <button className='btn_order'>주문하기</button>
         </div>
     </section>
   )

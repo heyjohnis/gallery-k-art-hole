@@ -7269,7 +7269,7 @@ Shopping
     }
   }
   .product_sale_info {
-    padding: 130px 199px 0 150px;
+    padding: 130px 199px 100px 150px;
     .product_brand {
       margin-bottom: 10px;
       color: $gray-color;
@@ -7387,12 +7387,13 @@ Shopping
       }
     }
     .shopping_btn {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: minmax(auto, 360px) minmax(auto, 360px);
+      justify-content: space-between; 
+      column-gap: 28px;
       margin-top: 100px;
       button {
         padding: 20px 0;
-        max-width: 360px;
         border: 1px solid $body-color;
         background: $white-color;
         color: $body-color;
@@ -7406,7 +7407,39 @@ Shopping
       }
     }
   }
+  .detail_menu {
+    margin:0;
+    padding: 0 199px 0 150px;
+    display: flex;
+    list-style: none;
+    background: #f3f3f3;
+    li{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 250px;
+      height: 80px;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.2px;
+    }
+  }
+  .products_detail {
+    padding: 100px 199px 0 150px;
+    .detail_item {
+      padding-bottom: 50px;
+      border-bottom: 1px solid #ddd;
+      h2 {
+        margin: 50px 0 30px 0;
+        color: $body-color;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+      }
+    }
+  }
 }
+
 
 @media only screen and (max-width: 1466px) and (min-width: 1400px) {
   .shopping_list_container {
