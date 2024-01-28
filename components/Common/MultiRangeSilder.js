@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
-import styles from "./style/multiRangeSlider.module.css";
+import styles from "./style/multiRangeSlider.module.scss";
 
 const MultiRangeSlider = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = useState(min);
@@ -42,7 +42,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
   }, [minVal, maxVal, onChange]);
 
   return (
-    <div className="container">
+    <div>
       <input
         type="range"
         min={min}
