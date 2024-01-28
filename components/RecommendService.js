@@ -4,15 +4,14 @@ import { POST } from "../utils/restApi";
 import { commaFormat } from "../utils/number";
 import { useRouter } from "next/router";
 import Link from "next/link";
-const cntGoods = 5;
 
-export default function RecommendService({ user, pdKind }) {
+export default function RecommendService({ user, pdKind, countTotal = 5 }) {
   const router = useRouter();
   const [goods, setGoods] = React.useState([]);
   const getRecommendService = () => {
     POST("/mall/rand", {
       pd_kind: pdKind,
-      limit_cnt: cntGoods,
+      limit_cnt: countTotal,
       membership: user.membership,
       service_group: user.service_group,
     }).then((res) => {
@@ -30,7 +29,7 @@ export default function RecommendService({ user, pdKind }) {
       <section className="complete_recomend_content">
         <h3>
           추천 {pdKind === "shop" ? "상품" : "서비스"}{" "}
-          <span className="total">{cntGoods}</span>
+          <span className="total">{countTotal}</span>
         </h3>
         <Swiper
           spaceBetween={30}

@@ -5114,17 +5114,82 @@ Booking Page
       letter-spacing: -0.44px;
     }
     h2 {
-      margin-top: 45px;
-      padding-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin: 45px 0 0 0;
+      padding-bottom: 10px;
       color: $body-color;
       font-size: 24px;
       font-weight: 500;
       letter-spacing: -0.24px;
       border-bottom: 1px solid $body-color;
+      .total_items {
+        color: $gray-color;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.14px;
+      }
     }
     .md_screen_payment_tit {
       display: none;
     }
+
+    .product_info {
+      margin: 40px 0 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      .product_info_items {
+        display: flex;
+        img {
+          width: 160px;
+        }
+        .product_info_item {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          margin-left: 20px;
+          h3 {
+            overflow: hidden;
+            color: $main-color;
+            text-overflow: ellipsis;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: -1px;
+          }
+          p {
+            margin-top: 10px;
+            color: $body-color;
+            font-size: 16px;
+            font-weight: 200;
+            letter-spacing: -0.16px;
+          }
+          .product_amount {
+            color: $body-color;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: -0.16px;
+          }
+          .product_price {
+            color: $body-color;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.24px;
+          }
+        }
+      }
+      button {
+        padding: 0 0 1px 0;
+        color: #aaa;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.16px;
+        border-bottom: 1px solid #aaa;
+      }
+    }
+
     form {
       margin-bottom: 100px;
     }
@@ -5182,6 +5247,7 @@ Booking Page
         margin: 0;
         width: 24px;
         height: 24px;
+        border-radius: 0;
       }
       .form-check-label {
         margin: 0 0 0 8px;
@@ -5206,6 +5272,10 @@ Booking Page
       &::placeholder {
         color: #ccc;
       }
+      &.address_detail {
+        width: 100%;
+        margin-top: 20px;
+      }
     }
 
     input[type="tel"] {
@@ -5216,6 +5286,7 @@ Booking Page
       width: 500px;
       height: 200px;
       padding: 14px 20px;
+
       white-space: pre-line;
     }
 
@@ -5245,6 +5316,14 @@ Booking Page
       span {
         width: auto;
         padding: 0;
+      }
+      button {
+        padding: 20px 30px;
+        background: #ddd;
+        color: $body-color;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.14px;
       }
     }
 
@@ -5290,6 +5369,25 @@ Booking Page
     background: $white-color;
     &.screen {
       position: static;
+    }
+    .price_content {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      .price_items {
+        display: flex;
+        justify-content: space-between;
+        span {
+          color: $body-color;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 50px;
+          letter-spacing: -0.4px;
+        }
+        .price {
+          font-weight: 700;
+        }
+      }
     }
     .total_payment {
       display: flex;
@@ -5342,7 +5440,7 @@ Booking Page
     }
 
     .point_status {
-      margin: 10px 0;
+      margin: 10px 0 20px;
       color: $light-gray;
       font-size: 12px;
       font-weight: 400;
@@ -5427,6 +5525,19 @@ Booking Page
       margin-top: 40px;
       background-color: $body-color;
       color: $white-color;
+    }
+    .btn_purchase {
+      button {
+        margin-top: 20px;
+        &.black {
+          margin-top: 0;
+        }
+        &.white {
+          color: $body-color;
+          border: 1px solid $body-color;
+          background: $white-color;
+        }
+      }
     }
   }
 }
@@ -6913,7 +7024,7 @@ My Page > 포인트 이용내역
       font-weight: 400;
       letter-spacing: -0.16px;
     }
-    .form-select{
+    .form-select {
       width: 128px;
       padding: 12px 20px;
       border-radius: 5px;
@@ -7033,7 +7144,7 @@ My Page > 포인트 이용내역
           font-weight: 400;
           letter-spacing: -0.14px;
         }
-        .form-select{
+        .form-select {
           display: none;
         }
       }
@@ -7277,7 +7388,7 @@ Shopping
       font-weight: 300;
       letter-spacing: -0.3px;
     }
-    .product_name{
+    .product_name {
       margin-bottom: 30px;
       color: $body-color;
       font-size: 36px;
@@ -7303,15 +7414,15 @@ Shopping
         background: $white-color;
         line-height: normal;
       }
-      ul{
-        padding:0;
-        margin:0;
+      ul {
+        padding: 0;
+        margin: 0;
         display: flex;
         list-style: none;
         li {
           margin-right: 10px;
           &::before {
-            content:"#";
+            content: "#";
             margin-right: 2px;
           }
         }
@@ -7328,11 +7439,13 @@ Shopping
         font-weight: 700;
         letter-spacing: -0.3px;
       }
-      .discount_rate, .discount_price {
+      .discount_rate,
+      .discount_price {
         display: none;
       }
       &.sale {
-        .discount_rate, .discount_price {
+        .discount_rate,
+        .discount_price {
           display: block;
         }
         .discount_rate {
@@ -7354,7 +7467,8 @@ Shopping
       font-weight: 300;
       line-height: 36px;
       letter-spacing: -1px;
-      th, td {
+      th,
+      td {
         padding: 0;
         border: 0;
       }
@@ -7389,7 +7503,7 @@ Shopping
     .shopping_btn {
       display: grid;
       grid-template-columns: minmax(auto, 360px) minmax(auto, 360px);
-      justify-content: space-between; 
+      justify-content: space-between;
       column-gap: 28px;
       margin-top: 100px;
       button {
@@ -7408,12 +7522,12 @@ Shopping
     }
   }
   .detail_menu {
-    margin:0;
+    margin: 0;
     padding: 0 199px 0 150px;
     display: flex;
     list-style: none;
     background: #f3f3f3;
-    li{
+    li {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -7439,7 +7553,6 @@ Shopping
     }
   }
 }
-
 
 @media only screen and (max-width: 1466px) and (min-width: 1400px) {
   .shopping_list_container {
