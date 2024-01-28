@@ -16,11 +16,11 @@ export default function ServiceComp({ user, serviceGroup }) {
     POST("/mall/rand", {
       pd_kind,
       limit_cnt: 3,
-      membership: user?.membership,
+      membership: user?.membership || "green",
       service_group: user?.service_group || "01",
     }).then((res) => {
       console.log(res?.data);
-      const items = res?.data.map((item) => {
+      const items = res?.data?.map((item) => {
         return { ...item, ...calcDiscount(item.origin_price, item.price) };
       });
       if (pd_kind === "tour") {

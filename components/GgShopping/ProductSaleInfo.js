@@ -1,17 +1,38 @@
-import { max } from "date-fns";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { Table } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import { POST } from "../../utils/restApi";
 
 export const ProductSaleInfo = ({ content, options }) => {
+  const router = useRouter();
   const productSale = "sale";
   const [keywords, setKeywords] = useState([]);
+  const [form, setForm] = useState({ content });
   const parseKeyword = (keyword) => {
     setKeywords(keyword.split(",").map((item) => item?.trim()));
   };
 
+  const addCart = () => {
+    POST("/mall/add/cart", form).then((res) => {
+      if (res?.data?.insertId > 0) {
+        alert("장바구니에 추가되었습니다.");
+        router.push("/ggshopping/list");
+      }
+    });
+  };
+
+  const gotoOrder = () => {
+    POST("/mall/add/cart", form).then((res) => {
+      if (res?.data?.insertId > 0) {
+        router.push("/ggshopping/order/");
+      }
+    });
+  };
+
   useEffect(() => {
     console.log("content: ", content);
+    setForm((prev) => ({ ...prev, ...content }));
     if (content?.pd_keyword) parseKeyword(content?.pd_keyword);
   }, [content]);
 
@@ -26,6 +47,7 @@ export const ProductSaleInfo = ({ content, options }) => {
     const quantity = maxQuantity > 4 ? 4 : maxQuantity;
     return Array.from({ length: quantity }, (_, i) => (
       <Form.Check
+        key={i}
         label={`${i + 1}개`}
         name="time1"
         type="radio"
@@ -33,6 +55,9 @@ export const ProductSaleInfo = ({ content, options }) => {
         className="item btn_radio"
         defaultChecked={i === 0}
         value={i + 1}
+        onChange={(e) =>
+          setForm((prev) => ({ ...prev, quantity: e.target.value }))
+        }
       />
     ));
   };
@@ -86,8 +111,12 @@ export const ProductSaleInfo = ({ content, options }) => {
         )}
       </div>
       <div className="shopping_btn row">
-        <button className="btn_cart col-5">장바구니</button>
-        <button className="btn_order col-5">주문하기</button>
+        <button className="btn_cart col-5" onClick={addCart}>
+          장바구니
+        </button>
+        <button className="btn_order col-5" onClick={gotoOrder}>
+          주문하기
+        </button>
       </div>
     </section>
   );

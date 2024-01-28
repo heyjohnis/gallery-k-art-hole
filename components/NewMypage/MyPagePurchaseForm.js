@@ -5,7 +5,7 @@ import Image from "next/image";
 import Form from "react-bootstrap/Form";
 import { GET, DELETE } from "../../utils/restApi";
 
-export default function GgShoppingPurchaseForm({
+export default function MyPagePurchaseForm({
   user,
   setOrderProducts,
   setOrderInfo,

@@ -8,12 +8,14 @@ export default function GgShoppingDetail({ user, content, options }) {
     <>
       <div className="row">
         <div className="col-lg-5 p-0 product_img">
-          <Image
-            src={content?.thumb_img}
-            width="350"
-            height="350"
-            alt={content?.pd_name}
-          />
+          {content && (
+            <Image
+              src={content?.thumb_img}
+              width="350"
+              height="350"
+              alt={content?.pd_name}
+            />
+          )}
         </div>
         <div className="col-lg-7 p-0">
           <ProductSaleInfo content={content} options={options} />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import { POST } from "../../utils/restApi";
 
-export default function GgShoppingPurchaseAgreement({
+export default function MyPagePurchaseAgreement({
   user,
   orderProducts,
   orderInfo,
