@@ -1,21 +1,24 @@
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { POST } from "../../utils/restApi";
-import { commaFormat } from "../../utils/number";
+import { POST } from "../utils/restApi";
+import { commaFormat } from "../utils/number";
 import { useRouter } from "next/router";
 import Link from "next/link";
 const cntGoods = 5;
 
-export default function RecommendService() {
+export default function RecommendService({ user, pdKind }) {
   const router = useRouter();
   const [goods, setGoods] = React.useState([]);
   const getRecommendService = () => {
-    POST("/mall/rand", { pd_kind: "service", limit_cnt: cntGoods }).then(
-      (res) => {
-        console.log("/mall/rand: ", res.data);
-        setGoods(res.data);
-      }
-    );
+    POST("/mall/rand", {
+      pd_kind: pdKind,
+      limit_cnt: cntGoods,
+      membership: user.membership,
+      service_group: user.service_group,
+    }).then((res) => {
+      console.log("/mall/rand: ", res.data);
+      setGoods(res.data);
+    });
   };
 
   useEffect(() => {
@@ -26,7 +29,8 @@ export default function RecommendService() {
     <>
       <section className="complete_recomend_content">
         <h3>
-          추천서비스 <span className="total">{cntGoods}</span>
+          추천 {pdKind === "shop" ? "상품" : "서비스"}{" "}
+          <span className="total">{cntGoods}</span>
         </h3>
         <Swiper
           spaceBetween={30}

@@ -4,7 +4,7 @@ import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
 import { CompleteTitle } from "../../components/Common/CompleteTitle";
 import { ScreenCompleteContent } from "../../components/Booking/ScreenCompleteContent";
-import RecommendService from "../../components/Booking/RecommendService";
+import RecommendService from "../../components/RecommendService";
 
 const GolfComplete = ({ user }) => {
   useEffect(() => {
@@ -32,7 +32,7 @@ const GolfComplete = ({ user }) => {
           text="담당자 확인 후 포인트 사용이 확정됩니다."
         />
         <ScreenCompleteContent />
-        <RecommendService />
+        <RecommendService user={user} pdKind={"service"} />
       </section>
       <Footer />
     </>

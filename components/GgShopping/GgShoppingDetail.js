@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ProductDetailContent } from "./ProductDetailContent";
 import { ProductSaleInfo } from "./ProductSaleInfo";
 
-export default function GgShoppingDetail({ content, options }) {
+export default function GgShoppingDetail({ user, content, options }) {
   return (
     <>
       <div className="row">
@@ -22,7 +22,7 @@ export default function GgShoppingDetail({ content, options }) {
       <div className="row">
         <div className="col-lg-5"></div>
         <div className="col-lg-7 p-0">
-          <ProductDetailContent content={content} />
+          <ProductDetailContent user={user} content={content} />
         </div>
       </div>
     </>

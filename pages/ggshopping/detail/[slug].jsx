@@ -5,7 +5,7 @@ import Footer from "../../../components/Layouts/Footer";
 import { useRouter } from "next/router";
 import { GET } from "../../../utils/restApi";
 
-export default function detail() {
+export default function detail({ user }) {
   const router = useRouter();
   const [content, setContent] = useState("");
   const [options, setOptions] = useState("");
@@ -28,7 +28,7 @@ export default function detail() {
     <div>
       <PageBanner />
       <section className="shopping_detail">
-        <GgShoppingDetail content={content} options={options} />
+        <GgShoppingDetail user={user} content={content} options={options} />
       </section>
       <Footer />
     </div>
