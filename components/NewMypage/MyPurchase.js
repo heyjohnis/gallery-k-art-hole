@@ -1,6 +1,6 @@
 import React from "react";
-import { MyPagePurchaseAgreement } from "../GgShopping/MyPagePurchaseAgreement";
-import { MyPagePurchaseForm } from "../GgShopping/MyPagePurchaseForm";
+import { MyPagePurchaseAgreement } from "./MyPagePurchaseAgreement";
+import { MyPagePurchaseForm } from "./MyPagePurchaseForm";
 
 export const MyPurchase = () => {
   return (

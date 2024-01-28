@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 
-export const GgShoppingPurchaseAgreement = () => {
+export const MyPagePurchaseAgreement = () => {
   return (
     <div className="agree_content screen">
       <div className="price_content">
@@ -11,17 +11,17 @@ export const GgShoppingPurchaseAgreement = () => {
         </div>
         <div className="price_items">
           <span className="item">배송비</span>
-          <span className="price">+ 5,000 P</span>
+          <span className="price">+ 3,000 P</span>
         </div>
         <div className="price_items">
           <span className="item">할인가</span>
-          <span className="price">- 500,000 P</span>
+          <span className="price">- 50,000 P</span>
         </div>
       </div>
       <div className="total_payment">
         <span>총 결제포인트</span>
         <strong>
-          <span>550,000</span> P
+          <span>953,000</span> P
         </strong>
       </div>
       <Form>

@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 export const MyPagePurchaseForm = () => {
   return (
     <div className="booking_content">
-      <h1>상품주문</h1>
+      <h1>상품 주문</h1>
       <h2>
         상품 정보<span className="total_items">총 3건</span>
       </h2>
