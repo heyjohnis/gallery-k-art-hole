@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Form from "react-bootstrap/Form";
 
-export const GgShoppingPurchaseForm = () => {
+export const MyPagePurchaseForm = () => {
   return (
     <div className="booking_content">
-      <h1>GG 쇼핑 주문</h1>
+      <h1>상품주문</h1>
       <h2>
         상품 정보<span className="total_items">총 3건</span>
       </h2>
@@ -17,6 +17,38 @@ export const GgShoppingPurchaseForm = () => {
             <div className="product_info_item">
               <div>
                 <h3>여성 캐주얼 캐디백</h3>
+                <p>배송비 1,000P 차감</p>
+                <span className="product_amount">수량 : 1</span>
+              </div>
+              <div>
+                <span className="product_price">358,200 P</span>
+              </div>
+            </div>
+          </div>
+          <button>삭제하기</button>
+        </li>
+        <li>
+          <div className="product_info_items">
+            <img src="/images/ggshopping/product02.png" />
+            <div className="product_info_item">
+              <div>
+                <h3>말리 화이트휠 스탠드 캐디백</h3>
+                <p>배송비 1,000P 차감</p>
+                <span className="product_amount">수량 : 1</span>
+              </div>
+              <div>
+                <span className="product_price">358,200 P</span>
+              </div>
+            </div>
+          </div>
+          <button>삭제하기</button>
+        </li>
+        <li>
+          <div className="product_info_items">
+            <img src="/images/ggshopping/product03.png" />
+            <div className="product_info_item">
+              <div>
+                <h3>여성 화이트 퍼 파우치</h3>
                 <p>배송비 1,000P 차감</p>
                 <span className="product_amount">수량 : 1</span>
               </div>
