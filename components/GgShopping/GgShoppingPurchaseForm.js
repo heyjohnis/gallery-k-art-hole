@@ -11,22 +11,24 @@ export const GgShoppingPurchaseForm = () => {
       <h2>
         상품 정보<span className="total_items">총 3건</span>
       </h2>
-      <div className="product_info">
-        <div className="product_info_items">
-          <img src="/images/ggshopping/product01.png" />
-          <div className="product_info_item">
-            <div>
-              <h3>여성 캐주얼 캐디백</h3>
-              <p>배송비 1,000P 차감</p>
-              <span className="product_amount">수량 : 1</span>
-            </div>
-            <div>
-              <span className="product_price">358,200 P</span>
+      <ul className="product_info">
+        <li>
+          <div className="product_info_items">
+            <img src="/images/ggshopping/product01.png" />
+            <div className="product_info_item">
+              <div>
+                <h3>여성 캐주얼 캐디백</h3>
+                <p>배송비 1,000P 차감</p>
+                <span className="product_amount">수량 : 1</span>
+              </div>
+              <div>
+                <span className="product_price">358,200 P</span>
+              </div>
             </div>
           </div>
-        </div>
-        <button>삭제하기</button>
-      </div>
+          <button>삭제하기</button>
+        </li>
+      </ul>
 
       <h2>주문자 정보</h2>
       <Form>
