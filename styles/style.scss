@@ -4804,6 +4804,14 @@ Booking Complete
   padding: 30px 0;
   margin-top: 70px;
   border-top: 1px solid #ddd;
+  &.gg_complete {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .complete_info {
+    display: flex;
+    align-items: center;
+  }
   span {
     color: #999;
     font-family: Noto Sans KR;
@@ -4814,6 +4822,60 @@ Booking Complete
     font-size: 14px;
     color: #ccc;
     margin: 0 20px;
+  }
+  .complete_product_items {
+    width: 100%;
+    margin-top: 26px;
+    display: flex;
+    justify-content: space-between;
+    .complete_product_item {
+      display: flex;
+      img {
+        width: 180px;
+      }
+      .item_info {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h3 {
+          overflow: hidden;
+          color: $main-color;
+          text-overflow: ellipsis;
+          font-size: 22px;
+          font-weight: 500;
+          letter-spacing: -1px;
+        }
+        p {
+          margin: 10px 0 0 0;
+          color: $body-color;
+          font-size: 16px;
+          font-weight: 200;
+          letter-spacing: -0.16px;
+        }
+        .item_amount {
+          display: block;
+          margin-top: 10px;
+          color: $body-color;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.16px;
+        }
+        .item_price {
+          color: $body-color;
+          font-size: 24px;
+          font-weight: 700;
+          letter-spacing: -0.24px;
+        }
+      }
+    }
+    .complete_status {
+      color: $sub-color;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
   }
 }
 
@@ -4886,14 +4948,14 @@ Booking Complete
       color: $gray-color;
       text-align: right;
     }
-    &.total_points {
-      padding-top: 30px;
-      margin-top: 30px;
-      border-top: solid 1px #ddd;
-      .items_detail {
-        color: $body-color;
-        font-weight: 700;
-      }
+  }
+  .total_points {
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: solid 1px #ddd;
+    .strong {
+      color: $body-color;
+      font-weight: 700;
     }
   }
 }
