@@ -61,7 +61,7 @@ export const ScreenCompleteContent = () => {
 
           <div className="complete_content_items total_points">
             <span className="items_item">총 결제포인트</span>
-            <span className="items_detail">
+            <span className="items_detail strong">
               {commaFormat(form.total_pay_point)} P
             </span>
           </div>
