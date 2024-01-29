@@ -1,121 +1,64 @@
-import React, { memo, use, useEffect, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
-import Image from "next/image";
 import Form from "react-bootstrap/Form";
-import { GET, DELETE } from "../../utils/restApi";
 
-export default function MyPagePurchaseForm({
-  user,
-  setOrderProducts,
-  setOrderInfo,
-}) {
-  const [products, setProducts] = useState([]);
-  const [countSelected, setCountSelected] = useState(0);
-  const [form, setForm] = useState({
-    order_user_name: "",
-    order_user_phone: "",
-    order_user_email: "",
-    delivery_user_name: "",
-    delivery_phone: "",
-    delivery_zipcode: "",
-    delivery_addr1: "",
-    delivery_addr2: "",
-    memo: "",
-  });
-
-  const getCartProducts = () => {
-    GET("/mall/cart/list").then((res) => {
-      console.log("/mall/cart/list", res);
-      setProducts(res?.data);
-      setCountSelected(res?.data?.length);
-      setOrderProducts(res?.data);
-    });
-  };
-
-  const deleteCartItem = (itemNo) => {
-    DELETE("/mall/cart/delete", { item_no: itemNo }).then((res) => {
-      console.log("/mall/cart/delete", res);
-      getCartProducts();
-    });
-  };
-
-  const copyOrderInfo = (e) => {
-    if (e.target.checked) {
-      setForm((prev) => ({
-        ...prev,
-        delivery_user_name: form.order_user_name,
-        delivery_phone: form.order_user_phone,
-        delivery_zipcode: user.zipcode,
-        delivery_addr1: user.addr1,
-        delivery_addr2: user.addr2,
-      }));
-    }
-  };
-
-  const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  useEffect(() => {
-    getCartProducts();
-  }, []);
-
-  useEffect(() => {
-    form?.order_user_name && setOrderInfo((prev) => ({ ...prev, ...form }));
-  }, [form]);
-
-  useEffect(() => {
-    setForm((prev) => ({
-      ...prev,
-      order_user_name: user.user_name,
-      order_user_phone: user.mobile,
-      order_user_email: user.email,
-      memo: "",
-      delivery_user_name: "",
-      delivery_phone: "",
-      delivery_zipcode: "",
-      delivery_addr1: "",
-      delivery_addr2: "",
-    }));
-  }, [user]);
-
+export const MyPagePurchaseForm = () => {
   return (
     <div className="booking_content">
       <h1>상품 주문</h1>
       <h2>
-        상품 정보<span className="total_items">총 {countSelected}건</span>
+        상품 정보<span className="total_items">총 3건</span>
       </h2>
       <ul className="product_info">
-        {products?.map((item) => (
-          <li key={item.item_no}>
-            <div className="product_info_items">
-              <Image
-                src={item.thumb_img}
-                width="150"
-                height="150"
-                alt={item.pd_name}
-              />
-              <div className="product_info_item">
-                <div>
-                  <h3>{item.pd_name}</h3>
-                  <p>배송비 {item.delivery_fee.toLocaleString()} P 차감</p>
-                  <span className="product_amount">
-                    수량 : {item?.quantity || 1}
-                  </span>
-                </div>
-                <div>
-                  <span className="product_price">
-                    {item.price.toLocaleString()} P
-                  </span>
-                </div>
+        <li>
+          <div className="product_info_items">
+            <img src="/images/ggshopping/product01.png" />
+            <div className="product_info_item">
+              <div>
+                <h3>여성 캐주얼 캐디백</h3>
+                <p>배송비 1,000P 차감</p>
+                <span className="product_amount">수량 : 1</span>
+              </div>
+              <div>
+                <span className="product_price">358,200 P</span>
               </div>
             </div>
-            <button onClick={() => deleteCartItem(item.item_no)}>
-              삭제하기
-            </button>
-          </li>
-        ))}
+          </div>
+          <button>삭제하기</button>
+        </li>
+        <li>
+          <div className="product_info_items">
+            <img src="/images/ggshopping/product02.png" />
+            <div className="product_info_item">
+              <div>
+                <h3>말리 화이트휠 스탠드 캐디백</h3>
+                <p>배송비 1,000P 차감</p>
+                <span className="product_amount">수량 : 1</span>
+              </div>
+              <div>
+                <span className="product_price">358,200 P</span>
+              </div>
+            </div>
+          </div>
+          <button>삭제하기</button>
+        </li>
+        <li>
+          <div className="product_info_items">
+            <img src="/images/ggshopping/product03.png" />
+            <div className="product_info_item">
+              <div>
+                <h3>여성 화이트 퍼 파우치</h3>
+                <p>배송비 1,000P 차감</p>
+                <span className="product_amount">수량 : 1</span>
+              </div>
+              <div>
+                <span className="product_price">358,200 P</span>
+              </div>
+            </div>
+          </div>
+          <button>삭제하기</button>
+        </li>
       </ul>
 
       <h2>주문자 정보</h2>
@@ -126,13 +69,12 @@ export default function MyPagePurchaseForm({
             <Form.Control
               type="text"
               placeholder="이름을 입력해주세요."
-              name="order_user_name"
-              value={form?.order_user_name}
-              onChange={handleChange}
+              name="user_name"
             />
             <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
           </div>
         </div>
+
         <div className="form_item">
           <Form.Label>주문자 연락처</Form.Label>
           <div className="item_group row">
@@ -140,11 +82,9 @@ export default function MyPagePurchaseForm({
               <div className="col-lg-2 col-3">
                 <Form.Control
                   type="text"
-                  name="order_user_phone"
+                  name="mobile"
                   maxLength="15"
                   placeholder="010-1234-5678"
-                  value={form?.order_user_phone}
-                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -156,9 +96,7 @@ export default function MyPagePurchaseForm({
           <Form.Control
             type="email"
             placeholder="email@galleryk.co.kr"
-            name="order_user_email"
-            value={form?.order_user_email}
-            onChange={handleChange}
+            name="email"
           />
         </div>
 
@@ -166,11 +104,9 @@ export default function MyPagePurchaseForm({
           <Form.Label>요청사항</Form.Label>
           <Form.Control
             as="textarea"
-            name="memo"
+            name="etc"
             rows={3}
             placeholder="문의하실 요청사항을 작성해주세요."
-            value={form?.memo}
-            onChange={handleChange}
           />
         </div>
 
@@ -179,11 +115,10 @@ export default function MyPagePurchaseForm({
           <Form.Check
             inline
             label="주문자 정보와 동일"
-            name="copy_order_info"
+            name="agree_payment"
             type="checkbox"
-            id="copy_order_info"
-            value={form?.copy_order_info}
-            onChange={copyOrderInfo}
+            required
+            id="agree_payment"
           />
         </div>
         <div className="form_item">
@@ -192,9 +127,7 @@ export default function MyPagePurchaseForm({
             <Form.Control
               type="text"
               placeholder="이름을 입력해주세요."
-              name="delivery_user_name"
-              value={form?.delivery_user_name}
-              onChange={handleChange}
+              name="user_name"
             />
             <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
           </div>
@@ -207,11 +140,9 @@ export default function MyPagePurchaseForm({
               <div className="col-lg-2 col-3">
                 <Form.Control
                   type="text"
-                  name="delivery_phone"
+                  name="mobile"
                   maxLength="15"
                   placeholder="010-1234-5678"
-                  value={form?.delivery_phone}
-                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -225,11 +156,9 @@ export default function MyPagePurchaseForm({
               <div className="col">
                 <Form.Control
                   type="text"
-                  name="delivery_zipcode"
+                  name="zipcode"
                   maxLength="5"
                   placeholder="우편번호"
-                  value={form?.delivery_zipcode}
-                  onChange={handleChange}
                 />
               </div>
               <div className="col">
@@ -239,23 +168,19 @@ export default function MyPagePurchaseForm({
           </div>
           <Form.Control
             type="text"
-            placeholder="주소를 입력하세요"
-            name="delivery_addr1"
+            placeholder="Type something"
+            name="user_name"
             className="address_detail"
-            value={form?.delivery_addr1}
-            onChange={handleChange}
           />
           <Form.Control
             type="text"
-            placeholder="상세주소를 입력하세요"
-            name="delivery_addr2"
+            placeholder="Type something"
+            name="user_name"
             className="address_detail"
-            value={form?.delivery_addr2}
-            onChange={handleChange}
           />
         </div>
       </Form>
       <h2 className="md_screen_payment_tit">결제 정보</h2>
     </div>
   );
-}
+};
