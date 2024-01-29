@@ -9,6 +9,7 @@ import { calcDiscount } from "../../utils/price";
 export default function GgShoppingListPc({ user }) {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState({ currentPage: 1, totalPages: 1 });
+  const [form, setForm] = useState({});
 
   const getGgShoppingList = (currentPage = 1) => {
     POST(`/mall/paging`, {
@@ -31,6 +32,10 @@ export default function GgShoppingListPc({ user }) {
     if (user?.membership) getGgShoppingList();
   }, [user]);
 
+  useEffect(() => {
+    console.log("form: ", form);
+  }, [form]);
+
   return (
     <>
       <div className="shopping_tit">
@@ -48,7 +53,7 @@ export default function GgShoppingListPc({ user }) {
       </div>
       <div className="row">
         <div className="col-lg-2">
-          <GgShoppingFilter />
+          <GgShoppingFilter form={form} setForm={setForm} />
         </div>
         <div className="col-lg-10">
           <GgshoppingListItems items={items} />
