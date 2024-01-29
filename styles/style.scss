@@ -7638,6 +7638,166 @@ Shopping
   }
 }
 
+.gg_complete_container {
+  padding-bottom: 100px;
+  background: none;
+  border: 0;
+  border-top: 1px solid $body-color;
+  border-bottom: 1px solid #ddd;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      .accordion-item {
+        background: none;
+        border: 0;
+        .complete_item {
+          padding: 40px 0;
+          border-bottom: 1px solid #999;
+          .complete_data {
+            display: flex;
+            align-items: center;
+            color: $gray-color;
+            font-size: 16px;
+            font-weight: 200;
+            line-height: normal;
+            .bar {
+              color: #ddd;
+              font-weight: 300;
+            }
+          }
+          section {
+            margin-top: 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            .product_info {
+              display: flex;
+              img {
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
+              }
+              article {
+                margin-left: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                h3 {
+                  overflow: hidden;
+                  color: $main-color;
+                  text-overflow: ellipsis;
+                  font-size: 22px;
+                  font-weight: 500;
+                  letter-spacing: -1px;
+                }
+                p {
+                  margin: 10px 0 0 0;
+                  color: $body-color;
+                  font-size: 16px;
+                  font-weight: 200;
+                  letter-spacing: -0.16px;
+                }
+                .amount {
+                  margin-top: 10px;
+                  color: $body-color;
+                  font-size: 16px;
+                  font-weight: 400;
+                  letter-spacing: -0.16px;
+                }
+                .price {
+                  color: $body-color;
+                  font-size: 24px;
+                  font-weight: 700;
+                  letter-spacing: -0.24px;
+                }
+              }
+            }
+            .product_result {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              .status {
+                margin-bottom: 30px;
+                color: $sub-color;
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: -0.2px;
+              }
+              .btn_detail {
+                button {
+                  padding: 12px 40px;
+                  border-radius: 5px;
+                  background: #ddd;
+                  color: $body-color;
+                  font-size: 16px;
+                  font-weight: 400;
+                  letter-spacing: -1px;
+                }
+                .accordion-button::after {
+                  margin-left: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .accordion-body {
+        padding: 40px;
+        background-color: $white-color;
+        ul {
+          padding: 0;
+          li {
+            display: flex;
+            justify-content: space-between;
+            span {
+              color: $body-color;
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 50px;
+              letter-spacing: -1px;
+            }
+            .info {
+              color: $gray-color;
+              font-weight: 400;
+            }
+            .strong {
+              font-weight: 700;
+            }
+          }
+        }
+        .purchase_info {
+          padding-bottom: 30px;
+          border-bottom: 1px solid #ddd;
+        }
+        .price_info {
+          padding-top: 40px;
+        }
+      }
+      &:last-child {
+        .accordion-item {
+          .complete_item {
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+  .purchase_status {
+    display: block;
+    width: 250px;
+    padding: 20px 0px;
+    margin: 50px auto 0;
+    background-color: $white-color;
+    border: 1px solid $body-color;
+    color: $body-color;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.16px;
+    line-height: normal;
+  }
+}
+
 @media only screen and (max-width: 1466px) and (min-width: 1400px) {
   .shopping_list_container {
     .items {
