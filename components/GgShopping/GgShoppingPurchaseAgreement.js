@@ -58,27 +58,67 @@ export default function GgShoppingPurchaseAgreement({
     }));
   };
 
-  const handleOrder = () => {
-    console.log("handleOrder: ", form);
-    if (!form.agree_payment) {
-      alert("결제정보 확인에 동의해주세요.");
-      return;
+  const validateForm = () => {
+    if (!form.order_user_name) {
+      alert("주문자 이름을 입력해주세요.");
+      return false;
     }
-    if (!form.agree_service) {
-      alert("필수 항목에 동의해주세요.");
-      return;
+    if (!form.order_user_phone) {
+      alert("주문자 연락처를 입력해주세요.");
+      return false;
+    }
+    if (!form.order_user_email) {
+      alert("주문자 이메일을 입력해주세요.");
+      return false;
+    }
+    if (!form.delivery_user_name) {
+      alert("수령인 이름을 입력해주세요.");
+      return false;
+    }
+    if (!form.delivery_phone) {
+      alert("수령인 연락처를 입력해주세요.");
+      return false;
+    }
+    if (!form.delivery_zipcode) {
+      alert("우편번호를 입력해주세요.");
+      return false;
+    }
+    if (!form.delivery_addr1) {
+      alert("주소를 입력해주세요.");
+      return false;
+    }
+    if (!form.delivery_addr2) {
+      alert("상세주소를 입력해주세요.");
+      return false;
     }
     if (form.pay_amount !== form.total_price) {
       alert("결제하실 포인트를 확인해주세요.");
-      return;
+      return false;
     }
-    const orderItemNo = orderProducts?.reduce(
-      (acc, cur) => [...acc, cur.item_no],
-      []
-    );
+    if (!form.agree_payment) {
+      alert("결제정보 확인에 동의해주세요.");
+      return false;
+    }
+    if (!form.agree_service) {
+      alert("필수 항목에 동의해주세요.");
+      return false;
+    }
+    return true;
+  };
+
+  const handleOrder = () => {
+    console.log("handleOrder: ", form);
+
+    if (!validateForm()) return;
+
+    const orderItemNo = orderProducts
+      ?.reduce((acc, cur) => [...acc, cur.item_no], [])
+      .join(",");
+    if (!orderItemNo) return alert("주문할 상품이 없습니다.");
+
     POST("/mall/cart/order", {
       ...form,
-      order_item_no: orderItemNo?.join(","),
+      order_item_no: orderItemNo,
     }).then((res) => {
       if (res?.data?.order_no > 0) {
         alert("주문이 완료되었습니다.");
@@ -165,14 +205,6 @@ export default function GgShoppingPurchaseAgreement({
             required
             value={form?.agree_service}
             onChange={handleChange}
-          />
-          <Form.Check
-            inline
-            label="아래 내용에 모두 동의합니다.(필수)"
-            name="agree_service"
-            type="checkbox"
-            id="agree_service"
-            required
           />
         </div>
 

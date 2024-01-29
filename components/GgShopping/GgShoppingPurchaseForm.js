@@ -1,9 +1,10 @@
-import React, { memo, use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Image from "next/image";
 import Form from "react-bootstrap/Form";
 import { GET, DELETE } from "../../utils/restApi";
+import ModalDaumPost from "../Common/ModalDaumPost";
 
 export default function GgShoppingPurchaseForm({
   user,
@@ -12,6 +13,7 @@ export default function GgShoppingPurchaseForm({
 }) {
   const [products, setProducts] = useState([]);
   const [countSelected, setCountSelected] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
   const [form, setForm] = useState({
     order_user_name: "",
     order_user_phone: "",
@@ -53,8 +55,23 @@ export default function GgShoppingPurchaseForm({
     }
   };
 
+  const getAddressData = (data) => {
+    setIsOpen(false);
+    console.log("getAddressData: ", data);
+    setForm((prev) => ({
+      ...prev,
+      delivery_zipcode: data.zonecode,
+      delivery_addr1: data.address,
+    }));
+  };
+
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const openPostModal = (e) => {
+    e.preventDefault();
+    setIsOpen(true);
   };
 
   useEffect(() => {
@@ -226,6 +243,7 @@ export default function GgShoppingPurchaseForm({
                 <Form.Control
                   type="text"
                   name="delivery_zipcode"
+                  id="delivery_zipcode"
                   maxLength="5"
                   placeholder="우편번호"
                   value={form?.delivery_zipcode}
@@ -233,7 +251,7 @@ export default function GgShoppingPurchaseForm({
                 />
               </div>
               <div className="col">
-                <button>도로명주소</button>
+                <button onClick={openPostModal}>도로명주소</button>
               </div>
             </div>
           </div>
@@ -242,6 +260,7 @@ export default function GgShoppingPurchaseForm({
             placeholder="주소를 입력하세요"
             name="delivery_addr1"
             className="address_detail"
+            id="delivery_addr1"
             value={form?.delivery_addr1}
             onChange={handleChange}
           />
@@ -255,6 +274,7 @@ export default function GgShoppingPurchaseForm({
           />
         </div>
       </Form>
+      <ModalDaumPost getAddressData={getAddressData} isOpen={isOpen} />
       <h2 className="md_screen_payment_tit">결제 정보</h2>
     </div>
   );
