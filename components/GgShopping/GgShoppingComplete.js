@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import { POST } from "../../utils/restApi";
+import { useRouter } from "next/router";
+import { set } from "date-fns";
 
 export default function GgShoppingComplete() {
+  const [orderNo, setOrderNo] = useState(0);
+  const router = useRouter();
+  const getOrderCompleteData = (order_no) => {
+    POST("/mall/order/complete", { order_no }).then((res) => {
+      console.log("getOrderCompleteData res: ", res);
+    });
+  };
+
+  useEffect(() => {
+    //getOrderCompleteData();
+    setOrderNo(router.query.order_no);
+  }, [router.query]);
+
+  useEffect(() => {
+    if (orderNo) getOrderCompleteData(orderNo);
+  }, [orderNo]);
+
   return (
     <Accordion defaultActiveKey="" className="gg_complete_container">
       <ul>

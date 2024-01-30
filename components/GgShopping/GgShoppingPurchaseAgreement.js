@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import { POST } from "../../utils/restApi";
+import { useRouter } from "next/router";
 
 export default function GgShoppingPurchaseAgreement({
   user,
   orderProducts,
   orderInfo,
 }) {
+  const router = useRouter();
   const [orderPrice, setOrderPrice] = useState({
     total_price: 0,
     sale_price: 0,
@@ -127,7 +129,10 @@ export default function GgShoppingPurchaseAgreement({
     }).then((res) => {
       if (res?.data?.order_no > 0) {
         alert("주문이 완료되었습니다.");
-        router.push("/mypage");
+        router.push({
+          pathname: "/ggshopping/complete/",
+          query: { order_no: res?.data?.order_no },
+        });
       }
     });
   };
