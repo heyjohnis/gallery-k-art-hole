@@ -43,7 +43,7 @@
 }
 
 .slideGogh1 {
-  background-image: url(/images/main/top_president01.jpg);
+  background-image: url(/images/main/president01_pc_3840.jpg);
 
   &::after {
     content : '';
@@ -62,7 +62,7 @@
 }
 
 .slideGogh2 {
-  background-image: url(/images/main/top_president02.jpg);
+  background-image: url(/images/main/president01_pc_3840.jpg);
 
   &::after {
     content : '';
@@ -81,7 +81,7 @@
 }
 
 .slideGogh3 {
-  background-image: url(/images/main/top_president03.jpg);
+  background-image: url(/images/main/president01_pc_3840.jpg);
 
   &::after {
     content : '';
@@ -98,8 +98,9 @@
     z-index: 9;
   }
 }
+
 .slideRenoir1 {
-  background-image: url(/images/main/top_noblesse01.jpg);
+  background-image: url(/images/main/noblesse01_pc_3840.jpg);
 
   &::after {
     content : '';
@@ -118,7 +119,7 @@
 }
 
 .slideRenoir2 {
-  background-image: url(/images/main/top_noblesse02.jpg);
+  background-image: url(/images/main/noblesse01_pc_3840.jpg);
 
   &::after {
     content : '';
@@ -137,7 +138,7 @@
 }
 
 .slideRenoir3 {
-  background-image: url(/images/main/top_noblesse03.jpg);
+  background-image: url(/images/main/noblesse01_pc_3840.jpg);
 
   &::after {
     content : '';
@@ -156,7 +157,7 @@
 }
 
 .slideMonet1 {
-  background-image: url(/images/main/top_elite01.jpg);
+  background-image: url(/images/main/elite01_pc_3840.jpg);
 
   &::after {
     content : '';
@@ -175,7 +176,7 @@
 }
 
 .slideMonet2 {
-  background-image: url(/images/main/top_elite02.jpg);
+  background-image: url(/images/main/elite01_pc_3840.jpg);
 
   &::after {
     content : '';
@@ -194,7 +195,7 @@
 }
 
 .slideMonet3 {
-  background-image: url(/images/main/top_elite03.jpg);
+  background-image: url(/images/main/elite01_pc_3840.jpg);
 
   &::after {
     content : '';
@@ -524,13 +525,13 @@
       background-size: cover;
     }
 
-    .slide3 {
-      margin: 0 !important;
-      padding: 0 !important;
-      background-image: url(/images/main/main_gogh_3.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+    // .slide3 {
+    //   margin: 0 !important;
+    //   padding: 0 !important;
+    //   background-image: url(/images/main/main_gogh_3.png);
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    // }
 
     .backgroundImage {
       width: 50vw;
