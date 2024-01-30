@@ -5253,6 +5253,21 @@ Booking Page
     }
   }
 }
+.btn_radio {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0 30px 0 0;
+  color: $gray-color;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.14px;
+  .form-check-input {
+    width: 24px;
+    height: 24px;
+    margin: 0 8px 0 0;
+  }
+}
 .booking_container {
   position: relative;
   margin: 100px 0 150px;
@@ -7909,3 +7924,7 @@ Shopping
 .fp-watermark {
   display: none;
 }
+
+/*
+제휴서비스
+================================*/
