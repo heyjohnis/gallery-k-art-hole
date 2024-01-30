@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import MultiRangeSlider from "../Common/MultiRangeSilder";
+import { useDebouncedCallback } from "use-debounce";
+import { de } from "date-fns/locale";
 
 export default function GgShoppingFilter({ form, setForm }) {
   const handleCheckBrand = (e) => {
     const { checked, value } = e.target;
-    const arr = form?.brands?.split(",") || [];
+    const arr = form?.brands ? form?.brands.split(",") : [];
     let brands = "";
     if (checked) {
       arr.push(e.target.value);
@@ -21,7 +23,7 @@ export default function GgShoppingFilter({ form, setForm }) {
 
   const handleCheckKeyword = (e) => {
     const { checked, value } = e.target;
-    const arr = form?.keywords?.split(",") || [];
+    const arr = form?.keywords ? form?.keywords?.split(",") : [];
     let keywords = "";
     if (checked) {
       arr.push(e.target.value);
@@ -36,13 +38,16 @@ export default function GgShoppingFilter({ form, setForm }) {
   };
 
   const handlePriceRange = (data) => {
-    console.log("handlePriceRange: ", data);
+    debounced(data);
+  };
+
+  const debounced = useDebouncedCallback((data) => {
     setForm((prev) => ({
       ...prev,
       start_price: data.min,
       end_price: data.max,
     }));
-  };
+  }, 1000);
 
   return (
     <div className="shopping_filter">
@@ -110,12 +115,12 @@ export default function GgShoppingFilter({ form, setForm }) {
             onChange={handleCheckKeyword}
           />
           <Form.Check
-            label="캐디백"
+            label="골프백"
             name="product2"
             type="checkbox"
             id="pro_2"
             className="item"
-            value="캐디백"
+            value="골프백"
             onChange={handleCheckKeyword}
           />
           <Form.Check

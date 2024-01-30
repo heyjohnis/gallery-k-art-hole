@@ -110,11 +110,16 @@ export default function GgShoppingPurchaseAgreement({
     console.log("handleOrder: ", form);
 
     if (!validateForm()) return;
-
     const orderItemNo = orderProducts
       ?.reduce((acc, cur) => [...acc, cur.item_no], [])
       .join(",");
     if (!orderItemNo) return alert("주문할 상품이 없습니다.");
+
+    const pdLength = orderProducts.length;
+    const comment = `${orderProducts[0].pd_name} ${
+      pdLength > 1 ? `외 ${pdLength - 1}건` : ""
+    }`;
+    form.comment = comment;
 
     POST("/mall/cart/order", {
       ...form,

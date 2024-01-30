@@ -13,6 +13,7 @@ export default function GgShoppingListPc({ user }) {
 
   const getGgShoppingList = (currentPage = 1) => {
     POST(`/mall/paging`, {
+      ...form,
       pd_kind: "shop",
       currentPage,
       pageSize: 16,
@@ -34,6 +35,7 @@ export default function GgShoppingListPc({ user }) {
 
   useEffect(() => {
     console.log("form: ", form);
+    getGgShoppingList();
   }, [form]);
 
   return (
