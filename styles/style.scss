@@ -2297,7 +2297,6 @@ Footer
     }
 
     .cstimeWrap {
-
       .time {
         font-family: Montserrat;
         font-size: 20px;
@@ -2542,7 +2541,7 @@ Footer
       }
     }
 
-    &  {
+    & {
       display: flex;
       flex-direction: row;
 
@@ -2584,26 +2583,25 @@ Footer
           color: #999;
         }
       }
-      
     }
   }
 
   .tel_service {
     display: flex;
     flex-direction: column;
-  
+
     .contact-wrap {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       margin-bottom: 0px;
-  
+
       .linkWrap {
         order: 1;
         width: 50%;
         margin-bottom: 0px;
         padding-left: 7%;
-  
+
         a {
           display: inline-block;
           font-family: Montserrat;
@@ -2614,11 +2612,11 @@ Footer
           color: #666;
         }
       }
-  
+
       .cstimeWrap {
         order: 0;
         width: 50%;
-  
+
         .time {
           font-family: Montserrat;
           font-size: 1.2rem;
@@ -2629,7 +2627,7 @@ Footer
         }
       }
     }
-  
+
     .privacy-policy-wrap {
       a {
         font-family: Montserrat;
@@ -2639,7 +2637,7 @@ Footer
         letter-spacing: -0.16px;
         color: #666;
       }
-  
+
       span {
         font-family: Montserrat;
         font-size: 0.8rem;
@@ -2647,7 +2645,7 @@ Footer
         line-height: 30px;
         letter-spacing: -0.16px;
         color: #666;
-  
+
         &:nth-child(6) {
           font-weight: 100;
         }
@@ -7366,6 +7364,10 @@ Shopping
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  .tit {
+    display: flex;
+    align-items: flex-end;
+  }
   h1 {
     margin: 0 50px 0 0;
     color: $main-color;

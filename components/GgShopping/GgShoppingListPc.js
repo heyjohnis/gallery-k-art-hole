@@ -50,7 +50,7 @@ export default function GgShoppingListPc({ user }) {
   return (
     <>
       <div className="shopping_tit">
-        <div>
+        <div className="tit">
           <h1>GG 쇼핑</h1>
           <span>{`GG Mall > GG 쇼핑`}</span>
         </div>
