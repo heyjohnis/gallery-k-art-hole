@@ -14,7 +14,7 @@ export default function error() {
         title2="담아주세요"
         text="그린갤러리의 다양한 제휴서비스와 엄선된 상품을 만나보세요."
       />
-      <button className="btn_white mt-100 mb-100">상품 담으러 가기</button>
+      <button className="btn_white">상품 담으러 가기</button>
       {/* <RecommendService /> */}
       <Footer />
     </div>
