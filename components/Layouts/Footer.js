@@ -43,28 +43,30 @@ const Footer = () => {
             <div className="center-wrap">
               <div className="single-widget tel_service">
                 <div className="contact-wrap">
-                  <Link
-                    className="sns-link"
-                    href="https://www.instagram.com/green_gallery_official"
-                    target="_blank"
-                  >
-                    INSTAGRAM
-                  </Link>
-                  <br />
-                  <Link
-                    className="sns-link"
-                    href="https://www.youtube.com/@GREENGALLERY072"
-                    target="_blank"
-                  >
-                    YOUTUBE
-                  </Link>
-                  <br />
-                  <br />
-                  <p className="time">
-                    상담문의 1588 - 1778
+                  <div className="linkWrap">
+                    <Link
+                      className="sns-link"
+                      href="https://www.instagram.com/green_gallery_official"
+                      target="_blank"
+                    >
+                      INSTAGRAM
+                    </Link>
                     <br />
-                    상담시간 10am - 7pm
-                  </p>
+                    <Link
+                      className="sns-link"
+                      href="https://www.youtube.com/@GREENGALLERY072"
+                      target="_blank"
+                    >
+                      YOUTUBE
+                    </Link>
+                  </div>
+                  <div className="cstimeWrap">
+                    <p className="time">
+                      상담문의 1588 - 1778
+                      <br />
+                      상담시간 10am - 7pm
+                    </p>
+                  </div>
                 </div>
 
                 <div className="privacy-policy-wrap">
@@ -83,9 +85,9 @@ const Footer = () => {
             </div>
 
             <div className="right-wrap">
-              <div className="single-widget">
+              <div className="single-widget addWrap">
                 <p className="address">
-                  주식회사 갤러리케이 <br />
+                  <strong>주식회사 갤러리케이</strong> <br />
                   대표자 <span>|</span> 김정필 <br />
                   사업자 등록번호 <span>|</span> 359 - 86 - 00885 <br />
                   통신판매업 신고 <span>|</span> 2023 - 서울동대문 - 0364호
@@ -96,6 +98,9 @@ const Footer = () => {
                   &#40;신설동&#41;
                   <br />
                 </p>
+                <div className="copy-right-wrap-mo">
+                  <span>ⓒ 2024 GREEN GALLERY</span>
+                </div>
               </div>
             </div>
           </div>
