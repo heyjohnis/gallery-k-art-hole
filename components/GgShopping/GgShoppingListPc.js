@@ -5,11 +5,20 @@ import GgshoppingListItems from "./GgshoppingListItems";
 import { POST } from "../../utils/restApi";
 import Pagination from "../Pagination";
 import { calcDiscount } from "../../utils/price";
+import { useDebouncedCallback } from "use-debounce";
 
 export default function GgShoppingListPc({ user }) {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState({ currentPage: 1, totalPages: 1 });
   const [form, setForm] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    debounced(name, value);
+  };
+  const debounced = useDebouncedCallback((name, value) => {
+    setForm((prev) => ({ ...prev, [name]: value }));
+  }, 1000);
 
   const getGgShoppingList = (currentPage = 1) => {
     POST(`/mall/paging`, {
@@ -48,8 +57,10 @@ export default function GgShoppingListPc({ user }) {
         <div>
           <Form.Control
             type="text"
+            name="search_word"
             placeholder="Search"
             className="shopping_search"
+            onChange={handleChange}
           />
         </div>
       </div>

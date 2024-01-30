@@ -21,6 +21,24 @@ export default function GgShoppingFilter({ form, setForm }) {
     setForm((prev) => ({ ...prev, brands }));
   };
 
+  const restForm = (e) => {
+    e.preventDefault();
+    setForm((prev) => ({
+      ...prev,
+      brands: "",
+      keywords: "",
+      start_price: "",
+      end_price: "",
+      search_word: "",
+    }));
+    document
+      .querySelectorAll("input[type=checkbox]")
+      .forEach((el) => (el.checked = false));
+    document
+      .querySelectorAll("input[type=text]")
+      .forEach((el) => (el.value = ""));
+  };
+
   const handleCheckKeyword = (e) => {
     const { checked, value } = e.target;
     const arr = form?.keywords ? form?.keywords?.split(",") : [];
@@ -51,7 +69,9 @@ export default function GgShoppingFilter({ form, setForm }) {
 
   return (
     <div className="shopping_filter">
-      <h2 className="total">전체</h2>
+      <h2 className="total">
+        <button onClick={restForm}>전체</button>
+      </h2>
       <section>
         <h2>브랜드</h2>
         <div className="filter_group">
