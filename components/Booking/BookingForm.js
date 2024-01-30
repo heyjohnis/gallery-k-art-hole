@@ -279,7 +279,6 @@ const BookingForm = ({ user, updateReservation }, ref) => {
               >
                 <label>시간 선택</label>
                 <span className="text-danger"> *</span>
-
                 <div className="btn_radio">
                   <Form.Check
                     inline

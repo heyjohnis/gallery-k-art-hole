@@ -4857,10 +4857,6 @@ Ver2.0
 
 .datePickerWrap {
   margin: 50px 0;
-
-  & input {
-    width: 332px;
-  }
 }
 
 /*
@@ -5261,12 +5257,16 @@ Booking Page
 .form-check-input:checked[type="checkbox"] {
   background-image: url(/images/booking/check.svg);
 }
+
 .btn_radio {
   .form-check-input {
     border-radius: 0;
     &:checked[type="radio"] {
       background-image: url(/images/booking/check.svg);
     }
+  }
+  .form-check-inline {
+    padding: 0;
   }
 }
 .btn_radio {
@@ -7725,6 +7725,8 @@ Shopping
     }
   }
   .detail_menu {
+    position: sticky;
+    top: 101px;
     margin: 0;
     padding: 0 199px 0 150px;
     display: flex;
@@ -7945,5 +7947,16 @@ Shopping
 제휴서비스
 ================================*/
 .calendar_wrap {
+  display: grid;
+  grid-template-columns: 266px 266px;
+  column-gap: 20px;
+}
+
+.service_option {
   display: flex;
+  justify-content: space-between;
+}
+
+.date_start {
+  margin-right: 20px;
 }
