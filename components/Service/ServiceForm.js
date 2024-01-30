@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Image from "next/image";
 import Form from "react-bootstrap/Form";
+import DatePicker from "../Common/DatePicker";
 
 export const ServiceForm = () => {
   return (
@@ -85,27 +86,36 @@ export const ServiceForm = () => {
             />
           </div>
         </div>
+        <div className="datePickerWrap mb-80">
+          <label>날짜선택</label>
+          <div className="calendar_wrap">
+            <DatePicker placeholder="출발일" dateKind="hope_date1" />
+            <DatePicker placeholder="도착일" dateKind="hope_date2" />
+          </div>
+        </div>
 
+        <h2>이용자 정보</h2>
         <div className="form_item">
-          <Form.Label>주문자명</Form.Label>
+          <Form.Label>이용자명</Form.Label>
           <div className="item_name">
             <Form.Control
               type="text"
-              placeholder="이름을 입력해주세요."
-              name="order_user_name"
-              value="이름"
+              placeholder="홍길동"
+              name="delivery_user_name"
+              value=""
             />
             <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
           </div>
         </div>
+
         <div className="form_item">
-          <Form.Label>주문자 연락처</Form.Label>
+          <Form.Label>이용자 연락처</Form.Label>
           <div className="item_group row">
             <div className="col row tel_group">
               <div className="col-lg-2 col-3">
                 <Form.Control
                   type="text"
-                  name="order_user_phone"
+                  name="delivery_phone"
                   maxLength="15"
                   placeholder="010-1234-5678"
                   value=""
@@ -116,7 +126,7 @@ export const ServiceForm = () => {
         </div>
 
         <div className="form_item">
-          <Form.Label>주문자 이메일</Form.Label>
+          <Form.Label>이용자 이메일</Form.Label>
           <Form.Control
             type="email"
             placeholder="email@galleryk.co.kr"
@@ -135,214 +145,7 @@ export const ServiceForm = () => {
             value=""
           />
         </div>
-
-        <h2>배송지 정보</h2>
-        <div className="form_item">
-          <Form.Check
-            inline
-            label="주문자 정보와 동일"
-            name="copy_order_info"
-            type="checkbox"
-            id="copy_order_info"
-            value=""
-          />
-        </div>
-        <div className="form_item">
-          <Form.Label>배송지명</Form.Label>
-          <div className="item_name">
-            <Form.Control
-              type="text"
-              placeholder="이름을 입력해주세요."
-              name="delivery_user_name"
-              value=""
-            />
-            <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
-          </div>
-        </div>
-
-        <div className="form_item">
-          <Form.Label>배송지 연락처</Form.Label>
-          <div className="item_group row">
-            <div className="col row tel_group">
-              <div className="col-lg-2 col-3">
-                <Form.Control
-                  type="text"
-                  name="delivery_phone"
-                  maxLength="15"
-                  placeholder="010-1234-5678"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="form_item">
-          <Form.Label>배송지 주소</Form.Label>
-          <div className="item_group row">
-            <div className="col row tel_group">
-              <div className="col">
-                <Form.Control
-                  type="text"
-                  name="delivery_zipcode"
-                  id="delivery_zipcode"
-                  maxLength="5"
-                  placeholder="우편번호"
-                  value=""
-                />
-              </div>
-              <div className="col">
-                <button>도로명주소</button>
-              </div>
-            </div>
-          </div>
-          <Form.Control
-            type="text"
-            placeholder="주소를 입력하세요"
-            name="delivery_addr1"
-            className="address_detail"
-            id="delivery_addr1"
-            value=""
-          />
-          <Form.Control
-            type="text"
-            placeholder="상세주소를 입력하세요"
-            name="delivery_addr2"
-            className="address_detail"
-            value=""
-          />
-        </div>
       </Form>
-
-      <h2>주문자 정보</h2>
-      <Form>
-        <div className="form_item">
-          <Form.Label>주문자명</Form.Label>
-          <div className="item_name">
-            <Form.Control
-              type="text"
-              placeholder="이름을 입력해주세요."
-              name="order_user_name"
-              value="이름"
-            />
-            <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
-          </div>
-        </div>
-        <div className="form_item">
-          <Form.Label>주문자 연락처</Form.Label>
-          <div className="item_group row">
-            <div className="col row tel_group">
-              <div className="col-lg-2 col-3">
-                <Form.Control
-                  type="text"
-                  name="order_user_phone"
-                  maxLength="15"
-                  placeholder="010-1234-5678"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="form_item">
-          <Form.Label>주문자 이메일</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="email@galleryk.co.kr"
-            name="order_user_email"
-            value=""
-          />
-        </div>
-
-        <div className="form_item margin_b_80">
-          <Form.Label>요청사항</Form.Label>
-          <Form.Control
-            as="textarea"
-            name="memo"
-            rows={3}
-            placeholder="문의하실 요청사항을 작성해주세요."
-            value=""
-          />
-        </div>
-
-        <h2>배송지 정보</h2>
-        <div className="form_item">
-          <Form.Check
-            inline
-            label="주문자 정보와 동일"
-            name="copy_order_info"
-            type="checkbox"
-            id="copy_order_info"
-            value=""
-          />
-        </div>
-        <div className="form_item">
-          <Form.Label>배송지명</Form.Label>
-          <div className="item_name">
-            <Form.Control
-              type="text"
-              placeholder="이름을 입력해주세요."
-              name="delivery_user_name"
-              value=""
-            />
-            <FontAwesomeIcon icon={faCircleCheck} className="icon_complete" />
-          </div>
-        </div>
-
-        <div className="form_item">
-          <Form.Label>배송지 연락처</Form.Label>
-          <div className="item_group row">
-            <div className="col row tel_group">
-              <div className="col-lg-2 col-3">
-                <Form.Control
-                  type="text"
-                  name="delivery_phone"
-                  maxLength="15"
-                  placeholder="010-1234-5678"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="form_item">
-          <Form.Label>배송지 주소</Form.Label>
-          <div className="item_group row">
-            <div className="col row tel_group">
-              <div className="col">
-                <Form.Control
-                  type="text"
-                  name="delivery_zipcode"
-                  id="delivery_zipcode"
-                  maxLength="5"
-                  placeholder="우편번호"
-                  value=""
-                />
-              </div>
-              <div className="col">
-                <button>도로명주소</button>
-              </div>
-            </div>
-          </div>
-          <Form.Control
-            type="text"
-            placeholder="주소를 입력하세요"
-            name="delivery_addr1"
-            className="address_detail"
-            id="delivery_addr1"
-            value=""
-          />
-          <Form.Control
-            type="text"
-            placeholder="상세주소를 입력하세요"
-            name="delivery_addr2"
-            className="address_detail"
-            value=""
-          />
-        </div>
-      </Form>
-      <h2 className="md_screen_payment_tit">결제 정보</h2>
     </div>
   );
 };

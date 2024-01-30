@@ -225,6 +225,10 @@ textarea {
   margin-bottom: 70px;
 }
 
+.mb-80 {
+  margin-bottom: 80px !important;
+}
+
 .pl-30 {
   padding-left: 30px;
 }
@@ -243,6 +247,10 @@ textarea {
 
 .mt-50 {
   margin-top: 50px;
+}
+
+.mt-80 {
+  margin-top: 80px;
 }
 
 .mt-100 {
@@ -4847,6 +4855,14 @@ Ver2.0
   background: $white-color;
 }
 
+.datePickerWrap {
+  margin: 50px 0;
+
+  & input {
+    width: 332px;
+  }
+}
+
 /*
 Golf Booking 
 ================================*/
@@ -7928,3 +7944,6 @@ Shopping
 /*
 제휴서비스
 ================================*/
+.calendar_wrap {
+  display: flex;
+}
