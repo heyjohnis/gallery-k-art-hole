@@ -7744,9 +7744,9 @@ Shopping
     }
   }
   .products_detail {
-    padding: 100px 199px 0 150px;
+    padding: 50px 199px 0 150px;
     .detail_item {
-      padding-bottom: 50px;
+      padding: 50px 0;
       border-bottom: 1px solid #ddd;
       h2 {
         margin: 50px 0 30px 0;
@@ -7754,6 +7754,48 @@ Shopping
         font-size: 30px;
         font-weight: 700;
         letter-spacing: -0.3px;
+      }
+      .detail_info,
+      .reservation_info {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .detail_info {
+        li {
+          display: grid;
+          grid-template-columns: 130px 30px auto;
+          margin-bottom: 20px;
+          span {
+            color: $body-color;
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: -0.18px;
+          }
+          .tit {
+            font-weight: 500;
+            &::before {
+              content: "ㆍ";
+            }
+          }
+          .bar {
+            margin-right: 16px;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .reservation_info {
+        li {
+          color: $body-color;
+          font-size: 18px;
+          font-weight: 300;
+          letter-spacing: -0.18px;
+          &::before {
+            content: "ㆍ";
+          }
+        }
       }
     }
   }
@@ -7941,6 +7983,10 @@ Shopping
 
 .fp-watermark {
   display: none;
+}
+
+html {
+  scroll-padding-top: 250px;
 }
 
 /*
