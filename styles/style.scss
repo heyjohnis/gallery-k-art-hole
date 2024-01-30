@@ -249,6 +249,10 @@ textarea {
   margin-top: 100px;
 }
 
+.mb-100 {
+  margin-bottom: 100px;
+}
+
 .mt-140 {
   margin-top: 140px;
 }
@@ -4761,6 +4765,18 @@ span.option_price {
     background-color: #4e7d22;
     color: #fff;
   }
+}
+
+/*
+Ver2.0 
+================================*/
+.btn_white {
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+  padding: 20px 0px;
+  border: 1px solid $body-color;
+  background: $white-color;
 }
 
 /*
