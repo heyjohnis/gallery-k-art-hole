@@ -1,6 +1,26 @@
+.select_wrap {
+  margin-bottom: 50px;
+}
+
 .tit {
-  font-size: 18px;
-  font-weight: 600;
-  margin-right: 10px;
-  margin-top: 20px;
+  display: block;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.14px;
+}
+
+.select {
+  width: auto;
+  min-width: 101px;
+  padding: 12px 20px;
+  background-color: #eee;
+  border: 0;
+  border-radius: 5px;
+  color: #333;
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -1px;
 }

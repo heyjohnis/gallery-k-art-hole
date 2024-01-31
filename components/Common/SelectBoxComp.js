@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Form } from "react-bootstrap";
+
 import styles from "./style/selectBoxComp.module.scss";
 
 export function SelectBoxComp({ opData, selectedOption }) {
@@ -29,9 +31,12 @@ export function SelectBoxComp({ opData, selectedOption }) {
 
   return (
     <div className="row">
-      <div className="col-md-12">
+      <div className={`col-md-12 ${styles.select_wrap}`}>
         <label className={styles.tit}>{opData.option_name}</label>
-        <select
+        <Form.Select
+          className={styles.select}
+          aria-label=""
+          name=""
           onChange={(e) => {
             let data = jsonArr[e.target.selectedIndex - 1];
             if (e.target.selectedIndex === 0) {
@@ -49,7 +54,7 @@ export function SelectBoxComp({ opData, selectedOption }) {
                 : ""}
             </option>
           ))}
-        </select>
+        </Form.Select>
       </div>
     </div>
   );
