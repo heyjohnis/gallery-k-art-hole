@@ -1,7 +1,11 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-export function GgQuantityComp({ setForm, maxQuantity, unitOption }) {
+export function GgQuantityComp({
+  setForm,
+  maxQuantity,
+  unitOption = { label: "수량", unit: "개" },
+}) {
   const setQuantityOption = (maxCnt) => {
     const quantity = maxCnt > 4 ? 4 : maxCnt;
     return Array.from({ length: quantity }, (_, i) => (
@@ -20,14 +24,15 @@ export function GgQuantityComp({ setForm, maxQuantity, unitOption }) {
       />
     ));
   };
+  console.log("maxQuantity: ", maxQuantity);
   return (
-    <div className="form_item">
+    <>
       {maxQuantity > 1 && (
-        <>
+        <div className="form_item">
           <label>{unitOption.label}</label>
           <div className="item_group">{setQuantityOption(maxQuantity)}</div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }

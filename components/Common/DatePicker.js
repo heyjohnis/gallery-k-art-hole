@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
-import styles from "../Home/home.module.scss";
+import styles from "./style/datePicker.module.scss";
 
-const DatePicker = ({ label, pickDate, dateKind, selectedDate }) => {
+export function DatePicker({ label, pickDate, dateKind, selectedDate = null }) {
   const [selectedDay, setSelectedDay] = useState();
   const [isShow, setIsShow] = useState(false);
 
@@ -28,7 +28,7 @@ const DatePicker = ({ label, pickDate, dateKind, selectedDate }) => {
   }, [selectedDate]);
 
   return (
-    <div>
+    <div className={styles.datepickerWrap}>
       <div className="col-lg-12 col-sm-12">
         <label>{label}</label>
         <input
@@ -56,6 +56,4 @@ const DatePicker = ({ label, pickDate, dateKind, selectedDate }) => {
       )}
     </div>
   );
-};
-
-export default DatePicker;
+}

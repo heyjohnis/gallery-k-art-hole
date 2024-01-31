@@ -54,7 +54,7 @@ export default function BookingComp() {
         <div className={`col-lg-12 col-md-6 ${styles.formWrap}`}>
           <form>
             <div className={`row col-lg-12 col-md-6 ${styles.inputWrap}`}>
-              <div className={`col ${styles.datepickerWrap}`}>
+              <div className="col">
                 <DatePicker
                   label="SCHEDULE"
                   pickDate={(date) => selectedPickDate(date)}

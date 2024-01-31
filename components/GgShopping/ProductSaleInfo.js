@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Table } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
 import { POST } from "../../utils/restApi";
-import { GgQuantityComp } from "./GgQuantityComp";
-import { set } from "date-fns";
+import { GgOptionsComp } from "./GgOptionsComp";
 
-export const ProductSaleInfo = ({ content, options }) => {
+export function ProductSaleInfo({ content, options }) {
   const router = useRouter();
   const productSale = "sale";
   const [keywords, setKeywords] = useState([]);
   const [form, setForm] = useState({ content });
-  const [unitOption, setUnitOption] = useState({ label: "수량", unit: "개" });
   const parseKeyword = (keyword) => {
     setKeywords(keyword.split(",").map((item) => item?.trim()));
   };
@@ -42,11 +38,9 @@ export const ProductSaleInfo = ({ content, options }) => {
 
   useEffect(() => {
     console.log("content: ", content);
+    console.log("options: ", options);
     setForm((prev) => ({ ...prev, ...content }));
     if (content?.pd_keyword) parseKeyword(content?.pd_keyword);
-    if (["tour", "service"].includes(content?.pd_kind)) {
-      setUnitOption({ label: "인원", unit: "명" });
-    }
   }, [content]);
 
   return (
@@ -79,14 +73,11 @@ export const ProductSaleInfo = ({ content, options }) => {
           </span>
         )}
       </div>
-      <Table className="delivery_notice">
+      <div className="delivery_notice">
         <div dangerouslySetInnerHTML={{ __html: content.info_product }}></div>
-      </Table>
-      <GgQuantityComp
-        setForm={setForm}
-        maxQuantity={content.max_quantity}
-        unitOption={unitOption}
-      />
+      </div>
+      <GgOptionsComp content={content} options={options} setForm={setForm} />
+
       <div className="shopping_btn row">
         <button className="btn_cart col-5" onClick={addCart}>
           장바구니
@@ -97,4 +88,4 @@ export const ProductSaleInfo = ({ content, options }) => {
       </div>
     </section>
   );
-};
+}

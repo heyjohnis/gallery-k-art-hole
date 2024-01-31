@@ -4,36 +4,47 @@
   animation: blink 0.5s ease-in-out infinite alternate;
 }
 
-@-webkit-keyframes blink{
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@-moz-keyframes blink{
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes blink{
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
 
 .intro_arrow {
   position: relative;
   background: none;
   border: none;
   cursor: pointer;
-  animation: up-down 1s 0s ease-in-out infinite alternate;	
+  animation: up-down 1s 0s ease-in-out infinite alternate;
 }
 @keyframes up-down {
   0% {
-      top: 0px;
-  } 
+    top: 0px;
+  }
   100% {
-      top: 30px;
-  } 
+    top: 30px;
+  }
 }
 
 .mainModal {
@@ -46,16 +57,17 @@
   background-image: url(/images/main/president01_pc_3840.jpg);
 
   &::after {
-    content : '';
-    position : absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
-    background-color : rgba(0, 0, 0, 0.4);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  & .titleWrap, & .discriptionWrap {
+  & .titleWrap,
+  & .discriptionWrap {
     position: relative;
     z-index: 9;
   }
@@ -65,16 +77,17 @@
   background-image: url(/images/main/president01_pc_3840.jpg);
 
   &::after {
-    content : '';
-    position : absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
-    background-color : rgba(0, 0, 0, 0.4)
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  & .titleWrap, & .discriptionWrap {
+  & .titleWrap,
+  & .discriptionWrap {
     position: relative;
     z-index: 9;
   }
@@ -84,16 +97,17 @@
   background-image: url(/images/main/president01_pc_3840.jpg);
 
   &::after {
-    content : '';
-    position : absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
-    background-color : rgba(0, 0, 0, 0.4);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  & .titleWrap, & .discriptionWrap {
+  & .titleWrap,
+  & .discriptionWrap {
     position: relative;
     z-index: 9;
   }
@@ -103,16 +117,17 @@
   background-image: url(/images/main/noblesse01_pc_3840.jpg);
 
   &::after {
-    content : '';
-    position : absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
-    background-color : rgba(0, 0, 0, 0.4)
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  & .titleWrap, & .discriptionWrap {
+  & .titleWrap,
+  & .discriptionWrap {
     position: relative;
     z-index: 9;
   }
@@ -122,16 +137,17 @@
   background-image: url(/images/main/noblesse01_pc_3840.jpg);
 
   &::after {
-    content : '';
-    position : absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
-    background-color : rgba(0, 0, 0, 0.4)
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  & .titleWrap, & .discriptionWrap {
+  & .titleWrap,
+  & .discriptionWrap {
     position: relative;
     z-index: 9;
   }
@@ -141,16 +157,17 @@
   background-image: url(/images/main/noblesse01_pc_3840.jpg);
 
   &::after {
-    content : '';
-    position : absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
-    background-color : rgba(0, 0, 0, 0.4)
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  & .titleWrap, & .discriptionWrap {
+  & .titleWrap,
+  & .discriptionWrap {
     position: relative;
     z-index: 9;
   }
@@ -160,16 +177,17 @@
   background-image: url(/images/main/elite01_pc_3840.jpg);
 
   &::after {
-    content : '';
-    position : absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
-    background-color : rgba(0, 0, 0, 0.4)
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  & .titleWrap, & .discriptionWrap {
+  & .titleWrap,
+  & .discriptionWrap {
     position: relative;
     z-index: 9;
   }
@@ -179,16 +197,17 @@
   background-image: url(/images/main/elite01_pc_3840.jpg);
 
   &::after {
-    content : '';
-    position : absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
-    background-color : rgba(0, 0, 0, 0.4)
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  & .titleWrap, & .discriptionWrap {
+  & .titleWrap,
+  & .discriptionWrap {
     position: relative;
     z-index: 9;
   }
@@ -198,16 +217,17 @@
   background-image: url(/images/main/elite01_pc_3840.jpg);
 
   &::after {
-    content : '';
-    position : absolute;
-    top : 0;
-    left : 0;
-    width : 100%;
-    height : 100%;
-    background-color : rgba(0, 0, 0, 0.4)
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  & .titleWrap, & .discriptionWrap {
+  & .titleWrap,
+  & .discriptionWrap {
     position: relative;
     z-index: 9;
   }
@@ -216,7 +236,7 @@
 .container1 {
   position: relative;
   top: -1010px;
-  color:#fff;
+  color: #fff;
 }
 
 .titleWrap {
@@ -265,7 +285,7 @@
   color: #fff;
   text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
   text-align: center;
-  
+
   svg {
     padding: 10px 0 0 0;
   }
@@ -282,7 +302,6 @@
   //   width: 100%;
   //   height: auto;
   // }
-
 }
 
 .swiper {
@@ -448,23 +467,21 @@
           position: absolute;
           top: 100px;
           left: -4px;
+          margin: 0;
           padding: 5px;
           border: 1px solid #dadce0;
           border-radius: 6px;
           background: #fff;
-          box-shadow: 0 2px 6px 2px rgba(60, 64, 67, .15);
+          box-shadow: 0 2px 6px 2px rgba(60, 64, 67, 0.15);
 
           --rdp-cell-size: 32px;
           --rdp-caption-font-size: 14px;
 
           button {
             font-size: 14px;
-
           }
         }
       }
-
-        
 
       .discriptionWrap {
         width: 487px;
@@ -672,7 +689,6 @@
     }
 
     & > div:nth-child(3) {
-
       right: 11.8vw;
       height: 465px !important;
       background: rgba(0, 0, 0, 0.2);
@@ -703,7 +719,7 @@
     align-content: flex-end;
     justify-content: center;
     align-items: flex-start;
-    
+
     .titleWrap {
       width: 354px;
       height: auto;
