@@ -31,21 +31,24 @@ export function GgOptionsComp({ content, setForm, options }) {
   return (
     <>
       {options?.length > 0 &&
-        options.map((item, index) =>
-          item.option_type === "01" ? (
+        options.map(({ option_name, option_type, option_value }, index) =>
+          option_type === "01" ? (
             <SelectBoxComp
               key={index}
-              opData={item}
+              optionValue={option_value}
+              optionName={option_name}
               selectedOption={selectedOption}
             />
-          ) : item.option_type === "02" ? (
+          ) : option_type === "02" ? (
             <DatePicker
               key={index}
-              label={item.option_name}
+              label={option_name}
               pickDate={(date) => selectedPickDate(date)}
               dateKind="start_date"
             />
-          ) : (
+          ) : option_type === "03" ? (
+            <></>
+          ) : option_type === "04" ? (
             <>
               <DatePicker
                 key={index}
@@ -60,6 +63,15 @@ export function GgOptionsComp({ content, setForm, options }) {
                 dateKind="end_date"
               />
             </>
+          ) : option_type === "05" ? (
+            <GgQuantityComp
+              setForm={setForm}
+              maxQuantity={content?.max_quantity}
+            />
+          ) : option_type === "06" ? (
+            <></>
+          ) : (
+            <></>
           )
         )}
 

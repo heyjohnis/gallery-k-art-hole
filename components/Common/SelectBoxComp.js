@@ -3,13 +3,13 @@ import { Form } from "react-bootstrap";
 
 import styles from "./style/selectBoxComp.module.scss";
 
-export function SelectBoxComp({ opData, selectedOption }) {
+export function SelectBoxComp({ optionName, optionValue, selectedOption }) {
   const [optionData, setOptionData] = useState([]);
   const optionArr = [];
 
   optionArr.push(<option key={0}>선택</option>);
 
-  const jsonArr = JSON.parse(opData.option_value);
+  const jsonArr = JSON.parse(optionValue);
   for (let j = 0; j < jsonArr.length; j++) {
     optionArr.push(
       <option key={j + 1} value={jsonArr[j]?.price}>
@@ -22,17 +22,16 @@ export function SelectBoxComp({ opData, selectedOption }) {
   }
 
   useEffect(() => {
-    console.log("opData: ", opData);
-    if (!opData.option_value) return;
-    const parsedOption = JSON.parse(opData.option_value);
+    if (!optionValue) return;
+    const parsedOption = JSON.parse(optionValue);
     console.log("parsedOption: ", parsedOption);
     setOptionData(parsedOption);
-  }, [opData]);
+  }, [optionValue]);
 
   return (
     <div className="row">
       <div className={`col-md-12 ${styles.select_wrap}`}>
-        <label className={styles.tit}>{opData.option_name}</label>
+        <label className={styles.tit}>{optionName}</label>
         <Form.Select
           className={styles.select}
           aria-label=""
@@ -42,7 +41,7 @@ export function SelectBoxComp({ opData, selectedOption }) {
             if (e.target.selectedIndex === 0) {
               data = { op_name: "", price: 0 };
             }
-            selectedOption(opData.option_no, data);
+            selectedOption(option_no, data);
           }}
         >
           <option key={0}>선택</option>
