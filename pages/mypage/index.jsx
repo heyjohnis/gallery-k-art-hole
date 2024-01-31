@@ -10,6 +10,7 @@ import Order from "../../components/Mypage/Content/Order";
 import Update from "../../components/Mypage/Content/Update";
 import Reservation from "../../components/NewMypage/Reservation";
 import MobileFooterNav from "../../components/Layouts/MobileFooterNav";
+import MyOrder from "../../components/NewMypage/MyOrder";
 
 function Mypage({ user }) {
   const router = useRouter();
@@ -95,7 +96,7 @@ function Mypage({ user }) {
               </>
             )}
             {selectedService === "reservation" && <Reservation user={user} />}
-            {selectedService === "order" && <Order />}
+            {selectedService === "order" && <MyOrder />}
             {selectedService === "point" && <MyPoint user={user} />}
             {selectedService === "userInfo" && <Update user={user} />}
           </div>
