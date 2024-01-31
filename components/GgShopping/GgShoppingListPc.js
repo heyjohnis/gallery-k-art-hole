@@ -64,6 +64,13 @@ export default function GgShoppingListPc({ user, pdKind }) {
           />
         </div>
       </div>
+      <div className="shopping_tit_mb">
+        <ul className="mypage_tab_menu">
+          <li className="active">제휴서비스</li>
+          <li className="">GG 투어</li>
+          <li className="">GG 쇼핑</li>
+        </ul>
+      </div>
       <div className="row">
         <div className="col-lg-2">
           <GgShoppingFilter form={form} setForm={setForm} pdKind={pdKind} />
