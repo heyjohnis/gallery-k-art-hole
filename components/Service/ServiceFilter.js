@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-export const ServiceFilter = () => {
+export function ServiceFilter() {
   return (
     <div className="shopping_filter">
       <h2 className="total">
@@ -62,4 +62,4 @@ export const ServiceFilter = () => {
       </section>
     </div>
   );
-};
+}

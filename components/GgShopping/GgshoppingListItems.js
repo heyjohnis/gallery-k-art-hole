@@ -7,7 +7,7 @@ export default function GgshoppingListItems({ items }) {
   const productSale = "sale";
 
   const gotoDetail = (id) => {
-    router.push(`/ggshopping/detail/${id}`);
+    router.push(`/gg-mall/detail/${id}`);
   };
 
   return (
@@ -21,10 +21,10 @@ export default function GgshoppingListItems({ items }) {
           <div className="items">
             <div className="list_img">
               <Image
-                src={`${item.thumb_img}`}
+                src={item.thumb_img}
                 width={523}
                 height={523}
-                alt="상품사진"
+                alt={item.pd_name}
               />
             </div>
             <div className="list_product">
@@ -32,7 +32,7 @@ export default function GgshoppingListItems({ items }) {
               <p>{item.brand}</p>
               <div
                 className={`product_price_info ${
-                  item.discount_rate > 0 ? productSale : ""
+                  item.discount_rate > 0 && "sale"
                 }`}
               >
                 <span className="label_sale">SALE</span>

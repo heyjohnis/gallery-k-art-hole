@@ -1,9 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Pagination } from "react-bootstrap";
 import { ServiceFilter } from "./ServiceFilter";
 import { ServiceListItems } from "./ServiceListItems";
+import { POST } from "../../utils/restApi";
+import { calcDiscount } from "../../utils/price";
+import { useDebouncedCallback } from "use-debounce";
+import { useRouter } from "next/router";
+export default function ServiceListPc({ user }) {
+  const router = useRouter();
+  const [form, setForm] = useState({});
+  const [items, setItems] = useState([]);
+  const [page, setPage] = useState({ currentPage: 1, totalPages: 1 });
+  const [pdKind, setPdKind] = useState("");
 
-export const ServiceListPc = () => {
+  const getServiceData = (currentPage = 1) => {
+    POST(`/mall/paging`, {
+      ...form,
+      pd_kind: pdKind,
+      currentPage,
+      pageSize: 16,
+      membership: user?.membership,
+      service_group: user?.service_group,
+    }).then((res) => {
+      setPage(res?.data?.pagination);
+      const items = res?.data?.list?.map((item) => {
+        return { ...item, ...calcDiscount(item.origin_price, item.price) };
+      });
+      setItems(items);
+      console.log("getGgShoppingList res: ", items);
+    });
+  };
+
+  useEffect(() => {
+    if (user?.membership) getServiceData();
+  }, [user]);
+
+  useEffect(() => {
+    console.log("form: ", form);
+    getServiceData();
+  }, [form]);
+
+  useEffect(() => {
+    if (router.query) {
+      setPdKind(router.query.slug);
+    }
+  }, [router.query]);
+
   return (
     <>
       <div className="shopping_tit">
@@ -22,13 +64,17 @@ export const ServiceListPc = () => {
       </div>
       <div className="row">
         <div className="col-lg-2">
-          <ServiceFilter />
+          <ServiceFilter form={form} setForm={setForm} />
         </div>
         <div className="col-lg-10">
-          <ServiceListItems />
-          <Pagination pageInfo="" gotoPage="" displayPage="5" />
+          <ServiceListItems serviceItems={items} />
+          <Pagination
+            pageInfo={page}
+            gotoPage={getServiceData}
+            displayPage="5"
+          />
         </div>
       </div>
     </>
   );
-};
+}

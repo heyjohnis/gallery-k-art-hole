@@ -43,7 +43,7 @@ export default function OrderListComp({ orderData, cancelOrder }) {
                     </article>
                   </div>
                   <div className="product_result">
-                    <span className="status">신청완료</span>
+                    <span className="status">{product.order_status_name}</span>
                     <Accordion.Header className="btn_detail">
                       상세정보
                     </Accordion.Header>

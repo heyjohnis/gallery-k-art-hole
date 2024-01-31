@@ -209,20 +209,17 @@ const Navbar = ({ user }) => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li className="nav-item">
-                    <Link
-                      href="/ggshopping/list/service"
-                      onClick={toggleNavbar}
-                    >
+                    <Link href="/gg-mall/service" onClick={toggleNavbar}>
                       제휴서비스
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/ggshopping/list" onClick={toggleNavbar}>
+                    <Link href="/gg-mall/shop" onClick={toggleNavbar}>
                       GG 쇼핑
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link href="/ggmall/list/tour" onClick={toggleNavbar}>
+                    <Link href="/gg-mall/tour" onClick={toggleNavbar}>
                       GG 투어
                     </Link>
                   </li>

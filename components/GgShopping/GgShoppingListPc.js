@@ -6,12 +6,12 @@ import { POST } from "../../utils/restApi";
 import Pagination from "../Pagination";
 import { calcDiscount } from "../../utils/price";
 import { useDebouncedCallback } from "use-debounce";
+import { ggmallKind } from "../../utils/cmmCode";
 
-export default function GgShoppingListPc({ user }) {
+export default function GgShoppingListPc({ user, pdKind }) {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState({ currentPage: 1, totalPages: 1 });
   const [form, setForm] = useState({});
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     debounced(name, value);
@@ -23,7 +23,7 @@ export default function GgShoppingListPc({ user }) {
   const getGgShoppingList = (currentPage = 1) => {
     POST(`/mall/paging`, {
       ...form,
-      pd_kind: "shop",
+      pd_kind: pdKind || "",
       currentPage,
       pageSize: 16,
       membership: user?.membership,
@@ -39,20 +39,20 @@ export default function GgShoppingListPc({ user }) {
   };
 
   useEffect(() => {
-    if (user?.membership) getGgShoppingList();
-  }, [user]);
-
-  useEffect(() => {
     console.log("form: ", form);
     getGgShoppingList();
   }, [form]);
+
+  useEffect(() => {
+    if (user?.membership) getGgShoppingList();
+  }, [pdKind, user]);
 
   return (
     <>
       <div className="shopping_tit">
         <div className="tit">
-          <h1>GG 쇼핑</h1>
-          <span>{`GG Mall > GG 쇼핑`}</span>
+          <h1>{ggmallKind[pdKind]}</h1>
+          <span>{`GG Mall > ${ggmallKind[pdKind]}`}</span>
         </div>
         <div>
           <Form.Control
@@ -66,10 +66,10 @@ export default function GgShoppingListPc({ user }) {
       </div>
       <div className="row">
         <div className="col-lg-2">
-          <GgShoppingFilter form={form} setForm={setForm} />
+          <GgShoppingFilter form={form} setForm={setForm} pdKind={pdKind} />
         </div>
         <div className="col-lg-10">
-          <GgshoppingListItems items={items} />
+          <GgshoppingListItems items={items} pdKind={pdKind} />
           <Pagination
             pageInfo={page}
             gotoPage={getGgShoppingList}

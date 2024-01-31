@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import RecommendService from "../RecommendService";
 
 export const ProductDetailContent = ({ user, content }) => {

@@ -5,6 +5,13 @@ export const ggmallKind = {
   gift: "사은품",
 };
 
+export const ggmallKindEng = {
+  service: "제휴서비스",
+  shop: "GG Shopping",
+  tour: "GG Tour",
+  gift: "사은품",
+};
+
 export const bbs = {
   news: "뉴스",
   event: "이벤트",

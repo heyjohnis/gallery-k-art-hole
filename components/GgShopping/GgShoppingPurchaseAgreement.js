@@ -130,7 +130,7 @@ export default function GgShoppingPurchaseAgreement({
       if (res?.data?.order_no > 0) {
         alert("주문이 완료되었습니다.");
         router.push({
-          pathname: "/ggshopping/complete/",
+          pathname: "/gg-mall/complete/",
           query: { order_no: res?.data?.order_no },
         });
       }

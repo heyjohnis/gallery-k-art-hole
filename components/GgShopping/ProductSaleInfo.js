@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Table } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { POST } from "../../utils/restApi";
+import { GgQuantityComp } from "./GgQuantityComp";
 
 export const ProductSaleInfo = ({ content, options }) => {
   const router = useRouter();
@@ -17,7 +18,7 @@ export const ProductSaleInfo = ({ content, options }) => {
     POST("/mall/add/cart", form).then((res) => {
       if (res?.data?.insertId > 0) {
         alert("장바구니에 추가되었습니다.");
-        router.push("/ggshopping/list");
+        router.push("/gg-mall/list");
       }
     });
   };
@@ -25,7 +26,7 @@ export const ProductSaleInfo = ({ content, options }) => {
   const gotoOrder = () => {
     POST("/mall/add/cart", form).then((res) => {
       if (res?.data?.insertId > 0) {
-        router.push("/ggshopping/order/");
+        router.push("/gg-mall/order/");
       }
     });
   };
@@ -41,25 +42,6 @@ export const ProductSaleInfo = ({ content, options }) => {
       100 - ((origin_price - price) / origin_price) * 100
     );
     return discount_rate;
-  };
-
-  const setQuantityOption = (maxQuantity) => {
-    const quantity = maxQuantity > 4 ? 4 : maxQuantity;
-    return Array.from({ length: quantity }, (_, i) => (
-      <Form.Check
-        key={i}
-        label={`${i + 1}개`}
-        name="time1"
-        type="radio"
-        id={`product-${i + 1}`}
-        className="item btn_radio"
-        defaultChecked={i === 0}
-        value={i + 1}
-        onChange={(e) =>
-          setForm((prev) => ({ ...prev, quantity: e.target.value }))
-        }
-      />
-    ));
   };
 
   return (
@@ -100,16 +82,7 @@ export const ProductSaleInfo = ({ content, options }) => {
           </tr>
         </tbody>
       </Table>
-      <div className="form_item">
-        {content?.max_quantity > 1 && (
-          <>
-            <label>수량</label>
-            <div className="item_group">
-              {setQuantityOption(content?.max_quantity)}
-            </div>
-          </>
-        )}
-      </div>
+      <GgQuantityComp setForm={setForm} maxQuantity={content.max_quantity} />
       <div className="shopping_btn row">
         <button className="btn_cart col-5" onClick={addCart}>
           장바구니

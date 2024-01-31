@@ -1,36 +1,54 @@
 import React from "react";
+import Image from "next/image";
 
-export const ServiceListItems = () => {
+export function ServiceListItems({ serviceItems }) {
   const productSale = "sale";
+  console.log("serviceItems: ", serviceItems);
   return (
     <div className="shopping_list_container row">
-      <div className="col-xxl-3 col-lg-4 cursor-pointer">
-        <div className="items">
-          <div className="list_img">
-            <img
-              src={`/images/service/service01.png`}
-              width={523}
-              height={523}
-              alt="상품사진"
-            />
-          </div>
-          <div className="list_product">
-            <h3>쇼골프 아카데미 레슨 바우처</h3>
-            <p>SHOW GOLF</p>
-            <div
-              className={`product_price_info ${
-                productSale
-                //  item.discount_rate > 0 ? productSale : ""
-              }`}
-            >
-              <span className="label_sale">SALE</span>
-              <span className="product_sales">10 % </span>
-              <span className="product_price">862,200 P</span>
-              <span className="product_ori">958,000 P</span>
+      {serviceItems.map((item) => (
+        <div key={item.item_no} className="col-xxl-3 col-lg-4 cursor-pointer">
+          <div className="items">
+            <div className="list_img">
+              <Image
+                src={item.thumb_img}
+                width={523}
+                height={523}
+                alt={item.pd_name}
+              />
+            </div>
+            <div className="list_product">
+              <h3>{item.pd_name}</h3>
+              <p>{item.brand}</p>
+              <div
+                className={`product_price_info ${
+                  item.discount_rate > 0 && "sale"
+                }`}
+              >
+                <span className="label_sale">SALE</span>
+                {item.discount_rate > 0 && (
+                  <>
+                    <span className="product_sales">
+                      {item.discount_rate.toLocaleString()} %
+                    </span>
+                    <span className="product_price">
+                      {item.price.toLocaleString()} P
+                    </span>
+                    <span className="product_ori">
+                      {item.origin_price.toLocaleString()} P
+                    </span>
+                  </>
+                )}
+                {item.discount_rate === 0 && (
+                  <span className="product_price">
+                    {item.price.toLocaleString()} P
+                  </span>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ))}
     </div>
   );
-};
+}
