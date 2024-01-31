@@ -534,42 +534,6 @@ Default Btn
   background-color: $main-color;
   display: inline-block;
 
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: -20px;
-  //   left: -40px;
-  //   width: 10px;
-  //   height: 100px;
-  //   background-color: #ffffff;
-  //   opacity: 0.5;
-  //   transition: $transition;
-  //   transform: rotate(45deg);
-  // }
-
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   top: -20px;
-  //   right: -40px;
-  //   width: 10px;
-  //   height: 100px;
-  //   background-color: #ffffff;
-  //   opacity: 0.5;
-  //   transition: $transition;
-  //   transform: rotate(45deg);
-  // }
-
-  // &.active {
-  //   background-color: $sub-color;
-  //   color: $main-color;
-
-  //   &:hover {
-  //     color: $white-color;
-  //     background-color: $sub-color;
-  //   }
-  // }
-
   &:hover {
     color: $white-color;
     transition: $transition;
@@ -790,20 +754,9 @@ Nav 메뉴
 ======================================================*/
 .navbar-area {
   nav {
-    // padding-top: 38px;
-    // padding-top: 28px;
-    // padding-bottom: 28px;
     transition: $transition;
     flex-direction: column;
-    // background-color: $main-color;
-
     .top-menu {
-      // width: 18%;
-      // position: absolute;
-      // right: 0;
-      // top: -35px;
-      // right: 50px;
-      // top: -55px;
       right: 0px;
       top: -60px;
       margin: 0;
@@ -835,7 +788,6 @@ Nav 메뉴
           .menu-items {
             color: #333;
           }
-
           span {
             background-color: #333;
           }
@@ -886,49 +838,28 @@ Nav 메뉴
             size: 16px;
             weight: 500;
           }
-
-          // color: $white-color;
           color: #111;
           text-transform: uppercase;
-
           padding: {
             left: 50px;
             right: 50px;
             top: 0;
             bottom: 0;
           }
-
           margin: {
             left: 0px;
             right: 0px;
           }
-
           &:hover,
           &:focus,
           &.active {
-            //color: #b1ea0c;
             color: $main-color;
           }
-
           i {
             font-size: 19px;
             transform: translateY(2px);
           }
         }
-
-        // &:last-child {
-        //   a {
-        //     margin-right: 0;
-        //   }
-        // }
-
-        // &:first-child {
-        //   a {
-        //     margin-left: 0;
-        //     padding-right: 15px;
-        //   }
-        // }
-
         &:hover,
         &.active {
           a {
@@ -938,18 +869,12 @@ Nav 메뉴
 
         .dropdown-menu {
           display: none;
-          // box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
-          // background: rgba(0, 0, 0, 0.5);
           background: rgba(0, 0, 0, 0);
-          // position: absolute;
           border: none;
           top: 80px;
           left: 0;
           width: 100%;
           z-index: 99;
-          //display: block;
-          // opacity: 0;
-          // visibility: hidden;
           border-radius: 5px;
           transition: all 0.3s ease-in-out;
           background: #f5f5f5;
@@ -968,7 +893,6 @@ Nav 메뉴
               top: 5px;
               bottom: 5px;
             }
-
             a {
               display: block;
               padding: 5px 10px;
@@ -977,124 +901,102 @@ Nav 메뉴
               font-family: $main-font-family-eng;
               letter-spacing: -0.14px;
               text-transform: capitalize;
-
               font: {
                 size: 14px;
                 weight: 500;
               }
-
               &:hover,
               &:focus,
               &.active {
-                //color: #b1ea0c;
                 color: $main-color;
               }
             }
-
             .dropdown-menu {
               width: 100%;
               left: -250px;
               top: 0;
               opacity: 0;
               visibility: hidden;
-
               li {
                 a {
                   color: $white-color;
                   text-transform: capitalize;
                   font-size: 14px;
-
                   &:hover,
                   &:focus,
                   &.active {
-                    //color: #b1ea0c;
                     color: $main-color;
                   }
                 }
-
                 .dropdown-menu {
                   left: 220px;
                   top: 0;
                   opacity: 0;
                   visibility: hidden;
-
                   li {
                     a {
                       color: $black-color;
                       text-transform: capitalize;
-
                       &:hover,
                       &:focus,
                       &.active {
                         color: $main-color;
                       }
                     }
-
                     .dropdown-menu {
                       left: -250px;
                       top: 0;
                       opacity: 0;
                       visibility: hidden;
-
                       li {
                         a {
                           color: $black-color;
                           text-transform: capitalize;
-
                           &:hover,
                           &:focus,
                           &.active {
                             color: $main-color;
                           }
                         }
-
                         .dropdown-menu {
                           left: -250px;
                           top: 0;
                           opacity: 0;
                           visibility: hidden;
-
                           li {
                             a {
                               color: $black-color;
                               text-transform: capitalize;
-
                               &:hover,
                               &:focus,
                               &.active {
                                 color: $main-color;
                               }
                             }
-
                             .dropdown-menu {
                               left: -250px;
                               top: 0;
                               opacity: 0;
                               visibility: hidden;
-
                               li {
                                 a {
                                   color: $black-color;
                                   text-transform: capitalize;
-
                                   &:hover,
                                   &:focus,
                                   &.active {
                                     color: $main-color;
                                   }
                                 }
-
                                 .dropdown-menu {
                                   left: -250px;
                                   top: 0;
                                   opacity: 0;
                                   visibility: hidden;
-
                                   li {
                                     a {
                                       color: $black-color;
                                       text-transform: capitalize;
-
                                       &:hover,
                                       &:focus,
                                       &.active {
@@ -1103,13 +1005,11 @@ Nav 메뉴
                                     }
                                   }
                                 }
-
                                 &.active {
                                   a {
                                     color: $main-color;
                                   }
                                 }
-
                                 &:hover {
                                   .dropdown-menu {
                                     opacity: 1;
@@ -1119,13 +1019,11 @@ Nav 메뉴
                                 }
                               }
                             }
-
                             &.active {
                               a {
                                 color: $main-color;
                               }
                             }
-
                             &:hover {
                               .dropdown-menu {
                                 opacity: 1;
@@ -1135,13 +1033,11 @@ Nav 메뉴
                             }
                           }
                         }
-
                         &.active {
                           a {
                             color: $main-color;
                           }
                         }
-
                         &:hover {
                           .dropdown-menu {
                             opacity: 1;
@@ -1151,13 +1047,11 @@ Nav 메뉴
                         }
                       }
                     }
-
                     &.active {
                       a {
                         color: $main-color;
                       }
                     }
-
                     &:hover {
                       .dropdown-menu {
                         opacity: 1;
@@ -1167,13 +1061,11 @@ Nav 메뉴
                     }
                   }
                 }
-
                 &.active {
                   a {
                     color: $main-color;
                   }
                 }
-
                 &:hover {
                   .dropdown-menu {
                     opacity: 1;
@@ -1183,13 +1075,11 @@ Nav 메뉴
                 }
               }
             }
-
             &.active {
               a {
                 color: $main-color;
               }
             }
-
             &:hover {
               .dropdown-menu {
                 opacity: 1;
@@ -1199,12 +1089,9 @@ Nav 메뉴
             }
           }
         }
-
         &:hover {
           .dropdown-menu {
             display: block;
-            // opacity: 1;
-            // visibility: visible;
             top: 100%;
           }
         }
@@ -1217,16 +1104,11 @@ Nav 메뉴
       display: none;
     }
   }
-
   .others-options {
     display: flex;
-    // position: relative;
-    // top: 3px;
-
     .default-btn {
       padding: 12px 20px 10px;
       font-size: 16px;
-
       i {
         position: relative;
         top: 1px;
@@ -1237,62 +1119,40 @@ Nav 메뉴
 
   &.is-sticky {
     nav {
-      background-color: $white-color;
-      // padding-top: 38px;
-      // padding-bottom: 15px;
-      // box-shadow: $box-shadow;
-
+      background-color: #000;
       .top-menu {
         li {
           .menu-items {
-            color: $body-color;
+            color: $white-color;
           }
-
           span {
-            background-color: $body-color;
+            background-color: $white-color;
           }
         }
       }
-
-      // .navbar-brand {
-      //   &.light_logo {
-      //     display: none;
-      //   }
-
-      //   &.dark_logo {
-      //     display: block;
-      //   }
-      // }
-
       .navbar-nav {
         .nav-item {
           a {
             color: $gray-color;
-
             &.active {
               color: #66aa25;
             }
           }
-
           .dropdown-menu {
             background: $white-color;
-
             li {
               a {
                 color: $gray-color;
-
                 &:hover,
                 &:focus,
                 &.active {
                   color: #66aa25;
                 }
               }
-
               .dropdown-menu {
                 li {
                   a {
                     color: $body-color;
-
                     &:hover,
                     &:focus,
                     &.active {
@@ -1321,7 +1181,6 @@ Nav 메뉴
   .icon-bar {
     width: 28px;
     transition: all 0.3s;
-    // background: $main-color;
     background: $white-color;
     height: 2px;
     display: block;
@@ -1494,7 +1353,6 @@ Main Banner
         &:nth-child(3) {
           top: -100px;
           left: 70px;
-          // animation: moVebounce 5s linear infinite;
         }
 
         &:nth-child(4) {
@@ -1799,7 +1657,6 @@ Company 그린갤러리
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0);
-
     p {
       padding-bottom: 10px;
       text-align: center;
@@ -1808,7 +1665,6 @@ Company 그린갤러리
       font-family: $body-font-family;
       font-weight: 300;
     }
-
     span {
       color: transparent;
       font-size: 16px;
@@ -1825,19 +1681,15 @@ Company 그린갤러리
       transform: scale(1.2);
       filter: blur(3px);
     }
-
     h2 {
       color: transparent;
     }
-
     .main-product-link {
       background: rgba(0, 0, 0, 0.3);
-
       p {
         transform: translateY(-20px);
         color: $white-color;
       }
-
       span {
         transform: translateY(-20px);
         color: $white-color;
@@ -1854,10 +1706,8 @@ Company 그린갤러리
   border-radius: $border-radius;
   margin-bottom: 30px;
   transition: $transition;
-
   h2 {
     margin-bottom: 0;
-
     span {
       font-size: 50px;
       color: #6b6bd4;
