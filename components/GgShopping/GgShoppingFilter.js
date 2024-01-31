@@ -63,6 +63,7 @@ export default function GgShoppingFilter({ form, setForm, pdKind }) {
           </div>
         </section>
       </div>
+      {/* 모바일 필터 구조 */}
       <div className="shopping_filter_mb">
         <div className="search_mb">
           <Form.Control

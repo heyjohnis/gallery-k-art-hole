@@ -64,6 +64,7 @@ export default function GgShoppingListPc({ user, pdKind }) {
           />
         </div>
       </div>
+      {/* 모바일 탭메뉴 */}
       <div className="shopping_tit_mb">
         <ul className="mypage_tab_menu">
           <li className="active">제휴서비스</li>
