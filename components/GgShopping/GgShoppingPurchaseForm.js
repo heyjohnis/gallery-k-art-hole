@@ -10,6 +10,7 @@ export default function GgShoppingPurchaseForm({
   user,
   setOrderProducts,
   setOrderInfo,
+  pdKind,
 }) {
   const [products, setProducts] = useState([]);
   const [countSelected, setCountSelected] = useState(0);
@@ -27,7 +28,7 @@ export default function GgShoppingPurchaseForm({
   });
 
   const getCartProducts = () => {
-    GET("/mall/cart/list").then((res) => {
+    GET(`/mall/cart/list?pd_kind=${pdKind}`).then((res) => {
       console.log("/mall/cart/list", res);
       setProducts(res?.data);
       setCountSelected(res?.data?.length);
@@ -75,8 +76,8 @@ export default function GgShoppingPurchaseForm({
   };
 
   useEffect(() => {
-    getCartProducts();
-  }, []);
+    if (pdKind) getCartProducts();
+  }, [pdKind]);
 
   useEffect(() => {
     form?.order_user_name && setOrderInfo((prev) => ({ ...prev, ...form }));

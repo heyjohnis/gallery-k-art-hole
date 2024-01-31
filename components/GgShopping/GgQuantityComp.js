@@ -1,13 +1,13 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-export function GgQuantityComp({ setForm, maxQuantity }) {
+export function GgQuantityComp({ setForm, maxQuantity, unitOption }) {
   const setQuantityOption = (maxCnt) => {
     const quantity = maxCnt > 4 ? 4 : maxCnt;
     return Array.from({ length: quantity }, (_, i) => (
       <Form.Check
         key={i}
-        label={`${i + 1}개`}
+        label={`${i + 1}${unitOption.unit}`}
         name="time1"
         type="radio"
         id={`product-${i + 1}`}
@@ -24,7 +24,7 @@ export function GgQuantityComp({ setForm, maxQuantity }) {
     <div className="form_item">
       {maxQuantity > 1 && (
         <>
-          <label>수량</label>
+          <label>{unitOption.label}</label>
           <div className="item_group">{setQuantityOption(maxQuantity)}</div>
         </>
       )}
