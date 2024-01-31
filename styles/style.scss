@@ -7961,6 +7961,29 @@ Shopping
   }
 }
 
+@media only screen and (max-width: 1134px) and (min-width: 992px) {
+  .shopping_list_container {
+    .items {
+      .list_product {
+        h3 {
+          font-size: 20px;
+        }
+        .product_price_info {
+          .product_sales {
+            font-size: 18px;
+          }
+          .product_price {
+            font-size: 18px;
+          }
+          .product_ori {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1466px) and (min-width: 1400px) {
   .shopping_list_container {
     .items {
