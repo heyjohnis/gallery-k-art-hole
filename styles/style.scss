@@ -7441,7 +7441,6 @@ Shopping
   .product_img {
     img {
       width: 100%;
-      height: 100%;
       object-fit: contain;
     }
   }
@@ -8004,10 +8003,18 @@ Shopping
 @media only screen and (max-width: 1440px) {
   .shopping_detail {
     .product_sale_info {
-      padding: 130px 130px 100px 100px;
+      padding: 50px 100px 70px 80px;
     }
     .products_detail {
       padding: 50px 130px 0 100px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .shopping_detail {
+    .product_sale_info {
+      padding: 50px 70px 70px 50px;
     }
   }
 }
