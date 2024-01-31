@@ -83,19 +83,19 @@
   pointer-events: none;
   position: absolute;
   height: 0;
-  width: 200px;
+  width: 100%;
   outline: none;
 }
 
 .thumbLeft {
-  left: -8px;
-  top: -2px;
+  left: -2px;
+  top: 2px;
   z-index: 3;
 }
 
 .thumbRight {
-  right: -8px;
-  top: -2px;
+  right: -2px;
+  top: 2px;
   z-index: 4;
 }
 
@@ -108,7 +108,6 @@
   cursor: pointer;
   height: 16px;
   width: 16px;
-  margin-top: 4px;
   pointer-events: all;
   position: relative;
 }
@@ -124,4 +123,15 @@
   width: 16px;
   pointer-events: all;
   position: relative;
+}
+
+@media only screen and (max-width: 1280px) {
+  .slider__leftValue,
+  .slider__rightValue {
+    input {
+      width: 55px;
+      padding: 4px 4px;
+      font-size: 10px;
+    }
+  }
 }
