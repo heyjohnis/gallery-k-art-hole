@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { GgQuantityComp } from "./GgQuantityComp";
 import { DatePicker } from "../Common/DatePicker";
 import { SelectBoxComp } from "../Common/SelectBoxComp";
-import { it } from "date-fns/locale";
 
 export function GgOptionsComp({ content, setForm, options }) {
   const [price, setPrice] = useState({});

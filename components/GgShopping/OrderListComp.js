@@ -9,7 +9,7 @@ export default function OrderListComp({ orderData, cancelOrder }) {
       <ul>
         {orderData.map((product) => (
           <li key={product.item_no}>
-            <Accordion.Item eventKey="0">
+            <Accordion.Item eventKey={product.item_no}>
               <div className="complete_item">
                 <div className="complete_data">
                   <span>주문번호 : {product.order_no} </span>

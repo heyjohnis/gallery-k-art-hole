@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import DatePicker from "../Common/DatePicker";
+import { DatePicker } from "../Common/DatePicker";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Form from "react-bootstrap/Form";
