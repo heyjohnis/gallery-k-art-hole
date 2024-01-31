@@ -77,7 +77,7 @@ export function ProductSaleInfo({ content, options }) {
         <div dangerouslySetInnerHTML={{ __html: content.info_product }}></div>
       </div>
       <GgOptionsComp content={content} options={options} setForm={setForm} />
-      <div>
+      <div className="price_info total_shopping_price">
         총 {(form.price * form.quantity + form.option_price).toLocaleString()}
       </div>
       <div className="shopping_btn row">
