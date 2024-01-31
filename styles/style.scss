@@ -7722,6 +7722,7 @@ Shopping
       }
     }
     .shopping_btn {
+      margin: 0;
       display: grid;
       grid-template-columns: minmax(auto, 360px) minmax(auto, 360px);
       justify-content: space-between;
@@ -8213,6 +8214,14 @@ Shopping
           }
         }
       }
+    }
+  }
+  .shopping_detail {
+    .product_sale_info {
+      padding: 130px 40px 100px 40px;
+    }
+    .products_detail {
+      padding: 50px 40px 0 40px;
     }
   }
 }
