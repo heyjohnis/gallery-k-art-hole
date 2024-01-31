@@ -25,7 +25,7 @@ export function SelectBoxComp({
   }, [optionValue]);
 
   return (
-    <div className="row">
+    <div className={`row ${styles.select_option}`}>
       <div className={`col-md-12 ${styles.select_wrap}`}>
         <label className={styles.tit}>{label}</label>
         <Form.Select
