@@ -6,6 +6,32 @@ import Form from "react-bootstrap/Form";
 import { GET, DELETE } from "../../utils/restApi";
 import ModalDaumPost from "../Common/ModalDaumPost";
 
+const INIT_FORM = {
+  order_user_name: "",
+  order_user_phone: "",
+  order_user_email: "",
+  delivery_user_name: "",
+  delivery_phone: "",
+  delivery_zipcode: "",
+  delivery_addr1: "",
+  delivery_addr2: "",
+  memo: "",
+};
+
+const TITLE = {
+  service: "서비스 신청",
+  shop: "GG 쇼핑 주문",
+  tour: "GG 투어 신청",
+  gift: "사은품 신청",
+};
+
+const SUB_TITLE = {
+  service: "서비스 정보",
+  shop: "상품 정보",
+  tour: "투어 정보",
+  gift: "사은품 정보",
+};
+
 export default function GgShoppingPurchaseForm({
   user,
   setOrderProducts,
@@ -15,17 +41,7 @@ export default function GgShoppingPurchaseForm({
   const [products, setProducts] = useState([]);
   const [countSelected, setCountSelected] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const [form, setForm] = useState({
-    order_user_name: "",
-    order_user_phone: "",
-    order_user_email: "",
-    delivery_user_name: "",
-    delivery_phone: "",
-    delivery_zipcode: "",
-    delivery_addr1: "",
-    delivery_addr2: "",
-    memo: "",
-  });
+  const [form, setForm] = useState(INIT_FORM);
 
   const getCartProducts = () => {
     GET(`/mall/cart/list?pd_kind=${pdKind}`).then((res) => {
@@ -100,9 +116,10 @@ export default function GgShoppingPurchaseForm({
 
   return (
     <div className="booking_content">
-      <h1>상품 주문</h1>
+      <h1>{TITLE[pdKind]}</h1>
       <h2>
-        상품 정보<span className="total_items">총 {countSelected}건</span>
+        {SUB_TITLE[pdKind]}
+        <span className="total_items">총 {countSelected}건</span>
       </h2>
       <ul className="product_info">
         {products?.map((item) => (
