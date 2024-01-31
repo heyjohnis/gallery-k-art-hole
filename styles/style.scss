@@ -830,7 +830,7 @@ Nav 메뉴
         }
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 991px) {
         li {
           .menu-items {
             color: #333;
@@ -858,7 +858,7 @@ Nav 메뉴
         font-size: 25px;
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 991px) {
         &.light_logo {
           display: none;
         }
@@ -5726,7 +5726,6 @@ Booking Page
       color: $white-color;
     }
     .btn_purchase {
-      margin-top: 30px;
       button {
         margin-top: 20px;
         &.black {
