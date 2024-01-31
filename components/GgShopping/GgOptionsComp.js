@@ -6,6 +6,7 @@ import { it } from "date-fns/locale";
 
 export function GgOptionsComp({ content, setForm, options }) {
   const [price, setPrice] = useState({});
+  const [option, setOption] = useState({});
 
   const selectedPickDate = (date) => {
     console.log("selectedPickDate: ", date);
@@ -38,13 +39,28 @@ export function GgOptionsComp({ content, setForm, options }) {
               opData={item}
               selectedOption={selectedOption}
             />
-          ) : (
+          ) : item.option_type === "02" ? (
             <DatePicker
               key={index}
               label={item.option_name}
               pickDate={(date) => selectedPickDate(date)}
               dateKind="start_date"
             />
+          ) : (
+            <>
+              <DatePicker
+                key={index}
+                pickDate={(date) => selectedPickDate(date)}
+                placeholder="출발일"
+                dateKind="start_date"
+              />
+              <DatePicker
+                key={index}
+                pickDate={(date) => selectedPickDate(date)}
+                placeholder="도착일"
+                dateKind="end_date"
+              />
+            </>
           )
         )}
 

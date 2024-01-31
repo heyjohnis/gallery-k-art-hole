@@ -4,7 +4,13 @@ import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
 import styles from "./style/datePicker.module.scss";
 
-export function DatePicker({ label, pickDate, dateKind, selectedDate = null }) {
+export function DatePicker({
+  label,
+  pickDate,
+  dateKind,
+  selectedDate = null,
+  placeholder = "날짜 선택",
+}) {
   const [selectedDay, setSelectedDay] = useState();
   const [isShow, setIsShow] = useState(false);
 
@@ -30,7 +36,7 @@ export function DatePicker({ label, pickDate, dateKind, selectedDate = null }) {
   return (
     <div className={styles.datepickerWrap}>
       <div className="col-lg-12 col-sm-12">
-        <label>{label}</label>
+        {label && <label>{label}</label>}
         <input
           type="text"
           className="form-control select_date"
@@ -38,7 +44,7 @@ export function DatePicker({ label, pickDate, dateKind, selectedDate = null }) {
           readOnly
           onClick={handleOnClick}
           onChange={hideDayicker}
-          placeholder="날짜 선택"
+          placeholder={placeholder}
         />
       </div>
       {isShow && (
