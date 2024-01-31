@@ -18,8 +18,6 @@ export function DatePicker({
     setIsShow(!isShow);
   };
 
-  const hideDayicker = () => {};
-
   useEffect(() => {
     if (selectedDay) {
       setIsShow(false);
@@ -39,12 +37,15 @@ export function DatePicker({
         {label && <label>{label}</label>}
         <input
           type="text"
+          name="time1"
           className="form-control select_date"
-          value={selectedDay && format(selectedDay, "yyyy-MM-dd")}
+          value={(selectedDay && format(selectedDay, "yyyy-MM-dd")) || ""}
           readOnly
           onClick={handleOnClick}
-          onChange={hideDayicker}
           placeholder={placeholder}
+          onChange={() => {
+            console.log("onChange");
+          }}
         />
       </div>
       {isShow && (
