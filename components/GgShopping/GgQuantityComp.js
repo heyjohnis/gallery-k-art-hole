@@ -24,7 +24,6 @@ export function GgQuantityComp({
       />
     ));
   };
-  console.log("maxQuantity: ", maxQuantity);
   return (
     <>
       {maxQuantity > 1 && (

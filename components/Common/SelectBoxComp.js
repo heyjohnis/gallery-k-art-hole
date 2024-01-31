@@ -3,53 +3,43 @@ import { Form } from "react-bootstrap";
 
 import styles from "./style/selectBoxComp.module.scss";
 
-export function SelectBoxComp({ optionName, optionValue, selectedOption }) {
+export function SelectBoxComp({
+  optionNo,
+  label,
+  optionValue,
+  setOptionValues,
+}) {
   const [optionData, setOptionData] = useState([]);
-  const optionArr = [];
 
-  optionArr.push(<option key={0}>선택</option>);
-
-  const jsonArr = JSON.parse(optionValue);
-  for (let j = 0; j < jsonArr.length; j++) {
-    optionArr.push(
-      <option key={j + 1} value={jsonArr[j]?.price}>
-        {jsonArr[j].op_name}{" "}
-        {parseInt(jsonArr[j]?.price)
-          ? `(+${(jsonArr[j]?.price || 0).toLocaleString()}P)`
-          : ""}
-      </option>
-    );
-  }
+  const selectedOption = (e) => {
+    const [op_name, price] = e.target.value.split("#");
+    setOptionValues((prev) => ({
+      ...prev,
+      [optionNo]: { op_name, price: parseInt(price) },
+    }));
+  };
 
   useEffect(() => {
     if (!optionValue) return;
-    const parsedOption = JSON.parse(optionValue);
-    console.log("parsedOption: ", parsedOption);
-    setOptionData(parsedOption);
+    setOptionData(JSON.parse(optionValue));
   }, [optionValue]);
 
   return (
     <div className="row">
       <div className={`col-md-12 ${styles.select_wrap}`}>
-        <label className={styles.tit}>{optionName}</label>
+        <label className={styles.tit}>{label}</label>
         <Form.Select
           className={styles.select}
           aria-label=""
           name=""
-          onChange={(e) => {
-            let data = jsonArr[e.target.selectedIndex - 1];
-            if (e.target.selectedIndex === 0) {
-              data = { op_name: "", price: 0 };
-            }
-            selectedOption(option_no, data);
-          }}
+          onChange={selectedOption}
         >
           <option key={0}>선택</option>
           {optionData.map((item, index) => (
-            <option key={index} value={item.price}>
+            <option key={index} value={`${item.op_name}#${item.price}`}>
               {item.op_name}
               {parseInt(item.price)
-                ? `(+${(item?.price || 0).toLocaleString()}P)`
+                ? ` (+${parseInt(item?.price).toLocaleString()}P)`
                 : ""}
             </option>
           ))}

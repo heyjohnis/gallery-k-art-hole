@@ -2,77 +2,69 @@ import React, { useState, useEffect } from "react";
 import { GgQuantityComp } from "./GgQuantityComp";
 import { DatePicker } from "../Common/DatePicker";
 import { SelectBoxComp } from "../Common/SelectBoxComp";
+import { CheckBoxComp } from "../Common/CheckBoxComp";
+import { DatePickerTermComp } from "../Common/DatePickerTermComp";
 
 export function GgOptionsComp({ content, setForm, options }) {
-  const [price, setPrice] = useState({});
-  const [option, setOption] = useState({});
-
-  const selectedPickDate = (date) => {
-    console.log("selectedPickDate: ", date);
-  };
-
-  const selectedOption = (optionNo, option) => {
-    console.log("selected option: ", option);
-    setPrice((prev) => ({
-      ...prev,
-      [optionNo]: parseInt(option.price),
-    }));
-    setOption((prev) => ({
-      ...prev,
-      [optionNo]: { op_name: option.op_name, price: parseInt(option.price) },
-    }));
-    console.log("total", price);
-  };
+  const [optionValues, setOptionValues] = useState({});
 
   useEffect(() => {
-    setPrice((prev) => ({ ...prev, price: parseInt(content?.price) }));
-  }, [options]);
+    const values = Object.values(optionValues);
+    const total = values.reduce((acc, cur) => acc + cur.price, 0);
+    setForm((prev) => ({
+      ...prev,
+      values: JSON.stringify(optionValues),
+      option_price: total,
+    }));
+  }, [optionValues]);
 
   return (
     <>
       {options?.length > 0 &&
-        options.map(({ option_name, option_type, option_value }, index) =>
-          option_type === "01" ? (
-            <SelectBoxComp
-              key={index}
-              optionValue={option_value}
-              optionName={option_name}
-              selectedOption={selectedOption}
-            />
-          ) : option_type === "02" ? (
-            <DatePicker
-              key={index}
-              label={option_name}
-              pickDate={(date) => selectedPickDate(date)}
-              dateKind="start_date"
-            />
-          ) : option_type === "03" ? (
-            <></>
-          ) : option_type === "04" ? (
-            <>
+        options.map(
+          ({ option_name, option_type, option_value, option_no }, index) =>
+            option_type === "01" ? (
+              <SelectBoxComp
+                key={index}
+                optionNo={option_no}
+                optionValue={option_value}
+                label={option_name}
+                setOptionValues={setOptionValues}
+              />
+            ) : option_type === "02" ? (
               <DatePicker
                 key={index}
-                pickDate={(date) => selectedPickDate(date)}
-                placeholder="출발일"
+                label={option_name}
+                pickDate={(date) =>
+                  setOptionValues((prev) => ({
+                    ...prev,
+                    [option_no]: { start_date: date.start_date },
+                  }))
+                }
                 dateKind="start_date"
               />
-              <DatePicker
+            ) : option_type === "03" ? (
+              <></>
+            ) : option_type === "04" ? (
+              <DatePickerTermComp
                 key={index}
-                pickDate={(date) => selectedPickDate(date)}
-                placeholder="도착일"
-                dateKind="end_date"
+                optionNo={option_no}
+                label={option_name}
+                setOptionValues={setOptionValues}
               />
-            </>
-          ) : option_type === "05" ? (
-            <GgQuantityComp
-              setForm={setForm}
-              maxQuantity={content?.max_quantity}
-            />
-          ) : option_type === "06" ? (
-            <></>
-          ) : (
-            <></>
-          )
+            ) : option_type === "05" ? (
+              <CheckBoxComp
+                key={index}
+                optionNo={option_no}
+                label={option_name}
+                optionValue={option_value}
+                setOptionValues={setOptionValues}
+              />
+            ) : option_type === "06" ? (
+              <></>
+            ) : (
+              <></>
+            )
         )}
 
       {content?.max_quantity > 0 && (
