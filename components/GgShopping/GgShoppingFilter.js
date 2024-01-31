@@ -50,12 +50,14 @@ export default function GgShoppingFilter({ form, setForm, pdKind }) {
       )}
       <section>
         <h2>가격</h2>
-        <MultiRangeSlider
-          min={10000}
-          max={2000000}
-          step={10000}
-          onChange={({ min, max }) => handlePriceRange({ min, max })}
-        />
+        <div className="multi_range_warp">
+          <MultiRangeSlider
+            min={10000}
+            max={2000000}
+            step={10000}
+            onChange={({ min, max }) => handlePriceRange({ min, max })}
+          />
+        </div>
       </section>
     </div>
   );
