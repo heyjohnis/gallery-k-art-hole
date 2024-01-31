@@ -15,7 +15,7 @@ export default function GgshoppingListItems({ items }) {
       {items?.map((item, i) => (
         <div
           key={i}
-          className="col-xxl-3 col-lg-4 cursor-pointer"
+          className="col-xxl-3 col-lg-4 col-6 cursor-pointer"
           onClick={() => gotoDetail(item.pd_no)}
         >
           <div className="items">
