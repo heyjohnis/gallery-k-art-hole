@@ -1,8 +1,8 @@
 import React from "react";
-import { CompleteTitle } from "../../components/Common/CompleteTitle";
-import PageBanner from "../../components/Common/PageBanner";
-import Footer from "../../components/Layouts/Footer";
-import { ServiceCompleteContent } from "../../components/Service/ServiceCompleteContent";
+import { CompleteTitle } from "../../../components/Common/CompleteTitle";
+import PageBanner from "../../../components/Common/PageBanner";
+import Footer from "../../../components/Layouts/Footer";
+import { ServiceCompleteContent } from "../../../components/Service/ServiceCompleteContent";
 
 export default function servicecomplete() {
   return (
