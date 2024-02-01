@@ -1,6 +1,6 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import DatePicker from "../Common/DatePicker";
+import { DatePicker } from "../Common/DatePicker";
 
 export const ServiceInfo = () => {
   const productSale = "sale";

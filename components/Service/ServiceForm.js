@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Image from "next/image";
 import Form from "react-bootstrap/Form";
-import DatePicker from "../Common/DatePicker";
+import { DatePicker } from "../Common/DatePicker";
 
 export const ServiceForm = () => {
   return (

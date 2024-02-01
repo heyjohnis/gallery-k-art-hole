@@ -10,7 +10,7 @@ import { Modal, Button } from "react-bootstrap";
 import axios from "axios";
 import cookie from "js-cookie";
 import baseUrl from "../../utils/baseUrl";
-import DatePicker from "../Common/DatePicker";
+import { DatePicker } from "../Common/DatePicker";
 import styles from "./Mypage.module.scss";
 import Link from "next/link";
 

@@ -1,18 +1,9 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, {
-  forwardRef,
-  useState,
-  useImperativeHandle,
-  useEffect,
-} from "react";
-import { Modal, Button, Container } from "react-bootstrap";
-import axios from "axios";
-import cookie from "js-cookie";
-import baseUrl from "../../utils/baseUrl";
-import DatePicker from "../Common/DatePicker";
+import React, { useState } from "react";
+import { Container } from "react-bootstrap";
+import { DatePicker } from "../Common/DatePicker";
 import styles from "./BookingForm.module.scss";
-import Link from "next/link";
 
 const INITIAL_STATE = {
   user_name: "",

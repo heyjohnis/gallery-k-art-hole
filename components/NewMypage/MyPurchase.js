@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MyPagePurchaseAgreement from "./MyPagePurchaseAgreement";
-import MyPagePurchaseForm from "./MyPagePurchaseForm";
+import { MyPagePurchaseForm } from "./MyPagePurchaseForm";
 
 export default function MyPurchase({ user }) {
   const [orderProducts, setOrderProducts] = useState([]);

@@ -1,7 +1,7 @@
-import React from 'react';
-import PageBanner from '../../components/Common/PageBanner';
-import Footer from '../../components/Layouts/Footer';
-import { MyPoint } from '../../components/NewMypage/MyPoint';
+import React from "react";
+import PageBanner from "../../components/Common/PageBanner";
+import Footer from "../../components/Layouts/Footer";
+import MyPoint from "../../components/NewMypage/MyPoint";
 
 export default function point() {
   return (
@@ -20,12 +20,10 @@ export default function point() {
           <li className="active">포인트 이용내역</li>
           <li>1:1 상담</li>
         </ul>
-        <MyPoint/>
+        <MyPoint />
       </section>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }
-
-
