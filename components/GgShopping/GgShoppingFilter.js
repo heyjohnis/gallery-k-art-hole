@@ -45,20 +45,12 @@ export default function GgShoppingFilter({ form, setForm, pdKind }) {
     }));
   }, 1000);
 
-  const handleCheckBrand = (e) => {
-    const { checked, value } = e.target;
-    const arr = form?.keywords ? form?.keywords?.split(",") : [];
-    let keywords = "";
-    if (checked) {
-      arr.push(e.target.value);
-      const set = new Set(arr);
-      keywords = Array.from(set).join(",");
-    } else {
-      const index = arr.indexOf(value);
-      arr.splice(index, 1);
-      keywords = arr.join(",");
-    }
-    setForm((prev) => ({ ...prev, keywords }));
+  const handleCheckBrand = (value) => {
+    setForm((prev) => ({ ...prev, brands: value }));
+  };
+
+  const handleCheckKeyword = (value) => {
+    setForm((prev) => ({ ...prev, keywords: value }));
   };
 
   useEffect(() => {
@@ -125,38 +117,41 @@ export default function GgShoppingFilter({ form, setForm, pdKind }) {
                 </ToggleButton>
                 <ToggleButton
                   id="product-radio-2"
-                  value=""
+                  value="아이젠하임"
                   className="btn_filter"
-                  onClick={() => handleCheckBrand("")}
+                  onClick={() => handleCheckBrand("아이젠하임")}
                 >
                   EISEN HEIM
                 </ToggleButton>
                 <ToggleButton
                   id="product-radio-3"
-                  value=""
+                  value="보그너"
                   className="btn_filter"
-                  onClick={() => handleCheckBrand("")}
+                  onClick={() => handleCheckBrand("보그너")}
                 >
                   BOGNER
                 </ToggleButton>
                 <ToggleButton
                   id="product-radio-4"
-                  value=""
+                  value="핑골프"
                   className="btn_filter"
+                  onClick={() => handleCheckBrand("핑골프")}
                 >
                   PING
                 </ToggleButton>
                 <ToggleButton
                   id="product-radio-5"
-                  value=""
+                  value="야마하"
                   className="btn_filter"
+                  onClick={() => handleCheckBrand("야마하")}
                 >
                   YAMAHA
                 </ToggleButton>
                 <ToggleButton
                   id="product-radio-6"
-                  value=""
+                  value="파이골프"
                   className="btn_filter"
+                  onClick={() => handleCheckBrand("파이골프")}
                 >
                   Phi Golf
                 </ToggleButton>
@@ -164,12 +159,21 @@ export default function GgShoppingFilter({ form, setForm, pdKind }) {
             )}
 
             <ToggleButtonGroup type="radio" name="types" defaultValue="">
+              <ToggleButton
+                id={`producttypes-radio`}
+                value={""}
+                className="btn_filter"
+                onClick={() => handleCheckKeyword("")}
+              >
+                전체
+              </ToggleButton>
               {keywords.map((keyword, index) => (
                 <ToggleButton
-                  key={index}
+                  key={index + 1}
                   id={`producttypes-radio-${index + 1}`}
                   value={keyword}
                   className="btn_filter"
+                  onClick={() => handleCheckKeyword(keyword)}
                 >
                   {keyword}
                 </ToggleButton>

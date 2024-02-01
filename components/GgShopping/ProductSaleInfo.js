@@ -37,8 +37,6 @@ export function ProductSaleInfo({ content, options }) {
   };
 
   useEffect(() => {
-    console.log("content: ", content);
-    console.log("options: ", options);
     setForm((prev) => ({ ...prev, ...content }));
     if (content?.pd_keyword) parseKeyword(content?.pd_keyword);
   }, [content]);

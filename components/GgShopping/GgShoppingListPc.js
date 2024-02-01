@@ -80,7 +80,7 @@ export default function GgShoppingListPc({ user, pdKind }) {
           {links.map((item) => (
             <li
               key={item.link}
-              className={item.link === router.asPath && "active"}
+              className={item.link === router.asPath ? "active" : ""}
             >
               <Link href={item.link}>{item.name}</Link>
             </li>
