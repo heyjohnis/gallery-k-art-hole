@@ -25,6 +25,7 @@ export function GgServiceFilter({ form, setForm, keywords }) {
         <div className="filter_group">
           {keywords.map((keyword, index) => (
             <Form.Check
+              key={index}
               label={keyword}
               name={`brand${index + 1}`}
               type="checkbox"

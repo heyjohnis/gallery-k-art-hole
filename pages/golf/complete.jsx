@@ -7,13 +7,6 @@ import { GolfCompleteContent } from "../../components/Booking/GolfCompleteConten
 import RecommendService from "../../components/RecommendService";
 
 const Complete = ({ user }) => {
-  useEffect(() => {
-    if (!user) {
-      alert("로그인이 필요합니다.");
-      Router.push("/login");
-    }
-  }, [user]);
-
   return (
     <>
       <PageBanner

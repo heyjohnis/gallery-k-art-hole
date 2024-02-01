@@ -166,6 +166,7 @@ export default function GgShoppingFilter({ form, setForm, pdKind }) {
             <ToggleButtonGroup type="radio" name="types" defaultValue="">
               {keywords.map((keyword, index) => (
                 <ToggleButton
+                  key={index}
                   id={`producttypes-radio-${index + 1}`}
                   value={keyword}
                   className="btn_filter"

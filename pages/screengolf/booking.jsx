@@ -5,13 +5,6 @@ import Footer from "../../components/Layouts/Footer";
 import { ScreenBookingPage } from "../../components/Booking/ScreenBookingPage";
 
 const ScreenBooking = ({ user }) => {
-  useEffect(() => {
-    if (!user) {
-      alert("로그인이 필요합니다.");
-      Router.push("/login");
-    }
-  }, [user]);
-
   {
     /* harry 0605 pagebanner 정보 변경 */
   }

@@ -78,7 +78,10 @@ export default function GgShoppingListPc({ user, pdKind }) {
       <div className="shopping_tit_mb">
         <ul className="mypage_tab_menu">
           {links.map((item) => (
-            <li className={item.link === router.asPath && "active"}>
+            <li
+              key={item.link}
+              className={item.link === router.asPath && "active"}
+            >
               <Link href={item.link}>{item.name}</Link>
             </li>
           ))}

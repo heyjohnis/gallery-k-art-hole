@@ -6,14 +6,6 @@ import ArtworkList from "../../components/Artworks/ArtworkList";
 import BookingForm from "../../components/Booking/BookingForm";
 
 const MyPag = ({ user }) => {
-  useEffect(() => {
-    if (!user) {
-      alert("로그인이 필요합니다.");
-      Router.push("/login");
-    }
-  }, [user]);
-
-  {/* harry 0605 pagebanner 정보 변경 */ }
   return (
     <>
       <PageBanner

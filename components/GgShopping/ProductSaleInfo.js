@@ -78,7 +78,12 @@ export function ProductSaleInfo({ content, options }) {
       </div>
       <GgOptionsComp content={content} options={options} setForm={setForm} />
       <div className="price_info total_shopping_price">
-        총 {(form.price * form.quantity + form.option_price).toLocaleString()}
+        총{" "}
+        {(
+          (form.price || 0) * (form.quantity || 1) +
+          (form.option_price || 0)
+        ).toLocaleString()}{" "}
+        P
       </div>
       <div className="shopping_btn row">
         <button className="btn_cart col-5" onClick={addCart}>
