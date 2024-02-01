@@ -2,7 +2,6 @@ import React from "react";
 import { CompleteTitle } from "../../components/Common/CompleteTitle";
 import PageBanner from "../../components/Common/PageBanner";
 import Footer from "../../components/Layouts/Footer";
-import RecommendService from "../../components/RecommendService";
 import { ServiceCompleteContent } from "../../components/Service/ServiceCompleteContent";
 
 export default function servicecomplete() {
@@ -17,7 +16,6 @@ export default function servicecomplete() {
           text="담당자 확인 후 포인트 사용이 확정됩니다."
         />
         <ServiceCompleteContent />
-        {/* <RecommendService user={user} pdKind={"service"} /> */}
       </section>
       <Footer />
     </div>

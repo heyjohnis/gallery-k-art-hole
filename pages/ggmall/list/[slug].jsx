@@ -31,8 +31,6 @@ const ggList = ({ user }) => {
     };
     console.log("getContents req: ", req);
     POST("/mall", req).then((res) => {
-      console.log("mall res: ", res);
-
       setContents(res?.data);
     });
   };

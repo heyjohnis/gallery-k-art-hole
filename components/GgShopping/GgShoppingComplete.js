@@ -9,13 +9,11 @@ export default function GgShoppingComplete() {
   const router = useRouter();
   const getOrderCompleteData = (order_no) => {
     POST("/mall/order/complete", { order_no }).then((res) => {
-      console.log("getOrderCompleteData res: ", res);
       setOrderProducts(res.data);
     });
   };
 
   useEffect(() => {
-    //getOrderCompleteData();
     setOrderNo(router.query.order_no);
   }, [router.query]);
 

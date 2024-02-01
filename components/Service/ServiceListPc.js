@@ -27,7 +27,6 @@ export default function ServiceListPc({ user }) {
         return { ...item, ...calcDiscount(item.origin_price, item.price) };
       });
       setItems(items);
-      console.log("getGgShoppingList res: ", items);
     });
   };
 

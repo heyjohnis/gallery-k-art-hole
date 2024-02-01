@@ -7,14 +7,12 @@ export default function MyOrder() {
 
   const getOrderData = () => {
     POST("/mall/order", {}).then((res) => {
-      console.log("getOrderData res: ", res.data);
       setOrders(res.data);
     });
   };
 
   const cancelOrder = (item_no) => {
     POST("/mall/order/cancel", { item_no }).then((res) => {
-      console.log("cancelOrder res: ", res.data);
       getOrderData();
     });
   };

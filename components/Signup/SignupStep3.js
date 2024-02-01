@@ -10,7 +10,6 @@ export default function SignupStep3({ form, setForm }) {
   const getCCList = () => {
     try {
       POST("/reservation/cc-info", {}).then((res) => {
-        console.log("res: ", res);
         setCcList(res.data);
       });
     } catch (error) {

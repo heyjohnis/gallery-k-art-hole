@@ -28,7 +28,6 @@ async function commonApi(uri, data, method) {
     data,
   })
     .then((res) => {
-      console.log("commonApi response: ", res);
       return res;
     })
     .catch((err) => {

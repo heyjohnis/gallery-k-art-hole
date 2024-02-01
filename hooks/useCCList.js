@@ -5,7 +5,6 @@ export default function useCCList() {
   const [ccList, setCcList] = useState([]);
   try {
     POST("/reservation/cc-info", {}).then((res) => {
-      console.log("res: ", res);
       setCcList(res.data);
     });
   } catch (error) {

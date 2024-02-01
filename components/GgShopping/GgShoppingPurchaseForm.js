@@ -45,7 +45,7 @@ export default function GgShoppingPurchaseForm({
 
   const getCartProducts = () => {
     GET(`/mall/cart/list?pd_kind=${pdKind}`).then((res) => {
-      console.log("/mall/cart/list", res);
+      console.log("/mall/cart/list", res?.data);
       setProducts(res?.data);
       setCountSelected(res?.data?.length);
       setOrderProducts(res?.data);

@@ -15,7 +15,6 @@ export default function RecommendService({ user, pdKind, countTotal = 5 }) {
       membership: user.membership,
       service_group: user.service_group,
     }).then((res) => {
-      console.log("/mall/rand: ", res.data);
       setGoods(res.data);
     });
   };

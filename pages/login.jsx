@@ -18,16 +18,14 @@ export default function Login() {
   const [user, setUser] = useState(INITIAL_USER);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [userId, setUserId] = useState("");
 
   const { goto } = router.query;
 
   useEffect(() => {
-    console.log("useEffect router.query");
     setUser({
       login_id: window.localStorage.getItem("userId") || "",
       password: window.localStorage.getItem("password") || "",
-    })
+    });
   }, [router.query]);
 
   const handleChange = (e) => {
@@ -43,8 +41,8 @@ export default function Login() {
       const url = `${baseUrl}/login`;
       const payload = { ...user };
       const response = await axios.post(url, payload);
-      window.localStorage.setItem("userId", user.login_id)
-      window.localStorage.setItem("password", user.password)
+      window.localStorage.setItem("userId", user.login_id);
+      window.localStorage.setItem("password", user.password);
       handleLogin(response.data.token, goto);
     } catch (error) {
       if (error.response) alert(error.response.data.message);
@@ -70,7 +68,9 @@ export default function Login() {
               <div className="contact-form-action">
                 <div className="form-heading text-center">
                   <h3 className="form-title">로그인</h3>
-                  <span className="form-text ">그린갤러리 멤버십 소유자만 가입과 로그인이 가능합니다.</span>
+                  <span className="form-text ">
+                    그린갤러리 멤버십 소유자만 가입과 로그인이 가능합니다.
+                  </span>
                 </div>
 
                 <form onSubmit={handleSubmit}>
@@ -110,7 +110,11 @@ export default function Login() {
                     </div>
 
                     <div className="col-12 d-grid gap-2">
-                      <button className="default-btn btn-one" style={{margin: "initial", borderRadius: "0"}} type="submit">
+                      <button
+                        className="default-btn btn-one"
+                        style={{ margin: "initial", borderRadius: "0" }}
+                        type="submit"
+                      >
                         LOGIN
                       </button>
                     </div>
@@ -128,10 +132,7 @@ export default function Login() {
 
                     <div className="col-12 mt-30 d-flex justify-content-center">
                       <Link href="sign-up-1" className="forget">
-                        <button
-                          className="btn-two btn-border"
-                          type="submit"
-                        >
+                        <button className="btn-two btn-border" type="submit">
                           회원가입
                         </button>
                       </Link>

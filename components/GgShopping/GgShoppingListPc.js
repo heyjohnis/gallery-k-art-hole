@@ -44,7 +44,6 @@ export default function GgShoppingListPc({ user, pdKind }) {
         return { ...item, ...calcDiscount(item.origin_price, item.price) };
       });
       setItems(items);
-      console.log("getGgShoppingList res: ", items);
     });
   };
 

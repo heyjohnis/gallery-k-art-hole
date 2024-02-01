@@ -145,7 +145,6 @@ export default function SignUp() {
   const { goto } = router.query;
 
   useEffect(() => {
-    console.log("useEffect router.query");
     setUser({
       login_id: window.localStorage.getItem("userId") || "",
       password: window.localStorage.getItem("password") || "",

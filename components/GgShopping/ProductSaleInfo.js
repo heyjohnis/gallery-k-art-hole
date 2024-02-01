@@ -24,7 +24,14 @@ export function ProductSaleInfo({ content, options }) {
   const gotoOrder = () => {
     POST("/mall/add/cart", form).then((res) => {
       if (res?.data?.insertId > 0) {
-        router.push(`/gg-mall/order/${content?.pd_kind}/`);
+        if (content?.pd_kind === "shop") {
+          router.push(`/gg-mall/order/${content?.pd_kind}/`);
+        } else {
+          router.push({
+            pathname: `/gg-mall/booking/${content?.pd_kind}`,
+            query: { item_no: res?.data?.insertId, pd_no: content?.pd_no },
+          });
+        }
       }
     });
   };
@@ -40,6 +47,10 @@ export function ProductSaleInfo({ content, options }) {
     setForm((prev) => ({ ...prev, ...content }));
     if (content?.pd_keyword) parseKeyword(content?.pd_keyword);
   }, [content]);
+
+  useEffect(() => {
+    console.log("form: ", form);
+  }, [form]);
 
   return (
     <section className="product_sale_info">
@@ -84,10 +95,17 @@ export function ProductSaleInfo({ content, options }) {
         P
       </div>
       <div className="shopping_btn row">
-        <button className="btn_cart col-5" onClick={addCart}>
-          장바구니
-        </button>
-        <button className="btn_order col-5" onClick={gotoOrder}>
+        {content?.pd_kind === "shop" && (
+          <button className="btn_cart col-5" onClick={addCart}>
+            장바구니
+          </button>
+        )}
+        <button
+          className={`btn_order col-${
+            content?.pd_kind !== "shop" ? "12" : "5"
+          }`}
+          onClick={gotoOrder}
+        >
           주문하기
         </button>
       </div>

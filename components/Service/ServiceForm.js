@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Image from "next/image";
 import Form from "react-bootstrap/Form";
 import { DatePicker } from "../Common/DatePicker";
 
-export const ServiceForm = () => {
+export function ServiceForm({ options, bookingData }) {
+  const {
+    item_no,
+    pd_name,
+    thumb_img,
+    brand,
+    quantity,
+    price,
+    origin_price,
+    delivery_fee,
+    option_price,
+    option_values,
+  } = bookingData;
+
+  useEffect(() => {
+    console.log("options: ", options);
+    console.log("bookingData: ", bookingData);
+  }, [options, bookingData]);
   return (
     <div className="booking_content">
       <h1>제휴서비스 신청</h1>
@@ -13,87 +30,22 @@ export const ServiceForm = () => {
       <ul className="product_info">
         <li className="pb-0" key="23">
           <div className="product_info_items">
-            <Image
-              src="/images/service/service02.png"
-              width="150"
-              height="150"
-              alt="서비스이름"
-            />
+            <Image src={thumb_img} width="150" height="150" alt={pd_name} />
             <div className="product_info_item">
               <div>
-                <h3>제주 스위트룸 이용권</h3>
-                <p>호텔 에어시티 제주</p>
+                <h3>{pd_name}</h3>
+                <p>{brand}</p>
               </div>
               <div>
-                <span className="product_price">300,000 원</span>
+                <span className="product_price">
+                  {price.toLocaleString()} 원
+                </span>
               </div>
             </div>
           </div>
         </li>
       </ul>
       <Form>
-        <div className="form_item">
-          <label>연박수</label>
-          <div className="btn_radio">
-            <Form.Check
-              inline
-              label="1박"
-              name="group1"
-              type="radio"
-              id="inline-radio-1"
-              checked
-            />
-            <Form.Check
-              inline
-              label="2박(150,000 P 추가)"
-              name="group1"
-              type="radio"
-              id="inline-radio-2"
-            />
-          </div>
-        </div>
-        <div className="form_item">
-          <label>인원수</label>
-          <div className="btn_radio">
-            <Form.Check
-              inline
-              label="1명"
-              name="people"
-              type="radio"
-              id="people-1"
-              checked
-            />
-            <Form.Check
-              inline
-              label="2명"
-              name="people"
-              type="radio"
-              id="people-2"
-            />
-            <Form.Check
-              inline
-              label="3명"
-              name="people"
-              type="radio"
-              id="people-3"
-            />
-            <Form.Check
-              inline
-              label="4명"
-              name="people"
-              type="radio"
-              id="people-4"
-            />
-          </div>
-        </div>
-        <div className="datePickerWrap mb-80">
-          <label>날짜선택</label>
-          <div className="calendar_wrap">
-            <DatePicker placeholder="출발일" dateKind="hope_date1" />
-            <DatePicker placeholder="도착일" dateKind="hope_date2" />
-          </div>
-        </div>
-
         <h2>이용자 정보</h2>
         <div className="form_item">
           <Form.Label>이용자명</Form.Label>
@@ -148,4 +100,4 @@ export const ServiceForm = () => {
       </Form>
     </div>
   );
-};
+}

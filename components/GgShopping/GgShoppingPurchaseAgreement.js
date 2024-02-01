@@ -33,29 +33,45 @@ export default function GgShoppingPurchaseAgreement({
 
   const calcOrderPrice = () => {
     const originPrice = orderProducts?.reduce(
-      (acc, cur) => acc + cur.origin_price * cur.quantity,
+      (acc, cur) => acc + cur.origin_price * (cur.quantity || 1),
       0
     );
-    const salePrice = orderProducts?.reduce(
-      (acc, cur) => acc + cur.price * cur.quantity,
+    const price = orderProducts?.reduce(
+      (acc, cur) => acc + cur.price * (cur.quantity || 1),
       0
     );
     const deliveryFee = orderProducts?.reduce(
-      (acc, cur) => acc + cur.delivery_fee,
+      (acc, cur) => acc + cur.delivery_fee || 0,
       0
     );
-    const totalPrice = salePrice + deliveryFee;
+    const optionsPrice = orderProducts?.reduce(
+      (acc, cur) => acc + cur.option_price || 0,
+      0
+    );
+
+    console.log(
+      "calcOrderPrice: ",
+      originPrice,
+      price,
+      deliveryFee,
+      optionsPrice
+    );
+
+    const totalPrice = price + deliveryFee + optionsPrice;
     setOrderPrice({
       origin_price: originPrice,
+      price: price,
       total_price: totalPrice,
-      sale_price: originPrice - salePrice,
+      sale_price: originPrice - price,
       delivery_fee: deliveryFee,
+      option_price: optionsPrice,
     });
     const orderPoint = ablePoint > totalPrice ? totalPrice : ablePoint;
     setForm((prev) => ({
       ...prev,
       pay_amount: orderPoint,
       delivery_fee: deliveryFee,
+      option_price: optionsPrice,
       total_price: totalPrice,
     }));
   };
@@ -150,6 +166,10 @@ export default function GgShoppingPurchaseAgreement({
     console.log("orderInfo: ", orderInfo);
     setForm((prev) => ({ ...prev, ...orderInfo }));
   }, [orderInfo]);
+
+  useEffect(() => {
+    console.log("form: ", form);
+  }, [form]);
   return (
     <div className="agree_content screen">
       <div className="price_content">
@@ -157,6 +177,12 @@ export default function GgShoppingPurchaseAgreement({
           <span className="item">상품가</span>
           <span className="price">
             {orderPrice?.origin_price?.toLocaleString()} P
+          </span>
+        </div>
+        <div className="price_items">
+          <span className="item">추가포인트</span>
+          <span className="price">
+            {orderPrice?.option_price?.toLocaleString()} P
           </span>
         </div>
         <div className="price_items">

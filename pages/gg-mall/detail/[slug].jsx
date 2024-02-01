@@ -12,14 +12,12 @@ export default function detail({ user }) {
 
   const getProductData = (id) => {
     GET(`/mall/${id}`).then((res) => {
-      console.log("res: ", res);
       setContent(res?.data?.product);
       setOptions(res?.data?.options);
     });
   };
 
   useEffect(() => {
-    console.log("useEffect router.query");
     const pdId = router.query.slug;
     if (pdId) getProductData(pdId);
   }, [router.query]);
