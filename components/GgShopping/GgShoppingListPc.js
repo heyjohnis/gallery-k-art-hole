@@ -7,8 +7,18 @@ import Pagination from "../Pagination";
 import { calcDiscount } from "../../utils/price";
 import { useDebouncedCallback } from "use-debounce";
 import { ggmallKind } from "../../utils/cmmCode";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+const links = [
+  { name: "제휴서비스", link: "/gg-mall/service/" },
+  { name: "GG 투어", link: "/gg-mall/tour/" },
+  { name: "GG 쇼핑", link: "/gg-mall/shop/" },
+];
 
 export default function GgShoppingListPc({ user, pdKind }) {
+  const router = useRouter();
+
   const [items, setItems] = useState([]);
   const [page, setPage] = useState({ currentPage: 1, totalPages: 1 });
   const [form, setForm] = useState({});
@@ -67,9 +77,11 @@ export default function GgShoppingListPc({ user, pdKind }) {
       {/* 모바일 탭메뉴 */}
       <div className="shopping_tit_mb">
         <ul className="mypage_tab_menu">
-          <li className="active">제휴서비스</li>
-          <li className="">GG 투어</li>
-          <li className="">GG 쇼핑</li>
+          {links.map((item) => (
+            <li className={item.link === router.asPath && "active"}>
+              <Link href={item.link}>{item.name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="row">

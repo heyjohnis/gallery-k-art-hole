@@ -1,9 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const Keywords = ["라운딩", "레슨", "연습장", "호텔", "여가", "의전"];
-
-export function GgServiceFilter({ form, setForm }) {
+export function GgServiceFilter({ form, setForm, keywords }) {
   const handleCheckKeyword = (e) => {
     const { checked, value } = e.target;
     const arr = form?.keywords ? form?.keywords?.split(",") : [];
@@ -25,7 +23,7 @@ export function GgServiceFilter({ form, setForm }) {
       <section>
         <h2>카테고리</h2>
         <div className="filter_group">
-          {Keywords.map((keyword, index) => (
+          {keywords.map((keyword, index) => (
             <Form.Check
               label={keyword}
               name={`brand${index + 1}`}

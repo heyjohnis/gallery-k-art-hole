@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-export function GgShopFilter({ form, setForm }) {
+export function GgShopFilter({ form, setForm, keywords }) {
   const handleCheckBrand = (e) => {
     const { checked, value } = e.target;
     const arr = form?.brands ? form?.brands.split(",") : [];
@@ -89,51 +89,18 @@ export function GgShopFilter({ form, setForm }) {
       <section>
         <h2>제품</h2>
         <div className="filter_group">
-          <Form.Check
-            label="골프채"
-            name="product1"
-            type="checkbox"
-            id="pro_1"
-            className="item"
-            value="골프채"
-            onChange={handleCheckKeyword}
-          />
-          <Form.Check
-            label="골프백"
-            name="product2"
-            type="checkbox"
-            id="pro_2"
-            className="item"
-            value="골프백"
-            onChange={handleCheckKeyword}
-          />
-          <Form.Check
-            label="보스턴백"
-            name="product3"
-            type="checkbox"
-            id="pro_3"
-            className="item"
-            value="보스턴백"
-            onChange={handleCheckKeyword}
-          />
-          <Form.Check
-            label="골프웨어"
-            name="product4"
-            type="checkbox"
-            id="pro_4"
-            className="item"
-            value="골프웨어"
-            onChange={handleCheckKeyword}
-          />
-          <Form.Check
-            label="스윙연습기"
-            name="product5"
-            type="checkbox"
-            id="pro_5"
-            className="item"
-            value="스윙연습기"
-            onChange={handleCheckKeyword}
-          />
+          {keywords.map((keyword, index) => (
+            <Form.Check
+              key={index}
+              label={keyword}
+              name={`product${index}`}
+              type="checkbox"
+              id={`product${index}`}
+              className="item"
+              value={keyword}
+              onChange={handleCheckKeyword}
+            />
+          ))}
         </div>
       </section>
     </>

@@ -9,7 +9,12 @@ import { GgServiceFilter } from "./GgServiceFilter";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 
+const shopKeywords = ["골프채", "골프백", "보스턴백", "골프웨어", "스윙연습기"];
+const tourKeywords = ["메이저투어", "해외투어", "국내투어"];
+const serviceKeywords = ["라운딩", "레슨", "연습장", "호텔", "여가", "의전"];
+
 export default function GgShoppingFilter({ form, setForm, pdKind }) {
+  const [keywords, setKeywords] = useState([]);
   const restForm = (e) => {
     e.preventDefault();
     setForm((prev) => ({
@@ -40,16 +45,49 @@ export default function GgShoppingFilter({ form, setForm, pdKind }) {
     }));
   }, 1000);
 
+  const handleCheckBrand = (e) => {
+    const { checked, value } = e.target;
+    const arr = form?.keywords ? form?.keywords?.split(",") : [];
+    let keywords = "";
+    if (checked) {
+      arr.push(e.target.value);
+      const set = new Set(arr);
+      keywords = Array.from(set).join(",");
+    } else {
+      const index = arr.indexOf(value);
+      arr.splice(index, 1);
+      keywords = arr.join(",");
+    }
+    setForm((prev) => ({ ...prev, keywords }));
+  };
+
+  useEffect(() => {
+    const keys =
+      pdKind === "shop"
+        ? shopKeywords
+        : pdKind === "tour"
+        ? tourKeywords
+        : serviceKeywords;
+    setKeywords(keys);
+  }, [pdKind]);
   return (
     <>
       <div className="shopping_filter">
         <h2 className="total">
           <button onClick={restForm}>전체</button>
         </h2>
-        {pdKind === "shop" && <GgShopFilter form={form} setForm={setForm} />}
-        {pdKind === "tour" && <GgTourFilter form={form} setForm={setForm} />}
+        {pdKind === "shop" && (
+          <GgShopFilter form={form} setForm={setForm} keywords={shopKeywords} />
+        )}
+        {pdKind === "tour" && (
+          <GgTourFilter form={form} setForm={setForm} keywords={tourKeywords} />
+        )}
         {pdKind === "service" && (
-          <GgServiceFilter form={form} setForm={setForm} />
+          <GgServiceFilter
+            form={form}
+            setForm={setForm}
+            keywords={serviceKeywords}
+          />
         )}
         <section>
           <h2>가격</h2>
@@ -75,94 +113,66 @@ export default function GgShoppingFilter({ form, setForm, pdKind }) {
         </div>
         <div className="mb_reser_content">
           <section className="mb_reser_filter">
-            <ToggleButtonGroup type="radio" name="term" defaultValue="">
-              <ToggleButton
-                id="product-radio-1"
-                value=""
-                className="btn_filter"
-              >
-                전체
-              </ToggleButton>
-              <ToggleButton
-                id="product-radio-2"
-                value=""
-                className="btn_filter"
-              >
-                EISEN HEIM
-              </ToggleButton>
-              <ToggleButton
-                id="product-radio-3"
-                value=""
-                className="btn_filter"
-              >
-                BOGNER
-              </ToggleButton>
-              <ToggleButton
-                id="product-radio-4"
-                value=""
-                className="btn_filter"
-              >
-                PING
-              </ToggleButton>
-              <ToggleButton
-                id="product-radio-5"
-                value=""
-                className="btn_filter"
-              >
-                YAMAHA
-              </ToggleButton>
-              <ToggleButton
-                id="product-radio-6"
-                value=""
-                className="btn_filter"
-              >
-                Phi Golf
-              </ToggleButton>
-            </ToggleButtonGroup>
+            {pdKind === "shop" && (
+              <ToggleButtonGroup type="radio" name="term" defaultValue="">
+                <ToggleButton
+                  id="product-radio-1"
+                  value=""
+                  className="btn_filter"
+                  onClick={() => handleCheckBrand("")}
+                >
+                  전체
+                </ToggleButton>
+                <ToggleButton
+                  id="product-radio-2"
+                  value=""
+                  className="btn_filter"
+                  onClick={() => handleCheckBrand("")}
+                >
+                  EISEN HEIM
+                </ToggleButton>
+                <ToggleButton
+                  id="product-radio-3"
+                  value=""
+                  className="btn_filter"
+                  onClick={() => handleCheckBrand("")}
+                >
+                  BOGNER
+                </ToggleButton>
+                <ToggleButton
+                  id="product-radio-4"
+                  value=""
+                  className="btn_filter"
+                >
+                  PING
+                </ToggleButton>
+                <ToggleButton
+                  id="product-radio-5"
+                  value=""
+                  className="btn_filter"
+                >
+                  YAMAHA
+                </ToggleButton>
+                <ToggleButton
+                  id="product-radio-6"
+                  value=""
+                  className="btn_filter"
+                >
+                  Phi Golf
+                </ToggleButton>
+              </ToggleButtonGroup>
+            )}
 
             <ToggleButtonGroup type="radio" name="types" defaultValue="">
-              <ToggleButton
-                id="producttypes-radio-1"
-                value=""
-                className="btn_filter"
-              >
-                전체
-              </ToggleButton>
-              <ToggleButton
-                id="producttypes-radio-2"
-                value=""
-                className="btn_filter"
-              >
-                골프채
-              </ToggleButton>
-              <ToggleButton
-                id="producttypes-radio-3"
-                value=""
-                className="btn_filter"
-              >
-                캐디백
-              </ToggleButton>
-              <ToggleButton
-                id="producttypes-radio-4"
-                value=""
-                className="btn_filter"
-              >
-                보스턴백
-              </ToggleButton>
-              <ToggleButton
-                id="producttypes-radio-5"
-                value=""
-                className="btn_filter"
-              >
-                골프웨어
-              </ToggleButton>
-              <ToggleButton
-                id="producttypes-radio-6"
-                value=""
-                className="btn_filter"
-              >
-                스윙연습기
-              </ToggleButton>
+              {keywords.map((keyword, index) => (
+                <ToggleButton
+                  id={`producttypes-radio-${index + 1}`}
+                  value={keyword}
+                  className="btn_filter"
+                >
+                  {keyword}
+                </ToggleButton>
+              ))}
             </ToggleButtonGroup>
             {/* <MultiRangeSlider/> */}
           </section>
