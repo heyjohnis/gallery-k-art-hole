@@ -6,6 +6,7 @@ export function CheckBoxComp({
   label,
   optionNo,
   setOptionValues,
+  defaultValue,
 }) {
   const options = JSON.parse(optionValue);
   const checkedOption = (item) => {
@@ -26,7 +27,7 @@ export function CheckBoxComp({
             type="radio"
             id={`product${optionNo}-${index + 1}`}
             className="item btn_radio"
-            defaultChecked={index === 0}
+            defaultChecked={defaultValue === `${item.op_name}#${item.price}`}
             value={`${item.op_name}#${item.price}`}
             onChange={() => checkedOption(item)}
           />

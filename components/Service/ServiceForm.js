@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Image from "next/image";
 import Form from "react-bootstrap/Form";
-import { DatePicker } from "../Common/DatePicker";
+import { GgOptionsComp } from "../GgShopping/GgOptionsComp";
 
 export function ServiceForm({ options, bookingData }) {
+  const [form, setForm] = useState({});
+  const [optionValues, setOptionValues] = useState({});
   const {
     item_no,
     pd_name,
@@ -20,8 +22,16 @@ export function ServiceForm({ options, bookingData }) {
   } = bookingData;
 
   useEffect(() => {
+    if (options.length === 0) return;
     console.log("options: ", options);
     console.log("bookingData: ", bookingData);
+    const values = JSON.parse(bookingData?.option_values || "");
+    const optionVals = options.map((option) => ({
+      ...option,
+      ...values[option.option_no],
+    }));
+    console.log("optionValues: ", optionValues, values);
+    setOptionValues(optionVals);
   }, [options, bookingData]);
   return (
     <div className="booking_content">
@@ -38,13 +48,14 @@ export function ServiceForm({ options, bookingData }) {
               </div>
               <div>
                 <span className="product_price">
-                  {price.toLocaleString()} 원
+                  {price?.toLocaleString()} 원
                 </span>
               </div>
             </div>
           </div>
         </li>
       </ul>
+      <GgOptionsComp options={optionValues} setForm={setForm} />
       <Form>
         <h2>이용자 정보</h2>
         <div className="form_item">

@@ -22,19 +22,33 @@ export function GgOptionsComp({ content, setForm, options }) {
     <>
       {options?.length > 0 &&
         options.map(
-          ({ option_name, option_type, option_value, option_no }, index) =>
+          (
+            {
+              option_name,
+              option_type,
+              option_value,
+              option_no,
+              price,
+              op_name,
+              start_date,
+              end_date,
+            },
+            index
+          ) =>
             option_type === "01" ? (
               <SelectBoxComp
                 key={index}
                 optionNo={option_no}
                 optionValue={option_value}
                 label={option_name}
+                defaultValue={`${op_name}#${price}`}
                 setOptionValues={setOptionValues}
               />
             ) : option_type === "02" ? (
               <DatePicker
                 key={index}
                 label={option_name}
+                selectedDate={start_date || ""}
                 pickDate={(date) =>
                   setOptionValues((prev) => ({
                     ...prev,
@@ -50,6 +64,8 @@ export function GgOptionsComp({ content, setForm, options }) {
                 key={index}
                 optionNo={option_no}
                 label={option_name}
+                defaultStartDate={start_date || ""}
+                defaultEndDate={end_date || ""}
                 setOptionValues={setOptionValues}
               />
             ) : option_type === "05" ? (
@@ -58,6 +74,7 @@ export function GgOptionsComp({ content, setForm, options }) {
                 optionNo={option_no}
                 label={option_name}
                 optionValue={option_value}
+                defaultValue={`${op_name}#${price}`}
                 setOptionValues={setOptionValues}
               />
             ) : option_type === "06" ? (

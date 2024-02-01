@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { DatePicker } from "./DatePicker";
 
-export function DatePickerTermComp({ setOptionValues, optionNo, label }) {
+export function DatePickerTermComp({
+  setOptionValues,
+  optionNo,
+  label,
+  defaultStartDate,
+  defaultEndDate,
+}) {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
 
@@ -23,12 +29,14 @@ export function DatePickerTermComp({ setOptionValues, optionNo, label }) {
         <DatePicker
           pickDate={(data) => setStartDate(data.start_date)}
           dateKind="start_date"
+          selectedDate={defaultStartDate}
         />
       </div>
       <div className="col-6">
         <DatePicker
           pickDate={(data) => setEndDate(data.end_date)}
           dateKind="end_date"
+          selectedDate={defaultEndDate}
         />
       </div>
     </div>
