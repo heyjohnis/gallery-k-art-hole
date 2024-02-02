@@ -28,7 +28,7 @@ export function GgOptionsComp({ content, setForm, options }) {
   }, [optionValues]);
 
   useEffect(() => {
-    setDefaultValues();
+    if (options?.length > 0) setDefaultValues();
   }, [options]);
 
   return (
