@@ -1,23 +1,28 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 
-export const ServiceAgreement = () => {
+export function ServiceAgreement({ user, form, setForm }) {
   return (
     <div className="agree_content screen">
       <div className="price_content">
         <div className="price_items">
           <span className="item">상품가</span>
-          <span className="price">150,000 P</span>
+          <span className="price">{form?.price?.toLocaleString()} P</span>
         </div>
         <div className="price_items">
           <span className="item">추가 포인트</span>
-          <span className="price">+ 150,000 P</span>
+          <span className="price">
+            + {form?.option_price?.toLocaleString()} P
+          </span>
         </div>
       </div>
       <div className="total_payment">
         <span>총 결제포인트</span>
         <strong>
-          <span>300,000</span> P
+          <span>
+            {((form?.price || 0) + (form?.option_price || 0)).toLocaleString()}
+          </span>{" "}
+          P
         </strong>
       </div>
       <Form>
@@ -110,4 +115,4 @@ export const ServiceAgreement = () => {
       </Form>
     </div>
   );
-};
+}

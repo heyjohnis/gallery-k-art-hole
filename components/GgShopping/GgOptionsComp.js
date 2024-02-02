@@ -4,19 +4,32 @@ import { DatePicker } from "../Common/DatePicker";
 import { SelectBoxComp } from "../Common/SelectBoxComp";
 import { CheckBoxComp } from "../Common/CheckBoxComp";
 import { DatePickerTermComp } from "../Common/DatePickerTermComp";
+import { convertArrayToObject } from "../../utils/array";
 
 export function GgOptionsComp({ content, setForm, options }) {
   const [optionValues, setOptionValues] = useState({});
 
+  const setDefaultValues = () => {
+    console.log("options: ", options);
+    const settedValues = convertArrayToObject(options, "option_no");
+    setOptionValues(settedValues);
+  };
+
   useEffect(() => {
+    console.log("GgOptionsComp optionValues: ", optionValues);
     const values = Object.values(optionValues);
-    const total = values.reduce((acc, cur) => acc + cur.price, 0);
+    console.log("GgOptionsComp values: ", values);
+    const total = values.reduce((acc, cur) => acc + (cur?.price || 0), 0);
     setForm((prev) => ({
       ...prev,
       values: JSON.stringify(optionValues),
       option_price: total,
     }));
   }, [optionValues]);
+
+  useEffect(() => {
+    setDefaultValues();
+  }, [options]);
 
   return (
     <>

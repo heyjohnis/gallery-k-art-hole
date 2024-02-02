@@ -29,7 +29,11 @@ export function ProductSaleInfo({ content, options }) {
         } else {
           router.push({
             pathname: `/gg-mall/booking/${content?.pd_kind}`,
-            query: { item_no: res?.data?.insertId, pd_no: content?.pd_no },
+            query: {
+              item_no: res?.data?.insertId,
+              pd_no: content?.pd_no,
+              pd_kind: content?.pd_kind,
+            },
           });
         }
       }
