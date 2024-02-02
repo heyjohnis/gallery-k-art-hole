@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 
 export function ServiceAgreement({ user, form, setForm }) {
+  const [ablePoint, setAblePoint] = useState(0);
+  const handleChange = (e) => {
+    const { name, value, checked, type } = e.target;
+    console.log("handleChange: ", name, value, checked, type);
+    if (type === "checkbox") {
+      setForm((prev) => ({ ...prev, [name]: checked }));
+    } else {
+      setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    }
+  };
+
   return (
     <div className="agree_content screen">
       <div className="price_content">
@@ -37,7 +48,7 @@ export function ServiceAgreement({ user, form, setForm }) {
             />
           </div>
           <p className="point_status">
-            사용 가능 포인트 <span>11111 P</span>
+            사용 가능 포인트 <span>{ablePoint.toLocaleString()} P</span>
           </p>
         </div>
 
@@ -48,8 +59,8 @@ export function ServiceAgreement({ user, form, setForm }) {
             name="agree_payment"
             type="checkbox"
             required
-            id="agree_payment"
-            value=""
+            value={form?.agree_payment}
+            onChange={handleChange}
           />
           <Form.Check
             inline
@@ -58,7 +69,8 @@ export function ServiceAgreement({ user, form, setForm }) {
             type="checkbox"
             id="agree_service"
             required
-            value=""
+            value={form?.agree_service}
+            onChange={handleChange}
           />
         </div>
 

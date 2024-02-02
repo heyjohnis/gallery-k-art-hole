@@ -97,7 +97,7 @@ export function GgOptionsComp({ content, setForm, options }) {
             )
         )}
 
-      {content?.max_quantity > 0 && (
+      {content?.max_quantity > 0 && content?.pd_kind === "shop" && (
         <GgQuantityComp setForm={setForm} maxQuantity={content?.max_quantity} />
       )}
     </>

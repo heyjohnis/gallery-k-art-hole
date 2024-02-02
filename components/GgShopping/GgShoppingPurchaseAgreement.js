@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import { POST } from "../../utils/restApi";
 import { useRouter } from "next/router";
-
-export default function GgShoppingPurchaseAgreement({
-  user,
-  orderProducts,
-  orderInfo,
-}) {
+import { calcSumCartPoint, calcTotalOrderPoint } from "../../service/calcPoint";
+import { GGFormValidation } from "./order/GGFormValidation";
+export default function GgShoppingPurchaseAgreement({ user, form, setForm }) {
   const router = useRouter();
   const [orderPrice, setOrderPrice] = useState({
     total_price: 0,
@@ -31,103 +28,12 @@ export default function GgShoppingPurchaseAgreement({
     }
   };
 
-  const calcOrderPrice = () => {
-    const originPrice = orderProducts?.reduce(
-      (acc, cur) => acc + cur.origin_price * (cur.quantity || 1),
-      0
-    );
-    const price = orderProducts?.reduce(
-      (acc, cur) => acc + cur.price * (cur.quantity || 1),
-      0
-    );
-    const deliveryFee = orderProducts?.reduce(
-      (acc, cur) => acc + cur.delivery_fee || 0,
-      0
-    );
-    const optionsPrice = orderProducts?.reduce(
-      (acc, cur) => acc + cur.option_price || 0,
-      0
-    );
-
-    console.log(
-      "calcOrderPrice: ",
-      originPrice,
-      price,
-      deliveryFee,
-      optionsPrice
-    );
-
-    const totalPrice = price + deliveryFee + optionsPrice;
-    setOrderPrice({
-      origin_price: originPrice,
-      price: price,
-      total_price: totalPrice,
-      sale_price: originPrice - price,
-      delivery_fee: deliveryFee,
-      option_price: optionsPrice,
-    });
-    const orderPoint = ablePoint > totalPrice ? totalPrice : ablePoint;
-    setForm((prev) => ({
-      ...prev,
-      pay_amount: orderPoint,
-      delivery_fee: deliveryFee,
-      option_price: optionsPrice,
-      total_price: totalPrice,
-    }));
-  };
-
-  const validateForm = () => {
-    if (!form.order_user_name) {
-      alert("주문자 이름을 입력해주세요.");
-      return false;
-    }
-    if (!form.order_user_phone) {
-      alert("주문자 연락처를 입력해주세요.");
-      return false;
-    }
-    if (!form.order_user_email) {
-      alert("주문자 이메일을 입력해주세요.");
-      return false;
-    }
-    if (!form.delivery_user_name) {
-      alert("수령인 이름을 입력해주세요.");
-      return false;
-    }
-    if (!form.delivery_phone) {
-      alert("수령인 연락처를 입력해주세요.");
-      return false;
-    }
-    if (!form.delivery_zipcode) {
-      alert("우편번호를 입력해주세요.");
-      return false;
-    }
-    if (!form.delivery_addr1) {
-      alert("주소를 입력해주세요.");
-      return false;
-    }
-    if (!form.delivery_addr2) {
-      alert("상세주소를 입력해주세요.");
-      return false;
-    }
-    if (form.pay_amount !== form.total_price) {
-      alert("결제하실 포인트를 확인해주세요.");
-      return false;
-    }
-    if (!form.agree_payment) {
-      alert("결제정보 확인에 동의해주세요.");
-      return false;
-    }
-    if (!form.agree_service) {
-      alert("필수 항목에 동의해주세요.");
-      return false;
-    }
-    return true;
-  };
-
   const handleOrder = () => {
     console.log("handleOrder: ", form);
 
-    if (!validateForm()) return;
+    const isValid = GGFormValidation(form);
+    if (!isValid) return;
+
     const orderItemNo = orderProducts
       ?.reduce((acc, cur) => [...acc, cur.item_no], [])
       .join(",");
@@ -153,23 +59,6 @@ export default function GgShoppingPurchaseAgreement({
     });
   };
 
-  useEffect(() => {
-    calcOrderPrice();
-    const hasPoint =
-      user?.yearly_point - user?.use_point > 0
-        ? user?.yearly_point - user?.use_point
-        : 0;
-    setAblePoint(hasPoint);
-  }, [orderProducts]);
-
-  useEffect(() => {
-    console.log("orderInfo: ", orderInfo);
-    setForm((prev) => ({ ...prev, ...orderInfo }));
-  }, [orderInfo]);
-
-  useEffect(() => {
-    console.log("form: ", form);
-  }, [form]);
   return (
     <div className="agree_content screen">
       <div className="price_content">
