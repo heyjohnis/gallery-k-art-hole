@@ -24,6 +24,19 @@ export function ServiceBooking({ user }) {
     });
   };
 
+  const handleSubmit = () => {
+    console.log("handleSubmit: ", form);
+    // POST("/reservation/ggmall/order", form).then((res) => {
+    //   console.log("handleSubmit: ", res.data);
+    //   if (res.data.result === "success") {
+    //     alert("서비스 신청이 완료되었습니다.");
+    //     router.push("/service");
+    //   } else {
+    //     alert("서비스 신청에 실패했습니다.");
+    //   }
+    // });
+  };
+
   useEffect(() => {
     if (!router.query) return;
     const { item_no, pd_no, pd_kind } = router.query;
@@ -44,10 +57,6 @@ export function ServiceBooking({ user }) {
     if (options.length === 0) return;
     mergeOptionDefaultValue();
   }, [options, items]);
-
-  useEffect(() => {
-    console.log("form: ", form);
-  }, [form]);
 
   const setOrderPoint = () => {
     const yearlyPoint = parseInt(user?.yearly_point) || 0;
@@ -100,7 +109,11 @@ export function ServiceBooking({ user }) {
           </div>
         </div>
         <div className="col-lg-5 p-0">
-          <ServiceAgreement user={user} form={form} setForm={setForm} />
+          <ServiceAgreement
+            form={form}
+            setForm={setForm}
+            handleSubmit={handleSubmit}
+          />
         </div>
       </div>
     </section>

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 
-export function ServiceAgreement({ user, form, setForm }) {
-  const [ablePoint, setAblePoint] = useState(0);
+export function ServiceAgreement({ form, setForm, handleSubmit }) {
   const handleChange = (e) => {
     const { name, value, checked, type } = e.target;
     console.log("handleChange: ", name, value, checked, type);
@@ -118,7 +117,7 @@ export function ServiceAgreement({ user, form, setForm }) {
         </div>
 
         <div className="btn_purchase">
-          <button type="button" className="black">
+          <button type="button" className="black" onClick={handleSubmit}>
             신청하기
           </button>
           <button type="button" className="white">
