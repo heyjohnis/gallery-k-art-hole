@@ -44,11 +44,12 @@ export function ServiceAgreement({ user, form, setForm }) {
               type="number"
               placeholder="100,000"
               name="pay_amount"
-              value=""
+              value={(form?.price || 0) + (form?.option_price || 0)}
+              onChange={handleChange}
             />
           </div>
           <p className="point_status">
-            사용 가능 포인트 <span>{ablePoint.toLocaleString()} P</span>
+            사용 가능 포인트 <span>{form?.able_point?.toLocaleString()} P</span>
           </p>
         </div>
 

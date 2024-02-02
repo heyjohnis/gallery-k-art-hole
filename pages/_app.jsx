@@ -94,6 +94,7 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
       if (isNotPermitted) {
         redirectUser(ctx, "/products");
       }
+      console.log("global user: ", user);
       pageProps.user = user;
     } catch (error) {
       destroyCookie(ctx, "medq_token");

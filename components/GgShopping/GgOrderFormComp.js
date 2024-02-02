@@ -117,7 +117,7 @@ export function GgOrderFormComp({ setForm, form, user }) {
             onChange={handleChange}
           />
         </div>
-        {form.pd_kind === "shop" && (
+        {form?.pd_kind === "shop" && (
           <>
             <h2>배송지 정보</h2>
             <div className="form_item">

@@ -5,18 +5,20 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { GgOptionsComp } from "../GgShopping/GgOptionsComp";
 import { GgOrderFormComp } from "../GgShopping/GgOrderFormComp";
+import { calcSumCartPoint } from "../../service/calcPoint";
 
 export function ServiceBooking({ user }) {
   const router = useRouter();
   const [form, setForm] = useState({});
-  const [bookingData, setBookingData] = useState({});
+  const [items, setItems] = useState([]);
   const [options, setOptions] = useState([]);
   const [optionValues, setOptionValues] = useState([]);
 
   const getBookingData = (req) => {
     POST("/mall/booking/cart", req).then((res) => {
       console.log("getBookingData: ", res.data);
-      setBookingData(res.data.booking);
+      setItems(res.data.booking);
+      calcSumCartPoint({ items: res.data.booking, setForm });
       setOptions(res.data.options);
       setForm((prev) => ({ ...prev, ...res.data.booking }));
     });
@@ -30,7 +32,7 @@ export function ServiceBooking({ user }) {
   }, [router.query]);
 
   const mergeOptionDefaultValue = () => {
-    const values = JSON.parse(bookingData?.option_values || "");
+    const values = JSON.parse(items[0]?.option_values || "");
     const optionVals = options.map((option) => ({
       ...option,
       ...values[option.option_no],
@@ -41,11 +43,22 @@ export function ServiceBooking({ user }) {
   useEffect(() => {
     if (options.length === 0) return;
     mergeOptionDefaultValue();
-  }, [options, bookingData]);
+  }, [options, items]);
 
   useEffect(() => {
     console.log("form: ", form);
   }, [form]);
+
+  const setOrderPoint = () => {
+    const yearlyPoint = parseInt(user?.yearly_point) || 0;
+    const use_point = user?.use_point || 0;
+    const ableP = yearlyPoint - use_point > 0 ? yearlyPoint - use_point : 0;
+    setForm((prev) => ({ ...prev, able_point: ableP }));
+  };
+  useEffect(() => {
+    if (!user?.yearly_point) return;
+    setOrderPoint();
+  }, [user]);
 
   return (
     <section className="container">
@@ -54,31 +67,36 @@ export function ServiceBooking({ user }) {
           <div className="booking_content">
             <h1>제휴서비스 신청</h1>
             <h2>서비스 정보</h2>
-            <ul className="product_info">
-              <li className="pb-0" key="23">
-                <div className="product_info_items">
-                  <Image
-                    src={bookingData.thumb_img}
-                    width="150"
-                    height="150"
-                    alt={bookingData.pd_name}
-                  />
-                  <div className="product_info_item">
-                    <div>
-                      <h3>{bookingData.pd_name}</h3>
-                      <p>{bookingData.brand}</p>
-                    </div>
-                    <div>
-                      <span className="product_price">
-                        {bookingData.price?.toLocaleString()} 원
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <GgOptionsComp options={optionValues} setForm={setForm} />
-            <GgOrderFormComp user={user} form={form} setForm={setForm} />
+            {items.length > 0 &&
+              items.map((bookingData) => (
+                <>
+                  <ul className="product_info">
+                    <li className="pb-0" key="23">
+                      <div className="product_info_items">
+                        <Image
+                          src={bookingData.thumb_img}
+                          width="150"
+                          height="150"
+                          alt={bookingData.pd_name}
+                        />
+                        <div className="product_info_item">
+                          <div>
+                            <h3>{bookingData.pd_name}</h3>
+                            <p>{bookingData.brand}</p>
+                          </div>
+                          <div>
+                            <span className="product_price">
+                              {bookingData.price?.toLocaleString()} 원
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <GgOptionsComp options={optionValues} setForm={setForm} />
+                  <GgOrderFormComp user={user} form={form} setForm={setForm} />
+                </>
+              ))}
           </div>
         </div>
         <div className="col-lg-5 p-0">

@@ -1,23 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Form from "react-bootstrap/Form";
-import { POST } from "../../utils/restApi";
-import { useRouter } from "next/router";
-import { calcSumCartPoint, calcTotalOrderPoint } from "../../service/calcPoint";
-import { GGFormValidation } from "./order/GGFormValidation";
-export default function GgShoppingPurchaseAgreement({ user, form, setForm }) {
-  const router = useRouter();
-  const [orderPrice, setOrderPrice] = useState({
-    total_price: 0,
-    sale_price: 0,
-    delivery_fee: 0,
-  });
-  const [ablePoint, setAblePoint] = useState(0);
-  const [form, setForm] = useState({
-    agree_payment: false,
-    agree_service: false,
-    pay_amount: 0,
-  });
 
+export default function GgShoppingPurchaseAgreement({
+  user,
+  form,
+  setForm,
+  submitOrder,
+}) {
   const handleChange = (e) => {
     const { name, value, checked, type } = e.target;
     console.log("handleChange: ", name, value, checked, type);
@@ -28,69 +17,38 @@ export default function GgShoppingPurchaseAgreement({ user, form, setForm }) {
     }
   };
 
-  const handleOrder = () => {
-    console.log("handleOrder: ", form);
-
-    const isValid = GGFormValidation(form);
-    if (!isValid) return;
-
-    const orderItemNo = orderProducts
-      ?.reduce((acc, cur) => [...acc, cur.item_no], [])
-      .join(",");
-    if (!orderItemNo) return alert("주문할 상품이 없습니다.");
-
-    const pdLength = orderProducts.length;
-    const comment = `${orderProducts[0].pd_name} ${
-      pdLength > 1 ? `외 ${pdLength - 1}건` : ""
-    }`;
-    form.comment = comment;
-
-    POST("/mall/cart/order", {
-      ...form,
-      order_item_no: orderItemNo,
-    }).then((res) => {
-      if (res?.data?.order_no > 0) {
-        alert("주문이 완료되었습니다.");
-        router.push({
-          pathname: "/gg-mall/complete/",
-          query: { order_no: res?.data?.order_no },
-        });
-      }
-    });
-  };
-
   return (
     <div className="agree_content screen">
       <div className="price_content">
         <div className="price_items">
           <span className="item">상품가</span>
           <span className="price">
-            {orderPrice?.origin_price?.toLocaleString()} P
+            {form?.origin_price?.toLocaleString()} P
           </span>
         </div>
         <div className="price_items">
           <span className="item">추가포인트</span>
           <span className="price">
-            {orderPrice?.option_price?.toLocaleString()} P
+            + {form?.option_price?.toLocaleString()} P
           </span>
         </div>
         <div className="price_items">
           <span className="item">배송비</span>
           <span className="price">
-            + {orderPrice?.delivery_fee?.toLocaleString()} P
+            + {form?.delivery_fee?.toLocaleString()} P
           </span>
         </div>
         <div className="price_items">
           <span className="item">할인가</span>
           <span className="price">
-            - {orderPrice?.sale_price?.toLocaleString()} P
+            - {(form?.sale_price || 0)?.toLocaleString()} P
           </span>
         </div>
       </div>
       <div className="total_payment">
         <span>총 결제포인트</span>
         <strong>
-          <span>{orderPrice?.total_price?.toLocaleString()}</span> P
+          <span>{form?.total_price?.toLocaleString()}</span> P
         </strong>
       </div>
       <Form>
@@ -101,12 +59,13 @@ export default function GgShoppingPurchaseAgreement({ user, form, setForm }) {
               type="number"
               placeholder="100,000"
               name="pay_amount"
-              value={form?.pay_amount}
+              value={form?.pay_amount || 0}
               onChange={handleChange}
             />
           </div>
           <p className="point_status">
-            사용 가능 포인트 <span>{ablePoint.toLocaleString()} P</span>
+            사용 가능 포인트{" "}
+            <span> {form?.able_point?.toLocaleString()} P</span>
           </p>
         </div>
 
@@ -218,10 +177,10 @@ export default function GgShoppingPurchaseAgreement({ user, form, setForm }) {
         </div>
 
         <div className="btn_purchase">
-          <button type="button" className="black" onClick={handleOrder}>
+          <button type="button" className="black" onClick={submitOrder}>
             주문하기
           </button>
-          <button type="button" className="white" onClick={handleOrder}>
+          <button type="button" className="white" onClick={submitOrder}>
             주문취소
           </button>
         </div>

@@ -11,8 +11,8 @@ export function GgOptionsComp({ content, setForm, options }) {
 
   const setDefaultValues = () => {
     console.log("options: ", options);
-    const settedValues = convertArrayToObject(options, "option_no");
-    setOptionValues(settedValues);
+    const defaultVal = convertArrayToObject(options, "option_no");
+    setOptionValues(defaultVal);
   };
 
   useEffect(() => {

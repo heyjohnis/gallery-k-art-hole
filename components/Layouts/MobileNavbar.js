@@ -27,23 +27,6 @@ const MobileNavbar = ({ user }) => {
     }
   };
 
-  const getReservationData = () => {
-    if (user.user_no) {
-      const url = `${baseUrl}/mypage/reservation`;
-      const medq_token = cookie.get("medq_token");
-      axios({
-        method: "post",
-        url: url,
-        headers: { Authorization: `Bearer ${medq_token}` },
-        data: {},
-      })
-        .then(({ data }) => {
-          console.log("data: ", data);
-        })
-        .finally(() => {});
-    }
-  };
-
   useEffect(() => {
     let elementId = document.getElementById("navbar");
     document.addEventListener("scroll", () => {
