@@ -20,21 +20,21 @@ export function ServiceBooking({ user }) {
       setItems(res.data.booking);
       calcSumCartPoint({ items: res.data.booking, setForm });
       setOptions(res.data.options);
-      setForm((prev) => ({ ...prev, ...res.data.booking }));
+      setForm((prev) => ({ ...prev, ...res.data.booking[0] }));
     });
   };
 
   const handleSubmit = () => {
     console.log("handleSubmit: ", form);
-    // POST("/reservation/ggmall/order", form).then((res) => {
-    //   console.log("handleSubmit: ", res.data);
-    //   if (res.data.result === "success") {
-    //     alert("서비스 신청이 완료되었습니다.");
-    //     router.push("/service");
-    //   } else {
-    //     alert("서비스 신청에 실패했습니다.");
-    //   }
-    // });
+    POST("/reservation/ggmall/order", form).then((res) => {
+      console.log("handleSubmit: ", res.data);
+      if (res?.data?.order_id > 0) {
+        alert("서비스 신청이 완료되었습니다.");
+        router.push(`/gg-mall/${form.pd_kind}`);
+      } else {
+        alert("서비스 신청에 실패했습니다. 입력 정보를 확인해주세요");
+      }
+    });
   };
 
   useEffect(() => {

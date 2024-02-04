@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
+import { commaFormat } from "../../utils/number";
 
 export function CheckBoxComp({
   optionValue,
@@ -22,7 +23,9 @@ export function CheckBoxComp({
         {options.map((item, index) => (
           <Form.Check
             key={index}
-            label={item.op_name}
+            label={`${item.op_name}${
+              item.price > 0 ? ` (+${commaFormat(item.price)})` : ""
+            }`}
             name={`product${optionNo}`}
             type="radio"
             id={`product${optionNo}-${index + 1}`}

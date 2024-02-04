@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Form from "react-bootstrap/Form";
+import { useRouter } from "next/router";
 
 export function ServiceAgreement({ form, setForm, handleSubmit }) {
+  const router = useRouter();
   const handleChange = (e) => {
     const { name, value, checked, type } = e.target;
     console.log("handleChange: ", name, value, checked, type);
@@ -9,6 +11,12 @@ export function ServiceAgreement({ form, setForm, handleSubmit }) {
       setForm((prev) => ({ ...prev, [name]: checked }));
     } else {
       setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    }
+  };
+
+  const handleCancel = () => {
+    if (confirm("신청을 취소하시겠습니까?")) {
+      router.push(`/gg-mall/${form.pd_kind}`);
     }
   };
 
@@ -120,7 +128,7 @@ export function ServiceAgreement({ form, setForm, handleSubmit }) {
           <button type="button" className="black" onClick={handleSubmit}>
             신청하기
           </button>
-          <button type="button" className="white">
+          <button type="button" className="white" onClick={handleCancel}>
             신청취소
           </button>
         </div>
