@@ -12,6 +12,7 @@ const Navbar = ({ user }) => {
   const router = useRouter();
   const [currentPath, setCurrentPath] = useState("");
   const [menu, setMenu] = useState(true);
+  const [userMembership, setUserMembership] = useState("");
 
   useEffect(() => {
     setCurrentPath(router.asPath);
@@ -34,6 +35,10 @@ const Navbar = ({ user }) => {
     });
   });
 
+  useEffect(() => {
+    setUserMembership(user?.membership);
+  });
+
   const classOne = menu
     ? "collapse flex-column mean-menu"
     : "collapse flex-column show";
@@ -52,7 +57,10 @@ const Navbar = ({ user }) => {
         <div className={styles.backdrop}></div>
         <div
           className={`${styles.top_event} ${
-            currentPath.indexOf("landing") > -1 ? styles.topEventRemove : ""
+            currentPath.indexOf("landing") > -1 ||
+            currentPath.indexOf("dealer-page") > -1
+              ? styles.topEventRemove
+              : ""
           }`}
         >
           <Swiper
@@ -66,9 +74,21 @@ const Navbar = ({ user }) => {
             className={`hero-swiper ${styles.swiper}`}
           >
             <SwiperSlide>
-              <Link href="/landing">
-                <span>What is GREEN GALLERY?</span>
-              </Link>
+              <div className={styles.landingWrap}>
+                <Link href="/landing">
+                  <span>What is GREEN GALLERY?</span>
+                </Link>
+                {userMembership === "dealer" ? (
+                  <>
+                    <div className="slash">&ensp;/&ensp;</div>
+                    <Link href="/dealer-page">
+                      <span>Dealer</span>
+                    </Link>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             </SwiperSlide>
           </Swiper>
         </div>

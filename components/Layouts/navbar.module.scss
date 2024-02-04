@@ -41,10 +41,15 @@ $sub-content-color-home-four: #e7e7e7;
             letter-spacing: -0.16px;
             color: #111;
         }
+
+        &:hover {
+            text-decoration-line: underline;
+    
+        }
     }
 
-    &:hover {
-        text-decoration-line: underline;
+    div {
+        font-size: 12px;
 
     }
 }
@@ -62,11 +67,13 @@ $sub-content-color-home-four: #e7e7e7;
     // width: 345px;
     width: 550px;
     height: 100vh;
+    margin:  0 0 0;
     padding: 100px 0 50px;
+    // padding: 100px 0 50px;
     position: absolute;
     top: 0vh;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .menuBtn {
@@ -79,6 +86,12 @@ $sub-content-color-home-four: #e7e7e7;
 
 .topEventRemove {
     display: none;
+}
+
+.landingWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
