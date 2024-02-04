@@ -6,7 +6,6 @@ import styles from "../Mypage.module.scss";
 import Table from "react-bootstrap/Table";
 
 import baseUrl from "../../../utils/baseUrl";
-import { commaFormat } from "../../../utils/number";
 
 const Point = () => {
   const [points, setPoints] = useState([]);
@@ -23,7 +22,7 @@ const Point = () => {
       .then(({ data }) => {
         setPoints(data);
       })
-      .finally(() => { });
+      .finally(() => {});
   }, []);
 
   return (
@@ -47,9 +46,7 @@ const Point = () => {
                   {point.resv_name}
                   {point.pd_name}
                 </td>
-                <td className="text-right">
-                  {point.point || 0} P
-                </td>
+                <td className="text-right">{point.point || 0} P</td>
               </tr>
             ))}
           </tbody>

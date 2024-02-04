@@ -130,7 +130,7 @@ export default function PcMyBooking({
                       {/* TODO: 타입에 따른 썸네일 변경 */}
                     </div>
                     <article>
-                      <h3>{RESV_KIND[resv?.resv_kind]}</h3>
+                      <h3>{resv?.resv_name}</h3>
                       <span>
                         {["01", "05"].includes(resv?.resv_stts) && (
                           <span>
@@ -250,7 +250,7 @@ export default function PcMyBooking({
                       <h4>고객 요청사항</h4>
                       <ul className="reser_detail_info">
                         <li className="request">
-                          <span className="tit">내용</span>
+                          <span className="tit">{resv.memo}</span>
                           <span>
                             <pre>{resv.memo}</pre>
                           </span>
