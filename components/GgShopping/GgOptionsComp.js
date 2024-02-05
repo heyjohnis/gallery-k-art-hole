@@ -65,7 +65,7 @@ export function GgOptionsComp({ content, setForm, options }) {
                 pickDate={(date) =>
                   setOptionValues((prev) => ({
                     ...prev,
-                    [option_no]: { start_date: date.start_date },
+                    [option_no]: { option_name, start_date: date.start_date },
                   }))
                 }
                 dateKind="start_date"

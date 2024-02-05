@@ -16,7 +16,11 @@ export function DatePickerTermComp({
 
     setOptionValues((prev) => ({
       ...prev,
-      [optionNo]: { start_date: startDate, end_date: endDate },
+      [optionNo]: {
+        option_name: label,
+        start_date: startDate,
+        end_date: endDate,
+      },
     }));
   }, [startDate, endDate]);
 
