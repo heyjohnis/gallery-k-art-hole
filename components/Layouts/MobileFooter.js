@@ -10,7 +10,10 @@ const MobileFooter = () => {
 
   return (
     <>
-      <footer className={`footer-top-area pb-70 footer ${styles.footer}`}>
+      <footer
+        className={`footer-top-area pb-70 footer ${styles.footer}`}
+        style={{ backgroundColor: "#333" }}
+      >
         <div className={`${styles.footerWrap}`}>
           <div className={`${styles.leftWrap}`}>
             <div className={`${styles.csWrap}`}>
