@@ -259,7 +259,6 @@ export default function PcMyBooking({
                       <h4>고객 요청사항</h4>
                       <ul className="reser_detail_info">
                         <li className="request">
-                          <span className="tit">{resv.memo}</span>
                           <span>
                             <pre>{resv.memo}</pre>
                           </span>
