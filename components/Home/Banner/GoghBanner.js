@@ -49,6 +49,10 @@ export default function GoghBanner() {
                     <img src="/images/main/president.png" alt="presudent k" />
                   </div>
                 </div>
+
+                <div className={styles.artworkTitle}>
+                  <span>김복동 - sailing</span>
+                </div>
               </div>
             </div>
           </div>
@@ -86,6 +90,10 @@ export default function GoghBanner() {
                     <img src="/images/main/president.png" alt="presudent k" />
                   </div>
                 </div>
+
+                <div className={styles.artworkTitle}>
+                  <span>김복동 - sailing</span>
+                </div>
               </div>
             </div>
           </div>
@@ -122,6 +130,10 @@ export default function GoghBanner() {
                   <div className={styles.imageWrapTop}>
                     <img src="/images/main/president.png" alt="presudent k" />
                   </div>
+                </div>
+
+                <div className={styles.artworkTitle}>
+                  <span>김복동 - sailing</span>
                 </div>
               </div>
             </div>

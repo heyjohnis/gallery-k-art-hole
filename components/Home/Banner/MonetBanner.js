@@ -49,6 +49,10 @@ export default function MonetBanner() {
                     <img src="/images/main/elite.png" alt="elite k" />
                   </div>
                 </div>
+
+                <div className={styles.artworkTitle}>
+                  <span>로사조 - Be a Princess II-2</span>
+                </div>
               </div>
             </div>
           </div>
@@ -86,6 +90,10 @@ export default function MonetBanner() {
                     <img src="/images/main/elite.png" alt="elite k" />
                   </div>
                 </div>
+
+                <div className={styles.artworkTitle}>
+                  <span>로사조 - Be a Princess II-2</span>
+                </div>
               </div>
             </div>
           </div>
@@ -122,6 +130,10 @@ export default function MonetBanner() {
                   <div className={styles.imageWrapTop}>
                     <img src="/images/main/elite.png" alt="elite k" />
                   </div>
+                </div>
+
+                <div className={styles.artworkTitle}>
+                  <span>로사조 - Be a Princess II-2</span>
                 </div>
               </div>
             </div>

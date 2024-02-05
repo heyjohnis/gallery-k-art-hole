@@ -48,6 +48,10 @@ export default function RenoirBanner() {
                     <img src="/images/main/noblesse.png" alt="noblesse k" />
                   </div>
                 </div>
+
+                <div className={styles.artworkTitle}>
+                  <span>박해강 - 달과 검은토끼</span>
+                </div>
               </div>
             </div>
           </div>
@@ -85,6 +89,10 @@ export default function RenoirBanner() {
                     <img src="/images/main/noblesse.png" alt="noblesse k" />
                   </div>
                 </div>
+
+                <div className={styles.artworkTitle}>
+                  <span>박해강 - 달과 검은토끼</span>
+                </div>
               </div>
             </div>
           </div>
@@ -121,6 +129,10 @@ export default function RenoirBanner() {
                   <div className={styles.imageWrapTop}>
                     <img src="/images/main/noblesse.png" alt="noblesse k" />
                   </div>
+                </div>
+
+                <div className={styles.artworkTitle}>
+                  <span>박해강 - 달과 검은토끼</span>
                 </div>
               </div>
             </div>

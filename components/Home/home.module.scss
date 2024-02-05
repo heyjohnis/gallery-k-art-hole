@@ -260,15 +260,15 @@
 
   h1 {
     font-family: Noto Sans KR;
-    font-size: 70px;
-    font-weight: 700;
+    font-size: 100px;
+    font-weight: 600;
     letter-spacing: -0.7px;
     color: #fff;
 
     span {
       font-family: Noto Sans KR;
-      font-size: 70px;
-      font-weight: 700;
+      font-size: 100px;
+      font-weight: 600;
       letter-spacing: -0.7px;
       color: #6ed338;
     }
@@ -292,6 +292,8 @@
 }
 
 .imageWrapTop {
+  display: none;
+
   position: absolute;
   bottom: -370px;
   // bottom: -365px;
@@ -357,6 +359,18 @@
       background-repeat: no-repeat;
       background-position: center;
     }
+  }
+}
+
+.artworkTitle {
+  position: absolute;
+  left: 1vw;
+  bottom: 1vh;
+  opacity: 0.9;
+
+  span {
+    font-size: 0.8rem;
+    color: #fff;
   }
 }
 

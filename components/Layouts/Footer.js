@@ -28,7 +28,7 @@ const Footer = () => {
                     <select name="selectSite" id="" onChange={handleSelect}>
                       <option value="">FAMILY SITE</option>
                       <option value="https://www.artnomics.co.kr/">
-                        아트노믹스
+                        갤러리케이
                       </option>
                     </select>
                   </div>
