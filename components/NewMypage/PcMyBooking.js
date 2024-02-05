@@ -11,6 +11,7 @@ import { REGION_CODE, RESV_KIND } from "../../utils/cmmCode";
 import { REGION_LIST } from "../../data/CommonCode";
 import Pagination from "../Pagination";
 import { NoContent } from "./NoContent";
+import { ReservationOptionComp } from "./ReservationOptionComp";
 
 export default function PcMyBooking({
   resvData,
@@ -244,6 +245,14 @@ export default function PcMyBooking({
                             </span>
                           </li>
                         </ul>
+                      </li>
+                    )}
+                    {resv.option_values && (
+                      <li className="reser_detail_items">
+                        <h4>옵션 내용</h4>
+                        <ReservationOptionComp
+                          optionValues={resv.option_values}
+                        />
                       </li>
                     )}
                     <li className="reser_detail_items">

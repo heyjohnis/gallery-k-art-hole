@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
 import { hyphenForPhone } from "../../utils/number";
 import { RESV_STTS, REGION_CODE } from "../../utils/cmmCode";
+import { ReservationOptionComp } from "./ReservationOptionComp";
 
 export default function ModalReservation({
   resv,
@@ -146,6 +147,14 @@ export default function ModalReservation({
               </ul>
             </>
           )}
+
+          {resv.option_values && (
+            <>
+              <h3>옵션 내용</h3>
+              <ReservationOptionComp optionValues={resv.option_values} />
+            </>
+          )}
+
           <h3 className="point">요청사항</h3>
           <ul className="md_reser_detail_list">
             <li>

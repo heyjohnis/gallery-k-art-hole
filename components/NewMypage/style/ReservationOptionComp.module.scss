@@ -1,0 +1,22 @@
+.optionList {
+  li {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    flex-direction: row !important;
+  }
+  label {
+    width: 200px;
+    flex: 1 1 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  span {
+    padding: 0 0.3em;
+    justify-content: end;
+    font-weight: 400;
+  }
+}

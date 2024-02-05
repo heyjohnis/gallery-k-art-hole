@@ -15,7 +15,7 @@ export default function Reservation({ user }) {
       currentPage,
       pageSize: 10,
     }).then(({ data }) => {
-      console.log("data: ", data);
+      console.log("reservation/paging: ", data);
       setPage(data?.pagination || {});
       setResvData(data?.list || []);
     });
