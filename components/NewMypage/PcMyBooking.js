@@ -270,10 +270,7 @@ export default function PcMyBooking({
                       <h4>답변 내용</h4>
                       <ul className="reser_detail_info">
                         <li className="request">
-                          <span className="tit">답변</span>
-                          <span>
-                            <pre>{resv.feedback}</pre>
-                          </span>
+                          <pre>{resv.feedback}</pre>
                         </li>
                       </ul>
                     </li>
