@@ -22,15 +22,17 @@ export function ReservationOptionComp({ optionValues }) {
         ({ option_name, price, op_name, start_date, end_date }, index) => (
           <li key={index}>
             <label>{option_name}</label>
-            {start_date && !end_date && <span>{start_date}</span>}
-            {end_date && start_date && (
-              <span>
-                {" "}
-                {start_date} ~ {end_date}
-              </span>
-            )}
-            {op_name && <span>{op_name}</span>}
-            {price > 0 && <span> +({price.toLocaleString()})</span>}
+            <div>
+              {start_date && !end_date && <span>{start_date}</span>}
+              {end_date && start_date && (
+                <span>
+                  {" "}
+                  {start_date} ~ {end_date}
+                </span>
+              )}
+              {op_name && <span>{op_name}</span>}
+              {price > 0 && <span> +({price.toLocaleString()})</span>}
+            </div>
           </li>
         )
       )}
