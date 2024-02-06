@@ -80,9 +80,13 @@ const Navbar = ({ user }) => {
                 </Link>
                 {userMembership === "dealer" ? (
                   <>
-                    <div className="slash">&ensp;/&ensp;</div>
+                    <div className="slash">
+                      &ensp;&ensp;&ensp;/&ensp;&ensp;&ensp;
+                    </div>
                     <Link href="/dealer-page">
-                      <span>Dealer</span>
+                      <p>
+                        아트딜러라면 <span className={styles.green}>클릭!</span>
+                      </p>
                     </Link>
                   </>
                 ) : (
